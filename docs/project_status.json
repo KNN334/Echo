@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-08T10:00:48.173380+00:00",
+  "updated_utc": "2026-11-08T10:13:51.058081+00:00",
   "code_version": "v0.4.0",
   "camus_expected_patients": 500,
   "camus_local_cached_complete_patients": 116,
@@ -47,5 +47,10 @@
   "last_verified_remote_main_before_model_publication": "6186d976886fd4be0acd3810a870cc63064f69ba",
   "roi_manually_reviewed": false,
   "temporal_gate_effectiveness_validated": false,
-  "notes": "500-patient prepared input, one fixed patient-split research baseline; not clinical validation. Raw local cache is distinct from the complete released dataset."
+  "notes": "500-patient prepared input, one fixed patient-split research baseline; not clinical validation. Raw local cache is distinct from the complete released dataset.",
+  "github_feature_commit_verified": "899d8405c26ec388a937ab68f46819917f04e2d0",
+  "github_model_release_verified": "https://github.com/KNN334/Echo/releases/tag/v0.4.0",
+  "github_model_release_all_assets_verified": true,
+  "publication_verification": "reports/publication_verification.json",
+  "github_ci_verified": "https://github.com/KNN334/Echo/actions/runs/42469765905"
 }

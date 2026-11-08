@@ -1,0 +1,157 @@
+{
+  "verified_utc": "2026-11-08T10:13:51.058081+00:00",
+  "repository": "KNN334/Echo",
+  "verified_feature_commit": "899d8405c26ec388a937ab68f46819917f04e2d0",
+  "version_tag": "v0.4.0",
+  "root_entries": [
+    ".gitattributes",
+    ".github",
+    ".gitignore",
+    "2-毕业设计（论文）任务书.docx",
+    "AGENTS.md",
+    "README.md",
+    "cardiac",
+    "configs",
+    "data",
+    "docs",
+    "outputs",
+    "pyproject.toml",
+    "reports",
+    "research",
+    "scripts",
+    "tests",
+    "vendor"
+  ],
+  "ci": {
+    "id": 42469765905,
+    "html_url": "https://github.com/KNN334/Echo/actions/runs/42469765905",
+    "head_sha": "899d8405c26ec388a937ab68f46819917f04e2d0",
+    "status": "completed",
+    "conclusion": "success"
+  },
+  "publications": {
+    "raw": {
+      "url": "https://github.com/KNN334/Echo/releases/tag/camus-data-20261108",
+      "tag": "camus-data-20261108",
+      "assets": [
+        {
+          "name": "archives.json",
+          "size": 767,
+          "state": "uploaded",
+          "digest": "sha256:d2324a79831ceaca05574bfffc61bc32bb209bd8f224180dc201390f2a7dab32",
+          "browser_download_url": "https://github.com/KNN334/Echo/releases/download/camus-data-20261108/archives.json"
+        },
+        {
+          "name": "camus_download.json",
+          "size": 1521250,
+          "state": "uploaded",
+          "digest": "sha256:6528b02a76181dcf16e79f9072e85349d1a0b5ab55f2defcef51d219fcd5740c",
+          "browser_download_url": "https://github.com/KNN334/Echo/releases/download/camus-data-20261108/camus_download.json"
+        },
+        {
+          "name": "CAMUS_part_01_of_05.zip",
+          "size": 871785195,
+          "state": "uploaded",
+          "digest": "sha256:250d5388cfdd50252de85f655f0adcedfa982bce038773e952fa368a4b8adf16",
+          "browser_download_url": "https://github.com/KNN334/Echo/releases/download/camus-data-20261108/CAMUS_part_01_of_05.zip"
+        },
+        {
+          "name": "CAMUS_part_02_of_05.zip",
+          "size": 801264909,
+          "state": "uploaded",
+          "digest": "sha256:ec2997f5e33576bbb92013a5a0ae92e5e3190c6dfd7d8d05c6f52226868e49ec",
+          "browser_download_url": "https://github.com/KNN334/Echo/releases/download/camus-data-20261108/CAMUS_part_02_of_05.zip"
+        },
+        {
+          "name": "CAMUS_part_03_of_05.zip",
+          "size": 739574222,
+          "state": "uploaded",
+          "digest": "sha256:deab3f6837b097e9de7beef64124996a987fd8ac8a4c47c78894039fa435dacf",
+          "browser_download_url": "https://github.com/KNN334/Echo/releases/download/camus-data-20261108/CAMUS_part_03_of_05.zip"
+        },
+        {
+          "name": "CAMUS_part_04_of_05.zip",
+          "size": 705560232,
+          "state": "uploaded",
+          "digest": "sha256:858fb6db6ee9e408fb82e15b7fc2a1fb3e1ebabdd9aeb8ae71f193fc556c0137",
+          "browser_download_url": "https://github.com/KNN334/Echo/releases/download/camus-data-20261108/CAMUS_part_04_of_05.zip"
+        },
+        {
+          "name": "CAMUS_part_05_of_05.zip",
+          "size": 716374668,
+          "state": "uploaded",
+          "digest": "sha256:0920ac382073b7d19ae79e1051e10be11ea52076924a63b4e5bf5bdc06cae94b",
+          "browser_download_url": "https://github.com/KNN334/Echo/releases/download/camus-data-20261108/CAMUS_part_05_of_05.zip"
+        },
+        {
+          "name": "SHA256SUMS.txt",
+          "size": 450,
+          "state": "uploaded",
+          "digest": "sha256:d5378c79aacfd9a8f4e76ef773ec0d8e0cddca9044dba89da051738917e99e90",
+          "browser_download_url": "https://github.com/KNN334/Echo/releases/download/camus-data-20261108/SHA256SUMS.txt"
+        }
+      ]
+    },
+    "prepared": {
+      "url": "https://github.com/KNN334/Echo/releases/tag/camus-prepared-v0.3.4",
+      "tag": "camus-prepared-v0.3.4",
+      "assets": [
+        {
+          "name": "prepared_camus.zip",
+          "size": 134964648,
+          "state": "uploaded",
+          "digest": "sha256:e2ea5ffdb66435ca9cf7370a8ed6918e0213f47b69bf8995414b5165889e5d8a",
+          "browser_download_url": "https://github.com/KNN334/Echo/releases/download/camus-prepared-v0.3.4/prepared_camus.zip"
+        },
+        {
+          "name": "prepared_provenance.json",
+          "size": 577,
+          "state": "uploaded",
+          "digest": "sha256:2312eb9c11234fbeca8115372c6c57c44562ca9b64e43b8cf5024283416b4643",
+          "browser_download_url": "https://github.com/KNN334/Echo/releases/download/camus-prepared-v0.3.4/prepared_provenance.json"
+        },
+        {
+          "name": "SHA256SUMS.txt",
+          "size": 85,
+          "state": "uploaded",
+          "digest": "sha256:264742196f37662c1efbaf0792273ac9fe1812aa8458a7577531e14e16ab7cc6",
+          "browser_download_url": "https://github.com/KNN334/Echo/releases/download/camus-prepared-v0.3.4/SHA256SUMS.txt"
+        }
+      ]
+    },
+    "model": {
+      "url": "https://github.com/KNN334/Echo/releases/tag/v0.4.0",
+      "tag": "v0.4.0",
+      "assets": [
+        {
+          "name": "artifacts.json",
+          "size": 566,
+          "state": "uploaded",
+          "digest": "sha256:8652e9daebe0db8afdf9d14c9e7d907c897a8043f55e16ddb599dc4aa14bdaa4",
+          "browser_download_url": "https://github.com/KNN334/Echo/releases/download/v0.4.0/artifacts.json"
+        },
+        {
+          "name": "best.pt",
+          "size": 158968468,
+          "state": "uploaded",
+          "digest": "sha256:824b3e1f735704c3172f14a2e7102067dd655d759b5ceb7842d7d3315310821f",
+          "browser_download_url": "https://github.com/KNN334/Echo/releases/download/v0.4.0/best.pt"
+        },
+        {
+          "name": "CAMUS_EchoNet_full_baseline_v0.4.0.zip",
+          "size": 2403842,
+          "state": "uploaded",
+          "digest": "sha256:116e792dc3af3946e618ac676692f31ef72a6b455819e7c01257a47b61261d9a",
+          "browser_download_url": "https://github.com/KNN334/Echo/releases/download/v0.4.0/CAMUS_EchoNet_full_baseline_v0.4.0.zip"
+        },
+        {
+          "name": "SHA256SUMS.txt",
+          "size": 181,
+          "state": "uploaded",
+          "digest": "sha256:99c8d40729363a44e7ec493cbe28552b36f6c3f15afb0bc6828821460dd86b42",
+          "browser_download_url": "https://github.com/KNN334/Echo/releases/download/v0.4.0/SHA256SUMS.txt"
+        }
+      ]
+    }
+  }
+}
