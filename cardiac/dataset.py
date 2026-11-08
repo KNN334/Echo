@@ -35,7 +35,8 @@ def prepare_camus(root, output, config, split_path, limit=None):
                 # Spatially transformed medical header remains in source; no inferred temporal units.
                 output.mkdir(parents=True, exist_ok=True)
                 key = f"{folder.name}_{view}"
-                np.savez_compressed(output / (key + ".npz"), frames=x, masks=y, labeled=labeled)
+                np.savez_compressed(output / (key + ".npz"), frames=x, masks=y, labeled=labeled,
+                                    original_gt=masks[labeled], original_gt_indices=np.flatnonzero(labeled))
                 meta = {**source, "audit": audit, "preprocess_config": setting, "split": splits[folder.name]}
                 write_json(output / (key + ".json"), meta)
                 rows.append({"case_id": key, "patient_id": folder.name, "view": view, "split": splits[folder.name],
