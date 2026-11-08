@@ -1,0 +1,42 @@
+name: Prepare complete CAMUS features
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: camus-complete-preprocessing
+  cancel-in-progress: false
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      GH_TOKEN: ${{ github.token }}
+      PREPARED_TAG: camus-prepared-v0.3.1
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: false
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -e '.[medical]'
+      - name: Acquire all verified source patients
+        run: python scripts/download_camus.py --workers 8
+      - name: Preprocess all patients without test-label ROI leakage
+        run: python -m cardiac.cli prepare
+      - name: Verify and archive all 1000 views
+        run: python scripts/package_prepared.py
+      - name: Publish reproducible processed data
+        run: |
+          gh release view "$PREPARED_TAG" || gh release create "$PREPARED_TAG" --title 'CAMUS preprocessed (500 patients, v0.3.1)' --notes 'Full 500-patient CAMUS preprocessing with original-coordinate expert ED/ES labels retained, train/validation/test split, frame timing audit and reversible transforms. Source remains CC BY-NC-SA 4.0; retain attribution. This is processed training input, not a completed model experiment or manual ROI validation.'
+          gh release upload "$PREPARED_TAG" release_prepared/* --clobber
+      - name: Commit preparation provenance
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/manifests/prepared_provenance.json
+          git diff --cached --quiet || git commit -m 'data: publish all-patient CAMUS preprocessing and provenance'
+          git pull --rebase origin main
+          GIT_LFS_SKIP_PUSH=1 git push origin HEAD:main

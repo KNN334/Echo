@@ -193,6 +193,10 @@ def evaluate(processed, weights, output, split="test", normalization=None, devic
                 summaries[method+'_'+view]=mae_summary([x for x in functional_rows if x['method']==method and x['view']==view])
         else:
             summaries[method]=mae_summary([x for x in functional_rows if x['method']==method])
+    attempted_patients=len(set(x['patient_id'] for x in cases))
+    for method,metrics in summaries.items():
+        for metric in metrics.values():
+            metric['coverage_of_attempted_patients']=metric['n_patients']/attempted_patients if attempted_patients else 0.
     def mean_available(key, unit=None):
         # Average frames within patient then patients; explicit unit filter.
         groups={}
@@ -202,6 +206,7 @@ def evaluate(processed, weights, output, split="test", normalization=None, devic
         return float(np.mean([np.mean(a) for a in groups.values()])) if groups else None
     summary={**provenance(),"split":split,"weights_sha256":sha256(weights),"normalization":{"mean":mean,"std":std},
              "cases_attempted":len(cases),"cases_failed":len(failures),"labeled_frames":len(structures),
+             "patients_attempted":attempted_patients,
              "patients":len(set(x['patient_id'] for x in structures)),"failures":failures,
              "dice_patient_mean":mean_available('dice'),"assd_mm":mean_available('assd','mm'),
              "hd95_mm":mean_available('hd95','mm'),"assd_pixel":mean_available('assd','pixel'),

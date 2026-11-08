@@ -55,6 +55,7 @@ def train(processed, output, epochs=30, batch=8, lr=1e-4, seed=2026, weights=Non
     root, output = Path(processed), Path(output)
     output.mkdir(parents=True, exist_ok=True)
     entries = read_json(root / "manifest.json")["cases"]
+    all_patients=set(x['patient_id'] for x in entries)
     grouped = {split: [x for x in entries if x["split"] == split] for split in ("train", "val", "test")}
     if max_cases:
         grouped = {k: v[:max_cases] for k,v in grouped.items()}
@@ -88,7 +89,10 @@ def train(processed, output, epochs=30, batch=8, lr=1e-4, seed=2026, weights=Non
            "test_patients": sorted(set(x["patient_id"] for x in grouped["test"])),
            "input_manifest_sha256": sha256(root / "manifest.json"),
            "initial_weights_sha256": sha256(weights) if weights else None,
-           "experiment_type": "smoke_training_not_final" if max_cases else "baseline_training",
+           "experiment_type": "smoke_training_not_final" if max_cases else
+                               "partial_dataset_baseline" if len(all_patients)<500 else "baseline_training",
+           "prepared_dataset_patients":len(all_patients),
+           "full_500_patient_CAMUS_prepared":len(all_patients)==500,
            "torch_version": torch.__version__, "device": device}
     train_views={x['case_id'] for x in grouped['train']}
     run['train_case_ids']=sorted(train_views)

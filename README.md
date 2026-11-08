@@ -13,7 +13,9 @@ A study on ultrasound-based segmentation
 - EDV、ESV、SV、EF、CO 字段及 MAE；Dice、ASSD、HD95、最大边界距离、人工/轮廓派生关键点误差分开输出。
 - 平滑、质量门控、完整周期检测、有效覆盖率、患者聚类统计和静态 HTML 容积曲线报告。
 
-**代码已实现不等于完整数据实验已完成。** 当前实况以 `docs/project_status.json`（生成后）及提交记录为准；`smoke_training_not_final` 为小样本工程验证。CAMUS 半周期无法单独推断可靠心率/CO；没有独立 CO 真值不生成 CO MAE。没有人工点标签，不把轮廓几何代理误差称为人工关键点精度。
+**代码已实现不等于完整数据实验已完成。** 当前实况以 `docs/project_status.json` 及提交记录为准；`smoke_training_not_final` 为小样本工程验证。CAMUS 半周期无法单独推断可靠心率/CO；没有独立 CO 真值不生成 CO MAE。没有人工点标签，不把轮廓几何代理误差称为人工关键点精度。
+
+完整原始 CAMUS 已发布在 [CAMUS 数据 Release](https://github.com/KNN334/Echo/releases/tag/camus-data-20261108)：500 名患者，分成五个数据包，附全文件及压缩包 SHA256。下载五个 ZIP 并解压到同一目录即可组合完整数据集；数据体积较大，所以放在 Release 中，仓库源代码目录保留许可和校验清单。
 
 ## 安装
 

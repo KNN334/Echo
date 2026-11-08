@@ -58,6 +58,17 @@ def fetch(folder, dest):
                 shutil.copyfileobj(src, out)
     files = [{"path": str(p.relative_to(dest)).replace('\\', '/'), "bytes": p.stat().st_size,
               "sha256": digest(p)} for p in sorted(target.iterdir()) if p.is_file()]
+    names={Path(x['path']).name for x in files}
+    for view in ('2CH','4CH'):
+        required=[f'Info_{view}.cfg']+[f'{patient}_{view}_{phase}{suffix}.nii.gz'
+                  for phase in ('ED','ES') for suffix in ('','_gt')]
+        if not all(name in names for name in required):
+            raise RuntimeError('incomplete patient archive: missing phase image/config/label')
+        if not any(f'{patient}_{view}_{s}.nii.gz' in names for s in ('sequence','half_sequence')):
+            raise RuntimeError('missing sequence image')
+    expected=folder.get('size')
+    if expected is not None and sum(f['bytes'] for f in files)!=expected:
+        raise RuntimeError('archive total bytes differ from official folder metadata')
     record = {"patient_id": patient, "girder_id": folder["_id"], "files": files}
     marker.write_text(json.dumps(record, indent=2), encoding="utf-8")
     archive.unlink()
@@ -84,9 +95,12 @@ def main():
                 manifest["patients"].append(future.result())
             except Exception as e:
                 manifest["failures"].append({"patient_id": tasks[future], "error": str(e)})
+                print(f"FAILED {tasks[future]}: {type(e).__name__}: {e}",flush=True)
             count = len(manifest["patients"]) + len(manifest["failures"])
             if count % 10 == 0 or count == len(selected):
                 print(f"CAMUS {count}/{len(selected)}, failed {len(manifest['failures'])}", flush=True)
+                Path('data/manifests').mkdir(parents=True,exist_ok=True)
+                Path('data/manifests/camus_download_progress.json').write_text(json.dumps(manifest,indent=2))
     manifest["patients"].sort(key=lambda x: x["patient_id"])
     manifest["complete"] = len(manifest["patients"]) == len(folders) and not manifest["failures"]
     out = Path("data/manifests/camus_download.json")

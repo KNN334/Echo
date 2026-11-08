@@ -1,16 +1,19 @@
 {
-  "updated_utc": "2026-11-08T09:01:53.733920+00:00",
-  "code_version": "v0.3.0",
-  "camus_local_complete_patients": 101,
+  "updated_utc": "2026-11-08T09:14:53.665270+00:00",
+  "code_version": "v0.3.1",
+  "camus_local_complete_patients": 116,
   "camus_expected_patients": 500,
   "camus_complete": false,
-  "github_code_main_verified": "979e155bfcc103a6a6c1e683a51570e3aca3f24d",
-  "github_dataset_release": "pending",
+  "github_code_main_verified": "4327190bae6b616a8994127fa2b1626ab585da49",
+  "github_dataset_release": "https://github.com/KNN334/Echo/releases/tag/camus-data-20261108",
   "checks": "14 passed",
   "full_dataset_experiment_completed": false,
   "missing_references": [
     "independent_CO",
     "manual_anatomical_keypoints"
   ],
-  "notes": "Real pilot training is not a full-dataset baseline."
+  "notes": "Real pilot training is not a full-dataset baseline.",
+  "camus_github_complete": true,
+  "camus_files": 7500,
+  "camus_original_bytes": 3833307886
 }
