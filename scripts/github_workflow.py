@@ -13,6 +13,7 @@ def main():
     p.add_argument('--dispatch',action='store_true')
     p.add_argument('--release',action='store_true')
     p.add_argument('--release-tag',default='camus-data-20261108')
+    p.add_argument('--cancel-run',type=int)
     a=p.parse_args()
     if not re.fullmatch(r'[\w.-]+/[\w.-]+',a.repository):raise ValueError('invalid repository')
     c=subprocess.run(['git','-c','credential.interactive=never','credential','fill'],
@@ -28,6 +29,10 @@ def main():
         with urllib.request.urlopen(req,timeout=60) as r:
             content=r.read()
             return json.loads(content) if content else {}
+    if a.cancel_run:
+        api(f'/actions/runs/{a.cancel_run}/cancel',{})
+        print('Cancelled duplicate run '+str(a.cancel_run))
+        return
     if a.dispatch:
         api('/actions/workflows/'+a.workflow+'/dispatches',{'ref':'main'})
         print('Workflow dispatched: '+a.workflow)

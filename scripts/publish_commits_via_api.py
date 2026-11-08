@@ -39,7 +39,12 @@ def main():
             raise RuntimeError(f'GitHub API status {e.code}: '+e.read().decode()[:800]) from None
     before=api('/git/ref/heads/main')['object']['sha']
     expected=git('rev-parse','origin/main')
-    if before!=expected:raise RuntimeError('Remote main changed; fetch and merge before publishing')
+    if before!=expected:
+        exists=subprocess.run(['git','cat-file','-e',before+'^{commit}'],capture_output=True).returncode==0
+        ancestor=exists and subprocess.run(['git','merge-base','--is-ancestor',before,'HEAD'],capture_output=True).returncode==0
+        if not ancestor:raise RuntimeError('Remote main changed; fetch and merge before publishing')
+        # Earlier API publication may have succeeded without updating this local tracking ref.
+        subprocess.run(['git','update-ref','refs/remotes/origin/main',before],check=True)
     commits=git('rev-list','--reverse','origin/main..HEAD').splitlines()
     for commit in commits:
         parent_line=git('rev-list','--parents','-n','1',commit).split()
@@ -82,6 +87,7 @@ def main():
     api('/git/refs/heads/main',{'sha':head,'force':False},method='PATCH')
     after=api('/git/ref/heads/main')['object']['sha']
     if after!=head:raise RuntimeError('Remote verification failed')
+    subprocess.run(['git','update-ref','refs/remotes/origin/main',after],check=True)
     print(json.dumps({'repository':a.repository,'remote_main':after,'verified':True}))
 
 
