@@ -18,6 +18,10 @@ def overlay(frame, mask, points=None):
         for key in ("apex", "base_left", "base_right"):
             x,y = points[key]
             draw.ellipse((x-2,y-2,x+2,y+2), fill=(255,90,20))
+        apex=np.array(points['apex'])
+        base=(np.array(points['base_left'])+np.array(points['base_right']))/2
+        draw.line([tuple(apex),tuple(base)],fill=(255,180,30),width=1)
+        draw.line([tuple(points['base_left']),tuple(points['base_right'])],fill=(255,180,30),width=1)
     return image
 
 
@@ -103,8 +107,11 @@ def evaluate(processed, weights, output, split="test", normalization=None, devic
                         # QA has predicted overlay and reference overlay side by side.
                         reference_small = transform.image(gt, label=True)
                         canvas = Image.new("RGB", (frames.shape[2]*2, frames.shape[1]+20), "white")
-                        canvas.paste(overlay(frames[index], small), (0,20))
-                        canvas.paste(overlay(frames[index], reference_small), (frames.shape[2],20))
+                        def processed_points(points):
+                            return {name:transform.points(np.array([points[name]]))[0].tolist()
+                                    for name in ('apex','base_left','base_right')} if points else None
+                        canvas.paste(overlay(frames[index], small,processed_points(lp)), (0,20))
+                        canvas.paste(overlay(frames[index], reference_small,processed_points(tf.get('landmarks_xy'))), (frames.shape[2],20))
                         ImageDraw.Draw(canvas).text((2,2), key+f" frame {index}", fill="black")
                         canvas.save(out/(key+f"_{index}_overlay.png"))
             curve = smooth_curve(values, valid) if temporal else np.asarray(values)

@@ -30,7 +30,7 @@ def main():
     target.write_text(json.dumps(provenance,indent=2))
     out=Path('release_prepared');out.mkdir(exist_ok=True)
     archive=out/'prepared_camus.zip'
-    paths=sorted(root.glob('*'))+[target,Path('data/manifests/splits.json'),Path('data/licenses/CAMUS_LICENSE_TERMS.md')]
+    paths=sorted(root.glob('*'))+[target,Path('data/manifests/splits.json'),Path('data/manifests/camus_download.json'),Path('data/licenses/CAMUS_LICENSE_TERMS.md')]
     with zipfile.ZipFile(archive,'w',compression=zipfile.ZIP_STORED) as z:
         for p in paths:
             if p.is_file():z.write(p,p.as_posix())

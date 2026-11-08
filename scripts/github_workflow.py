@@ -12,6 +12,7 @@ def main():
     p.add_argument('--workflow',default='camus-dataset.yml')
     p.add_argument('--dispatch',action='store_true')
     p.add_argument('--release',action='store_true')
+    p.add_argument('--release-tag',default='camus-data-20261108')
     a=p.parse_args()
     if not re.fullmatch(r'[\w.-]+/[\w.-]+',a.repository):raise ValueError('invalid repository')
     c=subprocess.run(['git','-c','credential.interactive=never','credential','fill'],
@@ -41,7 +42,7 @@ def main():
         runs.append(row)
     print(json.dumps(runs,indent=2))
     if a.release:
-        release=api('/releases/tags/camus-data-20261108')
+        release=api('/releases/tags/'+a.release_tag)
         print(json.dumps({'tag':release['tag_name'],'url':release['html_url'],
                           'assets':[{k:x.get(k) for k in ('name','size','browser_download_url')} for x in release['assets']]},indent=2))
 
