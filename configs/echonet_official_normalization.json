@@ -1,0 +1,6 @@
+{
+  "mean": null,
+  "std": null,
+  "unit": "uint8_0_255",
+  "source": "Official EchoNet computes mean/std on its training set; supply actual values or use CAMUS training-only adaptation statistics. No invented constants."
+}

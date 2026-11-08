@@ -1,0 +1,9 @@
+{
+  "default": {
+    "output_hw": [112, 112],
+    "intensity_range": [0, 255],
+    "roi_reviewed": false,
+    "exclude_boxes_xyxy": []
+  },
+  "overrides": {}
+}

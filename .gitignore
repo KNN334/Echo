@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+*.egg-info/
+~$*
+research/runtime/
+research/cache/
+data/raw/
+data/processed/
+checkpoints/
+runs/
+vendor/*.zip
+*.log
+.env
+*.token
