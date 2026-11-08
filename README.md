@@ -1,2 +1,2 @@
 # Echo
-Work
+A study on ultrasound-based segmentation
