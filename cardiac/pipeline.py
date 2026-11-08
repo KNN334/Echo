@@ -40,9 +40,11 @@ def evaluate(processed, weights, output, split="test", normalization=None, devic
     manual = read_json(manual_landmarks) if manual_landmarks else {}
     structures, frame_rows, functional_rows, beat_rows, failures = [], [], [], [], []
     biplane = {}
+    camus_ef = {}
     started = time.perf_counter()
     for case in cases:
         key, pid, view = case["case_id"], case["patient_id"], case["view"]
+        checkpoint_lengths=[len(x) for x in (structures,frame_rows,functional_rows,beat_rows)]
         try:
             meta = read_json(root / (key+".json"))
             with np.load(root / (key+".npz")) as data:
@@ -56,6 +58,8 @@ def evaluate(processed, weights, output, split="test", normalization=None, devic
             transform = Transform(tuple(tr["original_hw"]), tuple(tr["crop_xyxy"]), tuple(tr["output_hw"]))
             spacing = meta["audit"]["spacing_xy_mm"]
             times = meta["audit"]["timestamps_s"]
+            if times is not None and len(times)!=len(frames):
+                raise ValueError('preprocessed timestamps do not match frames; regenerate processed data')
             features, truth_features = {}, {}
             valid, values = [], []
             for index, small in enumerate(pred):
@@ -108,6 +112,10 @@ def evaluate(processed, weights, output, split="test", normalization=None, devic
                 row["analysis_volume_ml"] = float(volume) if np.isfinite(volume) else None
                 row["temporal_filtered"] = temporal
             phases = meta.get("phases", {})
+            reported_ef=meta.get('config',{}).get('EF')
+            if reported_ef is not None:
+                camus_ef[pid]=float(reported_ef)
+            write_json(out/(key+'_features.json'), {'metadata':meta,'frames':features})
             if "ED" in phases and "ES" in phases:
                 ed,es = phases["ED"],phases["ES"]
                 hr = refs.get(pid,{}).get("HR")
@@ -117,9 +125,25 @@ def evaluate(processed, weights, output, split="test", normalization=None, devic
                 # GT-contour derived targets are explicitly separated from independent clinical labels.
                 tf = functional(truth_features.get(ed,{}).get("volume_ml"), truth_features.get(es,{}).get("volume_ml"))
                 fr = {"patient_id":pid,"view":view,"method":"single_plane_area_length", **{k:v for k,v in f.items() if k!='issues'},
-                      "issues":";".join(f['issues']), "reference_scope":"same_geometry_from_expert_ED_ES_contours"}
+                      "issues":";".join(f['issues']), "reference_scope":"same_geometry_from_expert_ED_ES_contours",
+                      "phase_selection":"reference_ED_ES_for_segmentation_error_isolation"}
                 fr.update({"ref_"+k:tf[k] for k in ("EDV","ESV","SV","EF","CO")})
                 functional_rows.append(fr)
+                # Separate automatic ED/ES selection from the oracle-phase segmentation analysis.
+                valid_indices=np.flatnonzero(np.asarray(valid)&np.isfinite(curve))
+                if len(valid_indices)>=2:
+                    auto_ed=int(valid_indices[np.argmax(curve[valid_indices])])
+                    after=valid_indices[valid_indices>auto_ed]
+                    if len(after):
+                        auto_es=int(after[np.argmin(curve[after])])
+                        af=functional(float(curve[auto_ed]),float(curve[auto_es]),hr)
+                        ar={**fr,**{k:v for k,v in af.items() if k!='issues'},
+                            "method":"single_plane_auto_extrema_"+view,
+                            "phase_selection":"predicted_ED_then_ES_within_available_sequence",
+                            "ed_frame":auto_ed,"es_frame":auto_es,
+                            "ed_frame_error":abs(auto_ed-ed),"es_frame_error":abs(auto_es-es),
+                            "issues":";".join(af['issues'])}
+                        functional_rows.append(ar)
                 for phase, index in phases.items():
                     biplane.setdefault(pid,{}).setdefault(phase,{})[view] = {
                         "pred": features[index] if valid[index] else {}, "truth":truth_features.get(index,{})}
@@ -129,7 +153,12 @@ def evaluate(processed, weights, output, split="test", normalization=None, devic
             if len(cases) <= 10 or (cases.index(case)+1)%20==0:
                 print(f"evaluated {key}",flush=True)
         except Exception as e:
-            failures.append({"case_id":key,"error":str(e)})
+            import traceback
+            for collection,length in zip((structures,frame_rows,functional_rows,beat_rows),checkpoint_lengths):
+                del collection[length:]
+            for phase in biplane.get(pid,{}).values():
+                phase.pop(view,None)
+            failures.append({"case_id":key,"error":str(e),'traceback':traceback.format_exc()})
     for pid, phases in biplane.items():
         if not all(phase in phases and all(view in phases[phase] for view in ('2CH','4CH')) for phase in ('ED','ES')):
             continue
@@ -141,9 +170,15 @@ def evaluate(processed, weights, output, split="test", normalization=None, devic
         f = functional(predv['ED'],predv['ES'],refs.get(pid,{}).get('HR'))
         tf = functional(refv['ED'],refv['ES'])
         row={"patient_id":pid,"view":"biplane","method":"20_disks_shorter_axis",**{k:v for k,v in f.items() if k!='issues'},
-             "issues":";".join(f['issues']),"reference_scope":"same_geometry_from_expert_ED_ES_contours"}
+             "issues":";".join(f['issues']),"reference_scope":"same_geometry_from_expert_ED_ES_contours",
+             "phase_selection":"reference_ED_ES_for_segmentation_error_isolation"}
         row.update({"ref_"+k:tf[k] for k in ('EDV','ESV','SV','EF','CO')})
         functional_rows.append(row)
+        if pid in camus_ef:
+            reported={**row,"method":"biplane_vs_CAMUS_reported_EF","reference_scope":"CAMUS_Info_cfg_EF"}
+            for k in ('EDV','ESV','SV','EF','CO'):
+                reported['ref_'+k]=camus_ef[pid] if k=='EF' else None
+            functional_rows.append(reported)
         # Independent supplied references have their own metrics group, including CO when available.
         if pid in refs:
             ext={**row,"method":"biplane_vs_supplied_reference","reference_scope":"external_reference_sidecar"}
@@ -173,7 +208,12 @@ def evaluate(processed, weights, output, split="test", normalization=None, devic
              "hd95_pixel":mean_available('hd95','pixel'),
              "manual_keypoint_error":mean_available('manual_keypoint_error'),
              "contour_derived_keypoint_error":mean_available('contour_derived_keypoint_error'),
+             "keypoint_distance_unit":'mm' if structures and all(x['keypoint_unit']=='mm' for x in structures) else 'pixel_or_mixed_review',
              "keypoint_scope":"manual_when_sidecar_available_else_contour_derived_proxy_only",
+             "manual_keypoint_labeled_frames":sum(x['manual_keypoint_error'] is not None for x in structures),
+             "contour_proxy_valid_frames":sum(x['contour_derived_keypoint_error'] is not None for x in structures),
+             "reference_file_sha256":sha256(references) if references else None,
+             "manual_landmark_file_sha256":sha256(manual_landmarks) if manual_landmarks else None,
              "function":summaries,"frames":len(frame_rows),"beats":len(beat_rows),
              "valid_frame_fraction":float(np.mean([x['valid'] for x in frame_rows])) if frame_rows else None,
              "timing_seconds":duration,"end_to_end_fps":len(frame_rows)/duration,
@@ -182,4 +222,6 @@ def evaluate(processed, weights, output, split="test", normalization=None, devic
     for name, rows in [('frames',frame_rows),('structure',structures),('function',functional_rows),('beats',beat_rows)]:
         write_csv(out/(name+'.csv'),rows)
     write_json(out/'summary.json',summary)
+    from .report import build_report
+    build_report(out)
     return summary

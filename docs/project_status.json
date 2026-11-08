@@ -1,0 +1,16 @@
+{
+  "updated_utc": "2026-11-08T09:01:53.733920+00:00",
+  "code_version": "v0.3.0",
+  "camus_local_complete_patients": 101,
+  "camus_expected_patients": 500,
+  "camus_complete": false,
+  "github_code_main_verified": "979e155bfcc103a6a6c1e683a51570e3aca3f24d",
+  "github_dataset_release": "pending",
+  "checks": "14 passed",
+  "full_dataset_experiment_completed": false,
+  "missing_references": [
+    "independent_CO",
+    "manual_anatomical_keypoints"
+  ],
+  "notes": "Real pilot training is not a full-dataset baseline."
+}

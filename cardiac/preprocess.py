@@ -1,5 +1,6 @@
 """Explicit image-only ROI and label-independent transforms; pixel centers are integer coordinates."""
 from dataclasses import dataclass, asdict
+import hashlib
 import numpy as np
 from PIL import Image, ImageDraw
 from .metadata import audit_metadata
@@ -64,6 +65,14 @@ def process(frames, config, metadata, labels=None):
     n, h, w = frames.shape
     transform = Transform((h, w), tuple(config.get("crop_xyxy", [0, 0, w, h])), tuple(config.get("output_hw", [112, 112])))
     keep = np.ones((h, w), bool)
+    if config.get("auto_largest_support", False):
+        from scipy import ndimage
+        support = np.max(frames, axis=0) > config.get("support_threshold", 0)
+        components, n_components = ndimage.label(support)
+        if not n_components:
+            raise ValueError("no nonzero ultrasound support")
+        sizes = np.bincount(components.ravel()); sizes[0] = 0
+        keep &= ndimage.binary_fill_holes(components == sizes.argmax())
     if config.get("keep_polygon_xy"):
         canvas = Image.new("L", (w, h))
         ImageDraw.Draw(canvas).polygon([tuple(x) for x in config["keep_polygon_xy"]], fill=1)
@@ -86,6 +95,15 @@ def process(frames, config, metadata, labels=None):
     audit["transform"] = transform.record(audit["spacing_xy_mm"])
     audit["roi_reviewed"] = bool(config.get("roi_reviewed", False))
     audit["masking_method"] = "explicit_keep_polygon_and_exclusion_boxes"
+    if config.get("auto_largest_support", False):
+        audit["masking_method"] += "+largest_image_support_no_labels"
+    audit["keep_mask_sha256"] = hashlib.sha256(np.packbits(keep).tobytes()).hexdigest()
+    audit["retained_pixel_fraction"] = float(keep.mean())
+    if labels is not None:
+        removed = int(np.count_nonzero(np.asarray(labels)[:, ~keep]))
+        audit["removed_foreground_label_pixels"] = removed
+        if removed:
+            audit["issues"].append("roi_removes_reference_foreground_review_required")
     if not audit["roi_reviewed"]:
         audit["issues"].append("roi_not_reviewed_text_removal_unverified")
     return output, label_output, audit

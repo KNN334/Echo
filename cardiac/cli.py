@@ -17,7 +17,7 @@ def main():
     train.add_argument('--output',default='checkpoints/camus_baseline')
     train.add_argument('--epochs',type=int,default=30)
     train.add_argument('--batch',type=int,default=8)
-    train.add_argument('--lr',type=float,default=1e-5)
+    train.add_argument('--lr',type=float,default=1e-4)
     train.add_argument('--weights')
     train.add_argument('--device',default='cuda')
     train.add_argument('--seed',type=int,default=2026)
@@ -48,6 +48,8 @@ def main():
         from .pipeline import evaluate
         result=evaluate(**args)
     print(json.dumps(result,ensure_ascii=False,indent=2,allow_nan=False))
+    if isinstance(result,dict) and (result.get('failures') or result.get('cases_failed',0)):
+        raise SystemExit(2)
 
 
 if __name__=='__main__':

@@ -32,6 +32,16 @@ def test_timing_not_invented():
         audit_metadata(3, timestamps_s=[0, .1, .1])
 
 
+def test_auto_support_preserves_frame_count_and_removes_isolated_text():
+    x=np.zeros((12,60,80),np.uint8)
+    x[:,10:50,20:70]=100
+    x[:,2:5,2:8]=255
+    out,_,audit=process(x,{'auto_largest_support':True,'output_hw':[60,80]}, {'fps':50})
+    assert audit['n_frames']==12 and len(audit['timestamps_s'])==12
+    assert out[:,2:5,2:8].sum()==0
+    assert out[:,20:30,30:40].mean()==100
+
+
 def test_split_patient_disjoint(tmp_path):
     from cardiac.dataset import make_splits
     a = make_splits(["patient0001", "patient0002"], tmp_path / "a.json")

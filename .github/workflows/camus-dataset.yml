@@ -1,0 +1,39 @@
+name: Publish complete CAMUS dataset
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: camus-dataset-release
+  cancel-in-progress: false
+jobs:
+  acquire-verify-publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    env:
+      GH_TOKEN: ${{ github.token }}
+      DATA_TAG: camus-data-20261108
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: false
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Download all patients from official CAMUS public service
+        run: python scripts/download_camus.py --workers 8
+      - name: Validate every file and package five archives
+        run: python scripts/package_camus.py
+      - name: Publish original data with attribution and checksums
+        run: |
+          gh release view "$DATA_TAG" || gh release create "$DATA_TAG" --title 'CAMUS complete dataset (500 patients)' --notes 'Original CAMUS NIfTI data from the official CREATIS public service. CC BY-NC-SA 4.0, non-commercial scientific research only; retain LICENSE_TERMS.md and MANDATORY_CITATION.md. Download and extract all five parts into the same directory. SHA256SUMS.txt and camus_download.json verify every archive and original file. Code and data have separate licensing.'
+          gh release upload "$DATA_TAG" release_data/* --clobber
+      - name: Commit verified dataset manifest
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/manifests/camus_download.json
+          git diff --cached --quiet || git commit -m 'data: verify complete 500-patient CAMUS release with SHA256 manifest'
+          git pull --rebase origin main
+          GIT_LFS_SKIP_PUSH=1 git push origin HEAD:main

@@ -85,7 +85,7 @@ def mask_features(mask, spacing_xy=None, landmarks=None, disks=20):
             "landmarks_xy": points, "largest_component_fraction": component_fraction,
             "touches_image_edge": touches_edge, "diameters_mm": widths if calibrated else None,
             "volume_ml": float(8 * area**2 / (3 * np.pi * length) / 1000) if calibrated else None,
-            "volume_pixel3": float(8 * area**2 / (3 * np.pi * length)),
+            "volume_pixel3": float(8 * area**2 / (3 * np.pi * length)) if not calibrated else None,
             "volume_method": "single_plane_area_length_approximation"}
 
 

@@ -3,6 +3,7 @@
     "output_hw": [112, 112],
     "intensity_range": [0, 255],
     "roi_reviewed": false,
+    "auto_largest_support": true,
     "exclude_boxes_xyxy": []
   },
   "overrides": {}

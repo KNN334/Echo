@@ -14,3 +14,6 @@ vendor/*.zip
 *.log
 .env
 *.token
+*.download.zip
+*.assembling
+.pytest_work/

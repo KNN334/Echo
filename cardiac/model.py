@@ -43,7 +43,7 @@ def predict(model, frames, mean, std, device, batch=16):
     return np.concatenate(result)
 
 
-def train(processed, output, epochs=30, batch=8, lr=1e-5, seed=2026, weights=None, device="cuda", max_cases=None):
+def train(processed, output, epochs=30, batch=8, lr=1e-4, seed=2026, weights=None, device="cuda", max_cases=None):
     import torch
     torch.manual_seed(seed)
     random.seed(seed)
@@ -76,9 +76,13 @@ def train(processed, output, epochs=30, batch=8, lr=1e-5, seed=2026, weights=Non
     # Train-only normalization, never use test statistics. Grayscale repeated into RGB.
     mean, std = [float(tx.mean())]*3, [max(float(tx.std()), 1.)]*3
     model = load_checkpoint(weights, device)[0] if weights else build_model().to(device)
-    optimizer = torch.optim.SGD(model.parameters(), lr=lr, momentum=.9, weight_decay=0)
+    # CAMUS adaptation: AdamW + mean BCE. The original code uses SGD + summed BCE;
+    # do not silently reuse its learning rate with a different loss reduction.
+    optimizer = torch.optim.AdamW(model.parameters(), lr=lr, weight_decay=0)
     run = {**provenance(), "model": "echonet_deeplabv3_resnet50_one_logit", "mean": mean, "std": std,
            "normalization_unit": "uint8_0_255", "epochs": epochs, "batch_size": batch, "lr": lr, "seed": seed,
+           "optimizer": "AdamW", "loss": "mean_BCE", "BN": "frozen_running_statistics",
+           "reproduction_scope": "EchoNet_architecture_CAMUS_training_adaptation_not_exact_paper_reproduction",
            "train_patients": sorted(set(x["patient_id"] for x in grouped["train"])),
            "val_patients": sorted(set(x["patient_id"] for x in grouped["val"])),
            "test_patients": sorted(set(x["patient_id"] for x in grouped["test"])),
@@ -86,6 +90,12 @@ def train(processed, output, epochs=30, batch=8, lr=1e-5, seed=2026, weights=Non
            "initial_weights_sha256": sha256(weights) if weights else None,
            "experiment_type": "smoke_training_not_final" if max_cases else "baseline_training",
            "torch_version": torch.__version__, "device": device}
+    train_views={x['case_id'] for x in grouped['train']}
+    run['train_case_ids']=sorted(train_views)
+    run['val_case_ids']=sorted(x['case_id'] for x in grouped['val'])
+    run['test_case_ids']=sorted(x['case_id'] for x in grouped['test'])
+    run['input_case_metadata_sha256']={x['case_id']:sha256(root/(x['case_id']+'.json'))
+                                       for split in ('train','val') for x in grouped[split]}
     for x in ("train", "val"):
         if set(run[x + "_patients"]) & set(run["test_patients"]):
             raise ValueError("patient leakage")
