@@ -2,7 +2,7 @@
   "source": "https://humanheart-project.creatis.insa-lyon.fr/database/api/v1",
   "folder_id": "63fde55f73e9f004868fb7ac",
   "expected_patients": 500,
-  "retrieved_utc": "2026-11-08T09:03:40.847414+00:00",
+  "retrieved_utc": "2026-11-08T09:33:54.709881+00:00",
   "patients": [
     {
       "patient_id": "patient0001",
