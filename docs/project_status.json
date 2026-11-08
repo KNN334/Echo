@@ -1,12 +1,12 @@
 {
   "updated_utc": "2026-11-08T09:14:53.665270+00:00",
-  "code_version": "v0.3.2",
+  "code_version": "v0.3.4",
   "camus_local_complete_patients": 116,
   "camus_expected_patients": 500,
   "camus_complete": false,
   "github_code_main_verified": "4327190bae6b616a8994127fa2b1626ab585da49",
   "github_dataset_release": "https://github.com/KNN334/Echo/releases/tag/camus-data-20261108",
-  "checks": "14 passed",
+  "checks": "15 passed",
   "full_dataset_experiment_completed": false,
   "missing_references": [
     "independent_CO",
@@ -20,5 +20,6 @@
   "prepared_patients": 500,
   "prepared_views": 1000,
   "prepared_expert_frames": 2000,
-  "prepared_provenance_commit": "repair_in_progress"
+  "prepared_provenance_commit": "superseded_by_label_preserving_v0.3.4",
+  "prepared_label_policy": "geometry_only_preserve_expert_annotations"
 }

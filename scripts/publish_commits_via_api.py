@@ -20,6 +20,7 @@ def git(*args,raw=False):
 def main():
     p=argparse.ArgumentParser()
     p.add_argument('--repository',required=True)
+    p.add_argument('--tags',action='store_true')
     a=p.parse_args()
     if not re.fullmatch(r'[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+',a.repository):
         raise ValueError('invalid repository')
@@ -88,6 +89,16 @@ def main():
     after=api('/git/ref/heads/main')['object']['sha']
     if after!=head:raise RuntimeError('Remote verification failed')
     subprocess.run(['git','update-ref','refs/remotes/origin/main',after],check=True)
+    if a.tags:
+        for line in git('for-each-ref','--format=%(refname:short) %(objectname)','refs/tags').splitlines():
+            tag,sha=line.split()
+            try:existing=api('/git/ref/tags/'+tag)
+            except RuntimeError as e:
+                if 'status 404' not in str(e):raise
+                api('/git/refs',{'ref':'refs/tags/'+tag,'sha':sha})
+                print('Published tag '+tag,flush=True)
+            else:
+                if existing['object']['sha']!=sha:raise RuntimeError('Remote tag differs; refuse to overwrite '+tag)
     print(json.dumps({'repository':a.repository,'remote_main':after,'verified':True}))
 
 

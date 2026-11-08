@@ -12,7 +12,7 @@ jobs:
     timeout-minutes: 60
     env:
       GH_TOKEN: ${{ github.token }}
-      PREPARED_TAG: camus-prepared-v0.3.1
+      PREPARED_TAG: camus-prepared-v0.3.4
     steps:
       - uses: actions/checkout@v4
         with:
@@ -30,7 +30,7 @@ jobs:
         run: python scripts/package_prepared.py
       - name: Publish reproducible processed data
         run: |
-          gh release view "$PREPARED_TAG" || gh release create "$PREPARED_TAG" --title 'CAMUS preprocessed (500 patients, v0.3.1)' --notes 'Full 500-patient CAMUS preprocessing with original-coordinate expert ED/ES labels retained, train/validation/test split, frame timing audit and reversible transforms. Source remains CC BY-NC-SA 4.0; retain attribution. This is processed training input, not a completed model experiment or manual ROI validation.'
+          gh release view "$PREPARED_TAG" || gh release create "$PREPARED_TAG" --title 'CAMUS preprocessed (500 patients, v0.3.4)' --notes 'Full 500-patient CAMUS preprocessing. Expert labels follow only geometric transforms and are never erased by intensity-derived image support; original-coordinate ED/ES labels, patient split, timing audit and reversible transforms retained. Supersedes v0.3.1. Source remains CC BY-NC-SA 4.0; retain attribution. This is processed input, not completed model validation or manual ROI review.'
           gh release upload "$PREPARED_TAG" release_prepared/* --clobber
       - name: Commit preparation provenance
         run: |

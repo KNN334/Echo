@@ -42,6 +42,15 @@ def test_auto_support_preserves_frame_count_and_removes_isolated_text():
     assert out[:,20:30,30:40].mean()==100
 
 
+def test_image_support_never_erases_expert_anatomical_labels():
+    x=np.zeros((2,40,40),np.uint8);x[:,10:30,10:30]=100
+    gt=np.zeros_like(x);gt[:,5:25,5:25]=1
+    _,processed,audit=process(x,{'auto_largest_support':True,'output_hw':[40,40]}, {},gt)
+    assert np.array_equal(processed,gt)
+    assert audit['image_support_excludes_reference_foreground_pixels']>0
+    assert audit['removed_foreground_label_pixels']==0
+
+
 def test_split_patient_disjoint(tmp_path):
     from cardiac.dataset import make_splits
     a = make_splits(["patient0001", "patient0002"], tmp_path / "a.json")

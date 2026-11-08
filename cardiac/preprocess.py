@@ -90,7 +90,9 @@ def process(frames, config, metadata, labels=None):
     output = np.stack([transform.image(np.where(keep, f, 0).astype(np.uint8)) for f in finite])
     label_output = None
     if labels is not None:
-        label_output = np.stack([transform.image(np.where(keep, m, 0).astype(np.uint8), label=True) for m in labels])
+        # Image support is not anatomical truth: dark myocardium/cavity can have expert labels.
+        # Labels follow only geometric crop/resize, never an intensity-derived exclusion mask.
+        label_output = np.stack([transform.image(m.astype(np.uint8), label=True) for m in labels])
     audit = audit_metadata(n, metadata.get("spacing_xy_mm"), metadata.get("fps"), metadata.get("timestamps_s"), metadata.get("source"))
     audit["transform"] = transform.record(audit["spacing_xy_mm"])
     audit["roi_reviewed"] = bool(config.get("roi_reviewed", False))
@@ -101,9 +103,13 @@ def process(frames, config, metadata, labels=None):
     audit["retained_pixel_fraction"] = float(keep.mean())
     if labels is not None:
         removed = int(np.count_nonzero(np.asarray(labels)[:, ~keep]))
-        audit["removed_foreground_label_pixels"] = removed
+        audit["image_support_excludes_reference_foreground_pixels"] = removed
+        x0,y0,x1,y1=transform.crop_xyxy
+        cropped=int(np.count_nonzero(labels)-np.count_nonzero(np.asarray(labels)[:,y0:y1,x0:x1]))
+        audit["cropped_reference_foreground_pixels"] = cropped
+        audit["removed_foreground_label_pixels"] = cropped
         if removed:
-            audit["issues"].append("roi_removes_reference_foreground_review_required")
+            audit["issues"].append("image_support_excludes_reference_foreground_review_required")
     if not audit["roi_reviewed"]:
         audit["issues"].append("roi_not_reviewed_text_removal_unverified")
     return output, label_output, audit
