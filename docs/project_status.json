@@ -1,25 +1,51 @@
 {
-  "updated_utc": "2026-11-08T09:14:53.665270+00:00",
-  "code_version": "v0.3.4",
-  "camus_local_complete_patients": 116,
+  "updated_utc": "2026-11-08T10:00:48.173380+00:00",
+  "code_version": "v0.4.0",
   "camus_expected_patients": 500,
-  "camus_complete": false,
-  "github_code_main_verified": "4327190bae6b616a8994127fa2b1626ab585da49",
-  "github_dataset_release": "https://github.com/KNN334/Echo/releases/tag/camus-data-20261108",
-  "checks": "15 passed",
-  "full_dataset_experiment_completed": false,
-  "missing_references": [
-    "independent_CO",
-    "manual_anatomical_keypoints"
-  ],
-  "notes": "Real pilot training is not a full-dataset baseline.",
+  "camus_local_cached_complete_patients": 116,
+  "camus_local_cache_is_full_dataset": false,
   "camus_github_complete": true,
   "camus_files": 7500,
   "camus_original_bytes": 3833307886,
+  "github_dataset_release": "https://github.com/KNN334/Echo/releases/tag/camus-data-20261108",
   "preprocessed_github_complete": true,
+  "github_preprocessed_release": "https://github.com/KNN334/Echo/releases/tag/camus-prepared-v0.3.4",
   "prepared_patients": 500,
   "prepared_views": 1000,
+  "prepared_frames": 19232,
   "prepared_expert_frames": 2000,
-  "prepared_provenance_commit": "superseded_by_label_preserving_v0.3.4",
-  "prepared_label_policy": "geometry_only_preserve_expert_annotations"
+  "prepared_provenance_commit": "eefbd61edd1a560ecc68f212c03036d357172234",
+  "prepared_label_policy": "geometry_only_preserve_expert_annotations",
+  "prepared_release_local_arrays_equivalent": true,
+  "full_dataset_experiment_completed": true,
+  "training_epochs": 30,
+  "selected_epoch_by_validation_BCE": 6,
+  "patients_split": {
+    "train": 347,
+    "val": 71,
+    "test": 82
+  },
+  "test_cases": 164,
+  "test_labeled_frames": 328,
+  "test_case_failures": 0,
+  "test_metrics": {
+    "dice_patient_mean": 0.9124587683879428,
+    "assd_mm": 1.9438655896102355,
+    "hd95_mm": 4.756159340440096,
+    "contour_derived_keypoint_error": 5.392758462870291,
+    "manual_keypoint_error": null
+  },
+  "missing_references": [
+    "independent_CO",
+    "manual_anatomical_keypoints",
+    "independent_clinical_EDV_ESV_SV"
+  ],
+  "checks": "15 passed (full installed model and medical dependencies)",
+  "test_report": "reports/full_baseline/RESULTS.md",
+  "model_release_tag": "v0.4.0",
+  "model_weights_sha256": "824b3e1f735704c3172f14a2e7102067dd655d759b5ceb7842d7d3315310821f",
+  "last_verified_remote_main_before_model_publication": "6186d976886fd4be0acd3810a870cc63064f69ba",
+  "roi_manually_reviewed": false,
+  "temporal_gate_effectiveness_validated": false,
+  "notes": "500-patient prepared input, one fixed patient-split research baseline; not clinical validation. Raw local cache is distinct from the complete released dataset."
 }

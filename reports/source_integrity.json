@@ -1,0 +1,72 @@
+{
+  "evaluated_commit": "6186d976886fd4be0acd3810a870cc63064f69ba",
+  "working_tree_dirty_recorded": true,
+  "note": "Only documentation, packaging scripts, research material and version metadata changed; evaluated algorithm and config blobs match the cited commit.",
+  "algorithm_files": [
+    {
+      "path": "cardiac/cli.py",
+      "sha256": "0ee90179d2a1d8a04b00bdfa7d1f259a38f333565f74366b5c6bcc214171931e",
+      "unchanged_from_evaluated_commit": true
+    },
+    {
+      "path": "cardiac/common.py",
+      "sha256": "493b7c3dc9cd1655658f0972f7f341785dc03f420ed948167dda58d98a9519ac",
+      "unchanged_from_evaluated_commit": true
+    },
+    {
+      "path": "cardiac/dataset.py",
+      "sha256": "fe4027221097477bc7730ea8e0a11fd2c05743093a782f89585a9edb3a1fc95c",
+      "unchanged_from_evaluated_commit": true
+    },
+    {
+      "path": "cardiac/geometry.py",
+      "sha256": "a71fffcfa99249b21d8b71c9ec128936a75c24901296865befaa0cb52efe60b6",
+      "unchanged_from_evaluated_commit": true
+    },
+    {
+      "path": "cardiac/io.py",
+      "sha256": "9a2e8d30dfbb69bd8e8f6e2f6d91eb28da0dafc87cd803dfd07c9d8de93c2acc",
+      "unchanged_from_evaluated_commit": true
+    },
+    {
+      "path": "cardiac/metadata.py",
+      "sha256": "c1dbe68ad20d392d48a7570009e546c53003b15798ebb149c040e1a48a9a4fe5",
+      "unchanged_from_evaluated_commit": true
+    },
+    {
+      "path": "cardiac/metrics.py",
+      "sha256": "d78366b822b55c77e9f54820b4ccc435d28984f14cc81e78c039e4cc2105456c",
+      "unchanged_from_evaluated_commit": true
+    },
+    {
+      "path": "cardiac/model.py",
+      "sha256": "b8ccb68e7a2c0209563f0b7863be406a5ec91a4975988564b37322e022365d87",
+      "unchanged_from_evaluated_commit": true
+    },
+    {
+      "path": "cardiac/pipeline.py",
+      "sha256": "0a4ee1daf903d68b05c8f5c4efcc7818a4067ce4b9f287db61b48e88cf8b212a",
+      "unchanged_from_evaluated_commit": true
+    },
+    {
+      "path": "cardiac/preprocess.py",
+      "sha256": "83fd8f7b802eb93d8785e1492ebbe988457880ad39a9e6a579dc56981aa82123",
+      "unchanged_from_evaluated_commit": true
+    },
+    {
+      "path": "cardiac/report.py",
+      "sha256": "9498f098557c21230af554db0a1961aa8794b2c50dfe9b2ea1a63eec06e7ea7f",
+      "unchanged_from_evaluated_commit": true
+    },
+    {
+      "path": "cardiac/temporal.py",
+      "sha256": "ec10271a0ff931f67f11fa07582b23c5be0cc32bd28e05da8e308dc70a8f5695",
+      "unchanged_from_evaluated_commit": true
+    },
+    {
+      "path": "configs/camus.json",
+      "sha256": "fb9a0ee2a5813ee0f15a0d58ec5de7ca2bc563444e4659d91347dbc648e3eb9e",
+      "unchanged_from_evaluated_commit": true
+    }
+  ]
+}

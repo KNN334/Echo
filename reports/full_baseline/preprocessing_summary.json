@@ -1,0 +1,24 @@
+{
+  "patients": 500,
+  "views": 1000,
+  "frames": 19232,
+  "expert_frames": 2000,
+  "fps_range": [
+    32.6,
+    85.6
+  ],
+  "splits_patients": {
+    "test": 82,
+    "val": 71,
+    "train": 347
+  },
+  "sequence_types": {
+    "half_sequence": 1000
+  },
+  "roi_removes_foreground_cases": 0,
+  "image_support_exclusion_review_cases": 92,
+  "phase_order": {
+    "ED_before_ES": 979,
+    "ES_before_ED": 21
+  }
+}

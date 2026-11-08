@@ -8,10 +8,11 @@ function Run-Step([string[]]$Arguments) {
 }
 Run-Step @('scripts/download_camus.py','--workers',"$Workers")
 Run-Step @('-m','cardiac.cli','prepare')
-Run-Step @('-m','cardiac.cli','train','--epochs',"$Epochs",'--device',$Device)
+Run-Step @('scripts/download_weights.py','--workers',"$Workers")
+Run-Step @('-m','cardiac.cli','train','--epochs',"$Epochs",'--device',$Device,'--weights','checkpoints/echonet_official.pt','--output','checkpoints/camus_full')
 $Modes=@(@(),@('--temporal'),@('--gate'),@('--temporal','--gate'))
 $Names=@('baseline','temporal','gate','temporal_gate')
 for ($i=0;$i -lt 4;$i++) {
-  $Arguments=@('-m','cardiac.cli','evaluate','--weights','checkpoints/camus_baseline/best.pt','--output',('runs/'+$Names[$i]),'--device',$Device)+$Modes[$i]
+  $Arguments=@('-m','cardiac.cli','evaluate','--weights','checkpoints/camus_full/best.pt','--output',('runs/'+$Names[$i]),'--device',$Device)+$Modes[$i]
   Run-Step $Arguments
 }

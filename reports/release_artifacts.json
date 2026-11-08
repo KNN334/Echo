@@ -1,0 +1,19 @@
+{
+  "scope": "full_CAMUS_predefined_patient_test_split",
+  "patients_attempted": 82,
+  "cases_attempted": 164,
+  "cases_failed": 0,
+  "evaluation_code_commit": "6186d976886fd4be0acd3810a870cc63064f69ba",
+  "artifacts": [
+    {
+      "file": "CAMUS_EchoNet_full_baseline_v0.4.0.zip",
+      "bytes": 2403842,
+      "sha256": "116e792dc3af3946e618ac676692f31ef72a6b455819e7c01257a47b61261d9a"
+    },
+    {
+      "file": "best.pt",
+      "bytes": 158968468,
+      "sha256": "824b3e1f735704c3172f14a2e7102067dd655d759b5ceb7842d7d3315310821f"
+    }
+  ]
+}

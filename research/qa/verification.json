@@ -1,0 +1,60 @@
+{
+  "date": "2026-11-07",
+  "papers": 20,
+  "journals": 12,
+  "workbook": {
+    "sheets": [
+      "阅读导航",
+      "文献矩阵",
+      "期刊指标",
+      "参数与边界",
+      "执行计划",
+      "检索记录"
+    ],
+    "unique_doi": 20,
+    "date_numeric_types": "PASS",
+    "required_fields": "PASS",
+    "formula_errors": 0,
+    "native_render": false,
+    "preview_count": 17
+  },
+  "documents": [
+    {
+      "file": "文献综述_初稿V0.1.docx",
+      "paragraphs": 67,
+      "characters": 11010,
+      "references": 20,
+      "xml": "PASS",
+      "visual": "NOT RENDERED; LibreOffice unavailable"
+    },
+    {
+      "file": "研究计划书_初稿V0.1.docx",
+      "paragraphs": 86,
+      "characters": 10186,
+      "references": 20,
+      "xml": "PASS",
+      "visual": "NOT RENDERED; LibreOffice unavailable"
+    }
+  ],
+  "previews": [
+    "阅读导航.png",
+    "矩阵_题录_2.png",
+    "矩阵_题录_7.png",
+    "矩阵_题录_12.png",
+    "矩阵_题录_17.png",
+    "矩阵_分析_2.png",
+    "矩阵_分析_7.png",
+    "矩阵_分析_12.png",
+    "矩阵_分析_17.png",
+    "矩阵_来源_2.png",
+    "矩阵_来源_7.png",
+    "矩阵_来源_12.png",
+    "矩阵_来源_17.png",
+    "期刊指标.png",
+    "参数与边界.png",
+    "执行计划.png",
+    "检索记录.png"
+  ],
+  "style_preset": "narrative_proposal with named academic overrides: A4, Songti 12pt/1.5; SimHei black headings; compact masthead",
+  "documents_render_attempt": "render_docx.py dependency supplied; conversion failed because soffice executable is unavailable (WinError 2). Structural XML checks passed; no page render QA."
+}

@@ -24,6 +24,7 @@ def main():
     p.add_argument('--title',required=True)
     p.add_argument('--notes',required=True)
     p.add_argument('--file',action='append',default=[])
+    p.add_argument('--update',action='store_true')
     a=p.parse_args()
     if not re.fullmatch(r'[\w.-]+/[\w.-]+',a.repository):raise ValueError('invalid repository')
     c=subprocess.run(['git','-c','credential.interactive=never','credential','fill'],input='protocol=https\nhost=github.com\n\n',text=True,capture_output=True,check=True)
@@ -31,9 +32,10 @@ def main():
     token=values.get('password')
     if not token:raise RuntimeError('No GitHub credential available')
     headers={'Authorization':'Bearer '+token,'Accept':'application/vnd.github+json','User-Agent':'Echo-release-publisher'}
-    def api(path,data=None):
+    def api(path,data=None,method=None):
         req=urllib.request.Request('https://api.github.com/repos/'+a.repository+path,
                 data=json.dumps(data).encode() if data is not None else None,
+                method=method,
                 headers={**headers,'Content-Type':'application/json'})
         with urllib.request.urlopen(req,timeout=60) as r:return json.load(r)
     try:release=api('/releases/tags/'+a.tag)
@@ -42,6 +44,9 @@ def main():
         commit=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()
         release=api('/releases',{'tag_name':a.tag,'target_commitish':commit,'name':a.title,
                     'body':Path(a.notes).read_text(encoding='utf-8'),'draft':False,'prerelease':True})
+    if a.update:
+        release=api(f"/releases/{release['id']}",{'name':a.title,'body':Path(a.notes).read_text(encoding='utf-8'),
+                    'prerelease':True},method='PATCH')
     upload=release['upload_url'].split('{')[0]
     if urllib.parse.urlparse(upload).hostname!='uploads.github.com':raise RuntimeError('unexpected upload host')
     verified=[]

@@ -34,6 +34,9 @@ def main():
                            'removed_foreground_pixels':audit.get('removed_foreground_label_pixels'),
                            'image_support_excludes_reference_foreground_pixels':audit.get('image_support_excludes_reference_foreground_pixels',0),
                            'roi_reviewed':audit['roi_reviewed'],'sequence_type':meta['sequence_type']})
+        audit_rows[-1]['ed_frame']=meta['phases']['ED']
+        audit_rows[-1]['es_frame']=meta['phases']['ES']
+        audit_rows[-1]['phase_order']='ED_before_ES' if meta['phases']['ED']<meta['phases']['ES'] else 'ES_before_ED'
     with (out/'preprocessing_audit.csv').open('w',encoding='utf-8-sig',newline='') as f:
         w=csv.DictWriter(f,fieldnames=list(audit_rows[0]));w.writeheader();w.writerows(audit_rows)
     audit_summary={'patients':len(set(x['patient_id'] for x in audit_rows)),'views':len(audit_rows),
@@ -44,6 +47,7 @@ def main():
                    'sequence_types':dict(Counter(x['sequence_type'] for x in audit_rows)),
                    'roi_removes_foreground_cases':sum(bool(x['removed_foreground_pixels']) for x in audit_rows)}
     audit_summary['image_support_exclusion_review_cases']=sum(bool(x['image_support_excludes_reference_foreground_pixels']) for x in audit_rows)
+    audit_summary['phase_order']=dict(Counter(x['phase_order'] for x in audit_rows))
     (out/'preprocessing_summary.json').write_text(json.dumps(audit_summary,indent=2))
     for name in ('summary.json','function.csv','structure.csv','frames.csv','beats.csv'):
         shutil.copyfile(Path(a.run)/name,out/name)
@@ -74,7 +78,8 @@ def main():
         for key,value in metrics.items():
             lines.append(f"| {method} | {key} | {fmt(value['mae'])} | {value['unit']} | {value['n_patients']} |")
     lines+=['','EDV/ESV/SV 的主要参考为专家轮廓经同一几何方法计算，不能冒充独立临床金标准。`biplane_vs_CAMUS_reported_EF` 才是与数据集 `Info.cfg` EF 标签的比较。参考相位和自动极值选相位结果分开报告。','',
-            'CAMUS 仅提供 ED→ES 半周期，不能由此可靠推导完整周期心率；没有独立 CO 真值，因此 CO 及其 MAE 为不可计算，绝不按双倍收缩时间伪造。','',
+            'CAMUS 仅提供半周期，不能由此可靠推导完整周期心率；没有独立 CO 真值，因此 CO 及其 MAE 为不可计算，绝不按双倍收缩时间伪造。','',
+            f"原始相位顺序：{audit_summary['phase_order']}。保留原始采集顺序，不反转时间；自动极值选相位只在可用序列内寻找 ED 后的 ES，逆序半周期和边界极值可能无法选出有效相位，覆盖率见各项结果，不能解释为完整心搏检测精度。",'',
             '## 可用性与限制','',
             f"原始基线几何有效帧占比：{fmt(summary['valid_frame_fraction'])}，属于研究性几何可计算率，不是经人工验证的临床有效覆盖率。",'',
             '默认 ROI 尚未逐病例人工审阅；自动最大声窗可去除分离文字，但与声窗相连的文字仍需人工排除。门控和平滑接口已实现，不能把未验证的阈值称为已证实有效的质量分类器。','',

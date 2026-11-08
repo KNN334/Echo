@@ -19,5 +19,6 @@ vendor/*.zip
 .pytest_work/
 release_data/
 release_prepared/
+release_results/
 data/downloads/
 data/manifests/camus_download_progress.json
