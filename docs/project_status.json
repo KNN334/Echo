@@ -51,6 +51,5 @@
   "github_feature_commit_verified": "899d8405c26ec388a937ab68f46819917f04e2d0",
   "github_model_release_verified": "https://github.com/KNN334/Echo/releases/tag/v0.4.0",
   "github_model_release_all_assets_verified": true,
-  "publication_verification": "reports/publication_verification.json",
   "github_ci_verified": "https://github.com/KNN334/Echo/actions/runs/42469765905"
 }
