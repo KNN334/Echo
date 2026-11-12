@@ -1,5 +1,6 @@
 """从实际源码目录生成 README 结构；忽略环境缓存及运行产物的内容。"""
 import argparse
+import textwrap
 from pathlib import Path
 
 from ..config.paths import PROJECT_ROOT
@@ -171,9 +172,9 @@ def _visible(path, root):
 
 
 def render_tree(root=PROJECT_ROOT):
-    """完整列出实际源码/配置/测试/文档，运行目录只显示顶层占位。"""
+    """完整列出项目文件，并把功能说明放到对应路径的下一行。"""
     root = Path(root).resolve()
-    lines = ['Echo/  # 左心室分割与心功能分析项目根目录']
+    lines = ['Echo/', '# 左心室分割与心功能分析项目根目录']
 
     def visit(directory, prefix=''):
         entries = {p.name: p for p in directory.iterdir() if _visible(p, root)}
@@ -189,8 +190,15 @@ def render_tree(root=PROJECT_ROOT):
             runtime = directory == root and path.name in RUNTIME_DIRECTORIES
             is_directory = runtime or path.is_dir()
             label = path.name + ('/' if is_directory else '')
-            label += '  # ' + _description(path, root)
             lines.append(prefix + ('└── ' if last else '├── ') + label)
+            description_prefix = prefix + ('    ' if last else '│   ')
+            description_lines = textwrap.wrap(
+                _description(path, root),
+                width=max(24, 54 - len(description_prefix)),
+                break_long_words=False,
+                break_on_hyphens=False,
+            ) or ['']
+            lines.extend(description_prefix + '# ' + line for line in description_lines)
             if is_directory and not runtime:
                 visit(path, prefix + ('    ' if last else '│   '))
 
