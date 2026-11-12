@@ -1,0 +1,12 @@
+# CUDA 用户请先安装与驱动匹配的 torch/torchvision；这里不指定 CPU/CUDA 来源。
+numpy>=1.24
+scipy>=1.10
+Pillow>=10
+PyYAML>=6.0
+torch>=2.2
+torchvision>=0.17
+tqdm>=4.66
+SimpleITK>=2.3
+opencv-python-headless>=4.9
+pydicom>=2.4
+pytest>=8

@@ -1,0 +1,19 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="03 测试与生成结果" type="PythonConfigurationType" factoryName="Python">
+    <module name="毕设-基于贴片式超声探头的心脏功能参数连续监测与分析" />
+    <option name="INTERPRETER_OPTIONS" value="" />
+    <option name="PARENT_ENVS" value="true" />
+    <envs>
+      <env name="PYTHONUNBUFFERED" value="1" />
+    </envs>
+    <option name="SDK_HOME" value="$PROJECT_DIR$/.venv/Scripts/python.exe" />
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    <option name="IS_MODULE_SDK" value="false" />
+    <option name="ADD_CONTENT_ROOTS" value="true" />
+    <option name="ADD_SOURCE_ROOTS" value="true" />
+    <option name="SCRIPT_NAME" value="$PROJECT_DIR$/scripts/evaluate.py" />
+    <option name="PARAMETERS" value="" />
+    <option name="MODULE_MODE" value="false" />
+    <method v="2" />
+  </configuration>
+</component>

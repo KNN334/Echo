@@ -1,0 +1,16 @@
+adapter: camus
+dataset: data/processed/camus
+split_assignments: configs/camus_splits.json  # 复用已有患者级划分
+train_path: data/processed/camus/splits/train.json
+val_path: data/processed/camus/splits/val.json
+test_path: data/processed/camus/splits/test.json
+split_seed: 2026
+expected_patients: 500
+views: [2CH, 4CH]
+# 可选 CAMUS 原始帧处理的参数；日常入口只核对已处理数据输出尺寸。
+preprocessing:
+  output_hw: [112, 112]
+  intensity_range: [0, 255]
+  auto_largest_support: true
+  exclude_boxes_xyxy: []
+  roi_reviewed: false  # 只有人工审核后才可改成 true

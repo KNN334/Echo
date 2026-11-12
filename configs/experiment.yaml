@@ -1,0 +1,22 @@
+# 三个阶段默认读取本文件；组件内的默认值可在此覆盖。
+# 所有数据、权重、结果路径均相对于项目根目录。
+defaults:
+  - model: model/deeplabv3_resnet50.yaml
+  - data: data/camus.yaml
+  - train: train/baseline.yaml
+
+train:
+  # 每次正式实验使用新的名称，避免覆盖已有权重。
+  output: checkpoints/camus_modular_baseline
+  initial_weights: checkpoints/echonet_official.pt  # null 表示从头训练
+
+test:
+  weights: checkpoints/camus_modular_baseline/best.pt
+  output: runs/camus_modular_baseline
+  device: auto
+  cpu_threads: 2
+  temporal: false  # CAMUS 半周期不能拼成完整心搏
+  quality_gate: false
+  normalization: null  # 默认使用训练权重携带的训练集统计量
+  references: null     # 可选的有来源独立临床参考值 JSON
+  manual_landmarks: null  # 可选的人工关键点 JSON

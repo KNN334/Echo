@@ -1,0 +1,9 @@
+# 当前为 EchoNet 架构在 CAMUS 上的训练适配，非论文训练设置的严格复现。
+epochs: 30
+batch_size: 8
+learning_rate: 0.0001
+seed: 2026
+device: auto  # 明确填写 cuda 时，不可用会报错
+cpu_threads: 2
+early_stopping_patience: null  # 正整数启用早停；null 完成全部轮次
+min_delta: 0.0
