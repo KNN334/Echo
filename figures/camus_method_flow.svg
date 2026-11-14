@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="183mm" height="190.757225mm" viewBox="0 0 519 541" role="img" aria-labelledby="figure-title figure-description">
+  <title id="figure-title">CAMUS 基线：左室分割与心功能参数估算流程</title>
+  <desc id="figure-description">从已处理 CAMUS 数据、固定患者级划分、DeepLabV3-ResNet50 训练与测试推理，到单平面和双平面几何容积、功能量及分层评价；时序平滑和质量门控默认为关闭；逐搏分析需完整序列与可靠时间。</desc>
+  <rect x="0" y="0" width="519" height="541" fill="#FFFFFF"/>
+
+  <text x="18" y="21" font-family="Microsoft YaHei UI, Arial, sans-serif" font-size="7" font-weight="700" fill="#172F31">CAMUS 基线：左室分割与心功能参数估算流程</text>
+  <text x="18" y="35" font-family="Microsoft YaHei UI, Arial, sans-serif" font-size="5.2" fill="#172F31">主线为患者级数据隔离、图像分割与几何估算；时序平滑和质量门控在默认配置中关闭。</text>
+
+  <g id="c:camus-input">
+    <rect x="18" y="49" width="145" height="74" rx="2" fill="#F2F5F5" stroke="#9AA8A8" stroke-width="0.9"/>
+    <circle cx="29" cy="61" r="6" fill="#53696A"/>
+    <text x="29" y="63" text-anchor="middle" font-family="Arial, sans-serif" font-size="5.2" font-weight="700" fill="#FFFFFF">1</text>
+    <text x="40" y="63" font-family="Microsoft YaHei UI, Arial, sans-serif" font-size="6.1" font-weight="700" fill="#172F31">CAMUS 已处理数据</text>
+    <text x="26" y="80" font-family="Microsoft YaHei UI, Arial, sans-serif" font-size="5.2" fill="#172F31">2CH / 4CH 图像与序列</text>
+    <text x="26" y="92" font-family="Microsoft YaHei UI, Arial, sans-serif" font-size="5.2" fill="#172F31">仅专家标注 ED/ES 帧用于监督</text>
+    <text x="26" y="104" font-family="Microsoft YaHei UI, Arial, sans-serif" font-size="5.2" fill="#172F31">空间间距、帧率 / 时间戳</text>
+  </g>
+
+  <g id="c:patient-split">
+    <rect x="187" y="49" width="145" height="74" rx="2" fill="#F7F8F8" stroke="#9AA8A8" stroke-width="0.9"/>
+    <circle cx="198" cy="61" r="6" fill="#53696A"/>
+    <text x="198" y="63" text-anchor="middle" font-family="Arial, sans-serif" font-size="5.2" font-weight="700" fill="#FFFFFF">2</text>
+    <text x="209" y="63" font-family="Microsoft YaHei UI, Arial, sans-serif" font-size="6.1" font-weight="700" fill="#172F31">核验与患者级划分</text>
+    <text x="195" y="80" font-family="Microsoft YaHei UI, Arial, sans-serif" font-size="5.2" fill="#172F31">核对已有数据清单和元数据</text>
+    <text x="195" y="92" font-family="Microsoft YaHei UI, Arial, sans-serif" font-size="5.2" fill="#172F31">固定 train / val / test 患者</text>
+    <text x="195" y="104" font-family="Microsoft YaHei UI, Arial, sans-serif" font-size="5.2" fill="#172F31">70 / 15 / 15；非官方划分</text>
+    <text x="195" y="115" font-family="Microsoft YaHei UI, Arial, sans-serif" font-size="5.1" fill="#172F31">112 × 112；正反坐标变换审计</text>
+  </g>
+
+  <g id="c:model-training">
+    <rect x="356" y="49" width="145" height="74" rx="2" fill="#E8F2F1" stroke="#4A928D" stroke-width="1.1"/>
+    <circle cx="367" cy="61" r="6" fill="#267D78"/>
+    <text x="367" y="63" text-anchor="middle" font-family="Arial, sans-serif" font-size="5.2" font-weight="700" fill="#FFFFFF">3</text>
+    <text x="378" y="63" font-family="Microsoft YaHei UI, Arial, sans-serif" font-size="5.8" font-weight="700" fill="#172F31">DeepLabV3-ResNet50</text>
+    <text x="364" y="79" font-family="Microsoft YaHei UI, Arial, sans-serif" font-size="5.1" fill="#172F31">EchoNet 架构 / 初始化权重</text>
+    <text x="364" y="90" font-family="Microsoft YaHei UI, Arial, sans-serif" font-size="5.1" fill="#172F31">灰度复制三通道；训练集归一化</text>
+    <text x="364" y="101" font-family="Microsoft YaHei UI, Arial, sans-serif" font-size="5.1" fill="#172F31">AdamW + mean BCE</text>
+    <text x="364" y="112" font-family="Microsoft YaHei UI, Arial, sans-serif" font-size="5.1" fill="#172F31">验证损失选最佳权重</text>
+  </g>
+
+  <g id="e:data-to-split">
+    <path d="M163 86 H181" fill="none" stroke="#267D78" stroke-width="1.25"/>
+    <path d="M187 86 L181.5 83 L181.5 89 Z" fill="#267D78"/>
+  </g>
+  <g id="e:split-to-training">
+    <path d="M332 86 H350" fill="none" stroke="#267D78" stroke-width="1.25"/>
+    <path d="M356 86 L350.5 83 L350.5 89 Z" fill="#267D78"/>
+  </g>
+
+  <g id="c:test-manifest">
+    <rect x="187" y="157" width="145" height="60" rx="2" fill="#F7F8F8" stroke="#9AA8A8" stroke-width="0.9"/>
+    <text x="198" y="173" font-family="Microsoft YaHei UI, Arial, sans-serif" font-size="6.1" font-weight="700" fill="#172F31">隔离测试清单</text>
+    <text x="195" y="190" font-family="Microsoft YaHei UI, Arial, sans-serif" font-size="5.2" fill="#172F31">仅 test.json 患者进入最终评价</text>
+    <text x="195" y="202" font-family="Microsoft YaHei UI, Arial, sans-serif" font-size="5.2" fill="#172F31">不参与训练、归一化或选模</text>
+  </g>
+
+  <g id="c:test-inference">
+    <rect x="356" y="157" width="145" height="60" rx="2" fill="#E8F2F1" stroke="#4A928D" stroke-width="1.1"/>
+    <circle cx="367" cy="169" r="6" fill="#267D78"/>
+    <text x="367" y="171" text-anchor="middle" font-family="Arial, sans-serif" font-size="5.2" font-weight="700" fill="#FFFFFF">4</text>
+    <text x="378" y="171" font-family="Microsoft YaHei UI, Arial, sans-serif" font-size="6.0" font-weight="700" fill="#172F31">测试集推理</text>
+    <text x="364" y="188" font-family="Microsoft YaHei UI, Arial, sans-serif" font-size="5.1" fill="#172F31">逐帧概率 → 固定 0.5 阈值</text>
+    <text x="364" y="200" font-family="Microsoft YaHei UI, Arial, sans-serif" font-size="5.1" fill="#172F31">预测掩膜恢复到原始坐标</text>
+  </g>
+
+  <g id="e:split-to-test-list">
+    <path d="M259.5 123 V151" fill="none" stroke="#267D78" stroke-width="1.15"/>
+    <path d="M259.5 157 L256.5 151 L262.5 151 Z" fill="#267D78"/>
+  </g>
+  <g id="e:checkpoint-to-inference">
+    <path d="M428.5 123 V151" fill="none" stroke="#267D78" stroke-width="1.15"/>
+    <path d="M428.5 157 L425.5 151 L431.5 151 Z" fill="#267D78"/>
+    <text x="434" y="145" font-family="Arial, sans-serif" font-size="5.1" fill="#172F31">best.pt</text>
+  </g>
+  <g id="e:test-list-to-inference">
+    <path d="M332 187 H350" fill="none" stroke="#267D78" stroke-width="1.15"/>
+    <path d="M356 187 L350 184 L350 190 Z" fill="#267D78"/>
+  </g>
+
+  <g id="c:geometry-features">
+    <rect x="187" y="248" width="314" height="64" rx="2" fill="#E8F2F1" stroke="#4A928D" stroke-width="1.1"/>
+    <circle cx="199" cy="261" r="6" fill="#267D78"/>
+    <text x="199" y="263" text-anchor="middle" font-family="Arial, sans-serif" font-size="5.2" font-weight="700" fill="#FFFFFF">5</text>
+    <text x="211" y="263" font-family="Microsoft YaHei UI, Arial, sans-serif" font-size="6.1" font-weight="700" fill="#172F31">原始预测掩膜与几何特征</text>
+    <text x="195" y="282" font-family="Microsoft YaHei UI, Arial, sans-serif" font-size="5.2" fill="#172F31">几何分支：最大连通域 / 填洞 → PCA → 面积、长轴、截面直径</text>
+    <text x="195" y="296" font-family="Microsoft YaHei UI, Arial, sans-serif" font-size="5.2" fill="#172F31">轮廓派生心尖 / 瓣环候选点；空间标定后估算容积并保留质量标志</text>
+  </g>
+
+  <g id="c:optional-temporal-quality">
+    <rect x="18" y="248" width="145" height="64" rx="2" fill="#FBFCFC" stroke="#718181" stroke-width="0.9" stroke-dasharray="3 2"/>
+    <text x="26" y="263" font-family="Microsoft YaHei UI, Arial, sans-serif" font-size="5.7" font-weight="700" fill="#172F31">可选：时序分析与门控</text>
+    <text x="26" y="281" font-family="Microsoft YaHei UI, Arial, sans-serif" font-size="5.1" fill="#172F31">片段平滑 / 质量门控默认关闭</text>
+    <text x="26" y="293" font-family="Microsoft YaHei UI, Arial, sans-serif" font-size="5.1" fill="#172F31">门控筛帧；完整序列可估 HR</text>
+    <text x="26" y="305" font-family="Microsoft YaHei UI, Arial, sans-serif" font-size="5.1" fill="#172F31">需可靠时间；半周期不拼接</text>
+  </g>
+
+  <g id="e:inference-to-geometry">
+    <path d="M428.5 217 V242" fill="none" stroke="#267D78" stroke-width="1.15"/>
+    <path d="M428.5 248 L425.5 242 L431.5 242 Z" fill="#267D78"/>
+  </g>
+  <g id="e:geometry-to-optional">
+    <path d="M187 280 H169" fill="none" stroke="#718181" stroke-width="1.0" stroke-dasharray="3 2"/>
+    <path d="M163 280 L169 277 L169 283 Z" fill="#718181"/>
+  </g>
+
+  <g id="e:geometry-branch">
+    <path d="M344 312 V326 M90.5 326 H428.5" fill="none" stroke="#267D78" stroke-width="1.0"/>
+    <circle cx="344" cy="326" r="1.8" fill="#267D78"/>
+    <path d="M90.5 326 V340 M259.5 326 V340 M428.5 326 V340" fill="none" stroke="#267D78" stroke-width="1.0"/>
+    <path d="M90.5 346 L87.5 340 L93.5 340 Z M259.5 346 L256.5 340 L262.5 340 Z M428.5 346 L425.5 340 L431.5 340 Z" fill="#267D78"/>
+  </g>
+
+  <g id="c:segmentation-evaluation">
+    <rect x="18" y="346" width="145" height="64" rx="2" fill="#F7F8F8" stroke="#9AA8A8" stroke-width="0.9"/>
+    <text x="26" y="362" font-family="Microsoft YaHei UI, Arial, sans-serif" font-size="6.0" font-weight="700" fill="#172F31">分割评价</text>
+    <text x="26" y="380" font-family="Microsoft YaHei UI, Arial, sans-serif" font-size="5.1" fill="#172F31">原始专家 ED/ES 掩膜</text>
+    <text x="26" y="392" font-family="Microsoft YaHei UI, Arial, sans-serif" font-size="5.2" fill="#172F31">Dice / ASSD / HD95</text>
+    <text x="26" y="402" font-family="Microsoft YaHei UI, Arial, sans-serif" font-size="5.1" fill="#172F31">边界距离按 mm / pixel 分列</text>
+  </g>
+
+  <g id="c:single-plane-volume">
+    <rect x="187" y="346" width="145" height="64" rx="2" fill="#FFFFFF" stroke="#9AA8A8" stroke-width="0.9"/>
+    <circle cx="198" cy="358" r="6" fill="#53696A"/>
+    <text x="198" y="360" text-anchor="middle" font-family="Arial, sans-serif" font-size="5.2" font-weight="700" fill="#FFFFFF">6</text>
+    <text x="209" y="360" font-family="Microsoft YaHei UI, Arial, sans-serif" font-size="5.8" font-weight="700" fill="#172F31">单平面容积</text>
+    <text x="195" y="380" font-family="Microsoft YaHei UI, Arial, sans-serif" font-size="5.1" fill="#172F31">面积–长度椭球近似</text>
+    <text x="195" y="393" font-family="Microsoft YaHei UI, Arial, sans-serif" font-size="5.1" fill="#172F31">EDV / ESV；需要空间标定</text>
+    <text x="195" y="402" font-family="Microsoft YaHei UI, Arial, sans-serif" font-size="5.1" fill="#172F31">专家相位 / 预测极值分别评价</text>
+  </g>
+
+  <g id="c:biplane-volume">
+    <rect x="356" y="346" width="145" height="64" rx="2" fill="#FFFFFF" stroke="#9AA8A8" stroke-width="0.9"/>
+    <circle cx="367" cy="358" r="6" fill="#53696A"/>
+    <text x="367" y="360" text-anchor="middle" font-family="Arial, sans-serif" font-size="5.2" font-weight="700" fill="#FFFFFF">6</text>
+    <text x="378" y="360" font-family="Microsoft YaHei UI, Arial, sans-serif" font-size="5.8" font-weight="700" fill="#172F31">双平面容积</text>
+    <text x="364" y="380" font-family="Microsoft YaHei UI, Arial, sans-serif" font-size="5.1" fill="#172F31">20 圆盘：2CH + 4CH</text>
+    <text x="364" y="393" font-family="Microsoft YaHei UI, Arial, sans-serif" font-size="5.1" fill="#172F31">同患者、同 ED / ES 相位</text>
+    <text x="364" y="402" font-family="Microsoft YaHei UI, Arial, sans-serif" font-size="5.1" fill="#172F31">不构造逐帧同步双平面曲线</text>
+  </g>
+
+  <g id="c:function-and-reference-output">
+    <rect x="18" y="438" width="483" height="95" rx="2" fill="#E8F2F1" stroke="#4A928D" stroke-width="1.1"/>
+    <circle cx="30" cy="451" r="6" fill="#267D78"/>
+    <text x="30" y="453" text-anchor="middle" font-family="Arial, sans-serif" font-size="5.2" font-weight="700" fill="#FFFFFF">7</text>
+    <text x="42" y="453" font-family="Microsoft YaHei UI, Arial, sans-serif" font-size="6.1" font-weight="700" fill="#172F31">心功能、分层评价与结果报告</text>
+    <path d="M259.5 462 V499" fill="none" stroke="#9AA8A8" stroke-width="0.7"/>
+    <text x="27" y="473" font-family="Microsoft YaHei UI, Arial, sans-serif" font-size="5.1" fill="#172F31">SV = EDV - ESV；EF = 100 × SV / EDV</text>
+    <text x="27" y="485" font-family="Microsoft YaHei UI, Arial, sans-serif" font-size="5.1" fill="#172F31">CO 需完整周期或有来源的可靠 HR；否则 null + 原因</text>
+    <text x="270" y="473" font-family="Microsoft YaHei UI, Arial, sans-serif" font-size="5.1" fill="#172F31">同几何法轮廓参考、CAMUS EF、独立参考分开</text>
+    <text x="270" y="485" font-family="Microsoft YaHei UI, Arial, sans-serif" font-size="5.1" fill="#172F31">缺人工点 / 独立 CO / 临床容积参考：对应误差为 null</text>
+    <text x="27" y="499" font-family="Microsoft YaHei UI, Arial, sans-serif" font-size="5.1" fill="#172F31">CO = SV × HR / 1000（L/min）；为左室容积差的等效输出。</text>
+    <text x="27" y="512" font-family="Microsoft YaHei UI, Arial, sans-serif" font-size="5.2" fill="#172F31">患者级 MAE / 偏倚 / Bootstrap 区间；覆盖率、失败病例与样本数</text>
+    <text x="27" y="525" font-family="Microsoft YaHei UI, Arial, sans-serif" font-size="5.2" fill="#172F31">导出：逐帧特征、预测掩膜、分割叠图、CSV / JSON / HTML 报告</text>
+  </g>
+
+  <g id="e:segmentation-to-report">
+    <path d="M90.5 410 V432" fill="none" stroke="#267D78" stroke-width="1.0"/>
+    <path d="M90.5 438 L87.5 432 L93.5 432 Z" fill="#267D78"/>
+  </g>
+  <g id="e:single-plane-to-functional">
+    <path d="M259.5 410 V432" fill="none" stroke="#267D78" stroke-width="1.0"/>
+    <path d="M259.5 438 L256.5 432 L262.5 432 Z" fill="#267D78"/>
+  </g>
+  <g id="e:biplane-to-functional">
+    <path d="M428.5 410 V432" fill="none" stroke="#267D78" stroke-width="1.0"/>
+    <path d="M428.5 438 L425.5 432 L431.5 432 Z" fill="#267D78"/>
+  </g>
+</svg>

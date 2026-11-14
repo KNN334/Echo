@@ -76,6 +76,20 @@ Echo/
 │   │   # 空间/时间标定、坐标恢复、指标与参考值的计算口径
 │   └── pycharm_run.md
 │       # PyCharm 环境确认、三个入口运行和配置修改步骤
+├── figures/
+│   # 论文方法流程图及其可编辑源稿和导出预览
+│   ├── camus_method_flow.pdf
+│   │   # 用于论文排版的矢量版方法流程图
+│   ├── camus_method_flow.png
+│   │   # 由 SVG 源稿生成的流程图预览
+│   ├── camus_method_flow.svg
+│   │   # CAMUS 左室分割与心功能参数估算可编辑流程图
+│   ├── method_flow_caption.md
+│   │   # 流程图图注、核心主张和实现假设
+│   ├── method_flow_export_check.json
+│   │   # 导出尺寸、文字边界和重叠检查记录
+│   └── render_method_flow.py
+│       # 从 SVG 导出保留文字的矢量 PDF 和 300 dpi 预览
 ├── reports/
 │   # 已完成历史基线结果及审计；不代表当前代码已重新训练
 │   ├── full_baseline/
