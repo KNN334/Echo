@@ -1,0 +1,9 @@
+﻿analysis,valid_patients,attempted_patients,coverage,status
+Segmentation,82,82,1.0,available
+Biplane geometry,82,82,1.0,available
+CAMUS reported EF,82,82,1.0,available
+Auto extrema 2CH,82,82,1.0,available
+Auto extrema 4CH,80,82,0.975609756097561,available
+Independent EDV / ESV,0,82,0.0,missing_clinical_volumes
+Manual landmarks,0,82,0.0,missing_manual_labels
+Independent CO,0,82,0.0,missing_independent_reference

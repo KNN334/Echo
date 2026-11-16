@@ -12,6 +12,9 @@ RUNTIME_DIRECTORIES = {
     'checkpoints': '本地模型权重，Git 忽略',
     'runs': '本地实验结果，Git 忽略',
 }
+GENERATED_DIRECTORIES = {
+    'reports/result_analysis': '实测结果图集、中文解读、源数据及图件检查；内容由绘图入口生成',
+}
 ENVIRONMENT_DIRECTORIES = {
     '.git', '.venv', '.idea', '.work', '.pytest_cache', '.pytest_work',
     'build', 'dist',
@@ -21,7 +24,8 @@ DESCRIPTIONS = {
     '.github': 'GitHub 仓库自动化配置',
     '.github/workflows': '提交与拉取请求触发的自动检查流程',
     '.github/workflows/tests.yml': '安装核心测试依赖并运行 pytest；缺少可选依赖的测试会跳过',
-    '.run': 'PyCharm 三阶段运行配置；首次使用需选择本机解释器',
+    '.run': 'PyCharm 三阶段与结果绘图运行配置；首次使用需选择本机解释器',
+    '.run/PlotResults.run.xml': '分析已保存实验并生成结果图，不重新训练或测试选模',
     '.run/Prepare.run.xml': '启动阶段 1：数据核查与固定患者划分',
     '.run/Test.run.xml': '启动阶段 3：测试集评价与结果导出',
     '.run/Train.run.xml': '启动阶段 2：模型训练与验证',
@@ -44,6 +48,7 @@ DESCRIPTIONS = {
     'docs/code_walkthrough.md': '数据到结果表格的全链路、流程图、公式和逐文件讲解',
     'docs/measurement_protocol.md': '空间/时间标定、坐标恢复、指标与参考值的计算口径',
     'docs/pycharm_run.md': 'PyCharm 环境确认、三个入口运行和配置修改步骤',
+    'docs/result_analysis.md': '结果图的证据设计、参考图适用范围、导出格式及复现方法',
     'figures': '论文方法流程图及其可编辑源稿和导出预览',
     'figures/camus_method_flow.svg': 'CAMUS 左室分割与心功能参数估算可编辑流程图',
     'figures/camus_method_flow.pdf': '用于论文排版的矢量版方法流程图',
@@ -61,11 +66,14 @@ DESCRIPTIONS = {
     'reports/input_equivalence.json': '历史本地输入与处理后发布数据包的一致性审计',
     'reports/release_artifacts.json': '历史结果发布归档的大小、摘要及校验信息',
     'reports/source_integrity.json': '历史评价源码与被记录提交的对应关系审计',
+    'reports/visualization_literature.md': '十二篇相关文献的结果图设计依据、参考流程图核对和论文建议',
+    'reports/visualization_sources.json': '本次图件调研的核验题录、摘要、来源及查阅范围',
     'scripts': '可直接在 PyCharm 运行的薄入口及辅助工具',
     'scripts/download_weights.py': '可选下载 EchoNet 初始化权重并核查摘要，不下载数据集',
     'scripts/evaluate.py': '阶段 3：检查测试清单/权重，调用评估引擎生成结果',
     'scripts/fix_windows_torch_runtime.py': '专项修复 Windows/Anaconda C++ 运行库冲突，非日常步骤',
     'scripts/prepare_data.py': '阶段 1：核查已有处理后数据，生成固定患者级三份子集清单',
+    'scripts/plot_results.py': '从匹配的冻结实验导出患者级图集及可追溯源数据',
     'scripts/train.py': '阶段 2：读取训练/验证清单，启动训练并保存配置和完成记录',
     'src': '项目算法与工程实现，按职责拆分的 Python 源码包',
     'src/config': 'YAML 配置加载、默认值合并和路径解析',
@@ -111,6 +119,7 @@ DESCRIPTIONS = {
     'src/utils/run.py': '保护已有输出目录，保存阶段配置与数据检查快照',
     'src/utils/seed.py': '设置 Python、NumPy、PyTorch/CUDA 随机种子',
     'src/visualization': '预测叠图、曲线及离线 HTML 报告',
+    'src/visualization/analysis.py': '核验实验来源，绘制训练/分割/一致性/覆盖率及失败病例图',
     'src/visualization/overlay.py': '将预测/参考轮廓叠加到超声图像',
     'src/visualization/plots.py': '绘制容积等时序曲线',
     'src/visualization/report.py': '汇总指标、图像和曲线生成离线 HTML 报告',
@@ -124,6 +133,7 @@ DESCRIPTIONS = {
     'tests/test_pipeline.py': '检查模拟预测到结果导出的流程和缺失参考处理',
     'tests/test_preprocess.py': '检查图像排除区、插值、时间缺失及患者隔离',
     'tests/test_project_structure.py': '检查 README 目录树与实际文件一致、文档本地链接有效',
+    'tests/test_result_analysis.py': '检查实验混用、患者泄漏、参考来源、缺失值及配对统计保护',
     'tests/test_training_progress.py': '检查训练进度/吞吐量记录、验证选模及早停',
     'vendor': '保留固定版本上游代码、来源和许可',
     'vendor/echonet': 'EchoNet 上游参考实现，独立于本项目三阶段入口',
@@ -158,6 +168,8 @@ def _description(path, root):
     relative = path.relative_to(root).as_posix()
     if relative in RUNTIME_DIRECTORIES:
         return RUNTIME_DIRECTORIES[relative]
+    if relative in GENERATED_DIRECTORIES:
+        return GENERATED_DIRECTORIES[relative]
     if relative in DESCRIPTIONS:
         return DESCRIPTIONS[relative]
     if path.name == '__init__.py':
@@ -167,7 +179,7 @@ def _description(path, root):
 
 def _visible(path, root):
     """仅排除明确的本机环境和可再生缓存，其余源码/文档必须列出。"""
-    if path.name == '__pycache__' or path.suffix in ('.pyc', '.pyo'):
+    if path.name == '__pycache__' or path.suffix in ('.pyc', '.pyo') or path.name.startswith('~$'):
         return False
     if path.parent == root:
         return (
@@ -194,7 +206,7 @@ def render_tree(root=PROJECT_ROOT):
         ))
         for index, path in enumerate(ordered):
             last = index == len(ordered) - 1
-            runtime = directory == root and path.name in RUNTIME_DIRECTORIES
+            runtime = path.relative_to(root).as_posix() in (RUNTIME_DIRECTORIES | GENERATED_DIRECTORIES)
             is_directory = runtime or path.is_dir()
             label = path.name + ('/' if is_directory else '')
             lines.append(prefix + ('└── ' if last else '├── ') + label)

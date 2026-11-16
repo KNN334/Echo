@@ -12,6 +12,12 @@
 
 详细步骤见 [PyCharm 三阶段运行指南](docs/pycharm_run.md)。默认配置是支持注释的 `configs/experiment.yaml`，按 `defaults` 合并模型、数据和训练组件。本次实验的配置可覆盖组件默认值；路径始终相对于项目根目录。
 
+## 结果分析图
+
+已保存实验的 10 组结果图见 [离线图集](reports/result_analysis/camus_cuda_progress/index.html)、[全部图件 PDF](reports/result_analysis/camus_cuda_progress/all_figures.pdf) 和 [中文解读](reports/result_analysis/camus_cuda_progress/RESULTS_ANALYSIS.md)。图集使用同一轮冻结实验，分别展示同法轮廓参考与 CAMUS 报告 EF；不把半周期推理称为完整心搏或半监督训练。
+
+新增 [绘图与复现说明](docs/result_analysis.md) 和 [文献与参考图分析](reports/visualization_literature.md)。运行 `python scripts/plot_results.py` 可重新生成图集；此入口不重新训练模型。
+
 ## 项目结构
 
 以下目录树由实际项目文件生成。每个目录和文件的功能说明紧跟在对应路径下一行，过长说明会自动换行。`data/`、`checkpoints/`、`runs/` 是内容随实验变化的本地运行目录，只列顶层；Git 历史、虚拟环境、PyCharm 本机设置、`AGENTS.md`、临时检查文件、Python 缓存及打包缓存不属于公开项目目录。
@@ -27,7 +33,9 @@ Echo/
 │       └── tests.yml
 │           # 安装核心测试依赖并运行 pytest；缺少可选依赖的测试会跳过
 ├── .run/
-│   # PyCharm 三阶段运行配置；首次使用需选择本机解释器
+│   # PyCharm 三阶段与结果绘图运行配置；首次使用需选择本机解释器
+│   ├── PlotResults.run.xml
+│   │   # 分析已保存实验并生成结果图，不重新训练或测试选模
 │   ├── Prepare.run.xml
 │   │   # 启动阶段 1：数据核查与固定患者划分
 │   ├── Test.run.xml
@@ -74,8 +82,10 @@ Echo/
 │   │   # 数据到结果表格的全链路、流程图、公式和逐文件讲解
 │   ├── measurement_protocol.md
 │   │   # 空间/时间标定、坐标恢复、指标与参考值的计算口径
-│   └── pycharm_run.md
-│       # PyCharm 环境确认、三个入口运行和配置修改步骤
+│   ├── pycharm_run.md
+│   │   # PyCharm 环境确认、三个入口运行和配置修改步骤
+│   └── result_analysis.md
+│       # 结果图的证据设计、参考图适用范围、导出格式及复现方法
 ├── figures/
 │   # 论文方法流程图及其可编辑源稿和导出预览
 │   ├── camus_method_flow.pdf
@@ -104,12 +114,18 @@ Echo/
 │   │   │   # 历史每轮训练/验证损失记录
 │   │   └── training_run.json
 │   │       # 历史训练参数、患者划分、归一化和运行溯源
+│   ├── result_analysis/
+│   │   # 实测结果图集、中文解读、源数据及图件检查；内容由绘图入口生成
 │   ├── input_equivalence.json
 │   │   # 历史本地输入与处理后发布数据包的一致性审计
 │   ├── release_artifacts.json
 │   │   # 历史结果发布归档的大小、摘要及校验信息
-│   └── source_integrity.json
-│       # 历史评价源码与被记录提交的对应关系审计
+│   ├── source_integrity.json
+│   │   # 历史评价源码与被记录提交的对应关系审计
+│   ├── visualization_literature.md
+│   │   # 十二篇相关文献的结果图设计依据、参考流程图核对和论文建议
+│   └── visualization_sources.json
+│       # 本次图件调研的核验题录、摘要、来源及查阅范围
 ├── runs/
 │   # 本地实验结果，Git 忽略
 ├── scripts/
@@ -122,6 +138,8 @@ Echo/
 │   │   # 阶段 3：检查测试清单/权重，调用评估引擎生成结果
 │   ├── fix_windows_torch_runtime.py
 │   │   # 专项修复 Windows/Anaconda C++ 运行库冲突，非日常步骤
+│   ├── plot_results.py
+│   │   # 从匹配的冻结实验导出患者级图集及可追溯源数据
 │   ├── prepare_data.py
 │   │   # 阶段 1：核查已有处理后数据，生成固定患者级三份子集清单
 │   └── train.py
@@ -234,6 +252,8 @@ Echo/
 │   │   # 预测叠图、曲线及离线 HTML 报告
 │   │   ├── __init__.py
 │   │   │   # Python 包初始化与模块说明，无需单独运行
+│   │   ├── analysis.py
+│   │   │   # 核验实验来源，绘制训练/分割/一致性/覆盖率及失败病例图
 │   │   ├── overlay.py
 │   │   │   # 将预测/参考轮廓叠加到超声图像
 │   │   ├── plots.py
@@ -262,6 +282,8 @@ Echo/
 │   │   # 检查图像排除区、插值、时间缺失及患者隔离
 │   ├── test_project_structure.py
 │   │   # 检查 README 目录树与实际文件一致、文档本地链接有效
+│   ├── test_result_analysis.py
+│   │   # 检查实验混用、患者泄漏、参考来源、缺失值及配对统计保护
 │   └── test_training_progress.py
 │       # 检查训练进度/吞吐量记录、验证选模及早停
 ├── vendor/
