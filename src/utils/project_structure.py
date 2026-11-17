@@ -13,6 +13,7 @@ RUNTIME_DIRECTORIES = {
     'runs': '本地实验结果，Git 忽略',
 }
 GENERATED_DIRECTORIES = {
+    'figures/workflow_parts': '当前项目流程图规划、独立零件及审阅图集；总图待讨论后组装',
     'reports/result_analysis': '实测结果图集、中文解读、源数据及图件检查；内容由绘图入口生成',
 }
 ENVIRONMENT_DIRECTORIES = {

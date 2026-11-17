@@ -1,0 +1,112 @@
+{
+  "A1_camus_input": {
+    "pixels": [
+      1087,
+      1276
+    ],
+    "dpi": [
+      599.9988,
+      599.9988
+    ]
+  },
+  "A2_preprocessing": {
+    "pixels": [
+      1087,
+      1276
+    ],
+    "dpi": [
+      599.9988,
+      599.9988
+    ]
+  },
+  "A3_patient_split": {
+    "pixels": [
+      1087,
+      1276
+    ],
+    "dpi": [
+      599.9988,
+      599.9988
+    ]
+  },
+  "B1_segmentation_network": {
+    "pixels": [
+      1087,
+      1276
+    ],
+    "dpi": [
+      599.9988,
+      599.9988
+    ]
+  },
+  "B2_supervised_finetuning": {
+    "pixels": [
+      1087,
+      1276
+    ],
+    "dpi": [
+      599.9988,
+      599.9988
+    ]
+  },
+  "B3_frame_inference": {
+    "pixels": [
+      1087,
+      1276
+    ],
+    "dpi": [
+      599.9988,
+      599.9988
+    ]
+  },
+  "C1_contour_geometry": {
+    "pixels": [
+      1087,
+      1276
+    ],
+    "dpi": [
+      599.9988,
+      599.9988
+    ]
+  },
+  "C2_volume_methods": {
+    "pixels": [
+      1087,
+      1276
+    ],
+    "dpi": [
+      599.9988,
+      599.9988
+    ]
+  },
+  "D1_functional_parameters": {
+    "pixels": [
+      1087,
+      1276
+    ],
+    "dpi": [
+      599.9988,
+      599.9988
+    ]
+  },
+  "D2_reference_evaluation": {
+    "pixels": [
+      1087,
+      1276
+    ],
+    "dpi": [
+      599.9988,
+      599.9988
+    ]
+  },
+  "E1_patch_extension": {
+    "pixels": [
+      1087,
+      1276
+    ],
+    "dpi": [
+      599.9988,
+      599.9988
+    ]
+  }
+}

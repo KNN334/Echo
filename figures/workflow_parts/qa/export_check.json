@@ -1,0 +1,127 @@
+{
+  "scope": "independent_workflow_components_not_final_assembled_figure",
+  "example_patient": "patient0008",
+  "example_split": "val",
+  "selection": "fixed_example_no_metric_based_selection",
+  "image_scope": "processed_frames_and_saved_predictions_not_raw_acquisition_images",
+  "prediction_weights_sha256": "59b92018e38e823179a4681aec49e06ca66ecbc418617221b9b2740c2c7e1008",
+  "parts": [
+    {
+      "name": "A1_camus_input",
+      "title": "A1｜CAMUS 数据输入"
+    },
+    {
+      "name": "A2_preprocessing",
+      "title": "A2｜预处理与坐标审计"
+    },
+    {
+      "name": "A3_patient_split",
+      "title": "A3｜固定患者级划分"
+    },
+    {
+      "name": "B1_segmentation_network",
+      "title": "B1｜左室分割网络"
+    },
+    {
+      "name": "B2_supervised_finetuning",
+      "title": "B2｜正则化监督微调"
+    },
+    {
+      "name": "B3_frame_inference",
+      "title": "B3｜逐帧推理与掩膜"
+    },
+    {
+      "name": "C1_contour_geometry",
+      "title": "C1｜轮廓几何特征"
+    },
+    {
+      "name": "C2_volume_methods",
+      "title": "C2｜几何容积估算"
+    },
+    {
+      "name": "D1_functional_parameters",
+      "title": "D1｜心功能参数计算"
+    },
+    {
+      "name": "D2_reference_evaluation",
+      "title": "D2｜参考分层与评价"
+    },
+    {
+      "name": "E1_patch_extension",
+      "title": "E1｜贴片连续监测扩展"
+    }
+  ],
+  "checks": {
+    "A1_camus_input": {
+      "text_elements": 8,
+      "bounds_and_text_overlap": "PASS"
+    },
+    "A2_preprocessing": {
+      "text_elements": 8,
+      "bounds_and_text_overlap": "PASS"
+    },
+    "A3_patient_split": {
+      "text_elements": 8,
+      "bounds_and_text_overlap": "PASS"
+    },
+    "B1_segmentation_network": {
+      "text_elements": 7,
+      "bounds_and_text_overlap": "PASS"
+    },
+    "B2_supervised_finetuning": {
+      "text_elements": 9,
+      "bounds_and_text_overlap": "PASS"
+    },
+    "B3_frame_inference": {
+      "text_elements": 3,
+      "bounds_and_text_overlap": "PASS"
+    },
+    "C1_contour_geometry": {
+      "text_elements": 7,
+      "bounds_and_text_overlap": "PASS"
+    },
+    "C2_volume_methods": {
+      "text_elements": 7,
+      "bounds_and_text_overlap": "PASS"
+    },
+    "D1_functional_parameters": {
+      "text_elements": 9,
+      "bounds_and_text_overlap": "PASS"
+    },
+    "D2_reference_evaluation": {
+      "text_elements": 12,
+      "bounds_and_text_overlap": "PASS"
+    },
+    "E1_patch_extension": {
+      "text_elements": 6,
+      "bounds_and_text_overlap": "PASS"
+    }
+  },
+  "physical_part_size_mm": [
+    46,
+    54
+  ],
+  "png_dpi": 600,
+  "sources_sha256": {
+    "configs/experiment.yaml": "47e38b93fc21e4123b15d5bcbfdbe646fb437888ab38dff5ef49738517644169",
+    "configs/train/baseline.yaml": "f0146d2a822b17c1f82fc5ba4de9d919b0be746eac60666b8cfe1126605c0512",
+    "configs/camus_splits.json": "85975e0ce238ae244f4b04e432914779feeb153e05c6deb27448aeae87a22cdf",
+    "src/engine/trainer.py": "e0f09b9125d915a4fd6a036f50cf66263bcda86bf0f261ea198a5fa250921a9c",
+    "src/engine/evaluator.py": "8cb7a295a887a8776ffb9f46075e5baff3f62bfac4023d68cf9e15f608fed84f",
+    "src/data/base.py": "4c2a9ba563c4f3a9c0a9178359e1f5250109a759f43fc8c4573210184e4e6167",
+    "src/data/camus/prepare.py": "3095b21d47eae2cd1e8a265c6b0eeaa2f0e1cd5eadc58220980943f301309aec",
+    "src/geometry/mask_features.py": "0b5d0dad4423542d715405a2dfe20f2f600a360bbfd7f03e0caf39b89b0b9323",
+    "src/geometry/volume.py": "199ad3f653132a6bc7693752ff67817d727e64512b8fe65e73fbae56538b5a42",
+    "src/geometry/functional.py": "27f2e3d1dcdc97b8c7fa32acfdbec22a61dc9048c5cfc14a7aad032b3af4d12b",
+    "src/models/deeplabv3.py": "8b44f9cebcdc0acc66f50742927e1154b76173cdc09b95a8885c0761c84cf93d",
+    "src/models/build.py": "412fd350ceb62325e77915b9d57485aef0ea1fc2960c13ce8eb9cc4657f45b6c",
+    "data/processed/camus/manifest.json": "e8603f1862c321c0ece99bbfb34c530e3512ff78ee1b2484c615fcafb08445a6",
+    "runs/validation_camus_regularized/summary.json": "9bc7cbbcbf5bb3d5e43de41aacf9fc3f1862bc767ee7a18edb5c11870c7a9a03",
+    "data/processed/camus/patient0008_2CH.npz": "547c0ea4b42c5f5c3d46d5fd7af51084752307791d3d761a37d4d415f2aab55b",
+    "data/processed/camus/patient0008_2CH.json": "36a91be2a90529c1e6f01dc684782b5697f238ceaae5dfa50f9e14570f4eae0c",
+    "runs/validation_camus_regularized/patient0008_2CH_pred.npz": "0b815ed39561d80f8abb44aef89c8e9e5a7528c1a7407d56a3b6dc48e85d1125",
+    "data/processed/camus/patient0008_4CH.npz": "ce05b95b101e7efce3227de6c6d72f0045cefa85234993cf9ce6c5da2cdd5dbb",
+    "data/processed/camus/patient0008_4CH.json": "2ebcec5b7055d9acc31cbab6cf71cb25bfc44719c6ee40626cfb224ee25e87ec",
+    "runs/validation_camus_regularized/patient0008_4CH_pred.npz": "f2ef4c4298cbd57b0f8ea3782092a37ea4657b26c5f94085d02c04a11db19a73"
+  }
+}
