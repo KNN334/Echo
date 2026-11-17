@@ -36,9 +36,18 @@ ET.register_namespace('', NS)
 ET.register_namespace('xlink', XLINK)
 INK, TEAL, PEACH = '#20303e', '#238b80', '#feccab'
 PALE, LIGHT, GREY = '#eaf5f2', '#f4f5f6', '#65747c'
-WIDTH, HEIGHT = 46 / 25.4 * 72, 54 / 25.4 * 72
+SIZE_MM = (180, 70)
+WIDTH, HEIGHT = [v / 25.4 * 72 for v in SIZE_MM]
 FONT, DPI = 'Microsoft YaHei UI', 600
 PATIENT = 'patient0008'
+RED = '#ce645f'
+PALETTES = {
+    'A': ('#f7e5d7', '#fffcf8', '#b59c7d'),
+    'B': ('#e5edd7', '#fbfdf8', '#8b9e73'),
+    'C': ('#e0ebf6', '#f9fcff', '#839db6'),
+    'D': ('#faf0c8', '#fffef7', '#b7ad73'),
+    'E': ('#eee1f1', '#fdfaff', '#a48cab'),
+}
 
 
 def element(parent, tag, **attrs):
@@ -50,12 +59,16 @@ class Part:
     def __init__(self, name, title):
         self.name, self.title = name, title
         self.root = ET.Element('{' + NS + '}svg', {
-            'width': '46mm', 'height': '54mm', 'viewBox': f'0 0 {WIDTH} {HEIGHT}',
+            'width': f'{SIZE_MM[0]}mm', 'height': f'{SIZE_MM[1]}mm', 'viewBox': f'0 0 {WIDTH} {HEIGHT}',
             'version': '1.1', 'role': 'img', 'aria-label': title})
         self.group = self.root
         element(self.root, 'rect', x=0, y=0, width=WIDTH, height=HEIGHT, fill='white')
-        self.rect(3, 3, WIDTH - 6, 17, PEACH, stroke='none')
-        self.text(WIDTH / 2, 14.5, title, size=7.6, bold=True)
+        self.tint, self.paper, self.edge = PALETTES[name[0]]
+        self.rect(6, 19, WIDTH - 12, HEIGHT - 26, self.paper, self.edge, dash='3 2', radius=10)
+        tab_width = 18 + sum(8.8 if ord(c) > 255 else 5.0 for c in title)
+        self.rect(17, 7, tab_width, 23, self.tint, stroke='none', radius=0)
+        self.text(25, 22.5, title, size=8.8, anchor='start', bold=True)
+        self.text(WIDTH - 17, 14, 'CAMUS  /  METHOD COMPONENT', size=5.8, anchor='end')
 
     def text(self, x, y, text, size=6.5, anchor='middle', bold=False):
         item = element(self.group, 'text', x=x, y=y, font_family=FONT, font_size=size,
@@ -63,8 +76,8 @@ class Part:
         item.text = text
         return item
 
-    def rect(self, x, y, w, h, fill=LIGHT, stroke=GREY, dash=None):
-        attrs = dict(x=x, y=y, width=w, height=h, rx=2, fill=fill, stroke=stroke, stroke_width=.55)
+    def rect(self, x, y, w, h, fill=LIGHT, stroke=GREY, dash=None, radius=2):
+        attrs = dict(x=x, y=y, width=w, height=h, rx=radius, fill=fill, stroke=stroke, stroke_width=.55)
         if dash:
             attrs['stroke_dasharray'] = dash
         return element(self.group, 'rect', **attrs)
@@ -161,9 +174,8 @@ def mask_image(mask, color=(35, 139, 128), white=True):
     return Image.fromarray(rgb)
 
 
-def geometry(part, sample, x, y, w, h, labels=False):
+def geometry(part, sample, x, y, w, h, labels=False, disks=True):
     clean, _ = main_component(sample['original'])
-    boundary = clean & ~ndimage.binary_erosion(clean)
     yy, xx = np.where(clean)
     minxy, maxxy = np.array([xx.min(), yy.min()]), np.array([xx.max(), yy.max()])
     factor = min(w / (maxxy - minxy)[0], h / (maxxy - minxy)[1])
@@ -182,7 +194,7 @@ def geometry(part, sample, x, y, w, h, labels=False):
     axis = (base - apex) * spacing
     axis /= np.linalg.norm(axis)
     side = np.array([axis[1], -axis[0]])
-    for i, diameter in enumerate(f['diameters_mm']):
+    for i, diameter in enumerate(f['diameters_mm'] if disks else []):
         center = apex * spacing + (i + .5) * f['long_axis_mm'] / 20 * axis
         start, stop = (center - diameter / 2 * side) / spacing, (center + diameter / 2 * side) / spacing
         p1, p2 = mapped(start), mapped(stop)
@@ -197,127 +209,353 @@ def geometry(part, sample, x, y, w, h, labels=False):
             part.text(px + dx, py + dy, name)
 
 
-def create_parts(samples):
+def overlay(frame, mask, color=(206, 100, 95)):
+    rgb = np.asarray(echo_image(frame)).copy()
+    foreground = np.asarray(mask, bool)
+    rgb[foreground] = .58 * rgb[foreground] + .42 * np.array(color)
+    boundary = foreground & ~ndimage.binary_erosion(foreground)
+    rgb[boundary] = color
+    return Image.fromarray(rgb)
+
+
+def person(p, x, y, color, scale=1):
+    element(p.group, 'circle', cx=x, cy=y, r=3.1 * scale, fill=color, stroke=p.edge, stroke_width=.45)
+    p.path(f'M {x-5*scale} {y+15*scale} L {x-5*scale} {y+8*scale} '
+           f'Q {x} {y+2*scale} {x+5*scale} {y+8*scale} L {x+5*scale} {y+15*scale} Z',
+           color=p.edge, width=.45, fill=color)
+
+
+def people(p, x, y, color, count=6):
+    for i in range(count):
+        person(p, x + (i % 3) * 15, y + (i // 3) * 25, color)
+
+
+def tensor(p, key, x, y, w, h, color, layers=3):
+    group = element(p.group, 'g', id='n-' + key, data_role='schematic-tensor')
+    previous, p.group = p.group, group
+    for i in range(layers - 1, -1, -1):
+        p.rect(x + i * 2.7, y - i * 2.7, w, h, color, stroke=p.edge, radius=0)
+    for i in range(1, 4):
+        p.line(x, y + h * i / 4, x + w, y + h * i / 4, color=p.edge, width=.25)
+    p.group = previous
+
+
+def document(p, x, y, color, lines=4):
+    p.rect(x+3, y-3, 31, 40, fill='white', stroke=p.edge, radius=1)
+    p.rect(x, y, 31, 40, fill=color, stroke=p.edge, radius=1)
+    for i in range(lines):
+        p.line(x+6, y+9+i*7, x+25, y+9+i*7, color=p.edge, width=.65)
+
+
+def stack(p, key, images, x, y, size=52, step=6):
+    for i, image in reversed(list(enumerate(images))):
+        p.rect(x+i*step-1, y-i*step-1, size+2, size+2, 'white', p.edge, radius=0)
+        p.image(key+str(i), image, x+i*step, y-i*step, size, size)
+
+
+def mini_model(p, x, y):
+    for i, (h, color) in enumerate([(36, '#dce8f4'), (28, '#ecdfe9'), (22, '#e5edd7')]):
+        tensor(p, f'model-{x}-{i}', x+i*20, y+(36-h)/2, 11, h, color, 2)
+        if i < 2:
+            p.arrow(f'model-link-{x}-{i}', [(x+i*20+14, y+18), (x+i*20+19, y+18)], color=INK)
+
+
+def disks_volume(p, samples, cx, y):
+    d2 = np.asarray(samples['2CH']['features']['diameters_mm'])
+    d4 = np.asarray(samples['4CH']['features']['diameters_mm'])
+    widths = np.sqrt(d2*d4)
+    widths = widths / max(widths) * 70
+    for i, width in enumerate(widths):
+        yy = y + i * 4.0
+        fill = '#ecd4ad' if i == 10 else '#e2e9ce'
+        left, right = cx-width/2, cx+width/2
+        p.path(f'M {left} {yy} L {left} {yy+3.8} C {left} {yy+9.8} {right} {yy+9.8} '
+               f'{right} {yy+3.8} L {right} {yy} Z', color='#8b9874', width=.45, fill=fill)
+        element(p.group, 'ellipse', cx=cx, cy=yy, rx=width/2, ry=min(5.5, width/5),
+                fill=fill, stroke='#8b9874', stroke_width=.45)
+
+
+def training_example(manifest):
+    record = next(r for r in manifest['cases'] if r['split'] == 'train' and r['view'] == '2CH')
+    name = record['case_id']
+    source = PROJECT / 'data/processed/camus'
+    meta = read_json(source / (name + '.json'))
+    with np.load(source / (name + '.npz'), allow_pickle=False) as z:
+        i = meta['phases']['ED']
+        return name, z['frames'][i].copy(), z['masks'][i].copy()
+
+
+def create_parts(samples, train):
     parts = []
-    p = Part('A1_camus_input', 'A1｜CAMUS 数据输入')
-    for col, view in enumerate(('2CH', '4CH')):
-        sample = samples[view]
-        x = 12 + col * 60
-        p.text(x + 23, 31, view)
-        for row, phase in enumerate(('ED', 'ES')):
-            i = sample['meta']['phases'][phase]
-            p.image(view + phase, echo_image(sample['arrays']['frames'][i], sample['arrays']['masks'][i]), x, 35 + row * 49, 46, 40)
-            p.text(x + 23, 83 + row * 49, phase)
-    p.text(WIDTH / 2, 146, '专家轮廓仅位于 ED / ES')
-    parts.append(p)
-
-    p = Part('A2_preprocessing', 'A2｜预处理与坐标审计')
-    for key, y, lines in [('metadata', 29, ['声窗与元数据核查', '空间 / 时间信息']),
-                          ('resize', 65, ['裁剪与尺寸变换', '112 × 112']),
-                          ('audit', 101, ['保留原始 ED/ES 标签', '保存正反坐标变换'])]:
-        p.box(key, 16, y, 98, 26, lines, fill=PALE)
-    p.arrow('to-resize', [(65, 55), (65, 64)])
-    p.arrow('to-audit', [(65, 91), (65, 100)])
-    p.text(WIDTH / 2, 143, '日常入口核验已有缓存')
-    parts.append(p)
-
-    p = Part('A3_patient_split', 'A3｜固定患者级划分')
-    for key, y, label, number, count in [('train', 29, '训练集', 347, 1388), ('val', 66, '验证集', 71, 284), ('test', 103, '测试集', 82, 328)]:
-        p.box(key, 12, y, 106, 29, [f'{label}：{number} 位患者', f'{count} 张 ED/ES 标注帧'], fill=PALE if key == 'train' else LIGHT)
-    p.text(WIDTH / 2, 146, '同患者两切面归属同一集合')
-    parts.append(p)
-
-    p = Part('B1_segmentation_network', 'B1｜左室分割网络')
-    for key, y, label, fill in [('input', 28, '输入：3 × 112 × 112', LIGHT), ('backbone', 53, 'ResNet-50', LIGHT),
-                               ('aspp', 78, 'ASPP 多尺度特征', PALE), ('head', 103, '单通道分割头 + 上采样', LIGHT)]:
-        p.box(key, 13, y, 104, 18, label, fill=fill)
-        if y < 103:
-            p.arrow('after-' + key, [(65, y + 18), (65, y + 24)])
-    p.text(WIDTH / 2, 134, 'p = sigmoid(z)')
-    p.text(WIDTH / 2, 146, 'EchoNet 官方权重初始化')
-    parts.append(p)
-
-    p = Part('B2_supervised_finetuning', 'B2｜正则化监督微调')
-    p.box('image', 12, 29, 48, 18, 'ED/ES 影像')
-    p.box('label', 70, 29, 48, 18, '专家标签 y')
-    p.box('augmentation', 20, 58, 90, 20, '同步几何增广', fill=PALE)
-    p.arrow('image-augmentation', [(36, 47), (36, 57)])
-    p.arrow('label-augmentation', [(94, 47), (94, 57)])
-    p.box('prediction', 12, 90, 48, 18, '预测 logit z')
-    p.box('bce', 70, 90, 48, 18, 'BCE 损失', fill=PALE)
-    p.arrow('aug-prediction', [(36, 78), (36, 89)])
-    p.arrow('aug-bce', [(94, 78), (94, 89)])
-    p.arrow('pred-bce', [(60, 99), (69, 99)])
-    p.path('M 94 108 C 94 117 6 117 6 99 L 11 99', color=TEAL, dash='1 2')
-    p.arrow('optimizer-return', [(6, 99), (11, 99)], dash='1 2')
-    p.text(65, 124, 'AdamW：lr / WD = 1e-4')
-    p.text(65, 134, '验证 BCE 选模 · 早停 6 轮')
-    p.text(65, 146, '仅训练帧更新参数与统计量')
-    parts.append(p)
-
     sample = samples['2CH']
-    ed = sample['meta']['phases']['ED']
-    p = Part('B3_frame_inference', 'B3｜逐帧推理与掩膜')
-    p.image('frame', echo_image(sample['arrays']['frames'][ed]), 12, 30, 43, 43)
-    p.image('prediction', mask_image(sample['prediction'][ed]), 76, 30, 43, 43)
-    p.arrow('frame-mask', [(57, 51), (73, 51)])
-    p.text(65, 85, 'M = 1[p ≥ 0.5]')
-    restored_w = 40 * sample['original'].shape[1] / sample['original'].shape[0]
-    restored_x = (WIDTH - restored_w) / 2
-    p.image('restored', mask_image(sample['original']), restored_x, 99, restored_w, 40)
-    p.rect(restored_x, 99, restored_w, 40, fill='none', stroke=GREY)
-    p.arrow('restore', [(65, 88), (65, 97)])
-    p.text(65, 150, '还原至原图坐标后测量')
+    ed, es = [sample['meta']['phases'][phase] for phase in ('ED', 'ES')]
+    frame, pred = sample['arrays']['frames'][ed], sample['prediction'][ed]
+
+    p = Part('A1_camus_input', 'A1  数据队列与专家标注')
+    people(p, 39, 64, '#ead4be')
+    p.text(54, 133, '500', size=12)
+    p.text(54, 148, '位 CAMUS 患者')
+    p.arrow('cohort-clips', [(98, 105), (121, 105)], color=INK)
+    for row, view in enumerate(('2CH', '4CH')):
+        s = samples[view]
+        ee, ss = [s['meta']['phases'][phase] for phase in ('ED', 'ES')]
+        indices = np.linspace(ee, ss, 4).round().astype(int)
+        yy = 55 + row*62
+        p.text(146, yy+19, view, anchor='end')
+        p.rect(153, yy-4, 154, 44, '#26323a', stroke='none', radius=1)
+        for col, index in enumerate(indices):
+            p.image(view+str(index), echo_image(s['arrays']['frames'][index]), 158+col*37, yy, 34, 34)
+            for dx in (0, 14, 28):
+                p.rect(160+col*37+dx, yy-2.7, 3, 1, '#f7f7f4', stroke='none', radius=0)
+        for col, phase in enumerate(('ED', 'ES')):
+            index = s['meta']['phases'][phase]
+            p.image(view+phase, overlay(s['arrays']['frames'][index], s['arrays']['masks'][index],(63,146,132)),
+                    368+col*56, yy, 39, 39)
+    p.arrow('clips-labels', [(317, 105), (347, 105)], color=INK)
+    p.text(229, 45, '两切面超声序列')
+    p.text(387, 45, 'ED')
+    p.text(443, 45, 'ES')
+    p.text(416, 172, '专家标注仅位于 ED / ES')
+    p.text(224, 182, '1000 条序列 · 2000 张专家标注帧')
     parts.append(p)
 
-    p = Part('C1_contour_geometry', 'C1｜轮廓几何特征')
-    p.text(65, 31, '最大连通域 + 填洞')
-    geometry(p, sample, 35, 39, 60, 82, labels=True)
-    p.text(65, 140, '面积 A · 长轴 L · 20 个盘径')
-    p.text(65, 151, '点位为轮廓派生候选，需复核')
+    p = Part('A2_preprocessing', 'A2  预处理与坐标保留')
+    transform = sample['meta']['audit']['transform']
+    tr = Transform(tuple(transform['original_hw']), tuple(transform['crop_xyxy']), tuple(transform['output_hw']))
+    original_gt = tr.restore_mask(sample['arrays']['masks'][ed])
+    p.text(81, 48, '原始标签坐标')
+    p.image('original-label', mask_image(original_gt, (63,146,132)), 30, 57, 94, 93)
+    ow = 93*original_gt.shape[1]/original_gt.shape[0]
+    ox = 30+(94-ow)/2
+    p.rect(ox, 57, ow, 93, 'none', p.edge, radius=0)
+    x0,y0,x1,y1 = transform['crop_xyxy']
+    scale = 93/original_gt.shape[0]
+    p.rect(ox+x0*scale, 57+y0*scale, (x1-x0)*scale, (y1-y0)*scale,
+           'none', RED, dash='1 2', radius=0)
+    p.text(81, 166, '空间 / 时间元数据')
+    p.arrow('original-cache', [(133,103), (173,103)], color=INK)
+    p.text(153, 83, '裁剪')
+    p.text(153, 130, '缩放')
+    p.image('processed-label', overlay(frame, sample['arrays']['masks'][ed],(63,146,132)), 185,61,86,86)
+    p.text(228, 48, '处理后影像与标签')
+    p.text(228, 166, '112 × 112')
+    p.path('M 182 150 C 150 175 124 171 124 145', color=TEAL, width=1.4)
+    p.arrow('inverse-map', [(124,145),(124,137)], color=TEAL)
+    p.text(153, 184, '正反坐标变换')
+    p.arrow('cache-audit', [(284,103), (320,103)], color=INK)
+    document(p, 350,70, '#f7e5d7')
+    p.text(414, 82, 'ED / ES 原标注', anchor='start')
+    p.text(414, 104, '像素间距', anchor='start')
+    p.text(414, 126, '坐标记录', anchor='start')
+    p.text(391, 165, '缓存与元数据审计')
     parts.append(p)
 
-    p = Part('C2_volume_methods', 'C2｜几何容积估算')
-    p.text(35, 31, '2CH')
-    p.text(96, 31, '4CH')
-    geometry(p, samples['2CH'], 17, 38, 36, 58)
-    geometry(p, samples['4CH'], 78, 38, 36, 58)
-    p.text(65, 110, '同患者、同 ED/ES 相位配对')
-    p.text(65, 124, 'V1 = 8A² / (3πL) / 1000')
-    p.text(65, 136, 'V2 = Σπd2i d4i L / (80×1000)')
-    p.text(65, 149, 'L = min(L2,L4)，容积单位 mL')
+    p = Part('A3_patient_split', 'A3  固定患者级划分')
+    people(p, 36,64,'#ead4be')
+    p.text(52,137,'500 位患者')
+    p.text(52,152,'2CH + 4CH')
+    p.arrow('patient-split',[(96,102),(127,102)],color=INK)
+    p.path('M 128 102 L 128 49 L 446 49',color=INK)
+    for x, name, number, count, color, note in [
+        (205,'训练集',347,1388,'#e4edd4','参数学习'),
+        (321,'验证集',71,284,'#dce7f3','选模与早停'),
+        (437,'测试集',82,328,'#f3e7c3','最终评价')]:
+        p.arrow('split-'+name,[(x,49),(x,65)],color=INK)
+        people(p,x-15,78,color)
+        p.text(x,137,f'{name}  n={number}',size=7.3)
+        p.text(x,152,f'{count} 张标注帧')
+        p.text(x,168,note)
+    p.text(270,184,'同一患者的全部帧与两切面始终属于同一集合')
     parts.append(p)
 
-    p = Part('D1_functional_parameters', 'D1｜心功能参数计算')
-    p.box('edv', 12, 29, 48, 24, ['EDV', '舒张末容积'])
-    p.box('esv', 70, 29, 48, 24, ['ESV', '收缩末容积'])
-    p.box('sv', 14, 66, 102, 18, 'SV = EDV − ESV', fill=PALE)
-    p.arrow('edv-sv', [(36, 53), (36, 65)])
-    p.arrow('esv-sv', [(94, 53), (94, 65)])
-    p.box('ef', 14, 92, 102, 18, 'EF = 100 × SV / EDV', fill=PALE)
-    p.box('co', 14, 122, 102, 22, ['可靠 HR 时', 'CO = SV × HR / 1000'], fill='white', dash='3 2')
+    p = Part('B1_segmentation_network', 'B1  DeepLabV3–ResNet50 分割网络')
+    p.box('weights',94,40,125,18,'EchoNet 分割预训练权重',fill='#edf1e3')
+    p.path('M 157 59 C 157 67 142 66 142 73',color=TEAL,width=1.2)
+    p.arrow('initialization',[(142,73),(142,77)])
+    stack(p,'input',[echo_image(frame)]*3,23,100,40,3)
+    p.text(46,157,'3 × 112 × 112')
+    p.arrow('input-backbone',[(77,119),(90,119)],color=INK)
+    p.rect(92,78,151,76,fill='#f0f4f8',stroke='#a0b0bb',radius=5)
+    p.text(167,91,'ResNet-50')
+    tensor(p,'stem',101,108,8,25,'#dce8f4',2)
+    for i,(height,repeat,color) in enumerate([(33,3,'#d8e5f2'),(29,4,'#e6dfe9'),(25,6,'#e2ebd5'),(22,3,'#f2e9cf')]):
+        x=128+i*27
+        tensor(p,'layer'+str(i+1),x,107+(33-height)/2,11,height,color,3)
+        p.text(x+6,150,f'L{i+1} ×{repeat}',size=5.8)
+        if i<3:p.arrow('layer-edge'+str(i),[(x+17,122),(x+25,122)],color=INK)
+    p.arrow('backbone-aspp',[(244,120),(260,120)],color=INK)
+    p.text(300,48,'ASPP 多尺度分支',size=7.3)
+    p.path('M 263 65 L 263 145',color=INK)
+    p.path('M 335 65 L 335 145',color=INK)
+    for i,label in enumerate(['1 × 1','3 × 3 · r=12','3 × 3 · r=24','3 × 3 · r=36','全局池化']):
+        yy=60+i*20
+        p.box('aspp-'+str(i),272,yy,55,13,label,fill=['#e2eaf4','#e6eddc','#f5e5dc','#ece3ef','#f5edcf'][i],size=5.8)
+        p.arrow('aspp-in-'+str(i),[(263,yy+6.5),(270,yy+6.5)],color=INK)
+        p.line(327,yy+6.5,335,yy+6.5,color=INK)
+    p.arrow('aspp-head',[(335,110),(358,110)],color=INK)
+    tensor(p,'head',365,91,14,42,'#eee0e7',3)
+    p.text(374,157,'分割头')
+    p.arrow('head-mask',[(391,111),(437,111)],color=INK)
+    p.text(415,84,'上采样',size=5.8)
+    p.text(415,142,'sigmoid',size=5.8)
+    p.image('mask-output',mask_image(pred,(206,100,95)),445,87,48,48)
+    p.text(469,157,'左室掩膜')
+    p.text(261,182,'骨干特征 → 多尺度上下文 → 单通道分割；掩膜由固定阈值生成')
     parts.append(p)
 
-    p = Part('D2_reference_evaluation', 'D2｜参考分层与评价')
-    p.box('pred', 8, 29, 53, 24, ['预测掩膜', '原图坐标'])
-    p.box('gt', 69, 29, 53, 24, ['原始专家掩膜', '仅 ED/ES'])
-    p.box('segmetrics', 8, 63, 114, 18, 'Dice / ASSD / HD95', fill=PALE)
-    p.arrow('pred-metrics', [(35, 53), (35, 62)])
-    p.arrow('gt-metrics', [(95, 53), (95, 62)])
-    p.box('same-geometry-ref', 8, 93, 53, 24, ['同法轮廓参考', 'EDV / ESV / EF'])
-    p.box('camus-ef', 69, 93, 53, 24, ['CAMUS 报告', 'EF'])
-    p.text(65, 133, '患者级误差、一致性与覆盖率')
-    p.text(65, 146, '独立临床参考缺失时保留 null')
+    p=Part('B2_supervised_finetuning','B2  专家监督与正则化微调')
+    _,train_frame,train_mask=train
+    p.image('train-label',mask_image(train_mask,(63,146,132)),29,58,44,44)
+    p.image('train-frame',echo_image(train_frame),29,118,44,44)
+    p.text(51,48,'专家标签 y')
+    p.text(51,175,'ED / ES 影像')
+    p.text(127,107,'同步几何增广')
+    p.text(127,119,'仅训练集')
+    p.arrow('label-loss',[(80,80),(337,80),(337,103)],color='#7b9c8b')
+    p.arrow('image-model',[(80,140),(181,140),(181,123),(190,123)],color=INK)
+    mini_model(p,195,105)
+    p.text(223,96,'分割网络')
+    p.arrow('model-loss',[(255,123),(307,123)],color=INK)
+    p.text(280,112,'logit z',size=5.8)
+    p.box('loss',313,105,53,37,['BCE','损失'],fill='#f6edcb',size=7.3)
+    p.path('M 339 143 C 339 176 224 176 224 149',color=TEAL,width=1.5)
+    p.arrow('update',[(224,149),(224,143)],color=TEAL)
+    p.text(305,177,'AdamW 反向更新')
+    p.line(392,49,392,172,color=p.edge,width=.6)
+    p.text(434,48,'验证集 ED / ES')
+    p.arrow('validation-selection',[(434,55),(434,65)],color=INK)
+    document(p,418,73,'#e1ead6')
+    p.text(434,134,'验证 BCE')
+    p.text(434,149,'选模与早停')
+    p.text(434,164,'保存最佳权重')
+    p.text(261,186,'lr / WD = 1e-4 · 冻结 BN 统计 · 早停耐心 6 轮')
     parts.append(p)
 
-    p = Part('E1_patch_extension', 'E1｜贴片连续监测扩展')
-    p.box('patch', 14, 29, 102, 22, '贴片探头连续采集', fill='white', dash='3 2')
-    p.box('calibration', 14, 62, 102, 22, '格式适配 + 空间/时间标定', fill='white', dash='3 2')
-    p.box('validation', 14, 95, 102, 22, '跨设备验证 + 独立参考', fill='white', dash='3 2')
-    p.arrow('patch-calibration', [(65, 51), (65, 61)], dash='3 2')
-    p.arrow('calibration-validation', [(65, 84), (65, 94)], dash='3 2')
-    p.text(65, 133, '完整周期与可靠时间 → HR / CO')
-    p.text(65, 146, '后续扩展 · 待采集与验证')
+    p=Part('B3_frame_inference','B3  序列逐帧推理与分割叠加')
+    indices=[ed,(ed+es)//2,es]
+    frames=[echo_image(sample['arrays']['frames'][i]) for i in indices]
+    masks=[mask_image(sample['prediction'][i],(206,100,95)) for i in indices]
+    overlays=[overlay(sample['arrays']['frames'][i],sample['prediction'][i]) for i in indices]
+    stack(p,'input-sequence',frames,27,86,59,7)
+    p.text(66,49,'超声序列')
+    p.text(66,163,'ED → 中间帧 → ES')
+    p.arrow('sequence-model',[(111,111),(148,111)],color=INK)
+    mini_model(p,160,94)
+    p.text(187,49,'冻结最佳模型')
+    p.text(187,163,'逐帧推理')
+    p.arrow('model-masks',[(221,111),(265,111)],color=INK)
+    stack(p,'masks',masks,279,86,59,7)
+    p.text(318,49,'左室二值掩膜')
+    p.text(318,163,'M = 1[p ≥ 0.5]')
+    p.arrow('masks-overlay',[(361,111),(398,111)],color=INK)
+    stack(p,'overlay',overlays,410,86,59,7)
+    p.text(450,49,'分割叠加')
+    p.text(450,163,'预测轮廓')
+    p.text(255,184,'所有帧可预测；几何测量前恢复原图坐标')
+    parts.append(p)
+
+    p=Part('C1_contour_geometry','C1  轮廓清理与几何特征提取')
+    p.image('predicted-overlay',overlay(frame,pred),30,62,87,87)
+    p.text(73,48,'预测左室轮廓')
+    p.arrow('mask-clean',[(129,105),(163,105)],color=INK)
+    geometry(p,sample,187,57,76,100,labels=True,disks=False)
+    p.text(226,48,'轮廓派生候选点')
+    p.text(225,181,'PCA / 基底宽度启发式')
+    p.arrow('landmarks-geometry',[(280,105),(311,105)],color=INK)
+    geometry(p,sample,334,56,75,101,disks=True)
+    p.text(372,48,'长轴与 20 个截面')
+    p.text(73,169,'最大连通域 + 填洞')
+    p.text(447,83,'A  面积',anchor='start')
+    p.text(447,107,'L  长轴',anchor='start')
+    p.text(447,131,'di  盘径',anchor='start')
+    p.text(408,181,'候选关键点需复核')
+    parts.append(p)
+
+    p=Part('C2_volume_methods','C2  双切面几何与容积估算')
+    for view,x in [('2CH',34),('4CH',112)]:
+        geometry(p,samples[view],x,60,48,91)
+        p.text(x+24,48,view,size=7.3)
+    p.text(96,171,'同患者 · 同 ED / ES 相位')
+    p.arrow('diameters-disks',[(174,106),(201,106)],color=INK)
+    disks_volume(p,samples,249,62)
+    p.text(249,171,'20 盘几何示意')
+    p.rect(309,51,184,45,'#eef3e6',stroke='none',radius=3)
+    p.text(401,65,'单平面面积–长度法',size=7.3)
+    p.text(401,84,'V = 8A² / (3πL) / 1000')
+    p.rect(309,109,184,49,'#e9eff7',stroke='none',radius=3)
+    p.text(401,123,'双平面椭圆盘法',size=7.3)
+    p.text(401,138,'V = Σ[π d2i d4i / 4] × ΔL / 1000')
+    p.text(401,152,'ΔL = min(L2,L4) / 20')
+    p.text(351,184,'A：mm²；L / d：mm；V：mL')
+    parts.append(p)
+
+    p=Part('D1_functional_parameters','D1  EDV / ESV 与心功能参数')
+    restored=[]
+    for i in (ed,es):restored.append(main_component(tr.restore_mask(sample['prediction'][i]))[0])
+    yy,xx=np.where(restored[0]|restored[1])
+    for i,(mask,label) in enumerate(zip(restored,('EDV','ESV'))):
+        crop=mask[yy.min():yy.max()+1,xx.min():xx.max()+1]
+        p.image('phase-'+label,mask_image(crop,(206,100,95)),35+i*87,62,57,83)
+        p.text(63+i*87,48,'ED' if i==0 else 'ES',size=7.3)
+        p.text(63+i*87,162,label,size=7.3)
+    p.arrow('edv-esv-parameters',[(185,105),(219,105)],color=INK)
+    p.rect(231,67,113,72,'#fbf3d9',stroke='none',radius=4)
+    p.text(287,84,'每搏量 SV',size=7.3)
+    p.text(287,107,'EDV − ESV',size=8.8)
+    p.text(287,127,'mL')
+    p.arrow('sv-ef',[(349,105),(373,105)],color=INK)
+    p.rect(382,67,111,72,'#f4e8d3',stroke='none',radius=4)
+    p.text(437,84,'射血分数 EF',size=7.3)
+    p.text(437,107,'100 × SV / EDV',size=7.3)
+    p.text(437,127,'%')
+    p.path('M 288 143 L 288 167 L 378 167',color=p.edge,dash='1 2')
+    p.text(431,170,'可靠 HR 时计算 CO')
+    p.text(350,185,'CO = SV × HR / 1000   (L/min)')
+    parts.append(p)
+
+    p=Part('D2_reference_evaluation','D2  分割评价与功能参考分层')
+    p.text(136,48,'结构一致性',size=7.3)
+    p.image('prediction',overlay(frame,pred),31,61,69,69)
+    p.image('expert',overlay(frame,sample['arrays']['masks'][ed],(63,146,132)),151,61,69,69)
+    p.text(65,143,'模型预测')
+    p.text(185,143,'专家 ED / ES')
+    p.text(125,98,'vs',size=7.3)
+    for i,text in enumerate(['Dice','ASSD','HD95']):
+        p.box('metric-'+text,25+i*77,155,68,19,text,fill='#f9efcb')
+    p.line(263,49,263,173,color=p.edge,width=.6)
+    p.text(384,48,'功能参数一致性',size=7.3)
+    document(p,306,68,'#e8eedb')
+    document(p,431,68,'#e4eaf5')
+    p.text(322,124,'同法轮廓参考')
+    p.text(447,124,'CAMUS 报告')
+    p.text(322,138,'EDV / ESV / EF')
+    p.text(447,138,'Info.cfg EF')
+    p.text(383,160,'患者级误差 · 一致性 · 覆盖率')
+    p.text(383,182,'独立临床参考缺失时保留空值')
+    parts.append(p)
+
+    p=Part('E1_patch_extension','E1  贴片连续监测扩展（待验证）')
+    element(p.group,'circle',cx=68,cy=61,r=11,fill='#f7eee7',stroke='#b69e91',stroke_width=.8)
+    p.path('M 37 145 L 39 94 Q 41 82 55 80 L 81 80 Q 95 82 98 94 L 100 145 Z',
+           color='#b69e91',width=.8,fill='#f8f1eb')
+    p.path('M 66 112 C 55 99 46 113 66 126 C 86 113 77 99 66 112 Z',
+           color='#ca8f89',fill='#eed7d5')
+    p.rect(73,94,29,11,'#b8c9dc',stroke='#7e94ac',radius=3)
+    p.text(69,165,'贴片采集概念示意')
+    p.arrow('collection-calibration',[(115,109),(159,109)],color=INK,dash='1 2')
+    element(p.group,'circle',cx=222,cy=92,r=26,fill='#f5edf6',stroke=p.edge,stroke_width=.8)
+    p.line(222,92,222,74,color=p.edge,width=1.1)
+    p.line(222,92,237,101,color=p.edge,width=1.1)
+    p.rect(188,130,70,12,'#e8e1ef',stroke=p.edge,radius=1)
+    for i in range(11):p.line(191+i*6,130,191+i*6,136 if i%2 else 140,color=p.edge,width=.6)
+    p.text(222,165,'空间 / 时间标定')
+    p.arrow('calibration-validation',[(272,109),(314,109)],color=INK,dash='1 2')
+    document(p,344,73,'#eee1f1')
+    p.path('M 350 102 L 357 109 L 372 89',color='#849674',width=2)
+    mini_model(p,410,84)
+    p.text(408,145,'跨设备验证 + 独立参考')
+    p.text(404,165,'接入既有推理与几何流程')
+    p.text(257,184,'可靠时间与完整周期满足后，再评价连续 HR / CO')
     parts.append(p)
     return parts
 
@@ -361,6 +599,8 @@ def export(part, device=None):
             x, y = float(label.get('x')), float(label.get('y'))
             if label.get('text-anchor') == 'middle':
                 x -= metrics.horizontalAdvance(label.text) / (2 * precision)
+            elif label.get('text-anchor') == 'end':
+                x -= metrics.horizontalAdvance(label.text) / precision
             measured = metrics.tightBoundingRect(label.text)
             bounds = QRectF(measured.x() / precision, measured.y() / precision,
                             measured.width() / precision, measured.height() / precision).translated(x, y)
@@ -385,7 +625,7 @@ def export(part, device=None):
 
     if device is not None:
         return paint(device)
-    image = QImage(round(46 / 25.4 * DPI), round(54 / 25.4 * DPI), QImage.Format_ARGB32_Premultiplied)
+    image = QImage(*[round(v / 25.4 * DPI) for v in SIZE_MM], QImage.Format_ARGB32_Premultiplied)
     image.setDotsPerMeterX(round(DPI / .0254))
     image.setDotsPerMeterY(round(DPI / .0254))
     image.fill(Qt.white)
@@ -393,7 +633,7 @@ def export(part, device=None):
     image.save(str(OUTPUT / 'png' / (part.name + '.png')))
     writer = QPdfWriter(str(OUTPUT / 'pdf' / (part.name + '.pdf')))
     writer.setResolution(DPI)
-    writer.setPageLayout(QPageLayout(QPageSize(QSizeF(46, 54), QPageSize.Millimeter),
+    writer.setPageLayout(QPageLayout(QPageSize(QSizeF(*SIZE_MM), QPageSize.Millimeter),
                                     QPageLayout.Portrait, QMarginsF(0, 0, 0, 0), QPageLayout.Millimeter))
     writer.setTitle(part.title)
     return paint(writer)
@@ -401,30 +641,40 @@ def export(part, device=None):
 
 def catalog(parts):
     # Inventory only: no cross-component arrows and no final workflow assembly.
-    cell_w, cell_h = 430, 525
-    sheet = Image.new('RGB', (3 * cell_w + 40, 4 * cell_h + 150), '#f1f3f5')
+    cell_w, cell_h = 910, 375
+    sheet = Image.new('RGB', (2 * cell_w + 40, 6 * cell_h + 150), '#f4f4ef')
     draw = ImageDraw.Draw(sheet)
     from PIL import ImageFont
     font = ImageFont.truetype('C:/Windows/Fonts/msyh.ttc', 30)
     small = ImageFont.truetype('C:/Windows/Fonts/msyh.ttc', 20)
-    draw.text((30, 22), '项目流程图零件｜审阅稿', font=font, fill=INK)
-    draw.text((30, 69), '当前 CAMUS 主体 + 贴片扩展；完整总图待讨论后组装', font=small, fill=INK)
+    draw.text((30, 22), 'CAMUS 方法零件｜参考图风格重绘', font=font, fill=INK)
+    draw.text((30, 69), '浅色分区 · 影像叠加 · 网络结构 · 几何示意   /   各模块独立，总图待讨论', font=small, fill=INK)
     links = []
     for i, part in enumerate(parts):
         image = Image.open(OUTPUT / 'png' / (part.name + '.png')).convert('RGB')
-        image.thumbnail((400, 475), Image.Resampling.LANCZOS)
-        x, y = 20 + (i % 3) * cell_w, 125 + (i // 3) * cell_h
+        image.thumbnail((890, 350), Image.Resampling.LANCZOS)
+        x, y = 20 + (i % 2) * cell_w, 125 + (i // 2) * cell_h
         sheet.paste(image, (x + (cell_w - image.width) // 2, y))
         links.append(f'<article><img src="png/{part.name}.png" alt="{html.escape(part.title)}">'
                      f'<p>{html.escape(part.title)}</p><a href="svg/{part.name}.svg">SVG</a> · '
                      f'<a href="pdf/{part.name}.pdf">PDF</a> · <a href="png/{part.name}.png">PNG</a></article>')
     sheet.save(OUTPUT / 'parts_catalog.png')
+    selected = ['B1_segmentation_network', 'C1_contour_geometry', 'C2_volume_methods']
+    preview = Image.new('RGB', (1500, 3*605+120), '#f4f4ef')
+    preview_draw = ImageDraw.Draw(preview)
+    preview_draw.text((28,20), '重点零件｜网络结构与几何容积', font=font, fill=INK)
+    preview_draw.text((28,66), '参照新提供的论文图重绘；这三幅是独立零件，尚未连接为总图', font=small, fill=INK)
+    for i, name in enumerate(selected):
+        im = Image.open(OUTPUT/'png'/(name+'.png')).convert('RGB')
+        im.thumbnail((1460,580),Image.Resampling.LANCZOS)
+        preview.paste(im,((1500-im.width)//2,120+i*605))
+    preview.save(OUTPUT/'style_preview.png')
     (OUTPUT / 'index.html').write_text('<!doctype html><html lang="zh-CN"><meta charset="utf-8">'
         '<title>流程图零件审阅</title><style>body{font:16px "Microsoft YaHei",sans-serif;color:#20303e;'
-        'max-width:1200px;margin:32px auto;background:#f4f5f6}main{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}'
-        'article{background:white;padding:16px;text-align:center}img{width:100%;height:auto}a{color:#187969}'
-        '@media(max-width:760px){main{grid-template-columns:1fr}}</style><h1>流程图零件｜审阅稿</h1>'
-        '<p>11 个独立零件；完整总图将在讨论后绘制。<a href="PLAN.md">规划方案</a> · '
+        'max-width:1600px;margin:32px auto;background:#f4f4ef}main{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}'
+        'article{background:white;padding:12px;text-align:center}img{width:100%;height:auto}a{color:#187969}'
+        '@media(max-width:1000px){main{grid-template-columns:1fr}}</style><h1>参考图风格｜流程图独立零件</h1>'
+        '<p>11 个横向图形模块；完整总图将在讨论后绘制。<a href="PLAN.md">规划方案</a> · '
         '<a href="CAPTIONS.md">零件说明</a></p><main>' + ''.join(links) + '</main></html>',
         encoding='utf-8', newline='\n')
 
@@ -441,7 +691,8 @@ def main():
     for directory in ('svg', 'pdf', 'png', 'qa'):
         (OUTPUT / directory).mkdir(exist_ok=True)
     samples, manifest = load_examples()
-    parts = create_parts(samples)
+    train = training_example(manifest)
+    parts = create_parts(samples, train)
     checks = {}
     for part in parts:
         part.write()
@@ -452,6 +703,8 @@ def main():
                'src/data/camus/prepare.py', 'src/geometry/mask_features.py', 'src/geometry/volume.py',
                'src/geometry/functional.py', 'src/models/deeplabv3.py', 'src/models/build.py',
                'data/processed/camus/manifest.json', 'runs/validation_camus_regularized/summary.json']
+    sources += ['src/data/transforms.py', 'docs/data_sources/echonet_weights.json']
+    sources += ['data/processed/camus/'+train[0]+ext for ext in ('.npz','.json')]
     for view in ('2CH', '4CH'):
         key = PATIENT + '_' + view
         sources += ['data/processed/camus/' + key + ext for ext in ('.npz', '.json')]
@@ -460,8 +713,14 @@ def main():
              'example_patient': PATIENT, 'example_split': 'val', 'selection': 'fixed_example_no_metric_based_selection',
              'image_scope': 'processed_frames_and_saved_predictions_not_raw_acquisition_images',
              'prediction_weights_sha256': read_json(PROJECT / 'runs/validation_camus_regularized/summary.json')['weights_sha256'],
+             'training_diagram_example': train[0], 'training_example_split': 'train',
+             'style': 'user_reference_pastel_groups_illustrated_landscape_modules',
+             'style_reference_sha256': 'f6a51d1add21fd4279bfae869b14ac61523d4e2f7fcdafd31402481a594e6472',
+             'style_reference_reuse': 'style_only_no_source_raster_elements_reused',
+             'feature_tensors': 'architecture_schematic_not_measured_activations',
+             'volume_disks': 'geometric_illustration_from_saved_predicted_diameters_not_acquired_3D',
              'parts': [{'name': p.name, 'title': p.title} for p in parts],
-             'checks': checks, 'physical_part_size_mm': [46, 54], 'png_dpi': DPI,
+             'checks': checks, 'physical_part_size_mm': list(SIZE_MM), 'png_dpi': DPI,
              'sources_sha256': {s: hashlib.sha256((PROJECT / s).read_bytes()).hexdigest() for s in sources}}
     (OUTPUT / 'qa/export_check.json').write_text(json.dumps(audit, ensure_ascii=False, indent=2) + '\n',
                                                encoding='utf-8', newline='\n')

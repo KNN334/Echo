@@ -2,220 +2,220 @@
   "A1_camus_input.svg": {
     "verdict": "PASS WITH WARNINGS",
     "auditable": true,
-    "width_mm": 46.00000000000001,
-    "text_count": 8,
-    "minimum_found_pt": 6.500000000000002,
-    "maximum_found_pt": 7.600000000000001,
+    "width_mm": 180.0,
+    "text_count": 11,
+    "minimum_found_pt": 5.8,
+    "maximum_found_pt": 12.0,
     "thresholds": {
       "min_pt": 5,
-      "max_pt": 8,
-      "max_width_mm": 46.1
+      "max_pt": 13,
+      "max_width_mm": 180.1
     },
     "findings": [
       {
         "severity": "WARN",
         "kind": "canvas.width",
-        "message": "width 46.0 mm is not 89 mm or 183 mm"
+        "message": "width 180.0 mm is not 89 mm or 183 mm"
       }
     ]
   },
   "A2_preprocessing.svg": {
     "verdict": "PASS WITH WARNINGS",
     "auditable": true,
-    "width_mm": 46.00000000000001,
-    "text_count": 8,
-    "minimum_found_pt": 6.500000000000002,
-    "maximum_found_pt": 7.600000000000001,
+    "width_mm": 180.0,
+    "text_count": 13,
+    "minimum_found_pt": 5.8,
+    "maximum_found_pt": 8.8,
     "thresholds": {
       "min_pt": 5,
-      "max_pt": 8,
-      "max_width_mm": 46.1
+      "max_pt": 13,
+      "max_width_mm": 180.1
     },
     "findings": [
       {
         "severity": "WARN",
         "kind": "canvas.width",
-        "message": "width 46.0 mm is not 89 mm or 183 mm"
+        "message": "width 180.0 mm is not 89 mm or 183 mm"
       }
     ]
   },
   "A3_patient_split.svg": {
     "verdict": "PASS WITH WARNINGS",
     "auditable": true,
-    "width_mm": 46.00000000000001,
-    "text_count": 8,
-    "minimum_found_pt": 6.500000000000002,
-    "maximum_found_pt": 7.600000000000001,
+    "width_mm": 180.0,
+    "text_count": 14,
+    "minimum_found_pt": 5.8,
+    "maximum_found_pt": 8.8,
     "thresholds": {
       "min_pt": 5,
-      "max_pt": 8,
-      "max_width_mm": 46.1
+      "max_pt": 13,
+      "max_width_mm": 180.1
     },
     "findings": [
       {
         "severity": "WARN",
         "kind": "canvas.width",
-        "message": "width 46.0 mm is not 89 mm or 183 mm"
+        "message": "width 180.0 mm is not 89 mm or 183 mm"
       }
     ]
   },
   "B1_segmentation_network.svg": {
     "verdict": "PASS WITH WARNINGS",
     "auditable": true,
-    "width_mm": 46.00000000000001,
-    "text_count": 7,
-    "minimum_found_pt": 6.500000000000002,
-    "maximum_found_pt": 7.600000000000001,
+    "width_mm": 180.0,
+    "text_count": 20,
+    "minimum_found_pt": 5.8,
+    "maximum_found_pt": 8.8,
     "thresholds": {
       "min_pt": 5,
-      "max_pt": 8,
-      "max_width_mm": 46.1
+      "max_pt": 13,
+      "max_width_mm": 180.1
     },
     "findings": [
       {
         "severity": "WARN",
         "kind": "canvas.width",
-        "message": "width 46.0 mm is not 89 mm or 183 mm"
+        "message": "width 180.0 mm is not 89 mm or 183 mm"
       }
     ]
   },
   "B2_supervised_finetuning.svg": {
     "verdict": "PASS WITH WARNINGS",
     "auditable": true,
-    "width_mm": 46.00000000000001,
-    "text_count": 9,
-    "minimum_found_pt": 6.500000000000002,
-    "maximum_found_pt": 7.600000000000001,
+    "width_mm": 180.0,
+    "text_count": 16,
+    "minimum_found_pt": 5.8,
+    "maximum_found_pt": 8.8,
     "thresholds": {
       "min_pt": 5,
-      "max_pt": 8,
-      "max_width_mm": 46.1
+      "max_pt": 13,
+      "max_width_mm": 180.1
     },
     "findings": [
       {
         "severity": "WARN",
         "kind": "canvas.width",
-        "message": "width 46.0 mm is not 89 mm or 183 mm"
+        "message": "width 180.0 mm is not 89 mm or 183 mm"
       }
     ]
   },
   "B3_frame_inference.svg": {
     "verdict": "PASS WITH WARNINGS",
     "auditable": true,
-    "width_mm": 46.00000000000001,
-    "text_count": 3,
-    "minimum_found_pt": 6.500000000000002,
-    "maximum_found_pt": 7.600000000000001,
+    "width_mm": 180.0,
+    "text_count": 11,
+    "minimum_found_pt": 5.8,
+    "maximum_found_pt": 8.8,
     "thresholds": {
       "min_pt": 5,
-      "max_pt": 8,
-      "max_width_mm": 46.1
+      "max_pt": 13,
+      "max_width_mm": 180.1
     },
     "findings": [
       {
         "severity": "WARN",
         "kind": "canvas.width",
-        "message": "width 46.0 mm is not 89 mm or 183 mm"
+        "message": "width 180.0 mm is not 89 mm or 183 mm"
       }
     ]
   },
   "C1_contour_geometry.svg": {
     "verdict": "PASS WITH WARNINGS",
     "auditable": true,
-    "width_mm": 46.00000000000001,
-    "text_count": 7,
-    "minimum_found_pt": 6.500000000000002,
-    "maximum_found_pt": 7.600000000000001,
+    "width_mm": 180.0,
+    "text_count": 14,
+    "minimum_found_pt": 5.8,
+    "maximum_found_pt": 8.8,
     "thresholds": {
       "min_pt": 5,
-      "max_pt": 8,
-      "max_width_mm": 46.1
+      "max_pt": 13,
+      "max_width_mm": 180.1
     },
     "findings": [
       {
         "severity": "WARN",
         "kind": "canvas.width",
-        "message": "width 46.0 mm is not 89 mm or 183 mm"
+        "message": "width 180.0 mm is not 89 mm or 183 mm"
       }
     ]
   },
   "C2_volume_methods.svg": {
     "verdict": "PASS WITH WARNINGS",
     "auditable": true,
-    "width_mm": 46.00000000000001,
-    "text_count": 7,
-    "minimum_found_pt": 6.500000000000002,
-    "maximum_found_pt": 7.600000000000001,
+    "width_mm": 180.0,
+    "text_count": 12,
+    "minimum_found_pt": 5.8,
+    "maximum_found_pt": 8.8,
     "thresholds": {
       "min_pt": 5,
-      "max_pt": 8,
-      "max_width_mm": 46.1
+      "max_pt": 13,
+      "max_width_mm": 180.1
     },
     "findings": [
       {
         "severity": "WARN",
         "kind": "canvas.width",
-        "message": "width 46.0 mm is not 89 mm or 183 mm"
+        "message": "width 180.0 mm is not 89 mm or 183 mm"
       }
     ]
   },
   "D1_functional_parameters.svg": {
     "verdict": "PASS WITH WARNINGS",
     "auditable": true,
-    "width_mm": 46.00000000000001,
-    "text_count": 9,
-    "minimum_found_pt": 6.500000000000002,
-    "maximum_found_pt": 7.600000000000001,
+    "width_mm": 180.0,
+    "text_count": 14,
+    "minimum_found_pt": 5.8,
+    "maximum_found_pt": 8.8,
     "thresholds": {
       "min_pt": 5,
-      "max_pt": 8,
-      "max_width_mm": 46.1
+      "max_pt": 13,
+      "max_width_mm": 180.1
     },
     "findings": [
       {
         "severity": "WARN",
         "kind": "canvas.width",
-        "message": "width 46.0 mm is not 89 mm or 183 mm"
+        "message": "width 180.0 mm is not 89 mm or 183 mm"
       }
     ]
   },
   "D2_reference_evaluation.svg": {
     "verdict": "PASS WITH WARNINGS",
     "auditable": true,
-    "width_mm": 46.00000000000001,
-    "text_count": 12,
-    "minimum_found_pt": 6.500000000000002,
-    "maximum_found_pt": 7.600000000000001,
+    "width_mm": 180.0,
+    "text_count": 16,
+    "minimum_found_pt": 5.8,
+    "maximum_found_pt": 8.8,
     "thresholds": {
       "min_pt": 5,
-      "max_pt": 8,
-      "max_width_mm": 46.1
+      "max_pt": 13,
+      "max_width_mm": 180.1
     },
     "findings": [
       {
         "severity": "WARN",
         "kind": "canvas.width",
-        "message": "width 46.0 mm is not 89 mm or 183 mm"
+        "message": "width 180.0 mm is not 89 mm or 183 mm"
       }
     ]
   },
   "E1_patch_extension.svg": {
     "verdict": "PASS WITH WARNINGS",
     "auditable": true,
-    "width_mm": 46.00000000000001,
-    "text_count": 6,
-    "minimum_found_pt": 6.500000000000002,
-    "maximum_found_pt": 7.600000000000001,
+    "width_mm": 180.0,
+    "text_count": 7,
+    "minimum_found_pt": 5.8,
+    "maximum_found_pt": 8.8,
     "thresholds": {
       "min_pt": 5,
-      "max_pt": 8,
-      "max_width_mm": 46.1
+      "max_pt": 13,
+      "max_width_mm": 180.1
     },
     "findings": [
       {
         "severity": "WARN",
         "kind": "canvas.width",
-        "message": "width 46.0 mm is not 89 mm or 183 mm"
+        "message": "width 180.0 mm is not 89 mm or 183 mm"
       }
     ]
   }

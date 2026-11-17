@@ -5,101 +5,108 @@
   "selection": "fixed_example_no_metric_based_selection",
   "image_scope": "processed_frames_and_saved_predictions_not_raw_acquisition_images",
   "prediction_weights_sha256": "59b92018e38e823179a4681aec49e06ca66ecbc418617221b9b2740c2c7e1008",
+  "training_diagram_example": "patient0001_2CH",
+  "training_example_split": "train",
+  "style": "user_reference_pastel_groups_illustrated_landscape_modules",
+  "style_reference_sha256": "f6a51d1add21fd4279bfae869b14ac61523d4e2f7fcdafd31402481a594e6472",
+  "style_reference_reuse": "style_only_no_source_raster_elements_reused",
+  "feature_tensors": "architecture_schematic_not_measured_activations",
+  "volume_disks": "geometric_illustration_from_saved_predicted_diameters_not_acquired_3D",
   "parts": [
     {
       "name": "A1_camus_input",
-      "title": "A1｜CAMUS 数据输入"
+      "title": "A1  数据队列与专家标注"
     },
     {
       "name": "A2_preprocessing",
-      "title": "A2｜预处理与坐标审计"
+      "title": "A2  预处理与坐标保留"
     },
     {
       "name": "A3_patient_split",
-      "title": "A3｜固定患者级划分"
+      "title": "A3  固定患者级划分"
     },
     {
       "name": "B1_segmentation_network",
-      "title": "B1｜左室分割网络"
+      "title": "B1  DeepLabV3–ResNet50 分割网络"
     },
     {
       "name": "B2_supervised_finetuning",
-      "title": "B2｜正则化监督微调"
+      "title": "B2  专家监督与正则化微调"
     },
     {
       "name": "B3_frame_inference",
-      "title": "B3｜逐帧推理与掩膜"
+      "title": "B3  序列逐帧推理与分割叠加"
     },
     {
       "name": "C1_contour_geometry",
-      "title": "C1｜轮廓几何特征"
+      "title": "C1  轮廓清理与几何特征提取"
     },
     {
       "name": "C2_volume_methods",
-      "title": "C2｜几何容积估算"
+      "title": "C2  双切面几何与容积估算"
     },
     {
       "name": "D1_functional_parameters",
-      "title": "D1｜心功能参数计算"
+      "title": "D1  EDV / ESV 与心功能参数"
     },
     {
       "name": "D2_reference_evaluation",
-      "title": "D2｜参考分层与评价"
+      "title": "D2  分割评价与功能参考分层"
     },
     {
       "name": "E1_patch_extension",
-      "title": "E1｜贴片连续监测扩展"
+      "title": "E1  贴片连续监测扩展（待验证）"
     }
   ],
   "checks": {
     "A1_camus_input": {
-      "text_elements": 8,
+      "text_elements": 11,
       "bounds_and_text_overlap": "PASS"
     },
     "A2_preprocessing": {
-      "text_elements": 8,
+      "text_elements": 13,
       "bounds_and_text_overlap": "PASS"
     },
     "A3_patient_split": {
-      "text_elements": 8,
+      "text_elements": 14,
       "bounds_and_text_overlap": "PASS"
     },
     "B1_segmentation_network": {
-      "text_elements": 7,
+      "text_elements": 20,
       "bounds_and_text_overlap": "PASS"
     },
     "B2_supervised_finetuning": {
-      "text_elements": 9,
+      "text_elements": 16,
       "bounds_and_text_overlap": "PASS"
     },
     "B3_frame_inference": {
-      "text_elements": 3,
+      "text_elements": 11,
       "bounds_and_text_overlap": "PASS"
     },
     "C1_contour_geometry": {
-      "text_elements": 7,
+      "text_elements": 14,
       "bounds_and_text_overlap": "PASS"
     },
     "C2_volume_methods": {
-      "text_elements": 7,
-      "bounds_and_text_overlap": "PASS"
-    },
-    "D1_functional_parameters": {
-      "text_elements": 9,
-      "bounds_and_text_overlap": "PASS"
-    },
-    "D2_reference_evaluation": {
       "text_elements": 12,
       "bounds_and_text_overlap": "PASS"
     },
+    "D1_functional_parameters": {
+      "text_elements": 14,
+      "bounds_and_text_overlap": "PASS"
+    },
+    "D2_reference_evaluation": {
+      "text_elements": 16,
+      "bounds_and_text_overlap": "PASS"
+    },
     "E1_patch_extension": {
-      "text_elements": 6,
+      "text_elements": 7,
       "bounds_and_text_overlap": "PASS"
     }
   },
   "physical_part_size_mm": [
-    46,
-    54
+    180,
+    70
   ],
   "png_dpi": 600,
   "sources_sha256": {
@@ -117,6 +124,10 @@
     "src/models/build.py": "412fd350ceb62325e77915b9d57485aef0ea1fc2960c13ce8eb9cc4657f45b6c",
     "data/processed/camus/manifest.json": "e8603f1862c321c0ece99bbfb34c530e3512ff78ee1b2484c615fcafb08445a6",
     "runs/validation_camus_regularized/summary.json": "9bc7cbbcbf5bb3d5e43de41aacf9fc3f1862bc767ee7a18edb5c11870c7a9a03",
+    "src/data/transforms.py": "7d5d10af714c60710a158d3a297ab499db0a218377dfb046ca345a91b24ccf2e",
+    "docs/data_sources/echonet_weights.json": "c4be5d09909eedc27e053f00507ffa87966749a6b1840e50d5b69c3ac42e0852",
+    "data/processed/camus/patient0001_2CH.npz": "f2de39c40655ea4d684722d17888bb7964f369b6bc704a3ec5082c99e7ea0fc2",
+    "data/processed/camus/patient0001_2CH.json": "0382c0f1c3e2cbaf0a8ce95c32f8e30c14dcb02fbabe924d7952a3111086a8d9",
     "data/processed/camus/patient0008_2CH.npz": "547c0ea4b42c5f5c3d46d5fd7af51084752307791d3d761a37d4d415f2aab55b",
     "data/processed/camus/patient0008_2CH.json": "36a91be2a90529c1e6f01dc684782b5697f238ceaae5dfa50f9e14570f4eae0c",
     "runs/validation_camus_regularized/patient0008_2CH_pred.npz": "0b815ed39561d80f8abb44aef89c8e9e5a7528c1a7407d56a3b6dc48e85d1125",

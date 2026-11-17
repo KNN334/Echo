@@ -2,8 +2,51 @@
   "A1_camus_input.pdf": {
     "auditable": true,
     "minimum_required_pt": 5,
-    "minimum_found_pt": 6.48767889488384,
-    "text_run_count": 2,
+    "minimum_found_pt": 5.792441038524235,
+    "text_run_count": 4,
+    "below_minimum_count": 0,
+    "below_minimum": [],
+    "warnings": [
+      "stream 1 uses an unsupported PDF filter",
+      "stream 2 uses an unsupported PDF filter",
+      "stream 3 uses an unsupported PDF filter",
+      "stream 4 uses an unsupported PDF filter",
+      "stream 5 uses an unsupported PDF filter",
+      "stream 6 uses an unsupported PDF filter",
+      "stream 7 uses an unsupported PDF filter",
+      "stream 8 uses an unsupported PDF filter",
+      "stream 9 uses an unsupported PDF filter",
+      "stream 10 uses an unsupported PDF filter",
+      "stream 11 uses an unsupported PDF filter",
+      "stream 12 uses an unsupported PDF filter"
+    ]
+  },
+  "A2_preprocessing.pdf": {
+    "auditable": true,
+    "minimum_required_pt": 5,
+    "minimum_found_pt": 5.792441038524235,
+    "text_run_count": 3,
+    "below_minimum_count": 0,
+    "below_minimum": [],
+    "warnings": [
+      "stream 1 uses an unsupported PDF filter",
+      "stream 2 uses an unsupported PDF filter"
+    ]
+  },
+  "A3_patient_split.pdf": {
+    "auditable": true,
+    "minimum_required_pt": 5,
+    "minimum_found_pt": 5.792441038524235,
+    "text_run_count": 9,
+    "below_minimum_count": 0,
+    "below_minimum": [],
+    "warnings": []
+  },
+  "B1_segmentation_network.pdf": {
+    "auditable": true,
+    "minimum_required_pt": 5,
+    "minimum_found_pt": 5.792441038524235,
+    "text_run_count": 9,
     "below_minimum_count": 0,
     "below_minimum": [],
     "warnings": [
@@ -13,47 +56,42 @@
       "stream 4 uses an unsupported PDF filter"
     ]
   },
-  "A2_preprocessing.pdf": {
-    "auditable": true,
-    "minimum_required_pt": 5,
-    "minimum_found_pt": 6.48767889488384,
-    "text_run_count": 2,
-    "below_minimum_count": 0,
-    "below_minimum": [],
-    "warnings": []
-  },
-  "A3_patient_split.pdf": {
-    "auditable": true,
-    "minimum_required_pt": 5,
-    "minimum_found_pt": 6.48767889488384,
-    "text_run_count": 2,
-    "below_minimum_count": 0,
-    "below_minimum": [],
-    "warnings": []
-  },
-  "B1_segmentation_network.pdf": {
-    "auditable": true,
-    "minimum_required_pt": 5,
-    "minimum_found_pt": 6.48767889488384,
-    "text_run_count": 2,
-    "below_minimum_count": 0,
-    "below_minimum": [],
-    "warnings": []
-  },
   "B2_supervised_finetuning.pdf": {
     "auditable": true,
     "minimum_required_pt": 5,
-    "minimum_found_pt": 6.48767889488384,
-    "text_run_count": 2,
+    "minimum_found_pt": 5.792441038524235,
+    "text_run_count": 6,
     "below_minimum_count": 0,
     "below_minimum": [],
-    "warnings": []
+    "warnings": [
+      "stream 1 uses an unsupported PDF filter",
+      "stream 2 uses an unsupported PDF filter"
+    ]
   },
   "B3_frame_inference.pdf": {
     "auditable": true,
     "minimum_required_pt": 5,
-    "minimum_found_pt": 6.48767889488384,
-    "text_run_count": 2,
+    "minimum_found_pt": 5.792441038524235,
+    "text_run_count": 3,
+    "below_minimum_count": 0,
+    "below_minimum": [],
+    "warnings": [
+      "stream 1 uses an unsupported PDF filter",
+      "stream 2 uses an unsupported PDF filter",
+      "stream 3 uses an unsupported PDF filter",
+      "stream 4 uses an unsupported PDF filter",
+      "stream 5 uses an unsupported PDF filter",
+      "stream 6 uses an unsupported PDF filter",
+      "stream 7 uses an unsupported PDF filter",
+      "stream 8 uses an unsupported PDF filter",
+      "stream 9 uses an unsupported PDF filter"
+    ]
+  },
+  "C1_contour_geometry.pdf": {
+    "auditable": true,
+    "minimum_required_pt": 5,
+    "minimum_found_pt": 5.792441038524235,
+    "text_run_count": 3,
     "below_minimum_count": 0,
     "below_minimum": [],
     "warnings": [
@@ -62,22 +100,11 @@
       "stream 3 uses an unsupported PDF filter"
     ]
   },
-  "C1_contour_geometry.pdf": {
-    "auditable": true,
-    "minimum_required_pt": 5,
-    "minimum_found_pt": 6.48767889488384,
-    "text_run_count": 2,
-    "below_minimum_count": 0,
-    "below_minimum": [],
-    "warnings": [
-      "stream 1 uses an unsupported PDF filter"
-    ]
-  },
   "C2_volume_methods.pdf": {
     "auditable": true,
     "minimum_required_pt": 5,
-    "minimum_found_pt": 6.48767889488384,
-    "text_run_count": 2,
+    "minimum_found_pt": 5.792441038524235,
+    "text_run_count": 8,
     "below_minimum_count": 0,
     "below_minimum": [],
     "warnings": [
@@ -88,26 +115,32 @@
   "D1_functional_parameters.pdf": {
     "auditable": true,
     "minimum_required_pt": 5,
-    "minimum_found_pt": 6.48767889488384,
-    "text_run_count": 2,
+    "minimum_found_pt": 5.792441038524235,
+    "text_run_count": 7,
     "below_minimum_count": 0,
     "below_minimum": [],
-    "warnings": []
+    "warnings": [
+      "stream 1 uses an unsupported PDF filter",
+      "stream 2 uses an unsupported PDF filter"
+    ]
   },
   "D2_reference_evaluation.pdf": {
     "auditable": true,
     "minimum_required_pt": 5,
-    "minimum_found_pt": 6.48767889488384,
-    "text_run_count": 2,
+    "minimum_found_pt": 5.792441038524235,
+    "text_run_count": 8,
     "below_minimum_count": 0,
     "below_minimum": [],
-    "warnings": []
+    "warnings": [
+      "stream 1 uses an unsupported PDF filter",
+      "stream 2 uses an unsupported PDF filter"
+    ]
   },
   "E1_patch_extension.pdf": {
     "auditable": true,
     "minimum_required_pt": 5,
-    "minimum_found_pt": 6.48767889488384,
-    "text_run_count": 2,
+    "minimum_found_pt": 5.792441038524235,
+    "text_run_count": 3,
     "below_minimum_count": 0,
     "below_minimum": [],
     "warnings": []
