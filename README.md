@@ -18,6 +18,8 @@
 
 已有正则化实验的 [训练日志](reports/training/camus_regularized/training_log.txt)、[逐轮损失](reports/training/camus_regularized/training.csv) 和 [归档说明](reports/training/camus_regularized/ARCHIVE.md) 可直接查看；旧实验没有保存完整环境信息。
 
+统一环境后的 `camus_regularized_v2` 已完成 14 轮训练并触发早停，最低验证 BCE 为 `0.0363108074`（第 14 轮）。可查看本次 [训练日志](reports/training/camus_regularized_v2/training_log.txt)、[逐轮损失](reports/training/camus_regularized_v2/training.csv)、[运行环境](reports/training/camus_regularized_v2/run.json) 和 [实验说明](reports/training/camus_regularized_v2/RUN_NOTES.md)。本次完成训练/验证，未执行新的测试集评价。
+
 ## 结果分析图
 
 已保存实验的 10 组结果图见 [离线图集](reports/result_analysis/camus_cuda_progress/index.html)、[全部图件 PDF](reports/result_analysis/camus_cuda_progress/all_figures.pdf) 和 [中文解读](reports/result_analysis/camus_cuda_progress/RESULTS_ANALYSIS.md)。图集使用同一轮冻结实验，分别展示同法轮廓参考与 CAMUS 报告 EF；不把半周期推理称为完整心搏或半监督训练。

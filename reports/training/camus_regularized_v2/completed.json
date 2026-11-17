@@ -1,0 +1,7 @@
+{
+  "epochs_completed": 14,
+  "best_epoch": 14,
+  "best_validation_bce": 0.03631080738786194,
+  "stopped_early": true,
+  "best_weights": "C:\\Users\\LEN\\Desktop\\毕业设计\\毕设-基于贴片式超声探头的心脏功能参数连续监测与分析\\checkpoints\\camus_regularized_v2\\best.pt"
+}

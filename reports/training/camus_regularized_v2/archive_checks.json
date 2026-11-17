@@ -1,0 +1,24 @@
+{
+  "source": "checkpoints/camus_regularized_v2",
+  "copies_identical": {
+    "run.json": true,
+    "training.csv": true,
+    "training_log.txt": true,
+    "completed.json": true
+  },
+  "checkpoint_matches_minimum_validation_loss": true,
+  "project_venv_verified": true,
+  "best_weights_sha256": "914388996214646f898f8d8dfcdf4b999e2f571fb733bbc5f46b3046491047b4",
+  "recorded_source_commit": "a9840e7db9b5cae4b1239248bd451dd364ac7f4d",
+  "test_evaluation_performed_in_this_update": false,
+  "text_hash_mode": "CRLF normalized to LF; UTF-8 BOM retained",
+  "archived_text_sha256_lf_normalized": {
+    "completed.json": "41b2c8b53b2c71e81a853c73f0491b92c56e82e54b56dccba499521e664206af",
+    "environment_packages.json": "68328c9a48b4afe08eb117c497c1db55861d1ebdc8f745b60fc308e6b0567619",
+    "experiment.json": "2ba123b3c3b4ebe30d2fbd4cfcc77201caf41431d98e82fdfbc856ceaf170069",
+    "run.json": "110e39b34764284df1c63856c07dee79e5a2401c95f31646574a6763ac39e2b1",
+    "RUN_NOTES.md": "22aa299356066253ee2ba8b816706194c36362969ac4b78c9ff256b62b104821",
+    "training.csv": "e6f9423f63b83db7b1724f1da3f43d94ea62be8af70e0a81a781edae86f0430a",
+    "training_log.txt": "a103f1efa704d57e0f20c3b9071c8ffc68a1b79a01bd46d202bd1b75c7c651fd"
+  }
+}

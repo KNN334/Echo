@@ -1,0 +1,101 @@
+{
+  "git_commit": "a9840e7db9b5cae4b1239248bd451dd364ac7f4d",
+  "working_tree_dirty": true,
+  "stage": "train",
+  "created_local": "2026-11-17T17:25:38.662970+08:00",
+  "config_path": "C:\\Users\\LEN\\Desktop\\毕业设计\\毕设-基于贴片式超声探头的心脏功能参数连续监测与分析\\configs\\experiment.yaml",
+  "config_sha256": "39507f28145d4dbbbe382b6fe47a18b02f7cfe856a32bd2062658800649b72a6",
+  "config": {
+    "model": {
+      "name": "deeplabv3_resnet50",
+      "in_channels": 3,
+      "num_classes": 1
+    },
+    "data": {
+      "adapter": "camus",
+      "split_seed": 2026,
+      "views": [
+        "2CH",
+        "4CH"
+      ],
+      "dataset": "data/processed/camus",
+      "split_assignments": "configs/camus_splits.json",
+      "train_path": "data/processed/camus/splits/train.json",
+      "val_path": "data/processed/camus/splits/val.json",
+      "test_path": "data/processed/camus/splits/test.json",
+      "expected_patients": 500,
+      "preprocessing": {
+        "output_hw": [
+          112,
+          112
+        ],
+        "intensity_range": [
+          0,
+          255
+        ],
+        "auto_largest_support": true,
+        "exclude_boxes_xyxy": [],
+        "roi_reviewed": false
+      }
+    },
+    "train": {
+      "epochs": 30,
+      "batch_size": 8,
+      "learning_rate": 0.0001,
+      "seed": 2026,
+      "device": "auto",
+      "cpu_threads": 2,
+      "early_stopping_patience": 6,
+      "min_delta": 0.0002,
+      "weight_decay": 0.0001,
+      "augmentation": {
+        "enabled": true,
+        "rotation_degrees": 5.0,
+        "translation_fraction": 0.04,
+        "scale_range": [
+          0.95,
+          1.05
+        ],
+        "intensity_range": [
+          0.9,
+          1.1
+        ]
+      },
+      "output": "checkpoints/camus_regularized_v2",
+      "initial_weights": "checkpoints/echonet_official.pt"
+    },
+    "test": {
+      "device": "auto",
+      "cpu_threads": 2,
+      "temporal": false,
+      "quality_gate": false,
+      "normalization": null,
+      "references": null,
+      "manual_landmarks": null,
+      "weights": "checkpoints/camus_regularized_v2/best.pt",
+      "output": "runs/camus_regularized_v2"
+    },
+    "_config_sources": {
+      "C:\\Users\\LEN\\Desktop\\毕业设计\\毕设-基于贴片式超声探头的心脏功能参数连续监测与分析\\configs\\experiment.yaml": "39507f28145d4dbbbe382b6fe47a18b02f7cfe856a32bd2062658800649b72a6",
+      "C:\\Users\\LEN\\Desktop\\毕业设计\\毕设-基于贴片式超声探头的心脏功能参数连续监测与分析\\configs\\model\\deeplabv3_resnet50.yaml": "d74098c0c3c7315e6a46941876a42cda81c54003cbebf98fd9ecffe410b40ed9",
+      "C:\\Users\\LEN\\Desktop\\毕业设计\\毕设-基于贴片式超声探头的心脏功能参数连续监测与分析\\configs\\data\\camus.yaml": "c13dd29e42d588c0046ae3dadcf3387cfeea969b3693f5f9bb4458eb5a04fc1d",
+      "C:\\Users\\LEN\\Desktop\\毕业设计\\毕设-基于贴片式超声探头的心脏功能参数连续监测与分析\\configs\\train\\baseline.yaml": "f0146d2a822b17c1f82fc5ba4de9d919b0be746eac60666b8cfe1126605c0512"
+    }
+  },
+  "prepared": {
+    "dataset_root": "C:\\Users\\LEN\\Desktop\\毕业设计\\毕设-基于贴片式超声探头的心脏功能参数连续监测与分析\\data\\processed\\camus",
+    "manifest_sha256": "e8603f1862c321c0ece99bbfb34c530e3512ff78ee1b2484c615fcafb08445a6",
+    "patient_splits": {
+      "train": 347,
+      "val": 71
+    },
+    "case_splits": {
+      "train": 694,
+      "val": 142
+    },
+    "validated_splits": [
+      "train",
+      "val"
+    ]
+  }
+}
