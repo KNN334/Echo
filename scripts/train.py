@@ -41,7 +41,8 @@ def main(argv=None):
                     lr=lr, seed=options['seed'], weights=initial, device=device,
                     model_config=config['model'], adapter=data['adapter'],
                     early_stopping_patience=options['early_stopping_patience'],
-                    min_delta=options['min_delta'])
+                    min_delta=options['min_delta'], weight_decay=options['weight_decay'],
+                    augmentation=options['augmentation'])
     write_json(output / 'completed.json', {'epochs_completed': len(history), 'best_weights': str(output / 'best.pt')})
     print(f'训练结束。最佳模型：{output / "best.pt"}\n损失记录：{output / "training.csv"}', flush=True)
     print('下一步：运行scripts/evaluate.py。', flush=True)

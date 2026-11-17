@@ -96,7 +96,9 @@ def test_three_stage_scripts_from_yaml(tmp_path, monkeypatch):
                  **{name + '_path': str(dataset / 'splits' / (name + '.json'))
                     for name in ('train', 'val', 'test')}},
         'train': {'output': str(tmp_path / 'checkpoints'), 'initial_weights': None,
-                  'epochs': 2, 'batch_size': 3, 'device': 'cpu', 'cpu_threads': 2},
+                  'epochs': 2, 'batch_size': 3, 'device': 'cpu', 'cpu_threads': 2,
+                  'augmentation': {'enabled': False}, 'weight_decay': 0.0,
+                  'early_stopping_patience': None},
         'test': {'weights': str(tmp_path / 'checkpoints' / 'best.pt'),
                  'output': str(tmp_path / 'results'), 'device': 'cpu', 'cpu_threads': 2},
     }

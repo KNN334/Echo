@@ -30,7 +30,7 @@ class PreparedDatasetAdapter(DatasetAdapter):
 class AnnotatedFrameDataset:
     """PyTorch DataLoader 可读取的数据集；仅加载专家实际标注的帧。"""
 
-    def __init__(self, adapter, cases=None, description='Load annotated frames'):
+    def __init__(self, adapter, cases=None, description='Load annotated frames', augmentation=None):
         from tqdm import tqdm
         images, masks = [], []
         rows = adapter.cases if cases is None else cases
@@ -43,6 +43,7 @@ class AnnotatedFrameDataset:
         if not len(self.frames):
             raise ValueError('清单中没有专家标注帧。')
         self.mean = self.std = None
+        self.augmentation = augmentation if augmentation and augmentation.get('enabled', False) else None
 
     def set_normalization(self, mean, std):
         """验证与测试必须复用训练集统计量，不能各自重新计算。"""
@@ -56,16 +57,23 @@ class AnnotatedFrameDataset:
         from .transforms import normalize
         if self.mean is None:
             raise ValueError('必须先设置训练集归一化统计量。')
+        if self.augmentation:
+            from .transforms import augment_echo_pair
+            image = torch.from_numpy(self.frames[index].astype(np.float32))[None, None]
+            target = torch.from_numpy(self.masks[index].astype(np.float32))[None, None]
+            image, target = augment_echo_pair(image, target, self.augmentation)
+            image = normalize(image[0].numpy(), self.mean, self.std)[0]
+            return image, target[0]
         image = normalize(self.frames[index:index + 1], self.mean, self.std)[0]
         target = torch.from_numpy(self.masks[index].astype(np.float32))[None]
         return image, target
 
 
-def build_dataset(adapter, cases=None, description='Load annotated frames'):
+def build_dataset(adapter, cases=None, description='Load annotated frames', augmentation=None):
     """数据格式与训练引擎解耦；新适配器可以复用通用标注帧协议。"""
     from .camus.dataset import CamusAdapter, CamusDataset
     dataset_class = CamusDataset if isinstance(adapter, CamusAdapter) else AnnotatedFrameDataset
-    return dataset_class(adapter, cases, description)
+    return dataset_class(adapter, cases, description, augmentation)
 
 
 def build_adapter(manifest, split, name='camus'):

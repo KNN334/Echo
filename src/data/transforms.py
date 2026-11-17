@@ -69,3 +69,41 @@ def normalize(frames, mean, std):
     # T×H×W 转成 T×3×H×W；mean/std 均按通道广播。
     x = torch.from_numpy(frames.astype(np.float32))[:, None].repeat(1, 3, 1, 1)
     return (x - torch.tensor(mean, dtype=torch.float32)[None, :, None, None]) / torch.tensor(std, dtype=torch.float32)[None, :, None, None]
+
+
+def augment_echo_pair(image, mask, options):
+    """同步增广单张灰度帧与二值掩膜，原始数组保持不变。
+
+    translation_fraction 为 [-1, 1] 采样坐标中的位移；0.04 对应约 2%
+    宽/高。scale_range 为输出到输入的采样倍率，显示缩放为其倒数。
+    """
+    import math
+    import torch
+    import torch.nn.functional as F
+
+    if image.ndim != 4 or mask.ndim != 4 or image.shape[0] != 1 or mask.shape[0] != 1:
+        raise ValueError('增广输入必须是单帧 NCHW 张量。')
+    if image.shape[-2:] != mask.shape[-2:]:
+        raise ValueError('影像和掩膜的空间尺寸必须一致。')
+    rotation = float(options.get('rotation_degrees', 5.0))
+    translation = float(options.get('translation_fraction', 0.04))
+    scale_range = options.get('scale_range', [0.95, 1.05])
+    intensity_range = options.get('intensity_range', [0.9, 1.1])
+    if (not math.isfinite(rotation) or rotation < 0 or
+            not math.isfinite(translation) or not 0 <= translation < 1 or
+            len(scale_range) != 2 or not 0 < scale_range[0] <= scale_range[1] or
+            len(intensity_range) != 2 or not 0 < intensity_range[0] <= intensity_range[1]):
+        raise ValueError('无效的 Echo 数据增广参数。')
+
+    angle = (torch.rand(()) * 2 - 1) * math.radians(rotation)
+    scale = torch.empty(()).uniform_(float(scale_range[0]), float(scale_range[1]))
+    tx = torch.empty(()).uniform_(-translation, translation)
+    ty = torch.empty(()).uniform_(-translation, translation)
+    cosine, sine = torch.cos(angle) * scale, torch.sin(angle) * scale
+    theta = torch.stack((cosine, -sine, tx, sine, cosine, ty)).reshape(1, 2, 3)
+    grid = F.affine_grid(theta, image.shape, align_corners=False)
+    image = F.grid_sample(image, grid, mode='bilinear', padding_mode='zeros', align_corners=False)
+    mask = F.grid_sample(mask, grid, mode='nearest', padding_mode='zeros', align_corners=False)
+    gain = torch.empty(()).uniform_(float(intensity_range[0]), float(intensity_range[1]))
+    image = torch.where(image > 0, image * gain, image).clamp_(0, 255)
+    return image, mask

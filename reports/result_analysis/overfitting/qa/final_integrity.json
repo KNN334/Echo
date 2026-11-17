@@ -1,0 +1,19 @@
+{
+  "frozen_values_match_originals": true,
+  "text_digest_convention": "UTF-8 bytes with CRLF normalized to LF; original run file hashes in provenance.json retain byte-exact convention",
+  "source_sha256": {
+    "source_data/20_disks_shorter_axis_paired_validation.csv": "1363764387ac3969103ea78cc22cf598bbf13cea3f7a26f1f9be7c70d3974265",
+    "source_data/baseline_training.csv": "a7e7a8d113608e43b79c1a4cf7162fae4658b6a7aa55cbb39f203f5fa9577a30",
+    "source_data/baseline_validation_summary.json": "b79a8184c880e32f2587f2c5dff2fd21adb5b25f479e4bd608f30c0d20ba791b",
+    "source_data/biplane_vs_CAMUS_reported_EF_paired_validation.csv": "5731da98805c77acc5dd27a0b49909fb6b6b9825603698b96ccf0a374d920590",
+    "source_data/provenance.json": "e3f2d7e2a2647e5a8b8c7a29da4a6115bcaa1f1979d6d7071ae0370ff2f3abb5",
+    "source_data/regularized_test_summary.json": "218996311a639af89650ec7cdaeacc06fa83b878cb4d6904f766ede475c32613",
+    "source_data/regularized_training.csv": "de80ecb9bb4cb438723a5db71eba3ff4a495595b43af7bafa4498df9a59475dd",
+    "source_data/regularized_validation_summary.json": "716fcd08b11c9278318fae3cd059a3e35a519054a68f29a5a1ad3cfa785f14b8",
+    "source_data/training_statistics.json": "c37a2857e3807596c74b5f9a3660f9a027fcf7c796969d8da768a8f3a40f32a0"
+  },
+  "plotting_source_sha256": "9f9a10618df6eefebf4b14a8961e7c7a98d44877c43f89daafb5f44dc39a267e",
+  "pdf_sha256": "5f26ba3d58cdcca49b80cd3ad137b11d8811bf05bca13463b23cd1369eb2218c",
+  "png_sha256": "79d7d364bf5c4fd2d934353c9af6a5cd6a1f80c184a10e9af284c0aaf1d77952",
+  "checks": "33 passed; real source hashes; disjoint patient sets; paired EF arithmetic; PDF font and collision; rendered alignment; PNG visual review"
+}

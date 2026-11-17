@@ -1,5 +1,7 @@
 # 结果分析图：设计、复现和证据边界
 
+新增的过拟合处理对照见 [诊断报告](../reports/result_analysis/overfitting/DIAGNOSIS.md) 和 [训练曲线 PDF](../reports/result_analysis/overfitting/training_comparison.pdf)。新实验使用训练期同步增广、权重衰减和验证早停，最低验证 BCE 下降约 4.5%；分割略有改善，但 EF 不同参考口径的结果并不一致。下文原图集仍对应其原始冻结实验，不混入新模型指标。
+
 本次图件分析固定使用 `runs/camus_cuda_progress` 的已完成测试输出及匹配的 `checkpoints/camus_cuda_progress` 训练记录。选用依据是已完成实验及权重摘要一致性，不根据测试分数选模型。历史 `reports/full_baseline` 是另一轮实验，不混合两轮指标，也不重新训练或改变测试阈值。
 
 ## 绘图前的证据设计

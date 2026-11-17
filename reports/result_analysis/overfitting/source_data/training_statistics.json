@@ -1,0 +1,19 @@
+{
+  "baseline": {
+    "best_epoch": 7,
+    "epochs_completed": 30,
+    "best_val_bce": 0.037530166717867054,
+    "train_bce_at_best_epoch": 0.02985673195457664,
+    "last_train_bce": 0.018293654155414337,
+    "last_val_bce": 0.04588166541523404
+  },
+  "regularized": {
+    "best_epoch": 17,
+    "epochs_completed": 23,
+    "best_val_bce": 0.035835905517968863,
+    "train_bce_at_best_epoch": 0.02979912259883579,
+    "last_train_bce": 0.027947867792313813,
+    "last_val_bce": 0.036155324118832745
+  },
+  "relative_best_val_bce_reduction": 0.045143982776170266
+}

@@ -14,7 +14,8 @@ from .callbacks import BatchProgress, BestCheckpoint, TrainingLogger, timestamp,
 
 def train(train_path, val_path, output, epochs=30, batch=8, lr=1e-4, seed=2026,
           weights=None, device='cuda', max_cases=None, model_config=None,
-          adapter='camus', early_stopping_patience=None, min_delta=0.0):
+          adapter='camus', early_stopping_patience=None, min_delta=0.0,
+          weight_decay=1e-4, augmentation=None):
     """只读取训练、验证清单；训练集统计归一化，验证损失选择最佳轮次。
 
     计时覆盖数据读取、模型初始化、优化、验证和保存。保留 best.pt、
@@ -28,6 +29,8 @@ def train(train_path, val_path, output, epochs=30, batch=8, lr=1e-4, seed=2026,
         raise ValueError('epochs 和 batch 必须为正整数。')
     if not np.isfinite(lr) or lr <= 0:
         raise ValueError('学习率必须为有限正数。')
+    if not np.isfinite(weight_decay) or weight_decay < 0:
+        raise ValueError('weight_decay 必须为有限非负数。')
     started_at, started = timestamp(), time.perf_counter()
     output = Path(output)
     output.mkdir(parents=True, exist_ok=True)
@@ -50,7 +53,7 @@ def train(train_path, val_path, output, epochs=30, batch=8, lr=1e-4, seed=2026,
         raise ValueError('患者级划分错误：训练集和验证集存在同一患者。')
 
     log(f'开始加载数据；device={device}，epochs={epochs}，batch_size={batch}。')
-    training = build_dataset(train_adapter, train_cases, 'Load train')
+    training = build_dataset(train_adapter, train_cases, 'Load train', augmentation)
     validation = build_dataset(val_adapter, val_cases, 'Load val')
     # 只从训练帧计算统计量；验证集复用相同值。
     mean = [float(training.frames.mean())] * 3
@@ -66,12 +69,13 @@ def train(train_path, val_path, output, epochs=30, batch=8, lr=1e-4, seed=2026,
     else:
         model = (build_model(model_config) if model_config is not None else build_model()).to(device)
     # 保持既有基线的 AdamW + 均值 BCE；不是上游 SGD + 求和 BCE 的严格复现。
-    optimizer = torch.optim.AdamW(model.parameters(), lr=lr, weight_decay=0)
+    optimizer = torch.optim.AdamW(model.parameters(), lr=lr, weight_decay=weight_decay)
     run = {
         **provenance(), 'model': 'echonet_deeplabv3_resnet50_one_logit',
         'model_config': model_config, 'adapter': adapter, 'mean': mean, 'std': std,
         'normalization_unit': 'uint8_0_255', 'epochs': epochs, 'batch_size': batch,
-        'lr': lr, 'seed': seed, 'optimizer': 'AdamW', 'loss': 'mean_BCE',
+        'lr': lr, 'weight_decay': weight_decay, 'augmentation': augmentation,
+        'seed': seed, 'optimizer': 'AdamW', 'loss': 'mean_BCE',
         'BN': 'frozen_running_statistics',
         'reproduction_scope': 'EchoNet_architecture_CAMUS_training_adaptation_not_exact_paper_reproduction',
         'train_patients': sorted(train_patients), 'val_patients': sorted(val_patients),
