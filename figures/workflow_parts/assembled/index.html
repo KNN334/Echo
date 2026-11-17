@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>项目技术路线图 · 三阶段审阅</title>
+<style>
+body { margin: 0; color: #20303e; background: #f5f5f1; font: 16px/1.7 'Microsoft YaHei UI', sans-serif; }
+main { max-width: 1120px; margin: auto; padding: 32px 22px 60px; }
+h1 { font-size: 27px; margin: 0 0 8px; } h2 { font-size: 21px; margin-bottom: 10px; }
+p { margin: 8px 0 18px; } a { color: #236c72; text-underline-offset: 4px; }
+nav { display: flex; flex-wrap: wrap; gap: 10px; margin: 22px 0; }
+button { cursor: pointer; font: inherit; color: inherit; padding: 9px 16px; border: 1px solid #b9c7c6; border-radius: 5px; background: white; }
+button[aria-selected=true] { background: #e6efec; border-color: #238b80; }
+.paper { background: white; border: 1px solid #d7dedb; padding: 12px; }
+.paper img { display: block; width: 100%; height: auto; }
+.files { display: flex; flex-wrap: wrap; gap: 24px; margin-bottom: 16px; }
+.note { font-size: 14px; } [hidden] { display: none; }
+</style>
+</head>
+<body><main>
+<h1>参考图 → 布局规划 → 项目总图</h1>
+<p>沿用浅色阶段分区、虚线分组、图形化网络与几何表达。当前显示内容替换后的总图，点击阶段可对照修改过程。</p>
+<nav role="tablist" aria-label="图件阶段">
+<button role="tab" id="t-ref" aria-controls="ref" aria-selected="false" onclick="show('ref')">① 参考图矢量重建</button>
+<button role="tab" id="t-layout" aria-controls="layout" aria-selected="false" onclick="show('layout')">② 项目布局草案</button>
+<button role="tab" id="t-project" aria-controls="project" aria-selected="true" onclick="show('project')">③ 项目内容总图</button>
+</nav>
+<section id="ref" role="tabpanel" aria-labelledby="t-ref" hidden>
+<h2>用户参考图的矢量结构重建</h2>
+<p class="note">主要标题、标签、分组、图形和连线可编辑。影像、结果图表及细小结构来自原图裁片的量化矢量描摹，缩略图内部小字为路径，不恢复医学影像或曲线原始数据。原图来源与再发布许可尚未提供，仅供个人版式研究。</p>
+<div class="files"><a href="01_reference_vector.svg">矢量 SVG</a><a href="01_reference_vector.pdf">矢量 PDF</a><a href="assets/reference.png">原始参考图</a></div>
+<div class="paper"><img src="01_reference_vector.svg" alt="参考图矢量结构重建"></div>
+</section>
+<section id="layout" role="tabpanel" aria-labelledby="t-layout" hidden>
+<h2>先固定分区、模块和流向</h2>
+<p class="note">前三层展开数据、分割、几何主线；底部左侧安排功能与参考分层，右侧为贴片待验证扩展。总图没有引入原图的肿瘤、多组学或生存分析内容。</p>
+<div class="files"><a href="02_project_layout.svg">布局 SVG</a><a href="02_project_layout.pdf">布局 PDF</a><a href="PLAN.md">规划与图注</a></div>
+<div class="paper"><img src="02_project_layout.svg" alt="项目五区布局草案"></div>
+</section>
+<section id="project" role="tabpanel" aria-labelledby="t-project">
+<h2>项目内容总图 · 作者审阅稿</h2>
+<p class="note">固定验证病例 patient0008，使用已有缓存与保存的预测。当前 CAMUS 基线与贴片扩展分开；人工关键点和独立临床参考缺失时保留空值及原因。数据署名：Leclerc et al., IEEE TMI (2019)，CC BY-NC-SA 4.0。</p>
+<div class="files"><a href="03_project_workflow.svg">可编辑 SVG</a><a href="03_project_workflow.pdf">论文排版 PDF</a><a href="03_project_workflow.png">300 dpi PNG</a><a href="PLAN.md">布局、图注与来源</a></div>
+<div class="paper"><img src="03_project_workflow.svg" alt="CAMUS 左室分割、几何容积、功能评价与贴片连续监测扩展流程图"></div>
+</section>
+<p class="note">SVG 的文字保持可编辑，缩略图为灰度量化后的路径，不是整张 PNG 封装。图件说明研究方法与计划，不表示已完成临床验证。</p>
+</main>
+<script>
+function show(id) {
+  for (const key of ['ref', 'layout', 'project']) {
+    document.getElementById(key).hidden = key !== id;
+    document.getElementById('t-' + key).setAttribute('aria-selected', String(key === id));
+  }
+}
+</script>
+</body></html>

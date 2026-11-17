@@ -1,0 +1,83 @@
+{
+  "01_reference_vector": {
+    "svg": {
+      "auditable": true,
+      "width_mm": 183.0,
+      "text_count": 96,
+      "minimum_found_pt": 6.021091113610799,
+      "maximum_found_pt": 9.417604049493814,
+      "thresholds": {
+        "min_pt": 5,
+        "max_pt": 12,
+        "max_width_mm": 183
+      },
+      "findings": [],
+      "verdict": "PASS"
+    },
+    "pdf_text": {
+      "auditable": true,
+      "minimum_required_pt": 5,
+      "minimum_found_pt": 6.022694529286904,
+      "text_run_count": 44,
+      "below_minimum_count": 0,
+      "below_minimum": [],
+      "warnings": []
+    },
+    "svg_sha256": "8b2c139a1cccd47a8aeef19a6104bcd95704d2ac47ab7fba1f1adc70cd288cca",
+    "pdf_sha256": "1d789a56ea7d82741a6ddd19fa2236c63937feeee5069ab7befd27dd658cdd0e"
+  },
+  "02_project_layout": {
+    "svg": {
+      "auditable": true,
+      "width_mm": 183.0,
+      "text_count": 41,
+      "minimum_found_pt": 6.021091113610799,
+      "maximum_found_pt": 11.193053993250846,
+      "thresholds": {
+        "min_pt": 5,
+        "max_pt": 12,
+        "max_width_mm": 183
+      },
+      "findings": [],
+      "verdict": "PASS"
+    },
+    "pdf_text": {
+      "auditable": true,
+      "minimum_required_pt": 5,
+      "minimum_found_pt": 6.022694529286904,
+      "text_run_count": 5,
+      "below_minimum_count": 0,
+      "below_minimum": [],
+      "warnings": []
+    },
+    "svg_sha256": "8948e693f6078a3ffa87f12ffee8a5d16afa57852fbded6f4e8f136b9d2e40b1",
+    "pdf_sha256": "f5bfcb102efdde070faa783a3b9b1101ad5d1141d51475529816d09b6d638e11"
+  },
+  "03_project_workflow": {
+    "svg": {
+      "auditable": true,
+      "width_mm": 183.0,
+      "text_count": 109,
+      "minimum_found_pt": 6.021091113610799,
+      "maximum_found_pt": 11.193053993250846,
+      "thresholds": {
+        "min_pt": 5,
+        "max_pt": 12,
+        "max_width_mm": 183
+      },
+      "findings": [],
+      "verdict": "PASS"
+    },
+    "pdf_text": {
+      "auditable": true,
+      "minimum_required_pt": 5,
+      "minimum_found_pt": 6.022694529286904,
+      "text_run_count": 50,
+      "below_minimum_count": 0,
+      "below_minimum": [],
+      "warnings": []
+    },
+    "svg_sha256": "cc6dc624d199836939bdac1595efdd999a0a648899bbe5f4ed13fecfe5cfe94c",
+    "pdf_sha256": "a8bcc783067ad37cdb0d58c8f48edb924ca59c35cb776aaff5c3419139f54ec1"
+  }
+}

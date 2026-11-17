@@ -1,0 +1,77 @@
+{
+  "01_reference_vector": {
+    "auditable": true,
+    "verdict": "PASS",
+    "page_count": 1,
+    "visible_text_box_count": 96,
+    "text_trace_count": 0,
+    "stroke_path_count": 191,
+    "filled_region_count": 0,
+    "image_region_count": 0,
+    "summary": {
+      "fail": 0,
+      "warn": 0,
+      "contained_fill_overlays": 0,
+      "contained_image_overlays": 0
+    },
+    "thresholds": {
+      "text_inset_pt": 0.6,
+      "min_overlap_ratio": 0.05,
+      "clipping_tolerance_pt": 0.5
+    },
+    "findings": [],
+    "scope": "measured_native_text_and_untransformed_straight_SVG_connectors_not_full_PDF_geometry",
+    "svg_sha256": "8b2c139a1cccd47a8aeef19a6104bcd95704d2ac47ab7fba1f1adc70cd288cca",
+    "pdf_sha256": "1d789a56ea7d82741a6ddd19fa2236c63937feeee5069ab7befd27dd658cdd0e"
+  },
+  "02_project_layout": {
+    "auditable": true,
+    "verdict": "PASS",
+    "page_count": 1,
+    "visible_text_box_count": 41,
+    "text_trace_count": 0,
+    "stroke_path_count": 4,
+    "filled_region_count": 0,
+    "image_region_count": 0,
+    "summary": {
+      "fail": 0,
+      "warn": 0,
+      "contained_fill_overlays": 0,
+      "contained_image_overlays": 0
+    },
+    "thresholds": {
+      "text_inset_pt": 0.6,
+      "min_overlap_ratio": 0.05,
+      "clipping_tolerance_pt": 0.5
+    },
+    "findings": [],
+    "scope": "measured_native_text_and_untransformed_straight_SVG_connectors_not_full_PDF_geometry",
+    "svg_sha256": "8948e693f6078a3ffa87f12ffee8a5d16afa57852fbded6f4e8f136b9d2e40b1",
+    "pdf_sha256": "f5bfcb102efdde070faa783a3b9b1101ad5d1141d51475529816d09b6d638e11"
+  },
+  "03_project_workflow": {
+    "auditable": true,
+    "verdict": "PASS",
+    "page_count": 1,
+    "visible_text_box_count": 109,
+    "text_trace_count": 0,
+    "stroke_path_count": 131,
+    "filled_region_count": 0,
+    "image_region_count": 0,
+    "summary": {
+      "fail": 0,
+      "warn": 0,
+      "contained_fill_overlays": 0,
+      "contained_image_overlays": 0
+    },
+    "thresholds": {
+      "text_inset_pt": 0.6,
+      "min_overlap_ratio": 0.05,
+      "clipping_tolerance_pt": 0.5
+    },
+    "findings": [],
+    "scope": "measured_native_text_and_untransformed_straight_SVG_connectors_not_full_PDF_geometry",
+    "svg_sha256": "cc6dc624d199836939bdac1595efdd999a0a648899bbe5f4ed13fecfe5cfe94c",
+    "pdf_sha256": "a8bcc783067ad37cdb0d58c8f48edb924ca59c35cb776aaff5c3419139f54ec1"
+  }
+}

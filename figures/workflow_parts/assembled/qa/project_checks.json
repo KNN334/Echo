@@ -1,0 +1,7 @@
+{
+  "date": "2026-11-17",
+  "command": ".venv/Scripts/python.exe -m pytest -q",
+  "result": "33 passed",
+  "duration_seconds": 11.69,
+  "scope": "project regression checks, not new patient experiments or clinical validation"
+}

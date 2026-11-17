@@ -1,0 +1,51 @@
+{
+  "date": "2026-11-17",
+  "scope": "vector_workflow_artifacts_only_not_new_experiments",
+  "reference_reuse": "traced_only_in_01_reference_vector_style_only_in_project_figure",
+  "reference_source": "user_supplied_image_original_publication_and_license_not_provided",
+  "project_examples": {
+    "patient": "patient0008",
+    "split": "val",
+    "selection": "fixed_previous_example_not_selected_by_test_metrics"
+  },
+  "patient_counts": {
+    "train": 347,
+    "val": 71,
+    "test": 82
+  },
+  "sequences": 1000,
+  "labeled_frames": 2000,
+  "thumbnail_transformation": "display_quantization_and_run_length_vector_paths_not_measurement_input",
+  "clinical_validation": false,
+  "author_scientific_review": "pending",
+  "input_sha256": {
+    "figures/workflow_parts/assembled/assets/reference.png": "3e9e948c5c75eb63efb77901479fd672e11b469732ee6d3425ca3e0ea7f3e9ee",
+    "configs/camus_splits.json": "85975e0ce238ae244f4b04e432914779feeb153e05c6deb27448aeae87a22cdf",
+    "configs/experiment.yaml": "47e38b93fc21e4123b15d5bcbfdbe646fb437888ab38dff5ef49738517644169",
+    "configs/train/baseline.yaml": "f0146d2a822b17c1f82fc5ba4de9d919b0be746eac60666b8cfe1126605c0512",
+    "data/processed/camus/manifest.json": "e8603f1862c321c0ece99bbfb34c530e3512ff78ee1b2484c615fcafb08445a6",
+    "data/processed/camus/patient0008_2CH.npz": "547c0ea4b42c5f5c3d46d5fd7af51084752307791d3d761a37d4d415f2aab55b",
+    "data/processed/camus/patient0008_2CH.json": "36a91be2a90529c1e6f01dc684782b5697f238ceaae5dfa50f9e14570f4eae0c",
+    "runs/validation_camus_regularized/patient0008_2CH_pred.npz": "0b815ed39561d80f8abb44aef89c8e9e5a7528c1a7407d56a3b6dc48e85d1125",
+    "data/processed/camus/patient0008_4CH.npz": "ce05b95b101e7efce3227de6c6d72f0045cefa85234993cf9ce6c5da2cdd5dbb",
+    "data/processed/camus/patient0008_4CH.json": "2ebcec5b7055d9acc31cbab6cf71cb25bfc44719c6ee40626cfb224ee25e87ec",
+    "runs/validation_camus_regularized/patient0008_4CH_pred.npz": "f2ef4c4298cbd57b0f8ea3782092a37ea4657b26c5f94085d02c04a11db19a73"
+  },
+  "exports": {
+    "01_reference_vector": {
+      "checks": "PASS",
+      "native_text_elements": 96,
+      "raster_image_elements": 0
+    },
+    "02_project_layout": {
+      "checks": "PASS",
+      "native_text_elements": 41,
+      "raster_image_elements": 0
+    },
+    "03_project_workflow": {
+      "checks": "PASS",
+      "native_text_elements": 109,
+      "raster_image_elements": 0
+    }
+  }
+}
