@@ -5,9 +5,10 @@
 ## 首次准备
 
 1. 在 PyCharm 打开项目根目录，确认解释器为项目 `.venv/Scripts/python.exe`。
-2. 将已处理的数据包解压到 `data/processed/camus/`。目录中应有 `manifest.json`、每个病例的 `.npz` 数组和 `.json` 元数据。
-3. 打开 `configs/experiment.yaml`。它会合并 `configs/model/`、`configs/data/` 和 `configs/train/` 中列出的 YAML 文件。到 `configs/data/camus.yaml` 确认 `dataset` 指向数据目录，期望患者数为 500。
-4. 运行 `scripts/prepare_data.py`。它核查数据完整性、原始标签、坐标变换和时间记录，然后按固定患者清单写出三个子集清单。
+2. 运行“00 检查实验环境”。输出应显示 `is_project_venv: true`、PyTorch 版本和 CUDA 状态；训练、评价与绘图入口会拒绝使用其他解释器。
+3. 将已处理的数据包解压到 `data/processed/camus/`。目录中应有 `manifest.json`、每个病例的 `.npz` 数组和 `.json` 元数据。
+4. 打开 `configs/experiment.yaml`。它会合并 `configs/model/`、`configs/data/` 和 `configs/train/` 中列出的 YAML 文件。到 `configs/data/camus.yaml` 确认 `dataset` 指向数据目录，期望患者数为 500。
+5. 运行 `scripts/prepare_data.py`。它核查数据完整性、原始标签、坐标变换和时间记录，然后按固定患者清单写出三个子集清单。
 
 如果没有初始化权重，可以在训练配置中将 `initial_weights` 设为 `null` 从头训练；已有 EchoNet 权重时将其放在 `checkpoints/` 并填写路径。此训练权重不属于数据下载流程。
 
@@ -17,7 +18,7 @@
 2. 右键同目录的 `train.py`，选择“运行”。它只读 `train.json` 与 `val.json`，用验证损失选模。控制台显示带时间戳的进度、速度、耗时及剩余时间。
 3. 右键同目录的 `evaluate.py`，选择“运行”。它只读 `test.json` 和训练好的 `best.pt`，导出最终结果。
 
-也可以从右上角运行配置依次选择“01 数据读取与固定患者划分”“02 训练模型”“03 测试与生成结果”。已更新的配置指向 `scripts/`。如果 PyCharm 仍显示旧配置，进入“运行 → 编辑配置”，将脚本路径改成上述新路径。
+也可以从右上角运行配置依次选择“00 检查实验环境”“01 数据读取与固定患者划分”“02 训练模型”“03 测试与生成结果”。这些配置都使用项目 `.venv`，并启用解释器校验。已更新的配置指向 `scripts/`。如果 PyCharm 仍显示旧配置，进入“运行 → 编辑配置”，将脚本路径改成上述新路径，并选择项目 `.venv`。
 
 PyCharm 自动创建的运行配置需将工作目录设为项目根目录，解释器使用项目虚拟环境。也可以直接在 PyCharm 终端依次运行：
 
@@ -45,6 +46,8 @@ PyCharm 自动创建的运行配置需将工作目录设为项目根目录，解
 
 数据路径在 `configs/data/camus.yaml`，训练轮数/批大小在 `configs/train/baseline.yaml`。如果将训练输出改为 `checkpoints/experiment_02`，同时将测试权重改为 `checkpoints/experiment_02/best.pt`，测试输出改为 `runs/experiment_02`。目录中已有内容时请使用新名称；程序不会覆盖旧实验。
 
+本次配置使用 `camus_regularized_v2`，保留原来的 `camus_regularized` 记录。命令行或右键启动脚本也会校验 `.venv`，无需额外设置环境变量。日志副本默认对应 `checkpoints/<实验名>` 下的训练；自定义到其他位置时，日志仍保存在该训练输出目录。
+
 prepare 写出的清单只包含病例路径索引和溯源信息，不会复制数据数组。三个阶段分工如下：
 
 ```text
@@ -63,6 +66,7 @@ scripts/prepare_data.py ──按患者固定划分──> train.json / val.json
 
 - `scripts/prepare_data.py` 输出 `data/processed/camus/splits/{train,val,test}.json` 及本次数据审计记录。
 - `scripts/train.py` 输出 `best.pt`、`run.json`、`training.csv`、`training.log` 和完整合并配置快照。归一化仅来自训练集；验证集用于选模及可选早停。
+- 训练日志另存于 `reports/training/<实验名>/`，包含可直接查看的 `training_log.txt`、每轮损失与耗时 `training.csv`、运行环境/参数 `run.json` 和完成记录。当前代码更新前的 `camus_regularized` 23 轮实验也已归档；旧记录未保存完整 Python 环境信息，不能据此补推版本。
 - `scripts/evaluate.py` 输出分割掩膜、逐帧特征、Dice、边界距离、关键点误差、功能参数及 MAE 汇总和 `report.html`。运行结束后可在浏览器打开该 HTML。
 - 新训练或测试结果必须使用新的输出目录。程序会拒绝覆盖已经存在内容的目录。
 - 绝对容积需要空间标定。没有可靠完整周期或来源明确的心率时，CO 保持空值；没有人工关键点标签时，人工关键点误差保持空值。

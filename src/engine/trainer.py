@@ -8,6 +8,7 @@ from ..models.build import build_model, load_checkpoint
 from ..models.losses import segmentation_loss
 from ..utils.hash import provenance, sha256
 from ..utils.io import write_json, write_csv
+from ..utils.runtime import runtime_metadata
 from ..utils.seed import seed_everything
 from .callbacks import BatchProgress, BestCheckpoint, TrainingLogger, timestamp, duration
 
@@ -15,7 +16,7 @@ from .callbacks import BatchProgress, BestCheckpoint, TrainingLogger, timestamp,
 def train(train_path, val_path, output, epochs=30, batch=8, lr=1e-4, seed=2026,
           weights=None, device='cuda', max_cases=None, model_config=None,
           adapter='camus', early_stopping_patience=None, min_delta=0.0,
-          weight_decay=1e-4, augmentation=None):
+          weight_decay=1e-4, augmentation=None, report_output=None):
     """只读取训练、验证清单；训练集统计归一化，验证损失选择最佳轮次。
 
     计时覆盖数据读取、模型初始化、优化、验证和保存。保留 best.pt、
@@ -34,7 +35,10 @@ def train(train_path, val_path, output, epochs=30, batch=8, lr=1e-4, seed=2026,
     started_at, started = timestamp(), time.perf_counter()
     output = Path(output)
     output.mkdir(parents=True, exist_ok=True)
-    log = TrainingLogger(output)
+    report_output = Path(report_output) if report_output is not None else None
+    if report_output is not None:
+        report_output.mkdir(parents=True, exist_ok=True)
+    log = TrainingLogger(output, report_output)
     selector = BestCheckpoint(output / 'best.pt', early_stopping_patience, min_delta)
     seed_everything(seed)
 
@@ -87,6 +91,7 @@ def train(train_path, val_path, output, epochs=30, batch=8, lr=1e-4, seed=2026,
         'initial_weights_sha256': sha256(weights) if weights else None,
         'experiment_type': 'smoke_training_not_final' if max_cases else 'training',
         'torch_version': torch.__version__, 'device': device, 'started_at': started_at,
+        'runtime': runtime_metadata(include_cuda=True),
         'early_stopping_patience': early_stopping_patience, 'min_delta': min_delta,
         'timing_scope': 'wall_clock_including_data_loading_model_initialization_and_checkpoint_io',
     }
@@ -95,6 +100,12 @@ def train(train_path, val_path, output, epochs=30, batch=8, lr=1e-4, seed=2026,
         for source, rows in ((train_adapter, train_cases), (val_adapter, val_cases)) for row in rows
     }
     write_json(output / 'run.json', run)
+    if report_output is not None:
+        write_json(report_output / 'run.json', run)
+    log(f'运行环境：Python {run["runtime"]["python"]["version"]}，'
+        f'解释器 {run["runtime"]["python"]["executable"]}，'
+        f'项目 .venv={run["runtime"]["python"]["is_project_venv"]}，'
+        f'PyTorch {torch.__version__}，device={device}。')
     log(f'模型就绪，准备耗时 {duration(time.perf_counter() - started)}。'
         '进度条 ETA 为当前阶段估计；整次训练 ETA 在首轮完成后显示。')
     history = []
@@ -144,6 +155,8 @@ def train(train_path, val_path, output, epochs=30, batch=8, lr=1e-4, seed=2026,
                    val_frames_per_second=len(validation) / max(val_progress.seconds, 1e-9))
         history.append(row)
         write_csv(output / 'training.csv', history)
+        if report_output is not None:
+            write_csv(report_output / 'training.csv', history)
         log(f'Epoch {epoch + 1}/{epochs} 完成 ({(epoch + 1) / epochs:.1%})；'
             f'train_bce={row["train_bce"]:.6f}，val_bce={row["val_bce"]:.6f}；'
             f'本轮 {duration(row["epoch_seconds"])}，累计 {duration(elapsed)}，'
@@ -152,5 +165,19 @@ def train(train_path, val_path, output, epochs=30, batch=8, lr=1e-4, seed=2026,
         if should_stop:
             log(f'验证损失连续 {selector.bad_epochs} 轮未达到改善阈值，提前停止。')
             break
-    log(f'训练完成，累计 {duration(time.perf_counter() - started)}；最佳验证 BCE={selector.best:.6f}。')
+    best_row = min(history, key=lambda row: row['val_bce'])
+    run.update(
+        epochs_completed=len(history), best_epoch=best_row['epoch'],
+        best_validation_bce=selector.best, stopped_early=len(history) < epochs,
+    )
+    write_json(output / 'run.json', run)
+    completed = {'epochs_completed': len(history), 'best_epoch': best_row['epoch'],
+                 'best_validation_bce': selector.best, 'stopped_early': len(history) < epochs,
+                 'best_weights': str(output / 'best.pt')}
+    write_json(output / 'completed.json', completed)
+    if report_output is not None:
+        write_json(report_output / 'run.json', run)
+        write_json(report_output / 'completed.json', completed)
+    log(f'训练完成，累计 {duration(time.perf_counter() - started)}；'
+        f'最佳验证 BCE={selector.best:.6f}（第 {best_row["epoch"]} 轮）。')
     return history

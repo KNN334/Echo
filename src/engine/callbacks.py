@@ -8,8 +8,9 @@ from pathlib import Path
 class TrainingLogger:
     """控制台和日志文件使用同一时间戳，进度条仅显示在控制台。"""
 
-    def __init__(self, output):
+    def __init__(self, output, report_output=None):
         self.path = Path(output) / 'training.log'
+        self.report_path = Path(report_output) / 'training_log.txt' if report_output else None
 
     def __call__(self, message):
         from tqdm import tqdm
@@ -17,6 +18,9 @@ class TrainingLogger:
         tqdm.write(line, file=sys.stdout)
         with self.path.open('a', encoding='utf-8') as stream:
             stream.write(line + '\n')
+        if self.report_path is not None:
+            with self.report_path.open('a', encoding='utf-8') as stream:
+                stream.write(line + '\n')
 
 
 class BestCheckpoint:

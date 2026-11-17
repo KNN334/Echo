@@ -7,9 +7,11 @@ if __package__ in (None, ''):
     sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from src.config.paths import project_path
+from src.utils.runtime import require_project_venv
 
 
 def main(argv=None):
+    require_project_venv()
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--results', default='runs/camus_cuda_progress', help='同一轮评估输出目录')
     parser.add_argument('--training', default='checkpoints/camus_cuda_progress', help='匹配的训练目录，包含 best.pt/run.json/training.csv')

@@ -7,12 +7,12 @@ defaults:
 
 train:
   # 每次正式实验使用新的名称，避免覆盖已有权重。
-  output: checkpoints/camus_regularized
+  output: checkpoints/camus_regularized_v2
   initial_weights: checkpoints/echonet_official.pt  # null 表示从头训练
 
 test:
-  weights: checkpoints/camus_regularized/best.pt
-  output: runs/camus_regularized
+  weights: checkpoints/camus_regularized_v2/best.pt
+  output: runs/camus_regularized_v2
   device: auto
   cpu_threads: 2
   temporal: false  # CAMUS 半周期不能拼成完整心搏

@@ -11,10 +11,12 @@ from src.config.paths import project_path
 from src.data.prepare import validate_split_inputs
 from src.utils.device import select_device
 from src.utils.run import require_new_output, record_stage
+from src.utils.runtime import require_project_venv
 
 
 def main(argv=None):
     """独立完成最终测试和结果导出；不会训练模型或自动选择最佳权重。"""
+    require_project_venv()
     config, path = load_experiment('固定测试集评估及结果生成', argv)
     data, options = config['data'], config['test']
     print('阶段 3：固定测试集评估与报告生成', flush=True)

@@ -11,10 +11,12 @@ from src.config.loader import load_experiment
 from src.config.paths import project_path
 from src.data.prepare import prepare_split_manifests, validate_prepared
 from src.utils.run import record_stage
+from src.utils.runtime import require_project_venv
 
 
 def main(argv=None):
     """只读取 data.dataset 指定的处理后数据，不下载原始数据或执行影像预处理。"""
+    require_project_venv()
     config, config_path = load_experiment('处理后数据读取与患者级划分', argv)
     data = config['data']
     print('阶段 1：读取处理后数据并划分训练/验证/测试集', flush=True)

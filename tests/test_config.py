@@ -55,6 +55,11 @@ def test_three_stage_scripts_from_yaml(tmp_path, monkeypatch):
     from src.models import build
     from src.utils import hash as hash_utils
 
+    # 本测试在 CI 的核心依赖环境中使用小型模拟数据；实际入口的解释器保护单独测试。
+    for name in ('prepare_data', 'train', 'evaluate'):
+        module = __import__('scripts.' + name, fromlist=['require_project_venv'])
+        monkeypatch.setattr(module, 'require_project_venv', lambda: None)
+
     class TinySegmentation(torch.nn.Module):
         def __init__(self):
             super().__init__()
@@ -119,6 +124,7 @@ def test_three_stage_scripts_from_yaml(tmp_path, monkeypatch):
     assert (tmp_path / 'results' / 'report.html').is_file()
     snapshot = read_json(tmp_path / 'checkpoints' / 'experiment.json')
     assert snapshot['config']['data']['adapter'] == 'prepared'
+    assert 'best_validation_bce' in read_json(tmp_path / 'checkpoints' / 'completed.json')
     checkpoint = torch.load(tmp_path / 'checkpoints' / 'best.pt', weights_only=False)
     assert checkpoint['model_config']['name'] == 'deeplabv3_resnet50'
     assert checkpoint['run']['train_patients'] == ['patient0000']

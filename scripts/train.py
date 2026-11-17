@@ -5,16 +5,17 @@ import sys
 if __package__ in (None, ""):
     sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from src.utils.io import write_json
 from src.config.loader import load_experiment
 from src.config.paths import project_path
 from src.data.prepare import validate_split_inputs
 from src.utils.device import select_device
 from src.utils.run import require_new_output, record_stage
+from src.utils.runtime import require_project_venv
 
 
 def main(argv=None):
     """独立训练和验证；不执行预处理，不计算最终测试指标。"""
+    require_project_venv()
     config, path = load_experiment('处理后数据集分割模型训练', argv)
     data, options = config['data'], config['train']
     print('阶段 2：模型训练与验证', flush=True)
@@ -31,6 +32,14 @@ def main(argv=None):
         raise FileNotFoundError(f'缺少初始化权重：{initial}。请先运行 scripts/download_weights.py。')
     output = project_path(options['output'])
     require_new_output(output)
+    checkpoint_root = project_path('checkpoints').resolve()
+    try:
+        experiment_name = output.resolve().relative_to(checkpoint_root)
+    except ValueError:
+        report_output = None
+    else:
+        report_output = project_path('reports/training') / experiment_name
+        require_new_output(report_output)
     device = select_device(options['device'], options['cpu_threads'])
     print(f'患者划分：{summary["patient_splits"]}，训练 {epochs} 轮，批大小 {batch}。', flush=True)
     print('仅训练集参与参数更新和归一化；验证集选择模型；测试集不参与调参。', flush=True)
@@ -42,9 +51,11 @@ def main(argv=None):
                     model_config=config['model'], adapter=data['adapter'],
                     early_stopping_patience=options['early_stopping_patience'],
                     min_delta=options['min_delta'], weight_decay=options['weight_decay'],
-                    augmentation=options['augmentation'])
-    write_json(output / 'completed.json', {'epochs_completed': len(history), 'best_weights': str(output / 'best.pt')})
-    print(f'训练结束。最佳模型：{output / "best.pt"}\n损失记录：{output / "training.csv"}', flush=True)
+                    augmentation=options['augmentation'], report_output=report_output)
+    print(f'训练结束。最佳模型：{output / "best.pt"}\n'
+          f'训练日志：{output / "training.log"}\n损失记录：{output / "training.csv"}', flush=True)
+    if report_output is not None:
+        print(f'项目内日志副本：{report_output}', flush=True)
     print('下一步：运行scripts/evaluate.py。', flush=True)
     return history
 

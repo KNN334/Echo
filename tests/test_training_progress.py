@@ -107,9 +107,11 @@ def test_training_logs_timings_preserves_selection_and_never_reads_test(tmp_path
         return dataset
 
     monkeypatch.setattr(model, 'build_dataset', capture_dataset)
+    report_output = tmp_path / 'training_report'
     history = model.train(root / 'train_input.json', root / 'val_input.json',
                           output, epochs=2, batch=2, device='cpu',
-                          weight_decay=1e-4, augmentation=augmentation)
+                          weight_decay=1e-4, augmentation=augmentation,
+                          report_output=report_output)
     assert len(history) == 2
     training, validation = datasets
     assert training.augmentation == augmentation and validation.augmentation is None
@@ -118,6 +120,8 @@ def test_training_logs_timings_preserves_selection_and_never_reads_test(tmp_path
     assert torch.equal(validation[0][0], validation[0][0])
     run = read_json(output / 'run.json')
     assert run['weight_decay'] == 1e-4 and run['augmentation'] == augmentation
+    assert run['runtime']['python']['version']
+    assert run['runtime']['packages']['torch'] == torch.__version__
     for row in history:
         assert datetime.fromisoformat(row['started_at']).tzinfo is not None
         assert datetime.fromisoformat(row['finished_at']) >= datetime.fromisoformat(row['started_at'])
@@ -131,7 +135,16 @@ def test_training_logs_timings_preserves_selection_and_never_reads_test(tmp_path
     assert read_json(output / 'run.json')['train_patients'] == ['train']
     assert read_json(output / 'run.json')['val_patients'] == ['val']
     assert (output / 'training.csv').is_file()
+    assert (report_output / 'training.csv').read_bytes() == (output / 'training.csv').read_bytes()
+    assert (report_output / 'run.json').read_bytes() == (output / 'run.json').read_bytes()
+    assert (report_output / 'completed.json').read_bytes() == (output / 'completed.json').read_bytes()
+    assert '运行环境：Python' in (report_output / 'training_log.txt').read_text(encoding='utf-8')
     log = (output / 'training.log').read_text(encoding='utf-8')
+    assert (report_output / 'training_log.txt').read_text(encoding='utf-8') == log
+    completed = read_json(output / 'completed.json')
+    assert completed['best_epoch'] == checkpoint['epoch']
+    assert completed['best_validation_bce'] == min(row['val_bce'] for row in history)
+    assert completed['epochs_completed'] == len(history) and not completed['stopped_early']
     assert 'Epoch 2/2' in log and 'img/s' in log
     shown = capsys.readouterr().out
     assert 'Train' in shown and 'Val' in shown and '3/3' in shown and '2/2' in shown

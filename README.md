@@ -12,6 +12,12 @@
 
 详细步骤见 [PyCharm 三阶段运行指南](docs/pycharm_run.md)。默认配置是支持注释的 `configs/experiment.yaml`，按 `defaults` 合并模型、数据和训练组件。本次实验的配置可覆盖组件默认值；路径始终相对于项目根目录。
 
+## 训练日志与环境
+
+数据准备、训练、测试与绘图入口统一校验项目 `.venv`；可先在 PyCharm 运行“00 检查实验环境”。训练中每轮更新 `reports/training/<实验名>/` 下的 `training_log.txt` 和 `training.csv`；`run.json` 记录参数与 Python/依赖/CUDA 信息，结束时生成 `completed.json`，保存最佳轮次等完成信息。
+
+已有正则化实验的 [训练日志](reports/training/camus_regularized/training_log.txt)、[逐轮损失](reports/training/camus_regularized/training.csv) 和 [归档说明](reports/training/camus_regularized/ARCHIVE.md) 可直接查看；旧实验没有保存完整环境信息。
+
 ## 结果分析图
 
 已保存实验的 10 组结果图见 [离线图集](reports/result_analysis/camus_cuda_progress/index.html)、[全部图件 PDF](reports/result_analysis/camus_cuda_progress/all_figures.pdf) 和 [中文解读](reports/result_analysis/camus_cuda_progress/RESULTS_ANALYSIS.md)。图集使用同一轮冻结实验，分别展示同法轮廓参考与 CAMUS 报告 EF；不把半周期推理称为完整心搏或半监督训练。
@@ -33,7 +39,9 @@ Echo/
 │       └── tests.yml
 │           # 安装核心测试依赖并运行 pytest；缺少可选依赖的测试会跳过
 ├── .run/
-│   # PyCharm 三阶段与结果绘图运行配置；首次使用需选择本机解释器
+│   # PyCharm 环境核查、三阶段与结果绘图配置；统一使用项目 .venv
+│   ├── CheckEnvironment.run.xml
+│   │   # 启动环境检查：核对项目 .venv、依赖版本和 CUDA
 │   ├── PlotResults.run.xml
 │   │   # 分析已保存实验并生成结果图，不重新训练或测试选模
 │   ├── Prepare.run.xml
@@ -103,7 +111,7 @@ Echo/
 │   └── render_method_flow.py
 │       # 从 SVG 导出保留文字的矢量 PDF 和 300 dpi 预览
 ├── reports/
-│   # 已完成历史基线结果及审计；不代表当前代码已重新训练
+│   # 历史基线结果、训练日志与审计；不代表当前代码已重新训练
 │   ├── full_baseline/
 │   │   # 历史完整基线的汇总指标、患者特征和训练记录
 │   │   ├── patient_features.csv
@@ -118,6 +126,8 @@ Echo/
 │   │       # 历史训练参数、患者划分、归一化和运行溯源
 │   ├── result_analysis/
 │   │   # 实测结果图集、中文解读、源数据及图件检查；内容由绘图入口生成
+│   ├── training/
+│   │   # 逐实验训练日志、每轮损失、运行环境与完成记录；内容由训练入口生成
 │   ├── input_equivalence.json
 │   │   # 历史本地输入与处理后发布数据包的一致性审计
 │   ├── release_artifacts.json
@@ -134,6 +144,8 @@ Echo/
 │   # 可直接在 PyCharm 运行的薄入口及辅助工具
 │   ├── __init__.py
 │   │   # Python 包初始化与模块说明，无需单独运行
+│   ├── check_environment.py
+│   │   # 核对 PyCharm 是否使用项目 .venv，并报告依赖版本与 CUDA 状态
 │   ├── download_weights.py
 │   │   # 可选下载 EchoNet 初始化权重并核查摘要，不下载数据集
 │   ├── evaluate.py
@@ -248,6 +260,8 @@ Echo/
 │   │   │   # 按实际文件生成带功能注释的目录树并检查 README 一致性
 │   │   ├── run.py
 │   │   │   # 保护已有输出目录，保存阶段配置与数据检查快照
+│   │   ├── runtime.py
+│   │   │   # 记录 Python/依赖/CUDA 版本并校验项目虚拟环境
 │   │   └── seed.py
 │   │       # 设置 Python、NumPy、PyTorch/CUDA 随机种子
 │   ├── visualization/
@@ -286,6 +300,8 @@ Echo/
 │   │   # 检查 README 目录树与实际文件一致、文档本地链接有效
 │   ├── test_result_analysis.py
 │   │   # 检查实验混用、患者泄漏、参考来源、缺失值及配对统计保护
+│   ├── test_runtime.py
+│   │   # 检查运行环境元数据和项目虚拟环境守卫
 │   └── test_training_progress.py
 │       # 检查训练进度/吞吐量记录、验证选模及早停
 ├── vendor/
