@@ -12,6 +12,8 @@
 
 详细步骤见 [PyCharm 三阶段运行指南](docs/pycharm_run.md)。默认配置是支持注释的 `configs/experiment.yaml`，按 `defaults` 合并模型、数据和训练组件。本次实验的配置可覆盖组件默认值；路径始终相对于项目根目录。
 
+贴片采集、波束合成与当前 CAMUS 主链的衔接见 [更新后的全项目流程](docs/patch_acquisition_workflow.md)：说明通道 RF/IQ、已合成 IQ 与图像/视频分别从哪里接入，以及空间/时间标定、无标签推理、模型适配和连续心功能评价的条件。贴片成像及部署接口仍待接入，不能将现有 CAMUS 基线写成已完成贴片验证。
+
 ## 训练日志与环境
 
 数据准备、训练、测试与绘图入口统一校验项目 `.venv`；可先在 PyCharm 运行“00 检查实验环境”。训练中每轮更新 `reports/training/<实验名>/` 下的 `training_log.txt` 和 `training.csv`；`run.json` 记录参数与 Python/依赖/CUDA 信息，结束时生成 `completed.json`，保存最佳轮次等完成信息。
@@ -92,6 +94,8 @@ Echo/
 │   │   # 数据到结果表格的全链路、流程图、公式和逐文件讲解
 │   ├── measurement_protocol.md
 │   │   # 空间/时间标定、坐标恢复、指标与参考值的计算口径
+│   ├── patch_acquisition_workflow.md
+│   │   # 贴片 RF/IQ 到超声成像、模型接入与连续心功能分析的条件流程
 │   ├── pycharm_run.md
 │   │   # PyCharm 环境确认、三个入口运行和配置修改步骤
 │   └── result_analysis.md

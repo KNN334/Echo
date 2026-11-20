@@ -2,6 +2,8 @@
 
 本文依据当前 `src/` 模块源码和本地处理后数据清单编写。阅读顺序为：任务目标 → 数据来源 → 预处理 → 数据划分 → 训练 → 测试 → 指标 → 结果文件 → 逐文件索引。这里说明代码实际执行的行为，未接入的接口和历史结果会明确标识。完整实际文件树以 README 的自动生成区块为准。
 
+贴片采集与波束合成的新增全项目流程见 [贴片回波到心功能参数](patch_acquisition_workflow.md)。本文的 CAMUS 主链从已经成像的图像开始；贴片原始 RF/通道 IQ 需要在其前端增加成像，而已合成 IQ、B-mode 应按各自数据层级接入。当前仓库尚未实现贴片波束合成及完整无标签部署入口。
+
 ## 1. 这个项目究竟在做什么
 
 项目输入是心尖切面的二维超声心动图序列。当前实际训练任务是：给定一帧灰度超声图，预测每一个像素是否属于左心室腔。网络输出的是左室分割概率图，并不直接输出 EDV、ESV、EF。
@@ -204,7 +206,7 @@ y' = (y - y0 + 0.5) * sy - 0.5
 
 `loader` 使用 safe_load，检查顶层映射、关键字段、患者数和循环引用，同时记录四份 YAML 文件的 SHA256。每个阶段保存合并后的完整配置；虽然输入变成 YAML，输出 `experiment.json` 仍是结果目录里的 JSON 快照，两者用途不同。
 
-当前默认训练设置：30 轮、batch=8、学习率 0.0001、种子 2026、device=auto、CPU线程=2、关闭早停；初始化使用 `checkpoints/echonet_official.pt`。网络配置只允许当前的 DeepLabV3、3 输入通道和 1 输出通道，填写其他模型名会报错。
+当前默认训练设置：最多 30 轮、batch=8、学习率 0.0001、种子 2026、device=auto、CPU线程=2；启用训练图像/标签同步增强、AdamW 权重衰减 0.0001，早停 patience=6、min_delta=0.0002。初始化使用 `checkpoints/echonet_official.pt`，当前输出名为 `camus_regularized_v2`。实验入口统一校验 PyCharm 的项目 `.venv`，日志及环境记录另存到 `reports/training/<实验名>/`。网络配置只允许当前的 DeepLabV3、3 输入通道和 1 输出通道，填写其他模型名会报错。
 
 ## 6. 阶段一：prepare_data.py
 
@@ -244,7 +246,7 @@ trainer 通过 `build_adapter` 创建 CAMUS 或通用 prepared 适配器，从�
 
 `AnnotatedFrameDataset` 逐病例读取数组，只留下 `frames[labeled]` 与 `masks[labeled]`，将所有监督帧加载进内存。当前训练有 1388 帧，验证有 284 帧。它满足 DataLoader 的长度/取样接口，不需要依赖原始 CAMUS 文件名。
 
-`DataLoader` 训练 shuffle=True，验证 shuffle=False，num_workers=0。没有在当前代码中做随机翻转、弹性变形等数据增强，也没有类别平衡采样。
+`DataLoader` 训练 shuffle=True，验证 shuffle=False，num_workers=0。当前仅训练样本启用图像/标签同步的旋转、平移、缩放和图像强度增强，验证样本不增强。没有实现随机翻转、弹性变形或类别平衡采样。
 
 ### 7.3 归一化与网络形状
 
@@ -268,7 +270,7 @@ DeepLabV3 的 ResNet50 提取二维图像特征，空洞空间金字塔聚合不
 
 损失是 `binary_cross_entropy_with_logits`：将 sigmoid 与二元交叉熵合并成数值稳定实现。每个像素有专家标签 y 和预测概率 p，概念公式为 `-[y*log(p)+(1-y)*log(1-p)]`，当前对批次/像素取均值。没有 Dice loss、加权 BCE 或多任务 EF loss。
 
-每个训练 batch 执行：取监督帧 → 标准化 → 放到设备 → 清梯度 → 前向输出 logits → 计算 BCE → backward 反传 → AdamW 更新。AdamW 的 weight_decay=0，学习率保持固定，当前没有学习率调度器、混合精度或梯度累积。
+每个训练 batch 执行：取监督帧 → 仅训练样本同步增强 → 标准化 → 放到设备 → 清梯度 → 前向输出 logits → 计算 BCE → backward 反传 → AdamW 更新。当前 AdamW 的 weight_decay=0.0001，学习率保持固定，没有学习率调度器、混合精度或梯度累积。
 
 每轮开始 model.train，但把 BatchNorm 的运行统计层改成 eval：冻结 running mean/variance，保留 BN 的可学习缩放/偏移参数参与梯度。这是对小批量训练的既有适配。
 
@@ -280,7 +282,7 @@ DeepLabV3 的 ResNet50 提取二维图像特征，空洞空间金字塔聚合不
 
 验证使用 model.eval + inference_mode，不反传、不更新权重。`val_bce` 最低的轮次保存为 best.pt，测试集不选模型。当前 epoch loss 是各 batch loss 的简单平均，尾批与完整批权重相同，不能精确称为按总像素加权的全数据损失。
 
-`BestCheckpoint` 始终保存实际最小验证损失。可选 patience/min_delta 控制多少轮没有达到指定改善后提前停止；默认 null 不早停。即使某次小改善不足 min_delta，只要是实际最小值仍会保存。
+`BestCheckpoint` 始终保存实际最小验证损失。patience/min_delta 控制多少轮没有达到指定改善后提前停止；当前配置为 6 轮和 0.0002，设为 null 才关闭早停。即使某次小改善不足 min_delta，只要是实际最小值仍会保存。
 
 `TrainingLogger` 写带时区时间戳的控制台/文本日志。`BatchProgress` 显示 epoch、训练/验证阶段、已完成批次、百分比、loss、平均 loss、秒/批、img/s、ETA；末批按实际帧数计数。读取 loss.item() 会等待本批 GPU 工作完成后统计。整次 ETA 基于已完成轮次估计，不是预先保证的完成时间。
 
@@ -289,11 +291,11 @@ DeepLabV3 的 ResNet50 提取二维图像特征，空洞空间金字塔聚合不
 | 文件 | 内容 |
 |---|---|
 | `experiment.json` | 合并配置、YAML摘要、阶段与数据检查记录 |
-| `run.json` | 代码提交/dirty、模型、患者与病例列表、训练参数、归一化、输入/初始化摘要、设备和时间 |
+| `run.json` | 代码提交/dirty、模型、患者与病例列表、训练参数、归一化、输入/初始化摘要、解释器/依赖/CUDA、时间与最终选模信息 |
 | `training.csv` | 逐轮训练/验证 BCE、时间戳、阶段耗时、轮耗时、累计/预计剩余时间、吞吐量 |
 | `training.log` | 可阅读的带时间戳过程文本 |
 | `best.pt` | 最佳模型 state_dict、选中轮次、模型配置、mean/std 和 run 来源 |
-| `completed.json` | 入口成功结束后记录完成轮数和最佳权重位置 |
+| `completed.json` | 训练成功结束后记录完成轮数、最佳轮次/验证损失、早停状态和最佳权重位置 |
 
 best.pt 没有保存优化器状态和随机数状态，所以不能当作完整中断续训快照。`load_checkpoint` 用 weights_only=False 兼容可信旧检查点，并移除 DataParallel 的 module. 前缀，严格核对参数；它只适合加载可信来源的文件。
 
