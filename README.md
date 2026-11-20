@@ -24,7 +24,7 @@
 
 ## 结果分析图
 
-本轮投稿图表规划见 [图表制作清单](figure_plan.md)、[结果资产盘点](figures/planning/result_assets.md) 和 [六篇同行论文逐图逐表拆解](figures/planning/literature_breakdown.md)。正文 4 图、2 表及补充候选、[全局样式](style/README.md) 和 [真实数据样式测试页](figures/style_test/style_test.pdf) 已确认。第一批 [Fig.1 数据与方法框架](figures/fig_01_data_workflow/fig_01_data_workflow.pdf) 和 [Fig.2 分割验证](figures/fig_02_segmentation_validation/fig_02_segmentation_validation.pdf) 已制作并附源数据、英文图注及检查，等待本批反馈。所有验证仍限定于公开 CAMUS 半周期，不能表述为贴片连续佩戴实测。
+本轮投稿图表规划见 [图表制作清单](figure_plan.md)、[结果资产盘点](figures/planning/result_assets.md) 和 [六篇同行论文逐图逐表拆解](figures/planning/literature_breakdown.md)。正文4图2表及补充候选、[全局样式](style/README.md) 和 [真实数据样式测试页](figures/style_test/style_test.pdf) 已确认。第一批 [Fig.1 数据与方法框架](figures/fig_01_data_workflow/fig_01_data_workflow.pdf) 和 [Fig.2 分割验证](figures/fig_02_segmentation_validation/fig_02_segmentation_validation.pdf) 已获用户确认。第二批 [Fig.3 功能一致性](figures/fig_03_function_agreement/fig_03_function_agreement.pdf) 和 [Fig.4 半周期容积轨迹](figures/fig_04_half_sequence/fig_04_half_sequence.pdf) 已制作，附源数据、英文图注及检查，等待本批反馈；两张表尚未制作。所有验证仍限定于公开CAMUS半周期，功能图保留当前几何与时序局限，不能表述为贴片连续佩戴实测或独立临床容积准确性。
 
 [2026-11-21结果自检](reports/result_integrity/camus_cuda_progress_20261121/report.md)：328标注帧分割指标与490行功能结果均可复算；发现代理长轴/基底导致的几何范围不一致、EF偏倚抵消和逐帧跳变风险。功能主图需先复核几何定义；原冻结结果保持不变。
 
@@ -107,9 +107,13 @@ Echo/
 ├── figures/
 │   # 论文图表规划、方法流程图、可编辑源稿和导出预览
 │   ├── fig_01_data_workflow/
-│   │   # 第一批Fig.1：队列与方法框架、PDF/600dpi位图、源数据、英文图注与检查；待本批反馈
+│   │   # 已确认的Fig.1：队列与方法框架、PDF/600dpi位图、源数据、英文图注与检查
 │   ├── fig_02_segmentation_validation/
-│   │   # 第一批Fig.2：全患者分布及固定排名ED/ES病例、源数据、英文图注与检查；待本批反馈
+│   │   # 已确认的Fig.2：全患者分布及固定排名ED/ES病例、源数据、英文图注与检查
+│   ├── fig_03_function_agreement/
+│   │   # 第二批Fig.3：同法容积与CAMUS标签EF散点/BA、配对源数据、图注与检查；待反馈
+│   ├── fig_04_half_sequence/
+│   │   # 第二批Fig.4：四固定病例真实ED–ES半序列轨迹、端点源数据、图注与检查；待反馈
 │   ├── planning/
 │   │   # 结果资产盘点、同行逐图逐表拆解与图表规划的可复核材料
 │   │   ├── asset_inventory.json
@@ -144,6 +148,10 @@ Echo/
 │   │   # 从冻结CAMUS队列与实际配置重建Fig.1数据和方法框架，不重新训练或推理
 │   ├── fig_02_segmentation_validation.py
 │   │   # 从全部82位测试患者和固定排名病例重建Fig.2，复核8帧轮廓指标
+│   ├── fig_03_function_agreement.py
+│   │   # 从冻结患者级配对重建Fig.3散点和Bland–Altman，分开参考口径并保留全部误差
+│   ├── fig_04_half_sequence.py
+│   │   # 重建Fig.4固定病例原始半序列容积及两个专家端点，不平滑或补造完整周期
 │   ├── method_flow_caption.md
 │   │   # 流程图图注、核心主张和实现假设
 │   ├── method_flow_export_check.json

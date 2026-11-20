@@ -1,0 +1,9 @@
+case_id,phase,frame,time_s,prediction_ml,expert_same_geometry_ml,reference_scope
+patient0229_2CH,ED,0,0.0,116.24696720955954,84.25137259903795,same_geometry_from_expert_ED_ES_contours
+patient0229_2CH,ES,17,0.3008849557522124,37.9536945052279,3.048778476172472,same_geometry_from_expert_ED_ES_contours
+patient0189_4CH,ED,0,0.0,77.16224318156186,67.01986963108153,same_geometry_from_expert_ED_ES_contours
+patient0189_4CH,ES,23,0.40707964601769914,19.379594748865113,15.088688653859995,same_geometry_from_expert_ED_ES_contours
+patient0327_2CH,ED,0,0.0,130.13147836213597,127.60535478168264,same_geometry_from_expert_ED_ES_contours
+patient0327_2CH,ES,17,0.2814569536423841,81.89179003861759,47.494620875533144,same_geometry_from_expert_ED_ES_contours
+patient0075_4CH,ED,0,0.0,403.4940625459642,531.8623777178824,same_geometry_from_expert_ED_ES_contours
+patient0075_4CH,ES,15,0.35799522673031026,387.37805016206823,490.1690496570715,same_geometry_from_expert_ED_ES_contours

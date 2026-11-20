@@ -1,0 +1,164 @@
+{
+  "experiment": "camus_cuda_progress",
+  "new_training_or_inference": false,
+  "test_feedback_used_for_model_selection": false,
+  "sources_sha256": {
+    "reports/result_analysis/camus_cuda_progress/source_data/example_selection.csv": "e41f39db9e7cf3ca3c1ebcd7785a3fe2d943f27738f7c77c0103f62772e6daac",
+    "runs/camus_cuda_progress/frames.csv": "e36e516521702c722392b935cd77d7bbb16a6b062f74591a7587539e2c09f174",
+    "runs/camus_cuda_progress/function.csv": "783ecf773c8be25a33546d96d18657d88cefe2a3b1701b08c67d4fa691dfc545",
+    "figures/fig_04_half_sequence.py": "dbc3009ffcad2789191ebc5a322705ccb93931b9b093398c184a13a80e228943",
+    "data/processed/camus/patient0229_2CH.json": "e43f90cc2f1f2c03d91fc7bfbe788b26a527f30f66311c8c4c4ad496b41cf9e8",
+    "runs/camus_cuda_progress/patient0229_2CH_features.json": "eb257eba849fd44e144d9d0857013aac1ca3a9d29ea7b7ab6cb9e290a5cf86ef",
+    "data/processed/camus/patient0189_4CH.json": "8927be5f25f1e8653fe5fb4b4d2af0d1dbe72a59404a2ecb929b7c99b9f644cc",
+    "runs/camus_cuda_progress/patient0189_4CH_features.json": "97e7b739f79093b55cad610fdfe0d94bcae23ddcc1f300a4a29f5c0772ff73f3",
+    "data/processed/camus/patient0327_2CH.json": "477d23b2e3df2be68e124d8309e6f083c49fff51b0d5c259ba5a28f76ee4414a",
+    "runs/camus_cuda_progress/patient0327_2CH_features.json": "8aec897f3e16e18a6cfcc9af619d51807d975ed82b3278924145a1aa8bbd1577",
+    "data/processed/camus/patient0075_4CH.json": "198eed11e1ce132b0339f57a36b60af6bd3b63f25ab8b68e12f8f6ac1081cdbd",
+    "runs/camus_cuda_progress/patient0075_4CH_features.json": "64ea8dd66a0d1a4f853145f1a4d519ac65336e34acbe3dba5e9b834f433fa806",
+    "reports/result_analysis/camus_cuda_progress/analysis_manifest.json": "91dc84c179309d1295ca2f93773fe056c68bdb1d8231339060333d8445cc1af4",
+    "style/palette.py": "9555eb7a32b99b6dad197f574aa76f6842e8e064328c3b55988e71eca651d64c",
+    "style/paper.mplstyle": "95fdfe0e423bead6abb36aa67a94b6e9b76f66845c2eb6feac1c1ee1438dae90",
+    "figures/_paper_common.py": "eb198d3ad330cf9d0252d61b444637fad114e80c0a95fd06778dbcf0ebd6c415"
+  },
+  "existing_frozen_sources_rechecked": [
+    "runs/camus_cuda_progress/frames.csv",
+    "runs/camus_cuda_progress/function.csv",
+    "runs/camus_cuda_progress/patient0229_2CH_features.json",
+    "runs/camus_cuda_progress/patient0189_4CH_features.json",
+    "runs/camus_cuda_progress/patient0327_2CH_features.json",
+    "runs/camus_cuda_progress/patient0075_4CH_features.json"
+  ],
+  "versions": {
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.4",
+    "Pillow": "13.0.0",
+    "cmcrameri": "1.10"
+  },
+  "figure": "Fig.4",
+  "archetype": "quantitative grid",
+  "core_conclusion": "Observed half-sequence estimates expose temporal variation and endpoint mismatch without establishing full-cycle or wearable accuracy.",
+  "panel_roles": {
+    "a": "Lowest-rank failure boundary",
+    "b": "Existing Q1 example",
+    "c": "Existing median example",
+    "d": "Existing Q3 example with high volumes"
+  },
+  "adaptation": "Time-series organization only from Ouyang Fig.2f and Hu Fig.5b; their full-beat claims are not transferred.",
+  "n_patients_total": 4,
+  "n_frames_total": 76,
+  "sample_selection": [
+    {
+      "selection": "Lowest",
+      "rank": "1",
+      "of_cases": "164",
+      "case_id": "patient0229_2CH",
+      "mean_dice": "0.6770097649127448"
+    },
+    {
+      "selection": "Q1",
+      "rank": "42",
+      "of_cases": "164",
+      "case_id": "patient0189_4CH",
+      "mean_dice": "0.8978078369146713"
+    },
+    {
+      "selection": "Median",
+      "rank": "83",
+      "of_cases": "164",
+      "case_id": "patient0327_2CH",
+      "mean_dice": "0.9206268860792544"
+    },
+    {
+      "selection": "Q3",
+      "rank": "123",
+      "of_cases": "164",
+      "case_id": "patient0075_4CH",
+      "mean_dice": "0.9384686939546771"
+    }
+  ],
+  "statistical_unit": "One patient/view per panel; frames are repeated observations, not independent patients.",
+  "reference": "Two same-geometry expert endpoints only; no reference curve.",
+  "temporal_processing": {
+    "timestamp_source": "derived_from_fps",
+    "smoothing": false,
+    "new_samples": 0,
+    "reflection": false,
+    "concatenation": false,
+    "phase_replacement": false,
+    "invalid_values": "NaN gaps, never joined across missing data",
+    "outside_ED_ES_frames": 0,
+    "HR": null,
+    "CO": null
+  },
+  "axis_ranges": {
+    "x_s": [
+      -0.02,
+      0.45
+    ],
+    "y_ml": [
+      -20,
+      600.0
+    ],
+    "negative_margin": "Display padding so ED and near-zero reference markers are fully visible; no negative observations."
+  },
+  "source_image_panels": "None; the matching real images are already provided in Fig.2.",
+  "curve_statistics": [
+    {
+      "selection": "Lowest",
+      "case_id": "patient0229_2CH",
+      "rank_of_view_sequences": 1,
+      "n_ranked_view_sequences": 164,
+      "n_patients": 1,
+      "n_observed_frames": 18,
+      "n_valid_volumes": 18,
+      "fps": 56.5,
+      "duration_s": 0.3008849557522124,
+      "max_adjacent_relative_volume_change": 0.3066729815136382,
+      "roi_reviewed": false
+    },
+    {
+      "selection": "Q1",
+      "case_id": "patient0189_4CH",
+      "rank_of_view_sequences": 42,
+      "n_ranked_view_sequences": 164,
+      "n_patients": 1,
+      "n_observed_frames": 24,
+      "n_valid_volumes": 24,
+      "fps": 56.5,
+      "duration_s": 0.40707964601769914,
+      "max_adjacent_relative_volume_change": 0.2115572065035195,
+      "roi_reviewed": false
+    },
+    {
+      "selection": "Median",
+      "case_id": "patient0327_2CH",
+      "rank_of_view_sequences": 83,
+      "n_ranked_view_sequences": 164,
+      "n_patients": 1,
+      "n_observed_frames": 18,
+      "n_valid_volumes": 18,
+      "fps": 60.4,
+      "duration_s": 0.2814569536423841,
+      "max_adjacent_relative_volume_change": 0.24854701552045136,
+      "roi_reviewed": false
+    },
+    {
+      "selection": "Q3",
+      "case_id": "patient0075_4CH",
+      "rank_of_view_sequences": 123,
+      "n_ranked_view_sequences": 164,
+      "n_patients": 1,
+      "n_observed_frames": 16,
+      "n_valid_volumes": 16,
+      "fps": 41.9,
+      "duration_s": 0.35799522673031026,
+      "max_adjacent_relative_volume_change": 0.11364271842428347,
+      "roi_reviewed": false
+    }
+  ],
+  "excluded_frames": [],
+  "font_path": "C:\\Windows\\Fonts\\arial.ttf",
+  "width_mm": 183,
+  "height_mm": 170,
+  "external_alignment_auditor_used": true
+}

@@ -1,6 +1,6 @@
-# 心功能结果图表制作清单（样式已确认，阶段 5 第一批待反馈）
+# 心功能结果图表制作清单（第一批已确认，阶段 5 第二批待反馈）
 
-更新日期：2026-11-21。用户已确认正文4图2表、补充候选及 `camus_cuda_progress` 主冻结实验，并选择 **1A/2A/3A/4A/5A**，随后确认样式测试页。当前状态：**阶段 4 已确认；阶段 5 第一批 Fig.1/2 已制作，等待本批反馈。**
+更新日期：2026-11-21。用户已确认正文4图2表、补充候选及 `camus_cuda_progress` 主冻结实验，并选择 **1A/2A/3A/4A/5A**，随后确认样式测试页。用户阅读数据自检后确认Fig.1/2并要求继续。当前状态：**第一批 Fig.1/2 已确认；第二批 Fig.3/4 已制作，等待本批反馈；Table 1/2 尚未制作。**
 
 本清单服务于“基于贴片式超声探头的心脏功能参数连续监测与分析”。当前实证范围是 **CAMUS 公开经胸超声上的 LV 分割及轮廓几何量化基线**。贴片连续佩戴是目标应用，尚无本项目佩戴实测证据。图表可以提高表达与可复核性；当前证据不足以支撑贴片连续监测、独立临床绝对容积验证或新算法全面优于同行的主张。
 
@@ -42,7 +42,7 @@
 | Table 1 | CAMUS 队列、患者划分与参考标签覆盖 | EchoFM Table I；EchoPrime Table 1 | 数据规模、有效参考及证据缺口均有明确分母 | ✅ 数据现成可做 | 正文 / P1，随 Fig.1 首次引用 |
 | Fig.1 | 当前验证数据与 LV 轮廓至心功能参数的分析流程 | Ouyang Fig.1；Hu Fig.5a；EchoPrime Fig.1 | 从公开半周期输入到分层参考评价的完整路径可追溯 | ✅ 数据现成可做 | 正文 / P1 |
 | Fig.2 | 全测试队列的 LV 分割性能及低分与典型病例 | Ouyang Fig.2d/e；Chao Fig.1；EchoFM Fig.4 | 全队列分布与固定排名样例同时显示空间误差及失败边界 | ✅ 数据现成可做 | 正文 / P1 |
-| Fig.3 | 双平面容积同法一致性与对照 CAMUS EF 标签的误差 | Ouyang Fig.2a；Hu Fig.5c；EchoPrime SI Fig.1 | 容积同法参考与 EF 标签验证是不同证据，均保留偏倚与离散程度 | ⚠️ 补算各自配对的 RMSE、r、预测 R²；已有 MAE/bias/LOA/n | 正文 / P1 |
+| Fig.3 | 双平面容积同法一致性与对照 CAMUS EF 标签的误差 | Ouyang Fig.2a；Hu Fig.5c；EchoPrime SI Fig.1 | 容积同法参考与 EF 标签验证是不同证据，均保留偏倚与离散程度 | ✅ 图中三口径配对统计已补齐并核对；当前几何局限保留，见自检 | 正文 / P1 |
 | Table 2 | 按几何法、相位策略与参考来源分层的功能误差 | EchoPrime Table 2；EchoFM Tables IV/V 的分层数值组织 | 不混合不同参考与有效数，完整列出 EDV/ESV/SV/EF 结果 | ⚠️ 补算各组 RMSE、r、预测 R²；ICC 暂不纳入 | 正文 / P1，随 Fig.3 首次引用 |
 | Fig.4 | 从 ED 到 ES 的真实半周期容积轨迹与相位覆盖边界 | Ouyang Fig.2f；Hu Fig.5b 的时序结构，**仅借鉴排布** | 现有数据展示半周期内的逐帧变化，完整逐搏及 CO/HR 尚不可评价 | ✅ 数据现成可做 | 正文 / P1 |
 
@@ -117,7 +117,7 @@ Fig.S3 的训练记录可以展示选模过程，不能把组合增广+weight de
 | 2 模板、补充检索与规律 | 已整理，两篇模板已确认 | 仅引用实际读取到的全文/附件；EchoFM SI保留未知 |
 | 3 清单 | **用户已确认，2026-11-20** | 正文4图2表、补充候选及主实验身份已确认 |
 | 4 视觉主题 | **用户已确认，2026-11-21** | 已选1A/2A/3A/4A/5A；全局样式与真实数据测试页保留 |
-| 5 分批制作 | **第一批 Fig.1/2 完成待反馈** | 已附独立脚本、真实源数据、英文图注、PDF及600 dpi位图；未开始 Fig.3/4 或两张表 |
+| 5 分批制作 | **第一批Fig.1/2已确认；第二批Fig.3/4完成待反馈** | 两批均附独立脚本、真实源数据、英文图注、PDF及600 dpi位图；两张表和补充候选未开始 |
 
 最终尺寸、色系、色带、方法配色及Nature规格已在阶段 4 选定并写入共享样式；新投稿图均调用该样式。
 
@@ -127,7 +127,7 @@ Fig.S3 的训练记录可以展示选模过程，不能把组合增广+weight de
 
 ## 7. 阶段 4：视觉主题选项（用户已选择五项A）
 
-下面保留各选项的说明；用户本轮已选择1A/2A/3A/4A/5A，A方案已写入全局样式，测试页等待确认。使用 Python/Matplotlib。白底，超声保留灰度；二值分割用离散轮廓，连续色带仅用于有来源的连续量。
+下面保留各选项的说明；用户已选择1A/2A/3A/4A/5A并确认测试页，A方案已写入全局样式。使用 Python/Matplotlib。白底，超声保留灰度；二值分割用离散轮廓，连续色带仅用于有来源的连续量。
 
 ### 7.1 主色系
 
@@ -198,8 +198,8 @@ Fig.S3 的训练记录可以展示选模过程，不能把组合增广+weight de
 
 | 图件 | 交付与来源 | 实际制作及检查 | 当前状态 |
 |---|---|---|---|
-| Fig.1 | [PDF](figures/fig_01_data_workflow/fig_01_data_workflow.pdf) · [预览](figures/fig_01_data_workflow/fig_01_data_workflow_preview.png) · [独立脚本](figures/fig_01_data_workflow.py) · [英文图注](figures/fig_01_data_workflow/caption_en.md) · [QA](figures/fig_01_data_workflow/QA.md) | 183×163 mm；a队列与患者划分、b真实配对ED输入、c实际推理/几何链、d参考层级与缺失输出；b使用同患者2CH/4CH ED图作输入示意，ED–ES半序列范围写明。未绘制新的模型结构或贴片数据箭头 | **已制作，待本批反馈** |
-| Fig.2 | [PDF](figures/fig_02_segmentation_validation/fig_02_segmentation_validation.pdf) · [预览](figures/fig_02_segmentation_validation/fig_02_segmentation_validation_preview.png) · [独立脚本](figures/fig_02_segmentation_validation.py) · [英文图注](figures/fig_02_segmentation_validation/caption_en.md) · [QA](figures/fig_02_segmentation_validation/QA.md) | 183×170 mm；全部82位患者均值及328标注帧；下排固定4病例×ED/ES。8幅影像统一270×200 mm视野，保留物理比例、20 mm尺及最低病例ES失败。8帧三项指标从掩膜重算均匹配原CSV | **已制作，待本批反馈** |
+| Fig.1 | [PDF](figures/fig_01_data_workflow/fig_01_data_workflow.pdf) · [预览](figures/fig_01_data_workflow/fig_01_data_workflow_preview.png) · [独立脚本](figures/fig_01_data_workflow.py) · [英文图注](figures/fig_01_data_workflow/caption_en.md) · [QA](figures/fig_01_data_workflow/QA.md) | 183×163 mm；a队列与患者划分、b真实配对ED输入、c实际推理/几何链、d参考层级与缺失输出；b使用同患者2CH/4CH ED图作输入示意，ED–ES半序列范围写明。未绘制新的模型结构或贴片数据箭头 | **用户已确认，2026-11-21** |
+| Fig.2 | [PDF](figures/fig_02_segmentation_validation/fig_02_segmentation_validation.pdf) · [预览](figures/fig_02_segmentation_validation/fig_02_segmentation_validation_preview.png) · [独立脚本](figures/fig_02_segmentation_validation.py) · [英文图注](figures/fig_02_segmentation_validation/caption_en.md) · [QA](figures/fig_02_segmentation_validation/QA.md) | 183×170 mm；全部82位患者均值及328标注帧；下排固定4病例×ED/ES。8幅影像统一270×200 mm视野，保留物理比例、20 mm尺及最低病例ES失败。8帧三项指标从掩膜重算均匹配原CSV | **用户已确认，2026-11-21** |
 
 两图输出目录均含同名600 dpi RGB PNG/LZW TIFF、`source_data/`、`provenance.json`、面板对齐与字体/碰撞/色觉检查。英文图注分别225/232词。Fig.2仅新增患者级描述性聚合（四帧均值、跨患者样本SD及分布），没有新增推理、bootstrap、检验或置信区间。完整源文件SHA256保留，既有冻结来源逐一核对匹配。
 
@@ -207,7 +207,7 @@ Fig.S3 的训练记录可以展示选模过程，不能把组合增广+weight de
 
 本批项目规定的核心工程检查：`python -m pytest -q --basetemp=.work/pytest-figures-batch01-20261121`，39项通过（7.28 s）。这只验证工程一致性，不等于新增临床验证。
 
-**【停】等待用户对第一批 Fig.1/2 的反馈；未开始下一批。**
+用户已确认第一批Fig.1/2并要求继续；该停止点已解除，当前停止点见第二批交付。
 
 ## 10. 2026-11-21 数据结果自检（用户追加要求）
 
@@ -217,4 +217,19 @@ Fig.S3 的训练记录可以展示选模过程，不能把组合增广+weight de
 
 专家轮廓同法EF对CAMUS标签本身MAE7.88 pp、bias+7.37 pp；模型对该几何参考bias−5.81 pp，部分抵消后对标签bias+1.56 pp。模型对标签EF MAE9.03 pp、RMSE11.12 pp、r0.663、LOA−20.15～23.28 pp，不能用小bias宣称准确。110/164条半序列至少一处相邻容积变化>20%（探索诊断阈值，不是临床失败定义）；代理轴跳变有明确实例。
 
-**Fig.1/2仍处于本批待反馈；不因本次自检继续下一批。Fig.3与Table 2的临床准确性表述需先收紧，功能图制作前优先复核几何定义；Fig.4不能宣称稳定逐搏/连续佩戴监测。** 不调整旧结果、不选更好看的测试参数；若修几何，先在训练/验证数据确定定义及规则，另立版本并安排独立最终评价。
+自检当时建议先复核几何定义；**随后用户确认Fig.1/2并明确要求继续制图**。本次据此继续如实呈现冻结基线，保留全部已知局限；不把继续制图解释为几何问题已解决。Fig.3/Table 2不能主张独立临床容积准确性，Fig.4不能宣称稳定逐搏/连续佩戴监测。不调整旧结果、不选更好看的测试参数；若修几何，先在训练/验证数据确定定义及规则，另立版本并安排独立最终评价。
+
+## 11. 第二批交付：Fig.3 与 Fig.4
+
+| 图件 | 交付与来源 | 实际制作及检查 | 当前状态 |
+|---|---|---|---|
+| Fig.3 | [PDF](figures/fig_03_function_agreement/fig_03_function_agreement.pdf) · [预览](figures/fig_03_function_agreement/fig_03_function_agreement_preview.png) · [独立脚本](figures/fig_03_function_agreement.py) · [英文图注](figures/fig_03_function_agreement/caption_en.md) · [QA](figures/fig_03_function_agreement/QA.md) | 183×170 mm；2×3散点/BA，EDV/ESV同法轮廓参考与CAMUS标签EF分开；每列82患者，无剔除；原始配对、MAE/r/bias/LOA逐项复核，RMSE及两种R²定义另存源表。明确当前几何覆盖范围问题，未修改模型/几何/预测 | **已制作，待本批反馈** |
+| Fig.4 | [PDF](figures/fig_04_half_sequence/fig_04_half_sequence.pdf) · [预览](figures/fig_04_half_sequence/fig_04_half_sequence_preview.png) · [独立脚本](figures/fig_04_half_sequence.py) · [英文图注](figures/fig_04_half_sequence/caption_en.md) · [QA](figures/fig_04_half_sequence/QA.md) | 183×170 mm；2×2固定病例，共4患者76帧；统一时间/容积范围，全部有效原始帧与2个专家端点；原始跳变、不一致和高容积病例均保留；仅画到各自ES，不补造完整心搏、不画CO/HR | **已制作，待本批反馈** |
+
+两图均含PDF、600 dpi RGB PNG/LZW TIFF、`source_data/`、`provenance.json`及字体/尺寸/面板对齐/碰撞/色觉检查。英文图注分别232/235词。实际嵌入Arial最小7 pt，1.5 pt面板对齐通过；最终PDF碰撞两图均0 FAIL/0 WARN。单文件静态扫描无法追踪共享样式/导出，原始提示保留，实际文件核实详见QA，不声称静态扫描全通过。
+
+本批核心工程检查：`python -m pytest -q --basetemp=.work/pytest-figures-batch02-20261121`，39项通过（7.88 s）。四张正文图全部已记录来源哈希继续匹配；未改第一批图件或原始冻结结果。
+
+正文四张图均已制作，其中Fig.1/2已确认、Fig.3/4待确认；Table 1、Table 2及补充候选仍待后续分批。所有功能图继续限定为现有工程基线，不等于已修复几何问题或完成临床验证。
+
+**【停】等待用户审阅第二批Fig.3/4，收到反馈后再继续下一批。**

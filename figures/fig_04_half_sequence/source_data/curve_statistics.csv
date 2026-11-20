@@ -1,0 +1,5 @@
+selection,case_id,rank_of_view_sequences,n_ranked_view_sequences,n_patients,n_observed_frames,n_valid_volumes,fps,duration_s,max_adjacent_relative_volume_change,roi_reviewed
+Lowest,patient0229_2CH,1,164,1,18,18,56.5,0.3008849557522124,0.3066729815136382,False
+Q1,patient0189_4CH,42,164,1,24,24,56.5,0.40707964601769914,0.2115572065035195,False
+Median,patient0327_2CH,83,164,1,18,18,60.4,0.2814569536423841,0.24854701552045136,False
+Q3,patient0075_4CH,123,164,1,16,16,41.9,0.35799522673031026,0.11364271842428347,False

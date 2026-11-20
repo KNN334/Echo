@@ -13,8 +13,10 @@ RUNTIME_DIRECTORIES = {
     'runs': '本地实验结果，Git 忽略',
 }
 GENERATED_DIRECTORIES = {
-    'figures/fig_01_data_workflow': '第一批Fig.1：队列与方法框架、PDF/600dpi位图、源数据、英文图注与检查；待本批反馈',
-    'figures/fig_02_segmentation_validation': '第一批Fig.2：全患者分布及固定排名ED/ES病例、源数据、英文图注与检查；待本批反馈',
+    'figures/fig_01_data_workflow': '已确认的Fig.1：队列与方法框架、PDF/600dpi位图、源数据、英文图注与检查',
+    'figures/fig_02_segmentation_validation': '已确认的Fig.2：全患者分布及固定排名ED/ES病例、源数据、英文图注与检查',
+    'figures/fig_03_function_agreement': '第二批Fig.3：同法容积与CAMUS标签EF散点/BA、配对源数据、图注与检查；待反馈',
+    'figures/fig_04_half_sequence': '第二批Fig.4：四固定病例真实ED–ES半序列轨迹、端点源数据、图注与检查；待反馈',
     'figures/style_test': '已确认的全局样式测试页、真实源数据、英文图注及字体/排版/色觉检查',
     'figures/workflow_parts': '当前项目流程图规划、独立零件及审阅图集；总图待讨论后组装',
     'reports/result_analysis': '实测结果图集、中文解读、源数据及图件检查；内容由绘图入口生成',
@@ -61,6 +63,8 @@ DESCRIPTIONS = {
     'figures/_paper_common.py': '新投稿图共用的源数据溯源、物理坐标叠图、毫米排版及面板对齐检查',
     'figures/fig_01_data_workflow.py': '从冻结CAMUS队列与实际配置重建Fig.1数据和方法框架，不重新训练或推理',
     'figures/fig_02_segmentation_validation.py': '从全部82位测试患者和固定排名病例重建Fig.2，复核8帧轮廓指标',
+    'figures/fig_03_function_agreement.py': '从冻结患者级配对重建Fig.3散点和Bland–Altman，分开参考口径并保留全部误差',
+    'figures/fig_04_half_sequence.py': '重建Fig.4固定病例原始半序列容积及两个专家端点，不平滑或补造完整周期',
     'figures/style_test.py': '从冻结CAMUS结果重建样式测试页；使用共享样式，不重训或重选病例',
     'figures/planning': '结果资产盘点、同行逐图逐表拆解与图表规划的可复核材料',
     'figures/planning/audit_assets.py': '只读核查缓存、患者划分和冻结源文件，不重训或重选模型',
