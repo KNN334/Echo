@@ -18,6 +18,7 @@ GENERATED_DIRECTORIES = {
     'figures/style_test': '已确认的全局样式测试页、真实源数据、英文图注及字体/排版/色觉检查',
     'figures/workflow_parts': '当前项目流程图规划、独立零件及审阅图集；总图待讨论后组装',
     'reports/result_analysis': '实测结果图集、中文解读、源数据及图件检查；内容由绘图入口生成',
+    'reports/result_integrity': '冻结结果全量复算、几何/EF偏倚/时序风险自检报告及逐项诊断数据；不改写原结果',
     'reports/training': '逐实验训练日志、每轮损失、运行环境与完成记录；内容由训练入口生成',
 }
 ENVIRONMENT_DIRECTORIES = {
@@ -63,6 +64,7 @@ DESCRIPTIONS = {
     'figures/style_test.py': '从冻结CAMUS结果重建样式测试页；使用共享样式，不重训或重选病例',
     'figures/planning': '结果资产盘点、同行逐图逐表拆解与图表规划的可复核材料',
     'figures/planning/audit_assets.py': '只读核查缓存、患者划分和冻结源文件，不重训或重选模型',
+    'figures/planning/audit_results.py': '重算全部测试标注帧与功能算术，审计代理几何覆盖和时序风险，不改冻结结果',
     'figures/planning/asset_inventory.json': '缓存规模、空间时间范围、冻结来源校验与现有实验清单',
     'figures/planning/result_assets.md': '输出资产、分辨率、实验和已算/待算/不可算指标的中文清单',
     'figures/planning/literature_catalog.json': '六篇已读论文逐图表结构、原始图注和来源校验记录',

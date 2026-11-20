@@ -26,6 +26,8 @@
 
 本轮投稿图表规划见 [图表制作清单](figure_plan.md)、[结果资产盘点](figures/planning/result_assets.md) 和 [六篇同行论文逐图逐表拆解](figures/planning/literature_breakdown.md)。正文 4 图、2 表及补充候选、[全局样式](style/README.md) 和 [真实数据样式测试页](figures/style_test/style_test.pdf) 已确认。第一批 [Fig.1 数据与方法框架](figures/fig_01_data_workflow/fig_01_data_workflow.pdf) 和 [Fig.2 分割验证](figures/fig_02_segmentation_validation/fig_02_segmentation_validation.pdf) 已制作并附源数据、英文图注及检查，等待本批反馈。所有验证仍限定于公开 CAMUS 半周期，不能表述为贴片连续佩戴实测。
 
+[2026-11-21结果自检](reports/result_integrity/camus_cuda_progress_20261121/report.md)：328标注帧分割指标与490行功能结果均可复算；发现代理长轴/基底导致的几何范围不一致、EF偏倚抵消和逐帧跳变风险。功能主图需先复核几何定义；原冻结结果保持不变。
+
 已保存实验的 10 组结果图见 [离线图集](reports/result_analysis/camus_cuda_progress/index.html)、[全部图件 PDF](reports/result_analysis/camus_cuda_progress/all_figures.pdf) 和 [中文解读](reports/result_analysis/camus_cuda_progress/RESULTS_ANALYSIS.md)。图集使用同一轮冻结实验，分别展示同法轮廓参考与 CAMUS 报告 EF；不把半周期推理称为完整心搏或半监督训练。
 
 新增 [绘图与复现说明](docs/result_analysis.md) 和 [文献与参考图分析](reports/visualization_literature.md)。运行 `python scripts/plot_results.py` 可重新生成图集；此入口不重新训练模型。
@@ -114,6 +116,8 @@ Echo/
 │   │   │   # 缓存规模、空间时间范围、冻结来源校验与现有实验清单
 │   │   ├── audit_assets.py
 │   │   │   # 只读核查缓存、患者划分和冻结源文件，不重训或重选模型
+│   │   ├── audit_results.py
+│   │   │   # 重算全部测试标注帧与功能算术，审计代理几何覆盖和时序风险，不改冻结结果
 │   │   ├── literature_breakdown.md
 │   │   │   # 两篇模板与四篇近期论文的逐图逐表拆解及共同做法
 │   │   ├── literature_catalog.json
@@ -164,6 +168,8 @@ Echo/
 │   │       # 历史训练参数、患者划分、归一化和运行溯源
 │   ├── result_analysis/
 │   │   # 实测结果图集、中文解读、源数据及图件检查；内容由绘图入口生成
+│   ├── result_integrity/
+│   │   # 冻结结果全量复算、几何/EF偏倚/时序风险自检报告及逐项诊断数据；不改写原结果
 │   ├── training/
 │   │   # 逐实验训练日志、每轮损失、运行环境与完成记录；内容由训练入口生成
 │   ├── input_equivalence.json
