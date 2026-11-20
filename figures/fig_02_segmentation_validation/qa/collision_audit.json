@@ -1,0 +1,72 @@
+{
+  "pdf": "C:\\Users\\LEN\\Desktop\\毕业设计\\毕设-基于贴片式超声探头的心脏功能参数连续监测与分析\\figures\\fig_02_segmentation_validation\\fig_02_segmentation_validation.pdf",
+  "auditable": true,
+  "verdict": "REVIEW REQUIRED",
+  "page_count": 1,
+  "visible_text_box_count": 66,
+  "text_trace_count": 66,
+  "stroke_path_count": 62,
+  "filled_region_count": 273,
+  "image_region_count": 8,
+  "summary": {
+    "fail": 0,
+    "warn": 2,
+    "contained_fill_overlays": 8,
+    "contained_image_overlays": 2
+  },
+  "thresholds": {
+    "text_inset_pt": 0.6,
+    "min_overlap_ratio": 0.05,
+    "clipping_tolerance_pt": 0.5
+  },
+  "findings": [
+    {
+      "severity": "WARN",
+      "kind": "text-image-edge",
+      "page": 1,
+      "message": "Text partially overlaps the edge of 1 raster image(s)",
+      "text": "20 mm",
+      "text_bbox": [
+        103.7481918334961,
+        309.4979553222656,
+        125.12511444091797,
+        316.4979553222656
+      ],
+      "other_text": null,
+      "other_bbox": [
+        37.82929229736328,
+        251.36810302734375,
+        115.2415771484375,
+        315.1410827636719
+      ],
+      "object_count": 1,
+      "object_indexes": [
+        0
+      ]
+    },
+    {
+      "severity": "WARN",
+      "kind": "text-image-edge",
+      "page": 1,
+      "message": "Text partially overlaps the edge of 1 raster image(s)",
+      "text": "20 mm",
+      "text_bbox": [
+        103.7481918334961,
+        417.2145080566406,
+        125.12511444091797,
+        424.2145080566406
+      ],
+      "other_text": null,
+      "other_bbox": [
+        37.82929229736328,
+        359.08465576171875,
+        115.2415771484375,
+        422.8576354980469
+      ],
+      "object_count": 1,
+      "object_indexes": [
+        1
+      ]
+    }
+  ]
+}

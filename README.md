@@ -24,7 +24,7 @@
 
 ## 结果分析图
 
-本轮投稿图表规划见 [图表制作清单](figure_plan.md)、[结果资产盘点](figures/planning/result_assets.md) 和 [六篇同行论文逐图逐表拆解](figures/planning/literature_breakdown.md)。正文 4 图、2 表及补充候选已确认；已按用户选择建立 [全局样式](style/README.md) 和 [真实数据样式测试页](figures/style_test/style_test.pdf)，当前等待样式确认，尚未开始正文分批制图。所有验证仍限定于公开 CAMUS 半周期，不能表述为贴片连续佩戴实测。
+本轮投稿图表规划见 [图表制作清单](figure_plan.md)、[结果资产盘点](figures/planning/result_assets.md) 和 [六篇同行论文逐图逐表拆解](figures/planning/literature_breakdown.md)。正文 4 图、2 表及补充候选、[全局样式](style/README.md) 和 [真实数据样式测试页](figures/style_test/style_test.pdf) 已确认。第一批 [Fig.1 数据与方法框架](figures/fig_01_data_workflow/fig_01_data_workflow.pdf) 和 [Fig.2 分割验证](figures/fig_02_segmentation_validation/fig_02_segmentation_validation.pdf) 已制作并附源数据、英文图注及检查，等待本批反馈。所有验证仍限定于公开 CAMUS 半周期，不能表述为贴片连续佩戴实测。
 
 已保存实验的 10 组结果图见 [离线图集](reports/result_analysis/camus_cuda_progress/index.html)、[全部图件 PDF](reports/result_analysis/camus_cuda_progress/all_figures.pdf) 和 [中文解读](reports/result_analysis/camus_cuda_progress/RESULTS_ANALYSIS.md)。图集使用同一轮冻结实验，分别展示同法轮廓参考与 CAMUS 报告 EF；不把半周期推理称为完整心搏或半监督训练。
 
@@ -104,6 +104,10 @@ Echo/
 │       # 结果图的证据设计、参考图适用范围、导出格式及复现方法
 ├── figures/
 │   # 论文图表规划、方法流程图、可编辑源稿和导出预览
+│   ├── fig_01_data_workflow/
+│   │   # 第一批Fig.1：队列与方法框架、PDF/600dpi位图、源数据、英文图注与检查；待本批反馈
+│   ├── fig_02_segmentation_validation/
+│   │   # 第一批Fig.2：全患者分布及固定排名ED/ES病例、源数据、英文图注与检查；待本批反馈
 │   ├── planning/
 │   │   # 结果资产盘点、同行逐图逐表拆解与图表规划的可复核材料
 │   │   ├── asset_inventory.json
@@ -121,15 +125,21 @@ Echo/
 │   │   └── summarize_literature.py
 │   │       # 从人工核查目录生成拆解表并统计图表数量与论证作用
 │   ├── style_test/
-│   │   # 全局样式测试页、真实源数据、英文图注及字体/排版/色觉检查；等待样式确认
+│   │   # 已确认的全局样式测试页、真实源数据、英文图注及字体/排版/色觉检查
 │   ├── workflow_parts/
 │   │   # 当前项目流程图规划、独立零件及审阅图集；总图待讨论后组装
+│   ├── _paper_common.py
+│   │   # 新投稿图共用的源数据溯源、物理坐标叠图、毫米排版及面板对齐检查
 │   ├── camus_method_flow.pdf
 │   │   # 用于论文排版的矢量版方法流程图
 │   ├── camus_method_flow.png
 │   │   # 由 SVG 源稿生成的流程图预览
 │   ├── camus_method_flow.svg
 │   │   # CAMUS 左室分割与心功能参数估算可编辑流程图
+│   ├── fig_01_data_workflow.py
+│   │   # 从冻结CAMUS队列与实际配置重建Fig.1数据和方法框架，不重新训练或推理
+│   ├── fig_02_segmentation_validation.py
+│   │   # 从全部82位测试患者和固定排名病例重建Fig.2，复核8帧轮廓指标
 │   ├── method_flow_caption.md
 │   │   # 流程图图注、核心主张和实现假设
 │   ├── method_flow_export_check.json
@@ -315,7 +325,7 @@ Echo/
 │   ├── paper.mplstyle
 │   │   # 用户选定的Nature/Arial全局样式：普通文字7pt、600dpi位图
 │   ├── README.md
-│   │   # 全局样式映射、复现方法与当前等待确认状态
+│   │   # 已确认的全局样式映射、期刊尺寸、复现方法及导出约定
 │   └── requirements.txt
 │       # 样式绘图、科学色带和PDF/色觉检查所需依赖
 ├── tests/

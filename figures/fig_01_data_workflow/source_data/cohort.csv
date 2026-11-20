@@ -1,0 +1,4 @@
+split,patients,view_sequences,frames,expert_labeled_frames
+train,347,694,13415,1388
+val,71,142,2650,284
+test,82,164,3167,328

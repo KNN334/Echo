@@ -1,0 +1,143 @@
+{
+  "experiment": "camus_cuda_progress",
+  "new_training_or_inference": false,
+  "test_feedback_used_for_model_selection": false,
+  "sources_sha256": {
+    "data/processed/camus/manifest.json": "e8603f1862c321c0ece99bbfb34c530e3512ff78ee1b2484c615fcafb08445a6",
+    "configs/camus_splits.json": "85975e0ce238ae244f4b04e432914779feeb153e05c6deb27448aeae87a22cdf",
+    "checkpoints/camus_cuda_progress/experiment.json": "fb0c758088cd044b1e5b7f92116a52616891b611f082ee7f1223ac871a19b886",
+    "checkpoints/camus_cuda_progress/training.csv": "d9279e315cc10d805facc230e6285c2e9d5d8e5f4af1153957595f64115a887b",
+    "runs/camus_cuda_progress/function.csv": "783ecf773c8be25a33546d96d18657d88cefe2a3b1701b08c67d4fa691dfc545",
+    "configs/model/deeplabv3_resnet50.yaml": "d74098c0c3c7315e6a46941876a42cda81c54003cbebf98fd9ecffe410b40ed9",
+    "src/data/camus/prepare.py": "3095b21d47eae2cd1e8a265c6b0eeaa2f0e1cd5eadc58220980943f301309aec",
+    "src/data/transforms.py": "7d5d10af714c60710a158d3a297ab499db0a218377dfb046ca345a91b24ccf2e",
+    "src/models/build.py": "412fd350ceb62325e77915b9d57485aef0ea1fc2960c13ce8eb9cc4657f45b6c",
+    "src/models/deeplabv3.py": "8b44f9cebcdc0acc66f50742927e1154b76173cdc09b95a8885c0761c84cf93d",
+    "src/engine/evaluator.py": "8cb7a295a887a8776ffb9f46075e5baff3f62bfac4023d68cf9e15f608fed84f",
+    "src/geometry/mask_features.py": "0b5d0dad4423542d715405a2dfe20f2f600a360bbfd7f03e0caf39b89b0b9323",
+    "src/geometry/volume.py": "199ad3f653132a6bc7693752ff67817d727e64512b8fe65e73fbae56538b5a42",
+    "src/geometry/functional.py": "27f2e3d1dcdc97b8c7fa32acfdbec22a61dc9048c5cfc14a7aad032b3af4d12b",
+    "figures/fig_01_data_workflow.py": "fc8c86762ab7b9f1b0a35f8ef8e66f3af8d1adb308b601f75036dc53f3069065",
+    "data/processed/camus/patient0189_2CH.json": "050fc6d04b698d58f2e4b26dd21f6e85ec4b079f8e0a488fbdadc1bbc07986dc",
+    "data/processed/camus/patient0189_2CH.npz": "6fd4d3a02ab7a132ecb556c7aa1176b331130ef52ac539f7619b83019c0d45c4",
+    "runs/camus_cuda_progress/patient0189_2CH_pred.npz": "62c56c85b5ba2da5ff79a5388053fb7f0b8e2e5a13b49cae24aa0ce91e89c817",
+    "data/processed/camus/patient0189_4CH.json": "8927be5f25f1e8653fe5fb4b4d2af0d1dbe72a59404a2ecb929b7c99b9f644cc",
+    "data/processed/camus/patient0189_4CH.npz": "ed34eefb6cf449613357fe898994896704081b280c60a899d14375b7ad4bdecd",
+    "runs/camus_cuda_progress/patient0189_4CH_pred.npz": "f37bcc4d3dbed2b29a14883911f9573b3d13228500b300f36461b8e3d1254e05",
+    "reports/result_analysis/camus_cuda_progress/analysis_manifest.json": "91dc84c179309d1295ca2f93773fe056c68bdb1d8231339060333d8445cc1af4",
+    "style/palette.py": "9555eb7a32b99b6dad197f574aa76f6842e8e064328c3b55988e71eca651d64c",
+    "style/paper.mplstyle": "95fdfe0e423bead6abb36aa67a94b6e9b76f66845c2eb6feac1c1ee1438dae90",
+    "figures/_paper_common.py": "eb198d3ad330cf9d0252d61b444637fad114e80c0a95fd06778dbcf0ebd6c415"
+  },
+  "existing_frozen_sources_rechecked": [
+    "checkpoints/camus_cuda_progress/training.csv",
+    "runs/camus_cuda_progress/function.csv",
+    "data/processed/camus/patient0189_4CH.npz",
+    "runs/camus_cuda_progress/patient0189_4CH_pred.npz"
+  ],
+  "versions": {
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.4",
+    "Pillow": "13.0.0",
+    "cmcrameri": "1.10"
+  },
+  "figure": "Fig.1",
+  "archetype": "schematic-led composite",
+  "core_conclusion": "The public half-sequence validation workflow and its reference boundaries are traceable.",
+  "panel_roles": {
+    "a": "cohort and independent split",
+    "b": "actual input and preprocessing",
+    "c": "implemented inference and geometry",
+    "d": "reference hierarchy and missing evidence"
+  },
+  "model_selection": "Existing validation-loss checkpoint; epoch 7 of 30; no reselection.",
+  "diagram_edges": "a→b indicates preprocessing; c is the implemented inference chain. No wearable-data arrow.",
+  "input_example_selection": "Existing Q1 patient0189 and paired view; illustrative, not quantitative evidence.",
+  "image_display": [
+    {
+      "case_id": "patient0189_2CH",
+      "phase": "ED",
+      "frame": 0,
+      "source_image_hw": [
+        112,
+        112
+      ],
+      "original_hw": [
+        422,
+        512
+      ],
+      "original_spacing_xy_mm": [
+        0.30799999833106995,
+        0.30799999833106995
+      ],
+      "processed_spacing_xy_mm": [
+        1.4079999923706055,
+        1.16049999371171
+      ],
+      "image_extent_mm": [
+        -0.15399999916553497,
+        157.54199914634228,
+        129.82199929654598,
+        -0.15399999916553497
+      ],
+      "display_field_mm": [
+        200,
+        200
+      ],
+      "extra_crop": null,
+      "interpolation": "none",
+      "image_limits": [
+        0,
+        255
+      ],
+      "brightness_contrast_gamma": "unchanged",
+      "roi_reviewed": false,
+      "contours": null
+    },
+    {
+      "case_id": "patient0189_4CH",
+      "phase": "ED",
+      "frame": 0,
+      "source_image_hw": [
+        112,
+        112
+      ],
+      "original_hw": [
+        422,
+        512
+      ],
+      "original_spacing_xy_mm": [
+        0.30799999833106995,
+        0.30799999833106995
+      ],
+      "processed_spacing_xy_mm": [
+        1.4079999923706055,
+        1.16049999371171
+      ],
+      "image_extent_mm": [
+        -0.15399999916553497,
+        157.54199914634228,
+        129.82199929654598,
+        -0.15399999916553497
+      ],
+      "display_field_mm": [
+        200,
+        200
+      ],
+      "extra_crop": null,
+      "interpolation": "none",
+      "image_limits": [
+        0,
+        255
+      ],
+      "brightness_contrast_gamma": "unchanged",
+      "roi_reviewed": false,
+      "contours": null
+    }
+  ],
+  "statistical_claims": "Cohort counts only; no statistical testing or new uncertainty.",
+  "font_path": "C:\\Windows\\Fonts\\arial.ttf",
+  "width_mm": 183,
+  "height_mm": 163,
+  "external_alignment_auditor_used": true
+}
