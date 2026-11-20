@@ -21,7 +21,7 @@ ENVIRONMENT_DIRECTORIES = {
     '.git', '.venv', '.idea', '.work', '.pytest_cache', '.pytest_work',
     'build', 'dist',
 }
-PRIVATE_PROJECT_FILES = {'AGENTS.md'}
+PRIVATE_PROJECT_FILES = {'AGENTS.md', 'task_extract.txt'}  # 本地协作约定与任务书提取件
 DESCRIPTIONS = {
     '.github': 'GitHub 仓库自动化配置',
     '.github/workflows': '提交与拉取请求触发的自动检查流程',
@@ -53,7 +53,16 @@ DESCRIPTIONS = {
     'docs/patch_acquisition_workflow.md': '贴片 RF/IQ 到超声成像、模型接入与连续心功能分析的条件流程',
     'docs/pycharm_run.md': 'PyCharm 环境确认、三个入口运行和配置修改步骤',
     'docs/result_analysis.md': '结果图的证据设计、参考图适用范围、导出格式及复现方法',
-    'figures': '论文方法流程图及其可编辑源稿和导出预览',
+    'figures': '论文图表规划、方法流程图、可编辑源稿和导出预览',
+    'figures/planning': '结果资产盘点、同行逐图逐表拆解与图表规划的可复核材料',
+    'figures/planning/audit_assets.py': '只读核查缓存、患者划分和冻结源文件，不重训或重选模型',
+    'figures/planning/asset_inventory.json': '缓存规模、空间时间范围、冻结来源校验与现有实验清单',
+    'figures/planning/result_assets.md': '输出资产、分辨率、实验和已算/待算/不可算指标的中文清单',
+    'figures/planning/literature_catalog.json': '六篇已读论文逐图表结构、原始图注和来源校验记录',
+    'figures/planning/summarize_literature.py': '从人工核查目录生成拆解表并统计图表数量与论证作用',
+    'figures/planning/literature_statistics.json': '图表数量中位数、范围和十二类论证作用的统计结果',
+    'figures/planning/literature_breakdown.md': '两篇模板与四篇近期论文的逐图逐表拆解及共同做法',
+    'figure_plan.md': '正文和补充图表制作清单、证据边界、待补计算与阶段确认进度',
     'figures/camus_method_flow.svg': 'CAMUS 左室分割与心功能参数估算可编辑流程图',
     'figures/camus_method_flow.pdf': '用于论文排版的矢量版方法流程图',
     'figures/camus_method_flow.png': '由 SVG 源稿生成的流程图预览',

@@ -1,0 +1,2914 @@
+{
+  "retrieved_on": "2026-11-20",
+  "recent_window": [
+    "2023-11-20",
+    "2026-11-20"
+  ],
+  "roles": [
+    "研究对象与数据",
+    "系统与方法框架 / 流程图",
+    "模型结构",
+    "精度验证（空间 / 轮廓）",
+    "精度验证（时间过程）",
+    "方法对比",
+    "误差分析",
+    "敏感性 / 消融",
+    "泛化能力",
+    "计算效率",
+    "生理机制 / 临床解释",
+    "其他"
+  ],
+  "search": {
+    "provider": "Europe PMC core search; publisher full text; NCBI PMC; Crossref",
+    "target_hits": 242,
+    "broad_hits": 3954,
+    "note": "叙述性图表样本，不是系统综述；从可获取全文中选取4篇相关近期原始研究。"
+  },
+  "papers": [
+    {
+      "id": "hu",
+      "label": "Hu 2023",
+      "title": "A wearable cardiac ultrasound imager",
+      "doi": "10.1038/s41586-022-05498-z",
+      "journal": "Nature",
+      "online": "2023-01-25",
+      "group": "用户确认模板",
+      "main_figures": 5,
+      "main_tables": 0,
+      "extended_figures": 8,
+      "extended_tables": 2,
+      "supplementary_figures": 34,
+      "supplementary_tables": 5,
+      "fulltext": "https://www.nature.com/articles/s41586-022-05498-z",
+      "cached": ".work/hu_wearable_cardiac_nature.html",
+      "supplement": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41586-022-05498-z/MediaObjects/41586_2022_5498_MOESM1_ESM.pdf",
+      "supplement_cache": ".work/hu_wearable_cardiac_supplement.pdf",
+      "fulltext_sha256": "b8dd872ef8adcb631469e33494b22a758189d8d15ca4d5698544050cab0217bb",
+      "supplement_sha256": "7895a1f5c5bf2ab9ca9a13a18f307bb681c4a1f5ef74a9d18b4343c7871f8338",
+      "read_scope": "正文全文与图注；正文和扩展图已看原图；可得SI逐图/表及图注；不包括逐帧观看视频"
+    },
+    {
+      "id": "ouyang",
+      "label": "Ouyang 2020",
+      "title": "Video-based AI for beat-to-beat assessment of cardiac function",
+      "doi": "10.1038/s41586-020-2145-8",
+      "journal": "Nature",
+      "online": "2020-03-25",
+      "group": "用户确认模板",
+      "main_figures": 3,
+      "main_tables": 0,
+      "extended_figures": 6,
+      "extended_tables": 4,
+      "supplementary_figures": 0,
+      "supplementary_tables": 0,
+      "fulltext": "https://www.nature.com/articles/s41586-020-2145-8",
+      "cached": ".work/figure_plan_ouyang.html",
+      "supplement_note": "独立附件为 Reporting Summary；扩展图表已单独计数。",
+      "fulltext_sha256": "369f8ee40b75f608f721887201be82c8166932f3b29be9cda2086262649e6730",
+      "read_scope": "正文全文与图注；正文和扩展图已看原图；可得SI逐图/表及图注；不包括逐帧观看视频"
+    },
+    {
+      "id": "sam",
+      "label": "Chao 2025",
+      "title": "Foundation versus domain-specific models for left ventricular segmentation on cardiac ultrasound",
+      "doi": "10.1038/s41746-025-01730-y",
+      "journal": "npj Digital Medicine",
+      "online": "2025-06-06",
+      "group": "近三年补充检索",
+      "main_figures": 3,
+      "main_tables": 4,
+      "extended_figures": 0,
+      "extended_tables": 0,
+      "supplementary_figures": 1,
+      "supplementary_tables": 3,
+      "fulltext": "https://www.nature.com/articles/s41746-025-01730-y",
+      "cached": ".work/figure_plan_foundation.html",
+      "supplement": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41746-025-01730-y/MediaObjects/41746_2025_1730_MOESM1_ESM.pdf",
+      "supplement_cache": ".work/figure_plan_foundation_supp.pdf",
+      "fulltext_sha256": "59e60cd2d7dbb12338d878cdbd6d8a173a476708017f910dc8f18d552bf8bb1b",
+      "supplement_sha256": "574f6bec9e4667f3cd831867bc388ef2278c073aff16628ac66fa5f143924bec",
+      "read_scope": "正文全文与图注；正文和扩展图已看原图；可得SI逐图/表及图注；不包括逐帧观看视频"
+    },
+    {
+      "id": "echofm",
+      "label": "Kim 2025 / EchoFM",
+      "title": "EchoFM: Foundation Model for Generalizable Echocardiogram Analysis",
+      "doi": "10.1109/TMI.2025.3580713",
+      "journal": "IEEE TMI",
+      "issue_date": "2025-10-01",
+      "group": "近三年补充检索",
+      "main_figures": 7,
+      "main_tables": 9,
+      "extended_figures": 0,
+      "extended_tables": 0,
+      "supplementary_figures": null,
+      "supplementary_tables": null,
+      "fulltext": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12616925/",
+      "cached": ".work/figure_plan_echofm.html",
+      "supplement_note": "开放作者稿 7 图 9 表；未查明独立出版商 SI，记 NA，不把未取得附件当作 0。日期为所核查卷期日期，不冒称最早在线日。",
+      "fulltext_sha256": "a3a7cb02938c7c5975f60a8c76724c535855f8729c1bcf67f63b3b4716420d81",
+      "read_scope": "正文全文与图注；正文和扩展图已看原图；可得SI逐图/表及图注；不包括逐帧观看视频"
+    },
+    {
+      "id": "echoprime",
+      "label": "Vukadinovic 2025在线/2026卷期",
+      "title": "Comprehensive echocardiogram evaluation with view primed vision language AI",
+      "doi": "10.1038/s41586-025-09850-x",
+      "journal": "Nature",
+      "online": "2025-11-11",
+      "group": "近三年补充检索",
+      "main_figures": 3,
+      "main_tables": 3,
+      "extended_figures": 4,
+      "extended_tables": 6,
+      "supplementary_figures": 2,
+      "supplementary_tables": 11,
+      "fulltext": "https://www.nature.com/articles/s41586-025-09850-x",
+      "cached": ".work/figure_plan_echo_vpa.html",
+      "supplement": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41586-025-09850-x/MediaObjects/41586_2025_9850_MOESM1_ESM.docx",
+      "supplement_cache": ".work/figure_plan_echo_vpa_supp.docx",
+      "date_note": "Crossref 核查 online 2025-11-11，print 2026-02-26，Nature 650:970–977。",
+      "fulltext_sha256": "3cad5ff423b395765f4a17b56ca880321fc8eb2b54b7345e924db4a40879d34a",
+      "supplement_sha256": "9b16811ce5de2a73585a39dff67fcd3c1df9ffcb23918f7f32eee61f10f13df7",
+      "read_scope": "正文全文与图注；正文和扩展图已看原图；可得SI逐图/表及图注；不包括逐帧观看视频"
+    },
+    {
+      "id": "safu",
+      "label": "Yuan 2025 / SAFU",
+      "title": "Skin-adaptive focused flexible micromachined ultrasound transducers for wearable cardiovascular health monitoring",
+      "doi": "10.1126/sciadv.adw7632",
+      "journal": "Science Advances",
+      "online": "2025-09-10",
+      "group": "近三年补充检索",
+      "main_figures": 5,
+      "main_tables": 0,
+      "extended_figures": 0,
+      "extended_tables": 0,
+      "supplementary_figures": 26,
+      "supplementary_tables": 8,
+      "fulltext": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12422204/",
+      "cached": ".work/figure_plan_skinadaptive.html",
+      "supplement": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12422204/supplementaryFiles",
+      "supplement_cache": ".work/figure_plan_safu_supp_real.pdf",
+      "relevance": "可穿戴超声器件与血管壁动态监测，非 LV 分割/EF 算法；仅借鉴验证证据组织。",
+      "fulltext_sha256": "b29bf78557fafd874d188572ce91b7a9a0f07977213a10f8e5fb79d449a951cd",
+      "supplement_sha256": "a5d97c56f839947ac5fb8c68de129bfbc469ede4c3143ec4cccecce8abaaf5aa",
+      "read_scope": "正文全文与图注；正文和扩展图已看原图；可得SI逐图/表及图注；不包括逐帧观看视频"
+    }
+  ],
+  "display_items": [
+    {
+      "paper": "hu",
+      "section": "正文",
+      "number": "Fig. 1",
+      "type": "器件爆炸图+照片+力学曲线",
+      "content": "贴片结构、导电电极拉伸/循环/粘接、有限元与贴合",
+      "layout": "a–f共6组；a横跨上方，b–e中排，f下排4照片",
+      "dimensions": "器件/影像/力学统计",
+      "roles": [
+        "系统与方法框架 / 流程图",
+        "敏感性 / 消融"
+      ],
+      "visual": "蓝/红/黑力学曲线，白底，照片与示意混排；原有限元色带不照搬"
+    },
+    {
+      "paper": "hu",
+      "section": "正文",
+      "number": "Fig. 2",
+      "type": "仿体影像+声场+定量曲线",
+      "content": "发射策略、深度/横向分辨率、动态范围与CNR",
+      "layout": "a–h共8组；左高影像a，中右d–f，下方b/c/g/h",
+      "dimensions": "影像/声场/统计",
+      "roles": [
+        "精度验证（空间 / 轮廓）",
+        "方法对比",
+        "敏感性 / 消融"
+      ],
+      "visual": "灰度B-mode，蓝红黑方法线；声场旧彩虹色带不复用"
+    },
+    {
+      "paper": "hu",
+      "section": "正文",
+      "number": "Fig. 3",
+      "type": "标准切面影像板+位移/ECG时序",
+      "content": "贴片与商用设备四切面、17节段、M-mode与心电对应",
+      "layout": "a–d共4组；a上方四切面，b/c中排，d底部长条",
+      "dimensions": "影像/解剖/时序",
+      "roles": [
+        "研究对象与数据",
+        "精度验证（空间 / 轮廓）",
+        "精度验证（时间过程）",
+        "方法对比",
+        "生理机制 / 临床解释"
+      ],
+      "visual": "超声黑底、红色峰标记、浅彩解剖示意"
+    },
+    {
+      "paper": "hu",
+      "section": "正文",
+      "number": "Fig. 4",
+      "type": "运动方案+M-mode长记录+局部放大",
+      "content": "静息/运动/恢复，HR及LVIDd/s变化",
+      "layout": "a–f共6组；a三阶段横排，b/c长条，d/e三列，f底部长条",
+      "dimensions": "影像/时序/事件",
+      "roles": [
+        "系统与方法框架 / 流程图",
+        "精度验证（时间过程）",
+        "生理机制 / 临床解释"
+      ],
+      "visual": "蓝/黄阶段背景，黑红曲线，局部虚线框"
+    },
+    {
+      "paper": "hu",
+      "section": "正文",
+      "number": "Fig. 5",
+      "type": "流程+容积波形+BA+指标对照",
+      "content": "FCN→LV→几何→功能；设备比较及恢复过程",
+      "layout": "a–h共8组；a顶层流程，b–d中排，e长时序，f–h底排",
+      "dimensions": "影像/掩膜/时序/统计",
+      "roles": [
+        "系统与方法框架 / 流程图",
+        "模型结构",
+        "精度验证（空间 / 轮廓）",
+        "精度验证（时间过程）",
+        "方法对比",
+        "误差分析",
+        "生理机制 / 临床解释"
+      ],
+      "visual": "蓝色网络块，黑/红设备区分，多指标分色；n=12是心搏不是12人"
+    },
+    {
+      "paper": "ouyang",
+      "section": "正文",
+      "number": "Fig. 1",
+      "type": "双分支模型/分析流程",
+      "content": "视频EF回归、帧分割、逐搏聚合及心衰分类",
+      "layout": "未字母分组；输入→上下两分支→逐搏→双输出，非规则网格",
+      "dimensions": "影像/掩膜/时序/统计",
+      "roles": [
+        "系统与方法框架 / 流程图",
+        "模型结构"
+      ],
+      "visual": "蓝/黄模块，黑箭头；分割与回归是不同分支"
+    },
+    {
+      "paper": "ouyang",
+      "section": "正文",
+      "number": "Fig. 2",
+      "type": "回归散点+ROC+箱线+样例+直方图",
+      "content": "内部/外部EF、重复测量、ED/ES分割、面积选搏",
+      "layout": "a–f共6组，约2×3；d内部为影像/轮廓/叠图三行",
+      "dimensions": "影像/掩膜/时序/统计",
+      "roles": [
+        "精度验证（空间 / 轮廓）",
+        "精度验证（时间过程）",
+        "方法对比",
+        "误差分析",
+        "泛化能力"
+      ],
+      "visual": "内部蓝、外部红；灰色直方图，淡蓝分割叠加"
+    },
+    {
+      "paper": "ouyang",
+      "section": "正文",
+      "number": "Fig. 3",
+      "type": "两病例时序+分布+采样敏感性",
+      "content": "窦律/房颤逐搏变化、EF方差及搏数平均影响",
+      "layout": "a–d共4组；a/b各左右两病例，c/d底排",
+      "dimensions": "时序/统计",
+      "roles": [
+        "精度验证（时间过程）",
+        "误差分析",
+        "敏感性 / 消融",
+        "生理机制 / 临床解释"
+      ],
+      "visual": "蓝/红区分低高变异，灰色分搏区；不等同本项目半周期"
+    },
+    {
+      "paper": "sam",
+      "section": "正文",
+      "number": "Fig. 1",
+      "type": "按分位数选例的影像叠图",
+      "content": "ED/ES在97.5%、50%、2.5% DSC位置的预测与标签",
+      "layout": "a–f共6组，3行×2相位组；每组预测/标签两图，共12小图",
+      "dimensions": "影像/掩膜",
+      "roles": [
+        "精度验证（空间 / 轮廓）",
+        "误差分析"
+      ],
+      "visual": "黑底超声、半透明蓝掩膜，右侧分位数箭头；包含低分例"
+    },
+    {
+      "paper": "sam",
+      "section": "正文",
+      "number": "Fig. 2",
+      "type": "零样本/微调定性对照",
+      "content": "POCUS的标签、zero-shot、fine-tuned SAM",
+      "layout": "a/b两相位，内部2×3影像",
+      "dimensions": "影像/掩膜",
+      "roles": [
+        "精度验证（空间 / 轮廓）",
+        "方法对比",
+        "泛化能力"
+      ],
+      "visual": "蓝掩膜、绿框；原绿框不代表本项目人工关键点"
+    },
+    {
+      "paper": "sam",
+      "section": "正文",
+      "number": "Fig. 3",
+      "type": "耗时与DSC分组柱图",
+      "content": "全部标注者/专家/学生的辅助标注效率和质量",
+      "layout": "a–f共6组，2×3；上排耗时，下排DSC",
+      "dimensions": "统计",
+      "roles": [
+        "精度验证（空间 / 轮廓）",
+        "方法对比",
+        "其他"
+      ],
+      "visual": "蓝/橙方法，误差棒与显著性括号；人工辅助标注效率归入其他，不是计算推理效率"
+    },
+    {
+      "paper": "sam",
+      "section": "正文",
+      "number": "Table 1",
+      "type": "模型性能表",
+      "content": "不同数据集/ED/ES的DSC和IoU",
+      "layout": "单表，数据集×相位分层，模型并列",
+      "dimensions": "统计",
+      "roles": [
+        "精度验证（空间 / 轮廓）",
+        "方法对比",
+        "泛化能力"
+      ],
+      "visual": "黑白表格、均值±SD与脚注符号"
+    },
+    {
+      "paper": "sam",
+      "section": "正文",
+      "number": "Table 2",
+      "type": "边界距离表",
+      "content": "多模型HD与ASD",
+      "layout": "单表，数据集×相位分层；注意HD不是HD95",
+      "dimensions": "统计",
+      "roles": [
+        "精度验证（空间 / 轮廓）",
+        "方法对比",
+        "泛化能力"
+      ],
+      "visual": "黑白表格；不能未经核对把原单位改成mm"
+    },
+    {
+      "paper": "sam",
+      "section": "正文",
+      "number": "Table 3",
+      "type": "二读者对照表",
+      "content": "TTE/POCUS、zero-shot/微调对第二观察者的分割",
+      "layout": "单表，两个数据域并列；ED/ES/总体分行",
+      "dimensions": "统计",
+      "roles": [
+        "精度验证（空间 / 轮廓）",
+        "方法对比",
+        "泛化能力"
+      ],
+      "visual": "均值±SD和p值；观察者身份写入表题"
+    },
+    {
+      "paper": "sam",
+      "section": "正文",
+      "number": "Table 4",
+      "type": "模型与分辨率对照表",
+      "content": "1024输入微调SAM与MedSAM的DSC/IoU/ASD/HD",
+      "layout": "单表，四指标×两模型列组",
+      "dimensions": "统计",
+      "roles": [
+        "精度验证（空间 / 轮廓）",
+        "方法对比",
+        "泛化能力"
+      ],
+      "visual": "黑白、多级表头，脚注定义指标"
+    },
+    {
+      "paper": "echofm",
+      "section": "正文",
+      "number": "Fig. 1",
+      "type": "研究对象+下游任务示意",
+      "content": "B-mode/彩色多普勒、周期性、视图识别/分割/疾病任务",
+      "layout": "a/b两组横排；各组内部多影像/流程",
+      "dimensions": "影像/掩膜/时序",
+      "roles": [
+        "研究对象与数据",
+        "系统与方法框架 / 流程图"
+      ],
+      "visual": "灰度影像、多结构红绿蓝叠图、浅蓝区块"
+    },
+    {
+      "paper": "echofm",
+      "section": "正文",
+      "number": "Fig. 2",
+      "type": "预训练架构流程",
+      "content": "时空mask、ViT编码/重建、周期对比学习",
+      "layout": "单个横向复合流程，无a/b子图；含相似度矩阵支路",
+      "dimensions": "影像/模型/矩阵",
+      "roles": [
+        "系统与方法框架 / 流程图",
+        "模型结构"
+      ],
+      "visual": "浅蓝/紫模块，红黄矩阵；原热色带不照搬"
+    },
+    {
+      "paper": "echofm",
+      "section": "正文",
+      "number": "Fig. 3",
+      "type": "mask策略示意",
+      "content": "随机、均匀帧、时空一致mask",
+      "layout": "a–c三组横排，每组上下两帧，共2×3",
+      "dimensions": "影像/时序",
+      "roles": [
+        "系统与方法框架 / 流程图",
+        "敏感性 / 消融"
+      ],
+      "visual": "黑底影像、红透明遮罩、白网格"
+    },
+    {
+      "paper": "echofm",
+      "section": "正文",
+      "number": "Fig. 4",
+      "type": "分割箱线+定性对照",
+      "content": "CAMUS与多中心分割、第二优模型与EchoFM",
+      "layout": "a–c三组横排；a两数据域箱线，b/c各2×3影像",
+      "dimensions": "影像/掩膜/统计",
+      "roles": [
+        "精度验证（空间 / 轮廓）",
+        "方法对比",
+        "泛化能力"
+      ],
+      "visual": "绿/灰箱体；黑底红绿蓝结构掩膜、白箭头和局部放大"
+    },
+    {
+      "paper": "echofm",
+      "section": "正文",
+      "number": "Fig. 5",
+      "type": "时间自相似矩阵",
+      "content": "VideoMAE与EchoFM在1/2周期的相似关系",
+      "layout": "a/b两方法，内部2×2矩阵",
+      "dimensions": "时序/矩阵",
+      "roles": [
+        "精度验证（时间过程）",
+        "方法对比"
+      ],
+      "visual": "黑红黄顺序热图，逐矩阵色标；只作结构参考"
+    },
+    {
+      "paper": "echofm",
+      "section": "正文",
+      "number": "Fig. 6",
+      "type": "消融雷达图",
+      "content": "有/无周期对比损失的分割和分类",
+      "layout": "a/b两雷达横排",
+      "dimensions": "统计",
+      "roles": [
+        "方法对比",
+        "敏感性 / 消融"
+      ],
+      "visual": "蓝/绿固定方案；本项目更适合配对点图，不强制雷达"
+    },
+    {
+      "paper": "echofm",
+      "section": "正文",
+      "number": "Fig. 7",
+      "type": "标签比例敏感性曲线",
+      "content": "20–100%标注预算下的方法比较",
+      "layout": "1个坐标面板，三方法曲线及95%区间",
+      "dimensions": "统计",
+      "roles": [
+        "方法对比",
+        "敏感性 / 消融"
+      ],
+      "visual": "蓝/绿/红，标记形状+透明CI；本项目缺标签比例实验"
+    },
+    {
+      "paper": "echofm",
+      "section": "正文",
+      "number": "Table I",
+      "type": "队列特征表",
+      "content": "多中心患者、视频、人口和临床特征",
+      "layout": "单表，两列指标/数值",
+      "dimensions": "统计",
+      "roles": [
+        "研究对象与数据"
+      ],
+      "visual": "黑白，人数与比例"
+    },
+    {
+      "paper": "echofm",
+      "section": "正文",
+      "number": "Table II",
+      "type": "观察者重复性表",
+      "content": "LVendo/LVepi/LA的intraobserver ICC",
+      "layout": "单表，结构×ICC/CI/p",
+      "dimensions": "统计",
+      "roles": [
+        "精度验证（空间 / 轮廓）"
+      ],
+      "visual": "黑白，明确观察者内重复性，不借作本项目ICC"
+    },
+    {
+      "paper": "echofm",
+      "section": "正文",
+      "number": "Table III",
+      "type": "视图识别对照表",
+      "content": "TMED-2/内部数据集的模型准确率",
+      "layout": "单表，模型×数据域",
+      "dimensions": "统计",
+      "roles": [
+        "方法对比",
+        "泛化能力"
+      ],
+      "visual": "最优加粗"
+    },
+    {
+      "paper": "echofm",
+      "section": "正文",
+      "number": "Table IV",
+      "type": "CAMUS分割对照表",
+      "content": "LVendo/LVepi/LA的Dice/IoU/HD95/ASSD",
+      "layout": "单表，结构×四指标的多级列",
+      "dimensions": "统计",
+      "roles": [
+        "精度验证（空间 / 轮廓）",
+        "方法对比"
+      ],
+      "visual": "最优加粗、次优下划线；划分不同不可横向宣称超越"
+    },
+    {
+      "paper": "echofm",
+      "section": "正文",
+      "number": "Table V",
+      "type": "多中心分割对照表",
+      "content": "相同结构指标在多中心域",
+      "layout": "单表，多级列同Table IV",
+      "dimensions": "统计",
+      "roles": [
+        "精度验证（空间 / 轮廓）",
+        "方法对比",
+        "泛化能力"
+      ],
+      "visual": "黑白，与Table IV结构一致"
+    },
+    {
+      "paper": "echofm",
+      "section": "正文",
+      "number": "Table VI",
+      "type": "AS分类对照表",
+      "content": "TMED-2主动脉狭窄分级AUROC",
+      "layout": "单表，模型×三种分类定义",
+      "dimensions": "统计",
+      "roles": [
+        "方法对比"
+      ],
+      "visual": "黑白、最优加粗"
+    },
+    {
+      "paper": "echofm",
+      "section": "正文",
+      "number": "Table VII",
+      "type": "AR严重度对照表",
+      "content": "准确率/precision/recall/F1",
+      "layout": "单表，预训练方法×四指标",
+      "dimensions": "统计",
+      "roles": [
+        "方法对比"
+      ],
+      "visual": "黑白；与EF回归口径不同"
+    },
+    {
+      "paper": "echofm",
+      "section": "正文",
+      "number": "Table VIII",
+      "type": "mask/patch消融表",
+      "content": "token尺寸与mask比例的平均Dice",
+      "layout": "单表，两个参数区块",
+      "dimensions": "统计",
+      "roles": [
+        "敏感性 / 消融"
+      ],
+      "visual": "最优加粗"
+    },
+    {
+      "paper": "echofm",
+      "section": "正文",
+      "number": "Table IX",
+      "type": "输入分辨率敏感性表",
+      "content": "112/224/384输入的两域分割",
+      "layout": "单表，三结构×三输入；格内双域数值",
+      "dimensions": "统计",
+      "roles": [
+        "敏感性 / 消融",
+        "泛化能力"
+      ],
+      "visual": "黑白；是重新训练/评价结果，不是显示缩放实验"
+    },
+    {
+      "paper": "echoprime",
+      "section": "正文",
+      "number": "Fig. 1",
+      "type": "队列统计+模型/推理流程",
+      "content": "视频/报告规模、联合嵌入、视图与解剖权重、研究级输出",
+      "layout": "a–c三组纵向；a统计横排，b训练，c推理",
+      "dimensions": "影像/文本/统计/模型",
+      "roles": [
+        "研究对象与数据",
+        "系统与方法框架 / 流程图",
+        "模型结构"
+      ],
+      "visual": "浅蓝流程与蓝色密度/条图，多色嵌入点；主推理链纵向可读"
+    },
+    {
+      "paper": "echoprime",
+      "section": "正文",
+      "number": "Fig. 2",
+      "type": "多中心雷达图+ROC",
+      "content": "五中心多任务对比及迁移学习诊断任务",
+      "layout": "a/b两组；a五雷达，b右下ROC，共约3×2槽位",
+      "dimensions": "统计",
+      "roles": [
+        "方法对比",
+        "泛化能力"
+      ],
+      "visual": "方法紫/青/黄固定；不同任务指标不能在本项目直接混合"
+    },
+    {
+      "paper": "echoprime",
+      "section": "正文",
+      "number": "Fig. 3",
+      "type": "混淆矩阵+频数+注意力热图",
+      "content": "视图分类、视图数量、结构相关权重与专家比较",
+      "layout": "a–d四组；顶层a/b，中间c宽热图，底层d左右热图",
+      "dimensions": "影像/统计/矩阵",
+      "roles": [
+        "研究对象与数据",
+        "误差分析",
+        "生理机制 / 临床解释"
+      ],
+      "visual": "蓝色顺序热图，层次聚类，结构/视图轴标注"
+    },
+    {
+      "paper": "echoprime",
+      "section": "正文",
+      "number": "Table 1",
+      "type": "队列特征表",
+      "content": "内部与外部临床队列",
+      "layout": "单表，中心并列列组",
+      "dimensions": "统计",
+      "roles": [
+        "研究对象与数据",
+        "泛化能力"
+      ],
+      "visual": "黑白多级表头"
+    },
+    {
+      "paper": "echoprime",
+      "section": "正文",
+      "number": "Table 2",
+      "type": "跨中心任务表",
+      "content": "五中心解释任务的AUROC/R²/MAE",
+      "layout": "单表，任务×中心，按指标分清",
+      "dimensions": "统计",
+      "roles": [
+        "方法对比",
+        "泛化能力"
+      ],
+      "visual": "黑白，区间与有效任务差异"
+    },
+    {
+      "paper": "echoprime",
+      "section": "正文",
+      "number": "Table 3",
+      "type": "双向检索表",
+      "content": "视频到报告/报告到视频的检索",
+      "layout": "单表，两方向列组",
+      "dimensions": "统计",
+      "roles": [
+        "方法对比"
+      ],
+      "visual": "黑白；与心功能回归非同一任务"
+    },
+    {
+      "paper": "safu",
+      "section": "正文",
+      "number": "Fig. 1",
+      "type": "器件/声学原理+参数曲线",
+      "content": "柔性阵列工作原理、曲率、声压、方向性及理论分析",
+      "layout": "A–H共8组；上A/B、中C–F、底G/H；H内4示意/曲面",
+      "dimensions": "器件/声场/统计",
+      "roles": [
+        "系统与方法框架 / 流程图",
+        "精度验证（空间 / 轮廓）",
+        "方法对比",
+        "敏感性 / 消融"
+      ],
+      "visual": "红蓝方法，浅绿SNR柱；含3D曲面和旧热图，不直接继承"
+    },
+    {
+      "paper": "safu",
+      "section": "正文",
+      "number": "Fig. 2",
+      "type": "制造流程+照片+性能曲线",
+      "content": "MEMS制造、谐振/带宽/衰减、水凝胶耦合与贴附",
+      "layout": "A–K共11组；A顶层流程，B照片行，中下多面板网格",
+      "dimensions": "器件/影像/统计",
+      "roles": [
+        "系统与方法框架 / 流程图",
+        "精度验证（空间 / 轮廓）",
+        "敏感性 / 消融"
+      ],
+      "visual": "青绿制造图、红蓝曲线、真实器件照片"
+    },
+    {
+      "paper": "safu",
+      "section": "正文",
+      "number": "Fig. 3",
+      "type": "血管信号+波形+佩戴照片+长时趋势",
+      "content": "不同血管BP、参考设备、重复性、24小时记录",
+      "layout": "A–H共8组；顶层信号/波形，中部对照，下G照片+波形，H长条",
+      "dimensions": "影像/时序/统计",
+      "roles": [
+        "精度验证（空间 / 轮廓）",
+        "精度验证（时间过程）",
+        "方法对比",
+        "泛化能力"
+      ],
+      "visual": "红蓝区分SBP/DBP及设备；多部位分色，单位统一mmHg"
+    },
+    {
+      "paper": "safu",
+      "section": "正文",
+      "number": "Fig. 4",
+      "type": "运动设计+HR/BP时序+RSI柱图",
+      "content": "三种运动、普通人与运动员的连续生理变化",
+      "layout": "A–D四组纵向；各行三种运动列，C内部双人波形",
+      "dimensions": "时序/事件/统计",
+      "roles": [
+        "系统与方法框架 / 流程图",
+        "精度验证（时间过程）",
+        "生理机制 / 临床解释"
+      ],
+      "visual": "普通人红、运动员蓝；运动阶段阴影"
+    },
+    {
+      "paper": "safu",
+      "section": "正文",
+      "number": "Fig. 5",
+      "type": "分组波形+血管参数统计+机制示意",
+      "content": "高血压/年龄/运动习惯的血管硬度与PWV/PI",
+      "layout": "A–F六组；前三行左波形右柱，底排D/E/F",
+      "dimensions": "时序/统计/示意",
+      "roles": [
+        "误差分析",
+        "生理机制 / 临床解释"
+      ],
+      "visual": "红蓝组别，误差棒、显著性括号；非LV/EF验证"
+    },
+    {
+      "paper": "hu",
+      "section": "扩展数据",
+      "number": "ED Fig. 1",
+      "type": "阵列结构与照片",
+      "content": "正交阵列的元件组合与机械结构",
+      "layout": "a–c三组纵向",
+      "dimensions": "器件/照片",
+      "roles": [
+        "系统与方法框架 / 流程图"
+      ],
+      "visual": "灰色结构，蓝红框，金色器件"
+    },
+    {
+      "paper": "hu",
+      "section": "扩展数据",
+      "number": "ED Fig. 2",
+      "type": "校正前后影像+曲线",
+      "content": "曲面相位校正影响空间分辨率与功能量",
+      "layout": "a–e五组；左影像、右曲线/条图",
+      "dimensions": "影像/统计",
+      "roles": [
+        "精度验证（空间 / 轮廓）",
+        "方法对比",
+        "敏感性 / 消融"
+      ],
+      "visual": "灰度影像、低饱和对照曲线"
+    },
+    {
+      "paper": "hu",
+      "section": "扩展数据",
+      "number": "ED Fig. 3",
+      "type": "采集位置照片",
+      "content": "标准切面与正交阵列贴附位置",
+      "layout": "a–f六组，3×2",
+      "dimensions": "照片/解剖",
+      "roles": [
+        "研究对象与数据",
+        "系统与方法框架 / 流程图"
+      ],
+      "visual": "真实照片、白色解剖/位置标记"
+    },
+    {
+      "paper": "hu",
+      "section": "扩展数据",
+      "number": "ED Fig. 4",
+      "type": "姿势分层影像板",
+      "content": "坐/站/弯腰/平卧/侧卧的四切面",
+      "layout": "a–e五组行；5×4影像及姿势示意",
+      "dimensions": "影像/工况",
+      "roles": [
+        "精度验证（空间 / 轮廓）",
+        "泛化能力"
+      ],
+      "visual": "灰度影像，失败/受限切面也展示"
+    },
+    {
+      "paper": "hu",
+      "section": "扩展数据",
+      "number": "ED Fig. 5",
+      "type": "B/M-mode时序样例",
+      "content": "静息、运动、恢复",
+      "layout": "a–c三组纵向；每组B-mode+M-mode",
+      "dimensions": "影像/时序",
+      "roles": [
+        "精度验证（时间过程）"
+      ],
+      "visual": "红线定位M-mode采样"
+    },
+    {
+      "paper": "hu",
+      "section": "扩展数据",
+      "number": "ED Fig. 6",
+      "type": "模型分割样例板",
+      "content": "原图与8种分割模型",
+      "layout": "无字母，3×3共9图",
+      "dimensions": "影像/掩膜",
+      "roles": [
+        "精度验证（空间 / 轮廓）",
+        "方法对比"
+      ],
+      "visual": "黑底白掩膜，保留模型失败输出"
+    },
+    {
+      "paper": "hu",
+      "section": "扩展数据",
+      "number": "ED Fig. 7",
+      "type": "模型容积曲线",
+      "content": "同视频8模型的容积波形稳定性",
+      "layout": "8个坐标，4×2",
+      "dimensions": "时序",
+      "roles": [
+        "精度验证（时间过程）",
+        "方法对比"
+      ],
+      "visual": "黑曲线，统一单位；不能由定性波形单独证明优越"
+    },
+    {
+      "paper": "hu",
+      "section": "扩展数据",
+      "number": "ED Fig. 8",
+      "type": "相位影像板",
+      "content": "四切面对应五个心动阶段",
+      "layout": "5相位×4视图，共20图",
+      "dimensions": "影像/时序",
+      "roles": [
+        "精度验证（时间过程）",
+        "生理机制 / 临床解释"
+      ],
+      "visual": "蓝/红/黄轮廓表示缩小/扩大/维持"
+    },
+    {
+      "paper": "hu",
+      "section": "扩展数据",
+      "number": "ED Table 1",
+      "type": "成像指标表",
+      "content": "贴片与商用设备声学指标",
+      "layout": "单表，两个设备列组",
+      "dimensions": "统计",
+      "roles": [
+        "精度验证（空间 / 轮廓）",
+        "方法对比"
+      ],
+      "visual": "黑白表格"
+    },
+    {
+      "paper": "hu",
+      "section": "扩展数据",
+      "number": "ED Table 2",
+      "type": "既有器件比较表",
+      "content": "连续深部超声设备及能力",
+      "layout": "单表，文献设备逐行",
+      "dimensions": "统计",
+      "roles": [
+        "方法对比"
+      ],
+      "visual": "黑白表格；不是本项目实测对照"
+    },
+    {
+      "paper": "ouyang",
+      "section": "扩展数据",
+      "number": "ED Fig. 1",
+      "type": "超参数曲线",
+      "content": "架构/初始化/clip长度/采样间隔",
+      "layout": "a/b两组，1×2",
+      "dimensions": "统计",
+      "roles": [
+        "方法对比",
+        "敏感性 / 消融"
+      ],
+      "visual": "蓝橙绿架构、实虚线初始化"
+    },
+    {
+      "paper": "ouyang",
+      "section": "扩展数据",
+      "number": "ED Fig. 2",
+      "type": "按患者排序的逐搏误差",
+      "content": "低/高搏间方差人群的每搏EF差异",
+      "layout": "左右两面板",
+      "dimensions": "时序/统计",
+      "roles": [
+        "精度验证（时间过程）",
+        "误差分析"
+      ],
+      "visual": "蓝/红分组，灰色误差带"
+    },
+    {
+      "paper": "ouyang",
+      "section": "扩展数据",
+      "number": "ED Fig. 3",
+      "type": "训练曲线",
+      "content": "EF MSE及分割交叉熵的训练/验证",
+      "layout": "a–d四组，2×2",
+      "dimensions": "训练日志",
+      "roles": [
+        "敏感性 / 消融"
+      ],
+      "visual": "架构固定颜色，分割虚线；损失曲线放扩展数据"
+    },
+    {
+      "paper": "ouyang",
+      "section": "扩展数据",
+      "number": "ED Fig. 4",
+      "type": "计算代价曲线",
+      "content": "clip长度对耗时和显存的影响",
+      "layout": "a/b两组，1×2",
+      "dimensions": "统计/效率",
+      "roles": [
+        "敏感性 / 消融",
+        "计算效率"
+      ],
+      "visual": "架构固定蓝橙绿"
+    },
+    {
+      "paper": "ouyang",
+      "section": "扩展数据",
+      "number": "ED Fig. 5",
+      "type": "图像质量与误差",
+      "content": "均值强度/强度SD、EF MAE与Dice",
+      "layout": "a/b两组纵向，各含箱线+5分位示例",
+      "dimensions": "影像/统计",
+      "roles": [
+        "精度验证（空间 / 轮廓）",
+        "误差分析"
+      ],
+      "visual": "灰箱线、真实灰度图"
+    },
+    {
+      "paper": "ouyang",
+      "section": "扩展数据",
+      "number": "ED Fig. 6",
+      "type": "退化敏感性",
+      "content": "随机置黑像素比例与R²/Dice",
+      "layout": "上下2坐标+底排6影像",
+      "dimensions": "影像/统计",
+      "roles": [
+        "精度验证（空间 / 轮廓）",
+        "敏感性 / 消融"
+      ],
+      "visual": "黑色曲线，灰度退化例"
+    },
+    {
+      "paper": "ouyang",
+      "section": "扩展数据",
+      "number": "ED Table 1",
+      "type": "队列/设备特征",
+      "content": "Stanford患者与设备",
+      "layout": "单表",
+      "dimensions": "统计",
+      "roles": [
+        "研究对象与数据"
+      ],
+      "visual": "黑白表格"
+    },
+    {
+      "paper": "ouyang",
+      "section": "扩展数据",
+      "number": "ED Table 2",
+      "type": "架构对照",
+      "content": "替代深度模型的心功能评价",
+      "layout": "单表，架构逐行",
+      "dimensions": "统计",
+      "roles": [
+        "方法对比"
+      ],
+      "visual": "黑白表格"
+    },
+    {
+      "paper": "ouyang",
+      "section": "扩展数据",
+      "number": "ED Table 3",
+      "type": "不一致病例表",
+      "content": "预测与人工EF差异最大的病例",
+      "layout": "单表，病例逐行",
+      "dimensions": "统计",
+      "roles": [
+        "误差分析"
+      ],
+      "visual": "保留极端误差，非剔除清单"
+    },
+    {
+      "paper": "ouyang",
+      "section": "扩展数据",
+      "number": "ED Table 4",
+      "type": "计算代价表",
+      "content": "参数量与计算成本",
+      "layout": "单表，模型逐行",
+      "dimensions": "统计",
+      "roles": [
+        "计算效率"
+      ],
+      "visual": "黑白表格；硬件条件不能移植成本项目结果"
+    },
+    {
+      "paper": "echoprime",
+      "section": "扩展数据",
+      "number": "ED Fig. 1",
+      "type": "能力层级柱图",
+      "content": "图像→视频→整检查→解剖加权的AR/EF",
+      "layout": "两个指标面板横排",
+      "dimensions": "统计",
+      "roles": [
+        "方法对比",
+        "敏感性 / 消融"
+      ],
+      "visual": "四级紫色，非独立外部队列"
+    },
+    {
+      "paper": "echoprime",
+      "section": "扩展数据",
+      "number": "ED Fig. 2",
+      "type": "UMAP+病例解释",
+      "content": "视图嵌入及心包积液的多切面权重",
+      "layout": "A/B两组纵排，B为4影像",
+      "dimensions": "影像/矩阵",
+      "roles": [
+        "误差分析",
+        "生理机制 / 临床解释"
+      ],
+      "visual": "多色嵌入，真实超声权重注释"
+    },
+    {
+      "paper": "echoprime",
+      "section": "扩展数据",
+      "number": "ED Fig. 3",
+      "type": "少样本迁移曲线",
+      "content": "EchoPrime/Kinetics/随机初始化",
+      "layout": "4任务，2×2",
+      "dimensions": "统计",
+      "roles": [
+        "方法对比",
+        "敏感性 / 消融"
+      ],
+      "visual": "蓝橙绿固定初始化方案"
+    },
+    {
+      "paper": "echoprime",
+      "section": "扩展数据",
+      "number": "ED Fig. 4",
+      "type": "加权模型示意",
+      "content": "冻结编码器/分类器与MIL视图权重",
+      "layout": "单横向模型流程",
+      "dimensions": "模型",
+      "roles": [
+        "系统与方法框架 / 流程图",
+        "模型结构"
+      ],
+      "visual": "蓝色编码器，带权重向量"
+    },
+    {
+      "paper": "echoprime",
+      "section": "扩展数据",
+      "number": "ED Table 1",
+      "type": "专用模型比较",
+      "content": "EchoPrime与task-specific模型",
+      "layout": "单表",
+      "dimensions": "统计",
+      "roles": [
+        "方法对比"
+      ],
+      "visual": "黑白表格"
+    },
+    {
+      "paper": "echoprime",
+      "section": "扩展数据",
+      "number": "ED Table 2",
+      "type": "跨中心回归表",
+      "content": "三个中心的回归任务",
+      "layout": "单表",
+      "dimensions": "统计",
+      "roles": [
+        "方法对比",
+        "泛化能力"
+      ],
+      "visual": "黑白表格"
+    },
+    {
+      "paper": "echoprime",
+      "section": "扩展数据",
+      "number": "ED Table 3",
+      "type": "外部模型对照",
+      "content": "EchoPrime与PanEcho，校正多重比较",
+      "layout": "单表",
+      "dimensions": "统计",
+      "roles": [
+        "方法对比",
+        "泛化能力"
+      ],
+      "visual": "黑白、校正说明脚注"
+    },
+    {
+      "paper": "echoprime",
+      "section": "扩展数据",
+      "number": "ED Table 4",
+      "type": "低质量域验证",
+      "content": "资源受限/低质量数据",
+      "layout": "单表",
+      "dimensions": "统计",
+      "roles": [
+        "误差分析",
+        "泛化能力"
+      ],
+      "visual": "黑白表格"
+    },
+    {
+      "paper": "echoprime",
+      "section": "扩展数据",
+      "number": "ED Table 5",
+      "type": "读者变异比较",
+      "content": "模型-医师与医师-医师的变异",
+      "layout": "单表",
+      "dimensions": "统计",
+      "roles": [
+        "方法对比",
+        "误差分析"
+      ],
+      "visual": "黑白表格；本项目缺读者重复数据"
+    },
+    {
+      "paper": "echoprime",
+      "section": "扩展数据",
+      "number": "ED Table 6",
+      "type": "加权消融",
+      "content": "有/无解剖权重",
+      "layout": "单表",
+      "dimensions": "统计",
+      "roles": [
+        "敏感性 / 消融"
+      ],
+      "visual": "黑白表格"
+    },
+    {
+      "paper": "hu",
+      "section": "补充材料",
+      "number": "SI Fig. 1",
+      "type": "曲线+结构图",
+      "content": "换能阵列电声特性",
+      "layout": "a–e共5组，2列不等高",
+      "dimensions": "曲线+结构图",
+      "roles": [
+        "精度验证（空间 / 轮廓）",
+        "敏感性 / 消融"
+      ],
+      "visual": "灰度影像/黑曲线为主，器件示意按材料分色；热图原样式仅记录"
+    },
+    {
+      "paper": "hu",
+      "section": "补充材料",
+      "number": "SI Fig. 2",
+      "type": "制造流程",
+      "content": "贴片制造步骤",
+      "layout": "a–m共13步骤，三列分行",
+      "dimensions": "制造流程",
+      "roles": [
+        "系统与方法框架 / 流程图"
+      ],
+      "visual": "灰度影像/黑曲线为主，器件示意按材料分色；热图原样式仅记录"
+    },
+    {
+      "paper": "hu",
+      "section": "补充材料",
+      "number": "SI Fig. 3",
+      "type": "显微照片",
+      "content": "液态金属电极加工分辨率",
+      "layout": "a–d共4图，2×2",
+      "dimensions": "显微照片",
+      "roles": [
+        "精度验证（空间 / 轮廓）"
+      ],
+      "visual": "灰度影像/黑曲线为主，器件示意按材料分色；热图原样式仅记录"
+    },
+    {
+      "paper": "hu",
+      "section": "补充材料",
+      "number": "SI Fig. 4",
+      "type": "照片",
+      "content": "电极拉伸前后力学/显微检查",
+      "layout": "a/b两组，上拉伸照片、下显微图",
+      "dimensions": "照片",
+      "roles": [
+        "敏感性 / 消融"
+      ],
+      "visual": "灰度影像/黑曲线为主，器件示意按材料分色；热图原样式仅记录"
+    },
+    {
+      "paper": "hu",
+      "section": "补充材料",
+      "number": "SI Fig. 5",
+      "type": "曲线",
+      "content": "搭接剪切强度",
+      "layout": "单坐标，两材料曲线",
+      "dimensions": "曲线",
+      "roles": [
+        "方法对比"
+      ],
+      "visual": "灰度影像/黑曲线为主，器件示意按材料分色；热图原样式仅记录"
+    },
+    {
+      "paper": "hu",
+      "section": "补充材料",
+      "number": "SI Fig. 6",
+      "type": "照片",
+      "content": "多层液态金属电极照片",
+      "layout": "a–f共6图，2×3",
+      "dimensions": "照片",
+      "roles": [
+        "系统与方法框架 / 流程图"
+      ],
+      "visual": "灰度影像/黑曲线为主，器件示意按材料分色；热图原样式仅记录"
+    },
+    {
+      "paper": "hu",
+      "section": "补充材料",
+      "number": "SI Fig. 7",
+      "type": "曲线",
+      "content": "基底和电极厚度",
+      "layout": "a/b两坐标，上下排列",
+      "dimensions": "曲线",
+      "roles": [
+        "精度验证（空间 / 轮廓）"
+      ],
+      "visual": "灰度影像/黑曲线为主，器件示意按材料分色；热图原样式仅记录"
+    },
+    {
+      "paper": "hu",
+      "section": "补充材料",
+      "number": "SI Fig. 8",
+      "type": "影像/信号",
+      "content": "屏蔽与累加的降噪效果",
+      "layout": "a–c三组，顶层5影像，底层曲线",
+      "dimensions": "影像/信号",
+      "roles": [
+        "方法对比",
+        "敏感性 / 消融"
+      ],
+      "visual": "灰度影像/黑曲线为主，器件示意按材料分色；热图原样式仅记录"
+    },
+    {
+      "paper": "hu",
+      "section": "补充材料",
+      "number": "SI Fig. 9",
+      "type": "曲线",
+      "content": "整器件应力应变",
+      "layout": "单坐标",
+      "dimensions": "曲线",
+      "roles": [
+        "精度验证（空间 / 轮廓）"
+      ],
+      "visual": "灰度影像/黑曲线为主，器件示意按材料分色；热图原样式仅记录"
+    },
+    {
+      "paper": "hu",
+      "section": "补充材料",
+      "number": "SI Fig. 10",
+      "type": "照片",
+      "content": "双轴拉伸器件前后",
+      "layout": "a/b两图横排",
+      "dimensions": "照片",
+      "roles": [
+        "敏感性 / 消融"
+      ],
+      "visual": "灰度影像/黑曲线为主，器件示意按材料分色；热图原样式仅记录"
+    },
+    {
+      "paper": "hu",
+      "section": "补充材料",
+      "number": "SI Fig. 11",
+      "type": "仿体示意",
+      "content": "器件表征仿体结构",
+      "layout": "单示意图",
+      "dimensions": "仿体示意",
+      "roles": [
+        "研究对象与数据",
+        "系统与方法框架 / 流程图"
+      ],
+      "visual": "灰度影像/黑曲线为主，器件示意按材料分色；热图原样式仅记录"
+    },
+    {
+      "paper": "hu",
+      "section": "补充材料",
+      "number": "SI Fig. 12",
+      "type": "曲线/声场",
+      "content": "不同发射方法的分辨率和声场",
+      "layout": "a–d四组，上曲线、下3行声场",
+      "dimensions": "曲线/声场",
+      "roles": [
+        "精度验证（空间 / 轮廓）",
+        "方法对比",
+        "敏感性 / 消融"
+      ],
+      "visual": "灰度影像/黑曲线为主，器件示意按材料分色；热图原样式仅记录"
+    },
+    {
+      "paper": "hu",
+      "section": "补充材料",
+      "number": "SI Fig. 13",
+      "type": "原理示意",
+      "content": "宽波束复合原理",
+      "layout": "a/b两组纵排",
+      "dimensions": "原理示意",
+      "roles": [
+        "系统与方法框架 / 流程图"
+      ],
+      "visual": "灰度影像/黑曲线为主，器件示意按材料分色；热图原样式仅记录"
+    },
+    {
+      "paper": "hu",
+      "section": "补充材料",
+      "number": "SI Fig. 14",
+      "type": "曲线",
+      "content": "角度步长/数量与SNR",
+      "layout": "一个双横轴坐标",
+      "dimensions": "曲线",
+      "roles": [
+        "敏感性 / 消融"
+      ],
+      "visual": "灰度影像/黑曲线为主，器件示意按材料分色；热图原样式仅记录"
+    },
+    {
+      "paper": "hu",
+      "section": "补充材料",
+      "number": "SI Fig. 15",
+      "type": "流程/示意",
+      "content": "接收波束合成",
+      "layout": "a/b两组，上流程下曲面几何",
+      "dimensions": "流程/示意",
+      "roles": [
+        "系统与方法框架 / 流程图"
+      ],
+      "visual": "灰度影像/黑曲线为主，器件示意按材料分色；热图原样式仅记录"
+    },
+    {
+      "paper": "hu",
+      "section": "补充材料",
+      "number": "SI Fig. 16",
+      "type": "影像",
+      "content": "仿体动态范围选窗",
+      "layout": "a–f六影像，2×3",
+      "dimensions": "影像",
+      "roles": [
+        "精度验证（空间 / 轮廓）"
+      ],
+      "visual": "灰度影像/黑曲线为主，器件示意按材料分色；热图原样式仅记录"
+    },
+    {
+      "paper": "hu",
+      "section": "补充材料",
+      "number": "SI Fig. 17",
+      "type": "条图/曲线",
+      "content": "贴片与商用设备成像指标",
+      "layout": "a–d四坐标，2×2",
+      "dimensions": "条图/曲线",
+      "roles": [
+        "精度验证（空间 / 轮廓）",
+        "方法对比"
+      ],
+      "visual": "灰度影像/黑曲线为主，器件示意按材料分色；热图原样式仅记录"
+    },
+    {
+      "paper": "hu",
+      "section": "补充材料",
+      "number": "SI Fig. 18",
+      "type": "示意/统计",
+      "content": "分辨率测试设置",
+      "layout": "a–c三组，设备示意+底部误差",
+      "dimensions": "示意/统计",
+      "roles": [
+        "系统与方法框架 / 流程图",
+        "误差分析"
+      ],
+      "visual": "灰度影像/黑曲线为主，器件示意按材料分色；热图原样式仅记录"
+    },
+    {
+      "paper": "hu",
+      "section": "补充材料",
+      "number": "SI Fig. 19",
+      "type": "照片/曲面/曲线",
+      "content": "表面曲率估计与相位校正流程",
+      "layout": "a–f六组，分行两列",
+      "dimensions": "照片/曲面/曲线",
+      "roles": [
+        "系统与方法框架 / 流程图",
+        "敏感性 / 消融"
+      ],
+      "visual": "灰度影像/黑曲线为主，器件示意按材料分色；热图原样式仅记录"
+    },
+    {
+      "paper": "hu",
+      "section": "补充材料",
+      "number": "SI Fig. 20",
+      "type": "影像",
+      "content": "不同耦合剂的四切面影像",
+      "layout": "a–d四视图，内部4×2",
+      "dimensions": "影像",
+      "roles": [
+        "精度验证（空间 / 轮廓）",
+        "方法对比"
+      ],
+      "visual": "灰度影像/黑曲线为主，器件示意按材料分色；热图原样式仅记录"
+    },
+    {
+      "paper": "hu",
+      "section": "补充材料",
+      "number": "SI Fig. 21",
+      "type": "信号/影像/统计",
+      "content": "耦合条件定量对照",
+      "layout": "a–d四组，上信号/条图，下3影像",
+      "dimensions": "信号/影像/统计",
+      "roles": [
+        "精度验证（空间 / 轮廓）",
+        "方法对比"
+      ],
+      "visual": "灰度影像/黑曲线为主，器件示意按材料分色；热图原样式仅记录"
+    },
+    {
+      "paper": "hu",
+      "section": "补充材料",
+      "number": "SI Fig. 22",
+      "type": "照片",
+      "content": "胸部贴附24小时",
+      "layout": "a–j共10照片，5×2",
+      "dimensions": "照片",
+      "roles": [
+        "泛化能力"
+      ],
+      "visual": "灰度影像/黑曲线为主，器件示意按材料分色；热图原样式仅记录"
+    },
+    {
+      "paper": "hu",
+      "section": "补充材料",
+      "number": "SI Fig. 23",
+      "type": "时序",
+      "content": "一小时温度和HR",
+      "layout": "a/b两坐标横排",
+      "dimensions": "时序",
+      "roles": [
+        "精度验证（时间过程）"
+      ],
+      "visual": "灰度影像/黑曲线为主，器件示意按材料分色；热图原样式仅记录"
+    },
+    {
+      "paper": "hu",
+      "section": "补充材料",
+      "number": "SI Fig. 24",
+      "type": "影像",
+      "content": "10位受试者PLAX",
+      "layout": "10影像，三列分行",
+      "dimensions": "影像",
+      "roles": [
+        "研究对象与数据",
+        "精度验证（空间 / 轮廓）",
+        "泛化能力"
+      ],
+      "visual": "灰度影像/黑曲线为主，器件示意按材料分色；热图原样式仅记录"
+    },
+    {
+      "paper": "hu",
+      "section": "补充材料",
+      "number": "SI Fig. 25",
+      "type": "模型结构",
+      "content": "FCN-32结构",
+      "layout": "单纵向网络及尺寸说明",
+      "dimensions": "模型结构",
+      "roles": [
+        "模型结构"
+      ],
+      "visual": "灰度影像/黑曲线为主，器件示意按材料分色；热图原样式仅记录"
+    },
+    {
+      "paper": "hu",
+      "section": "补充材料",
+      "number": "SI Fig. 26",
+      "type": "统计",
+      "content": "不同模型IoU",
+      "layout": "静息/运动后两组，上下箱线",
+      "dimensions": "统计",
+      "roles": [
+        "精度验证（空间 / 轮廓）",
+        "方法对比"
+      ],
+      "visual": "灰度影像/黑曲线为主，器件示意按材料分色；热图原样式仅记录"
+    },
+    {
+      "paper": "hu",
+      "section": "补充材料",
+      "number": "SI Fig. 27",
+      "type": "影像/掩膜/统计",
+      "content": "数据增广及其IoU影响",
+      "layout": "a/b两组，上增广影像/掩膜、下箱线",
+      "dimensions": "影像/掩膜/统计",
+      "roles": [
+        "敏感性 / 消融"
+      ],
+      "visual": "灰度影像/黑曲线为主，器件示意按材料分色；热图原样式仅记录"
+    },
+    {
+      "paper": "hu",
+      "section": "补充材料",
+      "number": "SI Fig. 28",
+      "type": "影像/解剖",
+      "content": "不同姿势的A4C视图",
+      "layout": "a–g七组，解剖示意+设备影像",
+      "dimensions": "影像/解剖",
+      "roles": [
+        "精度验证（空间 / 轮廓）",
+        "敏感性 / 消融",
+        "生理机制 / 临床解释"
+      ],
+      "visual": "灰度影像/黑曲线为主，器件示意按材料分色；热图原样式仅记录"
+    },
+    {
+      "paper": "hu",
+      "section": "补充材料",
+      "number": "SI Fig. 29",
+      "type": "时序",
+      "content": "图像补全验证",
+      "layout": "a–f六坐标，2×3",
+      "dimensions": "时序",
+      "roles": [
+        "精度验证（时间过程）",
+        "敏感性 / 消融"
+      ],
+      "visual": "灰度影像/黑曲线为主，器件示意按材料分色；热图原样式仅记录"
+    },
+    {
+      "paper": "hu",
+      "section": "补充材料",
+      "number": "SI Fig. 30",
+      "type": "影像",
+      "content": "腹部/肝脏设备对照",
+      "layout": "a/b两解剖组，内部2×2影像",
+      "dimensions": "影像",
+      "roles": [
+        "精度验证（空间 / 轮廓）",
+        "方法对比",
+        "泛化能力"
+      ],
+      "visual": "灰度影像/黑曲线为主，器件示意按材料分色；热图原样式仅记录"
+    },
+    {
+      "paper": "hu",
+      "section": "补充材料",
+      "number": "SI Fig. 31",
+      "type": "影像",
+      "content": "商业仿体活检测试",
+      "layout": "a–d四组，2×2；每组横断/纵断",
+      "dimensions": "影像",
+      "roles": [
+        "精度验证（空间 / 轮廓）",
+        "泛化能力"
+      ],
+      "visual": "灰度影像/黑曲线为主，器件示意按材料分色；热图原样式仅记录"
+    },
+    {
+      "paper": "hu",
+      "section": "补充材料",
+      "number": "SI Fig. 32",
+      "type": "影像",
+      "content": "专业商用设备四标准切面",
+      "layout": "a–d四影像，2×2",
+      "dimensions": "影像",
+      "roles": [
+        "研究对象与数据",
+        "精度验证（空间 / 轮廓）"
+      ],
+      "visual": "灰度影像/黑曲线为主，器件示意按材料分色；热图原样式仅记录"
+    },
+    {
+      "paper": "hu",
+      "section": "补充材料",
+      "number": "SI Fig. 33",
+      "type": "照片/流程",
+      "content": "成像系统照片和信号链",
+      "layout": "a/b两组，上照片下流程",
+      "dimensions": "照片/流程",
+      "roles": [
+        "系统与方法框架 / 流程图"
+      ],
+      "visual": "灰度影像/黑曲线为主，器件示意按材料分色；热图原样式仅记录"
+    },
+    {
+      "paper": "hu",
+      "section": "补充材料",
+      "number": "SI Fig. 34",
+      "type": "结构示意",
+      "content": "Mills cross阵列配置",
+      "layout": "单结构示意",
+      "dimensions": "结构示意",
+      "roles": [
+        "系统与方法框架 / 流程图"
+      ],
+      "visual": "灰度影像/黑曲线为主，器件示意按材料分色；热图原样式仅记录"
+    },
+    {
+      "paper": "safu",
+      "section": "补充材料",
+      "number": "SI Fig. 1",
+      "type": "装置示意",
+      "content": "柔性阵列声学测量设置",
+      "layout": "A/B两组横排",
+      "dimensions": "装置示意",
+      "roles": [
+        "系统与方法框架 / 流程图"
+      ],
+      "visual": "红蓝曲线/灰度影像；示意浅青绿；不复用旧彩虹色带"
+    },
+    {
+      "paper": "safu",
+      "section": "补充材料",
+      "number": "SI Fig. 2",
+      "type": "示意/声场",
+      "content": "曲面上的声束",
+      "layout": "A/B两组纵排，各示意+声场",
+      "dimensions": "示意/声场",
+      "roles": [
+        "精度验证（空间 / 轮廓）",
+        "敏感性 / 消融"
+      ],
+      "visual": "红蓝曲线/灰度影像；示意浅青绿；不复用旧彩虹色带"
+    },
+    {
+      "paper": "safu",
+      "section": "补充材料",
+      "number": "SI Fig. 3",
+      "type": "统计",
+      "content": "皮肤曲率与血管深度/直径",
+      "layout": "A/B两散点横排",
+      "dimensions": "统计",
+      "roles": [
+        "研究对象与数据",
+        "敏感性 / 消融"
+      ],
+      "visual": "红蓝曲线/灰度影像；示意浅青绿；不复用旧彩虹色带"
+    },
+    {
+      "paper": "safu",
+      "section": "补充材料",
+      "number": "SI Fig. 4",
+      "type": "示意/信号/曲线",
+      "content": "工作频率设计",
+      "layout": "A–C三组横排",
+      "dimensions": "示意/信号/曲线",
+      "roles": [
+        "敏感性 / 消融"
+      ],
+      "visual": "红蓝曲线/灰度影像；示意浅青绿；不复用旧彩虹色带"
+    },
+    {
+      "paper": "safu",
+      "section": "补充材料",
+      "number": "SI Fig. 5",
+      "type": "示意/曲线",
+      "content": "压电单元尺寸设计",
+      "layout": "A–D四组，2×2",
+      "dimensions": "示意/曲线",
+      "roles": [
+        "敏感性 / 消融"
+      ],
+      "visual": "红蓝曲线/灰度影像；示意浅青绿；不复用旧彩虹色带"
+    },
+    {
+      "paper": "safu",
+      "section": "补充材料",
+      "number": "SI Fig. 6",
+      "type": "示意/模拟",
+      "content": "蛇形电极设计",
+      "layout": "A–H八组，上模型曲线、下多行应力场",
+      "dimensions": "示意/模拟",
+      "roles": [
+        "敏感性 / 消融"
+      ],
+      "visual": "红蓝曲线/灰度影像；示意浅青绿；不复用旧彩虹色带"
+    },
+    {
+      "paper": "safu",
+      "section": "补充材料",
+      "number": "SI Fig. 7",
+      "type": "模拟/统计",
+      "content": "阵列优化",
+      "layout": "A–F六曲面，2×3",
+      "dimensions": "模拟/统计",
+      "roles": [
+        "敏感性 / 消融"
+      ],
+      "visual": "红蓝曲线/灰度影像；示意浅青绿；不复用旧彩虹色带"
+    },
+    {
+      "paper": "safu",
+      "section": "补充材料",
+      "number": "SI Fig. 8",
+      "type": "声场/统计",
+      "content": "曲率与声束形状",
+      "layout": "A–C三组，顶层声场下两条图",
+      "dimensions": "声场/统计",
+      "roles": [
+        "精度验证（空间 / 轮廓）",
+        "敏感性 / 消融"
+      ],
+      "visual": "红蓝曲线/灰度影像；示意浅青绿；不复用旧彩虹色带"
+    },
+    {
+      "paper": "safu",
+      "section": "补充材料",
+      "number": "SI Fig. 9",
+      "type": "照片/声场",
+      "content": "皮肤3D扫描与声场",
+      "layout": "A–D四组，上装置，中声场，下两条图",
+      "dimensions": "照片/声场",
+      "roles": [
+        "精度验证（空间 / 轮廓）",
+        "敏感性 / 消融"
+      ],
+      "visual": "红蓝曲线/灰度影像；示意浅青绿；不复用旧彩虹色带"
+    },
+    {
+      "paper": "safu",
+      "section": "补充材料",
+      "number": "SI Fig. 10",
+      "type": "流程",
+      "content": "柔性换能器制造流程",
+      "layout": "单流程，12个步骤分三行",
+      "dimensions": "流程",
+      "roles": [
+        "系统与方法框架 / 流程图"
+      ],
+      "visual": "红蓝曲线/灰度影像；示意浅青绿；不复用旧彩虹色带"
+    },
+    {
+      "paper": "safu",
+      "section": "补充材料",
+      "number": "SI Fig. 11",
+      "type": "照片",
+      "content": "PZT激光参数",
+      "layout": "A–C三行，每行4显微图",
+      "dimensions": "照片",
+      "roles": [
+        "敏感性 / 消融"
+      ],
+      "visual": "红蓝曲线/灰度影像；示意浅青绿；不复用旧彩虹色带"
+    },
+    {
+      "paper": "safu",
+      "section": "补充材料",
+      "number": "SI Fig. 12",
+      "type": "照片/曲线",
+      "content": "激光对压电性能影响",
+      "layout": "A–C三组横排",
+      "dimensions": "照片/曲线",
+      "roles": [
+        "精度验证（空间 / 轮廓）",
+        "敏感性 / 消融"
+      ],
+      "visual": "红蓝曲线/灰度影像；示意浅青绿；不复用旧彩虹色带"
+    },
+    {
+      "paper": "safu",
+      "section": "补充材料",
+      "number": "SI Fig. 13",
+      "type": "照片",
+      "content": "底电极激光参数",
+      "layout": "A–C三行，每行4显微图",
+      "dimensions": "照片",
+      "roles": [
+        "敏感性 / 消融"
+      ],
+      "visual": "红蓝曲线/灰度影像；示意浅青绿；不复用旧彩虹色带"
+    },
+    {
+      "paper": "safu",
+      "section": "补充材料",
+      "number": "SI Fig. 14",
+      "type": "示意/影像",
+      "content": "PDMS开孔与共聚焦测量",
+      "layout": "A/B两组，上流程下影像/剖面",
+      "dimensions": "示意/影像",
+      "roles": [
+        "精度验证（空间 / 轮廓）",
+        "敏感性 / 消融"
+      ],
+      "visual": "红蓝曲线/灰度影像；示意浅青绿；不复用旧彩虹色带"
+    },
+    {
+      "paper": "safu",
+      "section": "补充材料",
+      "number": "SI Fig. 15",
+      "type": "模拟/照片",
+      "content": "应变对顶部电极影响",
+      "layout": "A–C三组，上模型/应力场下照片",
+      "dimensions": "模拟/照片",
+      "roles": [
+        "敏感性 / 消融"
+      ],
+      "visual": "红蓝曲线/灰度影像；示意浅青绿；不复用旧彩虹色带"
+    },
+    {
+      "paper": "safu",
+      "section": "补充材料",
+      "number": "SI Fig. 16",
+      "type": "照片",
+      "content": "水凝胶贴片变形",
+      "layout": "A–D四组，2×2",
+      "dimensions": "照片",
+      "roles": [
+        "敏感性 / 消融"
+      ],
+      "visual": "红蓝曲线/灰度影像；示意浅青绿；不复用旧彩虹色带"
+    },
+    {
+      "paper": "safu",
+      "section": "补充材料",
+      "number": "SI Fig. 17",
+      "type": "装置",
+      "content": "BP实验设置",
+      "layout": "单装置照片/连接图",
+      "dimensions": "装置",
+      "roles": [
+        "系统与方法框架 / 流程图"
+      ],
+      "visual": "红蓝曲线/灰度影像；示意浅青绿；不复用旧彩虹色带"
+    },
+    {
+      "paper": "safu",
+      "section": "补充材料",
+      "number": "SI Fig. 18",
+      "type": "装置",
+      "content": "可穿戴测试设置",
+      "layout": "A/B两组横排",
+      "dimensions": "装置",
+      "roles": [
+        "系统与方法框架 / 流程图"
+      ],
+      "visual": "红蓝曲线/灰度影像；示意浅青绿；不复用旧彩虹色带"
+    },
+    {
+      "paper": "safu",
+      "section": "补充材料",
+      "number": "SI Fig. 19",
+      "type": "影像/示意/统计",
+      "content": "倾斜角与血管测量误差",
+      "layout": "A–J十组混合布局",
+      "dimensions": "影像/示意/统计",
+      "roles": [
+        "误差分析",
+        "敏感性 / 消融"
+      ],
+      "visual": "红蓝曲线/灰度影像；示意浅青绿；不复用旧彩虹色带"
+    },
+    {
+      "paper": "safu",
+      "section": "补充材料",
+      "number": "SI Fig. 20",
+      "type": "曲线/条图",
+      "content": "径向失配与回声幅值",
+      "layout": "A–C三组横排",
+      "dimensions": "曲线/条图",
+      "roles": [
+        "误差分析",
+        "敏感性 / 消融"
+      ],
+      "visual": "红蓝曲线/灰度影像；示意浅青绿；不复用旧彩虹色带"
+    },
+    {
+      "paper": "safu",
+      "section": "补充材料",
+      "number": "SI Fig. 21",
+      "type": "照片/影像",
+      "content": "探头定位与对齐验证",
+      "layout": "A–D四行，每行定位过程+影像",
+      "dimensions": "照片/影像",
+      "roles": [
+        "系统与方法框架 / 流程图",
+        "精度验证（空间 / 轮廓）"
+      ],
+      "visual": "红蓝曲线/灰度影像；示意浅青绿；不复用旧彩虹色带"
+    },
+    {
+      "paper": "safu",
+      "section": "补充材料",
+      "number": "SI Fig. 22",
+      "type": "统计",
+      "content": "三志愿者HR对照",
+      "layout": "A–C三个散点横排",
+      "dimensions": "统计",
+      "roles": [
+        "精度验证（空间 / 轮廓）",
+        "方法对比"
+      ],
+      "visual": "红蓝曲线/灰度影像；示意浅青绿；不复用旧彩虹色带"
+    },
+    {
+      "paper": "safu",
+      "section": "补充材料",
+      "number": "SI Fig. 23",
+      "type": "影像",
+      "content": "普通人和运动员SV的临床超声测量",
+      "layout": "A/B两影像横排",
+      "dimensions": "影像",
+      "roles": [
+        "方法对比",
+        "生理机制 / 临床解释"
+      ],
+      "visual": "红蓝曲线/灰度影像；示意浅青绿；不复用旧彩虹色带"
+    },
+    {
+      "paper": "safu",
+      "section": "补充材料",
+      "number": "SI Fig. 24",
+      "type": "时序",
+      "content": "低强度运动HR/BP",
+      "layout": "A–C三种运动列，每列含HR/BP",
+      "dimensions": "时序",
+      "roles": [
+        "精度验证（时间过程）",
+        "生理机制 / 临床解释"
+      ],
+      "visual": "红蓝曲线/灰度影像；示意浅青绿；不复用旧彩虹色带"
+    },
+    {
+      "paper": "safu",
+      "section": "补充材料",
+      "number": "SI Fig. 25",
+      "type": "统计",
+      "content": "PWV参考设备比较",
+      "layout": "A–C三条图横排",
+      "dimensions": "统计",
+      "roles": [
+        "精度验证（空间 / 轮廓）",
+        "方法对比"
+      ],
+      "visual": "红蓝曲线/灰度影像；示意浅青绿；不复用旧彩虹色带"
+    },
+    {
+      "paper": "safu",
+      "section": "补充材料",
+      "number": "SI Fig. 26",
+      "type": "影像",
+      "content": "彩超PI参考",
+      "layout": "A–G七影像，4+3分行",
+      "dimensions": "影像",
+      "roles": [
+        "精度验证（空间 / 轮廓）",
+        "方法对比"
+      ],
+      "visual": "红蓝曲线/灰度影像；示意浅青绿；不复用旧彩虹色带"
+    },
+    {
+      "paper": "sam",
+      "section": "补充材料",
+      "number": "SI Fig. 1",
+      "type": "标注样例叠图",
+      "content": "原图/标签/SAM辅助/自由手绘的对照，展示标签本身也可有缺陷",
+      "layout": "四影像，1×4",
+      "dimensions": "影像/掩膜",
+      "roles": [
+        "精度验证（空间 / 轮廓）",
+        "方法对比",
+        "误差分析"
+      ],
+      "visual": "蓝色透明掩膜，黑底超声"
+    },
+    {
+      "paper": "sam",
+      "section": "补充材料",
+      "number": "SI Table 1",
+      "type": "训练/验证分割表",
+      "content": "zero-shot与微调的ED/ES/总体DSC/IoU",
+      "layout": "单表，方案×训练/验证列组",
+      "dimensions": "统计",
+      "roles": [
+        "精度验证（空间 / 轮廓）",
+        "方法对比"
+      ],
+      "visual": "黑白均值±SD"
+    },
+    {
+      "paper": "sam",
+      "section": "补充材料",
+      "number": "SI Table 2",
+      "type": "EF估计表",
+      "content": "五数据域zero-shot/微调EF的R²和MAE；参考由标签轮廓算出",
+      "layout": "单表，多数据域列组",
+      "dimensions": "统计",
+      "roles": [
+        "方法对比",
+        "泛化能力"
+      ],
+      "visual": "黑白；不能误称独立临床EF标签"
+    },
+    {
+      "paper": "sam",
+      "section": "补充材料",
+      "number": "SI Table 3",
+      "type": "排除病例清单",
+      "content": "因缺失标签排除的EchoNet病例及split",
+      "layout": "单表，文件名/split两列",
+      "dimensions": "统计",
+      "roles": [
+        "研究对象与数据",
+        "误差分析"
+      ],
+      "visual": "黑白；明确缺失原因"
+    },
+    {
+      "paper": "echoprime",
+      "section": "补充材料",
+      "number": "SI Fig. 1",
+      "type": "Bland–Altman多面板",
+      "content": "三个中心不同回归指标的预测减参考",
+      "layout": "11个指标面板，分行网格；按指标不同中心数不同",
+      "dimensions": "统计",
+      "roles": [
+        "方法对比",
+        "误差分析",
+        "泛化能力"
+      ],
+      "visual": "中心蓝/橙/绿，灰bias、红±1.96SD虚线；r不代替一致性"
+    },
+    {
+      "paper": "echoprime",
+      "section": "补充材料",
+      "number": "SI Fig. 2",
+      "type": "检索候选数敏感性",
+      "content": "候选报告数量与AUROC/R²",
+      "layout": "1个坐标，多任务曲线",
+      "dimensions": "统计",
+      "roles": [
+        "敏感性 / 消融"
+      ],
+      "visual": "多色任务线，右侧图例；不是训练损失"
+    },
+    {
+      "paper": "hu",
+      "section": "补充材料",
+      "number": "SI Table 1",
+      "type": "比较表",
+      "content": "既有心脏成像方法比较",
+      "layout": "单表，分组表头",
+      "dimensions": "统计",
+      "roles": [
+        "方法对比"
+      ],
+      "visual": "黑白表格，参数/单位列明"
+    },
+    {
+      "paper": "hu",
+      "section": "补充材料",
+      "number": "SI Table 2",
+      "type": "比较表",
+      "content": "电极/基底粘接强度比较",
+      "layout": "单表，分组表头",
+      "dimensions": "统计",
+      "roles": [
+        "方法对比"
+      ],
+      "visual": "黑白表格，参数/单位列明"
+    },
+    {
+      "paper": "hu",
+      "section": "补充材料",
+      "number": "SI Table 3",
+      "type": "比较表",
+      "content": "模型训练参数与代码来源",
+      "layout": "单表，分组表头",
+      "dimensions": "统计",
+      "roles": [
+        "方法对比"
+      ],
+      "visual": "黑白表格，参数/单位列明"
+    },
+    {
+      "paper": "hu",
+      "section": "补充材料",
+      "number": "SI Table 4",
+      "type": "比较表",
+      "content": "各模型样本规模",
+      "layout": "单表，分组表头",
+      "dimensions": "统计",
+      "roles": [
+        "研究对象与数据"
+      ],
+      "visual": "黑白表格，参数/单位列明"
+    },
+    {
+      "paper": "hu",
+      "section": "补充材料",
+      "number": "SI Table 5",
+      "type": "比较表",
+      "content": "各模型平均IoU",
+      "layout": "单表，分组表头",
+      "dimensions": "统计",
+      "roles": [
+        "精度验证（空间 / 轮廓）",
+        "方法对比"
+      ],
+      "visual": "黑白表格，参数/单位列明"
+    },
+    {
+      "paper": "echoprime",
+      "section": "补充材料",
+      "number": "SI Table 1",
+      "type": "任务/方法表",
+      "content": "Cedars-Sinai模型任务对比",
+      "layout": "单表，多级表头；队列或方法并列",
+      "dimensions": "统计",
+      "roles": [
+        "方法对比",
+        "泛化能力"
+      ],
+      "visual": "黑白，任务定义与指标不混用"
+    },
+    {
+      "paper": "echoprime",
+      "section": "补充材料",
+      "number": "SI Table 2",
+      "type": "任务/方法表",
+      "content": "Stanford模型任务对比",
+      "layout": "单表，多级表头；队列或方法并列",
+      "dimensions": "统计",
+      "roles": [
+        "方法对比",
+        "泛化能力"
+      ],
+      "visual": "黑白，任务定义与指标不混用"
+    },
+    {
+      "paper": "echoprime",
+      "section": "补充材料",
+      "number": "SI Table 3",
+      "type": "任务/方法表",
+      "content": "MIMIC模型任务对比",
+      "layout": "单表，多级表头；队列或方法并列",
+      "dimensions": "统计",
+      "roles": [
+        "方法对比",
+        "泛化能力"
+      ],
+      "visual": "黑白，任务定义与指标不混用"
+    },
+    {
+      "paper": "echoprime",
+      "section": "补充材料",
+      "number": "SI Table 4",
+      "type": "任务/方法表",
+      "content": "CGMH模型任务对比",
+      "layout": "单表，多级表头；队列或方法并列",
+      "dimensions": "统计",
+      "roles": [
+        "方法对比",
+        "泛化能力"
+      ],
+      "visual": "黑白，任务定义与指标不混用"
+    },
+    {
+      "paper": "echoprime",
+      "section": "补充材料",
+      "number": "SI Table 5",
+      "type": "任务/方法表",
+      "content": "Kaiser-Permanente模型任务对比",
+      "layout": "单表，多级表头；队列或方法并列",
+      "dimensions": "统计",
+      "roles": [
+        "方法对比",
+        "泛化能力"
+      ],
+      "visual": "黑白，任务定义与指标不混用"
+    },
+    {
+      "paper": "echoprime",
+      "section": "补充材料",
+      "number": "SI Table 6",
+      "type": "任务/方法表",
+      "content": "核心任务外部NPV",
+      "layout": "单表，多级表头；队列或方法并列",
+      "dimensions": "统计",
+      "roles": [
+        "方法对比",
+        "泛化能力"
+      ],
+      "visual": "黑白，任务定义与指标不混用"
+    },
+    {
+      "paper": "echoprime",
+      "section": "补充材料",
+      "number": "SI Table 7",
+      "type": "任务/方法表",
+      "content": "训练batch size比较",
+      "layout": "单表，多级表头；队列或方法并列",
+      "dimensions": "统计",
+      "roles": [
+        "敏感性 / 消融"
+      ],
+      "visual": "黑白，任务定义与指标不混用"
+    },
+    {
+      "paper": "echoprime",
+      "section": "补充材料",
+      "number": "SI Table 8",
+      "type": "任务/方法表",
+      "content": "mViT/VideoMAE编码器比较",
+      "layout": "单表，多级表头；队列或方法并列",
+      "dimensions": "统计",
+      "roles": [
+        "敏感性 / 消融"
+      ],
+      "visual": "黑白，任务定义与指标不混用"
+    },
+    {
+      "paper": "echoprime",
+      "section": "补充材料",
+      "number": "SI Table 9",
+      "type": "任务/方法表",
+      "content": "正常/异常研究的检索指标",
+      "layout": "单表，多级表头；队列或方法并列",
+      "dimensions": "统计",
+      "roles": [
+        "方法对比"
+      ],
+      "visual": "黑白，任务定义与指标不混用"
+    },
+    {
+      "paper": "echoprime",
+      "section": "补充材料",
+      "number": "SI Table 10",
+      "type": "任务/方法表",
+      "content": "EchoPrime/PanEcho/EchoNet-Measurements特征比较",
+      "layout": "单表，多级表头；队列或方法并列",
+      "dimensions": "统计",
+      "roles": [
+        "方法对比"
+      ],
+      "visual": "黑白，任务定义与指标不混用"
+    },
+    {
+      "paper": "echoprime",
+      "section": "补充材料",
+      "number": "SI Table 11",
+      "type": "任务/方法表",
+      "content": "评估任务及各队列标签阳性/有效数",
+      "layout": "单表，多级表头；队列或方法并列",
+      "dimensions": "统计",
+      "roles": [
+        "研究对象与数据"
+      ],
+      "visual": "黑白，任务定义与指标不混用"
+    },
+    {
+      "paper": "safu",
+      "section": "补充材料",
+      "number": "SI Table 1",
+      "type": "参数/特征表",
+      "content": "单元数×曲率的声束宽度",
+      "layout": "单表，条件或志愿者逐行",
+      "dimensions": "统计",
+      "roles": [
+        "敏感性 / 消融"
+      ],
+      "visual": "黑白网格；成本效率与推理效率不同"
+    },
+    {
+      "paper": "safu",
+      "section": "补充材料",
+      "number": "SI Table 2",
+      "type": "参数/特征表",
+      "content": "单元数×曲率的声束深度",
+      "layout": "单表，条件或志愿者逐行",
+      "dimensions": "统计",
+      "roles": [
+        "敏感性 / 消融"
+      ],
+      "visual": "黑白网格；成本效率与推理效率不同"
+    },
+    {
+      "paper": "safu",
+      "section": "补充材料",
+      "number": "SI Table 3",
+      "type": "参数/特征表",
+      "content": "单元数×曲率的声压",
+      "layout": "单表，条件或志愿者逐行",
+      "dimensions": "统计",
+      "roles": [
+        "敏感性 / 消融"
+      ],
+      "visual": "黑白网格；成本效率与推理效率不同"
+    },
+    {
+      "paper": "safu",
+      "section": "补充材料",
+      "number": "SI Table 4",
+      "type": "参数/特征表",
+      "content": "SAFU/相控阵/单单元方法比较",
+      "layout": "单表，条件或志愿者逐行",
+      "dimensions": "统计",
+      "roles": [
+        "方法对比"
+      ],
+      "visual": "黑白网格；成本效率与推理效率不同"
+    },
+    {
+      "paper": "safu",
+      "section": "补充材料",
+      "number": "SI Table 5",
+      "type": "参数/特征表",
+      "content": "新旧制造工艺",
+      "layout": "单表，条件或志愿者逐行",
+      "dimensions": "统计",
+      "roles": [
+        "方法对比"
+      ],
+      "visual": "黑白网格；成本效率与推理效率不同"
+    },
+    {
+      "paper": "safu",
+      "section": "补充材料",
+      "number": "SI Table 6",
+      "type": "参数/特征表",
+      "content": "新旧工艺成本估计",
+      "layout": "单表，条件或志愿者逐行",
+      "dimensions": "统计",
+      "roles": [
+        "其他"
+      ],
+      "visual": "黑白成本比较表；制造成本属于其他，不是计算效率"
+    },
+    {
+      "paper": "safu",
+      "section": "补充材料",
+      "number": "SI Table 7",
+      "type": "参数/特征表",
+      "content": "桡动脉直径及BP原始测量",
+      "layout": "单表，条件或志愿者逐行",
+      "dimensions": "统计",
+      "roles": [
+        "研究对象与数据"
+      ],
+      "visual": "黑白网格；成本效率与推理效率不同"
+    },
+    {
+      "paper": "safu",
+      "section": "补充材料",
+      "number": "SI Table 8",
+      "type": "参数/特征表",
+      "content": "志愿者年龄/身高/体重/BMI/高血压",
+      "layout": "单表，条件或志愿者逐行",
+      "dimensions": "统计",
+      "roles": [
+        "研究对象与数据"
+      ],
+      "visual": "黑白网格；成本效率与推理效率不同"
+    }
+  ],
+  "original_caption_records": [
+    {
+      "paper": "hu",
+      "kind": "figure",
+      "index": 1,
+      "text": "Fig. 1: Design and characterization of the wearable cardiac imager.Full size imagea, Schematics showing the exploded view of the wearable imager, with key components labelled (left) and its working principle (right). b, Resistance of the liquid metal composite electrode as a function of uniaxial tensile strain. The electrode can be stretched up to about 750% without failure. The y axis is the relative resistance defined as R/R0, in which R0 and R are the measured resistances at 0% strain and a given strain, respectively. The inset is a scanning electron micrograph of the liquid metal composite electrodes with a width as small as about 30 µm. Scale bar, 50 μm. c, Cycling performance of the electrode between 0% and 100% uniaxial tensile strain, showing the robustness of the electrode. The inset shows the zoomed-in features of the graph during cyclic stretching and relaxing of the electrode. d, Lap shear strength of the bonding between transducer elements and SEBS or liquid metal composite electrode. Data are mean and s.d. from n = 3 tests. The inset is a schematic setup of the lap shear test. e, Finite element analysis of the entire device under 110% biaxial stretching. f, Optical images showing the mechanical compliance of the wearable imager when bent on a developable surface, wrapped around a non-developable surface, poked and twisted. Scale bars, 5 mm.",
+      "image": "//media.springernature.com/lw685/springer-static/image/art%3A10.1038%2Fs41586-022-05498-z/MediaObjects/41586_2022_5498_Fig1_HTML.png"
+    },
+    {
+      "paper": "hu",
+      "kind": "figure",
+      "index": 2,
+      "text": "Fig. 2: B-mode imaging strategies and characterizations.Full size imagea, Imaging results on wire (100 µm in diameter) phantoms using different transmit beamforming strategies. The first three columns show the images through plane-wave, mono-focus and wide-beam compounding at different depths, respectively. The fourth column shows the imaging resolution of wide-beam compounding in the elevational direction. The bottom row shows images of laterally distributed wires by the wide-beam compounding, from which the lateral accuracy and spatial resolutions at different lateral distances from the central axis can be obtained. b, Signal-to-noise ratios as a function of the imaging depth under different transmission strategies. c, Simulated acoustic fields of the wide-beam compounding, with enhanced acoustic field across the entire insonation area. d, Elevational, lateral and axial resolutions of the device using wide-beam compounding at different depths. e, Lateral and axial resolutions of the device using wide-beam compounding with different lateral distances from the central axis. Data in d and e are mean and s.d. from five tests (n = 5). f, Imaging inclusions with different contrasts to the matrix. On the basis of these B-mode images, the dynamic range (g) and contrast-to-noise ratio (h) of the device can be quantified.",
+      "image": "//media.springernature.com/lw685/springer-static/image/art%3A10.1038%2Fs41586-022-05498-z/MediaObjects/41586_2022_5498_Fig2_HTML.png"
+    },
+    {
+      "paper": "hu",
+      "kind": "figure",
+      "index": 3,
+      "text": "Fig. 3: Echocardiography in several standard views.Full size imagea, Schematics and B-mode images of cardiac anatomies from the wearable and commercial imagers. The wearable imager was placed in the parasternal position for imaging in the parasternal long-axis and short-axis views and relocated at the apical position for imaging in the apical four-chamber and two-chamber views. b, 17-segment model representation of the left ventricular wall. Each of the concentrically nested rings that make up the circular plot represents the parasternal short-axis view of the myocardial wall from a different level of the left ventricle. c, B-mode images of the left ventricle in basal, mid-cavity and apical views (top row) and corresponding typical displacement for segments 3, 10 and 14, respectively (bottom row). The physical regions of the left ventricular wall represented by each segment of the 17-segment model have been labelled on the corresponding short-axis views. The peaks are marked with red dots. d, M-mode images (upper left) extracted from parasternal long-axis view and corresponding electrocardiogram signals (lower left). A zoomed-in plot shows the different phases of a representative cardiac cycle (right). Primary events include diastole and opening of the mitral valve during the P-wave of the electrocardiogram, opening of the aortic valve and systole during the QRS complex and closure of the aortic valve during the T-wave. AC, atrial contraction; AMVL, anterior mitral valve leaflet; C.I., commercial imager; ERF, early rapid filling; Ej., ejection; IVCT, isovolumetric contraction time; IVRT, isovolumetric relaxation time; IVS, interventricular septum; LA, left atrium; LV, left ventricle; LVIDd, left ventricular internal diameter end diastole; LVIDs, left ventricular internal diameter end systole; LVOT, left ventricular outflow tract; LVPW, left ventricular posterior wall; MV, mitral valve; RA, right atrium; RV, right ventricle; TV, tricuspid valve; W.I., wearable imager.",
+      "image": "//media.springernature.com/lw685/springer-static/image/art%3A10.1038%2Fs41586-022-05498-z/MediaObjects/41586_2022_5498_Fig3_HTML.png"
+    },
+    {
+      "paper": "hu",
+      "kind": "figure",
+      "index": 4,
+      "text": "Fig. 4: Monitoring during motion.Full size imagea, Three stages of stress echocardiography. In the rest stage, the subject laid supine for around 4 min. In the exercise stage, the subject rode a stationary bike for about 15 min, with intervals for rest. In the recovery stage, the subject laid supine again for about 10 min. The wearable imager was attached to the chest of the subject throughout the entire test, even during the transitions between the stages. b, Continuous M-mode echocardiography extracted from the parasternal long-axis-view B-mode images of the entire process. Key features of the interventricular septum and left ventricular posterior wall are identified. The stages of rest, exercise (with intervals of rest) and recovery are labelled. c, Variations in the heart rate extracted from the M-mode echocardiography. d, Zoomed-in images of sections 1 (rest), 2 (exercise) and 3 (recovery) (dashed boxes) in b. e, Left ventricular internal diameter end diastole (LVIDd) and left ventricular internal diameter end systole (LVIDs) waveforms of the three different sections of the recording and corresponding average fractional shortenings. f, Zoomed-in images of section 4 (dashed box) during exercise with intervals of rest in b. In the first interval, the subject took a rhythmic deep breath six times, whereas during exercise, there seems to be no obvious signs of a deep breath, probably because the subject switched from diaphragmatic (rest) to thoracic (exercise) breathing, which is shallower and usually takes less time.",
+      "image": "//media.springernature.com/lw685/springer-static/image/art%3A10.1038%2Fs41586-022-05498-z/MediaObjects/41586_2022_5498_Fig4_HTML.png"
+    },
+    {
+      "paper": "hu",
+      "kind": "figure",
+      "index": 5,
+      "text": "Fig. 5: Automatic image processing by deep learning.Full size imagea, Schematic workflow. Pre-processed images are used to train the FCN-32 model. The trained model accepts the unprocessed images and predicts the left ventricular (LV) volume, based on which stroke volume, cardiac output and ejection fraction are derived. b, Left ventricular volume waveform generated by the FCN-32 model from both the wearable imager (W.I.) and the commercial imager (C.I.) (left). Critical features are labelled in one detailed cardiac cycle (right). c, Bland–Altman analysis of the average of (x axis) and the difference between (y axis) the model-generated and manually labelled left ventricular volumes for the wearable (black) and commercial (red) imagers. Dashed lines indicate the 95% confidence interval and about 95% of the data points are within the interval for both imagers. Solid lines indicate mean differences. d, Comparing the stroke volume, cardiac output and ejection fraction extracted from results by the wearable and commercial imagers. Data are mean and s.d. from twelve cardiac cycles (n = 12). e, The model-generated left ventricular volume waveform in the recovery stage. f, Three representative sections of the recording from the initial, middle and end stages of e. End-systolic volume (ESV), end-diastolic volume (EDV), stroke volume and ejection fraction (g) and cardiac output and heart rate waveforms (h) derived from the left ventricular volume waveform. The end-systolic volume and end-diastolic volume gradually recover to the normal range in the end section. The stroke volume increases from about 60 ml to about 70 ml. The ejection fraction decreases from about 80% to about 60%. The cardiac output decreases from about 11 l min−1 to about 9 l min−1, indicating that the decreasing heart rate from about 175 bpm to about 130 bpm overshadowed the increasing stroke volume. AS, atrial systole; IC, isovolumetric contraction; IR, isovolumetric relaxation; RI, rapid inflow.",
+      "image": "//media.springernature.com/lw685/springer-static/image/art%3A10.1038%2Fs41586-022-05498-z/MediaObjects/41586_2022_5498_Fig5_HTML.png"
+    },
+    {
+      "paper": "hu",
+      "kind": "figure",
+      "index": 6,
+      "text": "Extended Data Fig. 1 Schematics and optical images of the orthogonal imager.a, The orthogonal imager consists of four arms, in which six small elements in one column are combined as one long element, and a central part that is shared by the four arms. The blue and red boxes label a long element integrated by six small pieces in each direction. The number of elements in one direction is 32. The pitch between the elements is 0.4 mm. Optical images in top view (b) and isometric view (c) showing the morphology of the orthogonal array. We used an automatic alignment strategy to fabricate the orthogonal array by bonding a large piece of backing layer with a large piece of 1-3 composite and then dicing them together into small elements with designed configurations. Inset in c shows the details of the elements. The 1-3 composite and backing layer have been labelled.",
+      "image": "/articles/s41586-022-05498-z/figures/6"
+    },
+    {
+      "paper": "hu",
+      "kind": "figure",
+      "index": 7,
+      "text": "Extended Data Fig. 2 Characterization of the effects of phase correction on imaging quality.B-mode images of a line phantom obtained from different situations (a). Left, from a planar surface. Middle, from a curvilinear surface without phase correction. Right, from a curvilinear surface with phase correction. b, The axial and lateral resolutions at different depths under these three situations. No obvious difference in axial resolution was found because it is mainly dependent on the transducer frequency and bandwidth. The lateral resolution of the wearable imager was improved after phase correction. Images collected in (c), the parasternallong-axis (PLAX) view of the heart and (d), the apical four-chamber view when measured by a planar probe (left panel), a curved probe without phase correction (middle panel) and a curved probe with phase correction (right panel). The left ventricular boundaries are labelled by white dashed lines in the images. e, Comparison of measured cardiac indices showing the impact of phase correction. Each measurement is based on the mean of five consecutive cardiac cycles (n = 5). The standard deviations are indicated by the error bars.",
+      "image": "/articles/s41586-022-05498-z/figures/7"
+    },
+    {
+      "paper": "hu",
+      "kind": "figure",
+      "index": 8,
+      "text": "Extended Data Fig. 3 Optical images showing positions and orientations for ultrasound heart imaging.a, Parasternal long-axis view. b, Parasternal short-axis view. c, Apical four-chamber view. d, Apical two-chamber view. The orthogonal wearable cardiac imager combines parasternal long-axis and short-axis views (e) and apical four-chamber and apical two-chamber views without rotation (f). The wearable imager can capture two parasternal views from a single position or two apical views from another single position. The sternum and ribs are labelled to indicate intercostal spaces.",
+      "image": "/articles/s41586-022-05498-z/figures/8"
+    },
+    {
+      "paper": "hu",
+      "kind": "figure",
+      "index": 9,
+      "text": "Extended Data Fig. 4 B-mode images collected from a subject with different postures.The four views collected when the subject is sitting (a), standing (b), bending over (c), lying flat (d) and lying on their side (e). The PLAX and PSAX views can keep their quality at different postures, whereas the quality of A4C and A2C views can only be achieved when lying on the side. A2C, apical two-chamber view; A4C, apical four-chamber view; PLAX, parasternal long-axis view; PSAX, parasternal short-axis view.",
+      "image": "/articles/s41586-022-05498-z/figures/9"
+    },
+    {
+      "paper": "hu",
+      "kind": "figure",
+      "index": 10,
+      "text": "Extended Data Fig. 5 Continuous cardiac imaging during rest, exercise and recovery.Representative B-mode and M-mode images during rest (a), exercise (b) and recovery (c). The red line highlights the M-mode section corresponding to the current B-mode frame. More details can be seen in Supplementary Video 3.",
+      "image": "/articles/s41586-022-05498-z/figures/10"
+    },
+    {
+      "paper": "hu",
+      "kind": "figure",
+      "index": 11,
+      "text": "Extended Data Fig. 6 Segmentation results of the left ventricle with different deep learning models.By qualitatively evaluating the result, we found no ‘jitteriness’ in Supplementary Video 4. The segmented left ventricle contracts and relaxes as naturally as the B-mode video. The segmentation boundaries are smooth with the highest fidelity. Compared with the original B-mode image, the FCN-32 model has the best agreement among all models used in this study.",
+      "image": "/articles/s41586-022-05498-z/figures/11"
+    },
+    {
+      "paper": "hu",
+      "kind": "figure",
+      "index": 12,
+      "text": "Extended Data Fig. 7 Waveforms of the left ventricular volume obtained with different deep learning models.Those waveforms are from segmenting the same B-mode video. Qualitatively, the waveform generated by the FCN-32 model gains the best stability and the least noise, and the waveform morphology is more constant from cycle to cycle. Quantitatively, the comparison results of those models is in Supplementary Fig. 26, which shows that the FCN-32 model has the highest mean intersection over union, showing the best performance in this study.",
+      "image": "/articles/s41586-022-05498-z/figures/12"
+    },
+    {
+      "paper": "hu",
+      "kind": "figure",
+      "index": 13,
+      "text": "Extended Data Fig. 8 Different phases in a cardiac cycle obtained from B-mode imaging.The rows are B-mode images of A4C, A2C, PLAX and PSAX views in the same phase. The columns are B-mode images of the same view during ventricular filling, atrial contraction, isovolumetric contraction, end of ejection and isovolumetric relaxation. The dashed lines highlight the main features of the current phase. Bluish lines mean shrinking in the volume of the labelled chamber. Reddish lines mean expansion in the volume of the labelled chamber. Yellowish lines mean retention in the volume of the labelled chamber. A2C, apical two-chamber view; A4C, apical four-chamber view; LA, left atrium; LV, left ventricle; LVOT, left ventricular outflow tract; RA, right atrium; RV, right ventricle; PLAX, parasternal long-axis view; PSAX: parasternal short-axis view.",
+      "image": "/articles/s41586-022-05498-z/figures/13"
+    },
+    {
+      "paper": "hu",
+      "kind": "table",
+      "index": 1,
+      "text": "Extended Data Table 1 Full comparison of the imaging metrics between the wearable imager and a commercial ultrasound imager (Model P4-2v)Full size table",
+      "id": null
+    },
+    {
+      "paper": "hu",
+      "kind": "table",
+      "index": 2,
+      "text": "Extended Data Table 2 Summary of wearable ultrasonic devices for continuous monitoring of deep tissuesFull size table",
+      "id": null
+    },
+    {
+      "paper": "ouyang",
+      "kind": "figure",
+      "index": 1,
+      "text": "Fig. 1: EchoNet-Dynamic workflow.Full size imageFor each patient, EchoNet-Dynamic uses standard apical four-chamber view echocardiogram videos as input. The model first predicts the ejection fraction for each cardiac cycle using spatiotemporal convolutions with residual connections and generates frame-level semantic segmentations of the left ventricle using weak supervision from expert human tracings. These outputs are combined to create beat-to-beat predictions of the ejection fraction and to predict the presence of heart failure with reduced ejection fraction. AUC, area under the curve.",
+      "image": "//media.springernature.com/lw685/springer-static/image/art%3A10.1038%2Fs41586-020-2145-8/MediaObjects/41586_2020_2145_Fig1_HTML.png"
+    },
+    {
+      "paper": "ouyang",
+      "kind": "figure",
+      "index": 2,
+      "text": "Fig. 2: Model performance.Full size imagea, The predicted ejection fraction of EchoNet-Dynamic compared with the reported ejection fraction for the internal test dataset from Stanford (blue, n = 1,277) and the external test dataset from Cedars-Sinai (red, n = 2,895). The blue and red lines indicate the least-squares regression line between model prediction and human-calculated ejection fraction. b, Receiver-operating characteristic curves for the diagnosis of heart failure with reduced ejection fraction for the internal test dataset (blue, n = 1,277) and external test dataset (red, n = 2,895). c, Variance of the metrics of cardiac function on repeat measurements. The left four box plots highlight the variation between clinicians using different techniques including global longitudinal strain (GLS) and ejection fraction (EF) by various methods (n = 55); the right two box plots show the variance of EchoNet-Dynamic (machine learning (ML) prediction for EF) with standard ultrasound machines (n = 55) and an ultrasound machine that had not previously been seen by the model (n = 49). Box plots show the median as a thick line, the 25th and 75th percentiles as upper and lower bounds of the box, and individual points are included for data more than 1.5× the interquartile range from the median. d, Weak supervision with human expert tracings of the left ventricle at end systole (ES) and end diastole (ED) is used to train a semantic segmentation model with input video frames throughout the cardiac cycle. The human expert tracings (with x, y coordinates designating the region of the image) are paired with the video frame (top row) for model training, allowing for segmentation of video frames that did not have prior human tracings (bottom row). e, The Dice similarity coefficient (DSC) was calculated for each end systole/end diastole frame (n = 1,277). f, The area of the left ventricle segmentation was used to identify the heart rate and bin clips for beat-to-beat evaluation of the ejection fraction.",
+      "image": "//media.springernature.com/lw685/springer-static/image/art%3A10.1038%2Fs41586-020-2145-8/MediaObjects/41586_2020_2145_Fig2_HTML.png"
+    },
+    {
+      "paper": "ouyang",
+      "kind": "figure",
+      "index": 3,
+      "text": "Fig. 3: Beat-to-beat evaluation of the ejection fraction.Full size imagea, Atrial fibrillation and other arrhythmias can be identified by marked variation in the intervals between ventricular contractions. b, Considerable variation in the heart rate was associated with higher variance in the prediction of the ejection fraction. c, Histogram of the s.d. of beat-to-beat evaluation of ejection fraction (n = 1,277) across the internal test videos. d, Assessing the effect of beat-to-beat prediction based on the number of sampled beats averaged for each prediction. Each box plot represents 100 random samples of a set number of beats and the comparison with the reported ejection fraction. Box plots show the median as a thick line, the 25th and 75th percentiles as upper and lower bounds of the box, and whiskers extend to 1.5× the interquartile range from the median.",
+      "image": "//media.springernature.com/lw685/springer-static/image/art%3A10.1038%2Fs41586-020-2145-8/MediaObjects/41586_2020_2145_Fig3_HTML.png"
+    },
+    {
+      "paper": "ouyang",
+      "kind": "figure",
+      "index": 4,
+      "text": "Extended Data Fig. 1 Hyperparameter search for spatiotemporal convolutions on the video dataset to predict ejection fraction.Model architecture (R2+1D, which is the architecture selected by EchoNet-Dynamic for ejection fraction prediction, R3D and MC3), initialization (solid line, Kinetics-400 pretrained weights; dotted line, random initial weights), clip length (1, 8, 16, 32, 64, 96 and all frames) and sampling period (1, 2, 4, 6 and 8) were considered. a, When varying clip lengths, performance is best at 64 frames (corresponding to 1.28 s) and starting from pretrained weights improves performance slightly across all models. b, Varying sampling period with a length to approximately correspond to 64 frames before subsampling. Performance is best with a sampling period of 2.",
+      "image": "/articles/s41586-020-2145-8/figures/4"
+    },
+    {
+      "paper": "ouyang",
+      "kind": "figure",
+      "index": 5,
+      "text": "Extended Data Fig. 2 Individual beat assessment of ejection fraction for each clip in the test dataset.Left, patients with low variance across beats (s.d. < 2.5, n = 3,353); right, patients with high variance across beats (s.d. > 2.5, n = 717). Each patient video is represented by multiple points that represent the estimate of each beat and a line that indicates 1.96 s.d. from the mean. A greater proportion of beats are within 5% of the ejection fraction estimate made by the human observer (the shaded regions) in videos with low variance compared with individual beat assessment of ejection fraction in high-variance patients.",
+      "image": "/articles/s41586-020-2145-8/figures/5"
+    },
+    {
+      "paper": "ouyang",
+      "kind": "figure",
+      "index": 6,
+      "text": "Extended Data Fig. 3 Model performance during training.a, b, Mean square error (MSE) loss for the prediction of left ventricular ejection fraction during training on the training (a) and validation (b) dataset. Pixel-level cross-entropy loss for semantic segmentation of the left ventricle during training on the training (c) and validation (d) dataset.",
+      "image": "/articles/s41586-020-2145-8/figures/6"
+    },
+    {
+      "paper": "ouyang",
+      "kind": "figure",
+      "index": 7,
+      "text": "Extended Data Fig. 4 Relationship between clip length, and speed and memory.Hyperparameter search for model architecture (R2+1D, which is used by EchoNet-Dynamic for ejection fraction prediction, R3D and MC3) and input video clip length (1, 8, 16, 32, 64 and 96 frames) and impact on model processing time and model memory usage.",
+      "image": "/articles/s41586-020-2145-8/figures/7"
+    },
+    {
+      "paper": "ouyang",
+      "kind": "figure",
+      "index": 8,
+      "text": "Extended Data Fig. 5 Variation in echocardiogram video quality and relationship with EchoNet-Dynamic model performance.a, b, Representative quintile video frames are shown with the respective mean pixel intensity (a) and the s.d. of the pixel intensity (b) compared with the mean absolute error of the ejection fraction prediction of EchoNet-Dynamic (EF MAE) and the Dice similarity coefficient for segmentation of the left ventricle (LV DSC). Box plots show the median as a thick line, the 25th and 75th percentiles as upper and lower bounds of the box, and whiskers extend to 1.5× the interquartile range from the median. n = 1,277.",
+      "image": "/articles/s41586-020-2145-8/figures/8"
+    },
+    {
+      "paper": "ouyang",
+      "kind": "figure",
+      "index": 9,
+      "text": "Extended Data Fig. 6 Impact of degraded image quality on model performance.Random pixels were removed and replaced with pure black pixels to simulate ultrasound dropout. Representative video frames with dropout are shown across a range of dropouts. The proportion of dropout was compared with model performance with respect to the R2 of the prediction of ejection fraction and the Dice similarity coefficient (DSC) compared with human segmentation of the left ventricle.",
+      "image": "/articles/s41586-020-2145-8/figures/9"
+    },
+    {
+      "paper": "ouyang",
+      "kind": "table",
+      "index": 1,
+      "text": "Extended Data Table 1 Summary statistics of patient and device characteristics in the Stanford datasetFull size table",
+      "id": null
+    },
+    {
+      "paper": "ouyang",
+      "kind": "table",
+      "index": 2,
+      "text": "Extended Data Table 2 Performance of EchoNet-Dynamic compared with alternative deep learning architectures in assessing cardiac functionFull size table",
+      "id": null
+    },
+    {
+      "paper": "ouyang",
+      "kind": "table",
+      "index": 3,
+      "text": "Extended Data Table 3 Videos with the most discordance between model prediction and human label of ejection fractionFull size table",
+      "id": null
+    },
+    {
+      "paper": "ouyang",
+      "kind": "table",
+      "index": 4,
+      "text": "Extended Data Table 4 Model parameters and computational costFull size table",
+      "id": null
+    },
+    {
+      "paper": "sam",
+      "kind": "figure",
+      "index": 1,
+      "text": "Fig. 1: Qualitative performance of fine-tuned SAM on representative cases against ground truth on the EchoNet-dynamic test dataset.Full size imageFrom top to bottom: 97.5th to 2.5th percentile of DSC. Panels a, b, and c are end-diastolic frames, and Panels d, e, and f are end-systolic frames. We observed that many of the poor-performance cases had suboptimal image qualities, such as weak LV endocardial borders or off-axis views (Panels c and f, suggesting the importance of good input image quality on model performance. Additionally, end-diastolic frames usually have a better delineation of borders than end-systolic frames, which is consistent with the model performance (end-diastolic slightly better than end-systolic).",
+      "image": "//media.springernature.com/lw685/springer-static/image/art%3A10.1038%2Fs41746-025-01730-y/MediaObjects/41746_2025_1730_Fig1_HTML.png"
+    },
+    {
+      "paper": "sam",
+      "kind": "figure",
+      "index": 2,
+      "text": "Fig. 2: Zero-shot and fine-tuned SAM performance on a representative POCUS case.Full size imagePanel a. end-diastolic frame, Panel b. end-systolic frame. From left to right are the ground truth, zero-shot, and fine-tuned mask, with an overlay of bounding boxes (green-colored) and mask (blue-colored), on the original POCUS image. Fine-tuned masks were more consistent with the anticipated left ventricular geometry on visualization. Note that POCUS images generally had worse quality compared to transthoracic echocardiography images.",
+      "image": "//media.springernature.com/lw685/springer-static/image/art%3A10.1038%2Fs41746-025-01730-y/MediaObjects/41746_2025_1730_Fig2_HTML.png"
+    },
+    {
+      "paper": "sam",
+      "kind": "figure",
+      "index": 3,
+      "text": "Fig. 3: SAM-assisted workflow decreased the time for annotation while maintaining the quality of echocardiography image segmentation.Full size imagea With SAM’s assistance, the average annotation time significantly decreased by 50%. b Among experienced annotators, the workflow decreased annotation time by 39.2%; (c) It also reduced 66.0% annotation time for an inexperienced annotator. d–f No significant difference was observed in segmentation quality when measured by the Dice Similarity Score. ***p < 0.0001.",
+      "image": "//media.springernature.com/lw685/springer-static/image/art%3A10.1038%2Fs41746-025-01730-y/MediaObjects/41746_2025_1730_Fig3_HTML.png"
+    },
+    {
+      "paper": "sam",
+      "kind": "table",
+      "index": 1,
+      "text": "Table 1 Comparison of Model Performance Based on Dice Similarity Coefficient (DSC) and Intersection over Union (IoU)Full size table",
+      "id": null
+    },
+    {
+      "paper": "sam",
+      "kind": "table",
+      "index": 2,
+      "text": "Table 2 Comparison of Model Performance Based on Hausdorff Distance (HD) and Average Surface Distance (ASD)Full size table",
+      "id": null
+    },
+    {
+      "paper": "sam",
+      "kind": "table",
+      "index": 3,
+      "text": "Table 3 Zero-shot vs. Fine-tuned SAM112 performance on TTE and POCUS (against the second observer)Full size table",
+      "id": null
+    },
+    {
+      "paper": "sam",
+      "kind": "table",
+      "index": 4,
+      "text": "Table 4 Comparison of fine-tuned SAM and MedSAMFull size table",
+      "id": null
+    },
+    {
+      "paper": "echofm",
+      "kind": "figure",
+      "index": 1,
+      "text": "Fig. 1. Open in a new tab (a) Key characteristics of B-mode echocardiography include its low signal-to-noise ratio and periodic temporal sequences. Unlike other imaging modalities, echocardiography features diverse scanning views and multiple imaging modes, enabling comprehensive cardiac assessment. (b) Typical downstream tasks in routine echocardiography include view identification and chamber segmentation, with a focus on disease diagnosis, such as assessing the severity of aortic stenosis and aortic regurgitation.",
+      "image": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/2450/12616925/db414aa2e92c/nihms-2119672-f0001.jpg"
+    },
+    {
+      "paper": "echofm",
+      "kind": "figure",
+      "index": 2,
+      "text": "Fig. 2. Open in a new tab The overview of the proposed method. We extract spatio-temporal patches, keeping mask-ratio along temporal domain. The visible patches are processed by the ViT encoder and extracted latent representation are grouped into temporal dimension. The decoder reconstructs the missing patches in the video input. The grouped spatio-temporal patches in temporal dimension are processed by a ViT-based projector to extract [CLS] tokens independently. We build the temporal self-similarity matrix by calculating similarity between [CLS] tokens. We sample triplet pairs, then the spatio-temporal consistent masking applied to triplet patches. We minimize periodic contrastive loss and reconstruction loss until network convergence. The encoder is attached to a task-specific decoder for fine-tuning and used for downstream tasks.",
+      "image": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/2450/12616925/37109be03e50/nihms-2119672-f0002.jpg"
+    },
+    {
+      "paper": "echofm",
+      "kind": "figure",
+      "index": 3,
+      "text": "Fig. 3. Open in a new tab Different masking strategies: (a) Random masking, (b) Uniform-frame masking, which maintains the same mask ratio across the temporal dimension, and (c) Spatio-temporal consistent masking, which applies the same mask to selected samples.",
+      "image": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/2450/12616925/ecba39b0714d/nihms-2119672-f0003.jpg"
+    },
+    {
+      "paper": "echofm",
+      "kind": "figure",
+      "index": 4,
+      "text": "Fig. 4. Open in a new tab (a) Quantitative comparison of segmentation performance on public and multi-center datasets. The Dice metric is presented with box-and-whiskers plot representing the range from minimum to maximum values. The p values indicate the statistically significant superiority of the proposed model. All statistical tests were two-sided. Visual comparison of EchoFM and the Second-Best model in CAMUS (b) and Multi-center dataset (c).",
+      "image": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/2450/12616925/394fe5436f9f/nihms-2119672-f0004.jpg"
+    },
+    {
+      "paper": "echofm",
+      "kind": "figure",
+      "index": 5,
+      "text": "Fig. 5. Open in a new tab Comparison of temporal self-similarity matrices produced by two methods: (a) VideoMAE and (b) the proposed EchoFM, illustrating the temporal self-similarity matrix within one and two cardiac cycles.",
+      "image": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/2450/12616925/505c09deca1f/nihms-2119672-f0005.jpg"
+    },
+    {
+      "paper": "echofm",
+      "kind": "figure",
+      "index": 6,
+      "text": "Fig. 6. Open in a new tab Ablation study evaluating the impact of periodic contrastive learning on model performance. (a) Dice scores for the chamber segmentation task. (b) Accuracy results for classification downstream tasks. Models trained with periodic contrastive loss are represented in blue, while models trained without it are shown in green.",
+      "image": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/2450/12616925/09ef34157277/nihms-2119672-f0006.jpg"
+    },
+    {
+      "paper": "echofm",
+      "kind": "figure",
+      "index": 7,
+      "text": "Fig. 7. Open in a new tab Comparison of various methods on the chamber segmentation task, focusing on label efficiency. EchoFM, when compared with EchoNet without pretraining and SAM pretrained on natural images, exhibits superior performance, particularly in scenarios with very limited labeled data. The results are presented with 95% confidence intervals.",
+      "image": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/2450/12616925/9acec1d52a09/nihms-2119672-f0007.jpg"
+    },
+    {
+      "paper": "echofm",
+      "kind": "table",
+      "index": 1,
+      "text": "TABLE VIII. Ablation study of the proposed EchoFM foundation model in terms of token size and masking ratio. The best result is shown in bold. Patch Size mDice [%] 8 × 8 × 2 89.20 8 × 8 × 4 89.03 16 × 16 × 2 89.65 16 × 16 × 4 90.43 Ratio mDice [%] 25 % 89.02 50 % 89.46 75 % 90.43 90 % 90.20 Open in a new tab",
+      "id": "T8"
+    },
+    {
+      "paper": "echofm",
+      "kind": "table",
+      "index": 2,
+      "text": "TABLE I. Patient Characteristics in the Multi-Center Dataset. Characteristics are listed as n (%). Characteristic Value Patients 6,494 Videos 286,080 Age, mean ± SD a 76.9 ± 10.9 Female 2,870 (44.2%) Clinical Conditions Heart Failure 2,346 (36.1%) Pulmonary Hypertension 570 (8.7%) Aortic Valve Stenosis 399 (6.1%) Mitral Valve Stenosis 1,011 (15.5%) Tricuspid Valve Stenosis 963 (14.8%) Open in a new tab aAge is reported in years.",
+      "id": "T1"
+    },
+    {
+      "paper": "echofm",
+      "kind": "table",
+      "index": 3,
+      "text": "TABLE II. Intraobserver Variability Analysis for the Segmentation Downstream Task. ROI ICC 95% CI p-value LVendo 0.964 0.961–0.967 <0.001 LVepi 0.941 0.932–0.950 <0.001 LA 0.947 0.940–0.954 <0.001 Open in a new tab",
+      "id": "T2"
+    },
+    {
+      "paper": "echofm",
+      "kind": "table",
+      "index": 4,
+      "text": "TABLE III. Quantitative results of various methods fine-tuned for the downstream view identification task. The accuracy of different methods on the TMED-2 and INTERNAL datasets is presented. The best result is highlighted in bold. Methods Pretrained Dataset Accuracy (%) TMED-2 INTERNAL ResNet50 [55] ImageNet 83.7 78.4 ViT-B [56] ImageNet 87.0 80.4 SAM [12] SA-1B 92.3 86.3 LVM-MED [14] 8 Medical imaging 93.8 86.5 USFM [22] US 94.3 86.2 VideoMAE [32] Kinetics-400 [57] 93.0 88.3 EchoFM - 83.8 77.8 EchoFM Countix [34] 93.1 88.5 EchoFM (Ours) Echo 94.2 89.1 Open in a new tab",
+      "id": "T3"
+    },
+    {
+      "paper": "echofm",
+      "kind": "table",
+      "index": 5,
+      "text": "TABLE IV. STATE-OF-THE-ART COMPARISON ON THE CAMUS DATASET. Quantitative results of methods fine-tuned for the chamber segmentation task on the CAMUS dataset. The best result is highlighted in bold, while the second-best result is indicated with an underline. Methods LVendo LVepi LA Average Dice IoU HD95 ASSD Dice IoU HD95 ASSD Dice IoU HD95 ASSD Dice IoU HD95 ASSD LUNet [58] 88.64 80.59 6.31 3.23 81.10 71.86 6.78 3.65 78.12 65.53 13.92 6.10 82.62 72.66 9.00 4.33 EchoNet [49] 89.83 80.31 6.08 2.98 82.64 73.10 6.64 3.52 79.51 67.60 11.02 5.64 83.99 73.67 7.91 4.05 SegFormer [59] 91.46 87.20 4.32 2.08 88.18 82.10 4.85 3.15 88.13 85.90 6.72 3.40 89.26 85.07 5.30 2.88 nnUnet ResEnc [60] 91.70 89.01 3.76 1.85 88.24 82.70 4.61 2.18 88.10 85.67 7.55 3.41 89.35 85.79 5.31 2.48 CLIP [10] 87.45 78.82 7.12 3.33 81.65 73.10 5.84 3.23 79.82 68.87 11.04 4.96 82.97 73.60 8.00 3.84 VideoMAE [32] 91.80 85.16 5.51 2.56 86.31 77.05 3.11 2.35 88.33 83.90 6.03 3.21 88.81 82.04 4.88 2.71 SimSiam [26] 90.18 88.08 5.90 3.44 85.88 78.05 4.65 2.02 87.82 82.90 7.82 4.05 87.96 83.01 6.12 3.17 DINO [11] 90.24 88.50 5.32 3.03 86.70 79.40 4.20 1.38 87.98 84.74 7.30 3.71 88.31 84.21 5.61 2.71 SAM [12] 90.03 84.22 5.02 2.20 85.40 75.75 5.52 2.10 83.23 82.64 7.30 3.48 86.22 80.87 5.95 2.59 SonoSAM [43] 91.02 85.09 4.10 1.89 86.50 80.77 4.68 2.01 86.81 84.46 7.28 3.30 88.11 83.44 5.35 2.40 LVM-Med [14] 91.58 84.68 4.14 1.77 85.78 76.20 4.72 1.77 83.50 83.38 7.10 3.22 86.95 81.42 5.32 2.25 USFM [22] 90.86 83.61 4.84 1.91 84.61 75.55 4.50 1.72 84.60 84.75 8.89 3.58 86.69 81.30 6.08 2.40 EchoCLIP [23] 91.30 88.94 4.06 2.24 87.98 82.10 3.89 1.92 88.43 85.80 7.02 3.20 89.24 85.61 4.99 2.45 EchoFM (RandomInit) 87.15 82.51 6.05 3.01 82.41 75.33 4.52 3.21 82.30 73.88 8.96 4.88 83.95 77.24 6.51 3.70 EchoFM (Countix) 91.24 85.98 4.51 2.19 87.88 82.40 4.42 1.68 86.92 83.55 7.45 3.40 88.68 83.98 4.79 2.42 EchoFM (Ours) 93.61 90.30 3.26 1.56 89.08 83.60 3.05 1.10 88.60 86.60 6.05 2.77 90.43 86.83 4.12 1.81 Open in a new tab",
+      "id": "T4"
+    },
+    {
+      "paper": "echofm",
+      "kind": "table",
+      "index": 6,
+      "text": "TABLE V. STATE-OF-THE-ART COMPARISON ON THE MULTI-CENTER DATASET. Quantitative results of methods fine-tuned for the chamber segmentation task on the Multi-center dataset. The best result is highlighted in bold, while the second-best result is indicated with an underline. Methods LVendo LVepi LA Average Dice IoU HD95 ASSD Dice IoU HD95 ASSD Dice IoU HD95 ASSD Dice IoU HD95 ASSD LUNet [58] 85.94 84.92 7.08 5.70 75.01 73.63 11.92 9.40 82.92 79.15 11.91 9.98 81.29 79.23 10.30 8.36 EchoNet [49] 86.40 85.04 7.43 5.49 78.42 75.91 9.89 8.22 83.78 80.84 10.84 9.40 82.87 80.60 9.39 7.70 SegFormer [59] 89.20 85.78 5.84 3.66 84.06 77.02 6.02 4.08 85.91 82.69 9.25 6.09 86.39 81.83 7.04 4.61 nnUnet ResEnc [60] 89.83 86.31 6.08 2.98 82.64 75.10 6.64 4.16 85.51 83.60 9.02 5.64 85.99 81.67 7.25 4.26 CLIP [10] 83.19 81.28 10.21 7.19 79.19 75.94 9.04 8.13 83.14 80.90 14.87 10.94 81.84 79.37 11.37 8.75 VideoMAE [32] 89.15 86.42 6.01 3.55 87.09 83.95 5.29 4.40 85.59 84.22 10.32 4.66 87.28 84.86 7.21 4.20 SimSiam [26] 87.80 85.90 7.50 4.51 86.88 84.05 6.05 5.01 84.20 83.33 11.22 5.23 86.29 84.43 8.26 4.92 DINO [11] 89.09 86.34 6.30 4.03 86.98 83.80 5.74 4.80 84.90 84.20 11.32 5.20 86.99 84.78 7.79 4.68 SAM [12] 87.03 85.58 8.10 5.45 86.04 84.42 6.30 6.81 86.20 83.32 9.20 6.58 86.42 84.44 7.87 6.28 SonoSAM [43] 90.03 87.22 5.65 3.20 87.40 83.75 5.52 4.16 86.23 84.64 8.30 4.48 87.89 85.20 6.49 3.95 LVM-Med [14] 88.01 86.03 7.98 4.88 86.12 85.19 7.12 6.20 86.42 84.30 10.49 6.50 86.85 85.17 8.53 5.86 USFM [22] 86.80 85.24 7.33 3.74 85.88 81.32 6.34 5.29 85.10 83.04 11.23 8.02 85.93 83.20 8.30 5.68 EchoCLIP [23] 88.70 86.36 5.82 3.52 87.03 83.38 5.60 4.30 86.08 83.24 10.01 5.24 87.27 84.33 7.14 4.35 EchoFM (RandomInit) 85.24 82.60 7.82 6.98 81.90 77.39 7.02 6.88 85.21 81.32 8.96 7.02 84.12 80.44 7.93 6.96 EchoFM (Countix) 89.82 86.98 6.20 3.55 86.05 81.96 6.88 5.81 85.78 82.87 9.54 5.60 87.22 83.94 7.54 4.99 EchoFM (Ours) 91.24 87.30 5.20 2.84 88.53 85.48 4.56 3.90 87.30 85.09 8.21 4.05 89.02 85.96 5.99 3.60 Open in a new tab",
+      "id": "T5"
+    },
+    {
+      "paper": "echofm",
+      "kind": "table",
+      "index": 7,
+      "text": "TABLE VI. The performance of different methods fine-tuned on the TMED-2 for AS detection. AUROC is reported. Methods Pretrained Dataset Absent vs. Present Early vs. Significant Non vs. Significant ResNet50 [55] ImageNet 0.66 0.67 0.66 ViT-B [56] ImageNet 0.68 0.71 0.70 AAD [50] – 0.74 0.73 0.76 SAM [12] SA-1B 0.74 0.76 0.77 LVM-MED[14] 8 Medical Imaging 0.76 0.77 0.79 USFM [22] US 0.77 0.80 0.81 EchoCLIP [23] Echo 0.79 0.82 0.82 EchoFM – 0.72 0.71 0.70 EchoFM Countix 0.75 0.76 0.77 EchoFM Echo 0.81 0.84 0.83 Open in a new tab",
+      "id": "T6"
+    },
+    {
+      "paper": "echofm",
+      "kind": "table",
+      "index": 8,
+      "text": "TABLE VII. Quantitative results of various methods fine-tuned for the downstream AR severity diagnosis task, evaluated in terms of accuracy, precision, recall, and F1 score on the internal dataset. The best result is highlighted in bold. Methods Pretrained Dataset Accuracy Precision Recall F1 MVCN [54] Kinetics400 83.3 86.4 82.2 84.2 VideoMAE [32] Echo 84.6 87.0 86.1 86.5 EchoFM – 70.8 72.3 69.8 71.0 EchoFM Countix 85.1 86.9 86.4 86.6 EchoFM (Ours) Echo 85.7 87.1 86.6 86.8 Open in a new tab",
+      "id": "T7"
+    },
+    {
+      "paper": "echofm",
+      "kind": "table",
+      "index": 9,
+      "text": "TABLE IX. Segmentation performance across different input resolutions on the CAMUS and multi-center datasets. ROI 112×112 224×224 384×384 LVendo 90.21 / 89.68 93.61 / 91.24 93.51 / 91.08 LVepi 86.82 / 84.36 89.08 / 88.53 88.91 / 86.57 LA 84.44 / 85.75 88.60 / 87.30 88.24 / 87.26 Open in a new tab",
+      "id": "T9"
+    },
+    {
+      "paper": "echoprime",
+      "kind": "figure",
+      "index": 1,
+      "text": "Fig. 1: EchoPrime overview.Full size imagea, Training dataset characteristics. The schematics were adapted from Flaticon by FreePik (https://www.flaticon.com). b, Video and text encoders are trained to map videos and text into a joint latent space. The view classifier and multiple instance learning are trained separately to learn view weighting based on the anatomical section. LV, left ventricle. SSN, suprasternal notch. c, Inference pipeline. When given a comprehensive echocardiogram study, EchoPrime determines the view for each video, uses contrastive encoder on the joint video–text latent space for retrieval augmented interpretation, and weights the interpretation of each video by anatomical attention for a study-level assessment of each cardiac structure.",
+      "image": "//media.springernature.com/lw685/springer-static/image/art%3A10.1038%2Fs41586-025-09850-x/MediaObjects/41586_2025_9850_Fig1_HTML.png"
+    },
+    {
+      "paper": "echoprime",
+      "kind": "figure",
+      "index": 2,
+      "text": "Fig. 2: Performance metrics for echocardiography prediction tasks.Full size imagea, Comparison of EchoPrime, EchoCLIP and BioMedCLIP on a range of echocardiography interpretation tasks on cohorts from five different clinical centres. The area under the receiver operating characteristic curve is shown for classification tasks and the R2 score for regression tasks. b, Transfer learning. Using linear probing, EchoPrime accurately predicts multimodal cardiovascular diseases even when their labels are not explicitly mentioned in the echocardiography reports. FPR, false positive rate; IVC, inferior vena cava; TAVR, transcatheter aortic valve replacement; TPR, true positive rate.",
+      "image": "//media.springernature.com/lw685/springer-static/image/art%3A10.1038%2Fs41586-025-09850-x/MediaObjects/41586_2025_9850_Fig2_HTML.png"
+    },
+    {
+      "paper": "echoprime",
+      "kind": "figure",
+      "index": 3,
+      "text": "Fig. 3: Anatomical attention to weight predictions across videos in an echocardiogram study.Full size imagea, A view classifier was trained on 60,000 videos to distinguish between 58 standard echocardiographic views. b, A comprehensive echocardiogram examination comprises many different views, which is summarized across our training cohort. c, A clustered heatmap showing the relative priority and ranking of each video for each anatomical structure based on learned anatomical attention. IAS, interatrial septum; IVS, interventricular septum; LA, left atrium; LV, left ventricle; MV, mitral valve; PV, pulmonic valve; RV, right ventricle; TV, tricuspid valve. d, Comparison of how a cardiologist (left) and EchoPrime (right) prioritizes different views based on the assessed anatomical structure.",
+      "image": "//media.springernature.com/lw685/springer-static/image/art%3A10.1038%2Fs41586-025-09850-x/MediaObjects/41586_2025_9850_Fig3_HTML.png"
+    },
+    {
+      "paper": "echoprime",
+      "kind": "figure",
+      "index": 4,
+      "text": "Extended Data Fig. 1The accuracy of predicting aortic regurgitation severity and left ventricular ejection fraction improves progressively from predictions on a single image to a full video, a single video to multiple videos in a full study and finally applying anatomical attention (EchoPrime weighting).",
+      "image": "/articles/s41586-025-09850-x/figures/4"
+    },
+    {
+      "paper": "echoprime",
+      "kind": "figure",
+      "index": 5,
+      "text": "Extended Data Fig. 2A, UMAP representation of features from the second to last layer of the video classifier. Doppler views are denoted by prefix “D”. B, Case study on pericardial effusion prediction demonstrates the advantages of utilizing all videos from the study and applying anatomical weighting.",
+      "image": "/articles/s41586-025-09850-x/figures/5"
+    },
+    {
+      "paper": "echoprime",
+      "kind": "figure",
+      "index": 6,
+      "text": "Extended Data Fig. 3Comparison of model performance when initialized with EchoPrime weights versus Kinetics weights versus random weights, showing the impact of domain-specific initialization on training efficiency and convergence.",
+      "image": "/articles/s41586-025-09850-x/figures/6"
+    },
+    {
+      "paper": "echoprime",
+      "kind": "figure",
+      "index": 7,
+      "text": "Extended Data Fig. 4 Weighting the views based on relevance.After training the architecture shown in the figure, with view classifier and video encoder frozen, MIL learns which views are most informative views for the specific feature prediction. The MIL component can be isolated and used as a weighting vector in other applications.",
+      "image": "/articles/s41586-025-09850-x/figures/7"
+    },
+    {
+      "paper": "echoprime",
+      "kind": "table",
+      "index": 1,
+      "text": "Table 1 Clinical characteristics of the study cohortsFull size table",
+      "id": null
+    },
+    {
+      "paper": "echoprime",
+      "kind": "table",
+      "index": 2,
+      "text": "Table 2 EchoPrime echocardiography interpretation performance across datasets from five different medical centresFull size table",
+      "id": null
+    },
+    {
+      "paper": "echoprime",
+      "kind": "table",
+      "index": 3,
+      "text": "Table 3 Cross-modal retrieval metrics on a test set of video–text report pairsFull size table",
+      "id": null
+    },
+    {
+      "paper": "echoprime",
+      "kind": "table",
+      "index": 4,
+      "text": "Extended Data Table 1 EchoPrime versus task-specific modelsFull size table",
+      "id": null
+    },
+    {
+      "paper": "echoprime",
+      "kind": "table",
+      "index": 5,
+      "text": "Extended Data Table 2 EchoPrime’s performance on regression tasks across three medical centresFull size table",
+      "id": null
+    },
+    {
+      "paper": "echoprime",
+      "kind": "table",
+      "index": 6,
+      "text": "Extended Data Table 3 Aggregated comparison of EchoPrime and PanEcho on all external validation sites. Asterisks (*) denote statistically significant differences (p < 0.05/59 adjusted for multiplicity). The DeLong test was used for comparing AUCs, and bootstrapping was used for MAE and R2 metricsFull size table",
+      "id": null
+    },
+    {
+      "paper": "echoprime",
+      "kind": "table",
+      "index": 7,
+      "text": "Extended Data Table 4 EchoPrime performance in low-quality resource-constrained settingFull size table",
+      "id": null
+    },
+    {
+      "paper": "echoprime",
+      "kind": "table",
+      "index": 8,
+      "text": "Extended Data Table 5 EchoPrime versus physician variability compared to physician versus physicianFull size table",
+      "id": null
+    },
+    {
+      "paper": "echoprime",
+      "kind": "table",
+      "index": 9,
+      "text": "Extended Data Table 6 EchoPrime performance with and without anatomical weighting variabilityFull size table",
+      "id": null
+    },
+    {
+      "paper": "safu",
+      "kind": "figure",
+      "index": 1,
+      "text": "Fig. 1. Design and working principle of the flexible ultrasonic transducer array. Open in a new tab (A) Working principle schematic of ultrasonic cardiovascular dynamic parameter measurement. (B) Structure schematic of the piezoelectric transducer cell. (C) Acoustic field of the transducer with different curvature radii. (D) Comparison of the normalized acoustic pressure between the ultrasonic array and a single cell. R10, R25, R40 and R60 mean the radii of curvature of 10, 25, 40 and 60 mm, respectively. (E) Comparison of directivity between the ultrasonic array and a single cell. The, theory; Mea, measurement. (F) Normalized SNR of the fabricated ultrasonic array and single cell under different curvature radii. (G) Beam width and beam depth of the fabricated ultrasonic array and single cell under different curvature radii. (H) Theoretical modeling and analyses for the flexible ultrasonic array: (a) Theoretical model for flexible array design; (b) beam width variations under different cell numbers and curvature radii; (c) beam depth variations under different cell numbers and curvature radii; and (d) acoustic pressure variations under different cell numbers and curvature radii.",
+      "image": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/a2e0/12422204/de53ad3516ed/sciadv.adw7632-f1.jpg"
+    },
+    {
+      "paper": "safu",
+      "kind": "figure",
+      "index": 2,
+      "text": "Fig. 2. The MEMS process–compatible fabrication and performance characterization of the flexible ultrasonic transducer array. Open in a new tab (A) Main fabrication process. (B) Digital image of the fabricated flexible ultrasonic array. (a) The fabricated flexible ultrasonic transducer patch. (b) The stretched flexible transducer. (c) The bent flexible transducer. (d) The twisted flexible transducer. (C) Resonant frequencies of multichannels. (D) Impedances of three different flexible transducers. (E) Bandwidths. (F) Acoustic pressure variations with meat thickness. (G) Schematic of the ultrasound transducer with or without the hydrogel patch. (H) Comparison of pulse-echo–received voltages with and without a hydrogel patch. (I) Peeling force testing. h, hours. (J) The process of transducer stripping. (K) Attachment to the skin after 24 hours.",
+      "image": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/a2e0/12422204/42764dcb81b7/sciadv.adw7632-f2.jpg"
+    },
+    {
+      "paper": "safu",
+      "kind": "figure",
+      "index": 3,
+      "text": "Fig. 3. BP waveform testing on various parts of the human body and long-term BP monitoring by the SAFU transducer array. Open in a new tab (A) Pulse-echo signals from the anterior and posterior walls of blood vessels. (B) BP waveforms tested by our work and Sph. (C) BP waveform analysis. (D) BP testing on volunteers with different body mass index (BMI). (E) Repeatability testing. (F) BP detection range testing of our SAFU transducer array. (G) BP waveform testing on various blood vessels at different depths. (H) Twenty-four–hour continuous BP testing. Error bars represent ±SD (N = 5). h, hours.",
+      "image": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/a2e0/12422204/2c716c3f5667/sciadv.adw7632-f3.jpg"
+    },
+    {
+      "paper": "safu",
+      "kind": "figure",
+      "index": 4,
+      "text": "Fig. 4. Continuous and real-time detection of both heart rate and BP waveform during exercise. Open in a new tab (A) Schematic of different exercises, such as spot running, squat exercise, and one-arm dumbbell exercise with a barbell weight of 2 kg. (B) Heart rate variations during spot running, squat exercise, and one-arm dumbbell exercise. (C) BP waveform variations during spot running, squat, and one-arm dumbbell exercises. (D) Comparison of RSI during spot running, squat, and one-arm dumbbell exercises. Error bars represent ±SD (N = 5). *P < 0.05; the difference between layperson and athlete before exercise versus the difference during exercise.",
+      "image": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/a2e0/12422204/3084e1791f2c/sciadv.adw7632-f4.jpg"
+    },
+    {
+      "paper": "safu",
+      "kind": "figure",
+      "index": 5,
+      "text": "Fig. 5. Vessel stiffness analysis for individuals with different ages and health conditions. Open in a new tab (A) Measured results of the hypertensive and normotensive individuals. (a) BP waveforms. (b) β and PWV. Error bars represent ±SD (N = 5). *P < 0.05; hypertensive versus normotensive. (B) Experimental results of the elderly and young individuals. (a) BP waveforms. (b) β and PWV. Error bars represent ±SD (N = 5). *P < 0.05; elderly versus young. (C) Tested results of the layperson and the athlete individuals. (a) BP waveforms. (b) β and PWV. Error bars represent ±SD (N = 5). *P < 0.05; layperson versus athlete. (D) Schematic of the vessel stiffness of the elderly and young individuals. (E) Comparison of β and PI between elderly and young individuals. Error bars represent ±SD (N = 5). *P < 0.05; young subjects versus elderly subjects. (F) Comparison of BP waveforms between the typical elderly and young individuals.",
+      "image": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/a2e0/12422204/565fcdc7f4bd/sciadv.adw7632-f5.jpg"
+    }
+  ],
+  "limitations": [
+    "EchoFM独立SI状态未知，不作为0计入SI中位数。",
+    "原图仅用于阅读与结构核查，不随投稿图复制；未从图中反推本项目数据。",
+    "SAFU是血管监测器件研究，不能当作LV分割算法性能对照。"
+  ]
+}

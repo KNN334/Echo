@@ -24,6 +24,8 @@
 
 ## 结果分析图
 
+本轮投稿图表规划见 [图表制作清单](figure_plan.md)、[结果资产盘点](figures/planning/result_assets.md) 和 [六篇同行论文逐图逐表拆解](figures/planning/literature_breakdown.md)。当前建议正文 4 图、2 表，补充图为备选；清单等待确认，尚未进入新视觉主题与分批制图。所有验证仍限定于公开 CAMUS 半周期，不能表述为贴片连续佩戴实测。
+
 已保存实验的 10 组结果图见 [离线图集](reports/result_analysis/camus_cuda_progress/index.html)、[全部图件 PDF](reports/result_analysis/camus_cuda_progress/all_figures.pdf) 和 [中文解读](reports/result_analysis/camus_cuda_progress/RESULTS_ANALYSIS.md)。图集使用同一轮冻结实验，分别展示同法轮廓参考与 CAMUS 报告 EF；不把半周期推理称为完整心搏或半监督训练。
 
 新增 [绘图与复现说明](docs/result_analysis.md) 和 [文献与参考图分析](reports/visualization_literature.md)。运行 `python scripts/plot_results.py` 可重新生成图集；此入口不重新训练模型。
@@ -101,7 +103,23 @@ Echo/
 │   └── result_analysis.md
 │       # 结果图的证据设计、参考图适用范围、导出格式及复现方法
 ├── figures/
-│   # 论文方法流程图及其可编辑源稿和导出预览
+│   # 论文图表规划、方法流程图、可编辑源稿和导出预览
+│   ├── planning/
+│   │   # 结果资产盘点、同行逐图逐表拆解与图表规划的可复核材料
+│   │   ├── asset_inventory.json
+│   │   │   # 缓存规模、空间时间范围、冻结来源校验与现有实验清单
+│   │   ├── audit_assets.py
+│   │   │   # 只读核查缓存、患者划分和冻结源文件，不重训或重选模型
+│   │   ├── literature_breakdown.md
+│   │   │   # 两篇模板与四篇近期论文的逐图逐表拆解及共同做法
+│   │   ├── literature_catalog.json
+│   │   │   # 六篇已读论文逐图表结构、原始图注和来源校验记录
+│   │   ├── literature_statistics.json
+│   │   │   # 图表数量中位数、范围和十二类论证作用的统计结果
+│   │   ├── result_assets.md
+│   │   │   # 输出资产、分辨率、实验和已算/待算/不可算指标的中文清单
+│   │   └── summarize_literature.py
+│   │       # 从人工核查目录生成拆解表并统计图表数量与论证作用
 │   ├── workflow_parts/
 │   │   # 当前项目流程图规划、独立零件及审阅图集；总图待讨论后组装
 │   ├── camus_method_flow.pdf
@@ -356,6 +374,8 @@ Echo/
 │   # 文本换行和医学影像/模型等 Git LFS 类型规则
 ├── .gitignore
 │   # 排除本机环境、数据、权重、运行产物和私有协作文件
+├── figure_plan.md
+│   # 正文和补充图表制作清单、证据边界、待补计算与阶段确认进度
 ├── pyproject.toml
 │   # 项目元数据、可选依赖、安装入口及 pytest 配置
 ├── README.md

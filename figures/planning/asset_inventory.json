@@ -1,0 +1,2562 @@
+{
+  "audit_date_local": "2026-11-20",
+  "scope": "read_only_local_inventory_not_new_clinical_validation",
+  "raw_data": {
+    "local_raw_directory_exists": false,
+    "historical_download_complete_flag": true,
+    "historical_manifest_patients": 500,
+    "historical_manifest_files": 7500,
+    "remote_release_reverified": false
+  },
+  "prepared": {
+    "manifest_cases": 1000,
+    "decoded_array_files": 1000,
+    "failures": [],
+    "total_frames": 19232,
+    "expert_labeled_frames": 2000,
+    "patients_by_split": {
+      "train": 347,
+      "test": 82,
+      "val": 71
+    },
+    "patient_split_overlaps": {
+      "train_val": [],
+      "train_test": [],
+      "val_test": []
+    },
+    "sequence_types": {
+      "half_sequence": 1000
+    },
+    "roi_reviewed": {
+      "False": 1000
+    },
+    "quality_by_view": {
+      "Good": 505,
+      "Medium": 379,
+      "Poor": 116
+    },
+    "frames_per_sequence": {
+      "min": 10,
+      "median": 19.0,
+      "max": 42
+    },
+    "original_height_px": {
+      "min": 292,
+      "median": 487.0,
+      "max": 973
+    },
+    "original_width_px": {
+      "min": 323,
+      "median": 591.0,
+      "max": 1181
+    },
+    "original_spacing_mm": {
+      "min": 0.30799999833106995,
+      "median": 0.30799999833106995,
+      "max": 0.30799999833106995
+    },
+    "processed_spacing_x_mm": {
+      "min": 0.8882499951869249,
+      "median": 1.6252499911934137,
+      "max": 3.2477499824017286
+    },
+    "processed_spacing_y_mm": {
+      "min": 0.8029999956488609,
+      "median": 1.3392499927431345,
+      "max": 2.67574998550117
+    },
+    "fps": {
+      "min": 32.6,
+      "median": 56.5,
+      "max": 85.6
+    },
+    "timestamp_sources": {
+      "derived_from_fps": 1000
+    },
+    "duration_s": {
+      "min": 0.1592920353982301,
+      "median": 0.3225806451612903,
+      "max": 0.6879194630872483
+    }
+  },
+  "main_frozen_experiment": {
+    "name": "camus_cuda_progress",
+    "source_sha256_match": {
+      "runs/camus_cuda_progress/summary.json": true,
+      "runs/camus_cuda_progress/frames.csv": true,
+      "runs/camus_cuda_progress/structure.csv": true,
+      "runs/camus_cuda_progress/function.csv": true,
+      "checkpoints/camus_cuda_progress/run.json": true,
+      "checkpoints/camus_cuda_progress/training.csv": true,
+      "checkpoints/camus_cuda_progress/best.pt": true,
+      "runs/camus_cuda_progress/patient0004_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0004_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0014_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0014_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0018_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0018_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0034_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0034_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0040_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0040_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0041_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0041_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0042_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0042_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0048_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0048_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0061_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0061_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0068_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0068_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0069_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0069_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0071_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0071_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0072_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0072_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0075_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0075_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0092_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0092_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0107_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0107_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0109_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0109_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0110_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0110_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0111_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0111_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0115_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0115_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0119_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0119_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0122_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0122_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0126_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0126_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0135_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0135_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0138_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0138_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0139_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0139_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0143_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0143_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0157_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0157_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0161_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0161_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0164_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0164_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0166_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0166_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0167_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0167_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0189_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0189_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0203_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0203_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0205_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0205_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0212_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0212_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0217_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0217_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0220_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0220_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0225_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0225_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0229_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0229_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0250_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0250_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0265_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0265_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0272_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0272_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0278_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0278_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0302_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0302_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0304_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0304_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0308_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0308_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0310_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0310_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0314_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0314_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0315_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0315_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0325_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0325_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0327_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0327_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0329_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0329_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0330_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0330_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0335_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0335_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0341_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0341_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0351_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0351_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0358_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0358_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0362_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0362_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0369_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0369_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0370_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0370_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0381_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0381_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0382_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0382_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0386_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0386_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0390_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0390_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0396_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0396_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0402_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0402_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0407_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0407_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0411_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0411_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0415_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0415_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0422_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0422_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0425_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0425_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0428_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0428_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0431_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0431_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0451_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0451_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0462_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0462_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0476_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0476_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0483_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0483_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0485_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0485_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0492_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0492_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0496_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0496_4CH_features.json": true,
+      "runs/camus_cuda_progress/patient0499_2CH_features.json": true,
+      "runs/camus_cuda_progress/patient0499_4CH_features.json": true,
+      "data/processed/camus/patient0229_2CH.npz": true,
+      "runs/camus_cuda_progress/patient0229_2CH_pred.npz": true,
+      "data/processed/camus/patient0189_4CH.npz": true,
+      "runs/camus_cuda_progress/patient0189_4CH_pred.npz": true,
+      "data/processed/camus/patient0327_2CH.npz": true,
+      "runs/camus_cuda_progress/patient0327_2CH_pred.npz": true,
+      "data/processed/camus/patient0075_4CH.npz": true,
+      "runs/camus_cuda_progress/patient0075_4CH_pred.npz": true
+    },
+    "prediction_files": 164,
+    "prediction_shape_failures": [],
+    "tables": [
+      {
+        "path": "runs/camus_cuda_progress/frames.csv",
+        "rows": 3167,
+        "columns": [
+          "case_id",
+          "patient_id",
+          "view",
+          "frame",
+          "time_s",
+          "volume_ml",
+          "area_mm2",
+          "long_axis_mm",
+          "valid",
+          "confidence",
+          "quality_flags",
+          "apex_x_original",
+          "apex_y_original",
+          "base_left_x_original",
+          "base_left_y_original",
+          "base_right_x_original",
+          "base_right_y_original",
+          "analysis_volume_ml",
+          "temporal_filtered"
+        ],
+        "sha256": "e36e516521702c722392b935cd77d7bbb16a6b062f74591a7587539e2c09f174"
+      },
+      {
+        "path": "runs/camus_cuda_progress/structure.csv",
+        "rows": 328,
+        "columns": [
+          "case_id",
+          "patient_id",
+          "view",
+          "frame",
+          "dice",
+          "assd",
+          "hd95",
+          "hd_max",
+          "distance_unit",
+          "distance_status",
+          "manual_keypoint_error",
+          "contour_derived_keypoint_error",
+          "keypoint_unit",
+          "contour_apex_error",
+          "contour_base_left_error",
+          "contour_base_right_error"
+        ],
+        "sha256": "724679f8869c3afa25a4f5c23cdffa1b4f5cb36e43c56ff8bf258bc366d85123"
+      },
+      {
+        "path": "runs/camus_cuda_progress/function.csv",
+        "rows": 490,
+        "columns": [
+          "patient_id",
+          "view",
+          "method",
+          "EDV",
+          "ESV",
+          "SV",
+          "EF",
+          "HR",
+          "CO",
+          "issues",
+          "reference_scope",
+          "phase_selection",
+          "ref_EDV",
+          "ref_ESV",
+          "ref_SV",
+          "ref_EF",
+          "ref_CO",
+          "ed_frame",
+          "es_frame",
+          "ed_frame_error",
+          "es_frame_error"
+        ],
+        "sha256": "783ecf773c8be25a33546d96d18657d88cefe2a3b1701b08c67d4fa691dfc545"
+      },
+      {
+        "path": "runs/camus_cuda_progress/beats.csv",
+        "rows": 0,
+        "columns": [],
+        "sha256": "f01a374e9c81e3db89b3a42940c4d6a5447684986a1296e42bf13f196eed6295"
+      }
+    ]
+  },
+  "existing_evaluations": [
+    {
+      "path": "runs/camus_cuda_progress/summary.json",
+      "sha256": "a5876545e456fb436fb49127237bdd56223a6d7114c60b6c75156871ab1b22d9",
+      "summary": {
+        "git_commit": "83f44897747ab742bbeb387c0af4403438b854b5",
+        "working_tree_dirty": false,
+        "split": "test",
+        "weights_sha256": "b0e8b724ca453c4801fb651163ad0353cec495c0a8d745ada1dbab9067b607c9",
+        "normalization": {
+          "mean": [
+            48.5741590178939,
+            48.5741590178939,
+            48.5741590178939
+          ],
+          "std": [
+            55.6928793276073,
+            55.6928793276073,
+            55.6928793276073
+          ]
+        },
+        "cases_attempted": 164,
+        "cases_failed": 0,
+        "labeled_frames": 328,
+        "patients_attempted": 82,
+        "patients": 82,
+        "failures": [],
+        "dice_patient_mean": 0.9119086690324603,
+        "assd_mm": 1.962740793620466,
+        "hd95_mm": 4.811382069431041,
+        "assd_pixel": null,
+        "hd95_pixel": null,
+        "manual_keypoint_error": null,
+        "contour_derived_keypoint_error": 5.399223075650265,
+        "keypoint_distance_unit": "mm",
+        "keypoint_scope": "manual_when_sidecar_available_else_contour_derived_proxy_only",
+        "manual_keypoint_labeled_frames": 0,
+        "contour_proxy_valid_frames": 328,
+        "reference_file_sha256": null,
+        "manual_landmark_file_sha256": null,
+        "function": {
+          "20_disks_shorter_axis": {
+            "EDV": {
+              "mae": 8.151093805043814,
+              "bias": -0.8726844587887349,
+              "n_patients": 82,
+              "unit": "mL",
+              "mae_ci95": [
+                6.621960852528489,
+                9.768295996330187
+              ],
+              "patient_mean_limits_of_agreement": [
+                -22.08528990100908,
+                20.339920983431607
+              ],
+              "coverage_of_attempted_patients": 1.0
+            },
+            "ESV": {
+              "mae": 5.822097688373647,
+              "bias": 2.554117707049714,
+              "n_patients": 82,
+              "unit": "mL",
+              "mae_ci95": [
+                4.902258252666517,
+                6.789862959039748
+              ],
+              "patient_mean_limits_of_agreement": [
+                -11.025286100299823,
+                16.133521514399252
+              ],
+              "coverage_of_attempted_patients": 1.0
+            },
+            "SV": {
+              "mae": 8.030481525021221,
+              "bias": -3.4268021658384495,
+              "n_patients": 82,
+              "unit": "mL",
+              "mae_ci95": [
+                6.656556127365453,
+                9.437393599049837
+              ],
+              "patient_mean_limits_of_agreement": [
+                -22.451016816805414,
+                15.597412485128515
+              ],
+              "coverage_of_attempted_patients": 1.0
+            },
+            "EF": {
+              "mae": 9.265665156998958,
+              "bias": -5.811348534045892,
+              "n_patients": 82,
+              "unit": "percentage_points",
+              "mae_ci95": [
+                7.503025015156412,
+                11.295067789306472
+              ],
+              "patient_mean_limits_of_agreement": [
+                -27.597259421352323,
+                15.974562353260541
+              ],
+              "coverage_of_attempted_patients": 1.0
+            },
+            "CO": {
+              "mae": null,
+              "n_patients": 0,
+              "unit": "L/min",
+              "reason": "no_valid_paired_reference",
+              "coverage_of_attempted_patients": 0.0
+            }
+          },
+          "biplane_vs_CAMUS_reported_EF": {
+            "EDV": {
+              "mae": null,
+              "n_patients": 0,
+              "unit": "mL",
+              "reason": "no_valid_paired_reference",
+              "coverage_of_attempted_patients": 0.0
+            },
+            "ESV": {
+              "mae": null,
+              "n_patients": 0,
+              "unit": "mL",
+              "reason": "no_valid_paired_reference",
+              "coverage_of_attempted_patients": 0.0
+            },
+            "SV": {
+              "mae": null,
+              "n_patients": 0,
+              "unit": "mL",
+              "reason": "no_valid_paired_reference",
+              "coverage_of_attempted_patients": 0.0
+            },
+            "EF": {
+              "mae": 9.032006321869929,
+              "bias": 1.5614660468678092,
+              "n_patients": 82,
+              "unit": "percentage_points",
+              "mae_ci95": [
+                7.64678076626742,
+                10.548189269321663
+              ],
+              "patient_mean_limits_of_agreement": [
+                -20.152673653461946,
+                23.275605747197567
+              ],
+              "coverage_of_attempted_patients": 1.0
+            },
+            "CO": {
+              "mae": null,
+              "n_patients": 0,
+              "unit": "L/min",
+              "reason": "no_valid_paired_reference",
+              "coverage_of_attempted_patients": 0.0
+            }
+          },
+          "single_plane_area_length_2CH": {
+            "EDV": {
+              "mae": 26.50138573240207,
+              "bias": -10.623469401014512,
+              "n_patients": 82,
+              "unit": "mL",
+              "mae_ci95": [
+                21.80304292486992,
+                31.392931688537313
+              ],
+              "patient_mean_limits_of_agreement": [
+                -74.87455231210348,
+                53.62761351007445
+              ],
+              "coverage_of_attempted_patients": 1.0
+            },
+            "ESV": {
+              "mae": 15.73021292636858,
+              "bias": -3.969619086781012,
+              "n_patients": 82,
+              "unit": "mL",
+              "mae_ci95": [
+                12.390310336327556,
+                19.82148161471761
+              ],
+              "patient_mean_limits_of_agreement": [
+                -48.83703006283364,
+                40.89779188927162
+              ],
+              "coverage_of_attempted_patients": 1.0
+            },
+            "SV": {
+              "mae": 21.476814685132794,
+              "bias": -5.673902872680975,
+              "n_patients": 81,
+              "unit": "mL",
+              "mae_ci95": [
+                17.782639113580387,
+                25.179285177011536
+              ],
+              "patient_mean_limits_of_agreement": [
+                -58.83038416197201,
+                47.48257841661006
+              ],
+              "coverage_of_attempted_patients": 0.9878048780487805
+            },
+            "EF": {
+              "mae": 9.9261074441718,
+              "bias": -2.2472370906427193,
+              "n_patients": 81,
+              "unit": "percentage_points",
+              "mae_ci95": [
+                8.160906382767674,
+                11.840464676483327
+              ],
+              "patient_mean_limits_of_agreement": [
+                -27.57880344325293,
+                23.08432926196749
+              ],
+              "coverage_of_attempted_patients": 0.9878048780487805
+            },
+            "CO": {
+              "mae": null,
+              "n_patients": 0,
+              "unit": "L/min",
+              "reason": "no_valid_paired_reference",
+              "coverage_of_attempted_patients": 0.0
+            }
+          },
+          "single_plane_area_length_4CH": {
+            "EDV": {
+              "mae": 21.302610847231293,
+              "bias": -3.9859779474809227,
+              "n_patients": 82,
+              "unit": "mL",
+              "mae_ci95": [
+                16.598142626240968,
+                26.91504383147794
+              ],
+              "patient_mean_limits_of_agreement": [
+                -65.26771439143505,
+                57.295758496473205
+              ],
+              "coverage_of_attempted_patients": 1.0
+            },
+            "ESV": {
+              "mae": 13.29193295015189,
+              "bias": -5.544740062375396,
+              "n_patients": 82,
+              "unit": "mL",
+              "mae_ci95": [
+                10.350783681251126,
+                16.680423878525037
+              ],
+              "patient_mean_limits_of_agreement": [
+                -45.02369280364515,
+                33.934212678894355
+              ],
+              "coverage_of_attempted_patients": 1.0
+            },
+            "SV": {
+              "mae": 17.405754681670444,
+              "bias": 1.558762114894473,
+              "n_patients": 82,
+              "unit": "mL",
+              "mae_ci95": [
+                14.78232613924789,
+                20.23152442322959
+              ],
+              "patient_mean_limits_of_agreement": [
+                -41.497930527626465,
+                44.61545475741541
+              ],
+              "coverage_of_attempted_patients": 1.0
+            },
+            "EF": {
+              "mae": 7.735472650926234,
+              "bias": 1.0706705260232272,
+              "n_patients": 82,
+              "unit": "percentage_points",
+              "mae_ci95": [
+                6.591689606577124,
+                8.995099399220958
+              ],
+              "patient_mean_limits_of_agreement": [
+                -17.563149925120282,
+                19.70449097716674
+              ],
+              "coverage_of_attempted_patients": 1.0
+            },
+            "CO": {
+              "mae": null,
+              "n_patients": 0,
+              "unit": "L/min",
+              "reason": "no_valid_paired_reference",
+              "coverage_of_attempted_patients": 0.0
+            }
+          },
+          "single_plane_auto_extrema_2CH": {
+            "EDV": {
+              "mae": 25.025580665383035,
+              "bias": -2.623339652525852,
+              "n_patients": 82,
+              "unit": "mL",
+              "mae_ci95": [
+                20.817526280923108,
+                29.549476955891
+              ],
+              "patient_mean_limits_of_agreement": [
+                -65.82441743792629,
+                60.577738132874586
+              ],
+              "coverage_of_attempted_patients": 1.0
+            },
+            "ESV": {
+              "mae": 17.910119880608615,
+              "bias": -6.91474180836959,
+              "n_patients": 82,
+              "unit": "mL",
+              "mae_ci95": [
+                13.940135764438846,
+                22.66987702781992
+              ],
+              "patient_mean_limits_of_agreement": [
+                -58.75021663571391,
+                44.92073301897473
+              ],
+              "coverage_of_attempted_patients": 1.0
+            },
+            "SV": {
+              "mae": 21.170352968978897,
+              "bias": 4.291402155843737,
+              "n_patients": 82,
+              "unit": "mL",
+              "mae_ci95": [
+                17.56047796008778,
+                24.941143957256216
+              ],
+              "patient_mean_limits_of_agreement": [
+                -49.46917772183851,
+                58.05198203352598
+              ],
+              "coverage_of_attempted_patients": 1.0
+            },
+            "EF": {
+              "mae": 10.15956350774525,
+              "bias": 2.2929315902243106,
+              "n_patients": 82,
+              "unit": "percentage_points",
+              "mae_ci95": [
+                8.446748558036719,
+                11.96773996450671
+              ],
+              "patient_mean_limits_of_agreement": [
+                -22.993829596361923,
+                27.579692776810543
+              ],
+              "coverage_of_attempted_patients": 1.0
+            },
+            "CO": {
+              "mae": null,
+              "n_patients": 0,
+              "unit": "L/min",
+              "reason": "no_valid_paired_reference",
+              "coverage_of_attempted_patients": 0.0
+            }
+          },
+          "single_plane_auto_extrema_4CH": {
+            "EDV": {
+              "mae": 20.849491936978588,
+              "bias": 0.997577505198137,
+              "n_patients": 80,
+              "unit": "mL",
+              "mae_ci95": [
+                16.88815502161832,
+                25.558842443304364
+              ],
+              "patient_mean_limits_of_agreement": [
+                -56.006352051941825,
+                58.0015070623381
+              ],
+              "coverage_of_attempted_patients": 0.975609756097561
+            },
+            "ESV": {
+              "mae": 14.939929423265278,
+              "bias": -10.616235744462045,
+              "n_patients": 80,
+              "unit": "mL",
+              "mae_ci95": [
+                11.03403011440984,
+                19.106095739568293
+              ],
+              "patient_mean_limits_of_agreement": [
+                -53.645605881043856,
+                32.413134392119765
+              ],
+              "coverage_of_attempted_patients": 0.975609756097561
+            },
+            "SV": {
+              "mae": 18.22546675038791,
+              "bias": 11.613813249660183,
+              "n_patients": 80,
+              "unit": "mL",
+              "mae_ci95": [
+                15.080137635339543,
+                21.435960131631767
+              ],
+              "patient_mean_limits_of_agreement": [
+                -28.606265906415118,
+                51.83389240573548
+              ],
+              "coverage_of_attempted_patients": 0.975609756097561
+            },
+            "EF": {
+              "mae": 8.660326406439129,
+              "bias": 6.243703997828144,
+              "n_patients": 80,
+              "unit": "percentage_points",
+              "mae_ci95": [
+                7.110420164293901,
+                10.299564725372285
+              ],
+              "patient_mean_limits_of_agreement": [
+                -12.041178524499164,
+                24.52858652015545
+              ],
+              "coverage_of_attempted_patients": 0.975609756097561
+            },
+            "CO": {
+              "mae": null,
+              "n_patients": 0,
+              "unit": "L/min",
+              "reason": "no_valid_paired_reference",
+              "coverage_of_attempted_patients": 0.0
+            }
+          }
+        },
+        "frames": 3167,
+        "beats": 0,
+        "valid_frame_fraction": 1.0,
+        "timing_seconds": 149.8525422999992,
+        "end_to_end_fps": 21.134109247608123,
+        "temporal": false,
+        "gate": false,
+        "experiment_type": "baseline_training"
+      }
+    },
+    {
+      "path": "runs/camus_regularized/summary.json",
+      "sha256": "a12331845bc73c02ee9dfc77a8d65b1b21794a26b5c9170d68def4cc622839fb",
+      "summary": {
+        "git_commit": "11741adbbb563ac49cf5f1dcc06f869fd296250e",
+        "working_tree_dirty": true,
+        "split": "test",
+        "weights_sha256": "59b92018e38e823179a4681aec49e06ca66ecbc418617221b9b2740c2c7e1008",
+        "normalization": {
+          "mean": [
+            48.5741590178939,
+            48.5741590178939,
+            48.5741590178939
+          ],
+          "std": [
+            55.6928793276073,
+            55.6928793276073,
+            55.6928793276073
+          ]
+        },
+        "cases_attempted": 164,
+        "cases_failed": 0,
+        "labeled_frames": 328,
+        "patients_attempted": 82,
+        "patients": 82,
+        "failures": [],
+        "dice_patient_mean": 0.9151950817812796,
+        "assd_mm": 1.8716436933020988,
+        "hd95_mm": 4.601071141882035,
+        "assd_pixel": null,
+        "hd95_pixel": null,
+        "manual_keypoint_error": null,
+        "contour_derived_keypoint_error": 5.284120788686167,
+        "keypoint_distance_unit": "mm",
+        "keypoint_scope": "manual_when_sidecar_available_else_contour_derived_proxy_only",
+        "manual_keypoint_labeled_frames": 0,
+        "contour_proxy_valid_frames": 328,
+        "reference_file_sha256": null,
+        "manual_landmark_file_sha256": null,
+        "function": {
+          "20_disks_shorter_axis": {
+            "EDV": {
+              "mae": 7.957455364665711,
+              "bias": -2.1746917632091773,
+              "n_patients": 82,
+              "unit": "mL",
+              "mae_ci95": [
+                6.4927333228448605,
+                9.563530659222565
+              ],
+              "patient_mean_limits_of_agreement": [
+                -22.483026134586314,
+                18.133642608167957
+              ],
+              "coverage_of_attempted_patients": 1.0
+            },
+            "ESV": {
+              "mae": 5.124621821322619,
+              "bias": 0.5888871877741019,
+              "n_patients": 82,
+              "unit": "mL",
+              "mae_ci95": [
+                4.290897939225063,
+                6.129790495800517
+              ],
+              "patient_mean_limits_of_agreement": [
+                -12.604596600415544,
+                13.782370975963747
+              ],
+              "coverage_of_attempted_patients": 1.0
+            },
+            "SV": {
+              "mae": 7.784236651891429,
+              "bias": -2.7635789509832787,
+              "n_patients": 82,
+              "unit": "mL",
+              "mae_ci95": [
+                6.540638893701798,
+                8.981065356006185
+              ],
+              "patient_mean_limits_of_agreement": [
+                -21.116424605446504,
+                15.589266703479948
+              ],
+              "coverage_of_attempted_patients": 1.0
+            },
+            "EF": {
+              "mae": 8.728426569572601,
+              "bias": -3.734485553799337,
+              "n_patients": 82,
+              "unit": "percentage_points",
+              "mae_ci95": [
+                7.15136980118246,
+                10.612369567098723
+              ],
+              "patient_mean_limits_of_agreement": [
+                -25.854032319007466,
+                18.38506121140879
+              ],
+              "coverage_of_attempted_patients": 1.0
+            },
+            "CO": {
+              "mae": null,
+              "n_patients": 0,
+              "unit": "L/min",
+              "reason": "no_valid_paired_reference",
+              "coverage_of_attempted_patients": 0.0
+            }
+          },
+          "biplane_vs_CAMUS_reported_EF": {
+            "EDV": {
+              "mae": null,
+              "n_patients": 0,
+              "unit": "mL",
+              "reason": "no_valid_paired_reference",
+              "coverage_of_attempted_patients": 0.0
+            },
+            "ESV": {
+              "mae": null,
+              "n_patients": 0,
+              "unit": "mL",
+              "reason": "no_valid_paired_reference",
+              "coverage_of_attempted_patients": 0.0
+            },
+            "SV": {
+              "mae": null,
+              "n_patients": 0,
+              "unit": "mL",
+              "reason": "no_valid_paired_reference",
+              "coverage_of_attempted_patients": 0.0
+            },
+            "EF": {
+              "mae": 10.076205370679862,
+              "bias": 3.638329027114365,
+              "n_patients": 82,
+              "unit": "percentage_points",
+              "mae_ci95": [
+                8.564340606194282,
+                11.621820505213854
+              ],
+              "patient_mean_limits_of_agreement": [
+                -19.05685289311168,
+                26.333510947340415
+              ],
+              "coverage_of_attempted_patients": 1.0
+            },
+            "CO": {
+              "mae": null,
+              "n_patients": 0,
+              "unit": "L/min",
+              "reason": "no_valid_paired_reference",
+              "coverage_of_attempted_patients": 0.0
+            }
+          },
+          "single_plane_area_length_2CH": {
+            "EDV": {
+              "mae": 27.244451060883243,
+              "bias": -10.197260079575576,
+              "n_patients": 82,
+              "unit": "mL",
+              "mae_ci95": [
+                22.810014197097956,
+                32.54812441806573
+              ],
+              "patient_mean_limits_of_agreement": [
+                -77.26498280182092,
+                56.87046264266977
+              ],
+              "coverage_of_attempted_patients": 1.0
+            },
+            "ESV": {
+              "mae": 18.213558362714487,
+              "bias": -5.8994326039821585,
+              "n_patients": 82,
+              "unit": "mL",
+              "mae_ci95": [
+                14.598308149754901,
+                22.354348396552332
+              ],
+              "patient_mean_limits_of_agreement": [
+                -55.18462328196307,
+                43.38575807399876
+              ],
+              "coverage_of_attempted_patients": 1.0
+            },
+            "SV": {
+              "mae": 21.418464648950575,
+              "bias": -4.297827475593416,
+              "n_patients": 82,
+              "unit": "mL",
+              "mae_ci95": [
+                17.633626110413147,
+                25.542012470422204
+              ],
+              "patient_mean_limits_of_agreement": [
+                -59.26465654727732,
+                50.66900159609049
+              ],
+              "coverage_of_attempted_patients": 1.0
+            },
+            "EF": {
+              "mae": 10.308488065913286,
+              "bias": -1.1442078439490693,
+              "n_patients": 82,
+              "unit": "percentage_points",
+              "mae_ci95": [
+                8.288336190421129,
+                12.46935624039342
+              ],
+              "patient_mean_limits_of_agreement": [
+                -29.160843276932866,
+                26.87242758903473
+              ],
+              "coverage_of_attempted_patients": 1.0
+            },
+            "CO": {
+              "mae": null,
+              "n_patients": 0,
+              "unit": "L/min",
+              "reason": "no_valid_paired_reference",
+              "coverage_of_attempted_patients": 0.0
+            }
+          },
+          "single_plane_area_length_4CH": {
+            "EDV": {
+              "mae": 21.88750823957563,
+              "bias": -1.5060007628270304,
+              "n_patients": 82,
+              "unit": "mL",
+              "mae_ci95": [
+                17.744943799053907,
+                26.846376618011806
+              ],
+              "patient_mean_limits_of_agreement": [
+                -61.08932019410197,
+                58.077318668447916
+              ],
+              "coverage_of_attempted_patients": 1.0
+            },
+            "ESV": {
+              "mae": 14.162463309528242,
+              "bias": -5.844983345782882,
+              "n_patients": 82,
+              "unit": "mL",
+              "mae_ci95": [
+                11.28571400571971,
+                17.4253151976034
+              ],
+              "patient_mean_limits_of_agreement": [
+                -45.4780971697581,
+                33.78813047819234
+              ],
+              "coverage_of_attempted_patients": 1.0
+            },
+            "SV": {
+              "mae": 16.92478292742439,
+              "bias": 4.33898258295585,
+              "n_patients": 82,
+              "unit": "mL",
+              "mae_ci95": [
+                13.894832388617283,
+                20.262116014462165
+              ],
+              "patient_mean_limits_of_agreement": [
+                -38.80725281674366,
+                47.485217982655364
+              ],
+              "coverage_of_attempted_patients": 1.0
+            },
+            "EF": {
+              "mae": 7.542269039911463,
+              "bias": 2.6202007122910937,
+              "n_patients": 82,
+              "unit": "percentage_points",
+              "mae_ci95": [
+                6.1903437875500025,
+                9.192760806858695
+              ],
+              "patient_mean_limits_of_agreement": [
+                -16.815782929232817,
+                22.056184353815006
+              ],
+              "coverage_of_attempted_patients": 1.0
+            },
+            "CO": {
+              "mae": null,
+              "n_patients": 0,
+              "unit": "L/min",
+              "reason": "no_valid_paired_reference",
+              "coverage_of_attempted_patients": 0.0
+            }
+          },
+          "single_plane_auto_extrema_2CH": {
+            "EDV": {
+              "mae": 24.84419028651291,
+              "bias": -2.2175685440939663,
+              "n_patients": 82,
+              "unit": "mL",
+              "mae_ci95": [
+                20.668532807988033,
+                29.4684101246154
+              ],
+              "patient_mean_limits_of_agreement": [
+                -65.87651237863086,
+                61.44137529044293
+              ],
+              "coverage_of_attempted_patients": 1.0
+            },
+            "ESV": {
+              "mae": 18.87087036636047,
+              "bias": -7.919265501596877,
+              "n_patients": 82,
+              "unit": "mL",
+              "mae_ci95": [
+                14.766681032641229,
+                23.68853639189959
+              ],
+              "patient_mean_limits_of_agreement": [
+                -61.30230290453014,
+                45.463771901336386
+              ],
+              "coverage_of_attempted_patients": 1.0
+            },
+            "SV": {
+              "mae": 19.64806691211366,
+              "bias": 5.70169695750291,
+              "n_patients": 82,
+              "unit": "mL",
+              "mae_ci95": [
+                16.085404781664657,
+                23.279600783924764
+              ],
+              "patient_mean_limits_of_agreement": [
+                -44.52683339816964,
+                55.930227313175465
+              ],
+              "coverage_of_attempted_patients": 1.0
+            },
+            "EF": {
+              "mae": 9.477465977187165,
+              "bias": 3.320029528852899,
+              "n_patients": 82,
+              "unit": "percentage_points",
+              "mae_ci95": [
+                7.912982478199988,
+                11.244167930064785
+              ],
+              "patient_mean_limits_of_agreement": [
+                -20.481686573984273,
+                27.12174563169007
+              ],
+              "coverage_of_attempted_patients": 1.0
+            },
+            "CO": {
+              "mae": null,
+              "n_patients": 0,
+              "unit": "L/min",
+              "reason": "no_valid_paired_reference",
+              "coverage_of_attempted_patients": 0.0
+            }
+          },
+          "single_plane_auto_extrema_4CH": {
+            "EDV": {
+              "mae": 22.35948931865325,
+              "bias": 4.729196610389304,
+              "n_patients": 82,
+              "unit": "mL",
+              "mae_ci95": [
+                18.532295342897132,
+                26.72124548222565
+              ],
+              "patient_mean_limits_of_agreement": [
+                -51.737390174423055,
+                61.19578339520166
+              ],
+              "coverage_of_attempted_patients": 1.0
+            },
+            "ESV": {
+              "mae": 15.945329092833829,
+              "bias": -7.991655406985875,
+              "n_patients": 82,
+              "unit": "mL",
+              "mae_ci95": [
+                12.062612793322492,
+                20.557412476857554
+              ],
+              "patient_mean_limits_of_agreement": [
+                -56.82043250886781,
+                40.837121694896055
+              ],
+              "coverage_of_attempted_patients": 1.0
+            },
+            "SV": {
+              "mae": 22.10981609550823,
+              "bias": 12.720852017375181,
+              "n_patients": 82,
+              "unit": "mL",
+              "mae_ci95": [
+                18.381043318079133,
+                25.848270429138406
+              ],
+              "patient_mean_limits_of_agreement": [
+                -36.66433285795919,
+                62.10603689270955
+              ],
+              "coverage_of_attempted_patients": 1.0
+            },
+            "EF": {
+              "mae": 10.383551316634437,
+              "bias": 5.801907950316011,
+              "n_patients": 82,
+              "unit": "percentage_points",
+              "mae_ci95": [
+                8.41016853400243,
+                12.763120209428918
+              ],
+              "patient_mean_limits_of_agreement": [
+                -21.23376701368376,
+                32.83758291431578
+              ],
+              "coverage_of_attempted_patients": 1.0
+            },
+            "CO": {
+              "mae": null,
+              "n_patients": 0,
+              "unit": "L/min",
+              "reason": "no_valid_paired_reference",
+              "coverage_of_attempted_patients": 0.0
+            }
+          }
+        },
+        "frames": 3167,
+        "beats": 0,
+        "valid_frame_fraction": 1.0,
+        "timing_seconds": 115.20994779999455,
+        "end_to_end_fps": 27.488945707170522,
+        "temporal": false,
+        "gate": false,
+        "experiment_type": "training"
+      }
+    },
+    {
+      "path": "runs/full_baseline/summary.json",
+      "sha256": "6204b461720fc1869f57a22a290274bfab96a93aa9b04394b020b48229811afd",
+      "summary": {
+        "git_commit": "6186d976886fd4be0acd3810a870cc63064f69ba",
+        "working_tree_dirty": true,
+        "split": "test",
+        "weights_sha256": "824b3e1f735704c3172f14a2e7102067dd655d759b5ceb7842d7d3315310821f",
+        "normalization": {
+          "mean": [
+            48.5741590178939,
+            48.5741590178939,
+            48.5741590178939
+          ],
+          "std": [
+            55.692879327607244,
+            55.692879327607244,
+            55.692879327607244
+          ]
+        },
+        "cases_attempted": 164,
+        "cases_failed": 0,
+        "labeled_frames": 328,
+        "patients_attempted": 82,
+        "patients": 82,
+        "failures": [],
+        "dice_patient_mean": 0.9124587683879428,
+        "assd_mm": 1.9438655896102355,
+        "hd95_mm": 4.756159340440096,
+        "assd_pixel": null,
+        "hd95_pixel": null,
+        "manual_keypoint_error": null,
+        "contour_derived_keypoint_error": 5.392758462870291,
+        "keypoint_distance_unit": "mm",
+        "keypoint_scope": "manual_when_sidecar_available_else_contour_derived_proxy_only",
+        "manual_keypoint_labeled_frames": 0,
+        "contour_proxy_valid_frames": 328,
+        "reference_file_sha256": null,
+        "manual_landmark_file_sha256": null,
+        "function": {
+          "20_disks_shorter_axis": {
+            "EDV": {
+              "mae": 8.905836529019124,
+              "bias": -2.1915686562474703,
+              "n_patients": 82,
+              "unit": "mL",
+              "mae_ci95": [
+                7.705053335323481,
+                10.224989834611875
+              ],
+              "patient_mean_limits_of_agreement": [
+                -22.71922670144772,
+                18.336089388952782
+              ],
+              "coverage_of_attempted_patients": 1.0
+            },
+            "ESV": {
+              "mae": 6.110693402604063,
+              "bias": 1.3088388243124973,
+              "n_patients": 82,
+              "unit": "mL",
+              "mae_ci95": [
+                5.075053287435487,
+                7.165257543895364
+              ],
+              "patient_mean_limits_of_agreement": [
+                -14.139588198591756,
+                16.75726584721675
+              ],
+              "coverage_of_attempted_patients": 1.0
+            },
+            "SV": {
+              "mae": 8.04875664170214,
+              "bias": -3.5004074805599665,
+              "n_patients": 82,
+              "unit": "mL",
+              "mae_ci95": [
+                6.91594830988731,
+                9.201783134155226
+              ],
+              "patient_mean_limits_of_agreement": [
+                -21.535237123544714,
+                14.53442216242478
+              ],
+              "coverage_of_attempted_patients": 1.0
+            },
+            "EF": {
+              "mae": 9.618841536493402,
+              "bias": -5.609723453596162,
+              "n_patients": 82,
+              "unit": "percentage_points",
+              "mae_ci95": [
+                7.808617294645121,
+                11.716269895363776
+              ],
+              "patient_mean_limits_of_agreement": [
+                -29.056129271682245,
+                17.836682364489917
+              ],
+              "coverage_of_attempted_patients": 1.0
+            },
+            "CO": {
+              "mae": null,
+              "n_patients": 0,
+              "unit": "L/min",
+              "reason": "no_valid_paired_reference",
+              "coverage_of_attempted_patients": 0.0
+            }
+          },
+          "biplane_vs_CAMUS_reported_EF": {
+            "EDV": {
+              "mae": null,
+              "n_patients": 0,
+              "unit": "mL",
+              "reason": "no_valid_paired_reference",
+              "coverage_of_attempted_patients": 0.0
+            },
+            "ESV": {
+              "mae": null,
+              "n_patients": 0,
+              "unit": "mL",
+              "reason": "no_valid_paired_reference",
+              "coverage_of_attempted_patients": 0.0
+            },
+            "SV": {
+              "mae": null,
+              "n_patients": 0,
+              "unit": "mL",
+              "reason": "no_valid_paired_reference",
+              "coverage_of_attempted_patients": 0.0
+            },
+            "EF": {
+              "mae": 9.66853700398498,
+              "bias": 1.7630911273175383,
+              "n_patients": 82,
+              "unit": "percentage_points",
+              "mae_ci95": [
+                8.049343211698922,
+                11.258501035143347
+              ],
+              "patient_mean_limits_of_agreement": [
+                -22.03399624213871,
+                25.560178496773784
+              ],
+              "coverage_of_attempted_patients": 1.0
+            },
+            "CO": {
+              "mae": null,
+              "n_patients": 0,
+              "unit": "L/min",
+              "reason": "no_valid_paired_reference",
+              "coverage_of_attempted_patients": 0.0
+            }
+          },
+          "single_plane_area_length_2CH": {
+            "EDV": {
+              "mae": 29.288030813709327,
+              "bias": -17.277721961498024,
+              "n_patients": 82,
+              "unit": "mL",
+              "mae_ci95": [
+                24.170110201904308,
+                35.07358513971851
+              ],
+              "patient_mean_limits_of_agreement": [
+                -85.22142665826203,
+                50.66598273526598
+              ],
+              "coverage_of_attempted_patients": 1.0
+            },
+            "ESV": {
+              "mae": 16.92559189008571,
+              "bias": -5.684995845846148,
+              "n_patients": 82,
+              "unit": "mL",
+              "mae_ci95": [
+                13.637433691987928,
+                20.69528712895199
+              ],
+              "patient_mean_limits_of_agreement": [
+                -50.67238870818722,
+                39.30239701649493
+              ],
+              "coverage_of_attempted_patients": 1.0
+            },
+            "SV": {
+              "mae": 23.62630508404199,
+              "bias": -10.040402000289415,
+              "n_patients": 80,
+              "unit": "mL",
+              "mae_ci95": [
+                19.995435401520876,
+                27.384040499966012
+              ],
+              "patient_mean_limits_of_agreement": [
+                -64.01104584063755,
+                43.93024184005873
+              ],
+              "coverage_of_attempted_patients": 0.975609756097561
+            },
+            "EF": {
+              "mae": 10.5957155642841,
+              "bias": -3.544123830010932,
+              "n_patients": 80,
+              "unit": "percentage_points",
+              "mae_ci95": [
+                8.58621344490587,
+                12.837828989223205
+              ],
+              "patient_mean_limits_of_agreement": [
+                -31.423075989121628,
+                24.334828329099764
+              ],
+              "coverage_of_attempted_patients": 0.975609756097561
+            },
+            "CO": {
+              "mae": null,
+              "n_patients": 0,
+              "unit": "L/min",
+              "reason": "no_valid_paired_reference",
+              "coverage_of_attempted_patients": 0.0
+            }
+          },
+          "single_plane_area_length_4CH": {
+            "EDV": {
+              "mae": 22.38325951152258,
+              "bias": -7.965217936769027,
+              "n_patients": 82,
+              "unit": "mL",
+              "mae_ci95": [
+                17.70489646418121,
+                28.340481265176322
+              ],
+              "patient_mean_limits_of_agreement": [
+                -70.41001478435903,
+                54.479578910820976
+              ],
+              "coverage_of_attempted_patients": 1.0
+            },
+            "ESV": {
+              "mae": 13.660643981134873,
+              "bias": -4.3304606818345315,
+              "n_patients": 82,
+              "unit": "mL",
+              "mae_ci95": [
+                10.700680804033002,
+                17.07027382721789
+              ],
+              "patient_mean_limits_of_agreement": [
+                -44.93924387181552,
+                36.27832250814646
+              ],
+              "coverage_of_attempted_patients": 1.0
+            },
+            "SV": {
+              "mae": 16.57971958740952,
+              "bias": -3.16370404420421,
+              "n_patients": 81,
+              "unit": "mL",
+              "mae_ci95": [
+                14.096174908875,
+                19.157900008698235
+              ],
+              "patient_mean_limits_of_agreement": [
+                -42.47748635193486,
+                36.15007826352644
+              ],
+              "coverage_of_attempted_patients": 0.9878048780487805
+            },
+            "EF": {
+              "mae": 7.8068853094999096,
+              "bias": -0.8161262283895072,
+              "n_patients": 81,
+              "unit": "percentage_points",
+              "mae_ci95": [
+                6.514647854019299,
+                9.193864782916556
+              ],
+              "patient_mean_limits_of_agreement": [
+                -20.12204039830458,
+                18.489787941525567
+              ],
+              "coverage_of_attempted_patients": 0.9878048780487805
+            },
+            "CO": {
+              "mae": null,
+              "n_patients": 0,
+              "unit": "L/min",
+              "reason": "no_valid_paired_reference",
+              "coverage_of_attempted_patients": 0.0
+            }
+          },
+          "single_plane_auto_extrema_2CH": {
+            "EDV": {
+              "mae": 24.131774190124833,
+              "bias": -10.2338087792958,
+              "n_patients": 81,
+              "unit": "mL",
+              "mae_ci95": [
+                19.843532774778765,
+                28.407316568383447
+              ],
+              "patient_mean_limits_of_agreement": [
+                -69.1938567055474,
+                48.726239146955805
+              ],
+              "coverage_of_attempted_patients": 0.9878048780487805
+            },
+            "ESV": {
+              "mae": 17.47029925501357,
+              "bias": -10.160032166944271,
+              "n_patients": 81,
+              "unit": "mL",
+              "mae_ci95": [
+                13.778282424663201,
+                22.015368158112473
+              ],
+              "patient_mean_limits_of_agreement": [
+                -56.16965583196599,
+                35.84959149807745
+              ],
+              "coverage_of_attempted_patients": 0.9878048780487805
+            },
+            "SV": {
+              "mae": 20.293198448860988,
+              "bias": -0.07377661235152964,
+              "n_patients": 81,
+              "unit": "mL",
+              "mae_ci95": [
+                16.899902167282683,
+                23.711196918135933
+              ],
+              "patient_mean_limits_of_agreement": [
+                -50.23695799510135,
+                50.08940477039829
+              ],
+              "coverage_of_attempted_patients": 0.9878048780487805
+            },
+            "EF": {
+              "mae": 9.883976752373181,
+              "bias": 1.6190659091116724,
+              "n_patients": 81,
+              "unit": "percentage_points",
+              "mae_ci95": [
+                8.25566457221631,
+                11.678081312684165
+              ],
+              "patient_mean_limits_of_agreement": [
+                -22.938003395610973,
+                26.176135213834318
+              ],
+              "coverage_of_attempted_patients": 0.9878048780487805
+            },
+            "CO": {
+              "mae": null,
+              "n_patients": 0,
+              "unit": "L/min",
+              "reason": "no_valid_paired_reference",
+              "coverage_of_attempted_patients": 0.0
+            }
+          },
+          "single_plane_auto_extrema_4CH": {
+            "EDV": {
+              "mae": 21.25478577722162,
+              "bias": -0.7353807375753412,
+              "n_patients": 80,
+              "unit": "mL",
+              "mae_ci95": [
+                17.572611074737015,
+                25.656115014827574
+              ],
+              "patient_mean_limits_of_agreement": [
+                -56.255243032833725,
+                54.784481557683044
+              ],
+              "coverage_of_attempted_patients": 0.975609756097561
+            },
+            "ESV": {
+              "mae": 14.786670167473655,
+              "bias": -9.074867754250672,
+              "n_patients": 80,
+              "unit": "mL",
+              "mae_ci95": [
+                10.87254401401048,
+                18.963700060014617
+              ],
+              "patient_mean_limits_of_agreement": [
+                -54.04486221120199,
+                35.89512670270065
+              ],
+              "coverage_of_attempted_patients": 0.975609756097561
+            },
+            "SV": {
+              "mae": 17.601532830541526,
+              "bias": 8.339487016675331,
+              "n_patients": 80,
+              "unit": "mL",
+              "mae_ci95": [
+                14.546404026905364,
+                20.71012116562534
+              ],
+              "patient_mean_limits_of_agreement": [
+                -32.82813426175122,
+                49.50710829510189
+              ],
+              "coverage_of_attempted_patients": 0.975609756097561
+            },
+            "EF": {
+              "mae": 8.484159149312713,
+              "bias": 4.705299726601883,
+              "n_patients": 80,
+              "unit": "percentage_points",
+              "mae_ci95": [
+                6.863613484548749,
+                10.078679620085394
+              ],
+              "patient_mean_limits_of_agreement": [
+                -15.001541229121983,
+                24.41214068232575
+              ],
+              "coverage_of_attempted_patients": 0.975609756097561
+            },
+            "CO": {
+              "mae": null,
+              "n_patients": 0,
+              "unit": "L/min",
+              "reason": "no_valid_paired_reference",
+              "coverage_of_attempted_patients": 0.0
+            }
+          }
+        },
+        "frames": 3167,
+        "beats": 0,
+        "valid_frame_fraction": 1.0,
+        "timing_seconds": 168.09731699999975,
+        "end_to_end_fps": 18.840276909357243,
+        "temporal": false,
+        "gate": false,
+        "experiment_type": "baseline_training"
+      }
+    },
+    {
+      "path": "runs/validation_camus_cuda_progress/summary.json",
+      "sha256": "d0f7a2447fe4817fbb78a71a942cde432bc6631eb27d663890acf065ff983e8b",
+      "summary": {
+        "git_commit": "11741adbbb563ac49cf5f1dcc06f869fd296250e",
+        "working_tree_dirty": true,
+        "split": "val",
+        "weights_sha256": "b0e8b724ca453c4801fb651163ad0353cec495c0a8d745ada1dbab9067b607c9",
+        "normalization": {
+          "mean": [
+            48.5741590178939,
+            48.5741590178939,
+            48.5741590178939
+          ],
+          "std": [
+            55.6928793276073,
+            55.6928793276073,
+            55.6928793276073
+          ]
+        },
+        "cases_attempted": 142,
+        "cases_failed": 0,
+        "labeled_frames": 284,
+        "patients_attempted": 71,
+        "patients": 71,
+        "failures": [],
+        "dice_patient_mean": 0.9020907464917227,
+        "assd_mm": 2.2301197100640904,
+        "hd95_mm": 5.707633649065685,
+        "assd_pixel": null,
+        "hd95_pixel": null,
+        "manual_keypoint_error": null,
+        "contour_derived_keypoint_error": 5.453001196218489,
+        "keypoint_distance_unit": "mm",
+        "keypoint_scope": "manual_when_sidecar_available_else_contour_derived_proxy_only",
+        "manual_keypoint_labeled_frames": 0,
+        "contour_proxy_valid_frames": 284,
+        "reference_file_sha256": null,
+        "manual_landmark_file_sha256": null,
+        "function": {
+          "20_disks_shorter_axis": {
+            "EDV": {
+              "mae": 8.454664821486617,
+              "bias": 0.2474674490854022,
+              "n_patients": 71,
+              "unit": "mL",
+              "mae_ci95": [
+                7.078549075491143,
+                9.943988842140456
+              ],
+              "patient_mean_limits_of_agreement": [
+                -20.90946724296241,
+                21.404402141133215
+              ],
+              "coverage_of_attempted_patients": 1.0
+            },
+            "ESV": {
+              "mae": 6.189527241895329,
+              "bias": 2.919390999826197,
+              "n_patients": 71,
+              "unit": "mL",
+              "mae_ci95": [
+                5.270879373222417,
+                7.282882593116395
+              ],
+              "patient_mean_limits_of_agreement": [
+                -11.021051437188241,
+                16.859833436840635
+              ],
+              "coverage_of_attempted_patients": 1.0
+            },
+            "SV": {
+              "mae": 7.695402466388913,
+              "bias": -2.6719235507407944,
+              "n_patients": 71,
+              "unit": "mL",
+              "mae_ci95": [
+                6.319931165896669,
+                9.114156638333592
+              ],
+              "patient_mean_limits_of_agreement": [
+                -21.30913455250717,
+                15.965287451025583
+              ],
+              "coverage_of_attempted_patients": 1.0
+            },
+            "EF": {
+              "mae": 9.345180776138227,
+              "bias": -4.971516945732577,
+              "n_patients": 71,
+              "unit": "percentage_points",
+              "mae_ci95": [
+                7.9190673182623765,
+                11.108182062861196
+              ],
+              "patient_mean_limits_of_agreement": [
+                -25.667386298393957,
+                15.724352406928801
+              ],
+              "coverage_of_attempted_patients": 1.0
+            },
+            "CO": {
+              "mae": null,
+              "n_patients": 0,
+              "unit": "L/min",
+              "reason": "no_valid_paired_reference",
+              "coverage_of_attempted_patients": 0.0
+            }
+          },
+          "biplane_vs_CAMUS_reported_EF": {
+            "EDV": {
+              "mae": null,
+              "n_patients": 0,
+              "unit": "mL",
+              "reason": "no_valid_paired_reference",
+              "coverage_of_attempted_patients": 0.0
+            },
+            "ESV": {
+              "mae": null,
+              "n_patients": 0,
+              "unit": "mL",
+              "reason": "no_valid_paired_reference",
+              "coverage_of_attempted_patients": 0.0
+            },
+            "SV": {
+              "mae": null,
+              "n_patients": 0,
+              "unit": "mL",
+              "reason": "no_valid_paired_reference",
+              "coverage_of_attempted_patients": 0.0
+            },
+            "EF": {
+              "mae": 8.135239847351528,
+              "bias": 1.8952363024963998,
+              "n_patients": 71,
+              "unit": "percentage_points",
+              "mae_ci95": [
+                6.7502134166840575,
+                9.711455048188583
+              ],
+              "patient_mean_limits_of_agreement": [
+                -18.190161570869225,
+                21.980634175862026
+              ],
+              "coverage_of_attempted_patients": 1.0
+            },
+            "CO": {
+              "mae": null,
+              "n_patients": 0,
+              "unit": "L/min",
+              "reason": "no_valid_paired_reference",
+              "coverage_of_attempted_patients": 0.0
+            }
+          },
+          "single_plane_area_length_2CH": {
+            "EDV": {
+              "mae": 26.17243930586838,
+              "bias": -4.3695184096886015,
+              "n_patients": 71,
+              "unit": "mL",
+              "mae_ci95": [
+                20.729736787572627,
+                31.500566994802522
+              ],
+              "patient_mean_limits_of_agreement": [
+                -74.02315474765224,
+                65.28411792827505
+              ],
+              "coverage_of_attempted_patients": 1.0
+            },
+            "ESV": {
+              "mae": 19.114862224464613,
+              "bias": 3.4695338766895194,
+              "n_patients": 71,
+              "unit": "mL",
+              "mae_ci95": [
+                14.844497073877092,
+                24.231352633672387
+              ],
+              "patient_mean_limits_of_agreement": [
+                -50.843045521609575,
+                57.78211327498861
+              ],
+              "coverage_of_attempted_patients": 1.0
+            },
+            "SV": {
+              "mae": 26.72107060023124,
+              "bias": -7.839052286378117,
+              "n_patients": 71,
+              "unit": "mL",
+              "mae_ci95": [
+                20.44961379088434,
+                33.97167963480509
+              ],
+              "patient_mean_limits_of_agreement": [
+                -83.68883152824588,
+                68.01072695548964
+              ],
+              "coverage_of_attempted_patients": 1.0
+            },
+            "EF": {
+              "mae": 12.780997638265871,
+              "bias": -5.323877371325369,
+              "n_patients": 71,
+              "unit": "percentage_points",
+              "mae_ci95": [
+                9.717622344826992,
+                16.05759492497388
+              ],
+              "patient_mean_limits_of_agreement": [
+                -41.20985995366641,
+                30.562105211015673
+              ],
+              "coverage_of_attempted_patients": 1.0
+            },
+            "CO": {
+              "mae": null,
+              "n_patients": 0,
+              "unit": "L/min",
+              "reason": "no_valid_paired_reference",
+              "coverage_of_attempted_patients": 0.0
+            }
+          },
+          "single_plane_area_length_4CH": {
+            "EDV": {
+              "mae": 23.892229902972534,
+              "bias": -8.175717532406379,
+              "n_patients": 71,
+              "unit": "mL",
+              "mae_ci95": [
+                18.817191718717428,
+                29.330279722667825
+              ],
+              "patient_mean_limits_of_agreement": [
+                -70.75273777360123,
+                54.401302708788464
+              ],
+              "coverage_of_attempted_patients": 1.0
+            },
+            "ESV": {
+              "mae": 12.638325532769265,
+              "bias": -4.152992754658648,
+              "n_patients": 71,
+              "unit": "mL",
+              "mae_ci95": [
+                9.64471473270673,
+                16.60775475783719
+              ],
+              "patient_mean_limits_of_agreement": [
+                -40.99638706912351,
+                32.69040155980621
+              ],
+              "coverage_of_attempted_patients": 1.0
+            },
+            "SV": {
+              "mae": 19.03169945267174,
+              "bias": -4.022724777747731,
+              "n_patients": 71,
+              "unit": "mL",
+              "mae_ci95": [
+                15.404612262451817,
+                23.075605743196235
+              ],
+              "patient_mean_limits_of_agreement": [
+                -52.824305117564954,
+                44.77885556206949
+              ],
+              "coverage_of_attempted_patients": 1.0
+            },
+            "EF": {
+              "mae": 7.171150490978943,
+              "bias": -1.2344005236335234,
+              "n_patients": 71,
+              "unit": "percentage_points",
+              "mae_ci95": [
+                5.785050500675677,
+                8.58113945219807
+              ],
+              "patient_mean_limits_of_agreement": [
+                -19.554491542788924,
+                17.085690495521874
+              ],
+              "coverage_of_attempted_patients": 1.0
+            },
+            "CO": {
+              "mae": null,
+              "n_patients": 0,
+              "unit": "L/min",
+              "reason": "no_valid_paired_reference",
+              "coverage_of_attempted_patients": 0.0
+            }
+          },
+          "single_plane_auto_extrema_2CH": {
+            "EDV": {
+              "mae": 24.668353544245992,
+              "bias": 4.19847322144838,
+              "n_patients": 71,
+              "unit": "mL",
+              "mae_ci95": [
+                19.44446078816474,
+                30.52626332802547
+              ],
+              "patient_mean_limits_of_agreement": [
+                -65.19611852453828,
+                73.59306496743504
+              ],
+              "coverage_of_attempted_patients": 1.0
+            },
+            "ESV": {
+              "mae": 16.15294841382458,
+              "bias": -2.1684550582241378,
+              "n_patients": 71,
+              "unit": "mL",
+              "mae_ci95": [
+                12.740874055860855,
+                19.941118612235744
+              ],
+              "patient_mean_limits_of_agreement": [
+                -46.000574687312344,
+                41.663664570864064
+              ],
+              "coverage_of_attempted_patients": 1.0
+            },
+            "SV": {
+              "mae": 24.45009621381229,
+              "bias": 6.366928279672517,
+              "n_patients": 71,
+              "unit": "mL",
+              "mae_ci95": [
+                19.124766569308132,
+                30.359159989137144
+              ],
+              "patient_mean_limits_of_agreement": [
+                -61.00592732635888,
+                73.73978388570391
+              ],
+              "coverage_of_attempted_patients": 1.0
+            },
+            "EF": {
+              "mae": 10.44910322014506,
+              "bias": 0.8256416105359222,
+              "n_patients": 71,
+              "unit": "percentage_points",
+              "mae_ci95": [
+                8.631889122239905,
+                12.604922711270444
+              ],
+              "patient_mean_limits_of_agreement": [
+                -26.459272279211387,
+                28.11055550028323
+              ],
+              "coverage_of_attempted_patients": 1.0
+            },
+            "CO": {
+              "mae": null,
+              "n_patients": 0,
+              "unit": "L/min",
+              "reason": "no_valid_paired_reference",
+              "coverage_of_attempted_patients": 0.0
+            }
+          },
+          "single_plane_auto_extrema_4CH": {
+            "EDV": {
+              "mae": 21.854965321166816,
+              "bias": -0.5106628817308857,
+              "n_patients": 70,
+              "unit": "mL",
+              "mae_ci95": [
+                16.860641908560297,
+                27.083116344881926
+              ],
+              "patient_mean_limits_of_agreement": [
+                -59.78480013723628,
+                58.76347437377451
+              ],
+              "coverage_of_attempted_patients": 0.9859154929577465
+            },
+            "ESV": {
+              "mae": 14.502458918903443,
+              "bias": -8.30714444141346,
+              "n_patients": 70,
+              "unit": "mL",
+              "mae_ci95": [
+                10.760492226524715,
+                19.52194699126789
+              ],
+              "patient_mean_limits_of_agreement": [
+                -52.51274626691763,
+                35.898457384090705
+              ],
+              "coverage_of_attempted_patients": 0.9859154929577465
+            },
+            "SV": {
+              "mae": 17.149832837642872,
+              "bias": 7.796481559682575,
+              "n_patients": 70,
+              "unit": "mL",
+              "mae_ci95": [
+                14.071645984339861,
+                20.550560500257635
+              ],
+              "patient_mean_limits_of_agreement": [
+                -34.12172537810353,
+                49.71468849746868
+              ],
+              "coverage_of_attempted_patients": 0.9859154929577465
+            },
+            "EF": {
+              "mae": 7.528727360468267,
+              "bias": 4.4153983401484185,
+              "n_patients": 70,
+              "unit": "percentage_points",
+              "mae_ci95": [
+                6.214082502737185,
+                9.099087364207778
+              ],
+              "patient_mean_limits_of_agreement": [
+                -12.98941274936113,
+                21.820209429657965
+              ],
+              "coverage_of_attempted_patients": 0.9859154929577465
+            },
+            "CO": {
+              "mae": null,
+              "n_patients": 0,
+              "unit": "L/min",
+              "reason": "no_valid_paired_reference",
+              "coverage_of_attempted_patients": 0.0
+            }
+          }
+        },
+        "frames": 2650,
+        "beats": 0,
+        "valid_frame_fraction": 0.9996226415094339,
+        "timing_seconds": 101.66266929999983,
+        "end_to_end_fps": 26.06659866641928,
+        "temporal": false,
+        "gate": false,
+        "experiment_type": "baseline_training"
+      }
+    },
+    {
+      "path": "runs/validation_camus_regularized/summary.json",
+      "sha256": "9bc7cbbcbf5bb3d5e43de41aacf9fc3f1862bc767ee7a18edb5c11870c7a9a03",
+      "summary": {
+        "git_commit": "11741adbbb563ac49cf5f1dcc06f869fd296250e",
+        "working_tree_dirty": true,
+        "split": "val",
+        "weights_sha256": "59b92018e38e823179a4681aec49e06ca66ecbc418617221b9b2740c2c7e1008",
+        "normalization": {
+          "mean": [
+            48.5741590178939,
+            48.5741590178939,
+            48.5741590178939
+          ],
+          "std": [
+            55.6928793276073,
+            55.6928793276073,
+            55.6928793276073
+          ]
+        },
+        "cases_attempted": 142,
+        "cases_failed": 0,
+        "labeled_frames": 284,
+        "patients_attempted": 71,
+        "patients": 71,
+        "failures": [],
+        "dice_patient_mean": 0.9036277948197795,
+        "assd_mm": 2.131303695747113,
+        "hd95_mm": 5.310481099208757,
+        "assd_pixel": null,
+        "hd95_pixel": null,
+        "manual_keypoint_error": null,
+        "contour_derived_keypoint_error": 5.450942210000016,
+        "keypoint_distance_unit": "mm",
+        "keypoint_scope": "manual_when_sidecar_available_else_contour_derived_proxy_only",
+        "manual_keypoint_labeled_frames": 0,
+        "contour_proxy_valid_frames": 284,
+        "reference_file_sha256": null,
+        "manual_landmark_file_sha256": null,
+        "function": {
+          "20_disks_shorter_axis": {
+            "EDV": {
+              "mae": 9.806674063476688,
+              "bias": -1.2156671608982044,
+              "n_patients": 71,
+              "unit": "mL",
+              "mae_ci95": [
+                7.71787700478033,
+                12.210206318974327
+              ],
+              "patient_mean_limits_of_agreement": [
+                -28.54627916295557,
+                26.114944841159165
+              ],
+              "coverage_of_attempted_patients": 1.0
+            },
+            "ESV": {
+              "mae": 5.498917324770978,
+              "bias": 0.2364809508744303,
+              "n_patients": 71,
+              "unit": "mL",
+              "mae_ci95": [
+                4.561284152160819,
+                6.729753094193888
+              ],
+              "patient_mean_limits_of_agreement": [
+                -13.930672933931692,
+                14.403634835680553
+              ],
+              "coverage_of_attempted_patients": 1.0
+            },
+            "SV": {
+              "mae": 8.302630680408054,
+              "bias": -0.7333913875759142,
+              "n_patients": 70,
+              "unit": "mL",
+              "mae_ci95": [
+                6.899183958169968,
+                9.912309100043474
+              ],
+              "patient_mean_limits_of_agreement": [
+                -21.634346628467043,
+                20.167563853315215
+              ],
+              "coverage_of_attempted_patients": 0.9859154929577465
+            },
+            "EF": {
+              "mae": 8.964319328700327,
+              "bias": -1.3610858839943847,
+              "n_patients": 70,
+              "unit": "percentage_points",
+              "mae_ci95": [
+                7.4904227835944095,
+                10.593036281733555
+              ],
+              "patient_mean_limits_of_agreement": [
+                -23.126751979875284,
+                20.404580211886515
+              ],
+              "coverage_of_attempted_patients": 0.9859154929577465
+            },
+            "CO": {
+              "mae": null,
+              "n_patients": 0,
+              "unit": "L/min",
+              "reason": "no_valid_paired_reference",
+              "coverage_of_attempted_patients": 0.0
+            }
+          },
+          "biplane_vs_CAMUS_reported_EF": {
+            "EDV": {
+              "mae": null,
+              "n_patients": 0,
+              "unit": "mL",
+              "reason": "no_valid_paired_reference",
+              "coverage_of_attempted_patients": 0.0
+            },
+            "ESV": {
+              "mae": null,
+              "n_patients": 0,
+              "unit": "mL",
+              "reason": "no_valid_paired_reference",
+              "coverage_of_attempted_patients": 0.0
+            },
+            "SV": {
+              "mae": null,
+              "n_patients": 0,
+              "unit": "mL",
+              "reason": "no_valid_paired_reference",
+              "coverage_of_attempted_patients": 0.0
+            },
+            "EF": {
+              "mae": 9.828890295649545,
+              "bias": 5.467795722765587,
+              "n_patients": 70,
+              "unit": "percentage_points",
+              "mae_ci95": [
+                8.407914149457918,
+                11.175476933857762
+              ],
+              "patient_mean_limits_of_agreement": [
+                -14.399450719339285,
+                25.33504216487046
+              ],
+              "coverage_of_attempted_patients": 0.9859154929577465
+            },
+            "CO": {
+              "mae": null,
+              "n_patients": 0,
+              "unit": "L/min",
+              "reason": "no_valid_paired_reference",
+              "coverage_of_attempted_patients": 0.0
+            }
+          },
+          "single_plane_area_length_2CH": {
+            "EDV": {
+              "mae": 28.932463389778956,
+              "bias": -7.106236358625655,
+              "n_patients": 71,
+              "unit": "mL",
+              "mae_ci95": [
+                22.53434087708971,
+                35.799248377446084
+              ],
+              "patient_mean_limits_of_agreement": [
+                -87.80919866363864,
+                73.59672594638734
+              ],
+              "coverage_of_attempted_patients": 1.0
+            },
+            "ESV": {
+              "mae": 15.736466448984293,
+              "bias": -2.4090625182762784,
+              "n_patients": 71,
+              "unit": "mL",
+              "mae_ci95": [
+                12.822726861266714,
+                19.29645568468476
+              ],
+              "patient_mean_limits_of_agreement": [
+                -43.42819513691546,
+                38.610070100362904
+              ],
+              "coverage_of_attempted_patients": 1.0
+            },
+            "SV": {
+              "mae": 26.566998309843036,
+              "bias": -2.852399841472664,
+              "n_patients": 70,
+              "unit": "mL",
+              "mae_ci95": [
+                20.616326402309188,
+                33.4637592863658
+              ],
+              "patient_mean_limits_of_agreement": [
+                -77.1471400496393,
+                71.44234036669398
+              ],
+              "coverage_of_attempted_patients": 0.9859154929577465
+            },
+            "EF": {
+              "mae": 11.003260242786915,
+              "bias": -2.100705823303307,
+              "n_patients": 70,
+              "unit": "percentage_points",
+              "mae_ci95": [
+                9.0664435204364,
+                13.03558975393192
+              ],
+              "patient_mean_limits_of_agreement": [
+                -29.431054220080135,
+                25.22964257347352
+              ],
+              "coverage_of_attempted_patients": 0.9859154929577465
+            },
+            "CO": {
+              "mae": null,
+              "n_patients": 0,
+              "unit": "L/min",
+              "reason": "no_valid_paired_reference",
+              "coverage_of_attempted_patients": 0.0
+            }
+          },
+          "single_plane_area_length_4CH": {
+            "EDV": {
+              "mae": 23.631581858963507,
+              "bias": -6.759703704703891,
+              "n_patients": 71,
+              "unit": "mL",
+              "mae_ci95": [
+                18.43338336197206,
+                29.234977392809345
+              ],
+              "patient_mean_limits_of_agreement": [
+                -70.50235995637236,
+                56.98295254696458
+              ],
+              "coverage_of_attempted_patients": 1.0
+            },
+            "ESV": {
+              "mae": 13.105920006728633,
+              "bias": -5.849298813650167,
+              "n_patients": 71,
+              "unit": "mL",
+              "mae_ci95": [
+                10.596985298227967,
+                15.869211086758197
+              ],
+              "patient_mean_limits_of_agreement": [
+                -38.1070176385366,
+                26.408420011236267
+              ],
+              "coverage_of_attempted_patients": 1.0
+            },
+            "SV": {
+              "mae": 16.07939375518681,
+              "bias": 0.3940612547543773,
+              "n_patients": 70,
+              "unit": "mL",
+              "mae_ci95": [
+                12.930643034140138,
+                19.464623799166198
+              ],
+              "patient_mean_limits_of_agreement": [
+                -41.91925251868514,
+                42.707375028193894
+              ],
+              "coverage_of_attempted_patients": 0.9859154929577465
+            },
+            "EF": {
+              "mae": 6.44211585639468,
+              "bias": 1.4689582191269412,
+              "n_patients": 70,
+              "unit": "percentage_points",
+              "mae_ci95": [
+                5.21006234961233,
+                7.742278939826509
+              ],
+              "patient_mean_limits_of_agreement": [
+                -14.904460038511536,
+                17.842376476765416
+              ],
+              "coverage_of_attempted_patients": 0.9859154929577465
+            },
+            "CO": {
+              "mae": null,
+              "n_patients": 0,
+              "unit": "L/min",
+              "reason": "no_valid_paired_reference",
+              "coverage_of_attempted_patients": 0.0
+            }
+          },
+          "single_plane_auto_extrema_2CH": {
+            "EDV": {
+              "mae": 25.374581735781362,
+              "bias": 4.4228442988466155,
+              "n_patients": 71,
+              "unit": "mL",
+              "mae_ci95": [
+                20.153356098733525,
+                31.40861868093207
+              ],
+              "patient_mean_limits_of_agreement": [
+                -64.95136326658435,
+                73.79705186427758
+              ],
+              "coverage_of_attempted_patients": 1.0
+            },
+            "ESV": {
+              "mae": 15.148814250549446,
+              "bias": -5.931744852787064,
+              "n_patients": 71,
+              "unit": "mL",
+              "mae_ci95": [
+                11.95381692893884,
+                19.013219971276484
+              ],
+              "patient_mean_limits_of_agreement": [
+                -46.564562217512204,
+                34.70107251193808
+              ],
+              "coverage_of_attempted_patients": 1.0
+            },
+            "SV": {
+              "mae": 25.460647889857412,
+              "bias": 10.354589151633679,
+              "n_patients": 71,
+              "unit": "mL",
+              "mae_ci95": [
+                19.97900956668321,
+                31.566435426950207
+              ],
+              "patient_mean_limits_of_agreement": [
+                -59.29318475972353,
+                80.00236306299088
+              ],
+              "coverage_of_attempted_patients": 1.0
+            },
+            "EF": {
+              "mae": 10.202933056487183,
+              "bias": 2.9967754203957826,
+              "n_patients": 71,
+              "unit": "percentage_points",
+              "mae_ci95": [
+                8.411139087259649,
+                12.126505300024728
+              ],
+              "patient_mean_limits_of_agreement": [
+                -22.14048086290157,
+                28.134031703693132
+              ],
+              "coverage_of_attempted_patients": 1.0
+            },
+            "CO": {
+              "mae": null,
+              "n_patients": 0,
+              "unit": "L/min",
+              "reason": "no_valid_paired_reference",
+              "coverage_of_attempted_patients": 0.0
+            }
+          },
+          "single_plane_auto_extrema_4CH": {
+            "EDV": {
+              "mae": 20.887179526975576,
+              "bias": 1.0963567126331604,
+              "n_patients": 69,
+              "unit": "mL",
+              "mae_ci95": [
+                16.927199361764778,
+                25.44845890687765
+              ],
+              "patient_mean_limits_of_agreement": [
+                -53.910887685037245,
+                56.103601110303565
+              ],
+              "coverage_of_attempted_patients": 0.971830985915493
+            },
+            "ESV": {
+              "mae": 14.318930355930803,
+              "bias": -9.884070394597318,
+              "n_patients": 69,
+              "unit": "mL",
+              "mae_ci95": [
+                10.943633488591413,
+                18.616516675684448
+              ],
+              "patient_mean_limits_of_agreement": [
+                -48.20998506268852,
+                28.441844273493885
+              ],
+              "coverage_of_attempted_patients": 0.971830985915493
+            },
+            "SV": {
+              "mae": 18.006160916058278,
+              "bias": 10.980427107230478,
+              "n_patients": 69,
+              "unit": "mL",
+              "mae_ci95": [
+                14.739326821351456,
+                21.505358959086408
+              ],
+              "patient_mean_limits_of_agreement": [
+                -28.81789773689185,
+                50.7787519513528
+              ],
+              "coverage_of_attempted_patients": 0.971830985915493
+            },
+            "EF": {
+              "mae": 7.616283638529465,
+              "bias": 6.196201155997852,
+              "n_patients": 69,
+              "unit": "percentage_points",
+              "mae_ci95": [
+                6.395107513116022,
+                9.02618651164223
+              ],
+              "patient_mean_limits_of_agreement": [
+                -7.927222261111377,
+                20.31962457310708
+              ],
+              "coverage_of_attempted_patients": 0.971830985915493
+            },
+            "CO": {
+              "mae": null,
+              "n_patients": 0,
+              "unit": "L/min",
+              "reason": "no_valid_paired_reference",
+              "coverage_of_attempted_patients": 0.0
+            }
+          }
+        },
+        "frames": 2650,
+        "beats": 0,
+        "valid_frame_fraction": 0.9988679245283019,
+        "timing_seconds": 106.43834860000061,
+        "end_to_end_fps": 24.897041666427967,
+        "temporal": false,
+        "gate": false,
+        "experiment_type": "training"
+      }
+    }
+  ],
+  "latest_training_has_test_output": false,
+  "new_training_or_evaluation_executed": false
+}
