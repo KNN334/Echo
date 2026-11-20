@@ -13,6 +13,7 @@ RUNTIME_DIRECTORIES = {
     'runs': '本地实验结果，Git 忽略',
 }
 GENERATED_DIRECTORIES = {
+    'figures/style_test': '全局样式测试页、真实源数据、英文图注及字体/排版/色觉检查；等待样式确认',
     'figures/workflow_parts': '当前项目流程图规划、独立零件及审阅图集；总图待讨论后组装',
     'reports/result_analysis': '实测结果图集、中文解读、源数据及图件检查；内容由绘图入口生成',
     'reports/training': '逐实验训练日志、每轮损失、运行环境与完成记录；内容由训练入口生成',
@@ -54,6 +55,7 @@ DESCRIPTIONS = {
     'docs/pycharm_run.md': 'PyCharm 环境确认、三个入口运行和配置修改步骤',
     'docs/result_analysis.md': '结果图的证据设计、参考图适用范围、导出格式及复现方法',
     'figures': '论文图表规划、方法流程图、可编辑源稿和导出预览',
+    'figures/style_test.py': '从冻结CAMUS结果重建样式测试页；使用共享样式，不重训或重选病例',
     'figures/planning': '结果资产盘点、同行逐图逐表拆解与图表规划的可复核材料',
     'figures/planning/audit_assets.py': '只读核查缓存、患者划分和冻结源文件，不重训或重选模型',
     'figures/planning/asset_inventory.json': '缓存规模、空间时间范围、冻结来源校验与现有实验清单',
@@ -63,6 +65,11 @@ DESCRIPTIONS = {
     'figures/planning/literature_statistics.json': '图表数量中位数、范围和十二类论证作用的统计结果',
     'figures/planning/literature_breakdown.md': '两篇模板与四篇近期论文的逐图逐表拆解及共同做法',
     'figure_plan.md': '正文和补充图表制作清单、证据边界、待补计算与阶段确认进度',
+    'style': '所有新投稿图共用的字体、色系、色带、尺寸与导出设置',
+    'style/paper.mplstyle': '用户选定的Nature/Arial全局样式：普通文字7pt、600dpi位图',
+    'style/palette.py': '固定实验/参考配色、cividis/vik色带、字体与物理尺寸及统一导出',
+    'style/requirements.txt': '样式绘图、科学色带和PDF/色觉检查所需依赖',
+    'style/README.md': '全局样式映射、复现方法与当前等待确认状态',
     'figures/camus_method_flow.svg': 'CAMUS 左室分割与心功能参数估算可编辑流程图',
     'figures/camus_method_flow.pdf': '用于论文排版的矢量版方法流程图',
     'figures/camus_method_flow.png': '由 SVG 源稿生成的流程图预览',

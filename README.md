@@ -24,7 +24,7 @@
 
 ## 结果分析图
 
-本轮投稿图表规划见 [图表制作清单](figure_plan.md)、[结果资产盘点](figures/planning/result_assets.md) 和 [六篇同行论文逐图逐表拆解](figures/planning/literature_breakdown.md)。当前建议正文 4 图、2 表，补充图为备选；清单等待确认，尚未进入新视觉主题与分批制图。所有验证仍限定于公开 CAMUS 半周期，不能表述为贴片连续佩戴实测。
+本轮投稿图表规划见 [图表制作清单](figure_plan.md)、[结果资产盘点](figures/planning/result_assets.md) 和 [六篇同行论文逐图逐表拆解](figures/planning/literature_breakdown.md)。正文 4 图、2 表及补充候选已确认；已按用户选择建立 [全局样式](style/README.md) 和 [真实数据样式测试页](figures/style_test/style_test.pdf)，当前等待样式确认，尚未开始正文分批制图。所有验证仍限定于公开 CAMUS 半周期，不能表述为贴片连续佩戴实测。
 
 已保存实验的 10 组结果图见 [离线图集](reports/result_analysis/camus_cuda_progress/index.html)、[全部图件 PDF](reports/result_analysis/camus_cuda_progress/all_figures.pdf) 和 [中文解读](reports/result_analysis/camus_cuda_progress/RESULTS_ANALYSIS.md)。图集使用同一轮冻结实验，分别展示同法轮廓参考与 CAMUS 报告 EF；不把半周期推理称为完整心搏或半监督训练。
 
@@ -120,6 +120,8 @@ Echo/
 │   │   │   # 输出资产、分辨率、实验和已算/待算/不可算指标的中文清单
 │   │   └── summarize_literature.py
 │   │       # 从人工核查目录生成拆解表并统计图表数量与论证作用
+│   ├── style_test/
+│   │   # 全局样式测试页、真实源数据、英文图注及字体/排版/色觉检查；等待样式确认
 │   ├── workflow_parts/
 │   │   # 当前项目流程图规划、独立零件及审阅图集；总图待讨论后组装
 │   ├── camus_method_flow.pdf
@@ -132,8 +134,10 @@ Echo/
 │   │   # 流程图图注、核心主张和实现假设
 │   ├── method_flow_export_check.json
 │   │   # 导出尺寸、文字边界和重叠检查记录
-│   └── render_method_flow.py
-│       # 从 SVG 导出保留文字的矢量 PDF 和 300 dpi 预览
+│   ├── render_method_flow.py
+│   │   # 从 SVG 导出保留文字的矢量 PDF 和 300 dpi 预览
+│   └── style_test.py
+│       # 从冻结CAMUS结果重建样式测试页；使用共享样式，不重训或重选病例
 ├── reports/
 │   # 历史基线结果、训练日志与审计；不代表当前代码已重新训练
 │   ├── full_baseline/
@@ -302,6 +306,18 @@ Echo/
 │   │       # 汇总指标、图像和曲线生成离线 HTML 报告
 │   └── __init__.py
 │       # Python 包初始化与模块说明，无需单独运行
+├── style/
+│   # 所有新投稿图共用的字体、色系、色带、尺寸与导出设置
+│   ├── __init__.py
+│   │   # Python 包初始化与模块说明，无需单独运行
+│   ├── palette.py
+│   │   # 固定实验/参考配色、cividis/vik色带、字体与物理尺寸及统一导出
+│   ├── paper.mplstyle
+│   │   # 用户选定的Nature/Arial全局样式：普通文字7pt、600dpi位图
+│   ├── README.md
+│   │   # 全局样式映射、复现方法与当前等待确认状态
+│   └── requirements.txt
+│       # 样式绘图、科学色带和PDF/色觉检查所需依赖
 ├── tests/
 │   # 自动工程回归检查，不替代真实患者实验或临床验证
 │   ├── test_camus.py

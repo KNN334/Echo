@@ -1,0 +1,5 @@
+matplotlib>=3.8
+cmcrameri==1.10
+Pillow>=10
+PyMuPDF>=1.24
+colorspacious==1.1.2

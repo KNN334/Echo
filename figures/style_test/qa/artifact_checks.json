@@ -1,0 +1,57 @@
+{
+  "width_mm": 183.00000559488933,
+  "height_mm": 144.99999949137367,
+  "minimum_font_pt": 7.0,
+  "pdf_text_span_count": 57,
+  "fonts": [
+    "Arial-BoldMT",
+    "ArialMT"
+  ],
+  "all_fonts_embedded": true,
+  "image_information_shape_preserved": [
+    112,
+    112
+  ],
+  "rasters": {
+    "png": {
+      "size_px": [
+        4322,
+        3425
+      ],
+      "mode": "RGB",
+      "dpi": [
+        599.9988,
+        599.9988
+      ]
+    },
+    "tiff": {
+      "size_px": [
+        4322,
+        3425
+      ],
+      "mode": "RGB",
+      "dpi": [
+        600.0,
+        600.0
+      ]
+    }
+  },
+  "source_hashes_match": true,
+  "external_alignment_report": "style_test.alignment.json",
+  "source_preflight_review": {
+    "status": "shared-style limitations reviewed against rendered artifacts",
+    "explanation": "The static single-file scanner cannot follow the imported mplstyle/export helper. Editable fonts, PDF output, dimensions and 600 dpi were verified in actual artifacts. SVG is not requested by approved output choice 5A."
+  },
+  "color_simulations": {
+    "engine": "colorspacious",
+    "version": "1.1.2",
+    "severity": 100,
+    "files": [
+      "protanomaly_100.png",
+      "deuteranomaly_100.png",
+      "tritanomaly_100.png",
+      "grayscale.png"
+    ],
+    "purpose": "Diagnostic views only; original scientific image and data unchanged."
+  }
+}

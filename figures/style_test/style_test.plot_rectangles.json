@@ -1,0 +1,18 @@
+{
+  "rectangles_inch": [
+    [
+      4.05511811023622,
+      3.385826771653543,
+      2.9133858267716537,
+      1.5354330708661421
+    ],
+    [
+      4.05511811023622,
+      0.8267716535433073,
+      2.9133858267716537,
+      1.5354330708661417
+    ]
+  ],
+  "tolerance_pt": 1.5,
+  "scope": "Quantitative b/d axes; palette card and calibrated image are not comparable plot areas."
+}
