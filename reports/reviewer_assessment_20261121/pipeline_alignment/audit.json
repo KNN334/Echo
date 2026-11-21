@@ -1,0 +1,211 @@
+{
+  "audit_utc": "2026-11-21T09:09:15.629459+00:00",
+  "source_commit": "ee7cc1dd581c9921b19d06076fa18461842129b5",
+  "scope": "Local current-code/data alignment audit with isolated engineering fixtures; no reshaping implemented.",
+  "python_files_by_group": {
+    "src": 49,
+    "scripts": 8,
+    "tests": 12,
+    "figures": 29,
+    "style": 3
+  },
+  "lines_by_group": {
+    "tests": 736,
+    "figures": 6221,
+    "style": 107,
+    "scripts": 357,
+    "src": 3022
+  },
+  "config_sha256": {
+    "configs/data/camus.yaml": "c13dd29e42d588c0046ae3dadcf3387cfeea969b3693f5f9bb4458eb5a04fc1d",
+    "configs/experiment.yaml": "39507f28145d4dbbbe382b6fe47a18b02f7cfe856a32bd2062658800649b72a6",
+    "configs/model/deeplabv3_resnet50.yaml": "d74098c0c3c7315e6a46941876a42cda81c54003cbebf98fd9ecffe410b40ed9",
+    "configs/train/baseline.yaml": "f0146d2a822b17c1f82fc5ba4de9d919b0be746eac60666b8cfe1126605c0512",
+    "configs/camus_splits.json": "85975e0ce238ae244f4b04e432914779feeb153e05c6deb27448aeae87a22cdf"
+  },
+  "acquired_data": {
+    "existing_validator": {
+      "patients": 500,
+      "cases": 1000,
+      "patient_splits": {
+        "train": 347,
+        "val": 71,
+        "test": 82
+      },
+      "case_splits": {
+        "train": 694,
+        "val": 142,
+        "test": 164
+      },
+      "manifest_sha256": "e8603f1862c321c0ece99bbfb34c530e3512ff78ee1b2484c615fcafb08445a6",
+      "array_contents_checked": false
+    },
+    "all_1000_arrays_decoded": true,
+    "original_label_resize_identity_passed": true,
+    "counts": {
+      "frames": 19232,
+      "labeled_frames": 2000,
+      "roi_reviewed": 0,
+      "half_sequence": 1000,
+      "ED_then_ES": 979,
+      "timing_derived_from_fps": 1000,
+      "ES_then_ED": 21
+    },
+    "ranges": {
+      "fps": {
+        "min": 32.6,
+        "median": 56.5,
+        "max": 85.6
+      },
+      "sequence_frames": {
+        "min": 10.0,
+        "median": 19.0,
+        "max": 42.0
+      },
+      "duration_s": {
+        "min": 0.1592920353982301,
+        "median": 0.3225806451612903,
+        "max": 0.6879194630872483
+      },
+      "original_height": {
+        "min": 292.0,
+        "median": 487.0,
+        "max": 973.0
+      },
+      "original_width": {
+        "min": 323.0,
+        "median": 591.0,
+        "max": 1181.0
+      },
+      "spacing_x_mm": {
+        "min": 0.30799999833106995,
+        "median": 0.30799999833106995,
+        "max": 0.30799999833106995
+      },
+      "spacing_y_mm": {
+        "min": 0.30799999833106995,
+        "median": 0.30799999833106995,
+        "max": 0.30799999833106995
+      },
+      "processed_spacing_x_mm": {
+        "min": 0.8882499951869249,
+        "median": 1.6252499911934137,
+        "max": 3.2477499824017286
+      },
+      "processed_spacing_y_mm": {
+        "min": 0.8029999956488609,
+        "median": 1.3392499927431345,
+        "max": 2.67574998550117
+      }
+    },
+    "cross_view_ef_label_conflicts": [],
+    "source_hash_checks": {
+      "sequence_and_config_source_hash_matches": 1000,
+      "referenced_raw_sequences_present_locally": 0
+    },
+    "cached_array_bytes": 129164467,
+    "local_raw_root_exists": false,
+    "historical_download_manifest": {
+      "complete": true,
+      "patients": 500,
+      "files": 7500,
+      "failures": []
+    },
+    "remote_release_reverified": false,
+    "acquired_processed_dataset_directories": [
+      "camus"
+    ],
+    "full_raw_preprocessing_reexecuted": false
+  },
+  "experiments": {
+    "current_train_output": "checkpoints/camus_regularized_v2",
+    "current_test_output": "runs/camus_regularized_v2",
+    "current_test_output_has_summary": false,
+    "current_initial_weights_hash_verified": true,
+    "official_echonet_data_downloaded_to_data": false,
+    "echonet_assets_in_project": "vendor source and segmentation initialization weights; no EchoNet dataset adapter or acquired video cohort",
+    "plot_entry_default": "runs/camus_cuda_progress and checkpoints/camus_cuda_progress",
+    "primary_paper_source": "figures/_paper_common.py fixed RUN/FROZEN paths",
+    "inventory_rows": 12
+  },
+  "engineering_probes": {
+    "scope": "Synthetic software fixtures only; not study simulations, new model inference or clinical results.",
+    "probe_artifacts": ".work/pipeline_alignment_probes/20261121T090913612407",
+    "label_dependent_preprocessing": {
+      "identical_input_images": true,
+      "only_reference_labels_changed": true,
+      "resulting_image_pixels_differ": 2,
+      "first_auto_support_applied": true,
+      "second_auto_support_applied": false
+    },
+    "no_label_preparation": {
+      "accepted": false,
+      "error": "影像/标签必须为 T×H×W，labeled 为非空布尔标注帧索引。"
+    },
+    "timestamp_gap": {
+      "all_valid_flags_true": true,
+      "median_step_s": 0.1,
+      "largest_step_s": 0.7,
+      "accepted_beats": 1,
+      "accepted_frame_intervals": [
+        [
+          1,
+          5
+        ]
+      ]
+    },
+    "container_rate_trust": {
+      "timestamp_source": "derived_from_fps",
+      "timestamps_s": [
+        0.0,
+        0.02,
+        0.04
+      ],
+      "issues": [
+        "missing_spatial_calibration"
+      ],
+      "source": {
+        "fps": "container_rate_not_acquisition_verified"
+      }
+    },
+    "evaluation": {
+      "unlabeled": {
+        "cases_failed": 1,
+        "frames": 0,
+        "function_groups": [],
+        "prediction_mock_calls": 0,
+        "failure_messages": [
+          "'original_gt_indices'"
+        ]
+      },
+      "single_view_external": {
+        "cases_failed": 0,
+        "frames": 4,
+        "function_groups": [
+          "single_plane_area_length_2CH",
+          "single_plane_area_length_4CH",
+          "single_plane_auto_extrema_4CH"
+        ],
+        "prediction_mock_calls": 1,
+        "failure_messages": []
+      }
+    }
+  },
+  "integrity": {
+    "all_code_and_config_files_unchanged": true,
+    "all_1000_cache_arrays_and_sidecars_unchanged": true,
+    "original_frozen_reports": 3,
+    "packet_files": 1371,
+    "unchanged_original_figure_assets": 198
+  },
+  "not_executed": [
+    "training",
+    "model inference",
+    "new test-set evaluation",
+    "full raw preprocessing",
+    "new data download",
+    "study simulation",
+    "figure regeneration",
+    "project reshaping"
+  ]
+}
