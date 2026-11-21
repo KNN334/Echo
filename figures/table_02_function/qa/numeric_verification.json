@@ -1,0 +1,9 @@
+{
+  "method": "Independent standard-library errors, sample SD, correlation and reference-based R-squared.",
+  "rows_verified": 5,
+  "patients_per_row": 82,
+  "pairs": 410,
+  "point_statistics_match": true,
+  "frozen_confidence_intervals_unchanged": true,
+  "excluded_or_imputed_pairs": 0
+}

@@ -24,7 +24,7 @@
 
 ## 结果分析图
 
-本轮投稿图表规划见 [图表制作清单](figure_plan.md)、[结果资产盘点](figures/planning/result_assets.md) 和 [六篇同行论文逐图逐表拆解](figures/planning/literature_breakdown.md)。[全局样式](style/README.md)、[样式测试页](figures/style_test/style_test.pdf) 及四张正文图均已确认：[Fig.1 数据与方法框架](figures/fig_01_data_workflow/fig_01_data_workflow.pdf)、[Fig.2 分割验证](figures/fig_02_segmentation_validation/fig_02_segmentation_validation.pdf)、[Fig.3 功能一致性](figures/fig_03_function_agreement/fig_03_function_agreement.pdf)、[Fig.4 半周期轨迹](figures/fig_04_half_sequence/fig_04_half_sequence.pdf)。两张正文表尚未制作。按用户新增的完整覆盖要求，[可视化覆盖目录](figures/planning/visualization_coverage.md) 已收集10类旧分析图及新增诊断，提出核心补充8图2表、另3张有条件备选图，等待新增清单确认。所有结果仍限定于公开CAMUS半周期，保留几何与时序局限，不表述为贴片佩戴实测或独立临床容积准确性。
+本轮投稿图表规划见 [图表制作清单](figure_plan.md)、[结果资产盘点](figures/planning/result_assets.md) 和 [六篇同行论文逐图逐表拆解](figures/planning/literature_breakdown.md)。[全局样式](style/README.md)、[样式测试页](figures/style_test/style_test.pdf) 及四张正文图均已确认：[Fig.1 数据与方法框架](figures/fig_01_data_workflow/fig_01_data_workflow.pdf)、[Fig.2 分割验证](figures/fig_02_segmentation_validation/fig_02_segmentation_validation.pdf)、[Fig.3 功能一致性](figures/fig_03_function_agreement/fig_03_function_agreement.pdf)、[Fig.4 半周期轨迹](figures/fig_04_half_sequence/fig_04_half_sequence.pdf)。[Table 1 队列与参考覆盖](figures/table_01_cohort/table_01_cohort.pdf)、[Table 2 主功能一致性](figures/table_02_function/table_02_function.pdf) 已制作并核查，待本批反馈；附可编辑Markdown、源表、英文图注和QA。按完整覆盖要求，[可视化覆盖目录](figures/planning/visualization_coverage.md) 的核心补充8图2表及3张有条件备选清单已确认，补充图尚未制作；反馈后先S1/S7，每批1–2项。所有结果仍限定于公开CAMUS半周期，保留几何与时序局限，不表述为贴片佩戴实测或独立临床容积准确性。
 
 [2026-11-21结果自检](reports/result_integrity/camus_cuda_progress_20261121/report.md)：328标注帧分割指标与490行功能结果均可复算；发现代理长轴/基底导致的几何范围不一致、EF偏倚抵消和逐帧跳变风险。功能主图需先复核几何定义；原冻结结果保持不变。
 
@@ -136,10 +136,16 @@ Echo/
 │   │       # 结果分析可视化覆盖审计、正文/补充/质控分层及不可制作项目
 │   ├── style_test/
 │   │   # 已确认的全局样式测试页、真实源数据、英文图注及字体/排版/色觉检查
+│   ├── table_01_cohort/
+│   │   # Table 1审阅稿：500患者队列与参考覆盖、可编辑表、PDF/600dpi、源数据及检查
+│   ├── table_02_function/
+│   │   # Table 2审阅稿：五行主功能口径、患者配对、参考声明、图注及检查
 │   ├── workflow_parts/
 │   │   # 当前项目流程图规划、独立零件及审阅图集；总图待讨论后组装
 │   ├── _paper_common.py
 │   │   # 新投稿图共用的源数据溯源、物理坐标叠图、毫米排版及面板对齐检查
+│   ├── _paper_tables.py
+│   │   # 共享样式的三线表排版、逐单元格边界检查及可编辑Markdown导出
 │   ├── camus_method_flow.pdf
 │   │   # 用于论文排版的矢量版方法流程图
 │   ├── camus_method_flow.png
@@ -160,8 +166,12 @@ Echo/
 │   │   # 导出尺寸、文字边界和重叠检查记录
 │   ├── render_method_flow.py
 │   │   # 从 SVG 导出保留文字的矢量 PDF 和 300 dpi 预览
-│   └── style_test.py
-│       # 从冻结CAMUS结果重建样式测试页；使用共享样式，不重训或重选病例
+│   ├── style_test.py
+│   │   # 从冻结CAMUS结果重建样式测试页；使用共享样式，不重训或重选病例
+│   ├── table_01_cohort.py
+│   │   # 从1000侧车与固定划分重建队列统计，分别列患者和序列分母
+│   └── table_02_function.py
+│       # 从冻结82患者配对重建五行功能统计，分开同法参考与CAMUS临床EF标签
 ├── reports/
 │   # 历史基线结果、训练日志与审计；不代表当前代码已重新训练
 │   ├── full_baseline/

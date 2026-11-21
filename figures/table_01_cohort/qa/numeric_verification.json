@@ -1,0 +1,8 @@
+{
+  "method": "Independent standard-library counts and inclusive quartiles; direct metadata comparison.",
+  "patient_count": 500,
+  "sequence_count": 1000,
+  "metadata_files_compared": 1000,
+  "all_numeric_aggregates_match": true,
+  "excluded_or_imputed_records": 0
+}

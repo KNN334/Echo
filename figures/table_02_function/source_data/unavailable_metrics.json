@@ -1,0 +1,14 @@
+[
+  {
+    "metric": "HR",
+    "n": 0,
+    "value": null,
+    "reason": "No complete cardiac cycle or reliable independent reference heart rate"
+  },
+  {
+    "metric": "CO",
+    "n": 0,
+    "value": null,
+    "reason": "No complete cycle/reliable reference HR and no independent CO reference"
+  }
+]
