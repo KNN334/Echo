@@ -78,4 +78,3 @@ CAMUS 和 EchoNet-Dynamic 是可公开获取的常规临床超声基线，能够
 - EchoNet-Dynamic 官方页：<https://echonet.github.io/dynamic/>。
 - EchoNet-Dynamic Stanford AIMI 门户：<https://stanford.redivis.com/datasets/66s1-2hsmzj5rn>。
 - EchoNet-Dynamic 代码：<https://github.com/echonet/dynamic>。
-
