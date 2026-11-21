@@ -1,0 +1,11 @@
+patient_id,method,view,metric,prediction,reference,reason
+patient0072,single_plane_area_length,2CH,SV,,79.66371326564717,invalid_or_missing_EDV_ESV
+patient0072,single_plane_area_length,2CH,EF,,58.30354899041632,invalid_or_missing_EDV_ESV
+patient0068,single_plane_auto_extrema_4CH,4CH,EDV,,,Maximum at final frame; no later ES under frozen ordered-extrema rule
+patient0068,single_plane_auto_extrema_4CH,4CH,ESV,,,Maximum at final frame; no later ES under frozen ordered-extrema rule
+patient0068,single_plane_auto_extrema_4CH,4CH,SV,,,Maximum at final frame; no later ES under frozen ordered-extrema rule
+patient0068,single_plane_auto_extrema_4CH,4CH,EF,,,Maximum at final frame; no later ES under frozen ordered-extrema rule
+patient0203,single_plane_auto_extrema_4CH,4CH,EDV,,,Maximum at final frame; no later ES under frozen ordered-extrema rule
+patient0203,single_plane_auto_extrema_4CH,4CH,ESV,,,Maximum at final frame; no later ES under frozen ordered-extrema rule
+patient0203,single_plane_auto_extrema_4CH,4CH,SV,,,Maximum at final frame; no later ES under frozen ordered-extrema rule
+patient0203,single_plane_auto_extrema_4CH,4CH,EF,,,Maximum at final frame; no later ES under frozen ordered-extrema rule

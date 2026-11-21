@@ -30,7 +30,9 @@
 
 用户进一步确认三维曲面方案后，新增 [Fig.R3 LV直径时空曲面](figures/fig_r03_diameter_surface/fig_r03_diameter_surface.pdf)：R2相同的全部720个直径值，按时间×代理轴位置×直径绘制为并排两面板，统一视角/坐标/色标，无新采样、平滑或周期补造。含[英文图注](figures/fig_r03_diameter_surface/caption_en.md)、原始节点及面片源表、独立入口和[QA](figures/fig_r03_diameter_surface/QA.md)。用户已确认R3及参考色调修订，R1/R2仍待最终选稿；曲面为R2热图的另一种表达，不新增独立证据或真实三维解剖主张。
 
-本批新增 [Fig.S3 训练收敛与配对验证表现](figures/fig_s03_training_comparison/fig_s03_training_comparison.pdf) 和 [Table S2 分割性能全分层](figures/table_s02_segmentation/table_s02_segmentation.pdf)，等待反馈。S3保留53个实际训练epoch、71位验证患者的Dice及共同有效70位的标签EF；基线/正则化Dice为0.9021/0.9036，配对标签EF MAE为8.24/9.83 pp，不称全面提升或单因素消融；一例无效EF的原值/原因及全部有效统计保留。S2含全部82位测试患者/328标注帧，直接从原坐标掩膜计算逐帧IoU，9个重叠分层均按患者报告均值±样本SD。两项均有独立入口、完整源表、英文图注、PDF/600 dpi位图及QA，未更改既有结果或训练选模。
+已确认 [Fig.S3 训练收敛与配对验证表现](figures/fig_s03_training_comparison/fig_s03_training_comparison.pdf) 和 [Table S2 分割性能全分层](figures/table_s02_segmentation/table_s02_segmentation.pdf)。S3保留53个实际训练epoch、71位验证患者的Dice及共同有效70位的标签EF；基线/正则化Dice为0.9021/0.9036，配对标签EF MAE为8.24/9.83 pp，不称全面提升或单因素消融；一例无效EF的原值/原因及全部有效统计保留。Table S2含全部82位测试患者/328标注帧，直接从原坐标掩膜计算逐帧IoU，9个重叠分层均按患者报告均值±样本SD。两项均有独立入口、完整源表、英文图注、PDF/600 dpi位图及QA，未更改既有结果或训练选模。
+
+本批新增 [Fig.S2 半序列相位定位与功能量化](figures/fig_s02_phase_selection/fig_s02_phase_selection.pdf) 和 [Table S1 全功能口径](figures/table_s01_function/table_s01_function.pdf)，等待反馈。S2在共同81/80患者上比较2CH/4CH专家相位与自动极值EF，对照为同法专家轮廓参考；MAE为9.93→10.06/7.82→8.66 pp，下排列出82/80患者的FPS派生定位偏差分布。Table S1列齐6口径21组点统计、1712配对及492可用性记录，临床标签EF独立分区；无效原因及负R²保留。表按各条件全部有效患者，图按交集配对，分母差异明确注明；未补造完整周期或HR/CO。两项含英文图注、真实源表、PDF/600 dpi位图和QA，现有结果及共享样式未改。
 
 [2026-11-21结果自检](reports/result_integrity/camus_cuda_progress_20261121/report.md)：328标注帧分割指标与490行功能结果均可复算；发现代理长轴/基底导致的几何范围不一致、EF偏倚抵消和逐帧跳变风险。功能主图需先复核几何定义；原冻结结果保持不变。
 
@@ -128,8 +130,10 @@ Echo/
 │   │   # 已确认的Fig.R3曲面候选：参考色调、全部真实直径、源节点/面片及检查
 │   ├── fig_s01_sv_ef_agreement/
 │   │   # Fig.S1审阅稿：82患者同法SV/LVEF散点及一致性、源表、图注与检查
+│   ├── fig_s02_phase_selection/
+│   │   # Fig.S2审阅稿：半序列配对EF与相位定位分布、完整覆盖、原极值重放及检查
 │   ├── fig_s03_training_comparison/
-│   │   # Fig.S3审阅稿：两历史训练方案损失、配对验证Dice/标签EF、完整覆盖与检查
+│   │   # 已确认的Fig.S3：两历史训练方案损失、配对验证Dice/标签EF、完整覆盖与检查
 │   ├── fig_s07_ef_reference_bias/
 │   │   # Fig.S7审阅稿：82患者EF三类参考差异与均值偏倚恒等式、源表及检查
 │   ├── planning/
@@ -161,8 +165,10 @@ Echo/
 │   │   # 1：500患者队列与参考覆盖、可编辑表、PDF/600dpi、源数据及检查
 │   ├── table_02_function/
 │   │   # 已确认的Table 2：五行主功能口径、患者配对、参考声明、图注及检查
+│   ├── table_s01_function/
+│   │   # Table S1审阅稿：21组完整功能统计、1712配对、全部可用性与null原因及检查
 │   ├── table_s02_segmentation/
-│   │   # Table S2审阅稿：82患者9层Dice/IoU/距离、逐帧交并集、患者源表及检查
+│   │   # 已确认的Table S2：82患者9层Dice/IoU/距离、逐帧交并集、患者源表及检查
 │   ├── workflow_parts/
 │   │   # 当前项目流程图规划、独立零件及审阅图集；总图待讨论后组装
 │   ├── _lv_results_common.py
@@ -193,6 +199,8 @@ Echo/
 │   │   # 将R2全部720个真实直径绘成统一视角三维曲面，不新增节点或平滑数值
 │   ├── fig_s01_sv_ef_agreement.py
 │   │   # 重建全部82患者同法SV和LVEF散点及Bland–Altman，逐值核对冻结配对
+│   ├── fig_s02_phase_selection.py
+│   │   # 重放162个原自动极值输出，绘制共同有效患者EF配对与FPS派生ED/ES定位分布
 │   ├── fig_s03_training_comparison.py
 │   │   # 核对两历史权重与全部训练epoch，重建71患者Dice和共同70患者标签EF配对
 │   ├── fig_s07_ef_reference_bias.py
@@ -209,6 +217,8 @@ Echo/
 │   │   # 从1000侧车与固定划分重建队列统计，分别列患者和序列分母
 │   ├── table_02_function.py
 │   │   # 从冻结82患者配对重建五行功能统计，分开同法参考与CAMUS临床EF标签
+│   ├── table_s01_function.py
+│   │   # 重建21组完整功能统计，分开六种参考口径并导出全部患者可用性和null原因
 │   └── table_s02_segmentation.py
 │       # 从328帧原坐标掩膜计算IoU/Dice，按82患者9层汇总空间指标并生成三线表
 ├── reports/

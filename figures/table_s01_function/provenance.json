@@ -1,0 +1,51 @@
+{
+  "experiment": "camus_cuda_progress",
+  "new_training_or_inference": false,
+  "test_feedback_used_for_model_selection": false,
+  "sources_sha256": {
+    "figures/table_s01_function.py": "b78ccaa9cbf3cb3647887e5849b707dcf8f86031d23499eaf2257926e14d59f0",
+    "figures/table_s01_function/figure_contract.md": "26588647a7ae5b9af82e92ed4c6ec7cdee595c3508da3a7aaf3bb3ee95773093",
+    "figures/_paper_tables.py": "03a01f6aec16c65314855889cf808bb02193ae00936a8528cb174a4e34aa686f",
+    "figures/table_02_function.py": "5e6d66d063bc38dbc0463cb353db79e0dc2e0f5bd4f761a1eb048c1c78b30b82",
+    "configs/camus_splits.json": "85975e0ce238ae244f4b04e432914779feeb153e05c6deb27448aeae87a22cdf",
+    "runs/camus_cuda_progress/function.csv": "783ecf773c8be25a33546d96d18657d88cefe2a3b1701b08c67d4fa691dfc545",
+    "runs/camus_cuda_progress/summary.json": "a5876545e456fb436fb49127237bdd56223a6d7114c60b6c75156871ab1b22d9",
+    "runs/camus_cuda_progress/frames.csv": "e36e516521702c722392b935cd77d7bbb16a6b062f74591a7587539e2c09f174",
+    "reports/result_integrity/camus_cuda_progress_20261121/function_agreement.csv": "024a8cb8d1d4d86e569b0d8022321b9a14d1ce183faec41b6cf465c258b8801a",
+    "figures/table_02_function/source_data/agreement_statistics.csv": "bb1241f50d217805c55d38403b193ed386dbbc74fba58820fa87478f6a52d4d6",
+    "reports/result_analysis/camus_cuda_progress/analysis_manifest.json": "91dc84c179309d1295ca2f93773fe056c68bdb1d8231339060333d8445cc1af4",
+    "style/palette.py": "9555eb7a32b99b6dad197f574aa76f6842e8e064328c3b55988e71eca651d64c",
+    "style/paper.mplstyle": "95fdfe0e423bead6abb36aa67a94b6e9b76f66845c2eb6feac1c1ee1438dae90",
+    "figures/_paper_common.py": "eb198d3ad330cf9d0252d61b444637fad114e80c0a95fd06778dbcf0ebd6c415"
+  },
+  "existing_frozen_sources_rechecked": [
+    "runs/camus_cuda_progress/function.csv",
+    "runs/camus_cuda_progress/summary.json",
+    "runs/camus_cuda_progress/frames.csv"
+  ],
+  "versions": {
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.4",
+    "Pillow": "13.0.0",
+    "cmcrameri": "1.10"
+  },
+  "table": "Table S1",
+  "n_scopes": 6,
+  "n_metric_groups": 21,
+  "attempted_patients_per_scope": 82,
+  "n_available_source_rows": 490,
+  "n_patient_scope_records": 492,
+  "n_valid_metric_pairs": 1712,
+  "n_unpaired_metric_records": 10,
+  "hypothesis_tests": null,
+  "new_confidence_intervals": false,
+  "point_statistics_match_existing_audit": true,
+  "primary_point_statistics_match_table_2": true,
+  "reference_scope": "Five geometry-specific contour-reference scopes and one separate clinical-label EF scope",
+  "predictive_R_squared": "1 - SSE/SST(reference); retain negatives",
+  "font_path": "C:\\Windows\\Fonts\\arial.ttf",
+  "width_mm": 183.0,
+  "height_mm": 170.0,
+  "bottom_rule_mm": 38.89999999999999,
+  "external_alignment_auditor_used": true
+}

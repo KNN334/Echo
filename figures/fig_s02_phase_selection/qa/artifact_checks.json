@@ -1,0 +1,58 @@
+{
+  "width_mm": 183.00000559488933,
+  "height_mm": 158.0000027126736,
+  "minimum_font_pt": 7.0,
+  "fonts": [
+    "Arial-BoldMT",
+    "ArialMT"
+  ],
+  "all_fonts_embedded": true,
+  "text_span_count": 58,
+  "native_image_shapes": [],
+  "text_within_page": true,
+  "rasters": {
+    "png": {
+      "size_px": [
+        4322,
+        3732
+      ],
+      "mode": "RGB",
+      "dpi": [
+        599.9988,
+        599.9988
+      ]
+    },
+    "tiff": {
+      "size_px": [
+        4322,
+        3732
+      ],
+      "mode": "RGB",
+      "dpi": [
+        600.0,
+        600.0
+      ]
+    }
+  },
+  "source_hashes_match": true,
+  "auditors": {
+    "audit_pdf_text.py": {
+      "exit_code": 0,
+      "stderr": ""
+    },
+    "audit_figure_collisions.py": {
+      "exit_code": 0,
+      "stderr": ""
+    },
+    "validate_figure.py": {
+      "exit_code": 1,
+      "stderr": ""
+    }
+  },
+  "color_vision_simulations": {
+    "engine": "colorspacious",
+    "version": "1.1.2",
+    "severity": 100,
+    "purpose": "Diagnostic images only; no source-data modifications."
+  }
+}

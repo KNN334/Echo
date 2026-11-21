@@ -1,0 +1,5 @@
+view,condition,scope,n,mae_pp,sample_sd_absolute_error_pp
+2CH,expert_phase,all_valid_per_condition,81,9.9261074441718,8.508273258958594
+2CH,auto_extrema,all_valid_per_condition,82,10.15956350774525,8.202303337670752
+4CH,expert_phase,all_valid_per_condition,82,7.735472650926234,5.564911408597146
+4CH,auto_extrema,all_valid_per_condition,80,8.660326406439129,7.110366748794533

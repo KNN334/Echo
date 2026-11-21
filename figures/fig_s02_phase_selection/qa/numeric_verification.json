@@ -1,0 +1,28 @@
+{
+  "independent_calculation": "stdlib csv/statistics, scalar covariance/SSE, replay of original extrema and FPS offsets",
+  "functional_groups_checked": 21,
+  "functional_pairs_checked": 1712,
+  "availability_records_checked": 492,
+  "unpaired_metric_records_checked": 10,
+  "negative_predictive_R_squared_preserved": [
+    [
+      "20_disks_shorter_axis",
+      "biplane",
+      "SV",
+      -0.0023699224171318534
+    ],
+    [
+      "20_disks_shorter_axis",
+      "biplane",
+      "EF",
+      -0.04113422365423913
+    ]
+  ],
+  "paired_EF_values_checked": 161,
+  "original_automatic_outputs_checked": 162,
+  "phase_offsets_checked": 324,
+  "all_164_sequence_coverage_checked": true,
+  "prior_figure_manifests_checked": 14,
+  "prior_distinct_source_hashes_verified": 1402,
+  "all_numeric_checks_passed": true
+}
