@@ -1,0 +1,12 @@
+[
+  {
+    "metric": "HR",
+    "value": null,
+    "reason": "No complete cycle or reliable independent reference HR"
+  },
+  {
+    "metric": "CO",
+    "value": null,
+    "reason": "No complete cycle/reliable HR and no independent CO"
+  }
+]

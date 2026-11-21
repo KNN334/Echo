@@ -1,0 +1,15 @@
+{
+  "case_id": "patient0329_2CH",
+  "patient_id": "patient0329",
+  "view": "2CH",
+  "stored_phase_order": "ED_to_ES",
+  "previous_frame": 18,
+  "next_frame": 19,
+  "previous_time_s": 0.31802120141342755,
+  "next_time_s": 0.33568904593639576,
+  "dt_ms": 17.667844522968213,
+  "area_change_percent": 1.0921004732435409,
+  "proxy_axis_change_percent": -32.48748133782645,
+  "volume_change_percent": 51.3735967877361,
+  "absolute_volume_change_percent": 51.3735967877361
+}

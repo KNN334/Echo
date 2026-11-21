@@ -34,7 +34,9 @@
 
 已确认 [Fig.S2 半序列相位定位与功能量化](figures/fig_s02_phase_selection/fig_s02_phase_selection.pdf) 和 [Table S1 全功能口径](figures/table_s01_function/table_s01_function.pdf)。S2在共同81/80患者上比较2CH/4CH专家相位与自动极值EF，对照为同法专家轮廓参考；MAE为9.93→10.06/7.82→8.66 pp，下排列出82/80患者的FPS派生定位偏差分布。Table S1列齐6口径21组点统计、1712配对及492可用性记录，临床标签EF独立分区；无效原因及负R²保留。表按各条件全部有效患者，图按交集配对，分母差异明确注明；未补造完整周期或HR/CO。两项含英文图注、真实源表、PDF/600 dpi位图和QA，现有结果及共享样式未改。
 
-本批新增 [Fig.S4 图像质量分层及空间—功能关联](figures/fig_s04_quality_associations/fig_s04_quality_associations.pdf) 和 [Fig.S6 几何覆盖与容积路径](figures/fig_s06_geometry_coverage/fig_s06_geometry_coverage.pdf)，等待反馈。S4保留82患者，原质量层31/39/12人的Dice为0.9179/0.9111/0.8993，标签EF MAE为9.25/9.14/8.11 pp；不将非单调结果写成质量因果效应。S6以固定真实轮廓实例解释代理轴及基底外区域，再展示全部患者的空间覆盖和两种原容积路径，656源记录/328患者几何/328比值完整导出；不把代理点当人工标签或将容积比归因为单一因素。两图含独立入口、英文图注、源数据、PDF/600 dpi和QA，未更改模型、原几何或共享样式。
+已确认 [Fig.S4 图像质量分层及空间—功能关联](figures/fig_s04_quality_associations/fig_s04_quality_associations.pdf) 和 [Fig.S6 几何覆盖与容积路径](figures/fig_s06_geometry_coverage/fig_s06_geometry_coverage.pdf)。S4保留82患者，原质量层31/39/12人的Dice为0.9179/0.9111/0.8993，标签EF MAE为9.25/9.14/8.11 pp；不将非单调结果写成质量因果效应。S6以固定真实轮廓实例解释代理轴及基底外区域，再展示全部患者的空间覆盖和两种原容积路径，656源记录/328患者几何/328比值完整导出；不把代理点当人工标签或将容积比归因为单一因素。两图含独立入口、英文图注、源数据、PDF/600 dpi和QA，未更改模型、原几何或共享样式。
+
+本批新增 [Fig.S8 观测帧级几何变化](figures/fig_s08_observed_temporal_variation/fig_s08_observed_temporal_variation.pdf) 和 [Fig.S9 功能输出可用性与原始相位顺序](figures/fig_s09_output_availability/fig_s09_output_availability.pdf)，等待反馈。S8覆盖3167帧/3003相邻帧对，保留全部原跳变及真实影像；S9对应21个适用组/1712配对、492条可用性及164条序列。核对到161条ED→ES、3条ES→ED；两条反向4CH因末帧最大值而无自动输出，第三条反向2CH仍有数值，不能把可用性当作相位正确。没有倒序、平滑或更改冻结规则；HR/CO仍不可计算。两图有独立入口、源表、英文图注、PDF/600 dpi及QA；核心补充8图2表均已制作，制作不等于全部获得用户确认。
 
 [2026-11-21结果自检](reports/result_integrity/camus_cuda_progress_20261121/report.md)：328标注帧分割指标与490行功能结果均可复算；发现代理长轴/基底导致的几何范围不一致、EF偏倚抵消和逐帧跳变风险。功能主图需先复核几何定义；原冻结结果保持不变。
 
@@ -137,11 +139,15 @@ Echo/
 │   ├── fig_s03_training_comparison/
 │   │   # 已确认的Fig.S3：两历史训练方案损失、配对验证Dice/标签EF、完整覆盖与检查
 │   ├── fig_s04_quality_associations/
-│   │   # Fig.S4审阅稿：82患者质量分层Dice/标签EF、空间功能关联、真实源表及检查
+│   │   # 已确认的Fig.S4：82患者质量分层Dice/标签EF、空间功能关联、真实源表及检查
 │   ├── fig_s06_geometry_coverage/
-│   │   # Fig.S6审阅稿：真实轮廓代理轴与区域、82患者几何覆盖及容积路径、源表与检查
+│   │   # 已确认的Fig.S6：真实轮廓代理轴与区域、82患者几何覆盖及容积路径、源表与检查
 │   ├── fig_s07_ef_reference_bias/
 │   │   # Fig.S7审阅稿：82患者EF三类参考差异与均值偏倚恒等式、源表及检查
+│   ├── fig_s08_observed_temporal_variation/
+│   │   # Fig.S8审阅稿：全部3167帧/3003相邻变化、真实跳变与代理轴、源表及检查
+│   ├── fig_s09_output_availability/
+│   │   # Fig.S9审阅稿：21组功能覆盖、原相位顺序与真实边界案例、源表及检查
 │   ├── planning/
 │   │   # 结果资产盘点、同行逐图逐表拆解与图表规划的可复核材料
 │   │   ├── asset_inventory.json
@@ -215,6 +221,10 @@ Echo/
 │   │   # 重建固定专家轮廓代理轴例图、患者轴面积覆盖及原单双平面容积比，不修改几何
 │   ├── fig_s07_ef_reference_bias.py
 │   │   # 重建预测/专家同法/CAMUS标签EF三方差异及均值偏倚抵消，不作因果归因
+│   ├── fig_s08_observed_temporal_variation.py
+│   │   # 重建全部半序列相邻几何变化和真实跳变例图，保留原帧序及FPS时间
+│   ├── fig_s09_output_availability.py
+│   │   # 核对21组可用性和164条原相位顺序，重建无效轨迹/影像及冻结规则边界
 │   ├── method_flow_caption.md
 │   │   # 流程图图注、核心主张和实现假设
 │   ├── method_flow_export_check.json

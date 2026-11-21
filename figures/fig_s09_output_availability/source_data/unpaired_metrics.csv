@@ -1,0 +1,11 @@
+patient_id,method,view,metric,value,reason
+patient0072,single_plane_area_length,2CH,SV,,invalid_or_missing_EDV_ESV
+patient0072,single_plane_area_length,2CH,EF,,invalid_or_missing_EDV_ESV
+patient0068,single_plane_auto_extrema_4CH,4CH,EDV,,"Stored ES_to_ED; maximum at final ED, no later ES under frozen rule"
+patient0068,single_plane_auto_extrema_4CH,4CH,ESV,,"Stored ES_to_ED; maximum at final ED, no later ES under frozen rule"
+patient0068,single_plane_auto_extrema_4CH,4CH,SV,,"Stored ES_to_ED; maximum at final ED, no later ES under frozen rule"
+patient0068,single_plane_auto_extrema_4CH,4CH,EF,,"Stored ES_to_ED; maximum at final ED, no later ES under frozen rule"
+patient0203,single_plane_auto_extrema_4CH,4CH,EDV,,"Stored ES_to_ED; maximum at final ED, no later ES under frozen rule"
+patient0203,single_plane_auto_extrema_4CH,4CH,ESV,,"Stored ES_to_ED; maximum at final ED, no later ES under frozen rule"
+patient0203,single_plane_auto_extrema_4CH,4CH,SV,,"Stored ES_to_ED; maximum at final ED, no later ES under frozen rule"
+patient0203,single_plane_auto_extrema_4CH,4CH,EF,,"Stored ES_to_ED; maximum at final ED, no later ES under frozen rule"

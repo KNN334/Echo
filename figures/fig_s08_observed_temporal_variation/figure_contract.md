@@ -1,0 +1,10 @@
+# Fig.S8 figure contract
+
+- Question: How do the existing frame-wise geometric outputs vary within all observed half-sequences, and what concrete image/axis change accompanies a documented large step?
+- Claim: Numeric completeness does not establish physiological smoothness; the existing area–length construction couples observed area and independently inferred axis changes into volume variation.
+- Evidence: a, all 82 paired-patient 2CH/4CH maximum absolute adjacent volume changes; b, all 3003 adjacent pairs, area change versus proxy-axis change colored by signed volume change; c, all 20 observed frames of previously documented patient0329_2CH; d, actual frames18/19 and each frame's own proxy axis. No selection optimized for appearance.
+- Archetype: quantitative grid plus image pair, Python/matplotlib. Organizing anchors only: Hu Extended Data Fig.7 and Ouyang Fig.2f; no transfer of complete-beat, motion-tracking or wearable evidence.
+- Preserve all 3167 frames/164 sequences, stored order (161 ED→ES, 3 ES→ED), original phase metadata, and FPS-derived time. Never reflect, reverse, concatenate or interpolate sequences. Missing/invalid adjacent pairs would remain recorded rather than bridged.
+- a is one measurement per patient per view, paired visually; b observations repeat within patients and receive no inferential test/CI. Group diamonds/whiskers in a are means ± patient sample SD. c/d are a diagnostic example, not an independent estimate of anatomical accuracy.
+- Final 183×170 mm, ≥7 pt; shared baseline blue and shared perceptually uniform diverging map for signed volume change, no hard-coded colors/fonts. Export editable PDF, 600 dpi RGB PNG/LZW TIFF, source tables, caption/provenance and rendered alignment/collision QA.
+- Quantitative a/b axes are comparable; image pair in d preserves calibrated aspect and has its own measured comparable group; c is separately measured, no unrecorded alignment bypass. Expert annotations exist only at ED/ES; no intermediate reference trajectory, HR/CO or patch-recording claims.

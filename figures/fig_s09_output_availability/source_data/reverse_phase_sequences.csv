@@ -1,0 +1,4 @@
+case_id,patient_id,view,n_frames,expert_ED_frame,expert_ES_frame,stored_phase_order,automatic_output_available,automatic_ED_frame,automatic_ES_frame,maximum_volume_frame,missing_reason
+patient0068_4CH,patient0068,4CH,36,35,0,ES_to_ED,False,,,35,Maximum at final expert ED; no subsequent frame under frozen rule
+patient0203_4CH,patient0203,4CH,31,30,0,ES_to_ED,False,,,30,Maximum at final expert ED; no subsequent frame under frozen rule
+patient0217_2CH,patient0217,2CH,21,20,0,ES_to_ED,True,16,18,16,

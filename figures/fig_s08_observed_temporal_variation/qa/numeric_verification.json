@@ -1,0 +1,25 @@
+{
+  "independent_calculation": "stdlib scalar adjacent changes, area-length identity, sample statistics and extrema-rule replay",
+  "all_frames_checked": 3167,
+  "adjacent_pairs_checked": 3003,
+  "sequence_maxima_checked": 164,
+  "view_summary_statistics_checked": 2,
+  "s8_example_frames_checked": 20,
+  "s8_proxy_axes_checked": 2,
+  "original_phase_orders_checked": {
+    "ED_to_ES": 161,
+    "ES_to_ED": 3
+  },
+  "sequence_ledger_checked": 164,
+  "auto_outputs_replayed": 162,
+  "reverse_phase_sequences_checked": 3,
+  "availability_records_checked": 492,
+  "applicable_metric_groups_checked": 21,
+  "valid_metric_pairs_checked": 1712,
+  "null_metric_records_checked": 10,
+  "s9_example_frames_checked": 81,
+  "image_display_records_checked": 4,
+  "prior_manifests_checked": 18,
+  "prior_distinct_source_hashes_verified": 1415,
+  "all_numeric_checks_passed": true
+}

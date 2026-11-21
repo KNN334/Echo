@@ -1,0 +1,10 @@
+# Fig.S9 figure contract
+
+- Question: Which existing functional outputs can be paired, and what do actual frames/sequence direction reveal about unavailable or direction-sensitive outputs?
+- Claim: A completed inference, an available scalar result, a reference-paired result and correct anatomical phase localization are distinct. Availability must be reported with the original rules and phase order.
+- Evidence: a, six scopes × four metric availability cells (21 applicable groups), each denominator82; b, all14 frames of patient0072_2CH with original expert ED/ES; c, its two actual endpoint images; d, all36/31 frames of the two missing automatic4CH outputs, preserving their stored ES→ED ordering. Replace repeated cause-count bars with actual trajectories; reasons remain explicit in source tables/caption.
+- Original phase order audit: 3 ES→ED sequences (patient0068_4CH, patient0203_4CH, patient0217_2CH); all three must remain in the full coverage ledger. The latter still has an automatic numeric output, demonstrating availability does not equal correct phase localization. Do not change the extrema rule or selectively remove it.
+- Independent unit82 fixed test patients. Each valid functional metric cell pairs within its own scope; clinical-label EF is separate from contour-derived geometry. No new estimates/tests/CI, no zero substitution for nulls or non-applicable cells.
+- Archetype: quantitative grid plus calibrated image pair; original organization, borrowing only transparent reporting from Ouyang Extended Data Table3/Chao supplementary exclusion table. Not a clinical failure-rate claim.
+- Python/matplotlib, 183×170 mm, ≥7 pt, shared palette/style; exact-size editable PDF plus600 dpi RGB PNG/LZW TIFF; raw-point source exports, English caption, hashes and rendered QA. Patient0072 plot and automatic4CH plots use identical time/volume limits; image pair retains physical aspect/field and endpoint labels.
+- No sequence reordering, interpolation, reflection, complete-cycle synthesis, new models, anatomical point truth, independent clinical volume or wearable acquisition. HR/CO remain null with reasons.
