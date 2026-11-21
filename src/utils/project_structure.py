@@ -81,6 +81,7 @@ DESCRIPTIONS = {
     'docs/data_sources/echonet_weights.json': 'EchoNet 官方初始化权重的来源与校验信息',
     'docs/data_sources/official_patient_index.json': '官方患者、视图及原始文件的索引',
     'docs/data_sources/prepared_provenance.json': '处理后数据的代码/配置摘要、规模和审阅状态',
+    'docs/data_sources/wearable_patch_public_datasets.md': '可穿戴/贴片式心脏超声公开数据集检索、访问条件与主线适用性核查',
     'docs/code_walkthrough.md': '数据到结果表格的全链路、流程图、公式和逐文件讲解',
     'docs/measurement_protocol.md': '空间/时间标定、坐标恢复、指标与参考值的计算口径',
     'docs/patch_acquisition_workflow.md': '贴片 RF/IQ 到超声成像、模型接入与连续心功能分析的条件流程',

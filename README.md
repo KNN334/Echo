@@ -126,8 +126,10 @@ Echo/
 │   │   │   # EchoNet 官方初始化权重的来源与校验信息
 │   │   ├── official_patient_index.json
 │   │   │   # 官方患者、视图及原始文件的索引
-│   │   └── prepared_provenance.json
-│   │       # 处理后数据的代码/配置摘要、规模和审阅状态
+│   │   ├── prepared_provenance.json
+│   │   │   # 处理后数据的代码/配置摘要、规模和审阅状态
+│   │   └── wearable_patch_public_datasets.md
+│   │       # 可穿戴/贴片式心脏超声公开数据集检索、访问条件与主线适用性核查
 │   ├── templates/
 │   │   # 尚未收到的贴片数据和参考信息的交接模板，不是可执行实验配置
 │   │   └── patch_record.template.yaml
