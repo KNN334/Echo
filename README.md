@@ -24,7 +24,9 @@
 
 ## 结果分析图
 
-本轮投稿图表规划见 [图表制作清单](figure_plan.md)、[结果资产盘点](figures/planning/result_assets.md) 和 [六篇同行论文逐图逐表拆解](figures/planning/literature_breakdown.md)。[全局样式](style/README.md)、[样式测试页](figures/style_test/style_test.pdf) 及四张正文图均已确认：[Fig.1 数据与方法框架](figures/fig_01_data_workflow/fig_01_data_workflow.pdf)、[Fig.2 分割验证](figures/fig_02_segmentation_validation/fig_02_segmentation_validation.pdf)、[Fig.3 功能一致性](figures/fig_03_function_agreement/fig_03_function_agreement.pdf)、[Fig.4 半周期轨迹](figures/fig_04_half_sequence/fig_04_half_sequence.pdf)。[Table 1 队列与参考覆盖](figures/table_01_cohort/table_01_cohort.pdf)（含零值可用性行修订）、[Table 2 主功能一致性](figures/table_02_function/table_02_function.pdf) 已确认。当前本批为 [Fig.S1 同法SV/LVEF一致性](figures/fig_s01_sv_ef_agreement/fig_s01_sv_ef_agreement.pdf) 与 [Fig.S7 EF参考差异及偏倚抵消](figures/fig_s07_ef_reference_bias/fig_s07_ef_reference_bias.pdf)，全部82测试患者、源表、英文图注与导出检查已完成；用户反馈外观需改进，尚未确认。[DCF论文适用性评估](figures/planning/directional_coherence_applicability.md)已区分可借鉴的影像矩阵/几何剖面与缺数据的声束/三维成像分析。[可视化覆盖目录](figures/planning/visualization_coverage.md) 的其余核心补充6图2表及3张有条件备选尚未制作；制作顺序待本批修订讨论，每批1–2项。所有结果仍限定于公开CAMUS半周期，保留几何与时序局限，不表述为贴片佩戴实测或独立临床容积准确性。
+本轮投稿图表规划见 [图表制作清单](figure_plan.md)、[结果资产盘点](figures/planning/result_assets.md) 和 [六篇同行论文逐图逐表拆解](figures/planning/literature_breakdown.md)。[全局样式](style/README.md)、[样式测试页](figures/style_test/style_test.pdf) 及四张正文图均已确认：[Fig.1 数据与方法框架](figures/fig_01_data_workflow/fig_01_data_workflow.pdf)、[Fig.2 分割验证](figures/fig_02_segmentation_validation/fig_02_segmentation_validation.pdf)、[Fig.3 功能一致性](figures/fig_03_function_agreement/fig_03_function_agreement.pdf)、[Fig.4 半周期轨迹](figures/fig_04_half_sequence/fig_04_half_sequence.pdf)。[Table 1 队列与参考覆盖](figures/table_01_cohort/table_01_cohort.pdf)（含零值可用性行修订）、[Table 2 主功能一致性](figures/table_02_function/table_02_function.pdf) 已确认。
+
+根据用户最新反馈，结果叙事改为“LV形态 → 空间几何量化 → 实际ED–ES时间过程”。借鉴[DCF论文已见Fig.6/7的组织](figures/planning/directional_coherence_applicability.md)，本批制作 [Fig.R1 双视图形态与直径剖面](figures/fig_r01_lv_morphology/fig_r01_lv_morphology.pdf) 和 [Fig.R2 真实帧、直径时序图及容积](figures/fig_r02_systolic_dynamics/fig_r02_systolic_dynamics.pdf)，均有独立入口、真实源表、英文图注及QA，等待本批反馈。R1/R2为原Fig.2/4的整合候选，未覆盖旧图或自动增加正文图数；[Fig.S1](figures/fig_s01_sv_ef_agreement/fig_s01_sv_ef_agreement.pdf)/[Fig.S7](figures/fig_s07_ef_reference_bias/fig_s07_ef_reference_bias.pdf)尚未确认。其余[覆盖候选](figures/planning/visualization_coverage.md)按论证价值分批选择，不自动继续原误差诊断顺序。所有结果限定于公开CAMUS半周期，代理几何尚未独立验证，不表述为贴片佩戴实测或独立临床容积准确性。
 
 [2026-11-21结果自检](reports/result_integrity/camus_cuda_progress_20261121/report.md)：328标注帧分割指标与490行功能结果均可复算；发现代理长轴/基底导致的几何范围不一致、EF偏倚抵消和逐帧跳变风险。功能主图需先复核几何定义；原冻结结果保持不变。
 
@@ -114,6 +116,10 @@ Echo/
 │   │   # 已确认的Fig.3：同法容积与CAMUS标签EF散点/BA、配对源数据、图注与检查
 │   ├── fig_04_half_sequence/
 │   │   # 已确认的Fig.4：四固定病例真实ED–ES半序列轨迹、端点源数据、图注与检查
+│   ├── fig_r01_lv_morphology/
+│   │   # Fig.R1审阅稿：双视图ED/ES形态矩阵与20层直径剖面、源表、图注及检查
+│   ├── fig_r02_systolic_dynamics/
+│   │   # Fig.R2审阅稿：真实ED–ES帧条带、直径时序热图和逐帧容积、源表与检查
 │   ├── fig_s01_sv_ef_agreement/
 │   │   # Fig.S1审阅稿：82患者同法SV/LVEF散点及一致性、源表、图注与检查
 │   ├── fig_s07_ef_reference_bias/
@@ -149,6 +155,8 @@ Echo/
 │   │   # 已确认的Table 2：五行主功能口径、患者配对、参考声明、图注及检查
 │   ├── workflow_parts/
 │   │   # 当前项目流程图规划、独立零件及审阅图集；总图待讨论后组装
+│   ├── _lv_results_common.py
+│   │   # 形态/时序图共享的固定病例、恢复坐标几何复核及真实帧物理尺度显示
 │   ├── _paper_common.py
 │   │   # 新投稿图共用的源数据溯源、物理坐标叠图、毫米排版及面板对齐检查
 │   ├── _paper_tables.py
@@ -167,6 +175,10 @@ Echo/
 │   │   # 从冻结患者级配对重建Fig.3散点和Bland–Altman，分开参考口径并保留全部误差
 │   ├── fig_04_half_sequence.py
 │   │   # 重建Fig.4固定病例原始半序列容积及两个专家端点，不平滑或补造完整周期
+│   ├── fig_r01_lv_morphology.py
+│   │   # 重建双视图双相位真实影像矩阵及自身代理轴直径剖面，不作解剖点准确性声明
+│   ├── fig_r02_systolic_dynamics.py
+│   │   # 重建实际帧条带、全部逐帧20层直径与单平面容积，不插值或补造完整周期
 │   ├── fig_s01_sv_ef_agreement.py
 │   │   # 重建全部82患者同法SV和LVEF散点及Bland–Altman，逐值核对冻结配对
 │   ├── fig_s07_ef_reference_bias.py

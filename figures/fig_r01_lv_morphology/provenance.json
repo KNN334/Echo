@@ -1,0 +1,479 @@
+{
+  "experiment": "camus_cuda_progress",
+  "new_training_or_inference": false,
+  "test_feedback_used_for_model_selection": false,
+  "sources_sha256": {
+    "figures/fig_r01_lv_morphology.py": "45c21bea0a61601d5fdb3e4a09381c5693178642311f3e6d7c4a62431566ebf6",
+    "reports/result_analysis/camus_cuda_progress/source_data/example_selection.csv": "e41f39db9e7cf3ca3c1ebcd7785a3fe2d943f27738f7c77c0103f62772e6daac",
+    "figures/_lv_results_common.py": "686a0ea4ddfdbd7f40c934d51cdb43468699c73e15b048ba23b6149dc3462285",
+    "src/geometry/mask_features.py": "0b5d0dad4423542d715405a2dfe20f2f600a360bbfd7f03e0caf39b89b0b9323",
+    "src/geometry/volume.py": "199ad3f653132a6bc7693752ff67817d727e64512b8fe65e73fbae56538b5a42",
+    "src/data/transforms.py": "7d5d10af714c60710a158d3a297ab499db0a218377dfb046ca345a91b24ccf2e",
+    "data/processed/camus/patient0327_2CH.json": "477d23b2e3df2be68e124d8309e6f083c49fff51b0d5c259ba5a28f76ee4414a",
+    "data/processed/camus/patient0327_2CH.npz": "ffd98ec0e4c3b425830696e89b1470d3d4a9bf65d117c4e42f6a750880781e23",
+    "runs/camus_cuda_progress/patient0327_2CH_pred.npz": "40ee006fe27eb8c3fbd43148d77199297157cb2d208f87bf79387a9abf51c188",
+    "runs/camus_cuda_progress/patient0327_2CH_features.json": "8aec897f3e16e18a6cfcc9af619d51807d975ed82b3278924145a1aa8bbd1577",
+    "data/processed/camus/patient0327_4CH.json": "5ec2a2fc5515d6a8b444b4f8067e27e30118fb494e529b470c96765066feca87",
+    "data/processed/camus/patient0327_4CH.npz": "9592c1c4e071c8894e15a62eaf42528f883a15cef3929ad3ccb91abf8ee8eb8b",
+    "runs/camus_cuda_progress/patient0327_4CH_pred.npz": "2e88ad8090afec663d0d9d6032c7a18eb74139324e8984f516bcbfb6bce6ca22",
+    "runs/camus_cuda_progress/patient0327_4CH_features.json": "b24ce7ef5b4ee1bd8874c03787296b013a4c1a9626f38a5b5ccf9a60fe638c91",
+    "data/processed/camus/patient0229_2CH.json": "e43f90cc2f1f2c03d91fc7bfbe788b26a527f30f66311c8c4c4ad496b41cf9e8",
+    "data/processed/camus/patient0229_2CH.npz": "740c7741fdcb63bfdb23eb3cfef47519f23523a6d0e58f787e9add10db428172",
+    "runs/camus_cuda_progress/patient0229_2CH_pred.npz": "e128baf5a762a0d1ef2b529461c98b704786df1d92afddcb7fb72030c7840df6",
+    "runs/camus_cuda_progress/patient0229_2CH_features.json": "eb257eba849fd44e144d9d0857013aac1ca3a9d29ea7b7ab6cb9e290a5cf86ef",
+    "data/processed/camus/patient0229_4CH.json": "d027781515b51af51cebcf41d11cb25d97b0109e85572f3e32dae82c660352ba",
+    "data/processed/camus/patient0229_4CH.npz": "8bf2a6f2f0dab3e5deb93801353b86a561fafc75e3ad49975c8df17298197a16",
+    "runs/camus_cuda_progress/patient0229_4CH_pred.npz": "c2382ab298e845b9a312edaab65ef242af87751f6c3ba5ac512b9daf711c6184",
+    "runs/camus_cuda_progress/patient0229_4CH_features.json": "7a3aa04804eb310b75a4b6ef34970bde7c414e4f81fb616fc27dd4696b5cf5b4",
+    "reports/result_analysis/camus_cuda_progress/analysis_manifest.json": "91dc84c179309d1295ca2f93773fe056c68bdb1d8231339060333d8445cc1af4",
+    "style/palette.py": "9555eb7a32b99b6dad197f574aa76f6842e8e064328c3b55988e71eca651d64c",
+    "style/paper.mplstyle": "95fdfe0e423bead6abb36aa67a94b6e9b76f66845c2eb6feac1c1ee1438dae90",
+    "figures/_paper_common.py": "eb198d3ad330cf9d0252d61b444637fad114e80c0a95fd06778dbcf0ebd6c415"
+  },
+  "existing_frozen_sources_rechecked": [
+    "data/processed/camus/patient0327_2CH.npz",
+    "runs/camus_cuda_progress/patient0327_2CH_pred.npz",
+    "runs/camus_cuda_progress/patient0327_2CH_features.json",
+    "runs/camus_cuda_progress/patient0327_4CH_features.json",
+    "data/processed/camus/patient0229_2CH.npz",
+    "runs/camus_cuda_progress/patient0229_2CH_pred.npz",
+    "runs/camus_cuda_progress/patient0229_2CH_features.json",
+    "runs/camus_cuda_progress/patient0229_4CH_features.json"
+  ],
+  "versions": {
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.4",
+    "Pillow": "13.0.0",
+    "cmcrameri": "1.10"
+  },
+  "figure": "Fig.R1",
+  "status": "provisional results candidate; awaiting user review",
+  "core_conclusion": "Calibrated LV contours support view-specific spatial morphology profiles at the observed ED and ES.",
+  "panel_roles": {
+    "a": "Median-ranked sequence with paired view",
+    "b": "Existing lowest-ranked sequence with paired view",
+    "c": "2CH spatial quantification",
+    "d": "4CH spatial quantification"
+  },
+  "adaptation": "Organization only: Wu and Lee 2025, DOI 10.1109/TUFFC.2025.3557519, user-supplied Fig.7 image matrix and Fig.6e profiles. Full text unavailable; no beamformer claims transferred.",
+  "n_patients": 2,
+  "n_view_sequences": 4,
+  "n_labeled_frames": 8,
+  "n_profile_values": 160,
+  "sample_selection": [
+    {
+      "selection": "Median",
+      "rank": "83",
+      "of_cases": "164",
+      "case_id": "patient0327_2CH",
+      "mean_dice": "0.9206268860792544"
+    },
+    {
+      "selection": "Lowest",
+      "rank": "1",
+      "of_cases": "164",
+      "case_id": "patient0229_2CH",
+      "mean_dice": "0.6770097649127448"
+    }
+  ],
+  "uncertainty": "Individual descriptive examples, no population inference or CI.",
+  "image_display": [
+    {
+      "case_id": "patient0327_2CH",
+      "frame": 0,
+      "phase": "ED",
+      "time_s": 0.0,
+      "expert_available": true,
+      "source_image_hw": [
+        112,
+        112
+      ],
+      "original_hw": [
+        422,
+        482
+      ],
+      "original_spacing_xy_mm": [
+        0.30799999833106995,
+        0.30799999833106995
+      ],
+      "processed_spacing_xy_mm": [
+        1.3254999928176403,
+        1.16049999371171
+      ],
+      "image_extent_mm": [
+        -0.15399999916553497,
+        148.30199919641018,
+        129.82199929654598,
+        -0.15399999916553497
+      ],
+      "display_field_mm": [
+        200,
+        170
+      ],
+      "interpolation": "none",
+      "image_limits": [
+        0,
+        255
+      ],
+      "extra_crop": null,
+      "brightness_contrast_gamma": "unchanged",
+      "roi_reviewed": false,
+      "panel": "a",
+      "selection_basis": {
+        "selection": "Median",
+        "rank": "83",
+        "of_cases": "164",
+        "case_id": "patient0327_2CH",
+        "mean_dice": "0.9206268860792544"
+      }
+    },
+    {
+      "case_id": "patient0327_2CH",
+      "frame": 17,
+      "phase": "ES",
+      "time_s": 0.2814569536423841,
+      "expert_available": true,
+      "source_image_hw": [
+        112,
+        112
+      ],
+      "original_hw": [
+        422,
+        482
+      ],
+      "original_spacing_xy_mm": [
+        0.30799999833106995,
+        0.30799999833106995
+      ],
+      "processed_spacing_xy_mm": [
+        1.3254999928176403,
+        1.16049999371171
+      ],
+      "image_extent_mm": [
+        -0.15399999916553497,
+        148.30199919641018,
+        129.82199929654598,
+        -0.15399999916553497
+      ],
+      "display_field_mm": [
+        200,
+        170
+      ],
+      "interpolation": "none",
+      "image_limits": [
+        0,
+        255
+      ],
+      "extra_crop": null,
+      "brightness_contrast_gamma": "unchanged",
+      "roi_reviewed": false,
+      "panel": "a",
+      "selection_basis": {
+        "selection": "Median",
+        "rank": "83",
+        "of_cases": "164",
+        "case_id": "patient0327_2CH",
+        "mean_dice": "0.9206268860792544"
+      }
+    },
+    {
+      "case_id": "patient0327_4CH",
+      "frame": 0,
+      "phase": "ED",
+      "time_s": 0.0,
+      "expert_available": true,
+      "source_image_hw": [
+        112,
+        112
+      ],
+      "original_hw": [
+        422,
+        482
+      ],
+      "original_spacing_xy_mm": [
+        0.30799999833106995,
+        0.30799999833106995
+      ],
+      "processed_spacing_xy_mm": [
+        1.3254999928176403,
+        1.16049999371171
+      ],
+      "image_extent_mm": [
+        -0.15399999916553497,
+        148.30199919641018,
+        129.82199929654598,
+        -0.15399999916553497
+      ],
+      "display_field_mm": [
+        200,
+        170
+      ],
+      "interpolation": "none",
+      "image_limits": [
+        0,
+        255
+      ],
+      "extra_crop": null,
+      "brightness_contrast_gamma": "unchanged",
+      "roi_reviewed": false,
+      "panel": "a",
+      "selection_basis": {
+        "selection": "Median",
+        "rank": "83",
+        "of_cases": "164",
+        "case_id": "patient0327_2CH",
+        "mean_dice": "0.9206268860792544"
+      }
+    },
+    {
+      "case_id": "patient0327_4CH",
+      "frame": 19,
+      "phase": "ES",
+      "time_s": 0.31456953642384106,
+      "expert_available": true,
+      "source_image_hw": [
+        112,
+        112
+      ],
+      "original_hw": [
+        422,
+        482
+      ],
+      "original_spacing_xy_mm": [
+        0.30799999833106995,
+        0.30799999833106995
+      ],
+      "processed_spacing_xy_mm": [
+        1.3254999928176403,
+        1.16049999371171
+      ],
+      "image_extent_mm": [
+        -0.15399999916553497,
+        148.30199919641018,
+        129.82199929654598,
+        -0.15399999916553497
+      ],
+      "display_field_mm": [
+        200,
+        170
+      ],
+      "interpolation": "none",
+      "image_limits": [
+        0,
+        255
+      ],
+      "extra_crop": null,
+      "brightness_contrast_gamma": "unchanged",
+      "roi_reviewed": false,
+      "panel": "a",
+      "selection_basis": {
+        "selection": "Median",
+        "rank": "83",
+        "of_cases": "164",
+        "case_id": "patient0327_2CH",
+        "mean_dice": "0.9206268860792544"
+      }
+    },
+    {
+      "case_id": "patient0229_2CH",
+      "frame": 0,
+      "phase": "ED",
+      "time_s": 0.0,
+      "expert_available": true,
+      "source_image_hw": [
+        112,
+        112
+      ],
+      "original_hw": [
+        519,
+        630
+      ],
+      "original_spacing_xy_mm": [
+        0.30799999833106995,
+        0.30799999833106995
+      ],
+      "processed_spacing_xy_mm": [
+        1.7324999906122684,
+        1.4272499922662973
+      ],
+      "image_extent_mm": [
+        -0.15399999916553497,
+        193.88599894940853,
+        159.69799913465977,
+        -0.15399999916553497
+      ],
+      "display_field_mm": [
+        200,
+        170
+      ],
+      "interpolation": "none",
+      "image_limits": [
+        0,
+        255
+      ],
+      "extra_crop": null,
+      "brightness_contrast_gamma": "unchanged",
+      "roi_reviewed": false,
+      "panel": "b",
+      "selection_basis": {
+        "selection": "Lowest",
+        "rank": "1",
+        "of_cases": "164",
+        "case_id": "patient0229_2CH",
+        "mean_dice": "0.6770097649127448"
+      }
+    },
+    {
+      "case_id": "patient0229_2CH",
+      "frame": 17,
+      "phase": "ES",
+      "time_s": 0.3008849557522124,
+      "expert_available": true,
+      "source_image_hw": [
+        112,
+        112
+      ],
+      "original_hw": [
+        519,
+        630
+      ],
+      "original_spacing_xy_mm": [
+        0.30799999833106995,
+        0.30799999833106995
+      ],
+      "processed_spacing_xy_mm": [
+        1.7324999906122684,
+        1.4272499922662973
+      ],
+      "image_extent_mm": [
+        -0.15399999916553497,
+        193.88599894940853,
+        159.69799913465977,
+        -0.15399999916553497
+      ],
+      "display_field_mm": [
+        200,
+        170
+      ],
+      "interpolation": "none",
+      "image_limits": [
+        0,
+        255
+      ],
+      "extra_crop": null,
+      "brightness_contrast_gamma": "unchanged",
+      "roi_reviewed": false,
+      "panel": "b",
+      "selection_basis": {
+        "selection": "Lowest",
+        "rank": "1",
+        "of_cases": "164",
+        "case_id": "patient0229_2CH",
+        "mean_dice": "0.6770097649127448"
+      }
+    },
+    {
+      "case_id": "patient0229_4CH",
+      "frame": 0,
+      "phase": "ED",
+      "time_s": 0.0,
+      "expert_available": true,
+      "source_image_hw": [
+        112,
+        112
+      ],
+      "original_hw": [
+        519,
+        630
+      ],
+      "original_spacing_xy_mm": [
+        0.30799999833106995,
+        0.30799999833106995
+      ],
+      "processed_spacing_xy_mm": [
+        1.7324999906122684,
+        1.4272499922662973
+      ],
+      "image_extent_mm": [
+        -0.15399999916553497,
+        193.88599894940853,
+        159.69799913465977,
+        -0.15399999916553497
+      ],
+      "display_field_mm": [
+        200,
+        170
+      ],
+      "interpolation": "none",
+      "image_limits": [
+        0,
+        255
+      ],
+      "extra_crop": null,
+      "brightness_contrast_gamma": "unchanged",
+      "roi_reviewed": false,
+      "panel": "b",
+      "selection_basis": {
+        "selection": "Lowest",
+        "rank": "1",
+        "of_cases": "164",
+        "case_id": "patient0229_2CH",
+        "mean_dice": "0.6770097649127448"
+      }
+    },
+    {
+      "case_id": "patient0229_4CH",
+      "frame": 16,
+      "phase": "ES",
+      "time_s": 0.2826855123674912,
+      "expert_available": true,
+      "source_image_hw": [
+        112,
+        112
+      ],
+      "original_hw": [
+        519,
+        630
+      ],
+      "original_spacing_xy_mm": [
+        0.30799999833106995,
+        0.30799999833106995
+      ],
+      "processed_spacing_xy_mm": [
+        1.7324999906122684,
+        1.4272499922662973
+      ],
+      "image_extent_mm": [
+        -0.15399999916553497,
+        193.88599894940853,
+        159.69799913465977,
+        -0.15399999916553497
+      ],
+      "display_field_mm": [
+        200,
+        170
+      ],
+      "interpolation": "none",
+      "image_limits": [
+        0,
+        255
+      ],
+      "extra_crop": null,
+      "brightness_contrast_gamma": "unchanged",
+      "roi_reviewed": false,
+      "panel": "b",
+      "selection_basis": {
+        "selection": "Lowest",
+        "rank": "1",
+        "of_cases": "164",
+        "case_id": "patient0229_2CH",
+        "mean_dice": "0.6770097649127448"
+      }
+    }
+  ],
+  "reference_scope": "Expert contours only; no anatomical point reference.",
+  "font_path": "C:\\Windows\\Fonts\\arial.ttf",
+  "width_mm": 183,
+  "height_mm": 170,
+  "external_alignment_auditor_used": true
+}

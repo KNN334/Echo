@@ -1,0 +1,512 @@
+{
+  "experiment": "camus_cuda_progress",
+  "new_training_or_inference": false,
+  "test_feedback_used_for_model_selection": false,
+  "sources_sha256": {
+    "figures/fig_r02_systolic_dynamics.py": "cca664362d2a771e348d9389118909ba765a1a71db7f6f0eacdb5123ce9cb53e",
+    "reports/result_analysis/camus_cuda_progress/source_data/example_selection.csv": "e41f39db9e7cf3ca3c1ebcd7785a3fe2d943f27738f7c77c0103f62772e6daac",
+    "runs/camus_cuda_progress/frames.csv": "e36e516521702c722392b935cd77d7bbb16a6b062f74591a7587539e2c09f174",
+    "runs/camus_cuda_progress/function.csv": "783ecf773c8be25a33546d96d18657d88cefe2a3b1701b08c67d4fa691dfc545",
+    "figures/_lv_results_common.py": "686a0ea4ddfdbd7f40c934d51cdb43468699c73e15b048ba23b6149dc3462285",
+    "src/geometry/mask_features.py": "0b5d0dad4423542d715405a2dfe20f2f600a360bbfd7f03e0caf39b89b0b9323",
+    "src/geometry/volume.py": "199ad3f653132a6bc7693752ff67817d727e64512b8fe65e73fbae56538b5a42",
+    "src/data/transforms.py": "7d5d10af714c60710a158d3a297ab499db0a218377dfb046ca345a91b24ccf2e",
+    "data/processed/camus/patient0327_2CH.json": "477d23b2e3df2be68e124d8309e6f083c49fff51b0d5c259ba5a28f76ee4414a",
+    "data/processed/camus/patient0327_2CH.npz": "ffd98ec0e4c3b425830696e89b1470d3d4a9bf65d117c4e42f6a750880781e23",
+    "runs/camus_cuda_progress/patient0327_2CH_pred.npz": "40ee006fe27eb8c3fbd43148d77199297157cb2d208f87bf79387a9abf51c188",
+    "runs/camus_cuda_progress/patient0327_2CH_features.json": "8aec897f3e16e18a6cfcc9af619d51807d975ed82b3278924145a1aa8bbd1577",
+    "data/processed/camus/patient0229_2CH.json": "e43f90cc2f1f2c03d91fc7bfbe788b26a527f30f66311c8c4c4ad496b41cf9e8",
+    "data/processed/camus/patient0229_2CH.npz": "740c7741fdcb63bfdb23eb3cfef47519f23523a6d0e58f787e9add10db428172",
+    "runs/camus_cuda_progress/patient0229_2CH_pred.npz": "e128baf5a762a0d1ef2b529461c98b704786df1d92afddcb7fb72030c7840df6",
+    "runs/camus_cuda_progress/patient0229_2CH_features.json": "eb257eba849fd44e144d9d0857013aac1ca3a9d29ea7b7ab6cb9e290a5cf86ef",
+    "reports/result_analysis/camus_cuda_progress/analysis_manifest.json": "91dc84c179309d1295ca2f93773fe056c68bdb1d8231339060333d8445cc1af4",
+    "style/palette.py": "9555eb7a32b99b6dad197f574aa76f6842e8e064328c3b55988e71eca651d64c",
+    "style/paper.mplstyle": "95fdfe0e423bead6abb36aa67a94b6e9b76f66845c2eb6feac1c1ee1438dae90",
+    "figures/_paper_common.py": "eb198d3ad330cf9d0252d61b444637fad114e80c0a95fd06778dbcf0ebd6c415"
+  },
+  "existing_frozen_sources_rechecked": [
+    "runs/camus_cuda_progress/frames.csv",
+    "runs/camus_cuda_progress/function.csv",
+    "data/processed/camus/patient0327_2CH.npz",
+    "runs/camus_cuda_progress/patient0327_2CH_pred.npz",
+    "runs/camus_cuda_progress/patient0327_2CH_features.json",
+    "data/processed/camus/patient0229_2CH.npz",
+    "runs/camus_cuda_progress/patient0229_2CH_pred.npz",
+    "runs/camus_cuda_progress/patient0229_2CH_features.json"
+  ],
+  "versions": {
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.4",
+    "Pillow": "13.0.0",
+    "cmcrameri": "1.10"
+  },
+  "figure": "Fig.R2",
+  "status": "provisional results candidate; awaiting user review",
+  "core_conclusion": "Observed LV segmentation supports frame-wise spatial diameter maps and single-plane volume trajectories over the acquired ED-ES interval.",
+  "panel_roles": {
+    "a": "Median-ranked sequence: actual images",
+    "b": "Lowest-ranked sequence: actual images",
+    "c": "Median-ranked sequence: diameter time map",
+    "d": "Lowest-ranked sequence: diameter time map",
+    "e": "Raw area-length volume trajectories and expert endpoints"
+  },
+  "adaptation": "Wu and Lee 2025 Fig.7 image matrix plus Fig.6e profile-to-quantity organization, seen in user screenshot; time mapping is a new project-specific analysis, not a claim from that paper.",
+  "n_patients": 2,
+  "n_sequences": 2,
+  "n_observed_frames": 36,
+  "n_diameter_values": 720,
+  "n_displayed_images": 10,
+  "sample_selection": [
+    {
+      "selection": "Median",
+      "rank": "83",
+      "of_cases": "164",
+      "case_id": "patient0327_2CH",
+      "mean_dice": "0.9206268860792544"
+    },
+    {
+      "selection": "Lowest",
+      "rank": "1",
+      "of_cases": "164",
+      "case_id": "patient0229_2CH",
+      "mean_dice": "0.6770097649127448"
+    }
+  ],
+  "uncertainty": "Descriptive repeated observations in two patients, no population inference or CI.",
+  "temporal_processing": {
+    "timestamp_source": "derived_from_fps",
+    "smoothing": false,
+    "new_samples": 0,
+    "reflection": false,
+    "concatenation": false,
+    "phase_replacement": false,
+    "invalid_values": "masked cells and disconnected NaN curves",
+    "HR": null,
+    "CO": null
+  },
+  "image_display": [
+    {
+      "case_id": "patient0327_2CH",
+      "frame": 0,
+      "phase": "ED",
+      "time_s": 0.0,
+      "expert_available": true,
+      "source_image_hw": [
+        112,
+        112
+      ],
+      "original_hw": [
+        422,
+        482
+      ],
+      "original_spacing_xy_mm": [
+        0.30799999833106995,
+        0.30799999833106995
+      ],
+      "processed_spacing_xy_mm": [
+        1.3254999928176403,
+        1.16049999371171
+      ],
+      "image_extent_mm": [
+        -0.15399999916553497,
+        148.30199919641018,
+        129.82199929654598,
+        -0.15399999916553497
+      ],
+      "display_field_mm": [
+        200,
+        170
+      ],
+      "interpolation": "none",
+      "image_limits": [
+        0,
+        255
+      ],
+      "extra_crop": null,
+      "brightness_contrast_gamma": "unchanged",
+      "roi_reviewed": false
+    },
+    {
+      "case_id": "patient0327_2CH",
+      "frame": 4,
+      "phase": "intermediate",
+      "time_s": 0.06622516556291391,
+      "expert_available": false,
+      "source_image_hw": [
+        112,
+        112
+      ],
+      "original_hw": [
+        422,
+        482
+      ],
+      "original_spacing_xy_mm": [
+        0.30799999833106995,
+        0.30799999833106995
+      ],
+      "processed_spacing_xy_mm": [
+        1.3254999928176403,
+        1.16049999371171
+      ],
+      "image_extent_mm": [
+        -0.15399999916553497,
+        148.30199919641018,
+        129.82199929654598,
+        -0.15399999916553497
+      ],
+      "display_field_mm": [
+        200,
+        170
+      ],
+      "interpolation": "none",
+      "image_limits": [
+        0,
+        255
+      ],
+      "extra_crop": null,
+      "brightness_contrast_gamma": "unchanged",
+      "roi_reviewed": false
+    },
+    {
+      "case_id": "patient0327_2CH",
+      "frame": 8,
+      "phase": "intermediate",
+      "time_s": 0.13245033112582782,
+      "expert_available": false,
+      "source_image_hw": [
+        112,
+        112
+      ],
+      "original_hw": [
+        422,
+        482
+      ],
+      "original_spacing_xy_mm": [
+        0.30799999833106995,
+        0.30799999833106995
+      ],
+      "processed_spacing_xy_mm": [
+        1.3254999928176403,
+        1.16049999371171
+      ],
+      "image_extent_mm": [
+        -0.15399999916553497,
+        148.30199919641018,
+        129.82199929654598,
+        -0.15399999916553497
+      ],
+      "display_field_mm": [
+        200,
+        170
+      ],
+      "interpolation": "none",
+      "image_limits": [
+        0,
+        255
+      ],
+      "extra_crop": null,
+      "brightness_contrast_gamma": "unchanged",
+      "roi_reviewed": false
+    },
+    {
+      "case_id": "patient0327_2CH",
+      "frame": 13,
+      "phase": "intermediate",
+      "time_s": 0.21523178807947022,
+      "expert_available": false,
+      "source_image_hw": [
+        112,
+        112
+      ],
+      "original_hw": [
+        422,
+        482
+      ],
+      "original_spacing_xy_mm": [
+        0.30799999833106995,
+        0.30799999833106995
+      ],
+      "processed_spacing_xy_mm": [
+        1.3254999928176403,
+        1.16049999371171
+      ],
+      "image_extent_mm": [
+        -0.15399999916553497,
+        148.30199919641018,
+        129.82199929654598,
+        -0.15399999916553497
+      ],
+      "display_field_mm": [
+        200,
+        170
+      ],
+      "interpolation": "none",
+      "image_limits": [
+        0,
+        255
+      ],
+      "extra_crop": null,
+      "brightness_contrast_gamma": "unchanged",
+      "roi_reviewed": false
+    },
+    {
+      "case_id": "patient0327_2CH",
+      "frame": 17,
+      "phase": "ES",
+      "time_s": 0.2814569536423841,
+      "expert_available": true,
+      "source_image_hw": [
+        112,
+        112
+      ],
+      "original_hw": [
+        422,
+        482
+      ],
+      "original_spacing_xy_mm": [
+        0.30799999833106995,
+        0.30799999833106995
+      ],
+      "processed_spacing_xy_mm": [
+        1.3254999928176403,
+        1.16049999371171
+      ],
+      "image_extent_mm": [
+        -0.15399999916553497,
+        148.30199919641018,
+        129.82199929654598,
+        -0.15399999916553497
+      ],
+      "display_field_mm": [
+        200,
+        170
+      ],
+      "interpolation": "none",
+      "image_limits": [
+        0,
+        255
+      ],
+      "extra_crop": null,
+      "brightness_contrast_gamma": "unchanged",
+      "roi_reviewed": false
+    },
+    {
+      "case_id": "patient0229_2CH",
+      "frame": 0,
+      "phase": "ED",
+      "time_s": 0.0,
+      "expert_available": true,
+      "source_image_hw": [
+        112,
+        112
+      ],
+      "original_hw": [
+        519,
+        630
+      ],
+      "original_spacing_xy_mm": [
+        0.30799999833106995,
+        0.30799999833106995
+      ],
+      "processed_spacing_xy_mm": [
+        1.7324999906122684,
+        1.4272499922662973
+      ],
+      "image_extent_mm": [
+        -0.15399999916553497,
+        193.88599894940853,
+        159.69799913465977,
+        -0.15399999916553497
+      ],
+      "display_field_mm": [
+        200,
+        170
+      ],
+      "interpolation": "none",
+      "image_limits": [
+        0,
+        255
+      ],
+      "extra_crop": null,
+      "brightness_contrast_gamma": "unchanged",
+      "roi_reviewed": false
+    },
+    {
+      "case_id": "patient0229_2CH",
+      "frame": 4,
+      "phase": "intermediate",
+      "time_s": 0.07079646017699115,
+      "expert_available": false,
+      "source_image_hw": [
+        112,
+        112
+      ],
+      "original_hw": [
+        519,
+        630
+      ],
+      "original_spacing_xy_mm": [
+        0.30799999833106995,
+        0.30799999833106995
+      ],
+      "processed_spacing_xy_mm": [
+        1.7324999906122684,
+        1.4272499922662973
+      ],
+      "image_extent_mm": [
+        -0.15399999916553497,
+        193.88599894940853,
+        159.69799913465977,
+        -0.15399999916553497
+      ],
+      "display_field_mm": [
+        200,
+        170
+      ],
+      "interpolation": "none",
+      "image_limits": [
+        0,
+        255
+      ],
+      "extra_crop": null,
+      "brightness_contrast_gamma": "unchanged",
+      "roi_reviewed": false
+    },
+    {
+      "case_id": "patient0229_2CH",
+      "frame": 8,
+      "phase": "intermediate",
+      "time_s": 0.1415929203539823,
+      "expert_available": false,
+      "source_image_hw": [
+        112,
+        112
+      ],
+      "original_hw": [
+        519,
+        630
+      ],
+      "original_spacing_xy_mm": [
+        0.30799999833106995,
+        0.30799999833106995
+      ],
+      "processed_spacing_xy_mm": [
+        1.7324999906122684,
+        1.4272499922662973
+      ],
+      "image_extent_mm": [
+        -0.15399999916553497,
+        193.88599894940853,
+        159.69799913465977,
+        -0.15399999916553497
+      ],
+      "display_field_mm": [
+        200,
+        170
+      ],
+      "interpolation": "none",
+      "image_limits": [
+        0,
+        255
+      ],
+      "extra_crop": null,
+      "brightness_contrast_gamma": "unchanged",
+      "roi_reviewed": false
+    },
+    {
+      "case_id": "patient0229_2CH",
+      "frame": 13,
+      "phase": "intermediate",
+      "time_s": 0.23008849557522124,
+      "expert_available": false,
+      "source_image_hw": [
+        112,
+        112
+      ],
+      "original_hw": [
+        519,
+        630
+      ],
+      "original_spacing_xy_mm": [
+        0.30799999833106995,
+        0.30799999833106995
+      ],
+      "processed_spacing_xy_mm": [
+        1.7324999906122684,
+        1.4272499922662973
+      ],
+      "image_extent_mm": [
+        -0.15399999916553497,
+        193.88599894940853,
+        159.69799913465977,
+        -0.15399999916553497
+      ],
+      "display_field_mm": [
+        200,
+        170
+      ],
+      "interpolation": "none",
+      "image_limits": [
+        0,
+        255
+      ],
+      "extra_crop": null,
+      "brightness_contrast_gamma": "unchanged",
+      "roi_reviewed": false
+    },
+    {
+      "case_id": "patient0229_2CH",
+      "frame": 17,
+      "phase": "ES",
+      "time_s": 0.3008849557522124,
+      "expert_available": true,
+      "source_image_hw": [
+        112,
+        112
+      ],
+      "original_hw": [
+        519,
+        630
+      ],
+      "original_spacing_xy_mm": [
+        0.30799999833106995,
+        0.30799999833106995
+      ],
+      "processed_spacing_xy_mm": [
+        1.7324999906122684,
+        1.4272499922662973
+      ],
+      "image_extent_mm": [
+        -0.15399999916553497,
+        193.88599894940853,
+        159.69799913465977,
+        -0.15399999916553497
+      ],
+      "display_field_mm": [
+        200,
+        170
+      ],
+      "interpolation": "none",
+      "image_limits": [
+        0,
+        255
+      ],
+      "extra_crop": null,
+      "brightness_contrast_gamma": "unchanged",
+      "roi_reviewed": false
+    }
+  ],
+  "heatmap_limits_mm": [
+    0,
+    60
+  ],
+  "volume_limits_ml": [
+    -5,
+    200
+  ],
+  "axis_padding": "Small negative display margins keep real ED and low reference markers visible; no negative observations.",
+  "font_path": "C:\\Windows\\Fonts\\arial.ttf",
+  "width_mm": 183,
+  "height_mm": 170,
+  "external_alignment_auditor_used": true
+}

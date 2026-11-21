@@ -1,0 +1,9 @@
+{
+  "R1_profile_values": 160,
+  "R2_observed_frame_values": 36,
+  "R2_diameter_values": 720,
+  "all_exported_prediction_values_exactly_match": true,
+  "independent_volume_formula_matches": true,
+  "old_approved_source_hashes_matched": 1049,
+  "old_approved_figures_tables_style_unchanged": true
+}

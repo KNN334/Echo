@@ -1,0 +1,3 @@
+selection,rank,of_cases,case_id,mean_dice
+Median,83,164,patient0327_2CH,0.9206268860792544
+Lowest,1,164,patient0229_2CH,0.6770097649127448

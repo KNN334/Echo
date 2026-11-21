@@ -1,0 +1,5 @@
+case_id,phase,frame,time_s,expert_same_geometry_ml,reference_scope
+patient0327_2CH,ED,0,0.0,127.60535478168264,same_geometry_from_expert_ED_ES_contours
+patient0327_2CH,ES,17,0.2814569536423841,47.494620875533144,same_geometry_from_expert_ED_ES_contours
+patient0229_2CH,ED,0,0.0,84.25137259903795,same_geometry_from_expert_ED_ES_contours
+patient0229_2CH,ES,17,0.3008849557522124,3.048778476172472,same_geometry_from_expert_ED_ES_contours
