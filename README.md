@@ -24,7 +24,7 @@
 
 ## 结果分析图
 
-本轮投稿图表规划见 [图表制作清单](figure_plan.md)、[结果资产盘点](figures/planning/result_assets.md) 和 [六篇同行论文逐图逐表拆解](figures/planning/literature_breakdown.md)。[全局样式](style/README.md)、[样式测试页](figures/style_test/style_test.pdf) 及四张正文图均已确认：[Fig.1 数据与方法框架](figures/fig_01_data_workflow/fig_01_data_workflow.pdf)、[Fig.2 分割验证](figures/fig_02_segmentation_validation/fig_02_segmentation_validation.pdf)、[Fig.3 功能一致性](figures/fig_03_function_agreement/fig_03_function_agreement.pdf)、[Fig.4 半周期轨迹](figures/fig_04_half_sequence/fig_04_half_sequence.pdf)。[Table 1 队列与参考覆盖](figures/table_01_cohort/table_01_cohort.pdf)（含零值可用性行修订）、[Table 2 主功能一致性](figures/table_02_function/table_02_function.pdf) 已确认。当前本批为 [Fig.S1 同法SV/LVEF一致性](figures/fig_s01_sv_ef_agreement/fig_s01_sv_ef_agreement.pdf) 与 [Fig.S7 EF参考差异及偏倚抵消](figures/fig_s07_ef_reference_bias/fig_s07_ef_reference_bias.pdf)，全部82测试患者、源表、英文图注与导出检查已完成，等待反馈。[可视化覆盖目录](figures/planning/visualization_coverage.md) 的其余核心补充6图2表及3张有条件备选尚未制作；本批确认后继续S2/S8，每批1–2项。所有结果仍限定于公开CAMUS半周期，保留几何与时序局限，不表述为贴片佩戴实测或独立临床容积准确性。
+本轮投稿图表规划见 [图表制作清单](figure_plan.md)、[结果资产盘点](figures/planning/result_assets.md) 和 [六篇同行论文逐图逐表拆解](figures/planning/literature_breakdown.md)。[全局样式](style/README.md)、[样式测试页](figures/style_test/style_test.pdf) 及四张正文图均已确认：[Fig.1 数据与方法框架](figures/fig_01_data_workflow/fig_01_data_workflow.pdf)、[Fig.2 分割验证](figures/fig_02_segmentation_validation/fig_02_segmentation_validation.pdf)、[Fig.3 功能一致性](figures/fig_03_function_agreement/fig_03_function_agreement.pdf)、[Fig.4 半周期轨迹](figures/fig_04_half_sequence/fig_04_half_sequence.pdf)。[Table 1 队列与参考覆盖](figures/table_01_cohort/table_01_cohort.pdf)（含零值可用性行修订）、[Table 2 主功能一致性](figures/table_02_function/table_02_function.pdf) 已确认。当前本批为 [Fig.S1 同法SV/LVEF一致性](figures/fig_s01_sv_ef_agreement/fig_s01_sv_ef_agreement.pdf) 与 [Fig.S7 EF参考差异及偏倚抵消](figures/fig_s07_ef_reference_bias/fig_s07_ef_reference_bias.pdf)，全部82测试患者、源表、英文图注与导出检查已完成；用户反馈外观需改进，尚未确认。[DCF论文适用性评估](figures/planning/directional_coherence_applicability.md)已区分可借鉴的影像矩阵/几何剖面与缺数据的声束/三维成像分析。[可视化覆盖目录](figures/planning/visualization_coverage.md) 的其余核心补充6图2表及3张有条件备选尚未制作；制作顺序待本批修订讨论，每批1–2项。所有结果仍限定于公开CAMUS半周期，保留几何与时序局限，不表述为贴片佩戴实测或独立临床容积准确性。
 
 [2026-11-21结果自检](reports/result_integrity/camus_cuda_progress_20261121/report.md)：328标注帧分割指标与490行功能结果均可复算；发现代理长轴/基底导致的几何范围不一致、EF偏倚抵消和逐帧跳变风险。功能主图需先复核几何定义；原冻结结果保持不变。
 
@@ -126,6 +126,8 @@ Echo/
 │   │   │   # 只读核查缓存、患者划分和冻结源文件，不重训或重选模型
 │   │   ├── audit_results.py
 │   │   │   # 重算全部测试标注帧与功能算术，审计代理几何覆盖和时序风险，不改冻结结果
+│   │   ├── directional_coherence_applicability.md
+│   │   │   # 用户指定DCF论文Fig.6/7对本项目的可视化适用性、资产映射及证据边界评估
 │   │   ├── literature_breakdown.md
 │   │   │   # 两篇模板与四篇近期论文的逐图逐表拆解及共同做法
 │   │   ├── literature_catalog.json

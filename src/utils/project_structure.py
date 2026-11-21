@@ -85,6 +85,7 @@ DESCRIPTIONS = {
     'figures/planning/literature_statistics.json': '图表数量中位数、范围和十二类论证作用的统计结果',
     'figures/planning/literature_breakdown.md': '两篇模板与四篇近期论文的逐图逐表拆解及共同做法',
     'figures/planning/visualization_coverage.md': '结果分析可视化覆盖审计、正文/补充/质控分层及不可制作项目',
+    'figures/planning/directional_coherence_applicability.md': '用户指定DCF论文Fig.6/7对本项目的可视化适用性、资产映射及证据边界评估',
     'figure_plan.md': '正文和补充图表制作清单、证据边界、待补计算与阶段确认进度',
     'style': '所有新投稿图共用的字体、色系、色带、尺寸与导出设置',
     'style/paper.mplstyle': '用户选定的Nature/Arial全局样式：普通文字7pt、600dpi位图',
