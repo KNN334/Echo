@@ -1,0 +1,38 @@
+{
+  "view": {
+    "elev": 27,
+    "azim": -55
+  },
+  "projection": "orthographic",
+  "box_aspect": [
+    1.4,
+    1,
+    0.85
+  ],
+  "box_zoom": 0.9,
+  "shared_limits": {
+    "time_s": [
+      0,
+      0.32
+    ],
+    "proxy_position_percent": [
+      0,
+      100
+    ],
+    "diameter_mm": [
+      0,
+      60
+    ]
+  },
+  "colormap": "cividis",
+  "shade": false,
+  "mesh": "Each valid adjacent native-grid cell split at the fixed (0,2) diagonal; original vertices only.",
+  "color": "Arithmetic mean diameter of the three original vertices in each triangle.",
+  "missing_values": "Omit every four-corner cell containing any nonfinite vertex; do not bridge gaps.",
+  "smoothing": false,
+  "new_time_samples": 0,
+  "new_position_samples": 0,
+  "outside_observed_ED_ES": "No mesh; blank",
+  "HR": null,
+  "CO": null
+}

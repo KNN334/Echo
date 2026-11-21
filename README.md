@@ -28,6 +28,8 @@
 
 根据用户最新反馈，结果叙事改为“LV形态 → 空间几何量化 → 实际ED–ES时间过程”。借鉴[DCF论文已见Fig.6/7的组织](figures/planning/directional_coherence_applicability.md)，本批制作 [Fig.R1 双视图形态与直径剖面](figures/fig_r01_lv_morphology/fig_r01_lv_morphology.pdf) 和 [Fig.R2 真实帧、直径时序图及容积](figures/fig_r02_systolic_dynamics/fig_r02_systolic_dynamics.pdf)，均有独立入口、真实源表、英文图注及QA，等待本批反馈。R1/R2为原Fig.2/4的整合候选，未覆盖旧图或自动增加正文图数；[Fig.S1](figures/fig_s01_sv_ef_agreement/fig_s01_sv_ef_agreement.pdf)/[Fig.S7](figures/fig_s07_ef_reference_bias/fig_s07_ef_reference_bias.pdf)尚未确认。其余[覆盖候选](figures/planning/visualization_coverage.md)按论证价值分批选择，不自动继续原误差诊断顺序。所有结果限定于公开CAMUS半周期，代理几何尚未独立验证，不表述为贴片佩戴实测或独立临床容积准确性。
 
+用户进一步确认三维曲面方案后，新增 [Fig.R3 LV直径时空曲面](figures/fig_r03_diameter_surface/fig_r03_diameter_surface.pdf)：R2相同的全部720个直径值，按时间×代理轴位置×直径绘制为并排两面板，统一视角/坐标/色标，无新采样、平滑或周期补造。含[英文图注](figures/fig_r03_diameter_surface/caption_en.md)、原始节点及面片源表、独立入口和[QA](figures/fig_r03_diameter_surface/QA.md)。当前停止点为R3等待反馈，R1/R2仍待最终选稿；曲面为R2热图的另一种表达，不新增独立证据或真实三维解剖主张。
+
 [2026-11-21结果自检](reports/result_integrity/camus_cuda_progress_20261121/report.md)：328标注帧分割指标与490行功能结果均可复算；发现代理长轴/基底导致的几何范围不一致、EF偏倚抵消和逐帧跳变风险。功能主图需先复核几何定义；原冻结结果保持不变。
 
 已保存实验的 10 组结果图见 [离线图集](reports/result_analysis/camus_cuda_progress/index.html)、[全部图件 PDF](reports/result_analysis/camus_cuda_progress/all_figures.pdf) 和 [中文解读](reports/result_analysis/camus_cuda_progress/RESULTS_ANALYSIS.md)。图集使用同一轮冻结实验，分别展示同法轮廓参考与 CAMUS 报告 EF；不把半周期推理称为完整心搏或半监督训练。
@@ -120,6 +122,8 @@ Echo/
 │   │   # Fig.R1审阅稿：双视图ED/ES形态矩阵与20层直径剖面、源表、图注及检查
 │   ├── fig_r02_systolic_dynamics/
 │   │   # Fig.R2审阅稿：真实ED–ES帧条带、直径时序热图和逐帧容积、源表与检查
+│   ├── fig_r03_diameter_surface/
+│   │   # Fig.R3审阅稿：两例全部真实直径的三维时空曲面、源节点/面片、图注及检查
 │   ├── fig_s01_sv_ef_agreement/
 │   │   # Fig.S1审阅稿：82患者同法SV/LVEF散点及一致性、源表、图注与检查
 │   ├── fig_s07_ef_reference_bias/
@@ -179,6 +183,8 @@ Echo/
 │   │   # 重建双视图双相位真实影像矩阵及自身代理轴直径剖面，不作解剖点准确性声明
 │   ├── fig_r02_systolic_dynamics.py
 │   │   # 重建实际帧条带、全部逐帧20层直径与单平面容积，不插值或补造完整周期
+│   ├── fig_r03_diameter_surface.py
+│   │   # 将R2全部720个真实直径绘成统一视角三维曲面，不新增节点或平滑数值
 │   ├── fig_s01_sv_ef_agreement.py
 │   │   # 重建全部82患者同法SV和LVEF散点及Bland–Altman，逐值核对冻结配对
 │   ├── fig_s07_ef_reference_bias.py

@@ -1,0 +1,10 @@
+{
+  "original_vertices": 720,
+  "display_triangles": 1292,
+  "all_original_values_match_frozen_features_and_R2": true,
+  "all_timestamps_match_FPS_and_sidecars": true,
+  "all_facet_vertices_are_adjacent_original_measurements": true,
+  "all_facet_mean_colors_verified": true,
+  "additional_measurement_nodes": 0,
+  "previous_source_hashes_matched": 1058
+}
