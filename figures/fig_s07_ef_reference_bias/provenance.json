@@ -1,0 +1,59 @@
+{
+  "experiment": "camus_cuda_progress",
+  "new_training_or_inference": false,
+  "test_feedback_used_for_model_selection": false,
+  "sources_sha256": {
+    "runs/camus_cuda_progress/function.csv": "783ecf773c8be25a33546d96d18657d88cefe2a3b1701b08c67d4fa691dfc545",
+    "configs/camus_splits.json": "85975e0ce238ae244f4b04e432914779feeb153e05c6deb27448aeae87a22cdf",
+    "figures/fig_s07_ef_reference_bias.py": "98c2c13250ab9ec8d7498f6b83c03ae0e0ea0c55305cceea06180a391e5f6aba",
+    "runs/camus_cuda_progress/summary.json": "a5876545e456fb436fb49127237bdd56223a6d7114c60b6c75156871ab1b22d9",
+    "reports/result_integrity/camus_cuda_progress_20261121/audit.json": "3340111ad716938ac28128321a024bfa4d568fb85c522ec8e025378564bfd730",
+    "reports/result_integrity/camus_cuda_progress_20261121/report.md": "1a30281d70dfb76983eeb9299bdab9aaff5c566bec4fc2a56c32a2f83a89685b",
+    "reports/result_analysis/camus_cuda_progress/source_data/agreement_pairs.csv": "c21aa8ac2aa2c12c952006ad8dfd2fd9cd5546ae52866ebbcc628feee80447d8",
+    "reports/result_analysis/camus_cuda_progress/source_data/agreement_statistics.csv": "5c312357651179fd79cb742bb84b283639eae5214f3cec2087e1d113da2adbdb",
+    "reports/result_analysis/camus_cuda_progress/analysis_manifest.json": "91dc84c179309d1295ca2f93773fe056c68bdb1d8231339060333d8445cc1af4",
+    "style/palette.py": "9555eb7a32b99b6dad197f574aa76f6842e8e064328c3b55988e71eca651d64c",
+    "style/paper.mplstyle": "95fdfe0e423bead6abb36aa67a94b6e9b76f66845c2eb6feac1c1ee1438dae90",
+    "figures/_paper_common.py": "eb198d3ad330cf9d0252d61b444637fad114e80c0a95fd06778dbcf0ebd6c415"
+  },
+  "existing_frozen_sources_rechecked": [
+    "runs/camus_cuda_progress/function.csv",
+    "runs/camus_cuda_progress/summary.json"
+  ],
+  "versions": {
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.4",
+    "Pillow": "13.0.0",
+    "cmcrameri": "1.10"
+  },
+  "figure": "Fig.S7",
+  "archetype": "quantitative grid",
+  "core_conclusion": "Opposing observed signed biases partly cancel; small total bias does not establish individual accuracy.",
+  "panel_roles": {
+    "a": "The two references have a systematic offset",
+    "b": "Its sign and spread",
+    "c": "Patient-level paired differences",
+    "d": "Exact identity of the three observed means"
+  },
+  "reference_figures": "Ouyang Fig.2a / Hu Fig.5c for agreement layout only; three-way diagnostic is original.",
+  "n_patients": 82,
+  "excluded_patients": [],
+  "horizontal_offsets": "Fixed patient-ID order, ±0.13 category units.",
+  "axis_ranges": {
+    "scatter_xy": [
+      0,
+      100
+    ],
+    "all_difference_y": [
+      -40,
+      40
+    ]
+  },
+  "inference": "Descriptive post hoc; no causal attribution, hypothesis tests, new confidence intervals or refitting.",
+  "uncertainty_exemption": "Panel d illustrates an algebraic identity of observed means, not a population estimate with new inference; panel c shows all patient values.",
+  "geometry_status": "Frozen proxy-axis coverage mismatch retained.",
+  "font_path": "C:\\Windows\\Fonts\\arial.ttf",
+  "width_mm": 183,
+  "height_mm": 170,
+  "external_alignment_auditor_used": true
+}

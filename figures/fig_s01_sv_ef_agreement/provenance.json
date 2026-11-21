@@ -1,0 +1,82 @@
+{
+  "experiment": "camus_cuda_progress",
+  "new_training_or_inference": false,
+  "test_feedback_used_for_model_selection": false,
+  "sources_sha256": {
+    "runs/camus_cuda_progress/function.csv": "783ecf773c8be25a33546d96d18657d88cefe2a3b1701b08c67d4fa691dfc545",
+    "configs/camus_splits.json": "85975e0ce238ae244f4b04e432914779feeb153e05c6deb27448aeae87a22cdf",
+    "runs/camus_cuda_progress/summary.json": "a5876545e456fb436fb49127237bdd56223a6d7114c60b6c75156871ab1b22d9",
+    "figures/fig_s01_sv_ef_agreement.py": "55946bc45bbecc41e45b4e817d26fe0105e40cce190e0a90c15a943aa3c4f1a0",
+    "figures/table_02_function/source_data/agreement_statistics.csv": "bb1241f50d217805c55d38403b193ed386dbbc74fba58820fa87478f6a52d4d6",
+    "reports/result_analysis/camus_cuda_progress/source_data/agreement_pairs.csv": "c21aa8ac2aa2c12c952006ad8dfd2fd9cd5546ae52866ebbcc628feee80447d8",
+    "reports/result_analysis/camus_cuda_progress/source_data/agreement_statistics.csv": "5c312357651179fd79cb742bb84b283639eae5214f3cec2087e1d113da2adbdb",
+    "reports/result_integrity/camus_cuda_progress_20261121/function_agreement.csv": "024a8cb8d1d4d86e569b0d8022321b9a14d1ce183faec41b6cf465c258b8801a",
+    "reports/result_integrity/camus_cuda_progress_20261121/report.md": "1a30281d70dfb76983eeb9299bdab9aaff5c566bec4fc2a56c32a2f83a89685b",
+    "reports/result_analysis/camus_cuda_progress/analysis_manifest.json": "91dc84c179309d1295ca2f93773fe056c68bdb1d8231339060333d8445cc1af4",
+    "style/palette.py": "9555eb7a32b99b6dad197f574aa76f6842e8e064328c3b55988e71eca651d64c",
+    "style/paper.mplstyle": "95fdfe0e423bead6abb36aa67a94b6e9b76f66845c2eb6feac1c1ee1438dae90",
+    "figures/_paper_common.py": "eb198d3ad330cf9d0252d61b444637fad114e80c0a95fd06778dbcf0ebd6c415"
+  },
+  "existing_frozen_sources_rechecked": [
+    "runs/camus_cuda_progress/function.csv",
+    "runs/camus_cuda_progress/summary.json"
+  ],
+  "versions": {
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.4",
+    "Pillow": "13.0.0",
+    "cmcrameri": "1.10"
+  },
+  "figure": "Fig.S1",
+  "archetype": "quantitative grid",
+  "core_conclusion": "Same-geometry SV and EF retain substantial error and wide agreement limits.",
+  "panel_roles": {
+    "a/b": "Association for the two supplementary functional endpoints",
+    "c/d": "Signed disagreement and its limits for those same endpoints"
+  },
+  "reference_figures": "Hu Fig.5c / EchoPrime SI Fig.1; scatter/BA organization only, no assets copied.",
+  "n_patients_per_metric": 82,
+  "excluded_pairs": [],
+  "axis_ranges": [
+    {
+      "metric": "SV",
+      "scatter_xy_limits": [
+        0,
+        100
+      ],
+      "ba_x_limits": [
+        0,
+        100
+      ],
+      "ba_y_limits": [
+        -40,
+        40
+      ],
+      "all_82_pairs_visible": true
+    },
+    {
+      "metric": "EF",
+      "scatter_xy_limits": [
+        0,
+        100
+      ],
+      "ba_x_limits": [
+        0,
+        100
+      ],
+      "ba_y_limits": [
+        -40,
+        40
+      ],
+      "all_82_pairs_visible": true
+    }
+  ],
+  "statistics": "Recomputed from function.csv and verified against frozen pairs, audit and Table 2.",
+  "confidence_intervals": null,
+  "hypothesis_tests": null,
+  "geometry_status": "Frozen proxy-axis range mismatch retained; no refitting or correction.",
+  "font_path": "C:\\Windows\\Fonts\\arial.ttf",
+  "width_mm": 183,
+  "height_mm": 170,
+  "external_alignment_auditor_used": true
+}

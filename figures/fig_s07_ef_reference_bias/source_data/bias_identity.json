@@ -1,0 +1,11 @@
+{
+  "n_patients": 82,
+  "definition": "(P-G)+(G-L)=P-L, per patient and for means; not a causal attribution.",
+  "mean_P_minus_G_pp": -5.811348534045892,
+  "mean_G_minus_L_pp": 7.372814580913701,
+  "mean_P_minus_L_pp": 1.5614660468678099,
+  "identity_residual_pp": -4.440892098500626e-16,
+  "mae_additivity": false,
+  "confidence_intervals": null,
+  "hypothesis_tests": null
+}

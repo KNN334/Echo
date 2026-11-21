@@ -65,11 +65,11 @@
 
 | 编号 | 标题/主要信息 | 数据、布局和对标 | 状态/位置 |
 |---|---|---|---|
-| Table 1 | CAMUS队列、固定划分与参考覆盖 | manifest/划分/1000侧车；train/val/test/总计，Age/Sex/EF、质量、空间/时间和EF标签覆盖；缺失证据及未审阅ROI写入表注，移除六行全零计数；EchoFM Table I、EchoPrime Table 1 | ✅ 按反馈修订，22行真实数据不变，待确认；正文P1 |
+| Table 1 | CAMUS队列、固定划分与参考覆盖 | manifest/划分/1000侧车；train/val/test/总计，Age/Sex/EF、质量、空间/时间和EF标签覆盖；缺失证据及未审阅ROI写入表注，移除六行全零计数；EchoFM Table I、EchoPrime Table 1 | ✅ 用户已确认修订，22行真实数据不变；正文P1 |
 | Fig.1 | 当前数据与实际方法链，贴片为目标场景 | a–d；Ouyang Fig.1、Hu Fig.5a、EchoPrime Fig.1 | ✅ 已确认；正文P1 |
 | Fig.2 | 全患者分割与低分/典型轮廓 | 82患者/328帧，三指标+2×4影像；Ouyang Fig.2d/e、Chao Fig.1、EchoFM Fig.4 | ✅ 已确认；正文P1 |
 | Fig.3 | 同法EDV/ESV与标签EF一致性 | 2×3散点/BA，各n=82；Ouyang Fig.2a、Hu Fig.5c、EchoPrime SI Fig.1 | ✅ 已确认；正文P1 |
-| Table 2 | 主功能误差，参考来源分开 | 双平面EDV/ESV/SV/EF和标签EF共5行；n、MAE区间、RMSE、bias、LOA、r、预测R²；EchoPrime Table 2、EchoFM Tables IV/V | ✅ 五行已制作，各82患者/共410配对，待本批反馈；正文P1 |
+| Table 2 | 主功能误差，参考来源分开 | 双平面EDV/ESV/SV/EF和标签EF共5行；n、MAE区间、RMSE、bias、LOA、r、预测R²；EchoPrime Table 2、EchoFM Tables IV/V | ✅ 用户已确认，五行各82患者/共410配对；正文P1 |
 | Fig.4 | 实际ED–ES轨迹及时间边界 | 4患者76帧，2×2；Ouyang Fig.2f、Hu Fig.5b仅借鉴结构 | ✅ 已确认；正文P1 |
 
 **会改变结论的限制必须写进正文**：Table 2脚注及Fig.3/4图注保留几何范围不一致、同法参考非独立金标准、时序局限；Results明确引用Fig.S6–S8，不能把这些问题仅藏在附件。
@@ -80,12 +80,12 @@
 
 | 编号/拟题 | 对标或借鉴范围 | 数据与子图安排 | 一句话核心信息 | 状态、分母和位置 |
 |---|---|---|---|---|
-| Fig.S1 同法双平面SV与EF完整一致性 | Hu Fig.5c、EchoPrime SI Fig.1 | `function.csv`、`agreement_pairs.csv`；2×2，两列SV/同法EF，上散点下BA | SV与同法EF的离散和偏倚不能被标签EF替代 | ✅ 配对/RMSE/r现成，⚠️ 其余R²待补；各82患者；补充P1 |
+| Fig.S1 同法双平面SV与EF完整一致性 | Hu Fig.5c、EchoPrime SI Fig.1 | `function.csv`、`agreement_pairs.csv`；2×2，两列SV/同法EF，上散点下BA | SV与同法EF的离散和偏倚不能被标签EF替代 | ✅ 已制作/核查，含预测R²源表；各82患者/164配对，待本批反馈；补充P1 |
 | Fig.S2 半序列自动ED/ES定位与功能误差 | Ouyang Fig.2f/3d，仅借选相位/配对结构，不照搬选搏 | `function.csv`、`paired_phase_errors.csv`、`auto_phase_checks.csv`、FPS；2×2，上两视图EF误差配对，下ED/ES帧偏差及覆盖 | 自动相位改变误差和覆盖，不是完整搏识别 | ⚠️ 交集2CH=81、4CH=80，自动总有效82/80；派生秒需核对；补充P1 |
 | Fig.S3 验证选模及组合正则化的不同影响 | Ouyang ED Fig.3、EchoFM Fig.6，仅借损失/配对布局 | 两training.csv、`runs/validation_camus_*`及冻结权重；2×2，两模型损失曲线、验证ΔDice、验证Δ标签EF绝对误差；标最佳epoch/覆盖 | 空间小幅改善没有转化为标签EF改善 | ⚠️ 身份/配对复核；Dice n=71、EF共同n=70，8.2443→9.8289 pp保留；补充P2；非单因素消融 |
 | Fig.S4 图像质量与分割—功能误差关联 | Ouyang ED Fig.5、Chao Fig.1、EchoPrime Fig.3 | `error_associations.csv`、`structure.csv`、侧车；2×2：质量层Dice、质量层EF绝对误差、平均Dice–EF误差、HD95–EF误差 | 高Dice不自动保证EF准确，域内误差有异质性 | ✅ 前三项现成；⚠️ HD95患者联表待导出；82患者、各层注明n；补充P2；探索性非因果 |
 | Fig.S6 几何覆盖与容积路径差异 | Hu Fig.5a仅借几何链；范围诊断为本项目新增，不假称某原图复刻 | `geometry_diagnostics.csv`、`cross_geometry_volume_ratios.csv`、真实轮廓；2×2：按声明规则选例的代理轴覆盖、总体轴/基底外面积、双/单平面比值、面积/轴/容积误差关系 | 共享几何存在范围不一致，低同法MAE不能证明独立容积准确 | ✅ 656条专家/预测记录、328条跨几何记录；⚠️ 联合误差待导出；82患者/328标注帧，按患者汇总；补充P1；非人工点误差 |
-| Fig.S7 两类EF参考与偏倚抵消 | Ouyang Fig.2a、Hu Fig.5c仅借一致性布局；三方诊断为新增 | `function.csv`双平面/标签行、`audit.json`；2×2：专家同法EF–标签散点/BA、同患者三类带符号误差、均值bias分解 | 小总体bias部分来自相反偏倚抵消，不是准确性证据 | ✅ n=82；⚠️ 三方源表待导出；−5.811+7.373=+1.561 pp为均值差恒等式，MAE不可相加；补充P1 |
+| Fig.S7 两类EF参考与偏倚抵消 | Ouyang Fig.2a、Hu Fig.5c仅借一致性布局；三方诊断为新增 | `function.csv`双平面/标签行、`audit.json`；2×2：专家同法EF–标签散点/BA、同患者三类带符号误差、均值bias分解 | 小总体bias部分来自相反偏倚抵消，不是准确性证据 | ✅ 已制作/核查，n=82完整三方源表，待本批反馈；−5.811+7.373=+1.561 pp为均值差恒等式，MAE不可相加；补充P1 |
 | Fig.S8 全半序列时序质量与真实跳变 | Hu ED Fig.7、Ouyang Fig.2f仅借轨迹/稳定性组织，不照搬整搏 | `curve_quality.csv`、`frames.csv`、预测/缓存；2×2：最大跳变分布、相邻面积/轴/容积变化关系、patient0329_2CH轨迹、18→19帧及代理轴 | 有逐帧数值不等于稳定的生理容积过程 | ✅ 164序列/82患者/3167帧；⚠️ 完整相邻差值待导出；110/164超20%为事后诊断，不作剔除/临床阈值；补充P1 |
 | Fig.S9 参考覆盖、几何无效和选相位失败 | Ouyang ED Table 3、Chao SI Table 3仅借透明报告；布局自行组织 | `coverage.csv`、`function.csv`、`summary.json`、影像；2×2：分口径覆盖矩阵、原因计数、patient0072_2CH ED/ES、自动4CH末帧极值病例 | 程序执行、几何有效、参考可配对和临床有效不是同一成功率 | ✅ 2CH SV/EF n=81、自动4CH n=80；其余逐项n；⚠️ 病例影像/相位联表；补充P1 |
 | Table S1 全功能口径和无效原因 | EchoPrime ED Tables 1–6、Chao排除清单 | `function.csv`、21组`function_agreement.csv`、配对行；按方法/视图/相位/参考分区，n、全误差、单位、null原因 | 正文5行之外的全结果可查且无静默删例 | ✅ 主要21组统计现成；⚠️ 其余R²、交集与无效表待导出；补充P1 |
@@ -128,10 +128,12 @@
 
 ## 9. 顺序与当前停止点
 
-扩展清单已确认，Table 1/2已制作并核查，等待本批反馈。确认后分批：S1/S7（功能与参考）→S2/S8（相位与时序）→S3/S6（方案比较与几何）→S4/S9（域内异质性与失败）→Table S1/S2。S5/S10/S11及动态材料逐项决定；每批1–2项，QA后交付并等反馈。
+扩展清单及Table 1/2（含零值行修订）已由用户“继续”确认。本批S1/S7（功能与参考）已制作并核查，等待反馈。确认后分批：S2/S8（相位与时序）→S3/S6（方案比较与几何）→S4/S9（域内异质性与失败）→Table S1/S2。S5/S10/S11及动态材料逐项决定；每批1–2项，QA后交付并等反馈。
 
 Nature规格是当前母版，非已确定投稿期刊。正式投递按实际刊物重排正文/Extended Data/SI；例如当前TMI不能原样提交扩展论文式补充图文文档，不承诺整套资料库一次提交。
 
 上轮覆盖审计：核心8图和备选3图编号一致；656条几何诊断、328条跨几何记录及21组功能统计可读；核心检查39项通过（11.48 s）。本轮两表另留数值复核与导出QA，既有四图49个不同来源文件SHA256继续匹配。这些检查不等于临床验证。
 
-**【停】等待Table 1/2本批反馈。此前Fig.1–4及扩展清单确认有效；不重新询问样式，不抢先制作下一批，不把尚未生成的补充资料库称为完成。**
+本批S1/S7：164个SV/EF配对、82个三方EF值均独立复核，全部固定测试患者保留。两图实际183×170 mm、嵌入Arial最小7 pt、纯矢量PDF和RGB600 dpi位图，面板对齐及PDF碰撞检查通过；既有四图两表152个受控文件不变、1049个来源哈希匹配。完整英文图注及逐面板QA保留。全库仍有6张核心补充图及2张补充表待制作。
+
+**【停】等待Fig.S1/S7本批反馈。此前Fig.1–4、Table 1/2、全局样式及扩展清单确认有效；不抢先制作S2/S8，不把尚未生成的补充资料库称为完成。**

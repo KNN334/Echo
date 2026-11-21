@@ -24,7 +24,7 @@
 
 ## 结果分析图
 
-本轮投稿图表规划见 [图表制作清单](figure_plan.md)、[结果资产盘点](figures/planning/result_assets.md) 和 [六篇同行论文逐图逐表拆解](figures/planning/literature_breakdown.md)。[全局样式](style/README.md)、[样式测试页](figures/style_test/style_test.pdf) 及四张正文图均已确认：[Fig.1 数据与方法框架](figures/fig_01_data_workflow/fig_01_data_workflow.pdf)、[Fig.2 分割验证](figures/fig_02_segmentation_validation/fig_02_segmentation_validation.pdf)、[Fig.3 功能一致性](figures/fig_03_function_agreement/fig_03_function_agreement.pdf)、[Fig.4 半周期轨迹](figures/fig_04_half_sequence/fig_04_half_sequence.pdf)。[Table 1 队列与参考覆盖](figures/table_01_cohort/table_01_cohort.pdf)、[Table 2 主功能一致性](figures/table_02_function/table_02_function.pdf) 已制作并核查，待本批反馈；附可编辑Markdown、源表、英文图注和QA。按完整覆盖要求，[可视化覆盖目录](figures/planning/visualization_coverage.md) 的核心补充8图2表及3张有条件备选清单已确认，补充图尚未制作；反馈后先S1/S7，每批1–2项。所有结果仍限定于公开CAMUS半周期，保留几何与时序局限，不表述为贴片佩戴实测或独立临床容积准确性。
+本轮投稿图表规划见 [图表制作清单](figure_plan.md)、[结果资产盘点](figures/planning/result_assets.md) 和 [六篇同行论文逐图逐表拆解](figures/planning/literature_breakdown.md)。[全局样式](style/README.md)、[样式测试页](figures/style_test/style_test.pdf) 及四张正文图均已确认：[Fig.1 数据与方法框架](figures/fig_01_data_workflow/fig_01_data_workflow.pdf)、[Fig.2 分割验证](figures/fig_02_segmentation_validation/fig_02_segmentation_validation.pdf)、[Fig.3 功能一致性](figures/fig_03_function_agreement/fig_03_function_agreement.pdf)、[Fig.4 半周期轨迹](figures/fig_04_half_sequence/fig_04_half_sequence.pdf)。[Table 1 队列与参考覆盖](figures/table_01_cohort/table_01_cohort.pdf)（含零值可用性行修订）、[Table 2 主功能一致性](figures/table_02_function/table_02_function.pdf) 已确认。当前本批为 [Fig.S1 同法SV/LVEF一致性](figures/fig_s01_sv_ef_agreement/fig_s01_sv_ef_agreement.pdf) 与 [Fig.S7 EF参考差异及偏倚抵消](figures/fig_s07_ef_reference_bias/fig_s07_ef_reference_bias.pdf)，全部82测试患者、源表、英文图注与导出检查已完成，等待反馈。[可视化覆盖目录](figures/planning/visualization_coverage.md) 的其余核心补充6图2表及3张有条件备选尚未制作；本批确认后继续S2/S8，每批1–2项。所有结果仍限定于公开CAMUS半周期，保留几何与时序局限，不表述为贴片佩戴实测或独立临床容积准确性。
 
 [2026-11-21结果自检](reports/result_integrity/camus_cuda_progress_20261121/report.md)：328标注帧分割指标与490行功能结果均可复算；发现代理长轴/基底导致的几何范围不一致、EF偏倚抵消和逐帧跳变风险。功能主图需先复核几何定义；原冻结结果保持不变。
 
@@ -114,6 +114,10 @@ Echo/
 │   │   # 已确认的Fig.3：同法容积与CAMUS标签EF散点/BA、配对源数据、图注与检查
 │   ├── fig_04_half_sequence/
 │   │   # 已确认的Fig.4：四固定病例真实ED–ES半序列轨迹、端点源数据、图注与检查
+│   ├── fig_s01_sv_ef_agreement/
+│   │   # Fig.S1审阅稿：82患者同法SV/LVEF散点及一致性、源表、图注与检查
+│   ├── fig_s07_ef_reference_bias/
+│   │   # Fig.S7审阅稿：82患者EF三类参考差异与均值偏倚恒等式、源表及检查
 │   ├── planning/
 │   │   # 结果资产盘点、同行逐图逐表拆解与图表规划的可复核材料
 │   │   ├── asset_inventory.json
@@ -137,9 +141,10 @@ Echo/
 │   ├── style_test/
 │   │   # 已确认的全局样式测试页、真实源数据、英文图注及字体/排版/色觉检查
 │   ├── table_01_cohort/
-│   │   # Table 1审阅稿：500患者队列与参考覆盖、可编辑表、PDF/600dpi、源数据及检查
+│   │   # 已确认的Table
+│   │   # 1：500患者队列与参考覆盖、可编辑表、PDF/600dpi、源数据及检查
 │   ├── table_02_function/
-│   │   # Table 2审阅稿：五行主功能口径、患者配对、参考声明、图注及检查
+│   │   # 已确认的Table 2：五行主功能口径、患者配对、参考声明、图注及检查
 │   ├── workflow_parts/
 │   │   # 当前项目流程图规划、独立零件及审阅图集；总图待讨论后组装
 │   ├── _paper_common.py
@@ -160,6 +165,10 @@ Echo/
 │   │   # 从冻结患者级配对重建Fig.3散点和Bland–Altman，分开参考口径并保留全部误差
 │   ├── fig_04_half_sequence.py
 │   │   # 重建Fig.4固定病例原始半序列容积及两个专家端点，不平滑或补造完整周期
+│   ├── fig_s01_sv_ef_agreement.py
+│   │   # 重建全部82患者同法SV和LVEF散点及Bland–Altman，逐值核对冻结配对
+│   ├── fig_s07_ef_reference_bias.py
+│   │   # 重建预测/专家同法/CAMUS标签EF三方差异及均值偏倚抵消，不作因果归因
 │   ├── method_flow_caption.md
 │   │   # 流程图图注、核心主张和实现假设
 │   ├── method_flow_export_check.json

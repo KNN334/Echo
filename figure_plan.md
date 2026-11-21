@@ -1,6 +1,6 @@
-# 心功能结果图表制作清单（扩展清单已确认，正文两表待反馈）
+# 心功能结果图表制作清单（正文图表已确认，Fig.S1/S7待反馈）
 
-更新日期：2026-11-21。用户已确认正文4图2表、原补充候选及 `camus_cuda_progress` 主冻结实验，并选择 **1A/2A/3A/4A/5A**，随后确认样式测试页。用户要求结果分析可视化齐全完备，并回复“继续”确认扩展清单。当前状态：**Fig.1–4 均已确认；Table 1/2 已制作并检查，等待本批反馈；核心补充8图2表及3张有条件备选范围已确认，尚未制作。** 新增范围的确认不撤销已完成图件或样式的确认。
+更新日期：2026-11-21。用户已确认正文4图2表、原补充候选及 `camus_cuda_progress` 主冻结实验，并选择 **1A/2A/3A/4A/5A**，随后确认样式测试页。用户要求结果分析可视化齐全完备，并回复“继续”确认扩展清单。当前状态：**Fig.1–4与Table 1/2均已确认（含Table 1零值行修订）；Fig.S1/S7已制作并检查，等待本批反馈；其余核心补充6图2表及3张有条件备选尚未制作。** 新增范围的确认不撤销已完成图件或样式的确认。
 
 本清单服务于“基于贴片式超声探头的心脏功能参数连续监测与分析”。当前实证范围是 **CAMUS 公开经胸超声上的 LV 分割及轮廓几何量化基线**。贴片连续佩戴是目标应用，尚无本项目佩戴实测证据。图表可以提高表达与可复核性；当前证据不足以支撑贴片连续监测、独立临床绝对容积验证或新算法全面优于同行的主张。
 
@@ -40,11 +40,11 @@
 
 | 编号 | 拟定标题 | 对标参考图表 | 核心信息 | 状态 | 位置 / 优先级 |
 |---|---|---|---|---|---|
-| Table 1 | CAMUS 队列、患者划分与参考标签覆盖 | EchoFM Table I；EchoPrime Table 1 | 数据规模、有效参考及证据缺口均有明确分母 | ✅ 已制作，500患者/1000侧车统计核对；待本批反馈 | 正文 / P1，随 Fig.1 首次引用 |
+| Table 1 | CAMUS 队列、患者划分与参考标签覆盖 | EchoFM Table I；EchoPrime Table 1 | 数据规模、有效参考及证据缺口均有明确分母 | ✅ 用户已确认，含零值可用性行修订；500患者/1000侧车统计核对 | 正文 / P1，随 Fig.1 首次引用 |
 | Fig.1 | 当前验证数据与 LV 轮廓至心功能参数的分析流程 | Ouyang Fig.1；Hu Fig.5a；EchoPrime Fig.1 | 从公开半周期输入到分层参考评价的完整路径可追溯 | ✅ 数据现成可做 | 正文 / P1 |
 | Fig.2 | 全测试队列的 LV 分割性能及低分与典型病例 | Ouyang Fig.2d/e；Chao Fig.1；EchoFM Fig.4 | 全队列分布与固定排名样例同时显示空间误差及失败边界 | ✅ 数据现成可做 | 正文 / P1 |
 | Fig.3 | 双平面容积同法一致性与对照 CAMUS EF 标签的误差 | Ouyang Fig.2a；Hu Fig.5c；EchoPrime SI Fig.1 | 容积同法参考与 EF 标签验证是不同证据，均保留偏倚与离散程度 | ✅ 图中三口径配对统计已补齐并核对；当前几何局限保留，见自检 | 正文 / P1 |
-| Table 2 | 两类参考下的主功能误差 | EchoPrime Table 2；EchoFM Tables IV/V 的分层数值组织 | 同法双平面四指标与CAMUS标签EF分别报告；其他口径见Table S1 | ✅ 已制作五行，各82患者，含MAE区间/RMSE/bias/LOA/r/预测R²；待本批反馈 | 正文 / P1，随 Fig.3 首次引用 |
+| Table 2 | 两类参考下的主功能误差 | EchoPrime Table 2；EchoFM Tables IV/V 的分层数值组织 | 同法双平面四指标与CAMUS标签EF分别报告；其他口径见Table S1 | ✅ 用户已确认；五行各82患者，含MAE区间/RMSE/bias/LOA/r/预测R² | 正文 / P1，随 Fig.3 首次引用 |
 | Fig.4 | 从 ED 到 ES 的真实半周期容积轨迹与相位覆盖边界 | Ouyang Fig.2f；Hu Fig.5b 的时序结构，**仅借鉴排布** | 现有数据展示半周期内的逐帧变化，完整逐搏及 CO/HR 尚不可评价 | ✅ 数据现成可做 | 正文 / P1 |
 
 ### Table 1：队列与标签覆盖
@@ -91,12 +91,12 @@
 
 | 编号/标题 | 数据和布局摘要 | 核心信息 | 就绪状态 | 位置/优先级 |
 |---|---|---|---|---|
-| Fig.S1 同法双平面SV与EF完整一致性 | function配对，2×2散点/BA，各82患者 | 同法EF不能被标签EF替代 | ✅ 配对/主要统计；⚠️ 其余R² | 核心补充/P1 |
+| Fig.S1 同法双平面SV与EF完整一致性 | function配对，2×2散点/BA，各82患者 | 同法EF不能被标签EF替代 | ✅ 已制作/复核，含预测R²源表；待本批反馈 | 核心补充/P1 |
 | Fig.S2 半序列自动ED/ES定位与功能误差 | 功能/相位CSV，2×2，交集2CH=81/4CH=80 | 自动相位改变误差和覆盖，非整搏识别 | ⚠️ 分母和派生秒复核 | 核心补充/P1 |
 | Fig.S3 验证选模与组合正则化 | 两份training.csv和验证结果，2×2损失/ΔDice/ΔEF误差 | 分割改善不代表标签EF改善，变差如实保留 | ⚠️ 验证71/EF共同70及权重配对 | 核心补充/P2 |
 | Fig.S4 质量分层及分割—功能误差关联 | 质量/structure/患者EF误差，2×2 | 高Dice不保证EF准确；仅域内探索 | ✅ 部分现成；⚠️ 患者联表 | 核心补充/P2 |
 | Fig.S6 几何覆盖和容积路径差异 | geometry_diagnostics/cross_geometry_volume_ratios，2×2 | 代理轴/基底覆盖不一致，不是人工点定位精度 | ✅ 诊断；⚠️ 误差联表 | 核心补充/P1 |
-| Fig.S7 两类EF参考与偏倚抵消 | 预测/专家同法/标签三方，2×2 | 小bias部分来自抵消，非准确性充分证据 | ✅ 82患者；⚠️ 三方源表 | 核心补充/P1 |
+| Fig.S7 两类EF参考与偏倚抵消 | 预测/专家同法/标签三方，2×2 | 小bias部分来自抵消，非准确性充分证据 | ✅ 已制作/复核，82完整三方源表；待本批反馈 | 核心补充/P1 |
 | Fig.S8 全半序列时序质量和真实跳变 | 164序列/3167帧，2×2分布/联动/轨迹/帧 | 数值有限不代表生理稳定，不补造整搏 | ✅ 诊断；⚠️ 相邻差值 | 核心补充/P1 |
 | Fig.S9 覆盖与真实无效案例 | coverage/function及0072/0068/0203原帧，2×2 | 技术执行、几何有效、参考和临床分母不同 | ✅ 数据；⚠️ 病例联表 | 核心补充/P1 |
 | Table S1 完整功能口径和无效原因 | 全部21组统计，按几何/视图/相位/参考分区 | 全量结果及null原因可追溯 | ✅ 主要统计；⚠️ 其余R²/交集 | 核心补充/P1 |
@@ -129,7 +129,7 @@ Fig.S3不称单因素消融；两历史实验测试集均已评价，不能由�
 | 2 模板、补充检索与规律 | 已整理，两篇模板已确认 | 仅引用实际读取到的全文/附件；EchoFM SI保留未知 |
 | 3 清单 | **原范围及扩展清单已确认** | 正文4图2表；核心补充8图2表，另3张有条件备选 |
 | 4 视觉主题 | **用户已确认，2026-11-21** | 已选1A/2A/3A/4A/5A；全局样式与真实数据测试页保留 |
-| 5 分批制作 | **Fig.1–4均已确认；Table 1/2待本批反馈** | 正文两表已检查并交付；补充图尚未制作，反馈后先S1/S7 |
+| 5 分批制作 | **Fig.1–4、Table 1/2均已确认；Fig.S1/S7待本批反馈** | S1/S7已检查并交付；确认后再做S2/S8，其余补充尚未制作 |
 
 最终尺寸、色系、色带、方法配色及Nature规格已在阶段 4 选定并写入共享样式；新投稿图均调用该样式。
 
@@ -261,12 +261,12 @@ Fig.S3不称单因素消融；两历史实验测试集均已评价，不能由�
 
 用户随后回复“继续”，扩展清单已确认；本轮据此完成Table 1/2，当前停止点见下。
 
-## 12. 第三批交付：正文Table 1/2（等待反馈）
+## 13. 第三批交付：正文Table 1/2（已确认，含零值行修订）
 
 | 项目 | 交付与检查 | 状态 |
 |---|---|---|
-| Table 1 | [PDF](figures/table_01_cohort/table_01_cohort.pdf) · [可编辑表](figures/table_01_cohort/table_01_cohort.md) · [英文图注](figures/table_01_cohort/caption_en.md) · [QA](figures/table_01_cohort/QA.md)；183×145 mm，固定347/71/82患者；22行真实队列数据，已按反馈移除六行全零证据计数，原因移至表注 | 已修订并核查，等待反馈 |
-| Table 2 | [PDF](figures/table_02_function/table_02_function.pdf) · [可编辑表](figures/table_02_function/table_02_function.md) · [英文图注](figures/table_02_function/caption_en.md) · [QA](figures/table_02_function/QA.md)；183×112 mm，五行各82患者，410个患者–指标配对；含冻结MAE患者区间、RMSE、bias、LOA、r及预测R² | 已制作并核查，等待反馈 |
+| Table 1 | [PDF](figures/table_01_cohort/table_01_cohort.pdf) · [可编辑表](figures/table_01_cohort/table_01_cohort.md) · [英文图注](figures/table_01_cohort/caption_en.md) · [QA](figures/table_01_cohort/QA.md)；183×145 mm，固定347/71/82患者；22行真实队列数据，已按反馈移除六行全零证据计数，原因移至表注 | 用户“继续”确认修订，2026-11-21 |
+| Table 2 | [PDF](figures/table_02_function/table_02_function.pdf) · [可编辑表](figures/table_02_function/table_02_function.md) · [英文图注](figures/table_02_function/caption_en.md) · [QA](figures/table_02_function/QA.md)；183×112 mm，五行各82患者，410个患者–指标配对；含冻结MAE患者区间、RMSE、bias、LOA、r及预测R² | 用户“继续”确认，2026-11-21 |
 
 Table 1直接核对1000侧车及500个患者记录，独立计数/四分位数复核一致，无缺失插补或排除。Table 2从原始function.csv重算点统计，核对冻结配对、既有统计及审计；保留2000次患者bootstrap、seed 2026的既有MAE区间，未重选区间。预测R²严格为1−SSE/SST(reference)，SV−0.002、同法EF−0.041如实保留；标签EF r=0.663、预测R²=0.189，不能互换。
 
@@ -278,4 +278,21 @@ Table 1直接核对1000侧车及500个患者记录，独立计数/四分位数�
 
 Table 1修订后重新完成PDF字体/碰撞与逐行对照检查；183×145 mm，实际最小字7 pt，碰撞0 FAIL/0 WARN；项目核心检查39项通过（7.60 s）。
 
-**【停】等待本批Table 1/2反馈；确认后制作Fig.S1/S7，不提前进入下一批。**
+第三批停止点已由用户“继续”解除，当前停止点见第14节。本批未改动已确认四图及两表。
+
+## 14. 第四批交付：Fig.S1 与 Fig.S7（等待反馈）
+
+| 图件 | 交付与来源 | 实际制作和结论 | 状态 |
+|---|---|---|---|
+| Fig.S1 | [PDF](figures/fig_s01_sv_ef_agreement/fig_s01_sv_ef_agreement.pdf) · [预览](figures/fig_s01_sv_ef_agreement/fig_s01_sv_ef_agreement_preview.png) · [独立入口](figures/fig_s01_sv_ef_agreement.py) · [英文图注](figures/fig_s01_sv_ef_agreement/caption_en.md) · [QA](figures/fig_s01_sv_ef_agreement/QA.md) | 183×170 mm，2×2散点/BA；SV与同法EF各82患者，共164配对；MAE8.03 mL/9.27 pp，bias−3.43 mL/−5.81 pp，宽LOA及所有极端值保留；补齐预测R²源表，不替换成标签EF口径 | 已制作并核查，等待反馈 |
+| Fig.S7 | [PDF](figures/fig_s07_ef_reference_bias/fig_s07_ef_reference_bias.pdf) · [预览](figures/fig_s07_ef_reference_bias/fig_s07_ef_reference_bias_preview.png) · [独立入口](figures/fig_s07_ef_reference_bias.py) · [英文图注](figures/fig_s07_ef_reference_bias/caption_en.md) · [QA](figures/fig_s07_ef_reference_bias/QA.md) | 183×170 mm，2×2；82完整三方EF配对，散点/BA、同患者三类差值连线及均值bias浮动条；−5.81+7.37=+1.56 pp为带符号均值恒等式，不是因果归因，MAE不可相加 | 已制作并核查，等待反馈 |
+
+两图均直接重建原始function.csv，患者ID与固定测试集完全一致；用独立标准库算法复核全部配对/三方值、MAE/RMSE/bias/LOA/r/两类R²及逐患者/均值恒等式。既有四图两表及共享样式152个受控文件与本批前版本一致，1049个不同来源SHA256全部匹配。未新增训练、推理、筛除、插补、拟合或临床接受阈值。
+
+两图均调用已确认样式，嵌入Arial/Arial Bold，实际最小7 pt；纯矢量可编辑PDF和RGB600 dpi PNG/LZW TIFF，英文图注200/233词。四面板最终实测对齐通过1.5 pt容差，最终PDF碰撞各0 FAIL/0 WARN；全页、各面板、色觉/灰度均检查。源级扫描不能追踪共享样式与导出，原始4 FAIL/2 WARN保留并逐项以实际文件核实，未声称静态扫描全通过。检查和统计边界见各自QA。
+
+同法专家轮廓参考不是独立临床容积金标准；当前代理轴几何覆盖范围问题仍未解决。S7仅作描述性事后诊断，小总体bias不能证明个体准确。当前数据仍为CAMUS半周期；无HR/CO或贴片佩戴性能主张。
+
+本批核心工程检查：`python -m pytest -q --basetemp=.work/pytest-figures-supplement01-final-20261121`，39项通过（7.77 s），README目录核对通过。工程检查不等于临床验证。
+
+**【停】等待本批Fig.S1/S7反馈；确认后再制作Fig.S2/S8，不提前进入下一批。**

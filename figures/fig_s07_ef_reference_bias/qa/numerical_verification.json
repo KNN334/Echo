@@ -1,0 +1,16 @@
+{
+  "engine": "Python standard-library math/statistics; independent of plotting implementation",
+  "n_complete_patient_triplets": 82,
+  "matches_all_fixed_test_ids": true,
+  "all_three_values_and_signed_differences_match_original_function_csv": true,
+  "all_exported_statistics_recomputed_and_match": true,
+  "outliers_removed": 0,
+  "all_per_patient_identities_match": true,
+  "mean_signed_differences_pp": [
+    -5.811348534045893,
+    7.372814580913702,
+    1.5614660468678094
+  ],
+  "mean_identity_residual_pp": 0.0,
+  "mae_additivity_claimed": false
+}

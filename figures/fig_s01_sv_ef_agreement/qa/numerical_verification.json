@@ -1,0 +1,10 @@
+{
+  "engine": "Python standard-library math/statistics; independent of plotting implementation",
+  "n_patients_per_metric": 82,
+  "pair_count": 164,
+  "matches_all_fixed_test_ids": true,
+  "all_prediction_reference_pairs_match_original_function_csv": true,
+  "all_exported_statistics_recomputed_and_match": true,
+  "outliers_removed": 0,
+  "predictive_R_squared": "1-SSE/SST(reference); negative SV and EF values retained"
+}
