@@ -1,0 +1,14 @@
+{
+  "independent_calculation": "stdlib scalar patient means/SD/covariance/ratios; example pixel projections",
+  "quality_patients_checked": 82,
+  "stratum_statistics_checked": 6,
+  "associations_checked": 2,
+  "source_geometry_records_checked": 656,
+  "patient_geometry_records_checked": 328,
+  "volume_path_ratios_checked": 328,
+  "geometry_panel_statistics_checked": 12,
+  "original_example_geometry_checked": true,
+  "prior_manifests_checked": 16,
+  "prior_distinct_source_hashes_verified": 1408,
+  "all_numeric_checks_passed": true
+}

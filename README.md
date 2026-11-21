@@ -32,7 +32,9 @@
 
 已确认 [Fig.S3 训练收敛与配对验证表现](figures/fig_s03_training_comparison/fig_s03_training_comparison.pdf) 和 [Table S2 分割性能全分层](figures/table_s02_segmentation/table_s02_segmentation.pdf)。S3保留53个实际训练epoch、71位验证患者的Dice及共同有效70位的标签EF；基线/正则化Dice为0.9021/0.9036，配对标签EF MAE为8.24/9.83 pp，不称全面提升或单因素消融；一例无效EF的原值/原因及全部有效统计保留。Table S2含全部82位测试患者/328标注帧，直接从原坐标掩膜计算逐帧IoU，9个重叠分层均按患者报告均值±样本SD。两项均有独立入口、完整源表、英文图注、PDF/600 dpi位图及QA，未更改既有结果或训练选模。
 
-本批新增 [Fig.S2 半序列相位定位与功能量化](figures/fig_s02_phase_selection/fig_s02_phase_selection.pdf) 和 [Table S1 全功能口径](figures/table_s01_function/table_s01_function.pdf)，等待反馈。S2在共同81/80患者上比较2CH/4CH专家相位与自动极值EF，对照为同法专家轮廓参考；MAE为9.93→10.06/7.82→8.66 pp，下排列出82/80患者的FPS派生定位偏差分布。Table S1列齐6口径21组点统计、1712配对及492可用性记录，临床标签EF独立分区；无效原因及负R²保留。表按各条件全部有效患者，图按交集配对，分母差异明确注明；未补造完整周期或HR/CO。两项含英文图注、真实源表、PDF/600 dpi位图和QA，现有结果及共享样式未改。
+已确认 [Fig.S2 半序列相位定位与功能量化](figures/fig_s02_phase_selection/fig_s02_phase_selection.pdf) 和 [Table S1 全功能口径](figures/table_s01_function/table_s01_function.pdf)。S2在共同81/80患者上比较2CH/4CH专家相位与自动极值EF，对照为同法专家轮廓参考；MAE为9.93→10.06/7.82→8.66 pp，下排列出82/80患者的FPS派生定位偏差分布。Table S1列齐6口径21组点统计、1712配对及492可用性记录，临床标签EF独立分区；无效原因及负R²保留。表按各条件全部有效患者，图按交集配对，分母差异明确注明；未补造完整周期或HR/CO。两项含英文图注、真实源表、PDF/600 dpi位图和QA，现有结果及共享样式未改。
+
+本批新增 [Fig.S4 图像质量分层及空间—功能关联](figures/fig_s04_quality_associations/fig_s04_quality_associations.pdf) 和 [Fig.S6 几何覆盖与容积路径](figures/fig_s06_geometry_coverage/fig_s06_geometry_coverage.pdf)，等待反馈。S4保留82患者，原质量层31/39/12人的Dice为0.9179/0.9111/0.8993，标签EF MAE为9.25/9.14/8.11 pp；不将非单调结果写成质量因果效应。S6以固定真实轮廓实例解释代理轴及基底外区域，再展示全部患者的空间覆盖和两种原容积路径，656源记录/328患者几何/328比值完整导出；不把代理点当人工标签或将容积比归因为单一因素。两图含独立入口、英文图注、源数据、PDF/600 dpi和QA，未更改模型、原几何或共享样式。
 
 [2026-11-21结果自检](reports/result_integrity/camus_cuda_progress_20261121/report.md)：328标注帧分割指标与490行功能结果均可复算；发现代理长轴/基底导致的几何范围不一致、EF偏倚抵消和逐帧跳变风险。功能主图需先复核几何定义；原冻结结果保持不变。
 
@@ -131,9 +133,13 @@ Echo/
 │   ├── fig_s01_sv_ef_agreement/
 │   │   # Fig.S1审阅稿：82患者同法SV/LVEF散点及一致性、源表、图注与检查
 │   ├── fig_s02_phase_selection/
-│   │   # Fig.S2审阅稿：半序列配对EF与相位定位分布、完整覆盖、原极值重放及检查
+│   │   # 已确认的Fig.S2：半序列配对EF与相位定位分布、完整覆盖、原极值重放及检查
 │   ├── fig_s03_training_comparison/
 │   │   # 已确认的Fig.S3：两历史训练方案损失、配对验证Dice/标签EF、完整覆盖与检查
+│   ├── fig_s04_quality_associations/
+│   │   # Fig.S4审阅稿：82患者质量分层Dice/标签EF、空间功能关联、真实源表及检查
+│   ├── fig_s06_geometry_coverage/
+│   │   # Fig.S6审阅稿：真实轮廓代理轴与区域、82患者几何覆盖及容积路径、源表与检查
 │   ├── fig_s07_ef_reference_bias/
 │   │   # Fig.S7审阅稿：82患者EF三类参考差异与均值偏倚恒等式、源表及检查
 │   ├── planning/
@@ -166,7 +172,7 @@ Echo/
 │   ├── table_02_function/
 │   │   # 已确认的Table 2：五行主功能口径、患者配对、参考声明、图注及检查
 │   ├── table_s01_function/
-│   │   # Table S1审阅稿：21组完整功能统计、1712配对、全部可用性与null原因及检查
+│   │   # 已确认的Table S1：21组完整功能统计、1712配对、全部可用性与null原因及检查
 │   ├── table_s02_segmentation/
 │   │   # 已确认的Table S2：82患者9层Dice/IoU/距离、逐帧交并集、患者源表及检查
 │   ├── workflow_parts/
@@ -203,6 +209,10 @@ Echo/
 │   │   # 重放162个原自动极值输出，绘制共同有效患者EF配对与FPS派生ED/ES定位分布
 │   ├── fig_s03_training_comparison.py
 │   │   # 核对两历史权重与全部训练epoch，重建71患者Dice和共同70患者标签EF配对
+│   ├── fig_s04_quality_associations.py
+│   │   # 按原两视图较差质量分层82患者Dice/标签EF，并复核患者HD95与探索性关联
+│   ├── fig_s06_geometry_coverage.py
+│   │   # 重建固定专家轮廓代理轴例图、患者轴面积覆盖及原单双平面容积比，不修改几何
 │   ├── fig_s07_ef_reference_bias.py
 │   │   # 重建预测/专家同法/CAMUS标签EF三方差异及均值偏倚抵消，不作因果归因
 │   ├── method_flow_caption.md

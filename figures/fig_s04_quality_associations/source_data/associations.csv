@@ -1,0 +1,3 @@
+x_metric,y_metric,n_patients,pearson_r,hypothesis_test
+mean_dice,clinical_label_EF_abs_difference_pp,82,-0.2701435727465328,None
+mean_hd95_mm,clinical_label_EF_abs_difference_pp,82,0.11381562879044224,None

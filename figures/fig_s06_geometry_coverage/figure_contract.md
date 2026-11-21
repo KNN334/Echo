@@ -1,0 +1,10 @@
+# Fig.S6 figure contract
+
+- Question: What spatial domain does the existing proxy axis cover, and how do the current single-plane and biplane volume paths relate?
+- Claim: The proxy axis covers a subset of the whole contour; therefore the two existing geometric outputs have different spatial coverage and cannot be treated as interchangeable clinical volumes.
+- Evidence chain: a, calibrated expert-contour example showing proxy axis/base and area beyond; b, per-patient axial coverage; c, per-patient area beyond proxy base; d, biplane/mean-single-plane volume ratio. This substitutes direct geometry comparison for another error-association panel in the original S6 outline.
+- Archetype: image plate + quantitative grid; one fixed previously chosen median sequence (patient0327_2CH ED), not selected by geometric effect size. The cohort uses all 82 patients, 656 source/view/phase rows and 328 source/phase volume ratios.
+- b/c average two independently acquired views within each patient/source/phase; d is the original paired-view scalar calculation at expert ED/ES phases, not synchronized biplane time imaging. All marks retained; means ± patient sample SD; no CIs, significance tests or new anatomical labels.
+- Python/matplotlib, shared style-only inheritance; no acoustic dB, volumetric reconstruction, artificial keypoint accuracy or independent clinical volume standard claims. Image uses original 112×112 cache gray window and physical calibration, original-coordinate expert mask, no further crop.
+- Export: 183×170 mm, editable vector text/curves plus native ultrasound raster, 600 dpi RGB PNG/LZW TIFF, ≥7 pt. Quantitative panels b/c/d use explicit comparable groups and 1.5 pt alignment; image a preserves physical aspect, measured but not required to match statistical axes. Preserve source data, English caption, provenance, collision audit and per-panel QA.
+- Do not change geometry or test outputs; any geometry correction requires a separate training/validation-defined evaluation version. No HR/CO, cycle synthesis or patch recordings.
