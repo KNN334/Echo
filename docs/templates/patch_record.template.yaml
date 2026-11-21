@@ -1,0 +1,119 @@
+# Planning-only acquisition handoff template. This is not an executable experiment config.
+# Unknown values remain null. Required fields depend on the declared input level.
+schema_version: 1
+status: planning_only
+data_received: false
+
+identity:
+  record_id: null
+  subject_or_virtual_object_id: null
+  session_id: null
+  acquisition_or_simulation_id: null
+  dataset_version: null
+  # public_observed | patch_observed | simulated
+  evidence_kind: null
+  split: null
+  license_or_access_terms: null
+
+input:
+  # channel_rf | channel_iq | beamformed_rf | beamformed_iq | envelope | bmode
+  level: null
+  path: null
+  sha256: null
+  container_format: null
+  dataset_key: null
+  axis_names: null
+  array_shape: null
+  dtype: null
+  signal_units: null
+  complex_representation: null
+  already_applied_processing: null
+
+channel_acquisition:
+  channel_map_path: null
+  element_coordinates_mm_path: null
+  element_geometry_and_directivity: null
+  array_coordinate_frame: null
+  array_deformation_or_calibration: null
+  # Includes transmit model, delays, event IDs and event-to-image grouping.
+  transmit_events_path: null
+  sample_rate_hz: null
+  first_sample_time_s_path: null
+  event_trigger_times_s_path: null
+  pulse_repetition_frequency_hz: null
+  demodulation_frequency_hz: null
+  iq_phase_convention: null
+  channel_calibration: null
+  excitation_and_impulse_response: null
+
+image_geometry:
+  view: null
+  orientation: null
+  grid_type: null
+  # Use spacing only for a verified uniform Cartesian grid.
+  spacing_xy_mm: null
+  pixel_to_physical_map_path: null
+  original_to_model_transform_path: null
+  model_to_original_transform_path: null
+  calibration_source: null
+  field_of_view_review: null
+
+timing:
+  frame_acquisition_times_s_path: null
+  clock_origin_and_reference: null
+  clock_synchronization_record: null
+  verified_acquisition_fps: null
+  container_playback_fps: null
+  compound_event_groups_path: null
+  compound_window_start_end_s_path: null
+  frame_timestamp_definition: null
+  missing_frames_and_gaps_path: null
+  cycle_completeness: unknown
+  timing_verification_record: null
+
+processing:
+  # Record actual methods and versions only after implementation and execution.
+  beamformer: null
+  beamformer_version: null
+  reconstruction_sound_speed_m_s: null
+  aperture_apodization_and_compounding: null
+  envelope_method: null
+  amplitude_reference: null
+  dynamic_range_db: null
+  scan_conversion: null
+  preprocessing_version: null
+  model_version: null
+  configuration_and_log_paths: null
+
+reference:
+  # Keep expert-contour-derived values, dataset labels and independent measurements distinct.
+  contours_path: null
+  anatomical_landmarks_path: null
+  functional_measurements_path: null
+  measurement_methods_and_units: null
+  reference_scope: null
+  independent_of_prediction_and_geometry: null
+  blinding_and_reading_protocol: null
+  acquisition_times_s_path: null
+  pairing_records_path: null
+  missing_reason: not_received
+
+simulation:
+  # Populate only for a distinct simulated record; never as an imputation of patient truth.
+  generator_and_version: null
+  base_geometry_and_motion_id: null
+  forward_model_config_path: null
+  random_seed: null
+  independent_ground_truth_path: null
+  ground_truth_derivation: null
+  forward_sound_speed_m_s: null
+  assumptions_and_perturbations: null
+  split_by_base_object_record: null
+
+review:
+  metadata_review: pending
+  anatomy_and_view_review: pending
+  spatial_calibration_review: pending
+  timing_review: pending
+  independent_reference_review: pending
+  missing_fields_and_reasons_path: null
