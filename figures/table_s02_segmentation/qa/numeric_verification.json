@@ -1,0 +1,29 @@
+{
+  "independent_check": "stdlib csv/statistics joins and mask intersection/XOR algorithm",
+  "validation_paired_values_checked": 141,
+  "training_epochs_checked": 53,
+  "test_frames_mask_checked": 328,
+  "test_patient_stratum_rows_checked": 738,
+  "stratum_statistics_checked": 45,
+  "prior_figure_manifests": [
+    "fig_01_data_workflow",
+    "fig_02_segmentation_validation",
+    "fig_03_function_agreement",
+    "fig_04_half_sequence",
+    "fig_r01_lv_morphology",
+    "fig_r02_systolic_dynamics",
+    "fig_r03_diameter_surface",
+    "fig_s01_sv_ef_agreement",
+    "fig_s07_ef_reference_bias",
+    "style_test",
+    "table_01_cohort",
+    "table_02_function"
+  ],
+  "prior_distinct_source_hashes_verified": 1068,
+  "old_sources_unchanged": true,
+  "baseline_all_valid_label_EF_n": 71,
+  "regularized_all_valid_label_EF_n": 70,
+  "paired_label_EF_n": 70,
+  "paired_label_EF_patient_exclusion": "patient0039; original ESV > EDV; null EF",
+  "all_checks_passed": true
+}

@@ -28,7 +28,9 @@
 
 根据用户最新反馈，结果叙事改为“LV形态 → 空间几何量化 → 实际ED–ES时间过程”。借鉴[DCF论文已见Fig.6/7的组织](figures/planning/directional_coherence_applicability.md)，本批制作 [Fig.R1 双视图形态与直径剖面](figures/fig_r01_lv_morphology/fig_r01_lv_morphology.pdf) 和 [Fig.R2 真实帧、直径时序图及容积](figures/fig_r02_systolic_dynamics/fig_r02_systolic_dynamics.pdf)，均有独立入口、真实源表、英文图注及QA，等待本批反馈。R1/R2为原Fig.2/4的整合候选，未覆盖旧图或自动增加正文图数；[Fig.S1](figures/fig_s01_sv_ef_agreement/fig_s01_sv_ef_agreement.pdf)/[Fig.S7](figures/fig_s07_ef_reference_bias/fig_s07_ef_reference_bias.pdf)尚未确认。其余[覆盖候选](figures/planning/visualization_coverage.md)按论证价值分批选择，不自动继续原误差诊断顺序。所有结果限定于公开CAMUS半周期，代理几何尚未独立验证，不表述为贴片佩戴实测或独立临床容积准确性。
 
-用户进一步确认三维曲面方案后，新增 [Fig.R3 LV直径时空曲面](figures/fig_r03_diameter_surface/fig_r03_diameter_surface.pdf)：R2相同的全部720个直径值，按时间×代理轴位置×直径绘制为并排两面板，统一视角/坐标/色标，无新采样、平滑或周期补造。含[英文图注](figures/fig_r03_diameter_surface/caption_en.md)、原始节点及面片源表、独立入口和[QA](figures/fig_r03_diameter_surface/QA.md)。当前停止点为R3等待反馈，R1/R2仍待最终选稿；曲面为R2热图的另一种表达，不新增独立证据或真实三维解剖主张。
+用户进一步确认三维曲面方案后，新增 [Fig.R3 LV直径时空曲面](figures/fig_r03_diameter_surface/fig_r03_diameter_surface.pdf)：R2相同的全部720个直径值，按时间×代理轴位置×直径绘制为并排两面板，统一视角/坐标/色标，无新采样、平滑或周期补造。含[英文图注](figures/fig_r03_diameter_surface/caption_en.md)、原始节点及面片源表、独立入口和[QA](figures/fig_r03_diameter_surface/QA.md)。用户已确认R3及参考色调修订，R1/R2仍待最终选稿；曲面为R2热图的另一种表达，不新增独立证据或真实三维解剖主张。
+
+本批新增 [Fig.S3 训练收敛与配对验证表现](figures/fig_s03_training_comparison/fig_s03_training_comparison.pdf) 和 [Table S2 分割性能全分层](figures/table_s02_segmentation/table_s02_segmentation.pdf)，等待反馈。S3保留53个实际训练epoch、71位验证患者的Dice及共同有效70位的标签EF；基线/正则化Dice为0.9021/0.9036，配对标签EF MAE为8.24/9.83 pp，不称全面提升或单因素消融；一例无效EF的原值/原因及全部有效统计保留。S2含全部82位测试患者/328标注帧，直接从原坐标掩膜计算逐帧IoU，9个重叠分层均按患者报告均值±样本SD。两项均有独立入口、完整源表、英文图注、PDF/600 dpi位图及QA，未更改既有结果或训练选模。
 
 [2026-11-21结果自检](reports/result_integrity/camus_cuda_progress_20261121/report.md)：328标注帧分割指标与490行功能结果均可复算；发现代理长轴/基底导致的几何范围不一致、EF偏倚抵消和逐帧跳变风险。功能主图需先复核几何定义；原冻结结果保持不变。
 
@@ -123,9 +125,11 @@ Echo/
 │   ├── fig_r02_systolic_dynamics/
 │   │   # Fig.R2审阅稿：真实ED–ES帧条带、直径时序热图和逐帧容积、源表与检查
 │   ├── fig_r03_diameter_surface/
-│   │   # Fig.R3审阅稿：两例全部真实直径的三维时空曲面、源节点/面片、图注及检查
+│   │   # 已确认的Fig.R3曲面候选：参考色调、全部真实直径、源节点/面片及检查
 │   ├── fig_s01_sv_ef_agreement/
 │   │   # Fig.S1审阅稿：82患者同法SV/LVEF散点及一致性、源表、图注与检查
+│   ├── fig_s03_training_comparison/
+│   │   # Fig.S3审阅稿：两历史训练方案损失、配对验证Dice/标签EF、完整覆盖与检查
 │   ├── fig_s07_ef_reference_bias/
 │   │   # Fig.S7审阅稿：82患者EF三类参考差异与均值偏倚恒等式、源表及检查
 │   ├── planning/
@@ -157,6 +161,8 @@ Echo/
 │   │   # 1：500患者队列与参考覆盖、可编辑表、PDF/600dpi、源数据及检查
 │   ├── table_02_function/
 │   │   # 已确认的Table 2：五行主功能口径、患者配对、参考声明、图注及检查
+│   ├── table_s02_segmentation/
+│   │   # Table S2审阅稿：82患者9层Dice/IoU/距离、逐帧交并集、患者源表及检查
 │   ├── workflow_parts/
 │   │   # 当前项目流程图规划、独立零件及审阅图集；总图待讨论后组装
 │   ├── _lv_results_common.py
@@ -187,6 +193,8 @@ Echo/
 │   │   # 将R2全部720个真实直径绘成统一视角三维曲面，不新增节点或平滑数值
 │   ├── fig_s01_sv_ef_agreement.py
 │   │   # 重建全部82患者同法SV和LVEF散点及Bland–Altman，逐值核对冻结配对
+│   ├── fig_s03_training_comparison.py
+│   │   # 核对两历史权重与全部训练epoch，重建71患者Dice和共同70患者标签EF配对
 │   ├── fig_s07_ef_reference_bias.py
 │   │   # 重建预测/专家同法/CAMUS标签EF三方差异及均值偏倚抵消，不作因果归因
 │   ├── method_flow_caption.md
@@ -199,8 +207,10 @@ Echo/
 │   │   # 从冻结CAMUS结果重建样式测试页；使用共享样式，不重训或重选病例
 │   ├── table_01_cohort.py
 │   │   # 从1000侧车与固定划分重建队列统计，分别列患者和序列分母
-│   └── table_02_function.py
-│       # 从冻结82患者配对重建五行功能统计，分开同法参考与CAMUS临床EF标签
+│   ├── table_02_function.py
+│   │   # 从冻结82患者配对重建五行功能统计，分开同法参考与CAMUS临床EF标签
+│   └── table_s02_segmentation.py
+│       # 从328帧原坐标掩膜计算IoU/Dice，按82患者9层汇总空间指标并生成三线表
 ├── reports/
 │   # 历史基线结果、训练日志与审计；不代表当前代码已重新训练
 │   ├── full_baseline/

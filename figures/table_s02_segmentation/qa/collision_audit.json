@@ -1,0 +1,23 @@
+{
+  "pdf": "C:\\Users\\LEN\\Desktop\\毕业设计\\毕设-基于贴片式超声探头的心脏功能参数连续监测与分析\\figures\\table_s02_segmentation\\table_s02_segmentation.pdf",
+  "auditable": true,
+  "verdict": "PASS",
+  "page_count": 1,
+  "visible_text_box_count": 92,
+  "text_trace_count": 92,
+  "stroke_path_count": 3,
+  "filled_region_count": 1,
+  "image_region_count": 0,
+  "summary": {
+    "fail": 0,
+    "warn": 0,
+    "contained_fill_overlays": 0,
+    "contained_image_overlays": 0
+  },
+  "thresholds": {
+    "text_inset_pt": 0.6,
+    "min_overlap_ratio": 0.05,
+    "clipping_tolerance_pt": 0.5
+  },
+  "findings": []
+}
