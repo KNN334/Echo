@@ -1,0 +1,184 @@
+{
+  "paper_count": 6,
+  "main_display_item_count": 42,
+  "main_figure_count": 26,
+  "total_curated_items": 162,
+  "counts": [
+    {
+      "paper": "Hu 2023",
+      "main_figures": 5,
+      "main_tables": 0,
+      "extended_figures": 8,
+      "extended_tables": 2,
+      "supplementary_figures": 34,
+      "supplementary_tables": 5,
+      "nonmain_figures_total": 42
+    },
+    {
+      "paper": "Ouyang 2020",
+      "main_figures": 3,
+      "main_tables": 0,
+      "extended_figures": 6,
+      "extended_tables": 4,
+      "supplementary_figures": 0,
+      "supplementary_tables": 0,
+      "nonmain_figures_total": 6
+    },
+    {
+      "paper": "Chao 2025",
+      "main_figures": 3,
+      "main_tables": 4,
+      "extended_figures": 0,
+      "extended_tables": 0,
+      "supplementary_figures": 1,
+      "supplementary_tables": 3,
+      "nonmain_figures_total": 1
+    },
+    {
+      "paper": "Kim 2025 / EchoFM",
+      "main_figures": 7,
+      "main_tables": 9,
+      "extended_figures": 0,
+      "extended_tables": 0,
+      "supplementary_figures": null,
+      "supplementary_tables": null,
+      "nonmain_figures_total": null
+    },
+    {
+      "paper": "Vukadinovic 2025在线/2026卷期",
+      "main_figures": 3,
+      "main_tables": 3,
+      "extended_figures": 4,
+      "extended_tables": 6,
+      "supplementary_figures": 2,
+      "supplementary_tables": 11,
+      "nonmain_figures_total": 6
+    },
+    {
+      "paper": "Yuan 2025 / SAFU",
+      "main_figures": 5,
+      "main_tables": 0,
+      "extended_figures": 0,
+      "extended_tables": 0,
+      "supplementary_figures": 26,
+      "supplementary_tables": 8,
+      "nonmain_figures_total": 26
+    }
+  ],
+  "main_role_counts": [
+    {
+      "role": "研究对象与数据",
+      "main_display_items": 6,
+      "main_figures": 4,
+      "papers_with_main_item": 3,
+      "all_curated_display_items": 17,
+      "papers_with_any_item": 6
+    },
+    {
+      "role": "系统与方法框架 / 流程图",
+      "main_display_items": 11,
+      "main_figures": 11,
+      "papers_with_main_item": 5,
+      "all_curated_display_items": 28,
+      "papers_with_any_item": 5
+    },
+    {
+      "role": "模型结构",
+      "main_display_items": 4,
+      "main_figures": 4,
+      "papers_with_main_item": 4,
+      "all_curated_display_items": 6,
+      "papers_with_any_item": 4
+    },
+    {
+      "role": "精度验证（空间 / 轮廓）",
+      "main_display_items": 18,
+      "main_figures": 11,
+      "papers_with_main_item": 5,
+      "all_curated_display_items": 51,
+      "papers_with_any_item": 5
+    },
+    {
+      "role": "精度验证（时间过程）",
+      "main_display_items": 8,
+      "main_figures": 8,
+      "papers_with_main_item": 4,
+      "all_curated_display_items": 15,
+      "papers_with_any_item": 4
+    },
+    {
+      "role": "方法对比",
+      "main_display_items": 24,
+      "main_figures": 13,
+      "papers_with_main_item": 6,
+      "all_curated_display_items": 67,
+      "papers_with_any_item": 6
+    },
+    {
+      "role": "误差分析",
+      "main_display_items": 6,
+      "main_figures": 6,
+      "papers_with_main_item": 5,
+      "all_curated_display_items": 18,
+      "papers_with_any_item": 5
+    },
+    {
+      "role": "敏感性 / 消融",
+      "main_display_items": 10,
+      "main_figures": 8,
+      "papers_with_main_item": 4,
+      "all_curated_display_items": 50,
+      "papers_with_any_item": 5
+    },
+    {
+      "role": "泛化能力",
+      "main_display_items": 14,
+      "main_figures": 5,
+      "papers_with_main_item": 5,
+      "all_curated_display_items": 30,
+      "papers_with_any_item": 6
+    },
+    {
+      "role": "计算效率",
+      "main_display_items": 0,
+      "main_figures": 0,
+      "papers_with_main_item": 0,
+      "all_curated_display_items": 2,
+      "papers_with_any_item": 1
+    },
+    {
+      "role": "生理机制 / 临床解释",
+      "main_display_items": 7,
+      "main_figures": 7,
+      "papers_with_main_item": 4,
+      "all_curated_display_items": 12,
+      "papers_with_any_item": 4
+    },
+    {
+      "role": "其他",
+      "main_display_items": 1,
+      "main_figures": 1,
+      "papers_with_main_item": 1,
+      "all_curated_display_items": 2,
+      "papers_with_any_item": 2
+    }
+  ],
+  "main_figures_summary": {
+    "n_papers": 6,
+    "median": 4.0,
+    "min": 3,
+    "max": 7
+  },
+  "main_tables_summary": {
+    "n_papers": 6,
+    "median": 1.5,
+    "min": 0,
+    "max": 9
+  },
+  "nonmain_figures_total_summary": {
+    "n_papers": 5,
+    "median": 6,
+    "min": 1,
+    "max": 42
+  }
+}

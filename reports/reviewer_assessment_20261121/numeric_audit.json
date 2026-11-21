@@ -1,0 +1,404 @@
+{
+  "scope": "Saved-output reproduction, not retraining or new inference",
+  "tolerance_absolute_and_relative": 1e-09,
+  "packet_files_verified": 1371,
+  "original_source_files_hash_verified": 1422,
+  "checks": {
+    "cohort": {
+      "patients": 500,
+      "views": 1000,
+      "frames": 19232,
+      "split": {
+        "train": 347,
+        "test": 82,
+        "val": 71
+      },
+      "test_patients": 82,
+      "test_sequences": 164,
+      "test_frames": 3167,
+      "roi_reviewed_count": 0,
+      "reverse_phase_sequences_by_split": {
+        "train": 17,
+        "test": 3,
+        "val": 1
+      }
+    },
+    "segmentation_reproduction": {
+      "labeled_frames": 328,
+      "inferential_unit": "82 patient means, four labeled frames per patient",
+      "restored_masks_rechecked": true,
+      "physical_distance_metrics_recomputed": true,
+      "metrics": {
+        "dice": {
+          "mean": 0.9119086690324603,
+          "sample_sd": 0.0319715026886594
+        },
+        "iou": {
+          "mean": 0.8416190523960843,
+          "sample_sd": 0.04899430736340417
+        },
+        "assd": {
+          "mean": 1.9627407936204655,
+          "sample_sd": 0.6381849899417779
+        },
+        "hd95": {
+          "mean": 4.811382069431041,
+          "sample_sd": 1.8562117197670025
+        },
+        "hd_max": {
+          "mean": 6.218202769738844,
+          "sample_sd": 2.0786565587350867
+        }
+      },
+      "patient_stratum_rows": 738,
+      "stratum_metric_summaries": 45
+    },
+    "functional_reproduction": {
+      "source_rows": 490,
+      "unique_patient_method_view_rows": 490,
+      "metric_groups": 21,
+      "metric_pairs": 1712,
+      "main_metrics": [
+        {
+          "method": "20_disks_shorter_axis",
+          "metric": "EDV",
+          "reference_scope": "same_geometry_from_expert_ED_ES_contours",
+          "error_unit": "mL",
+          "n": "82",
+          "mae": "8.151093805043814",
+          "rmse": "10.7919055855042",
+          "bias": "-0.8726844587887349",
+          "loa_low": "-22.08528990100908",
+          "loa_high": "20.339920983431607",
+          "pearson_r": "0.9079599296051263",
+          "pearson_r_squared": "0.8243912337685458",
+          "predictive_R_squared": "0.8232291677613217",
+          "mae_ci_low": "6.664183910351084",
+          "mae_ci_high": "9.748715096081842",
+          "mae_ci_source": "Frozen 2000-resample patient bootstrap; seed 2026"
+        },
+        {
+          "method": "20_disks_shorter_axis",
+          "metric": "ESV",
+          "reference_scope": "same_geometry_from_expert_ED_ES_contours",
+          "error_unit": "mL",
+          "n": "82",
+          "mae": "5.822097688373647",
+          "rmse": "7.344319414253458",
+          "bias": "2.554117707049714",
+          "loa_low": "-11.025286100299823",
+          "loa_high": "16.133521514399252",
+          "pearson_r": "0.9505681645376773",
+          "pearson_r_squared": "0.9035798354325288",
+          "predictive_R_squared": "0.8902398308822287",
+          "mae_ci_low": "4.892316183490189",
+          "mae_ci_high": "6.875385236041252",
+          "mae_ci_source": "Frozen 2000-resample patient bootstrap; seed 2026"
+        },
+        {
+          "method": "20_disks_shorter_axis",
+          "metric": "SV",
+          "reference_scope": "same_geometry_from_expert_ED_ES_contours",
+          "error_unit": "mL",
+          "n": "82",
+          "mae": "8.030481525021221",
+          "rmse": "10.237431228008804",
+          "bias": "-3.4268021658384495",
+          "loa_low": "-22.451016816805414",
+          "loa_high": "15.597412485128515",
+          "pearson_r": "0.6121764914247787",
+          "pearson_r_squared": "0.37476005665315215",
+          "predictive_R_squared": "-0.0023699224171318534",
+          "mae_ci_low": "6.740788638373048",
+          "mae_ci_high": "9.45685682228474",
+          "mae_ci_source": "Frozen 2000-resample patient bootstrap; seed 2026"
+        },
+        {
+          "method": "20_disks_shorter_axis",
+          "metric": "EF",
+          "reference_scope": "same_geometry_from_expert_ED_ES_contours",
+          "error_unit": "pp",
+          "n": "82",
+          "mae": "9.265665156998958",
+          "rmse": "12.48255165794031",
+          "bias": "-5.811348534045892",
+          "loa_low": "-27.597259421352323",
+          "loa_high": "15.974562353260541",
+          "pearson_r": "0.6587430755525119",
+          "pearson_r_squared": "0.43394243958838236",
+          "predictive_R_squared": "-0.04113422365423891",
+          "mae_ci_low": "7.557227001201034",
+          "mae_ci_high": "11.069299052348681",
+          "mae_ci_source": "Frozen 2000-resample patient bootstrap; seed 2026"
+        },
+        {
+          "method": "biplane_vs_CAMUS_reported_EF",
+          "metric": "EF",
+          "reference_scope": "CAMUS_Info_cfg_EF",
+          "error_unit": "pp",
+          "n": "82",
+          "mae": "9.032006321869929",
+          "rmse": "11.121048329311026",
+          "bias": "1.5614660468678092",
+          "loa_low": "-20.152673653461946",
+          "loa_high": "23.275605747197567",
+          "pearson_r": "0.6629483710961616",
+          "pearson_r_squared": "0.4395005427390539",
+          "predictive_R_squared": "0.18866151861895541",
+          "mae_ci_low": "7.63234584314737",
+          "mae_ci_high": "10.475583495340134",
+          "mae_ci_source": "Frozen 2000-resample patient bootstrap; seed 2026"
+        }
+      ],
+      "bootstrap_recomputed": {
+        "repetitions": 2000,
+        "seed": 2026,
+        "unit": "patient"
+      },
+      "negative_predictive_r2_retained": [
+        {
+          "method": "20_disks_shorter_axis",
+          "metric": "SV",
+          "predictive_R_squared": "-0.0023699224171318534"
+        },
+        {
+          "method": "20_disks_shorter_axis",
+          "metric": "EF",
+          "predictive_R_squared": "-0.04113422365423891"
+        }
+      ]
+    },
+    "temporal_and_nulls": {
+      "frames": 3167,
+      "adjacent_pairs": 3003,
+      "stored_order": {
+        "ED_to_ES": 161,
+        "ES_to_ED": 3
+      },
+      "auto_available": 162,
+      "attempted": 164,
+      "missing_metric_records": 10,
+      "hr_co_are_null": true,
+      "reverse_sequences": [
+        {
+          "case_id": "patient0068_4CH",
+          "patient_id": "patient0068",
+          "view": "4CH",
+          "n_frames": "36",
+          "expert_ED_frame": "35",
+          "expert_ES_frame": "0",
+          "stored_phase_order": "ES_to_ED",
+          "automatic_output_available": "False",
+          "automatic_ED_frame": "",
+          "automatic_ES_frame": "",
+          "maximum_volume_frame": "35",
+          "missing_reason": "Maximum at final expert ED; no subsequent frame under frozen rule"
+        },
+        {
+          "case_id": "patient0203_4CH",
+          "patient_id": "patient0203",
+          "view": "4CH",
+          "n_frames": "31",
+          "expert_ED_frame": "30",
+          "expert_ES_frame": "0",
+          "stored_phase_order": "ES_to_ED",
+          "automatic_output_available": "False",
+          "automatic_ED_frame": "",
+          "automatic_ES_frame": "",
+          "maximum_volume_frame": "30",
+          "missing_reason": "Maximum at final expert ED; no subsequent frame under frozen rule"
+        },
+        {
+          "case_id": "patient0217_2CH",
+          "patient_id": "patient0217",
+          "view": "2CH",
+          "n_frames": "21",
+          "expert_ED_frame": "20",
+          "expert_ES_frame": "0",
+          "stored_phase_order": "ES_to_ED",
+          "automatic_output_available": "True",
+          "automatic_ED_frame": "16",
+          "automatic_ES_frame": "18",
+          "maximum_volume_frame": "16",
+          "missing_reason": ""
+        }
+      ]
+    },
+    "geometry_reference_and_display": {
+      "geometry_diagnostics": [
+        {
+          "metric": "proxy_axis_to_mask_span",
+          "phase": "ED",
+          "source": "pred",
+          "n_patients": "82",
+          "unit": "%",
+          "mean": "68.9678636924857",
+          "sample_sd": "6.2669005935973",
+          "median": "68.9345332594998",
+          "minimum": "57.57778334902752",
+          "maximum": "82.88838976804793"
+        },
+        {
+          "metric": "proxy_axis_to_mask_span",
+          "phase": "ED",
+          "source": "expert",
+          "n_patients": "82",
+          "unit": "%",
+          "mean": "68.373670398263",
+          "sample_sd": "5.081203683128355",
+          "median": "68.35214087414033",
+          "minimum": "57.034380289325256",
+          "maximum": "80.6464359387552"
+        },
+        {
+          "metric": "proxy_axis_to_mask_span",
+          "phase": "ES",
+          "source": "pred",
+          "n_patients": "82",
+          "unit": "%",
+          "mean": "75.09223036535516",
+          "sample_sd": "5.810321097557143",
+          "median": "75.76086898385635",
+          "minimum": "58.21294706567641",
+          "maximum": "85.17274370878208"
+        },
+        {
+          "metric": "proxy_axis_to_mask_span",
+          "phase": "ES",
+          "source": "expert",
+          "n_patients": "82",
+          "unit": "%",
+          "mean": "71.80110356834425",
+          "sample_sd": "6.651462679738596",
+          "median": "72.10162662992296",
+          "minimum": "56.82330364556796",
+          "maximum": "90.63387916388214"
+        },
+        {
+          "metric": "mask_area_beyond_proxy_base_fraction",
+          "phase": "ED",
+          "source": "pred",
+          "n_patients": "82",
+          "unit": "%",
+          "mean": "28.390289592554943",
+          "sample_sd": "6.548012687612884",
+          "median": "28.521306974780128",
+          "minimum": "13.3458968321158",
+          "maximum": "41.12971689072064"
+        },
+        {
+          "metric": "mask_area_beyond_proxy_base_fraction",
+          "phase": "ED",
+          "source": "expert",
+          "n_patients": "82",
+          "unit": "%",
+          "mean": "29.57187862837655",
+          "sample_sd": "4.992978519699579",
+          "median": "29.606251730490683",
+          "minimum": "17.680968072808984",
+          "maximum": "39.72885361313981"
+        },
+        {
+          "metric": "mask_area_beyond_proxy_base_fraction",
+          "phase": "ES",
+          "source": "pred",
+          "n_patients": "82",
+          "unit": "%",
+          "mean": "23.23621470823501",
+          "sample_sd": "5.96569878696828",
+          "median": "22.830406971123573",
+          "minimum": "11.605900087598876",
+          "maximum": "39.67699249954965"
+        },
+        {
+          "metric": "mask_area_beyond_proxy_base_fraction",
+          "phase": "ES",
+          "source": "expert",
+          "n_patients": "82",
+          "unit": "%",
+          "mean": "27.817310127354503",
+          "sample_sd": "6.702982049482735",
+          "median": "28.108609699263887",
+          "minimum": "6.263510701759918",
+          "maximum": "42.47873644660597"
+        },
+        {
+          "metric": "biplane_to_mean_single_ratio",
+          "phase": "ED",
+          "source": "pred",
+          "n_patients": "82",
+          "unit": "ratio",
+          "mean": "0.4579924147317597",
+          "sample_sd": "0.08893648583952066",
+          "median": "0.44899407524588864",
+          "minimum": "0.31371041948311557",
+          "maximum": "0.6843668007945294"
+        },
+        {
+          "metric": "biplane_to_mean_single_ratio",
+          "phase": "ED",
+          "source": "expert",
+          "n_patients": "82",
+          "unit": "ratio",
+          "mean": "0.4407379836668587",
+          "sample_sd": "0.07167152948679842",
+          "median": "0.4404024293448196",
+          "minimum": "0.3307321911904098",
+          "maximum": "0.6305632423652285"
+        },
+        {
+          "metric": "biplane_to_mean_single_ratio",
+          "phase": "ES",
+          "source": "pred",
+          "n_patients": "82",
+          "unit": "ratio",
+          "mean": "0.5290195885048067",
+          "sample_sd": "0.09180222227334463",
+          "median": "0.5340351584366926",
+          "minimum": "0.3389264605277049",
+          "maximum": "0.7301048564563392"
+        },
+        {
+          "metric": "biplane_to_mean_single_ratio",
+          "phase": "ES",
+          "source": "expert",
+          "n_patients": "82",
+          "unit": "ratio",
+          "mean": "0.4641103961615118",
+          "sample_sd": "0.08953581650854009",
+          "median": "0.4642416748107035",
+          "minimum": "0.3000900307265209",
+          "maximum": "0.7022034198798682"
+        }
+      ],
+      "mean_signed_bias_identity": {
+        "P_minus_G": -5.811348534045892,
+        "G_minus_L": 7.372814580913701,
+        "P_minus_L": 1.5614660468678092
+      },
+      "r2_r3_identical_measurements": 720,
+      "independent_patients_in_r2_r3": 2,
+      "intermediate_manual_contour_reference": "unavailable",
+      "anatomical_point_reference": "unavailable"
+    },
+    "experimental_identity": {
+      "evaluation_commit": "83f44897747ab742bbeb387c0af4403438b854b5",
+      "weight_sha256": "b0e8b724ca453c4801fb651163ad0353cec495c0a8d745ada1dbab9067b607c9",
+      "epochs": 30,
+      "selected_epoch": 7,
+      "selected_validation_bce": 0.037530166717867054,
+      "split_membership_verified": true,
+      "full_retraining_or_inference_reproduction": false,
+      "current_default_config_is_not_the_evaluated_experiment": true
+    },
+    "preprocessing_identity": {
+      "commit": "eefbd61edd1a560ecc68f212c03036d357172234",
+      "source_sha256": "83fd8f7b802eb93d8785e1492ebbe988457880ad39a9e6a579dc56981aa82123",
+      "source_copy": "audit_support/preprocessing_eefbd61.py",
+      "static_inspection": "Image support is computed from frames only. Labels enter crop/resize and audit counts, not image-support selection.",
+      "full_raw_data_preprocessing_reproduction": false,
+      "current_label_guard_not_attributed_to_historical_experiment": true
+    }
+  },
+  "all_deterministic_assertions_passed": true
+}

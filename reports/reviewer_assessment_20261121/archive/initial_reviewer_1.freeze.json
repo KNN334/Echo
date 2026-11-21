@@ -1,0 +1,11 @@
+{
+  "reviewer": "Reviewer 1",
+  "report": "C:/Users/LEN/Desktop/毕业设计/毕设-基于贴片式超声探头的心脏功能参数连续监测与分析/reports/reviewer_assessment_20261121/reviewer_1.md",
+  "sha256": "1376b2b152cada51745c9920dfdd2ed7f4ab8ff37b39ff35fd36c7157a35188d",
+  "frozen_at_utc": "2026-11-21T07:53:26.367180+00:00",
+  "packet_manifest_sha256": "9a952ed15b39d8cc76b266220e04244e07d1ae26f3ded26e8d5fbccd66e10735",
+  "coverage_sha256": "b005b939e14894fe11b5914e741ee1263ab824197c85bb79ce39adb45d56c305",
+  "frozen": true,
+  "independent_context": true,
+  "report_modified_after_freeze": false
+}

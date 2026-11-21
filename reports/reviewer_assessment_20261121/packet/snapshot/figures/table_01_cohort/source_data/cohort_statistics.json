@@ -1,0 +1,346 @@
+{
+  "train": {
+    "patients": 347,
+    "sequences": 694,
+    "frames": 13415,
+    "female_patients": 116,
+    "male_patients": 231,
+    "age_years": {
+      "n": 347,
+      "median": 68.0,
+      "q1": 56.0,
+      "q3": 76.0,
+      "minimum": 18.0,
+      "maximum": 93.0
+    },
+    "dataset_ef_percent": {
+      "n": 347,
+      "median": 45.0,
+      "q1": 37.0,
+      "q3": 52.0,
+      "minimum": 5.0,
+      "maximum": 75.0
+    },
+    "quality_sequences": {
+      "Good": 345,
+      "Medium": 262,
+      "Poor": 87
+    },
+    "sampling": {
+      "frames": {
+        "n": 694,
+        "median": 19.0,
+        "q1": 17.0,
+        "q3": 22.0,
+        "minimum": 10.0,
+        "maximum": 42.0
+      },
+      "fps": {
+        "n": 694,
+        "median": 56.5,
+        "q1": 55.4,
+        "q3": 56.5,
+        "minimum": 39.5,
+        "maximum": 85.6
+      },
+      "half_sequence_duration_s": {
+        "n": 694,
+        "median": 0.3249097472924188,
+        "q1": 0.2831858407079646,
+        "q3": 0.37168141592920356,
+        "minimum": 0.1592920353982301,
+        "maximum": 0.6879194630872483
+      },
+      "processed_spacing_x_mm": {
+        "n": 694,
+        "median": 1.6252499911934137,
+        "q1": 1.484999991953373,
+        "q3": 1.8397499900311232,
+        "minimum": 0.8882499951869249,
+        "maximum": 2.5162499863654375
+      },
+      "processed_spacing_y_mm": {
+        "n": 694,
+        "median": 1.3392499927431345,
+        "q1": 1.16049999371171,
+        "q3": 1.5152499917894602,
+        "minimum": 0.8029999956488609,
+        "maximum": 1.963499989360571
+      },
+      "original_height_px": {
+        "n": 694,
+        "median": 487.0,
+        "q1": 422.0,
+        "q3": 551.0,
+        "minimum": 292.0,
+        "maximum": 714.0
+      },
+      "original_width_px": {
+        "n": 694,
+        "median": 591.0,
+        "q1": 540.0,
+        "q3": 669.0,
+        "minimum": 323.0,
+        "maximum": 915.0
+      }
+    }
+  },
+  "val": {
+    "patients": 71,
+    "sequences": 142,
+    "frames": 2650,
+    "female_patients": 29,
+    "male_patients": 42,
+    "age_years": {
+      "n": 71,
+      "median": 65.0,
+      "q1": 52.0,
+      "q3": 74.0,
+      "minimum": 18.0,
+      "maximum": 88.0
+    },
+    "dataset_ef_percent": {
+      "n": 71,
+      "median": 48.0,
+      "q1": 38.0,
+      "q3": 52.5,
+      "minimum": 21.0,
+      "maximum": 70.0
+    },
+    "quality_sequences": {
+      "Poor": 15,
+      "Good": 72,
+      "Medium": 55
+    },
+    "sampling": {
+      "frames": {
+        "n": 142,
+        "median": 18.0,
+        "q1": 17.0,
+        "q3": 20.0,
+        "minimum": 12.0,
+        "maximum": 33.0
+      },
+      "fps": {
+        "n": 142,
+        "median": 55.95,
+        "q1": 54.2,
+        "q3": 56.5,
+        "minimum": 32.6,
+        "maximum": 74.6
+      },
+      "half_sequence_duration_s": {
+        "n": 142,
+        "median": 0.3185840707964602,
+        "q1": 0.28480233710543534,
+        "q3": 0.3528275851998949,
+        "minimum": 0.19469026548672566,
+        "maximum": 0.5904059040590406
+      },
+      "processed_spacing_x_mm": {
+        "n": 142,
+        "median": 1.6252499911934137,
+        "q1": 1.4079999923706055,
+        "q3": 1.8397499900311232,
+        "minimum": 0.9734999947249888,
+        "maximum": 3.2477499824017286
+      },
+      "processed_spacing_y_mm": {
+        "n": 142,
+        "median": 1.3392499927431345,
+        "q1": 1.16049999371171,
+        "q3": 1.5173124917782843,
+        "minimum": 0.8029999956488609,
+        "maximum": 2.67574998550117
+      },
+      "original_height_px": {
+        "n": 142,
+        "median": 487.0,
+        "q1": 422.0,
+        "q3": 551.75,
+        "minimum": 292.0,
+        "maximum": 973.0
+      },
+      "original_width_px": {
+        "n": 142,
+        "median": 591.0,
+        "q1": 512.0,
+        "q3": 669.0,
+        "minimum": 354.0,
+        "maximum": 1181.0
+      }
+    }
+  },
+  "test": {
+    "patients": 82,
+    "sequences": 164,
+    "frames": 3167,
+    "female_patients": 25,
+    "male_patients": 57,
+    "age_years": {
+      "n": 82,
+      "median": 65.0,
+      "q1": 55.0,
+      "q3": 76.0,
+      "minimum": 18.0,
+      "maximum": 93.0
+    },
+    "dataset_ef_percent": {
+      "n": 82,
+      "median": 47.5,
+      "q1": 38.25,
+      "q3": 54.75,
+      "minimum": 6.0,
+      "maximum": 81.0
+    },
+    "quality_sequences": {
+      "Good": 88,
+      "Medium": 62,
+      "Poor": 14
+    },
+    "sampling": {
+      "frames": {
+        "n": 164,
+        "median": 19.0,
+        "q1": 17.0,
+        "q3": 21.0,
+        "minimum": 13.0,
+        "maximum": 37.0
+      },
+      "fps": {
+        "n": 164,
+        "median": 56.5,
+        "q1": 54.2,
+        "q3": 56.5,
+        "minimum": 41.9,
+        "maximum": 74.6
+      },
+      "half_sequence_duration_s": {
+        "n": 164,
+        "median": 0.31995182657567245,
+        "q1": 0.2831858407079646,
+        "q3": 0.36117403594440567,
+        "minimum": 0.21201413427561838,
+        "maximum": 0.6641366223908918
+      },
+      "processed_spacing_x_mm": {
+        "n": 164,
+        "median": 1.6252499911934137,
+        "q1": 1.4079999923706055,
+        "q3": 1.835624990053475,
+        "minimum": 0.9762499947100877,
+        "maximum": 2.389749987050891
+      },
+      "processed_spacing_y_mm": {
+        "n": 164,
+        "median": 1.3392499927431345,
+        "q1": 1.16049999371171,
+        "q3": 1.449249992147088,
+        "minimum": 0.8029999956488609,
+        "maximum": 1.7847499903291464
+      },
+      "original_height_px": {
+        "n": 164,
+        "median": 487.0,
+        "q1": 422.0,
+        "q3": 527.0,
+        "minimum": 292.0,
+        "maximum": 649.0
+      },
+      "original_width_px": {
+        "n": 164,
+        "median": 591.0,
+        "q1": 512.0,
+        "q3": 667.5,
+        "minimum": 355.0,
+        "maximum": 869.0
+      }
+    }
+  },
+  "total": {
+    "patients": 500,
+    "sequences": 1000,
+    "frames": 19232,
+    "female_patients": 170,
+    "male_patients": 330,
+    "age_years": {
+      "n": 500,
+      "median": 67.0,
+      "q1": 55.75,
+      "q3": 76.0,
+      "minimum": 18.0,
+      "maximum": 93.0
+    },
+    "dataset_ef_percent": {
+      "n": 500,
+      "median": 46.0,
+      "q1": 37.0,
+      "q3": 52.0,
+      "minimum": 5.0,
+      "maximum": 81.0
+    },
+    "quality_sequences": {
+      "Good": 505,
+      "Medium": 379,
+      "Poor": 116
+    },
+    "sampling": {
+      "frames": {
+        "n": 1000,
+        "median": 19.0,
+        "q1": 17.0,
+        "q3": 21.0,
+        "minimum": 10.0,
+        "maximum": 42.0
+      },
+      "fps": {
+        "n": 1000,
+        "median": 56.5,
+        "q1": 55.4,
+        "q3": 56.5,
+        "minimum": 32.6,
+        "maximum": 85.6
+      },
+      "half_sequence_duration_s": {
+        "n": 1000,
+        "median": 0.3225806451612903,
+        "q1": 0.2831858407079646,
+        "q3": 0.3682170542635659,
+        "minimum": 0.1592920353982301,
+        "maximum": 0.6879194630872483
+      },
+      "processed_spacing_x_mm": {
+        "n": 1000,
+        "median": 1.6252499911934137,
+        "q1": 1.4079999923706055,
+        "q3": 1.8397499900311232,
+        "minimum": 0.8882499951869249,
+        "maximum": 3.2477499824017286
+      },
+      "processed_spacing_y_mm": {
+        "n": 1000,
+        "median": 1.3392499927431345,
+        "q1": 1.16049999371171,
+        "q3": 1.5152499917894602,
+        "minimum": 0.8029999956488609,
+        "maximum": 2.67574998550117
+      },
+      "original_height_px": {
+        "n": 1000,
+        "median": 487.0,
+        "q1": 422.0,
+        "q3": 551.0,
+        "minimum": 292.0,
+        "maximum": 973.0
+      },
+      "original_width_px": {
+        "n": 1000,
+        "median": 591.0,
+        "q1": 512.0,
+        "q3": 669.0,
+        "minimum": 323.0,
+        "maximum": 1181.0
+      }
+    }
+  }
+}

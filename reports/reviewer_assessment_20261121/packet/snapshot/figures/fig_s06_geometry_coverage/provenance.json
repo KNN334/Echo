@@ -1,0 +1,118 @@
+{
+  "experiment": "camus_cuda_progress",
+  "new_training_or_inference": false,
+  "test_feedback_used_for_model_selection": false,
+  "sources_sha256": {
+    "figures/fig_s06_geometry_coverage.py": "36b44d90d2d37206ec7c986242c1864e809f89d0ff55af86e8438253f1da8a40",
+    "figures/fig_s06_geometry_coverage/figure_contract.md": "7525d18154c50322535f3d4cafff444a63dee403df03ed087fc1d3f9016154b5",
+    "configs/camus_splits.json": "85975e0ce238ae244f4b04e432914779feeb153e05c6deb27448aeae87a22cdf",
+    "reports/result_integrity/camus_cuda_progress_20261121/geometry_diagnostics.csv": "22b3454ad2bf9aef0c6b78b278412945e518dc6c77ebdf5b7de57b877dafb76b",
+    "reports/result_integrity/camus_cuda_progress_20261121/cross_geometry_volume_ratios.csv": "e5f3d603bd2ae4e574b2e1e4544c909e809c2e455273d332d539c7853f283053",
+    "reports/result_integrity/camus_cuda_progress_20261121/audit.json": "3340111ad716938ac28128321a024bfa4d568fb85c522ec8e025378564bfd730",
+    "runs/camus_cuda_progress/function.csv": "783ecf773c8be25a33546d96d18657d88cefe2a3b1701b08c67d4fa691dfc545",
+    "reports/result_analysis/camus_cuda_progress/source_data/example_selection.csv": "e41f39db9e7cf3ca3c1ebcd7785a3fe2d943f27738f7c77c0103f62772e6daac",
+    "data/processed/camus/patient0327_2CH.json": "477d23b2e3df2be68e124d8309e6f083c49fff51b0d5c259ba5a28f76ee4414a",
+    "data/processed/camus/patient0327_2CH.npz": "ffd98ec0e4c3b425830696e89b1470d3d4a9bf65d117c4e42f6a750880781e23",
+    "runs/camus_cuda_progress/patient0327_2CH_pred.npz": "40ee006fe27eb8c3fbd43148d77199297157cb2d208f87bf79387a9abf51c188",
+    "src/geometry/mask_features.py": "0b5d0dad4423542d715405a2dfe20f2f600a360bbfd7f03e0caf39b89b0b9323",
+    "src/geometry/volume.py": "199ad3f653132a6bc7693752ff67817d727e64512b8fe65e73fbae56538b5a42",
+    "src/data/transforms.py": "7d5d10af714c60710a158d3a297ab499db0a218377dfb046ca345a91b24ccf2e",
+    "reports/result_analysis/camus_cuda_progress/analysis_manifest.json": "91dc84c179309d1295ca2f93773fe056c68bdb1d8231339060333d8445cc1af4",
+    "style/palette.py": "9555eb7a32b99b6dad197f574aa76f6842e8e064328c3b55988e71eca651d64c",
+    "style/paper.mplstyle": "95fdfe0e423bead6abb36aa67a94b6e9b76f66845c2eb6feac1c1ee1438dae90",
+    "figures/_paper_common.py": "eb198d3ad330cf9d0252d61b444637fad114e80c0a95fd06778dbcf0ebd6c415"
+  },
+  "existing_frozen_sources_rechecked": [
+    "runs/camus_cuda_progress/function.csv",
+    "data/processed/camus/patient0327_2CH.npz",
+    "runs/camus_cuda_progress/patient0327_2CH_pred.npz"
+  ],
+  "versions": {
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.4",
+    "Pillow": "13.0.0",
+    "cmcrameri": "1.10"
+  },
+  "figure": "Fig.S6",
+  "n_patients": 82,
+  "n_source_geometry_rows": 656,
+  "n_patient_phase_source_geometry": 328,
+  "n_volume_path_ratios": 328,
+  "n_example_frames": 1,
+  "example_selection": {
+    "selection": "Median",
+    "rank": "83",
+    "of_cases": "164",
+    "case_id": "patient0327_2CH",
+    "mean_dice": "0.9206268860792544"
+  },
+  "image_display": {
+    "case_id": "patient0327_2CH",
+    "phase": "ED",
+    "frame": 0,
+    "source_image_hw": [
+      112,
+      112
+    ],
+    "original_hw": [
+      422,
+      482
+    ],
+    "original_spacing_xy_mm": [
+      0.30799999833106995,
+      0.30799999833106995
+    ],
+    "processed_spacing_xy_mm": [
+      1.3254999928176403,
+      1.16049999371171
+    ],
+    "image_extent_mm": [
+      -0.15399999916553497,
+      148.30199919641018,
+      129.82199929654598,
+      -0.15399999916553497
+    ],
+    "display_field_mm": [
+      200,
+      170
+    ],
+    "extra_crop": null,
+    "interpolation": "none",
+    "image_limits": [
+      0,
+      255
+    ],
+    "brightness_contrast_gamma": "unchanged",
+    "roi_reviewed": false,
+    "contours": "Original expert contour plus own inferred proxy axis/base; no predicted contour displayed",
+    "scale_bar_mm": 20,
+    "scale_bar_placement": "Lower padded black field, outside the native raster rectangle",
+    "fill": "Expert-contour area beyond own proxy base; not error or probability"
+  },
+  "statistical_unit": "Patient",
+  "variability": "Patient sample SD; no confidence intervals",
+  "hypothesis_tests": null,
+  "reference_scope": "Derived contour geometry; no independent anatomical or clinical volume truth",
+  "exclusions": [],
+  "geometry_changed": false,
+  "image_scale": "Original spatial calibration",
+  "alignment_groups": {
+    "rows": [
+      [
+        "c",
+        "d"
+      ]
+    ],
+    "columns": [
+      [
+        "b",
+        "d"
+      ]
+    ],
+    "image_a": "Measured; calibrated image aspect not comparable to statistical axes"
+  },
+  "font_path": "C:\\Windows\\Fonts\\arial.ttf",
+  "width_mm": 183,
+  "height_mm": 170,
+  "external_alignment_auditor_used": true
+}

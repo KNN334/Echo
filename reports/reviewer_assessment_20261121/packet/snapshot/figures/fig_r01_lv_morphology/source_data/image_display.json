@@ -1,0 +1,394 @@
+[
+  {
+    "case_id": "patient0327_2CH",
+    "frame": 0,
+    "phase": "ED",
+    "time_s": 0.0,
+    "expert_available": true,
+    "source_image_hw": [
+      112,
+      112
+    ],
+    "original_hw": [
+      422,
+      482
+    ],
+    "original_spacing_xy_mm": [
+      0.30799999833106995,
+      0.30799999833106995
+    ],
+    "processed_spacing_xy_mm": [
+      1.3254999928176403,
+      1.16049999371171
+    ],
+    "image_extent_mm": [
+      -0.15399999916553497,
+      148.30199919641018,
+      129.82199929654598,
+      -0.15399999916553497
+    ],
+    "display_field_mm": [
+      200,
+      170
+    ],
+    "interpolation": "none",
+    "image_limits": [
+      0,
+      255
+    ],
+    "extra_crop": null,
+    "brightness_contrast_gamma": "unchanged",
+    "roi_reviewed": false,
+    "panel": "a",
+    "selection_basis": {
+      "selection": "Median",
+      "rank": "83",
+      "of_cases": "164",
+      "case_id": "patient0327_2CH",
+      "mean_dice": "0.9206268860792544"
+    }
+  },
+  {
+    "case_id": "patient0327_2CH",
+    "frame": 17,
+    "phase": "ES",
+    "time_s": 0.2814569536423841,
+    "expert_available": true,
+    "source_image_hw": [
+      112,
+      112
+    ],
+    "original_hw": [
+      422,
+      482
+    ],
+    "original_spacing_xy_mm": [
+      0.30799999833106995,
+      0.30799999833106995
+    ],
+    "processed_spacing_xy_mm": [
+      1.3254999928176403,
+      1.16049999371171
+    ],
+    "image_extent_mm": [
+      -0.15399999916553497,
+      148.30199919641018,
+      129.82199929654598,
+      -0.15399999916553497
+    ],
+    "display_field_mm": [
+      200,
+      170
+    ],
+    "interpolation": "none",
+    "image_limits": [
+      0,
+      255
+    ],
+    "extra_crop": null,
+    "brightness_contrast_gamma": "unchanged",
+    "roi_reviewed": false,
+    "panel": "a",
+    "selection_basis": {
+      "selection": "Median",
+      "rank": "83",
+      "of_cases": "164",
+      "case_id": "patient0327_2CH",
+      "mean_dice": "0.9206268860792544"
+    }
+  },
+  {
+    "case_id": "patient0327_4CH",
+    "frame": 0,
+    "phase": "ED",
+    "time_s": 0.0,
+    "expert_available": true,
+    "source_image_hw": [
+      112,
+      112
+    ],
+    "original_hw": [
+      422,
+      482
+    ],
+    "original_spacing_xy_mm": [
+      0.30799999833106995,
+      0.30799999833106995
+    ],
+    "processed_spacing_xy_mm": [
+      1.3254999928176403,
+      1.16049999371171
+    ],
+    "image_extent_mm": [
+      -0.15399999916553497,
+      148.30199919641018,
+      129.82199929654598,
+      -0.15399999916553497
+    ],
+    "display_field_mm": [
+      200,
+      170
+    ],
+    "interpolation": "none",
+    "image_limits": [
+      0,
+      255
+    ],
+    "extra_crop": null,
+    "brightness_contrast_gamma": "unchanged",
+    "roi_reviewed": false,
+    "panel": "a",
+    "selection_basis": {
+      "selection": "Median",
+      "rank": "83",
+      "of_cases": "164",
+      "case_id": "patient0327_2CH",
+      "mean_dice": "0.9206268860792544"
+    }
+  },
+  {
+    "case_id": "patient0327_4CH",
+    "frame": 19,
+    "phase": "ES",
+    "time_s": 0.31456953642384106,
+    "expert_available": true,
+    "source_image_hw": [
+      112,
+      112
+    ],
+    "original_hw": [
+      422,
+      482
+    ],
+    "original_spacing_xy_mm": [
+      0.30799999833106995,
+      0.30799999833106995
+    ],
+    "processed_spacing_xy_mm": [
+      1.3254999928176403,
+      1.16049999371171
+    ],
+    "image_extent_mm": [
+      -0.15399999916553497,
+      148.30199919641018,
+      129.82199929654598,
+      -0.15399999916553497
+    ],
+    "display_field_mm": [
+      200,
+      170
+    ],
+    "interpolation": "none",
+    "image_limits": [
+      0,
+      255
+    ],
+    "extra_crop": null,
+    "brightness_contrast_gamma": "unchanged",
+    "roi_reviewed": false,
+    "panel": "a",
+    "selection_basis": {
+      "selection": "Median",
+      "rank": "83",
+      "of_cases": "164",
+      "case_id": "patient0327_2CH",
+      "mean_dice": "0.9206268860792544"
+    }
+  },
+  {
+    "case_id": "patient0229_2CH",
+    "frame": 0,
+    "phase": "ED",
+    "time_s": 0.0,
+    "expert_available": true,
+    "source_image_hw": [
+      112,
+      112
+    ],
+    "original_hw": [
+      519,
+      630
+    ],
+    "original_spacing_xy_mm": [
+      0.30799999833106995,
+      0.30799999833106995
+    ],
+    "processed_spacing_xy_mm": [
+      1.7324999906122684,
+      1.4272499922662973
+    ],
+    "image_extent_mm": [
+      -0.15399999916553497,
+      193.88599894940853,
+      159.69799913465977,
+      -0.15399999916553497
+    ],
+    "display_field_mm": [
+      200,
+      170
+    ],
+    "interpolation": "none",
+    "image_limits": [
+      0,
+      255
+    ],
+    "extra_crop": null,
+    "brightness_contrast_gamma": "unchanged",
+    "roi_reviewed": false,
+    "panel": "b",
+    "selection_basis": {
+      "selection": "Lowest",
+      "rank": "1",
+      "of_cases": "164",
+      "case_id": "patient0229_2CH",
+      "mean_dice": "0.6770097649127448"
+    }
+  },
+  {
+    "case_id": "patient0229_2CH",
+    "frame": 17,
+    "phase": "ES",
+    "time_s": 0.3008849557522124,
+    "expert_available": true,
+    "source_image_hw": [
+      112,
+      112
+    ],
+    "original_hw": [
+      519,
+      630
+    ],
+    "original_spacing_xy_mm": [
+      0.30799999833106995,
+      0.30799999833106995
+    ],
+    "processed_spacing_xy_mm": [
+      1.7324999906122684,
+      1.4272499922662973
+    ],
+    "image_extent_mm": [
+      -0.15399999916553497,
+      193.88599894940853,
+      159.69799913465977,
+      -0.15399999916553497
+    ],
+    "display_field_mm": [
+      200,
+      170
+    ],
+    "interpolation": "none",
+    "image_limits": [
+      0,
+      255
+    ],
+    "extra_crop": null,
+    "brightness_contrast_gamma": "unchanged",
+    "roi_reviewed": false,
+    "panel": "b",
+    "selection_basis": {
+      "selection": "Lowest",
+      "rank": "1",
+      "of_cases": "164",
+      "case_id": "patient0229_2CH",
+      "mean_dice": "0.6770097649127448"
+    }
+  },
+  {
+    "case_id": "patient0229_4CH",
+    "frame": 0,
+    "phase": "ED",
+    "time_s": 0.0,
+    "expert_available": true,
+    "source_image_hw": [
+      112,
+      112
+    ],
+    "original_hw": [
+      519,
+      630
+    ],
+    "original_spacing_xy_mm": [
+      0.30799999833106995,
+      0.30799999833106995
+    ],
+    "processed_spacing_xy_mm": [
+      1.7324999906122684,
+      1.4272499922662973
+    ],
+    "image_extent_mm": [
+      -0.15399999916553497,
+      193.88599894940853,
+      159.69799913465977,
+      -0.15399999916553497
+    ],
+    "display_field_mm": [
+      200,
+      170
+    ],
+    "interpolation": "none",
+    "image_limits": [
+      0,
+      255
+    ],
+    "extra_crop": null,
+    "brightness_contrast_gamma": "unchanged",
+    "roi_reviewed": false,
+    "panel": "b",
+    "selection_basis": {
+      "selection": "Lowest",
+      "rank": "1",
+      "of_cases": "164",
+      "case_id": "patient0229_2CH",
+      "mean_dice": "0.6770097649127448"
+    }
+  },
+  {
+    "case_id": "patient0229_4CH",
+    "frame": 16,
+    "phase": "ES",
+    "time_s": 0.2826855123674912,
+    "expert_available": true,
+    "source_image_hw": [
+      112,
+      112
+    ],
+    "original_hw": [
+      519,
+      630
+    ],
+    "original_spacing_xy_mm": [
+      0.30799999833106995,
+      0.30799999833106995
+    ],
+    "processed_spacing_xy_mm": [
+      1.7324999906122684,
+      1.4272499922662973
+    ],
+    "image_extent_mm": [
+      -0.15399999916553497,
+      193.88599894940853,
+      159.69799913465977,
+      -0.15399999916553497
+    ],
+    "display_field_mm": [
+      200,
+      170
+    ],
+    "interpolation": "none",
+    "image_limits": [
+      0,
+      255
+    ],
+    "extra_crop": null,
+    "brightness_contrast_gamma": "unchanged",
+    "roi_reviewed": false,
+    "panel": "b",
+    "selection_basis": {
+      "selection": "Lowest",
+      "rank": "1",
+      "of_cases": "164",
+      "case_id": "patient0229_2CH",
+      "mean_dice": "0.6770097649127448"
+    }
+  }
+]

@@ -36,6 +36,7 @@ GENERATED_DIRECTORIES = {
     'figures/workflow_parts': '当前项目流程图规划、独立零件及审阅图集；总图待讨论后组装',
     'reports/result_analysis': '实测结果图集、中文解读、源数据及图件检查；内容由绘图入口生成',
     'reports/result_integrity': '冻结结果全量复算、几何/EF偏倚/时序风险自检报告及逐项诊断数据；不改写原结果',
+    'reports/reviewer_assessment_20261121': '19个科学展项的三份独立审阅、冻结材料、数值核查及待讨论的论文主线和改图方案',
     'reports/training': '逐实验训练日志、每轮损失、运行环境与完成记录；内容由训练入口生成',
 }
 ENVIRONMENT_DIRECTORIES = {

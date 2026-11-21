@@ -1,0 +1,52 @@
+[
+  {
+    "experiment": "camus_cuda_progress",
+    "display_label": "Baseline",
+    "epochs_observed": 30,
+    "selected_epoch": 7,
+    "selected_weights_sha256": "b0e8b724ca453c4801fb651163ad0353cec495c0a8d745ada1dbab9067b607c9",
+    "initial_weights_sha256": "b32ea45b8200e11298ff4021166ff8d187204fb0c27a937bcdb4c518ffcbe1ed",
+    "train_patients": 347,
+    "validation_patients": 71,
+    "seed": 2026,
+    "batch_size": 8,
+    "lr": 0.0001,
+    "augmentation": {
+      "enabled": false
+    },
+    "weight_decay": 0,
+    "baseline_decay_source": "git 83f4489:cardiac/model.py:110, explicit weight_decay=0",
+    "early_stopping_patience": null,
+    "min_delta": 0
+  },
+  {
+    "experiment": "camus_regularized",
+    "display_label": "Regularized",
+    "epochs_observed": 23,
+    "selected_epoch": 17,
+    "selected_weights_sha256": "59b92018e38e823179a4681aec49e06ca66ecbc418617221b9b2740c2c7e1008",
+    "initial_weights_sha256": "b32ea45b8200e11298ff4021166ff8d187204fb0c27a937bcdb4c518ffcbe1ed",
+    "train_patients": 347,
+    "validation_patients": 71,
+    "seed": 2026,
+    "batch_size": 8,
+    "lr": 0.0001,
+    "augmentation": {
+      "enabled": true,
+      "rotation_degrees": 5.0,
+      "translation_fraction": 0.04,
+      "scale_range": [
+        0.95,
+        1.05
+      ],
+      "intensity_range": [
+        0.9,
+        1.1
+      ]
+    },
+    "weight_decay": 0.0001,
+    "baseline_decay_source": null,
+    "early_stopping_patience": 6,
+    "min_delta": 0.0002
+  }
+]

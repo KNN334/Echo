@@ -1,0 +1,3 @@
+case_id,selection,rank,rank_denominator,n_patients,n_observed_frames,n_layers,n_values,n_valid_values,fps,start_s,end_s,min_diameter_mm,max_diameter_mm,n_triangles,roi_reviewed
+patient0327_2CH,Median,83,164,1,18,20,360,360,60.4,0.0,0.2814569536423841,17.247999906539917,48.04799973964691,646,False
+patient0229_2CH,Lowest,1,164,1,18,20,360,360,56.5,0.0,0.3008849557522124,8.161999955773354,42.34999977052212,646,False

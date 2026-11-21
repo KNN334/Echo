@@ -1,0 +1,4 @@
+# EchoNet 分割架构：灰度复制为三通道，输出左室前景 logit。
+name: deeplabv3_resnet50
+in_channels: 3
+num_classes: 1

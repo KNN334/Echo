@@ -1,0 +1,53 @@
+{
+  "git_commit": "83f44897747ab742bbeb387c0af4403438b854b5",
+  "working_tree_dirty": false,
+  "stage": "test",
+  "created_local": "2026-11-10T17:53:11.875470+08:00",
+  "config_path": "C:\\Users\\LEN\\Desktop\\毕业设计\\毕设-基于贴片式超声探头的心脏功能参数连续监测与分析\\configs\\experiment.json",
+  "config_sha256": "c75999d41353b062489e61e58d3a60b60e95aa6ae9bea1a4665da791baeb2df7",
+  "config": {
+    "data": {
+      "adapter": "camus",
+      "source_config": "camus/config.json",
+      "processed": "data/processed/camus",
+      "splits": "data/manifests/splits.json",
+      "expected_patients": 500,
+      "views": [
+        "2CH",
+        "4CH"
+      ]
+    },
+    "train": {
+      "output": "checkpoints/camus_cuda_progress",
+      "initial_weights": "checkpoints/echonet_official.pt",
+      "epochs": 30,
+      "batch_size": 8,
+      "learning_rate": 0.0001,
+      "seed": 2026,
+      "device": "auto",
+      "cpu_threads": 2
+    },
+    "test": {
+      "weights": "checkpoints/camus_cuda_progress/best.pt",
+      "output": "runs/camus_cuda_progress",
+      "device": "auto",
+      "cpu_threads": 2,
+      "temporal": false,
+      "quality_gate": false,
+      "normalization": null,
+      "references": null,
+      "manual_landmarks": null
+    }
+  },
+  "prepared": {
+    "patients": 500,
+    "cases": 1000,
+    "patient_splits": {
+      "train": 347,
+      "val": 71,
+      "test": 82
+    },
+    "manifest_sha256": "e8603f1862c321c0ece99bbfb34c530e3512ff78ee1b2484c615fcafb08445a6",
+    "array_contents_checked": false
+  }
+}

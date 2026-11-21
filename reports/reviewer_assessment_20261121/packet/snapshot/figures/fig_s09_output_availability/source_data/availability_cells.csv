@@ -1,0 +1,25 @@
+method,view,display_scope,metric,applicable,valid_patients,attempted_patients
+20_disks_shorter_axis,biplane,Biplane · expert phases,EDV,True,82,82
+20_disks_shorter_axis,biplane,Biplane · expert phases,ESV,True,82,82
+20_disks_shorter_axis,biplane,Biplane · expert phases,SV,True,82,82
+20_disks_shorter_axis,biplane,Biplane · expert phases,EF,True,82,82
+single_plane_area_length,2CH,2CH · expert phases,EDV,True,82,82
+single_plane_area_length,2CH,2CH · expert phases,ESV,True,82,82
+single_plane_area_length,2CH,2CH · expert phases,SV,True,81,82
+single_plane_area_length,2CH,2CH · expert phases,EF,True,81,82
+single_plane_area_length,4CH,4CH · expert phases,EDV,True,82,82
+single_plane_area_length,4CH,4CH · expert phases,ESV,True,82,82
+single_plane_area_length,4CH,4CH · expert phases,SV,True,82,82
+single_plane_area_length,4CH,4CH · expert phases,EF,True,82,82
+single_plane_auto_extrema_2CH,2CH,2CH · auto extrema,EDV,True,82,82
+single_plane_auto_extrema_2CH,2CH,2CH · auto extrema,ESV,True,82,82
+single_plane_auto_extrema_2CH,2CH,2CH · auto extrema,SV,True,82,82
+single_plane_auto_extrema_2CH,2CH,2CH · auto extrema,EF,True,82,82
+single_plane_auto_extrema_4CH,4CH,4CH · auto extrema,EDV,True,80,82
+single_plane_auto_extrema_4CH,4CH,4CH · auto extrema,ESV,True,80,82
+single_plane_auto_extrema_4CH,4CH,4CH · auto extrema,SV,True,80,82
+single_plane_auto_extrema_4CH,4CH,4CH · auto extrema,EF,True,80,82
+biplane_vs_CAMUS_reported_EF,biplane,Clinical-label EF,EDV,False,,
+biplane_vs_CAMUS_reported_EF,biplane,Clinical-label EF,ESV,False,,
+biplane_vs_CAMUS_reported_EF,biplane,Clinical-label EF,SV,False,,
+biplane_vs_CAMUS_reported_EF,biplane,Clinical-label EF,EF,True,82,82

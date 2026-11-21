@@ -1,0 +1,271 @@
+{
+  "reviewer": "Reviewer 1",
+  "packet_commit": "4d74af1ffc29573865d00b9a43caddb18589a9f4",
+  "historical_evaluation_commit": "83f44897747ab742bbeb387c0af4403438b854b5",
+  "manifest_sha256": "9a952ed15b39d8cc76b266220e04244e07d1ae26f3ded26e8d5fbccd66e10735",
+  "manifest_files_sha256_verified": 1365,
+  "manifest_mismatches": [],
+  "scientific_exhibits": 19,
+  "historical_expressions": 10,
+  "coverage": [
+    {
+      "id": "fig_01_data_workflow",
+      "preview_viewed": true,
+      "caption_read": true,
+      "source_tables_checked": [
+        "snapshot/figures/fig_01_data_workflow/source_data/cohort.csv"
+      ],
+      "note": "500???????????????"
+    },
+    {
+      "id": "fig_02_segmentation_validation",
+      "preview_viewed": true,
+      "caption_read": true,
+      "source_tables_checked": [
+        "snapshot/figures/fig_02_segmentation_validation/source_data/patient_metrics.csv"
+      ],
+      "note": "82??????????ED/ES????"
+    },
+    {
+      "id": "fig_03_function_agreement",
+      "preview_viewed": true,
+      "caption_read": true,
+      "source_tables_checked": [
+        "snapshot/figures/fig_03_function_agreement/source_data/agreement_statistics.csv"
+      ],
+      "note": "246????????????EF??"
+    },
+    {
+      "id": "fig_04_half_sequence",
+      "preview_viewed": true,
+      "caption_read": true,
+      "source_tables_checked": [
+        "snapshot/figures/fig_04_half_sequence/source_data/frames.csv"
+      ],
+      "note": "????????????????"
+    },
+    {
+      "id": "fig_r01_lv_morphology",
+      "preview_viewed": true,
+      "caption_read": true,
+      "source_tables_checked": [
+        "snapshot/figures/fig_r01_lv_morphology/source_data/diameter_profiles.csv"
+      ],
+      "note": "?????????160??????"
+    },
+    {
+      "id": "fig_r02_systolic_dynamics",
+      "preview_viewed": true,
+      "caption_read": true,
+      "source_tables_checked": [
+        "snapshot/figures/fig_r02_systolic_dynamics/source_data/frame_diameters.csv"
+      ],
+      "note": "36??720????????R1???"
+    },
+    {
+      "id": "fig_r03_diameter_surface",
+      "preview_viewed": true,
+      "caption_read": true,
+      "source_tables_checked": [
+        "snapshot/figures/fig_r03_diameter_surface/source_data/sequences.csv"
+      ],
+      "note": "??720???????????646??????"
+    },
+    {
+      "id": "fig_s01_sv_ef_agreement",
+      "preview_viewed": true,
+      "caption_read": true,
+      "source_tables_checked": [
+        "snapshot/figures/fig_s01_sv_ef_agreement/source_data/agreement_statistics.csv"
+      ],
+      "note": "82????SV????EF???04??"
+    },
+    {
+      "id": "fig_s02_phase_selection",
+      "preview_viewed": true,
+      "caption_read": true,
+      "source_tables_checked": [
+        "snapshot/figures/fig_s02_phase_selection/source_data/phase_statistics.csv"
+      ],
+      "note": "162???????????????EF??"
+    },
+    {
+      "id": "fig_s03_training_comparison",
+      "preview_viewed": true,
+      "caption_read": true,
+      "source_tables_checked": [
+        "snapshot/figures/fig_s03_training_comparison/source_data/paired_statistics.json"
+      ],
+      "note": "71??????70?EF?epoch 7?17"
+    },
+    {
+      "id": "fig_s04_quality_associations",
+      "preview_viewed": true,
+      "caption_read": true,
+      "source_tables_checked": [
+        "snapshot/figures/fig_s04_quality_associations/source_data/quality_statistics.csv"
+      ],
+      "note": "31/39/12????????????"
+    },
+    {
+      "id": "fig_s06_geometry_coverage",
+      "preview_viewed": true,
+      "caption_read": true,
+      "source_tables_checked": [
+        "snapshot/figures/fig_s06_geometry_coverage/source_data/panel_statistics.csv"
+      ],
+      "note": "656???????328???????"
+    },
+    {
+      "id": "fig_s07_ef_reference_bias",
+      "preview_viewed": true,
+      "caption_read": true,
+      "source_tables_checked": [
+        "snapshot/figures/fig_s07_ef_reference_bias/source_data/bias_identity.json"
+      ],
+      "note": "82??????EF??????"
+    },
+    {
+      "id": "fig_s08_observed_temporal_variation",
+      "preview_viewed": true,
+      "caption_read": true,
+      "source_tables_checked": [
+        "snapshot/figures/fig_s08_observed_temporal_variation/source_data/all_observed_frames.csv"
+      ],
+      "note": "3,167??3,003???????????"
+    },
+    {
+      "id": "fig_s09_output_availability",
+      "preview_viewed": true,
+      "caption_read": true,
+      "source_tables_checked": [
+        "snapshot/figures/fig_s09_output_availability/source_data/reverse_phase_sequences.csv"
+      ],
+      "note": "492????????10???????3?????"
+    },
+    {
+      "id": "table_01_cohort",
+      "preview_viewed": true,
+      "caption_read": true,
+      "source_tables_checked": [
+        "snapshot/figures/table_01_cohort/source_data/display_table.csv"
+      ],
+      "note": "??????????????"
+    },
+    {
+      "id": "table_02_function",
+      "preview_viewed": true,
+      "caption_read": true,
+      "source_tables_checked": [
+        "snapshot/figures/table_02_function/source_data/display_table.csv"
+      ],
+      "note": "?????????2,000???bootstrap??"
+    },
+    {
+      "id": "table_s01_function",
+      "preview_viewed": true,
+      "caption_read": true,
+      "source_tables_checked": [
+        "snapshot/figures/table_s01_function/source_data/display_table.csv"
+      ],
+      "note": "21????1,712??????????"
+    },
+    {
+      "id": "table_s02_segmentation",
+      "preview_viewed": true,
+      "caption_read": true,
+      "source_tables_checked": [
+        "snapshot/figures/table_s02_segmentation/source_data/display_table.csv"
+      ],
+      "note": "?????????IoU?????"
+    },
+    {
+      "id": "01_training",
+      "preview_viewed": true,
+      "caption_read": true,
+      "source_directory": "snapshot/reports/result_analysis/camus_cuda_progress/source_data",
+      "note": "S3????????30??epoch 7??"
+    },
+    {
+      "id": "02_segmentation",
+      "preview_viewed": true,
+      "caption_read": true,
+      "source_directory": "snapshot/reports/result_analysis/camus_cuda_progress/source_data",
+      "note": "Figure 2??S2????????328?"
+    },
+    {
+      "id": "03_volume_agreement",
+      "preview_viewed": true,
+      "caption_read": true,
+      "source_directory": "snapshot/reports/result_analysis/camus_cuda_progress/source_data",
+      "note": "Figure 3??2????EDV/ESV"
+    },
+    {
+      "id": "04_function_agreement",
+      "preview_viewed": true,
+      "caption_read": true,
+      "source_directory": "snapshot/reports/result_analysis/camus_cuda_progress/source_data",
+      "note": "S1??2????SV/EF"
+    },
+    {
+      "id": "05_reported_ef",
+      "preview_viewed": true,
+      "caption_read": true,
+      "source_directory": "snapshot/reports/result_analysis/camus_cuda_progress/source_data",
+      "note": "Figure 3c/f??2?CAMUS??EF"
+    },
+    {
+      "id": "06_phase_selection",
+      "preview_viewed": true,
+      "caption_read": true,
+      "source_directory": "snapshot/reports/result_analysis/camus_cuda_progress/source_data",
+      "note": "S2?161?????EF??"
+    },
+    {
+      "id": "07_coverage",
+      "preview_viewed": true,
+      "caption_read": true,
+      "source_directory": "snapshot/reports/result_analysis/camus_cuda_progress/source_data",
+      "note": "S9??S1???????????????"
+    },
+    {
+      "id": "08_examples",
+      "preview_viewed": true,
+      "caption_read": true,
+      "source_directory": "snapshot/reports/result_analysis/camus_cuda_progress/source_data",
+      "note": "Figure 2?Figure 4??????????"
+    },
+    {
+      "id": "09_half_sequences",
+      "preview_viewed": true,
+      "caption_read": true,
+      "source_directory": "snapshot/reports/result_analysis/camus_cuda_progress/source_data",
+      "note": "Figure 4????????????"
+    },
+    {
+      "id": "10_error_associations",
+      "preview_viewed": true,
+      "caption_read": true,
+      "source_directory": "snapshot/reports/result_analysis/camus_cuda_progress/source_data",
+      "note": "S4????????EF????"
+    }
+  ],
+  "read_only_verification": {
+    "cases": [
+      "patient0229_2CH",
+      "patient0189_4CH",
+      "patient0327_2CH",
+      "patient0075_4CH",
+      "patient0329_2CH"
+    ],
+    "cached_frames": 96,
+    "expert_labeled_frames": 10,
+    "array_and_prediction_files_hash_verified": 10,
+    "weights_hash_verified": "b0e8b724ca453c4801fb651163ad0353cec495c0a8d745ada1dbab9067b607c9",
+    "max_spatial_metric_difference": 0,
+    "max_volume_difference": 0,
+    "training_or_model_inference_run": false,
+    "complete_raw_data_rechecked": false,
+    "full_cache_coverage_rechecked": false
+  }
+}

@@ -1,0 +1,176 @@
+{
+  "spacing_xy_mm": [
+    0.30799999833106995,
+    0.30799999833106995
+  ],
+  "origin": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "direction": [
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+  ],
+  "raw_spacing": [
+    0.30799999833106995,
+    0.30799999833106995,
+    1.0
+  ],
+  "source": {
+    "spacing": "medical_image_header",
+    "sha256": "a09d465ace95e186ab743f0215f3ac739a69df91607802c372368f3a801e5ea6",
+    "fps": "Info.cfg:FrameRate",
+    "config_sha256": "b7c581945d3bf0fb09819b3bf6958f533abf0b82a5003b76a5b3a4471d115745"
+  },
+  "fps": 67.4,
+  "sequence_type": "half_sequence",
+  "phases": {
+    "ED": 26,
+    "ES": 0
+  },
+  "config": {
+    "ED": "27",
+    "ES": "1",
+    "NbFrame": "27",
+    "Sex": "M",
+    "Age": "55",
+    "ImageQuality": "Medium",
+    "EF": "52",
+    "FrameRate": "67.4"
+  },
+  "patient_id": "patient0015",
+  "view": "4CH",
+  "gt_scope": "ED_ES_only",
+  "input_path": "data/raw/CAMUS/patient0015/patient0015_4CH_half_sequence.nii.gz",
+  "audit": {
+    "n_frames": 27,
+    "spacing_xy_mm": [
+      0.30799999833106995,
+      0.30799999833106995
+    ],
+    "fps": 67.4,
+    "timestamps_s": [
+      0.0,
+      0.014836795252225518,
+      0.029673590504451036,
+      0.044510385756676554,
+      0.05934718100890207,
+      0.07418397626112759,
+      0.08902077151335311,
+      0.10385756676557863,
+      0.11869436201780414,
+      0.13353115727002965,
+      0.14836795252225518,
+      0.16320474777448069,
+      0.17804154302670622,
+      0.19287833827893172,
+      0.20771513353115725,
+      0.22255192878338276,
+      0.2373887240356083,
+      0.2522255192878338,
+      0.2670623145400593,
+      0.28189910979228483,
+      0.29673590504451036,
+      0.3115727002967359,
+      0.32640949554896137,
+      0.3412462908011869,
+      0.35608308605341243,
+      0.37091988130563797,
+      0.38575667655786344
+    ],
+    "timestamp_source": "derived_from_fps",
+    "metadata_source": {
+      "spacing": "medical_image_header",
+      "sha256": "a09d465ace95e186ab743f0215f3ac739a69df91607802c372368f3a801e5ea6",
+      "fps": "Info.cfg:FrameRate",
+      "config_sha256": "b7c581945d3bf0fb09819b3bf6958f533abf0b82a5003b76a5b3a4471d115745"
+    },
+    "issues": [
+      "roi_not_reviewed_text_removal_unverified"
+    ],
+    "transform": {
+      "original_hw": [
+        389,
+        388
+      ],
+      "crop_xyxy": [
+        0,
+        0,
+        388,
+        389
+      ],
+      "output_hw": [
+        112,
+        112
+      ],
+      "original_to_processed": [
+        [
+          0.28865979381443296,
+          0.0,
+          -0.3556701030927835
+        ],
+        [
+          0.0,
+          0.2879177377892031,
+          -0.3560411311053985
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "processed_to_original": [
+        [
+          3.4642857142857144,
+          0.0,
+          1.2321428571428572
+        ],
+        [
+          0.0,
+          3.4732142857142856,
+          1.2366071428571428
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "coordinate_convention": "integer_pixel_centers_half_pixel_resize",
+      "processed_spacing_xy_mm": [
+        1.0669999942183495,
+        1.0697499942034483
+      ]
+    },
+    "roi_reviewed": false,
+    "masking_method": "explicit_keep_polygon_and_exclusion_boxes+largest_image_support_no_labels",
+    "keep_mask_sha256": "0fa0aa074a8af486d1398d7cc020be41de50383ccc46771c060e4ff1b3dd5d94",
+    "retained_pixel_fraction": 0.5224339437627541,
+    "image_support_excludes_reference_foreground_pixels": 0,
+    "cropped_reference_foreground_pixels": 0,
+    "removed_foreground_label_pixels": 0
+  },
+  "preprocess_config": {
+    "output_hw": [
+      112,
+      112
+    ],
+    "intensity_range": [
+      0,
+      255
+    ],
+    "roi_reviewed": false,
+    "auto_largest_support": true,
+    "exclude_boxes_xyxy": []
+  },
+  "split": "train"
+}

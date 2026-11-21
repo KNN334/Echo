@@ -1,0 +1,12 @@
+{
+  "all_reports_finalized_before_comparison": true,
+  "report_sha256": {
+    "reviewer_1.md": "1376b2b152cada51745c9920dfdd2ed7f4ab8ff37b39ff35fd36c7157a35188d",
+    "reviewer_2.md": "65c9c71a4dfc00cb15037118e600ca321ac35f7cf4f343df874da03ae7ce7bca",
+    "reviewer_3.md": "71cab28f24cc27c8a137e90505bc739c5baead647a9b0f029a1fc960816aa9b2"
+  },
+  "packet_files_verified": 1371,
+  "freeze_confirmed_utc": "2026-11-21T07:59:54.071465+00:00",
+  "report_contents_read_for_comparison_before_this_record": false,
+  "audit_not_yet_started": true
+}

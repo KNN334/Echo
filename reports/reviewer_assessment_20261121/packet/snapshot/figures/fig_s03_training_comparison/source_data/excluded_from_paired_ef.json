@@ -1,0 +1,12 @@
+[
+  {
+    "patient_id": "patient0039",
+    "experiment": "camus_regularized",
+    "issues": "invalid_or_missing_EDV_ESV",
+    "EDV_mL": 5.731467878467842,
+    "ESV_mL": 9.39577410239829,
+    "predicted_EF": null,
+    "CAMUS_label_EF_percent": 58.0,
+    "reason": "ESV exceeds EDV; original EF null retained; both runs omitted only from paired EF panel"
+  }
+]

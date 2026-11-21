@@ -1,0 +1,59 @@
+{
+  "scope": "Available CAMUS project assets; not a claim about all original clinical examinations.",
+  "previous_display": "Six evidence-availability counts were explicitly rendered as 0 in every split.",
+  "revision": "Remove these rows; retain unavailability and unreviewed status in notes. No patient exclusion.",
+  "items": [
+    {
+      "removed_row": "Independent clinical volume references, patients",
+      "measurement": null,
+      "reason": "No independent reference file supplied to the frozen experiment; contour-derived volumes use the same geometry.",
+      "evidence": {
+        "reference_file_sha256": null
+      }
+    },
+    {
+      "removed_row": "Manual anatomical point labels, patients",
+      "measurement": null,
+      "reason": "No independent manual-landmark file supplied; contour-derived proxy points are not manual labels.",
+      "evidence": {
+        "manual_landmark_file_sha256": null,
+        "manual_keypoint_labeled_frames": 0,
+        "manual_keypoint_error": null
+      }
+    },
+    {
+      "removed_row": "Complete cardiac cycles, n",
+      "measurement": null,
+      "reason": "All 1000 manifest sequences are ED-ES half-sequences; frozen beats.csv has no data rows.",
+      "evidence": {
+        "half_sequences_checked": 1000,
+        "complete_beats_reported": 0
+      }
+    },
+    {
+      "removed_row": "Independent HR/CO references, patients",
+      "measurement": null,
+      "reason": "No reliable independent HR/CO reference or complete cycle; HR/CO/ref_CO are absent in all 490 functional rows.",
+      "evidence": {
+        "functional_rows_checked": 490
+      }
+    },
+    {
+      "removed_row": "Project wearable ultrasound acquisitions, n",
+      "measurement": null,
+      "reason": "Every included source path is CAMUS half-sequence data, not a project wearable acquisition.",
+      "evidence": {
+        "source_paths_checked": 1000
+      }
+    },
+    {
+      "removed_row": "Human-reviewed ROIs, sequences",
+      "measurement": null,
+      "reason": "All 1000 sidecars explicitly retain roi_reviewed=false; automated processing is not human review.",
+      "evidence": {
+        "sidecars_checked": 1000,
+        "roi_reviewed_true": 0
+      }
+    }
+  ]
+}

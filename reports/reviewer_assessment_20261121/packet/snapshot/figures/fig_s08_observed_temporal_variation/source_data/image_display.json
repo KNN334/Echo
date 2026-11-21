@@ -1,0 +1,104 @@
+[
+  {
+    "case_id": "patient0329_2CH",
+    "frame": 18,
+    "phase": "intermediate",
+    "time_s": 0.31802120141342755,
+    "expert_available": false,
+    "source_image_hw": [
+      112,
+      112
+    ],
+    "original_hw": [
+      454,
+      551
+    ],
+    "original_spacing_xy_mm": [
+      0.30799999833106995,
+      0.30799999833106995
+    ],
+    "processed_spacing_xy_mm": [
+      1.5152499917894602,
+      1.2484999932348728
+    ],
+    "image_extent_mm": [
+      -0.15399999916553497,
+      169.553999081254,
+      139.67799924314022,
+      -0.15399999916553497
+    ],
+    "display_field_mm": [
+      200,
+      170
+    ],
+    "interpolation": "none",
+    "image_limits": [
+      0,
+      255
+    ],
+    "extra_crop": null,
+    "brightness_contrast_gamma": "unchanged",
+    "roi_reviewed": false,
+    "scale_bar_mm": 20,
+    "proxy_axis_apex_mm": [
+      86.69294070671586,
+      30.948338067597327
+    ],
+    "proxy_axis_base_mm": [
+      74.93923525353254,
+      92.60705757995542
+    ],
+    "axis_reference": "Independently inferred per frame; unvalidated"
+  },
+  {
+    "case_id": "patient0329_2CH",
+    "frame": 19,
+    "phase": "ES",
+    "time_s": 0.33568904593639576,
+    "expert_available": true,
+    "source_image_hw": [
+      112,
+      112
+    ],
+    "original_hw": [
+      454,
+      551
+    ],
+    "original_spacing_xy_mm": [
+      0.30799999833106995,
+      0.30799999833106995
+    ],
+    "processed_spacing_xy_mm": [
+      1.5152499917894602,
+      1.2484999932348728
+    ],
+    "image_extent_mm": [
+      -0.15399999916553497,
+      169.553999081254,
+      139.67799924314022,
+      -0.15399999916553497
+    ],
+    "display_field_mm": [
+      200,
+      170
+    ],
+    "interpolation": "none",
+    "image_limits": [
+      0,
+      255
+    ],
+    "extra_crop": null,
+    "brightness_contrast_gamma": "unchanged",
+    "roi_reviewed": false,
+    "scale_bar_mm": 20,
+    "proxy_axis_apex_mm": [
+      88.46905998573747,
+      30.178269603917766
+    ],
+    "proxy_axis_base_mm": [
+      81.04092898951825,
+      71.89909499789243
+    ],
+    "axis_reference": "Independently inferred per frame; unvalidated"
+  }
+]

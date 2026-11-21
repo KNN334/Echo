@@ -1,0 +1,125 @@
+{
+  "experiment": "two_historical_CAMUS_training_configurations",
+  "new_training_or_inference": false,
+  "test_feedback_used_for_model_selection": false,
+  "sources_sha256": {
+    "configs/camus_splits.json": "85975e0ce238ae244f4b04e432914779feeb153e05c6deb27448aeae87a22cdf",
+    "figures/fig_s03_training_comparison.py": "bace1bb5bc2885c26c5d5fa708b45fe3d5ca45baf58d99fb0d5500167b3d5a58",
+    "figures/fig_s03_training_comparison/figure_contract.md": "7c14a32230192e9133007acb17dbcf196875ed7617afea1ef2d60eb447df2f4b",
+    "checkpoints/camus_cuda_progress/training.csv": "d9279e315cc10d805facc230e6285c2e9d5d8e5f4af1153957595f64115a887b",
+    "checkpoints/camus_cuda_progress/run.json": "edffcc4243aa2f3b51fedbdf586cd95c3d8ec91f7ddb21f3dd7026ec71e4b3d1",
+    "checkpoints/camus_cuda_progress/completed.json": "5b79a39ed59a028655511a24895bfc1fbc98113dc5dde7e684f1fc0559da7519",
+    "checkpoints/camus_cuda_progress/experiment.json": "fb0c758088cd044b1e5b7f92116a52616891b611f082ee7f1223ac871a19b886",
+    "checkpoints/camus_cuda_progress/best.pt": "b0e8b724ca453c4801fb651163ad0353cec495c0a8d745ada1dbab9067b607c9",
+    "runs/validation_camus_cuda_progress/structure.csv": "de9909ebb213c159e927852bdeabe156481b40ffcd975d26193a63f58de935d9",
+    "runs/validation_camus_cuda_progress/function.csv": "66cfed6e1c9c95abe855cacc373d8ac13ff678b371ad0d682d29e690a216f93f",
+    "runs/validation_camus_cuda_progress/summary.json": "d0f7a2447fe4817fbb78a71a942cde432bc6631eb27d663890acf065ff983e8b",
+    "checkpoints/camus_regularized/training.csv": "86bad16316e2d31a7074dbea92244b629533bf3b72e2bd394b87508b74a621cf",
+    "checkpoints/camus_regularized/run.json": "5d3b6e4343e8c484693b9314dfad8eb1feabd9ff99bc5ff1219d92be27aaca8a",
+    "checkpoints/camus_regularized/completed.json": "0848186ea23d82f3f9a9653495d8b1b63d9549d4e3cbfb6d98ec98e075467661",
+    "checkpoints/camus_regularized/experiment.json": "1fd506a840b086e6086f24c2d4fc13c6d5c5d129be6901691cf956c232435e37",
+    "checkpoints/camus_regularized/best.pt": "59b92018e38e823179a4681aec49e06ca66ecbc418617221b9b2740c2c7e1008",
+    "runs/validation_camus_regularized/structure.csv": "8a5966a157b7d69dfd25b075a5c8af577768251820343f6b1a2a152c355878a2",
+    "runs/validation_camus_regularized/function.csv": "c0730a92e178edf8a06de2290587b2b564e22add732be7f17560e126e136361c",
+    "runs/validation_camus_regularized/summary.json": "9bc7cbbcbf5bb3d5e43de41aacf9fc3f1862bc767ee7a18edb5c11870c7a9a03",
+    "reports/training/camus_regularized/training.csv": "86bad16316e2d31a7074dbea92244b629533bf3b72e2bd394b87508b74a621cf",
+    "reports/result_analysis/camus_cuda_progress/analysis_manifest.json": "91dc84c179309d1295ca2f93773fe056c68bdb1d8231339060333d8445cc1af4",
+    "style/palette.py": "9555eb7a32b99b6dad197f574aa76f6842e8e064328c3b55988e71eca651d64c",
+    "style/paper.mplstyle": "95fdfe0e423bead6abb36aa67a94b6e9b76f66845c2eb6feac1c1ee1438dae90",
+    "figures/_paper_common.py": "eb198d3ad330cf9d0252d61b444637fad114e80c0a95fd06778dbcf0ebd6c415"
+  },
+  "existing_frozen_sources_rechecked": [
+    "checkpoints/camus_cuda_progress/training.csv",
+    "checkpoints/camus_cuda_progress/run.json",
+    "checkpoints/camus_cuda_progress/best.pt"
+  ],
+  "versions": {
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.4",
+    "Pillow": "13.0.0",
+    "cmcrameri": "1.10"
+  },
+  "figure": "Fig.S3",
+  "data_split": "training logs and validation metrics only",
+  "experiments": [
+    "camus_cuda_progress",
+    "camus_regularized"
+  ],
+  "configurations": [
+    {
+      "experiment": "camus_cuda_progress",
+      "display_label": "Baseline",
+      "epochs_observed": 30,
+      "selected_epoch": 7,
+      "selected_weights_sha256": "b0e8b724ca453c4801fb651163ad0353cec495c0a8d745ada1dbab9067b607c9",
+      "initial_weights_sha256": "b32ea45b8200e11298ff4021166ff8d187204fb0c27a937bcdb4c518ffcbe1ed",
+      "train_patients": 347,
+      "validation_patients": 71,
+      "seed": 2026,
+      "batch_size": 8,
+      "lr": 0.0001,
+      "augmentation": {
+        "enabled": false
+      },
+      "weight_decay": 0,
+      "baseline_decay_source": "git 83f4489:cardiac/model.py:110, explicit weight_decay=0",
+      "early_stopping_patience": null,
+      "min_delta": 0
+    },
+    {
+      "experiment": "camus_regularized",
+      "display_label": "Regularized",
+      "epochs_observed": 23,
+      "selected_epoch": 17,
+      "selected_weights_sha256": "59b92018e38e823179a4681aec49e06ca66ecbc418617221b9b2740c2c7e1008",
+      "initial_weights_sha256": "b32ea45b8200e11298ff4021166ff8d187204fb0c27a937bcdb4c518ffcbe1ed",
+      "train_patients": 347,
+      "validation_patients": 71,
+      "seed": 2026,
+      "batch_size": 8,
+      "lr": 0.0001,
+      "augmentation": {
+        "enabled": true,
+        "rotation_degrees": 5.0,
+        "translation_fraction": 0.04,
+        "scale_range": [
+          0.95,
+          1.05
+        ],
+        "intensity_range": [
+          0.9,
+          1.1
+        ]
+      },
+      "weight_decay": 0.0001,
+      "baseline_decay_source": null,
+      "early_stopping_patience": 6,
+      "min_delta": 0.0002
+    }
+  ],
+  "core_conclusion": "A small Dice improvement does not establish improved clinical-label EF estimation.",
+  "n_validation_patients_dice": 71,
+  "n_common_valid_ef": 70,
+  "validation_ef_coverage": {
+    "baseline": 71,
+    "regularized": 70,
+    "attempted_each": 71
+  },
+  "excluded_from_paired_ef": [
+    "patient0039"
+  ],
+  "excluded_from_segmentation": [],
+  "variability": "Sample SD across patients; one training run per configuration, no seed uncertainty",
+  "hypothesis_tests": null,
+  "new_model_selection": false,
+  "panel_roles": {
+    "a": "observed optimization",
+    "b": "original validation checkpoint selection",
+    "c": "paired spatial performance",
+    "d": "paired clinical-label EF performance"
+  },
+  "font_path": "C:\\Windows\\Fonts\\arial.ttf",
+  "width_mm": 183,
+  "height_mm": 158,
+  "external_alignment_auditor_used": true
+}

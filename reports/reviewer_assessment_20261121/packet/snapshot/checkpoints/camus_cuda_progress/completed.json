@@ -1,0 +1,4 @@
+{
+  "epochs_completed": 30,
+  "best_weights": "C:\\Users\\LEN\\Desktop\\毕业设计\\毕设-基于贴片式超声探头的心脏功能参数连续监测与分析\\checkpoints\\camus_cuda_progress\\best.pt"
+}

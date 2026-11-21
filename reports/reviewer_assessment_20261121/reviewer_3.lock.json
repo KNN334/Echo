@@ -1,0 +1,16 @@
+{
+  "reviewer": "Reviewer 3",
+  "status": "complete_frozen",
+  "report_path": "C:/Users/LEN/Desktop/毕业设计/毕设-基于贴片式超声探头的心脏功能参数连续监测与分析/reports/reviewer_assessment_20261121/reviewer_3.md",
+  "report_sha256": "71cab28f24cc27c8a137e90505bc739c5baead647a9b0f029a1fc960816aa9b2",
+  "packet_manifest_sha256": "9a952ed15b39d8cc76b266220e04244e07d1ae26f3ded26e8d5fbccd66e10735",
+  "packet_commit": "4d74af1ffc29573865d00b9a43caddb18589a9f4",
+  "historical_evaluation_commit": "83f44897747ab742bbeb387c0af4403438b854b5",
+  "scientific_exhibits_reviewed": 19,
+  "scientific_captions_read": 19,
+  "scientific_previews_visually_inspected": 19,
+  "style_auxiliary_reviewed": 1,
+  "historical_plots_reviewed": 10,
+  "independence": "Only the common frozen packet and own assigned emphasis were used; no other reports, emphasis briefs, synthesis, or post-review audit were read.",
+  "frozen_at_utc": "2026-11-21T07:58:41.570079+00:00"
+}

@@ -1,0 +1,166 @@
+{
+  "spacing_xy_mm": [
+    0.30799999833106995,
+    0.30799999833106995
+  ],
+  "origin": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "direction": [
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+  ],
+  "raw_spacing": [
+    0.30799999833106995,
+    0.30799999833106995,
+    1.0
+  ],
+  "source": {
+    "spacing": "medical_image_header",
+    "sha256": "50952be511b64c78667b3e906a093870ae30e1061e63eedff7dc8ea29446dd66",
+    "fps": "Info.cfg:FrameRate",
+    "config_sha256": "72c998959191003ad8fe125dd16e87c83d384a4882081164f3c2bf17d3e75e0e"
+  },
+  "fps": 48.4,
+  "sequence_type": "half_sequence",
+  "phases": {
+    "ED": 0,
+    "ES": 15
+  },
+  "config": {
+    "ED": "1",
+    "ES": "16",
+    "NbFrame": "16",
+    "Sex": "M",
+    "Age": "71",
+    "ImageQuality": "Good",
+    "EF": "64",
+    "FrameRate": "48.4"
+  },
+  "patient_id": "patient0119",
+  "view": "2CH",
+  "gt_scope": "ED_ES_only",
+  "input_path": "data/raw/CAMUS/patient0119/patient0119_2CH_half_sequence.nii.gz",
+  "audit": {
+    "n_frames": 16,
+    "spacing_xy_mm": [
+      0.30799999833106995,
+      0.30799999833106995
+    ],
+    "fps": 48.4,
+    "timestamps_s": [
+      0.0,
+      0.02066115702479339,
+      0.04132231404958678,
+      0.06198347107438017,
+      0.08264462809917356,
+      0.10330578512396695,
+      0.12396694214876033,
+      0.14462809917355374,
+      0.1652892561983471,
+      0.18595041322314051,
+      0.2066115702479339,
+      0.2272727272727273,
+      0.24793388429752067,
+      0.26859504132231404,
+      0.2892561983471075,
+      0.30991735537190085
+    ],
+    "timestamp_source": "derived_from_fps",
+    "metadata_source": {
+      "spacing": "medical_image_header",
+      "sha256": "50952be511b64c78667b3e906a093870ae30e1061e63eedff7dc8ea29446dd66",
+      "fps": "Info.cfg:FrameRate",
+      "config_sha256": "72c998959191003ad8fe125dd16e87c83d384a4882081164f3c2bf17d3e75e0e"
+    },
+    "issues": [
+      "image_support_excludes_reference_foreground_review_required",
+      "roi_not_reviewed_text_removal_unverified"
+    ],
+    "transform": {
+      "original_hw": [
+        325,
+        458
+      ],
+      "crop_xyxy": [
+        0,
+        0,
+        458,
+        325
+      ],
+      "output_hw": [
+        112,
+        112
+      ],
+      "original_to_processed": [
+        [
+          0.2445414847161572,
+          0.0,
+          -0.3777292576419214
+        ],
+        [
+          0.0,
+          0.3446153846153846,
+          -0.3276923076923077
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "processed_to_original": [
+        [
+          4.089285714285714,
+          0.0,
+          1.5446428571428572
+        ],
+        [
+          0.0,
+          2.9017857142857144,
+          0.9508928571428573
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "coordinate_convention": "integer_pixel_centers_half_pixel_resize",
+      "processed_spacing_xy_mm": [
+        1.2594999931752682,
+        0.8937499951571226
+      ]
+    },
+    "roi_reviewed": false,
+    "masking_method": "explicit_keep_polygon_and_exclusion_boxes+largest_image_support_no_labels",
+    "keep_mask_sha256": "57b2108996899536fabf40e4f8a1b6cc7611e88ed955ecd25a1e672091a1e2c7",
+    "retained_pixel_fraction": 0.5528988915015116,
+    "image_support_excludes_reference_foreground_pixels": 405,
+    "cropped_reference_foreground_pixels": 0,
+    "removed_foreground_label_pixels": 0
+  },
+  "preprocess_config": {
+    "output_hw": [
+      112,
+      112
+    ],
+    "intensity_range": [
+      0,
+      255
+    ],
+    "roi_reviewed": false,
+    "auto_largest_support": true,
+    "exclude_boxes_xyxy": []
+  },
+  "split": "test"
+}

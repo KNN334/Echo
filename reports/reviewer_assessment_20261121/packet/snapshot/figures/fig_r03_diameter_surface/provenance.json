@@ -1,0 +1,147 @@
+{
+  "experiment": "camus_cuda_progress",
+  "new_training_or_inference": false,
+  "test_feedback_used_for_model_selection": false,
+  "sources_sha256": {
+    "figures/fig_r03_diameter_surface.py": "c522b937a0803e0aa7b604b04a75cafdbafd676290608eac11c4c3c09d055fcb",
+    "style/surface_palette.py": "44c74e6759ae804478ccc33bc82767e3737757f21b044510fa55b2fabd708fd7",
+    "figures/fig_r03_diameter_surface/figure_contract.md": "8c939e6a105713642dc452da06a6ec4e135a9bd0e5485986f3abf477fa480d22",
+    "reports/result_analysis/camus_cuda_progress/source_data/example_selection.csv": "e41f39db9e7cf3ca3c1ebcd7785a3fe2d943f27738f7c77c0103f62772e6daac",
+    "figures/fig_r02_systolic_dynamics/source_data/frame_diameters.csv": "44606709e69ef21c23cea46aeb65c44b3e8b74eaa566088f4575089468c95c2d",
+    "figures/_lv_results_common.py": "686a0ea4ddfdbd7f40c934d51cdb43468699c73e15b048ba23b6149dc3462285",
+    "src/geometry/mask_features.py": "0b5d0dad4423542d715405a2dfe20f2f600a360bbfd7f03e0caf39b89b0b9323",
+    "src/geometry/volume.py": "199ad3f653132a6bc7693752ff67817d727e64512b8fe65e73fbae56538b5a42",
+    "src/data/transforms.py": "7d5d10af714c60710a158d3a297ab499db0a218377dfb046ca345a91b24ccf2e",
+    "data/processed/camus/patient0327_2CH.json": "477d23b2e3df2be68e124d8309e6f083c49fff51b0d5c259ba5a28f76ee4414a",
+    "data/processed/camus/patient0327_2CH.npz": "ffd98ec0e4c3b425830696e89b1470d3d4a9bf65d117c4e42f6a750880781e23",
+    "runs/camus_cuda_progress/patient0327_2CH_pred.npz": "40ee006fe27eb8c3fbd43148d77199297157cb2d208f87bf79387a9abf51c188",
+    "runs/camus_cuda_progress/patient0327_2CH_features.json": "8aec897f3e16e18a6cfcc9af619d51807d975ed82b3278924145a1aa8bbd1577",
+    "data/processed/camus/patient0229_2CH.json": "e43f90cc2f1f2c03d91fc7bfbe788b26a527f30f66311c8c4c4ad496b41cf9e8",
+    "data/processed/camus/patient0229_2CH.npz": "740c7741fdcb63bfdb23eb3cfef47519f23523a6d0e58f787e9add10db428172",
+    "runs/camus_cuda_progress/patient0229_2CH_pred.npz": "e128baf5a762a0d1ef2b529461c98b704786df1d92afddcb7fb72030c7840df6",
+    "runs/camus_cuda_progress/patient0229_2CH_features.json": "eb257eba849fd44e144d9d0857013aac1ca3a9d29ea7b7ab6cb9e290a5cf86ef",
+    "reports/result_analysis/camus_cuda_progress/analysis_manifest.json": "91dc84c179309d1295ca2f93773fe056c68bdb1d8231339060333d8445cc1af4",
+    "style/palette.py": "9555eb7a32b99b6dad197f574aa76f6842e8e064328c3b55988e71eca651d64c",
+    "style/paper.mplstyle": "95fdfe0e423bead6abb36aa67a94b6e9b76f66845c2eb6feac1c1ee1438dae90",
+    "figures/_paper_common.py": "eb198d3ad330cf9d0252d61b444637fad114e80c0a95fd06778dbcf0ebd6c415"
+  },
+  "existing_frozen_sources_rechecked": [
+    "data/processed/camus/patient0327_2CH.npz",
+    "runs/camus_cuda_progress/patient0327_2CH_pred.npz",
+    "runs/camus_cuda_progress/patient0327_2CH_features.json",
+    "data/processed/camus/patient0229_2CH.npz",
+    "runs/camus_cuda_progress/patient0229_2CH_pred.npz",
+    "runs/camus_cuda_progress/patient0229_2CH_features.json"
+  ],
+  "versions": {
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.4",
+    "Pillow": "13.0.0",
+    "cmcrameri": "1.10"
+  },
+  "figure": "Fig.R3",
+  "status": "candidate; awaiting user review",
+  "archetype": "quantitative grid",
+  "core_conclusion": "Existing contour-derived diameters describe layer-wise variation across the actually observed ED-ES interval.",
+  "panel_roles": {
+    "a": "Existing median-ranked example",
+    "b": "Existing lowest-ranked example"
+  },
+  "adaptation": "New scientific content; scalar-surface display inspired by the verified user-supplied Wu and Lee 2025 Fig.6a-d, DOI 10.1109/TUFFC.2025.3557519. No acoustic dB or 3D anatomical claims transferred; full text unavailable.",
+  "n_patients": 2,
+  "n_sequences": 2,
+  "n_frames": 36,
+  "n_diameter_values": 720,
+  "n_triangles": 1292,
+  "sample_selection": [
+    {
+      "selection": "Median",
+      "rank": "83",
+      "of_cases": "164",
+      "case_id": "patient0327_2CH",
+      "mean_dice": "0.9206268860792544"
+    },
+    {
+      "selection": "Lowest",
+      "rank": "1",
+      "of_cases": "164",
+      "case_id": "patient0229_2CH",
+      "mean_dice": "0.6770097649127448"
+    }
+  ],
+  "sequence_summary": [
+    {
+      "case_id": "patient0327_2CH",
+      "selection": "Median",
+      "rank": 83,
+      "rank_denominator": 164,
+      "n_patients": 1,
+      "n_observed_frames": 18,
+      "n_layers": 20,
+      "n_values": 360,
+      "n_valid_values": 360,
+      "fps": 60.4,
+      "start_s": 0.0,
+      "end_s": 0.2814569536423841,
+      "min_diameter_mm": 17.247999906539917,
+      "max_diameter_mm": 48.04799973964691,
+      "n_triangles": 646,
+      "roi_reviewed": false
+    },
+    {
+      "case_id": "patient0229_2CH",
+      "selection": "Lowest",
+      "rank": 1,
+      "rank_denominator": 164,
+      "n_patients": 1,
+      "n_observed_frames": 18,
+      "n_layers": 20,
+      "n_values": 360,
+      "n_valid_values": 360,
+      "fps": 56.5,
+      "start_s": 0.0,
+      "end_s": 0.3008849557522124,
+      "min_diameter_mm": 8.161999955773354,
+      "max_diameter_mm": 42.34999977052212,
+      "n_triangles": 646,
+      "roi_reviewed": false
+    }
+  ],
+  "statistical_unit": "Two descriptive patients; frames and layers are repeated observations.",
+  "uncertainty": "No aggregate, interval or statistical test; individual raw measurements.",
+  "temporal_processing": {
+    "smoothing": false,
+    "new_samples": 0,
+    "phase_replacement": false,
+    "reflection": false,
+    "concatenation": false,
+    "HR": null,
+    "CO": null
+  },
+  "display": {
+    "elev": 27,
+    "azim": -55
+  },
+  "projection": "orthographic",
+  "shared_limits": {
+    "time_s": [
+      0,
+      0.32
+    ],
+    "proxy_position_percent": [
+      0,
+      100
+    ],
+    "diameter_mm": [
+      0,
+      60
+    ]
+  },
+  "colormap": "reference_blue_cyan_green_yellow",
+  "color_revision": "User requested the supplied reference surface tones.",
+  "reference": "Prediction-only spatial diameters; no intermediate expert reference.",
+  "font_path": "C:\\Windows\\Fonts\\arial.ttf",
+  "width_mm": 183,
+  "height_mm": 115,
+  "external_alignment_auditor_used": true
+}

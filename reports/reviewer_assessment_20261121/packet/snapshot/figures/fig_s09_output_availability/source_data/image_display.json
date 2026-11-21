@@ -1,0 +1,84 @@
+[
+  {
+    "case_id": "patient0072_2CH",
+    "phase": "ED",
+    "frame": 0,
+    "source_image_hw": [
+      112,
+      112
+    ],
+    "original_hw": [
+      584,
+      708
+    ],
+    "original_spacing_xy_mm": [
+      0.30799999833106995,
+      0.30799999833106995
+    ],
+    "processed_spacing_xy_mm": [
+      1.9469999894499777,
+      1.6059999912977219
+    ],
+    "image_extent_mm": [
+      -0.15399999916553497,
+      217.909998819232,
+      179.7179990261793,
+      -0.15399999916553497
+    ],
+    "display_field_mm": [
+      240,
+      220
+    ],
+    "extra_crop": null,
+    "interpolation": "none",
+    "image_limits": [
+      0,
+      255
+    ],
+    "brightness_contrast_gamma": "unchanged",
+    "roi_reviewed": false,
+    "contours": "original expert and original-coordinate restored prediction",
+    "scale_bar_mm": 20
+  },
+  {
+    "case_id": "patient0072_2CH",
+    "phase": "ES",
+    "frame": 13,
+    "source_image_hw": [
+      112,
+      112
+    ],
+    "original_hw": [
+      584,
+      708
+    ],
+    "original_spacing_xy_mm": [
+      0.30799999833106995,
+      0.30799999833106995
+    ],
+    "processed_spacing_xy_mm": [
+      1.9469999894499777,
+      1.6059999912977219
+    ],
+    "image_extent_mm": [
+      -0.15399999916553497,
+      217.909998819232,
+      179.7179990261793,
+      -0.15399999916553497
+    ],
+    "display_field_mm": [
+      240,
+      220
+    ],
+    "extra_crop": null,
+    "interpolation": "none",
+    "image_limits": [
+      0,
+      255
+    ],
+    "brightness_contrast_gamma": "unchanged",
+    "roi_reviewed": false,
+    "contours": "original expert and original-coordinate restored prediction",
+    "scale_bar_mm": 20
+  }
+]

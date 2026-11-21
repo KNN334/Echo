@@ -1,0 +1,16 @@
+# 当前为 EchoNet 架构在 CAMUS 上的训练适配，非论文训练设置的严格复现。
+epochs: 30
+batch_size: 8
+learning_rate: 0.0001
+seed: 2026
+device: auto  # 明确填写 cuda 时，不可用会报错
+cpu_threads: 2
+early_stopping_patience: 6
+min_delta: 0.0002
+weight_decay: 0.0001
+augmentation:
+  enabled: true
+  rotation_degrees: 5.0
+  translation_fraction: 0.04  # affine_grid 归一化坐标；约为图像宽/高的 ±2%
+  scale_range: [0.95, 1.05]  # 输出到输入的采样尺度，实际图像缩放为其倒数
+  intensity_range: [0.9, 1.1]

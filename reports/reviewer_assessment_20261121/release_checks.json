@@ -1,0 +1,37 @@
+{
+  "active_reports": {
+    "reviewer_1_replacement.md": "46c5f103954b1c34c031a16ea068e7f4dfe208cc901797e9d937edeb083401b0",
+    "reviewer_2.md": "65c9c71a4dfc00cb15037118e600ca321ac35f7cf4f343df874da03ae7ce7bca",
+    "reviewer_3.md": "71cab28f24cc27c8a137e90505bc739c5baead647a9b0f029a1fc960816aa9b2"
+  },
+  "packet_files_verified": 1371,
+  "scientific_exhibits": 19,
+  "exhibit_preview_pdf_caption_paths": 57,
+  "unchanged_figure_assets": 198,
+  "unchanged_csv_json_sources": 114,
+  "local_document_links_checked": 23,
+  "concern_ids": {
+    "reviewer_1_replacement.md": [
+      "R1-M1",
+      "R1-M2",
+      "R1-m1",
+      "R1-m2"
+    ],
+    "reviewer_2.md": [
+      "R2-M1",
+      "R2-M2",
+      "R2-M3",
+      "R2-m1",
+      "R2-m2"
+    ],
+    "reviewer_3.md": [
+      "R3-M1",
+      "R3-m1",
+      "R3-m2",
+      "R3-m3"
+    ]
+  },
+  "major_count": 6,
+  "minor_count": 7,
+  "all_release_assertions_passed": true
+}

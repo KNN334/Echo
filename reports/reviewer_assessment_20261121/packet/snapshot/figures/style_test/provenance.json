@@ -1,0 +1,85 @@
+{
+  "purpose": "style_test_not_manuscript_results_figure",
+  "approved_choices": [
+    "1A",
+    "2A",
+    "3A",
+    "4A",
+    "5A"
+  ],
+  "experiment": "camus_cuda_progress",
+  "new_inference_or_training": false,
+  "sample_selection": {
+    "selection": "Lowest",
+    "rank": "1",
+    "of_cases": "164",
+    "case_id": "patient0229_2CH",
+    "mean_dice": "0.6770097649127448"
+  },
+  "image_phase": "ES",
+  "image_frame": 17,
+  "phase_selection_reason": "ES of the fixed lowest-ranked case, to show the existing failure visibly.",
+  "image_display": {
+    "source_shape": [
+      112,
+      112
+    ],
+    "vmin": 0,
+    "vmax": 255,
+    "interpolation": "none",
+    "crop": "none beyond stored preprocessing",
+    "gamma": "unchanged",
+    "processed_spacing_xy_mm": [
+      1.7324999906122684,
+      1.4272499922662973
+    ],
+    "physical_aspect_preserved": true,
+    "scale_bar_mm": 20,
+    "roi_reviewed": false
+  },
+  "curve": {
+    "n_patients": 1,
+    "n_frames": 18,
+    "valid_volumes": 18,
+    "timestamp_source": "derived_from_fps",
+    "reference": "same_geometry_from_expert_ED_ES_contours",
+    "interpolated_or_extended": false
+  },
+  "bars": {
+    "n_patients_each": 82,
+    "method": "20_disks_shorter_axis",
+    "reference": "same_geometry_from_expert_ED_ES_contours",
+    "interval": "Existing patient bootstrap 95% MAE CI",
+    "bootstrap_repetitions": 2000,
+    "bootstrap_seed": 2026,
+    "new_statistics_computed": false
+  },
+  "font_path": "C:\\Windows\\Fonts\\arial.ttf",
+  "body_pt": 7,
+  "panel_pt": 8,
+  "width_mm": 183.0,
+  "height_mm": 145.0,
+  "raster_dpi": 600,
+  "versions": {
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.4",
+    "Pillow": "13.0.0",
+    "cmcrameri": "1.10"
+  },
+  "sources_sha256": {
+    "reports/result_analysis/camus_cuda_progress/source_data/example_selection.csv": "e41f39db9e7cf3ca3c1ebcd7785a3fe2d943f27738f7c77c0103f62772e6daac",
+    "data/processed/camus/patient0229_2CH.json": "e43f90cc2f1f2c03d91fc7bfbe788b26a527f30f66311c8c4c4ad496b41cf9e8",
+    "data/processed/camus/patient0229_2CH.npz": "740c7741fdcb63bfdb23eb3cfef47519f23523a6d0e58f787e9add10db428172",
+    "runs/camus_cuda_progress/patient0229_2CH_pred.npz": "e128baf5a762a0d1ef2b529461c98b704786df1d92afddcb7fb72030c7840df6",
+    "reports/result_analysis/camus_cuda_progress/source_data/agreement_statistics.csv": "5c312357651179fd79cb742bb84b283639eae5214f3cec2087e1d113da2adbdb",
+    "reports/result_analysis/camus_cuda_progress/analysis_manifest.json": "91dc84c179309d1295ca2f93773fe056c68bdb1d8231339060333d8445cc1af4",
+    "runs/camus_cuda_progress/frames.csv": "e36e516521702c722392b935cd77d7bbb16a6b062f74591a7587539e2c09f174",
+    "runs/camus_cuda_progress/function.csv": "783ecf773c8be25a33546d96d18657d88cefe2a3b1701b08c67d4fa691dfc545",
+    "runs/camus_cuda_progress/structure.csv": "724679f8869c3afa25a4f5c23cdffa1b4f5cb36e43c56ff8bf258bc366d85123",
+    "style/paper.mplstyle": "95fdfe0e423bead6abb36aa67a94b6e9b76f66845c2eb6feac1c1ee1438dae90",
+    "style/palette.py": "9555eb7a32b99b6dad197f574aa76f6842e8e064328c3b55988e71eca651d64c",
+    "style/requirements.txt": "09f211fb8857d3caf026bd533a851066581e953ad3f64d40e988ca52b9a77984",
+    "figures/style_test.py": "534eb57b7d8f55ed6e7a6176d8f82c2d3ba26dfe3a4928e183f51f877eb98066"
+  },
+  "alignment_external_auditor_used": true
+}

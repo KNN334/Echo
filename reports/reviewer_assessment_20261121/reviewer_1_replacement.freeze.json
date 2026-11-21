@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "reviewer": "Reviewer 1",
+  "invocation": "fresh isolated replacement for unusable encoding output",
+  "report": "reviewer_1_replacement.md",
+  "report_sha256": "46c5f103954b1c34c031a16ea068e7f4dfe208cc901797e9d937edeb083401b0",
+  "report_bytes": 19401,
+  "frozen_at_utc": "2026-11-21 08:19:13 UTC",
+  "packet_manifest": "packet/manifest.json",
+  "packet_manifest_sha256": "9a952ed15b39d8cc76b266220e04244e07d1ae26f3ded26e8d5fbccd66e10735",
+  "packet_commit": "4d74af1ffc29573865d00b9a43caddb18589a9f4",
+  "historical_evaluation_commit": "83f44897747ab742bbeb387c0af4403438b854b5",
+  "read_other_reviewer_outputs": false,
+  "read_preceding_reviewer_1_output": false,
+  "new_experiments_or_figure_edits": false,
+  "encoding_validation": {
+    "encoding": "UTF-8",
+    "strict_utf8_decode": true,
+    "json_serialization_roundtrip_identical": true,
+    "chinese_characters": 4164,
+    "replacement_characters": 0,
+    "expected_chinese_phrase_present": true
+  },
+  "frozen": true,
+  "edit_after_freeze": false
+}
