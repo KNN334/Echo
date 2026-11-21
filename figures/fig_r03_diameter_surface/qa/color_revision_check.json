@@ -1,0 +1,16 @@
+{
+  "all_measurement_and_mesh_csv_unchanged": true,
+  "projected_bounds_unchanged": true,
+  "plot_rectangles_unchanged": true,
+  "base_palette_unchanged": true,
+  "checked_sha256": {
+    "figures\\fig_r03_diameter_surface\\source_data\\example_selection.csv": "5915e1e197c1ecb972cb0396b07c80810ca8587a956b17405f99cb2d2d449b9c",
+    "figures\\fig_r03_diameter_surface\\source_data\\mesh_facets.csv": "865806ccf4b66e866e7e2e9c448d869d587d6f2ff0c9972f56d1eff13bdcac12",
+    "figures\\fig_r03_diameter_surface\\source_data\\observed_vertices.csv": "44606709e69ef21c23cea46aeb65c44b3e8b74eaa566088f4575089468c95c2d",
+    "figures\\fig_r03_diameter_surface\\source_data\\sequences.csv": "1a0edc1e61e4381b8800122bca88757a4c205cb0de8698f2de8919cf8eebab66",
+    "figures\\fig_r03_diameter_surface\\qa\\projected_bounds.json": "0701805dbd7d9d5501d543ea2503afdec28d9267169854972298681e3e2ff724",
+    "figures\\fig_r03_diameter_surface\\fig_r03_diameter_surface.plot_rectangles.json": "57b9e77c85a442d3e4264c5c5c7aa169d968943934194f8a89c08cf8253b3cf5",
+    "style\\palette.py": "9555eb7a32b99b6dad197f574aa76f6842e8e064328c3b55988e71eca651d64c"
+  },
+  "change": "Only the shared surface colormap and associated captions/metadata were revised."
+}

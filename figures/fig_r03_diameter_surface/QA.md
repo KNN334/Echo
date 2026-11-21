@@ -26,7 +26,7 @@
 
 ## 渲染与可读性
 
-183×115 mm，沿用共享样式；实际Arial/Arial Bold最小7 pt，全部字体嵌入。两面板使用同一正交投影、仰角27°、方位角−55°和相同框体比例；时间0–0.32 s、代理位置0–100%、直径0–60 mm，统一cividis色标，无光照、投影阴影或背景网格。网格线用于表明离散面片，不是额外的坐标背景网格。轴名与单位完整；x/y标签水平排版以留出刻度空间，z标签竖排。全图/a/b和三类色觉模拟/灰度逐项查看，原始起伏可见，色标亮度顺序可读。
+183×115 mm，沿用共享样式；实际Arial/Arial Bold最小7 pt，全部字体嵌入。两面板使用同一正交投影、仰角27°、方位角−55°和相同框体比例；时间0–0.32 s、代理位置0–100%、直径0–60 mm，统一蓝—青—绿—黄色标，无光照、投影阴影或背景网格。网格线用于表明离散面片，不是额外的坐标背景网格。轴名与单位完整；x/y标签水平排版以留出刻度空间，z标签竖排。全图/a/b和三类色觉模拟/灰度逐项查看，原始起伏可见；高度和刻度提供颜色之外的量值编码。新色带为用户参考色调的视觉近似，不声称感知均匀或恢复原论文LUT。
 
 面板最终对齐PASS（1.5 pt容差）；PDF碰撞0 FAIL/0 WARN，字体实际7 pt检查通过。曲面1292个面片保留矢量路径，PDF文字可编辑；唯一细长栅格为连续色条。RGB PNG及LZW TIFF均600 dpi。英文图注240词。
 
@@ -37,3 +37,9 @@
 复现：项目根目录运行 `.venv/Scripts/python.exe -X utf8 figures/fig_r03_diameter_surface.py`；可用`--alignment-auditor`参数重跑外部对齐检查。默认仍检查最终物理绘图区边界。每次重新导出后须检查最终PDF碰撞。
 
 Core project checks: 39 passed in 7.62 s; `python -m pytest -q --basetemp=.work/pytest-lv-surface-20261121`. Directory and whitespace checks passed. These checks do not establish clinical validity.
+
+## 本次色调修订
+
+用户明确要求按所给参考图色调重配，替代原cividis。仅新增共享色带style/surface_palette.py并让本图调用，基础style/palette.py不变。720个顶点、1292个面片及全部序列/选择CSV、最终投影边界和绘图区矩形SHA256与修订前完全相同，范围仍0–60 mm、无新归一化或数据改动。英文图注只替换色带名称。颜色修订后重新导出并重跑字体、对齐及碰撞检查；最终PDF0 FAIL/0 WARN、7 pt。证据见qa/color_revision_check.json；新色觉/灰度图已覆盖旧诊断图。
+
+Color revision project checks: 39 passed in 7.87 s; `python -m pytest -q --basetemp=.work/pytest-lv-surface-color-20261121`.

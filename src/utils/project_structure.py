@@ -97,6 +97,7 @@ DESCRIPTIONS = {
     'style': '所有新投稿图共用的字体、色系、色带、尺寸与导出设置',
     'style/paper.mplstyle': '用户选定的Nature/Arial全局样式：普通文字7pt、600dpi位图',
     'style/palette.py': '固定实验/参考配色、cividis/vik色带、字体与物理尺寸及统一导出',
+    'style/surface_palette.py': '用户按参考图指定的共享三维曲面蓝—青—绿—黄色带，不修改基础配色',
     'style/requirements.txt': '样式绘图、科学色带和PDF/色觉检查所需依赖',
     'style/README.md': '已确认的全局样式映射、期刊尺寸、复现方法及导出约定',
     'figures/camus_method_flow.svg': 'CAMUS 左室分割与心功能参数估算可编辑流程图',

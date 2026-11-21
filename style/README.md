@@ -13,3 +13,5 @@
 测试页源数据、选择规则和处理记录见输出目录的 `source_data/`、`provenance.json`、`QA.md`。定量面板来自真实数据，不是演示随机数；最低排名样例是旧图集已记录的规则，不在本轮换选。
 
 已读取的期刊依据：[Nature final submission](https://www.nature.com/nature/for-authors/final-submission)、[Nature figure specifications](https://research-figure-guide.nature.com/figures/preparing-figures-our-specifications/)。图内尺寸及字体是按生产规范提前制作，尚不意味着稿件已达发表或临床验证要求。
+
+2026-11-21追加配色修订：用户要求三维曲面采用所给参考图的蓝—青—绿—黄色调，Fig.R3不再沿用cividis。共享色带定义在 `style/surface_palette.py`，后续同类曲面复用 `SURFACE_CMAP`，单图不硬编码颜色；两面板仍用同一线性0–60 mm范围。该色带为参考色调的自定义视觉近似，不声称恢复原论文LUT或感知均匀性。高度/刻度提供颜色之外的量值编码，色觉与灰度诊断保留。基础palette.py、既有图件及原始数据均保持原样。

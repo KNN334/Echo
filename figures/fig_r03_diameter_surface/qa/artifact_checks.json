@@ -62,8 +62,8 @@
   },
   "project_checks": {
     "pytest_passed": 39,
-    "pytest_time_s": 7.62,
-    "command": "python -m pytest -q --basetemp=.work/pytest-lv-surface-20261121",
+    "pytest_time_s": 7.87,
+    "command": "python -m pytest -q --basetemp=.work/pytest-lv-surface-color-20261121",
     "scope": "Engineering checks, not medical validation"
   }
 }

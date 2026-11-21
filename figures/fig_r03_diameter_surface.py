@@ -5,8 +5,9 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from style.palette import (COLORS, CMAPS, LINEWIDTH, MM_PER_INCH, apply_style,
+from style.palette import (COLORS, LINEWIDTH, apply_style,
                            export_figure, figure_size, panel_heading)
+from style.surface_palette import SURFACE_CMAP, SURFACE_CMAP_NAME
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
@@ -57,7 +58,8 @@ def main():
     chosen, selection_path = fixed_examples()
     r2_path = ROOT/'figures/fig_r02_systolic_dynamics/source_data/frame_diameters.csv'
     r2_rows = read_csv(r2_path)
-    sources = [Path(__file__), OUT/'figure_contract.md', selection_path, r2_path, *source_dependencies()]
+    sources = [Path(__file__), ROOT/'style/surface_palette.py', OUT/'figure_contract.md',
+               selection_path, r2_path, *source_dependencies()]
     fig = plt.figure(figsize=figure_size(height_mm=HEIGHT_MM))
     canvas = Canvas(fig)
     norm = colors.Normalize(*LIMITS['diameter_mm'], clip=False)
@@ -100,7 +102,7 @@ def main():
         ax.view_init(**VIEW)
         ax.set_box_aspect((1.4,1,.85), zoom=.9)
         collection = Poly3DCollection(triangles, zsort='average', shade=False,
-                        facecolors=CMAPS['sequential'](norm([r['color_mean_diameter_mm'] for r in face_rows])),
+                        facecolors=SURFACE_CMAP(norm([r['color_mean_diameter_mm'] for r in face_rows])),
                         edgecolors=colors.to_rgba(COLORS['axis'], .3),
                         linewidths=LINEWIDTH['comparison']*.35, antialiased=True)
         collection.set_rasterized(False)
@@ -121,7 +123,7 @@ def main():
             axis.line.set_linewidth(LINEWIDTH['comparison'])
         axes.append(ax)
     cbax = canvas.axes(55, 10, 73, 3)
-    scalar = ScalarMappable(norm=norm, cmap=CMAPS['sequential'])
+    scalar = ScalarMappable(norm=norm, cmap=SURFACE_CMAP)
     colorbar = fig.colorbar(scalar, cax=cbax, orientation='horizontal', ticks=[0,20,40,60])
     colorbar.set_label('Derived diameter (mm)', labelpad=1)
     colorbar.outline.set_visible(False)
@@ -131,7 +133,7 @@ def main():
     write_csv(OUT/'source_data/example_selection.csv', chosen)
     write_json(OUT/'source_data/display_settings.json', {
         'view':VIEW, 'projection':'orthographic', 'box_aspect':[1.4,1,.85], 'box_zoom':.9,
-        'shared_limits':LIMITS, 'colormap':'cividis', 'shade':False,
+        'shared_limits':LIMITS, 'colormap':SURFACE_CMAP_NAME, 'shade':False,
         'mesh':'Each valid adjacent native-grid cell split at the fixed (0,2) diagonal; original vertices only.',
         'color':'Arithmetic mean diameter of the three original vertices in each triangle.',
         'missing_values':'Omit every four-corner cell containing any nonfinite vertex; do not bridge gaps.',
@@ -147,7 +149,7 @@ def main():
     export_figure(fig, OUT/STEM)
     plt.close(fig)
     caption = """Figure R3 | Native-grid LV diameter surfaces over the observed ED–ES interval.
-a,b, Predicted contour-derived transverse diameters in patient0327_2CH and patient0229_2CH, respectively. These pre-existing examples ranked 83rd and first in ascending ED/ES mean Dice among 164 test view sequences; selection was unchanged from Figures R1/R2. Each panel contains 18 observed frames × 20 proxy-axis positions (360 values; two patients and 720 values in total). The horizontal axes represent time from ED, derived from the reported frame rate, and normalized position along each frame's independently estimated contour/PCA proxy axis. Height encodes diameter in millimetres. Adjacent original measurement nodes are joined with planar triangles using a fixed mesh diagonal; no measurement nodes, time samples or spatial samples are added. Facet color is the arithmetic mean diameter of its three vertices. Both panels use identical orthographic views, box proportions, axis ranges and a shared 0–60 mm cividis scale, without lighting or smoothing. Surfaces stop at each observed ES (0.2815 and 0.3009 s); all fluctuations are retained. These descriptive examples contain repeated observations, not 720 independent subjects, and provide no cohort inference. The unvalidated proxy axis is re-estimated per frame; mesh rows do not identify fixed anatomical tissue or measure strain. Intermediate frames have no expert reference. These surfaces are scalar visualizations, not three-dimensional LV reconstructions or acoustic beam-amplitude maps. Public transthoracic CAMUS half-sequences do not demonstrate continuous patch monitoring or full-cycle HR/CO. CAMUS: Leclerc et al., IEEE TMI (2019), doi:10.1109/TMI.2019.2900516; CC BY-NC-SA 4.0.
+a,b, Predicted contour-derived transverse diameters in patient0327_2CH and patient0229_2CH, respectively. These pre-existing examples ranked 83rd and first in ascending ED/ES mean Dice among 164 test view sequences; selection was unchanged from Figures R1/R2. Each panel contains 18 observed frames × 20 proxy-axis positions (360 values; two patients and 720 values in total). The horizontal axes represent time from ED, derived from the reported frame rate, and normalized position along each frame's independently estimated contour/PCA proxy axis. Height encodes diameter in millimetres. Adjacent original measurement nodes are joined with planar triangles using a fixed mesh diagonal; no measurement nodes, time samples or spatial samples are added. Facet color is the arithmetic mean diameter of its three vertices. Both panels use identical orthographic views, box proportions, axis ranges and a shared 0–60 mm blue–cyan–green–yellow scale, without lighting or smoothing. Surfaces stop at each observed ES (0.2815 and 0.3009 s); all fluctuations are retained. These descriptive examples contain repeated observations, not 720 independent subjects, and provide no cohort inference. The unvalidated proxy axis is re-estimated per frame; mesh rows do not identify fixed anatomical tissue or measure strain. Intermediate frames have no expert reference. These surfaces are scalar visualizations, not three-dimensional LV reconstructions or acoustic beam-amplitude maps. Public transthoracic CAMUS half-sequences do not demonstrate continuous patch monitoring or full-cycle HR/CO. CAMUS: Leclerc et al., IEEE TMI (2019), doi:10.1109/TMI.2019.2900516; CC BY-NC-SA 4.0.
 """
     assert len(caption.split()) < 250, len(caption.split())
     (OUT/'caption_en.md').write_text(caption, encoding='utf-8')
@@ -163,6 +165,7 @@ a,b, Predicted contour-derived transverse diameters in patient0327_2CH and patie
                temporal_processing={'smoothing':False, 'new_samples':0, 'phase_replacement':False,
                                     'reflection':False, 'concatenation':False, 'HR':None, 'CO':None},
                display=VIEW, projection='orthographic', shared_limits=LIMITS,
+               colormap=SURFACE_CMAP_NAME, color_revision='User requested the supplied reference surface tones.',
                reference='Prediction-only spatial diameters; no intermediate expert reference.',
                font_path=font, width_mm=183, height_mm=HEIGHT_MM,
                external_alignment_auditor_used=args.alignment_auditor is not None)

@@ -381,8 +381,10 @@ Echo/
 │   │   # 用户选定的Nature/Arial全局样式：普通文字7pt、600dpi位图
 │   ├── README.md
 │   │   # 已确认的全局样式映射、期刊尺寸、复现方法及导出约定
-│   └── requirements.txt
-│       # 样式绘图、科学色带和PDF/色觉检查所需依赖
+│   ├── requirements.txt
+│   │   # 样式绘图、科学色带和PDF/色觉检查所需依赖
+│   └── surface_palette.py
+│       # 用户按参考图指定的共享三维曲面蓝—青—绿—黄色带，不修改基础配色
 ├── tests/
 │   # 自动工程回归检查，不替代真实患者实验或临床验证
 │   ├── test_camus.py

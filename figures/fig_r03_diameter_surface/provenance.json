@@ -3,8 +3,9 @@
   "new_training_or_inference": false,
   "test_feedback_used_for_model_selection": false,
   "sources_sha256": {
-    "figures/fig_r03_diameter_surface.py": "435077c9dcdee7190519841b7ce7a1d55daf2321ef405f13a2112f7417010f42",
-    "figures/fig_r03_diameter_surface/figure_contract.md": "37f4cddcdf645bcc9a4e144c15b73aaa12ab37ce98afd6030b7199737d631086",
+    "figures/fig_r03_diameter_surface.py": "c522b937a0803e0aa7b604b04a75cafdbafd676290608eac11c4c3c09d055fcb",
+    "style/surface_palette.py": "44c74e6759ae804478ccc33bc82767e3737757f21b044510fa55b2fabd708fd7",
+    "figures/fig_r03_diameter_surface/figure_contract.md": "8c939e6a105713642dc452da06a6ec4e135a9bd0e5485986f3abf477fa480d22",
     "reports/result_analysis/camus_cuda_progress/source_data/example_selection.csv": "e41f39db9e7cf3ca3c1ebcd7785a3fe2d943f27738f7c77c0103f62772e6daac",
     "figures/fig_r02_systolic_dynamics/source_data/frame_diameters.csv": "44606709e69ef21c23cea46aeb65c44b3e8b74eaa566088f4575089468c95c2d",
     "figures/_lv_results_common.py": "686a0ea4ddfdbd7f40c934d51cdb43468699c73e15b048ba23b6149dc3462285",
@@ -136,6 +137,8 @@
       60
     ]
   },
+  "colormap": "reference_blue_cyan_green_yellow",
+  "color_revision": "User requested the supplied reference surface tones.",
   "reference": "Prediction-only spatial diameters; no intermediate expert reference.",
   "font_path": "C:\\Windows\\Fonts\\arial.ttf",
   "width_mm": 183,

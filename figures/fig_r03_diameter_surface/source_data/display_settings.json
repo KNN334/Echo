@@ -24,7 +24,7 @@
       60
     ]
   },
-  "colormap": "cividis",
+  "colormap": "reference_blue_cyan_green_yellow",
   "shade": false,
   "mesh": "Each valid adjacent native-grid cell split at the fixed (0,2) diagonal; original vertices only.",
   "color": "Arithmetic mean diameter of the three original vertices in each triangle.",
