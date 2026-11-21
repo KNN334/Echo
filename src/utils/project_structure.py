@@ -15,8 +15,8 @@ RUNTIME_DIRECTORIES = {
 GENERATED_DIRECTORIES = {
     'figures/fig_01_data_workflow': '已确认的Fig.1：队列与方法框架、PDF/600dpi位图、源数据、英文图注与检查',
     'figures/fig_02_segmentation_validation': '已确认的Fig.2：全患者分布及固定排名ED/ES病例、源数据、英文图注与检查',
-    'figures/fig_03_function_agreement': '第二批Fig.3：同法容积与CAMUS标签EF散点/BA、配对源数据、图注与检查；待反馈',
-    'figures/fig_04_half_sequence': '第二批Fig.4：四固定病例真实ED–ES半序列轨迹、端点源数据、图注与检查；待反馈',
+    'figures/fig_03_function_agreement': '已确认的Fig.3：同法容积与CAMUS标签EF散点/BA、配对源数据、图注与检查',
+    'figures/fig_04_half_sequence': '已确认的Fig.4：四固定病例真实ED–ES半序列轨迹、端点源数据、图注与检查',
     'figures/style_test': '已确认的全局样式测试页、真实源数据、英文图注及字体/排版/色觉检查',
     'figures/workflow_parts': '当前项目流程图规划、独立零件及审阅图集；总图待讨论后组装',
     'reports/result_analysis': '实测结果图集、中文解读、源数据及图件检查；内容由绘图入口生成',
@@ -75,6 +75,7 @@ DESCRIPTIONS = {
     'figures/planning/summarize_literature.py': '从人工核查目录生成拆解表并统计图表数量与论证作用',
     'figures/planning/literature_statistics.json': '图表数量中位数、范围和十二类论证作用的统计结果',
     'figures/planning/literature_breakdown.md': '两篇模板与四篇近期论文的逐图逐表拆解及共同做法',
+    'figures/planning/visualization_coverage.md': '结果分析可视化覆盖审计、正文/补充/质控分层及不可制作项目',
     'figure_plan.md': '正文和补充图表制作清单、证据边界、待补计算与阶段确认进度',
     'style': '所有新投稿图共用的字体、色系、色带、尺寸与导出设置',
     'style/paper.mplstyle': '用户选定的Nature/Arial全局样式：普通文字7pt、600dpi位图',

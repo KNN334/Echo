@@ -24,7 +24,7 @@
 
 ## 结果分析图
 
-本轮投稿图表规划见 [图表制作清单](figure_plan.md)、[结果资产盘点](figures/planning/result_assets.md) 和 [六篇同行论文逐图逐表拆解](figures/planning/literature_breakdown.md)。正文4图2表及补充候选、[全局样式](style/README.md) 和 [真实数据样式测试页](figures/style_test/style_test.pdf) 已确认。第一批 [Fig.1 数据与方法框架](figures/fig_01_data_workflow/fig_01_data_workflow.pdf) 和 [Fig.2 分割验证](figures/fig_02_segmentation_validation/fig_02_segmentation_validation.pdf) 已获用户确认。第二批 [Fig.3 功能一致性](figures/fig_03_function_agreement/fig_03_function_agreement.pdf) 和 [Fig.4 半周期容积轨迹](figures/fig_04_half_sequence/fig_04_half_sequence.pdf) 已制作，附源数据、英文图注及检查，等待本批反馈；两张表尚未制作。所有验证仍限定于公开CAMUS半周期，功能图保留当前几何与时序局限，不能表述为贴片连续佩戴实测或独立临床容积准确性。
+本轮投稿图表规划见 [图表制作清单](figure_plan.md)、[结果资产盘点](figures/planning/result_assets.md) 和 [六篇同行论文逐图逐表拆解](figures/planning/literature_breakdown.md)。[全局样式](style/README.md)、[样式测试页](figures/style_test/style_test.pdf) 及四张正文图均已确认：[Fig.1 数据与方法框架](figures/fig_01_data_workflow/fig_01_data_workflow.pdf)、[Fig.2 分割验证](figures/fig_02_segmentation_validation/fig_02_segmentation_validation.pdf)、[Fig.3 功能一致性](figures/fig_03_function_agreement/fig_03_function_agreement.pdf)、[Fig.4 半周期轨迹](figures/fig_04_half_sequence/fig_04_half_sequence.pdf)。两张正文表尚未制作。按用户新增的完整覆盖要求，[可视化覆盖目录](figures/planning/visualization_coverage.md) 已收集10类旧分析图及新增诊断，提出核心补充8图2表、另3张有条件备选图，等待新增清单确认。所有结果仍限定于公开CAMUS半周期，保留几何与时序局限，不表述为贴片佩戴实测或独立临床容积准确性。
 
 [2026-11-21结果自检](reports/result_integrity/camus_cuda_progress_20261121/report.md)：328标注帧分割指标与490行功能结果均可复算；发现代理长轴/基底导致的几何范围不一致、EF偏倚抵消和逐帧跳变风险。功能主图需先复核几何定义；原冻结结果保持不变。
 
@@ -111,9 +111,9 @@ Echo/
 │   ├── fig_02_segmentation_validation/
 │   │   # 已确认的Fig.2：全患者分布及固定排名ED/ES病例、源数据、英文图注与检查
 │   ├── fig_03_function_agreement/
-│   │   # 第二批Fig.3：同法容积与CAMUS标签EF散点/BA、配对源数据、图注与检查；待反馈
+│   │   # 已确认的Fig.3：同法容积与CAMUS标签EF散点/BA、配对源数据、图注与检查
 │   ├── fig_04_half_sequence/
-│   │   # 第二批Fig.4：四固定病例真实ED–ES半序列轨迹、端点源数据、图注与检查；待反馈
+│   │   # 已确认的Fig.4：四固定病例真实ED–ES半序列轨迹、端点源数据、图注与检查
 │   ├── planning/
 │   │   # 结果资产盘点、同行逐图逐表拆解与图表规划的可复核材料
 │   │   ├── asset_inventory.json
@@ -130,8 +130,10 @@ Echo/
 │   │   │   # 图表数量中位数、范围和十二类论证作用的统计结果
 │   │   ├── result_assets.md
 │   │   │   # 输出资产、分辨率、实验和已算/待算/不可算指标的中文清单
-│   │   └── summarize_literature.py
-│   │       # 从人工核查目录生成拆解表并统计图表数量与论证作用
+│   │   ├── summarize_literature.py
+│   │   │   # 从人工核查目录生成拆解表并统计图表数量与论证作用
+│   │   └── visualization_coverage.md
+│   │       # 结果分析可视化覆盖审计、正文/补充/质控分层及不可制作项目
 │   ├── style_test/
 │   │   # 已确认的全局样式测试页、真实源数据、英文图注及字体/排版/色觉检查
 │   ├── workflow_parts/
