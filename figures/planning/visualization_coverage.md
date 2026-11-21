@@ -65,7 +65,7 @@
 
 | 编号 | 标题/主要信息 | 数据、布局和对标 | 状态/位置 |
 |---|---|---|---|
-| Table 1 | CAMUS队列、固定划分与参考覆盖 | manifest/划分/1000侧车；train/val/test/总计，Age/Sex/EF、质量、空间/时间和参考覆盖；EchoFM Table I、EchoPrime Table 1 | ✅ 已制作并核查，待本批反馈；正文P1 |
+| Table 1 | CAMUS队列、固定划分与参考覆盖 | manifest/划分/1000侧车；train/val/test/总计，Age/Sex/EF、质量、空间/时间和EF标签覆盖；缺失证据及未审阅ROI写入表注，移除六行全零计数；EchoFM Table I、EchoPrime Table 1 | ✅ 按反馈修订，22行真实数据不变，待确认；正文P1 |
 | Fig.1 | 当前数据与实际方法链，贴片为目标场景 | a–d；Ouyang Fig.1、Hu Fig.5a、EchoPrime Fig.1 | ✅ 已确认；正文P1 |
 | Fig.2 | 全患者分割与低分/典型轮廓 | 82患者/328帧，三指标+2×4影像；Ouyang Fig.2d/e、Chao Fig.1、EchoFM Fig.4 | ✅ 已确认；正文P1 |
 | Fig.3 | 同法EDV/ESV与标签EF一致性 | 2×3散点/BA，各n=82；Ouyang Fig.2a、Hu Fig.5c、EchoPrime SI Fig.1 | ✅ 已确认；正文P1 |

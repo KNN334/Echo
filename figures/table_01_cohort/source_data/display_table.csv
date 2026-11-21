@@ -5,6 +5,7 @@ data,"Age, years; median [IQR]","68.0 [56.0, 76.0]","65.0 [52.0, 74.0]","65.0 [5
 data,"Female, n (%)",116 (33.4),29 (40.8),25 (30.5),170 (34.0)
 data,"Male, n (%)",231 (66.6),42 (59.2),57 (69.5),330 (66.0)
 data,"CAMUS EF label, %; median [IQR]","45.0 [37.0, 52.0]","48.0 [38.0, 52.5]","47.5 [38.2, 54.8]","46.0 [37.0, 52.0]"
+data,"CAMUS EF label coverage, patients",347 / 347,71 / 71,82 / 82,500 / 500
 section,View-sequence and frame-level characteristics,,,,
 data,"View sequences, n",694,142,164,"1,000"
 data,"2CH / 4CH sequences, n",347 / 347,71 / 71,82 / 82,500 / 500
@@ -23,11 +24,3 @@ data,"Original width, pixels; range",323-915,354-1181,355-869,323-1181
 data,"Original x / y spacing, mm",0.308 / 0.308,0.308 / 0.308,0.308 / 0.308,0.308 / 0.308
 data,"Processed x spacing, mm; median [IQR]","1.625 [1.485, 1.840]","1.625 [1.408, 1.840]","1.625 [1.408, 1.836]","1.625 [1.408, 1.840]"
 data,"Processed y spacing, mm; median [IQR]","1.339 [1.160, 1.515]","1.339 [1.160, 1.517]","1.339 [1.160, 1.449]","1.339 [1.160, 1.515]"
-section,Available references and unacquired evidence,,,,
-data,"CAMUS EF label coverage, patients",347 / 347,71 / 71,82 / 82,500 / 500
-data,"Independent clinical volume references, patients",0,0,0,0
-data,"Manual anatomical point labels, patients",0,0,0,0
-data,"Complete cardiac cycles, n",0,0,0,0
-data,"Independent HR/CO references, patients",0,0,0,0
-data,"Project wearable ultrasound acquisitions, n",0,0,0,0
-data,"Human-reviewed ROIs, sequences",0,0,0,0

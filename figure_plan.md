@@ -50,7 +50,7 @@
 ### Table 1：队列与标签覆盖
 
 - **源数据**：`data/processed/camus/manifest.json`、`configs/camus_splits.json`、1,000 个病例 JSON；`figures/planning/asset_inventory.json`；`reports/result_analysis/camus_cuda_progress/source_data/coverage.csv`。
-- **排版**：一张表，train/val/test/合计四列；患者数、切面数、总帧数、ED/ES 标注数、2CH/4CH、官方图像质量、帧率/半序列时长、空间尺寸分行。参考覆盖另作表内区块，避免把“0”写成“未发现”。训练与验证分层帧数从 manifest 分组汇总，不按比例推算。
+- **排版**：一张表，train/val/test/合计四列；患者数、切面数、总帧数、ED/ES 标注数、2CH/4CH、官方图像质量、帧率/半序列时长、空间尺寸分行。按用户反馈，不把六类缺失证据的全零计数作为队列特征行；CAMUS EF标签覆盖并入患者区块，缺失证据及ROI未审阅写在表注。训练与验证分层帧数从 manifest 分组汇总，不按比例推算。
 - **注释**：原始数据全量仅有历史清单，本地 1,000 切面缓存完整是本次实核结论；人工 ROI 审阅均为 false。尚无贴片、EchoNet 本项目外部评价或人工关键点。本轮只读核对500患者的Age/Sex/EF字段齐全且两视图一致，可按固定划分汇总真实年龄、性别和EF；不推定不存在的病种或临床容积标签。
 
 ### Fig.1：数据与方法框架
@@ -265,7 +265,7 @@ Fig.S3不称单因素消融；两历史实验测试集均已评价，不能由�
 
 | 项目 | 交付与检查 | 状态 |
 |---|---|---|
-| Table 1 | [PDF](figures/table_01_cohort/table_01_cohort.pdf) · [可编辑表](figures/table_01_cohort/table_01_cohort.md) · [英文图注](figures/table_01_cohort/caption_en.md) · [QA](figures/table_01_cohort/QA.md)；183×170 mm，固定347/71/82患者；年龄、性别、EF、质量、帧与空间/时间参数分别标单位和分母 | 已制作并核查，等待反馈 |
+| Table 1 | [PDF](figures/table_01_cohort/table_01_cohort.pdf) · [可编辑表](figures/table_01_cohort/table_01_cohort.md) · [英文图注](figures/table_01_cohort/caption_en.md) · [QA](figures/table_01_cohort/QA.md)；183×145 mm，固定347/71/82患者；22行真实队列数据，已按反馈移除六行全零证据计数，原因移至表注 | 已修订并核查，等待反馈 |
 | Table 2 | [PDF](figures/table_02_function/table_02_function.pdf) · [可编辑表](figures/table_02_function/table_02_function.md) · [英文图注](figures/table_02_function/caption_en.md) · [QA](figures/table_02_function/QA.md)；183×112 mm，五行各82患者，410个患者–指标配对；含冻结MAE患者区间、RMSE、bias、LOA、r及预测R² | 已制作并核查，等待反馈 |
 
 Table 1直接核对1000侧车及500个患者记录，独立计数/四分位数复核一致，无缺失插补或排除。Table 2从原始function.csv重算点统计，核对冻结配对、既有统计及审计；保留2000次患者bootstrap、seed 2026的既有MAE区间，未重选区间。预测R²严格为1−SSE/SST(reference)，SV−0.002、同法EF−0.041如实保留；标签EF r=0.663、预测R²=0.189，不能互换。
@@ -274,6 +274,8 @@ Table 1直接核对1000侧车及500个患者记录，独立计数/四分位数�
 
 本批项目核心检查39项通过（7.56 s），README目录核对通过；工程检查不代表临床验证。
 
-几何覆盖问题、同法参考非独立临床标准及偏倚抵消风险均保留。HR/CO为null、n=0并列原因；不存在独立容积/人工点/完整周期/贴片/人工ROI审阅证据的记录数0不表示误差为0。
+几何覆盖问题、同法参考非独立临床标准及偏倚抵消风险均保留。HR/CO为null、n=0并列原因。用户反馈后，Table 1删除独立容积、人工点、完整周期、HR/CO参考、贴片采集、ROI人工审阅六行全零可用性计数；原因逐项核实并保存，不再把缺失证据计数当作队列特征。22行真实数据不变、三份队列源表内容一致（忽略Git换行编码差异）、全部患者保留，相关限制在表注保留。Table 2未改动。
+
+Table 1修订后重新完成PDF字体/碰撞与逐行对照检查；183×145 mm，实际最小字7 pt，碰撞0 FAIL/0 WARN；项目核心检查39项通过（7.60 s）。
 
 **【停】等待本批Table 1/2反馈；确认后制作Fig.S1/S7，不提前进入下一批。**

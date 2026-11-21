@@ -6,9 +6,11 @@
     "data/processed/camus/manifest.json": "e8603f1862c321c0ece99bbfb34c530e3512ff78ee1b2484c615fcafb08445a6",
     "configs/camus_splits.json": "85975e0ce238ae244f4b04e432914779feeb153e05c6deb27448aeae87a22cdf",
     "figures/planning/asset_inventory.json": "fcb5d567ef893b6b38627521e78e675bac1d115da4fa7b88fca0d13a91b9ff03",
-    "figures/table_01_cohort.py": "d984b04b92e186618b61453e0fd7bc753aa8ded4c868ecc3c166f2c6938a0385",
+    "figures/table_01_cohort.py": "10bfb81b1a4892cae647e8dfff9a2ff3c880b338631e2661cbec37ca2feb5413",
     "figures/_paper_tables.py": "03a01f6aec16c65314855889cf808bb02193ae00936a8528cb174a4e34aa686f",
     "runs/camus_cuda_progress/summary.json": "a5876545e456fb436fb49127237bdd56223a6d7114c60b6c75156871ab1b22d9",
+    "runs/camus_cuda_progress/function.csv": "783ecf773c8be25a33546d96d18657d88cefe2a3b1701b08c67d4fa691dfc545",
+    "runs/camus_cuda_progress/beats.csv": "f01a374e9c81e3db89b3a42940c4d6a5447684986a1296e42bf13f196eed6295",
     "data/processed/camus/patient0001_2CH.json": "0382c0f1c3e2cbaf0a8ce95c32f8e30c14dcb02fbabe924d7952a3111086a8d9",
     "data/processed/camus/patient0001_4CH.json": "e9fe4be70316f40d0342e3864ae88f9c3ef975602b9a63beb07fa3146db9b108",
     "data/processed/camus/patient0002_2CH.json": "421f8122ff84adad5b27a52fd5ef2f7fead383cbc5e8726534cddc7bcbb0a054",
@@ -1015,7 +1017,8 @@
     "figures/_paper_common.py": "eb198d3ad330cf9d0252d61b444637fad114e80c0a95fd06778dbcf0ebd6c415"
   },
   "existing_frozen_sources_rechecked": [
-    "runs/camus_cuda_progress/summary.json"
+    "runs/camus_cuda_progress/summary.json",
+    "runs/camus_cuda_progress/function.csv"
   ],
   "versions": {
     "matplotlib": "3.11.2",
@@ -1031,11 +1034,12 @@
   "hypothesis_tests": null,
   "imputation": null,
   "excluded_patients": [],
+  "revision": "Removed six unavailable-evidence count rows from table; notes retain the limitations.",
   "data_scope": "Local prepared CAMUS half-sequences; no project patch acquisition.",
   "original_data_integrity": "Historical manifest only; no new full raw-data download or verification.",
   "font_path": "C:\\Windows\\Fonts\\arial.ttf",
   "width_mm": 183.0,
-  "height_mm": 170.0,
-  "bottom_rule_mm": 33.94999999999989,
+  "height_mm": 145.0,
+  "bottom_rule_mm": 34.49999999999993,
   "external_alignment_auditor_used": true
 }

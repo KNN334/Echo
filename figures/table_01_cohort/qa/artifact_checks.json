@@ -1,20 +1,20 @@
 {
   "width_mm": 183.00000559488933,
-  "height_mm": 170.00000237358938,
+  "height_mm": 144.99999949137367,
   "minimum_font_pt": 7.0,
   "fonts": [
     "Arial-BoldMT",
     "ArialMT"
   ],
   "all_fonts_embedded": true,
-  "text_span_count": 157,
+  "text_span_count": 126,
   "native_image_shapes": [],
   "text_within_page": true,
   "rasters": {
     "png": {
       "size_px": [
         4322,
-        4015
+        3425
       ],
       "mode": "RGB",
       "dpi": [
@@ -25,7 +25,7 @@
     "tiff": {
       "size_px": [
         4322,
-        4015
+        3425
       ],
       "mode": "RGB",
       "dpi": [

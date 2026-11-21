@@ -10,7 +10,7 @@ import matplotlib
 matplotlib.use('Agg')
 import numpy as np
 from style.palette import apply_style
-from _paper_common import PREPARED, RUN, provenance, read_json, write_csv, write_json
+from _paper_common import PREPARED, RUN, provenance, read_csv, read_json, write_csv, write_json
 from _paper_tables import render_table, write_markdown
 
 OUT = ROOT/'figures/table_01_cohort'
@@ -45,7 +45,9 @@ def main():
     splits = read_json(split_path)['patients']
     assert not manifest['failures']
     cases, patients, sources = [], {}, [manifest_path,split_path,inventory_path,Path(__file__),
-                                      ROOT/'figures/_paper_tables.py',RUN/'summary.json']
+                                      ROOT/'figures/_paper_tables.py',RUN/'summary.json',
+                                      RUN/'function.csv',RUN/'beats.csv']
+    input_paths = []
     for case in manifest['cases']:
         meta_path = PREPARED/(case['case_id']+'.json')
         meta = read_json(meta_path)
@@ -56,6 +58,7 @@ def main():
         assert meta['split'] == case['split'] == splits[pid]
         assert meta['patient_id'] == pid and meta['view'] == case['view']
         assert meta['sequence_type'] == 'half_sequence'
+        input_paths.append(meta['input_path'])
         assert case['frames'] == audit['n_frames'] and case['labeled_frames'] == 2
         assert tuple(tr['output_hw']) == (112,112)
         assert audit['timestamp_source'] == 'derived_from_fps'
@@ -88,6 +91,14 @@ def main():
     summary = read_json(RUN/'summary.json')
     assert len([p for p in patients.values() if p['split']=='test']) == summary['patients'] == 82
     assert summary['manual_keypoint_labeled_frames']==summary['beats']==0
+    assert summary['reference_file_sha256'] is None
+    assert summary['manual_landmark_file_sha256'] is None
+    assert summary['manual_keypoint_error'] is None
+    function_rows = read_csv(RUN/'function.csv')
+    assert len(function_rows)==490
+    assert all(not r['HR'] and not r['CO'] and not r['ref_CO'] for r in function_rows)
+    assert not read_csv(RUN/'beats.csv')
+    assert all('/CAMUS/' in p.replace('\\','/') and 'half_sequence' in p for p in input_paths)
     groups = {key:([p for p in patients.values() if p['split']==key],
                   [c for c in cases if c['split']==key]) for key in SPLITS[:-1]}
     groups['total'] = (list(patients.values()),cases)
@@ -109,6 +120,7 @@ def main():
     row('Female, n (%)',lambda ps,cs:count_pct(ps,'sex','F'))
     row('Male, n (%)',lambda ps,cs:count_pct(ps,'sex','M'))
     row('CAMUS EF label, %; median [IQR]',lambda ps,cs:iq([p['dataset_ef_percent'] for p in ps]))
+    row('CAMUS EF label coverage, patients',lambda ps,cs:f'{len(ps):,} / {len(ps):,}')
     section('View-sequence and frame-level characteristics')
     row('View sequences, n',lambda ps,cs:f'{len(cs):,}')
     row('2CH / 4CH sequences, n',lambda ps,cs:' / '.join(str(sum(c['view']==v for c in cs)) for v in ['2CH','4CH']))
@@ -130,24 +142,15 @@ def main():
     for direction in ['x','y']:
         row('Processed '+direction+' spacing, mm; median [IQR]',
             lambda ps,cs,k='processed_spacing_'+direction+'_mm':iq([c[k] for c in cs],3))
-    section('Available references and unacquired evidence')
-    row('CAMUS EF label coverage, patients',lambda ps,cs:f'{len(ps):,} / {len(ps):,}')
-    for label in ['Independent clinical volume references, patients',
-                  'Manual anatomical point labels, patients',
-                  'Complete cardiac cycles, n',
-                  'Independent HR/CO references, patients',
-                  'Project wearable ultrasound acquisitions, n',
-                  'Human-reviewed ROIs, sequences']:
-        row(label,lambda ps,cs:'0')
 
     notes = [
         'Patient statistics use one record per patient; quality and sampling statistics use view sequences.',
         'Values are n (%), median [25th, 75th percentiles], or ranges; IQR boundaries use linear quantiles.',
         'Custom patient split; both views stay together. All data are CAMUS transthoracic ED-ES half-sequences.',
         'Time is derived from FPS, not acquisition timestamps. Original and processed spacing are distinct.',
-        'Zero reference counts describe available project assets; they do not mean zero measurement error.',
         'Expert-contour-derived volumes are available but are not independent clinical volume standards.',
-        'No project patch recordings or independent HR/CO references; no full-cycle synthesis or ROI review claimed.'
+        'Independent volume, manual point and HR/CO references, full cycles and project patch recordings are unavailable.',
+        'All ROIs retain their unreviewed status. Missing evidence is stated here, not listed as cohort characteristics.'
     ]
     caption = ('Table 1 | CAMUS cohort, patient partitions and available reference evidence.\n\n'
                'The table summarizes all 500 patients and 1,000 two- and four-chamber view sequences '
@@ -157,9 +160,10 @@ def main():
                'or imputation. Image-quality categories are provided by CAMUS and counted per view sequence. '
                'Sequence duration is the observed ED-to-ES interval, (frame count minus one)/FPS. Original '
                'pixel spacing and the spacing of the 112-by-112 processed raster are reported separately. '
-               'Zero counts identify reference or acquisition assets unavailable in this project; they are '
-               'not zero errors, and do not imply that such measurements were absent from the original '
-               'clinical examination. Expert ED/ES contours support geometry-derived reference volumes, '
+               'Unavailable reference and acquisition evidence is described in the notes rather than '
+               'listed as zero-valued cohort characteristics. This concerns available project assets, '
+               'not measurements that may have been obtained during the original clinical examination. '
+               'Expert ED/ES contours support geometry-derived reference volumes, '
                'but no independent clinical volume standard, manually annotated anatomical points, '
                'complete cardiac cycles, independent HR/CO reference or project wearable acquisition '
                'is available. All ROIs retain their unreviewed status. No between-split hypothesis tests '
@@ -168,7 +172,7 @@ def main():
     headers = ['Characteristic','Train','Validation','Test','Total']
     dimensions = render_table(OUT,STEM,'Table 1 | Cohort, patient partitions and reference coverage',
                               headers,[66,26.25,26.25,26.25,26.25],rows,notes,
-                              height_mm=170,row_height_mm=3.65,header_top_mm=158,
+                              height_mm=145,row_height_mm=3.65,header_top_mm=133,
                               auditor=args.alignment_auditor)
     write_csv(OUT/'source_data/patient_metadata.csv',sorted(patients.values(),key=lambda p:p['patient_id']))
     write_csv(OUT/'source_data/sequence_metadata.csv',cases)
@@ -185,12 +189,38 @@ def main():
                             ['frames','fps','half_sequence_duration_s','processed_spacing_x_mm',
                              'processed_spacing_y_mm','original_height_px','original_width_px']}}
     write_json(OUT/'source_data/cohort_statistics.json',numeric)
+    write_json(OUT/'source_data/unavailable_evidence.json', {
+        'scope':'Available CAMUS project assets; not a claim about all original clinical examinations.',
+        'previous_display':'Six evidence-availability counts were explicitly rendered as 0 in every split.',
+        'revision':'Remove these rows; retain unavailability and unreviewed status in notes. No patient exclusion.',
+        'items':[
+            {'removed_row':'Independent clinical volume references, patients', 'measurement':None,
+             'reason':'No independent reference file supplied to the frozen experiment; contour-derived volumes use the same geometry.',
+             'evidence':{'reference_file_sha256':summary['reference_file_sha256']}},
+            {'removed_row':'Manual anatomical point labels, patients', 'measurement':None,
+             'reason':'No independent manual-landmark file supplied; contour-derived proxy points are not manual labels.',
+             'evidence':{'manual_landmark_file_sha256':summary['manual_landmark_file_sha256'],
+                         'manual_keypoint_labeled_frames':summary['manual_keypoint_labeled_frames'],
+                         'manual_keypoint_error':summary['manual_keypoint_error']}},
+            {'removed_row':'Complete cardiac cycles, n', 'measurement':None,
+             'reason':'All 1000 manifest sequences are ED-ES half-sequences; frozen beats.csv has no data rows.',
+             'evidence':{'half_sequences_checked':len(cases),'complete_beats_reported':summary['beats']}},
+            {'removed_row':'Independent HR/CO references, patients', 'measurement':None,
+             'reason':'No reliable independent HR/CO reference or complete cycle; HR/CO/ref_CO are absent in all 490 functional rows.',
+             'evidence':{'functional_rows_checked':len(function_rows)}},
+            {'removed_row':'Project wearable ultrasound acquisitions, n', 'measurement':None,
+             'reason':'Every included source path is CAMUS half-sequence data, not a project wearable acquisition.',
+             'evidence':{'source_paths_checked':len(input_paths)}},
+            {'removed_row':'Human-reviewed ROIs, sequences', 'measurement':None,
+             'reason':'All 1000 sidecars explicitly retain roi_reviewed=false; automated processing is not human review.',
+             'evidence':{'sidecars_checked':len(cases),'roi_reviewed_true':sum(c['roi_reviewed'] for c in cases)}}]})
     (OUT/'caption_en.md').write_text(caption,encoding='utf-8')
     write_markdown(OUT/(STEM+'.md'),caption,headers,rows,notes)
     provenance(OUT,sources,table='Table 1',statistical_unit='Patients; sequence metadata separately labelled',
                age_sex_ef_view_disagreements=0,missing_demographics=0,
                new_statistics='Descriptive fixed-split counts, percentages, medians and linear quartiles only.',
                hypothesis_tests=None,imputation=None,excluded_patients=[],
+               revision='Removed six unavailable-evidence count rows from table; notes retain the limitations.',
                data_scope='Local prepared CAMUS half-sequences; no project patch acquisition.',
                original_data_integrity='Historical manifest only; no new full raw-data download or verification.',
                font_path=font,**dimensions,external_alignment_auditor_used=args.alignment_auditor is not None)

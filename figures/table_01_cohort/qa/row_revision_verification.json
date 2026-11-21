@@ -1,0 +1,17 @@
+{
+  "removed_evidence_rows": [
+    "Independent clinical volume references, patients",
+    "Manual anatomical point labels, patients",
+    "Complete cardiac cycles, n",
+    "Independent HR/CO references, patients",
+    "Project wearable ultrasound acquisitions, n",
+    "Human-reviewed ROIs, sequences"
+  ],
+  "retained_data_rows": 22,
+  "retained_display_values_unchanged": true,
+  "zero_numeric_feature_values_remaining": false,
+  "cohort_source_files_identical_after_newline_normalization": true,
+  "patient_exclusion": false,
+  "value_replacement_or_imputation": false,
+  "table_02_unchanged": true
+}
