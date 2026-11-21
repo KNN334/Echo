@@ -17,3 +17,16 @@ def test_echonet_architecture_and_checkpoint_prefix(tmp_path):
     torch.save({'state_dict':{'module.'+k:v for k,v in m.state_dict().items()}},path)
     restored,_=load_checkpoint(path)
     assert restored.classifier[-1].out_channels==1
+
+
+@pytest.mark.skipif(importlib.util.find_spec('torch') is None, reason='optional model dependency')
+def test_fcn32_patch_architecture_is_registered():
+    import torch
+    from src.models.build import build_model
+
+    model = build_model({'name': 'fcn32', 'in_channels': 3, 'num_classes': 1,
+                         'base_channels': 4}).eval()
+    with torch.no_grad():
+        output = model(torch.zeros(1, 3, 64, 80))['out']
+
+    assert output.shape == (1, 1, 64, 80)

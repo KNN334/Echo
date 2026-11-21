@@ -1,5 +1,11 @@
 # Echo
 
+## 当前主线
+
+项目主线已按手写笔记重排为“贴片采集 -> RF/IQ 事件对齐 -> 波束合成与 B-mode -> FCN-32 左心室分割 -> 物理几何 -> EDV/ESV -> SV、EF、HR、CO -> 独立验证”。[主线说明](docs/patch_mainline.md)记录数据契约、论文证据边界和缺失数据时的 `null` 规则。
+
+`configs/experiment.yaml` 仍是 CAMUS / EchoNet 公开图像基线；`configs/experiment_patch.yaml` 是贴片主线配置，只有在真实贴片记录、患者级划分和独立参考就绪后才运行。当前仓库没有把公开数据或论文示例写成贴片临床验证。
+
 基于处理后超声心动图数据的左心室分割与心功能分析基线。模型采用 EchoNet 的 DeepLabV3-ResNet50 分割架构；CAMUS 处理后数据作为当前示例数据集。
 
 ## 三步运行
@@ -21,6 +27,10 @@
 已有正则化实验的 [训练日志](reports/training/camus_regularized/training_log.txt)、[逐轮损失](reports/training/camus_regularized/training.csv) 和 [归档说明](reports/training/camus_regularized/ARCHIVE.md) 可直接查看；旧实验没有保存完整环境信息。
 
 统一环境后的 `camus_regularized_v2` 已完成 14 轮训练并触发早停，最低验证 BCE 为 `0.0363108074`（第 14 轮）。可查看本次 [训练日志](reports/training/camus_regularized_v2/training_log.txt)、[逐轮损失](reports/training/camus_regularized_v2/training.csv)、[运行环境](reports/training/camus_regularized_v2/run.json) 和 [实验说明](reports/training/camus_regularized_v2/RUN_NOTES.md)。本次完成训练/验证，未执行新的测试集评价。
+
+## 文献调研
+
+与本项目相关的 10 篇代表研究汇总在 [中文文献报告](reports/literature_review/literature_review.docx) 和 [文献调研汇报 PPT](reports/literature_review/literature_review.pptx)。逐篇包含论文结构、结果与关键图表、创新、局限及对项目的启示；[来源记录](reports/literature_review/sources.json) 保留 DOI、期刊指标年份、核验范围和证据定位。期刊指标与论文结果均按各自来源解释，不构成本项目已完成的新实验或临床验证。
 
 ## 结果分析图
 
@@ -76,20 +86,32 @@ Echo/
 │   # 可注释的 YAML 实验配置及固定患者划分
 │   ├── data/
 │   │   # 数据集路径、视图和处理约定
-│   │   └── camus.yaml
-│   │       # CAMUS 数据目录、子集清单、患者数及预处理尺寸等参数
+│   │   ├── camus.yaml
+│   │   │   # CAMUS 数据目录、子集清单、患者数及预处理尺寸等参数
+│   │   └── patch.yaml
+│   │       # Patch mainline data directory, four views,
+│   │       # patient split and 512x512 preprocessing
 │   ├── model/
 │   │   # 模型结构与输入输出定义
-│   │   └── deeplabv3_resnet50.yaml
-│   │       # DeepLabV3-ResNet50 名称、输入通道和前景输出通道
+│   │   ├── deeplabv3_resnet50.yaml
+│   │   │   # DeepLabV3-ResNet50 名称、输入通道和前景输出通道
+│   │   └── fcn32.yaml
+│   │       # FCN-32 style model definition for the
+│   │       # patch image branch
 │   ├── train/
 │   │   # 训练超参数默认值
 │   │   └── baseline.yaml
 │   │       # 训练轮数、batch、学习率、随机种子、设备及可选早停
 │   ├── camus_splits.json
 │   │   # 固定训练/验证/测试患者归属，防止同一患者跨集合
-│   └── experiment.yaml
-│       # 实验总入口：合并组件配置，指定初始权重和训练/测试输出路径
+│   ├── experiment.yaml
+│   │   # 实验总入口：合并组件配置，指定初始权重和训练/测试输出路径
+│   ├── experiment_patch.yaml
+│   │   # Patch mainline planning experiment
+│   │   # configuration
+│   └── patch_splits.json
+│       # Planning placeholder for patient-level patch
+│       # splits
 ├── data/
 │   # 本地数据，Git 忽略；内部文件由数据集决定
 ├── docs/
@@ -116,6 +138,9 @@ Echo/
 │   │   # 空间/时间标定、坐标恢复、指标与参考值的计算口径
 │   ├── patch_acquisition_workflow.md
 │   │   # 贴片 RF/IQ 到超声成像、模型接入与连续心功能分析的条件流程
+│   ├── patch_mainline.md
+│   │   # Handwritten-note mainline from acquisition
+│   │   # through independent validation
 │   ├── patch_study_design.md
 │   │   # 采集到独立功能验证的研究主线、公开/仿真/实测证据分工及一轮图表候选
 │   ├── pycharm_run.md
@@ -261,6 +286,14 @@ Echo/
 │   │   │   # 历史每轮训练/验证损失记录
 │   │   └── training_run.json
 │   │       # 历史训练参数、患者划分、归一化和运行溯源
+│   ├── literature_review/
+│   │   # 十篇相关代表文献的研究结构、结果图表、创新、局限与项目启示
+│   │   ├── literature_review.docx
+│   │   │   # 中文文献调研报告，含逐篇分析、关键图表、测量口径与实验建议
+│   │   ├── literature_review.pptx
+│   │   │   # 可编辑的文献调研汇报幻灯片，含图表署名、来源和讲解备注
+│   │   └── sources.json
+│   │       # 论文题录、DOI、期刊指标、核验范围、证据定位及来源摘要
 │   ├── result_analysis/
 │   │   # 实测结果图集、中文解读、源数据及图件检查；内容由绘图入口生成
 │   ├── result_integrity/
@@ -287,6 +320,9 @@ Echo/
 │   │   # Python 包初始化与模块说明，无需单独运行
 │   ├── check_environment.py
 │   │   # 核对 PyCharm 是否使用项目 .venv，并报告依赖版本与 CUDA 状态
+│   ├── check_patch_contract.py
+│   │   # Validate patch acquisition records and
+│   │   # permitted outputs
 │   ├── download_weights.py
 │   │   # 可选下载 EchoNet 初始化权重并核查摘要，不下载数据集
 │   ├── evaluate.py
@@ -331,6 +367,9 @@ Echo/
 │   │   │   # 读取医学影像/视频及轮廓标注，提取可用空间与时间信息
 │   │   ├── metadata.py
 │   │   │   # 审计帧数、像素间距、帧率和时间戳，明确缺失及推导来源
+│   │   ├── patch.py
+│   │   │   # Prepared patch adapter with acquisition
+│   │   │   # evidence checks
 │   │   ├── prepare.py
 │   │   │   # 核查处理后数据、原始标签/坐标审计并生成三份子集清单
 │   │   ├── splits.py
@@ -375,8 +414,21 @@ Echo/
 │   │   │   # 按配置创建网络、兼容 EchoNet 检查点并分批推理
 │   │   ├── deeplabv3.py
 │   │   │   # 构建 EchoNet 风格的单前景 DeepLabV3-ResNet50 分割网络
+│   │   ├── fcn32.py
+│   │   │   # Compact FCN-32 style segmentation network
 │   │   └── losses.py
 │   │       # 计算均值二元交叉熵 BCE 分割损失
+│   ├── patch/
+│   │   # Patch acquisition contract and beamforming
+│   │   # primitives
+│   │   ├── __init__.py
+│   │   │   # Python 包初始化与模块说明，无需单独运行
+│   │   ├── beamforming.py
+│   │   │   # Inspectable angle, delay-and-sum,
+│   │   │   # envelope, compression and RMS primitives
+│   │   └── contract.py
+│   │       # RF/IQ/B-mode, calibration, timing and
+│   │       # independent-reference validation
 │   ├── temporal/
 │   │   # 可选时序分析；不拼接/反射半周期伪造完整心搏
 │   │   ├── __init__.py
@@ -435,6 +487,8 @@ Echo/
 │       # 用户按参考图指定的共享三维曲面蓝—青—绿—黄色带，不修改基础配色
 ├── tests/
 │   # 自动工程回归检查，不替代真实患者实验或临床验证
+│   ├── test_beamforming.py
+│   │   # 检查贴片角度表、延时求和、包络、压缩与 RMS 基元
 │   ├── test_camus.py
 │   │   # 检查左室标签身份、原始标注/坐标保留及声窗保护回退
 │   ├── test_config.py
@@ -447,6 +501,8 @@ Echo/
 │   │   # 检查 EchoNet 轮廓 CSV 转掩膜及对应帧身份
 │   ├── test_model.py
 │   │   # 检查 DeepLabV3 输出及检查点加载兼容性
+│   ├── test_patch_contract.py
+│   │   # 检查贴片采集证据契约、标定/周期门控及输入可追溯性
 │   ├── test_pipeline.py
 │   │   # 检查模拟预测到结果导出的流程和缺失参考处理
 │   ├── test_preprocess.py

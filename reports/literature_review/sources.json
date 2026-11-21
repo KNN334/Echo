@@ -1,0 +1,831 @@
+{
+  "retrieved_on": "2026-11-12",
+  "search": {
+    "date": "2026-11-12",
+    "review_type": "主题导向叙述性调研，不是PRISMA系统综述，也不声称穷尽全部高影响因子文献。",
+    "scope": "左室分割、EF/容积量化、时序质量、外部与临床验证、可穿戴连续超声及超声基础模型。",
+    "queries": [
+      "CAMUS echocardiography segmentation dataset",
+      "EchoNet-Dynamic beat-to-beat cardiac function",
+      "echocardiography artificial intelligence ejection fraction validation",
+      "wearable cardiac ultrasound imager",
+      "EchoCLIP PanEcho EchoPrime echocardiography"
+    ],
+    "sources": [
+      "PubMed E-utilities",
+      "Crossref REST API",
+      "Europe PMC REST API",
+      "出版社原文与期刊指标页面",
+      "CAMUS作者公开稿",
+      "NCBI PMC合法全文档案"
+    ],
+    "selection": "选择直接关联项目的同行评议代表研究，兼顾数据基准、模型、验证和硬件；优先高影响力综合医学/心血管/医学影像期刊。CAMUS因其直接数据关联性纳入，未设置一个所有论文必须达到的JIF门槛。",
+    "limitations": [
+      "学术检索MCP未挂载；OpenAlex免费共享额度耗尽，改用官方API和出版商页面。",
+      "9篇有可读取全文或作者稿；Huang 2020仅核实官方摘要，原文图号不编造。",
+      "Nature系列JIF按检索时官网标注的2025年记录；TMI数值未标年；JAMA和Circulation官网403，JIF数值留空。",
+      "未对原始个体数据重新统计；表内P值、区间和论文指标引用原研究。"
+    ]
+  },
+  "journals": {
+    "Nature": {
+      "jif": 56.1,
+      "year": 2025,
+      "source": "https://www.nature.com/nature/journal-impact",
+      "quote": "Journal Impact Factor: 56.1 (2025)"
+    },
+    "Nature Medicine": {
+      "jif": 52.3,
+      "year": 2025,
+      "source": "https://www.nature.com/nm/journal-impact",
+      "quote": "Journal Impact Factor: 52.3 (2025)"
+    },
+    "Nature Communications": {
+      "jif": 18.1,
+      "year": 2025,
+      "source": "https://www.nature.com/ncomms/journal-impact",
+      "quote": "Journal Impact Factor: 18.1 (2025)"
+    },
+    "npj Digital Medicine": {
+      "jif": 18.0,
+      "year": 2025,
+      "source": "https://www.nature.com/npjdigitalmed/journal-impact",
+      "quote": "Journal Impact Factor: 18.0 (2025)"
+    },
+    "IEEE Transactions on Medical Imaging": {
+      "jif": 12.4,
+      "year": null,
+      "source": "https://www.ieeetmi.org/",
+      "quote": "Impact Factor: 12.4",
+      "note": "官网未标明该数值的指标年份，不能与已标明2025年的指标作同年排序。"
+    },
+    "Circulation": {
+      "jif": null,
+      "year": null,
+      "source": "https://www.ahajournals.org/journal/circ",
+      "note": "期刊官网访问返回403；未获得可核实的当期JIF，数值留空。"
+    },
+    "JAMA": {
+      "jif": null,
+      "year": null,
+      "source": "https://jamanetwork.com/journals/jama/pages/journal-information",
+      "note": "期刊官网访问返回403；未获得可核实的当期JIF，数值留空。"
+    }
+  },
+  "papers": [
+    {
+      "id": 1,
+      "short": "CAMUS",
+      "year": "2019",
+      "journal": "IEEE Transactions on Medical Imaging",
+      "question": "公开、带专家标注的二维心脏超声数据，能否支持可复现的结构分割和临床参数估计？",
+      "data": "500名患者的心尖两腔与四腔B模式超声。舒张末期ED和收缩末期ES由专家描绘左室内膜、左室外膜和左房；主专家覆盖全部患者，50名患者子集有多观察者与重复标注。不是给每一帧都提供人工掩膜。",
+      "method": "比较U-Net 1/2、ACNN、SHG、U-Net++及传统方法；以患者为单位进行10折研究。论文主要结果表限制为406名图像质量为好/中的患者。以专家轮廓经双平面几何计算容积与EF，并报告观察者差异。",
+      "structure": "I 引言提出缺少统一数据与比较基准；II 相关工作；III 数据集、采集和描绘协议；IV 编码器—解码器及传统对照；V 几何与临床参数评价、质量/样本量/标注者影响；VI 结论。",
+      "results": [
+        [
+          "ED左室内膜Dice",
+          "0.939 ± 0.043",
+          "U-Net 2；好/中质量406人；作者公开稿Table III"
+        ],
+        [
+          "ES左室内膜Dice",
+          "0.916 ± 0.061",
+          "同上；不能与全500人结果混用"
+        ],
+        [
+          "EDV / ESV MAE",
+          "9.8 / 6.8 mL",
+          "U-Net 2；作者公开稿Table IV"
+        ],
+        [
+          "EF MAE",
+          "5.3 个百分点",
+          "U-Net 2；作者公开稿Table IV"
+        ]
+      ],
+      "figures": [
+        "Fig.1：好、中、差质量图像及专家轮廓，先理解“标签”怎样形成。",
+        "Table I：人群、图像质量和EF分布；Table III/IV：分割与心功能两类结果。",
+        "Fig.2：质量及多结构学习；Fig.3：训练样本量影响；Fig.4：标注者变化的影响。"
+      ],
+      "innovation": "提供大规模公开、多结构、带观察者变异信息的基准；把分割误差与功能量化连接起来，并表明简单U-Net已是强基线。创新主要在可复现数据与严谨比较，不是仅靠复杂网络。",
+      "limits": "原始队列来自单一中心和设备体系；主要表格排除了差质量病例。标注集中在ED/ES，不能据此证明完整周期内每一帧可靠。容积/EF参考依赖超声轮廓和几何假设，并非独立CMR金标准。",
+      "project": "直接对应src/data/camus、src/metrics/segmentation和src/geometry。项目目前自定义患者级70/15/15划分，与论文10折不同；应同时报告有效病例、失败率、图像质量和原始坐标下的Dice/毫米边界距离。",
+      "evidence": "作者官网合法公开稿全文 + Europe PMC摘要 + Crossref题录。表格数字明确来自作者稿，未将摘要中跨方法概括的5.6个百分点替代U-Net 2的表格数值。",
+      "access": "full_author_manuscript",
+      "links": [
+        "https://www.creatis.insa-lyon.fr/Challenge/camus/files/tmi_2019_leclerc.pdf",
+        "https://www.creatis.insa-lyon.fr/Challenge/camus/"
+      ],
+      "metric": "EF MAE 5.3 pp（指定表格队列）",
+      "risk": "ED/ES标注、几何参考，不能直接证明连续CO",
+      "title": "Deep Learning for Segmentation Using an Open Large-Scale Dataset in 2D Echocardiography",
+      "doi": "10.1109/tmi.2019.2900516",
+      "authors": "Leclerc S, Smistad E, Pedrosa J, Ostvik A, Cervenansky F, Espinosa F, Espeland T, Berg EAR, Jodoin PM, Grenier T, Lartizien C, Dhooge J, Lovstakken L, Bernard O.",
+      "pmid": "30802851",
+      "pmcid": null,
+      "volume": "38",
+      "pages": "2198-2210",
+      "jif": {
+        "jif": 12.4,
+        "year": null,
+        "source": "https://www.ieeetmi.org/",
+        "quote": "Impact Factor: 12.4",
+        "note": "官网未标明该数值的指标年份，不能与已标明2025年的指标作同年排序。"
+      },
+      "source_records": [
+        {
+          "url": "https://api.crossref.org/works/10.1109/tmi.2019.2900516",
+          "sha256": "c14d9e421f5569930b1556a5a31a007d6602e9f712c055d15593c3c88e018548"
+        },
+        {
+          "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:10.1109/tmi.2019.2900516&format=json&resultType=core",
+          "sha256": "7cb6a7bf81bc32eda74da6060cd33a41bd3540b3b4a23bfe7dc188348ac6b58b"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "short": "EchoNet 图像模型",
+      "year": "2020",
+      "journal": "npj Digital Medicine",
+      "question": "普通二维超声图像是否能预测局部结构、左室容积、EF，甚至全身表型？",
+      "data": "来自2,850名患者的数百万幅超声图像及临床报告标签。以心尖四腔等标准视图训练卷积模型，进行去身份、声窗外裁剪和数据增强。报告中的图像总量与采样子集口径不同，本调研不把它们混为一个精确训练样本数。",
+      "method": "分别训练结构分类和连续值回归CNN，使用临床报告提供的监督。对结构与EF任务开展梯度敏感性和遮挡解释；既直接预测EF，也比较从预测EDV/ESV计算EF的效果。",
+      "structure": "引言说明超声规模和报告标签优势；结果依次展开局部结构、心功能、系统性表型与一致性；讨论解释临床用途和偏差；方法说明队列、预处理、CNN与模型解释。",
+      "results": [
+        [
+          "ESV MAE",
+          "13.3 mL",
+          "正文Predicting cardiac function与Fig.3a"
+        ],
+        [
+          "EDV MAE",
+          "20.5 mL",
+          "Fig.3b"
+        ],
+        [
+          "直接EF MAE / R²",
+          "7.0 个百分点 / 0.50",
+          "Fig.3d；不是由本项目几何管线得到"
+        ],
+        [
+          "起搏器导线 / 左室肥厚AUROC",
+          "0.89 / 0.75",
+          "摘要与Fig.2"
+        ]
+      ],
+      "figures": [
+        "Fig.1：数据清洗、视图选择与增强，说明预处理是学习流程的一部分。",
+        "Fig.3：EDV、ESV、由容积算EF和直接EF的比较；Fig.5：差值分布，避免只看相关性。",
+        "Fig.2/4：热图是注意区域解释，不是解剖真值，也不证明因果。"
+      ],
+      "innovation": "把常规临床超声图像与既有报告结合，展示同一成像模态可支持多种预测，并利用解释实验检验模型是否关注合理心脏区域。",
+      "limits": "图像采样不能充分利用运动信息；回顾性报告监督含测量噪声和诊断风格。单中心及选定视图限制外推，系统性表型预测也可能受混杂因素影响。作者展示的性能不等于因果识别或临床获益。",
+      "project": "支持保留声窗裁剪、去文字及患者级分组；可用其“直接EF vs 容积推导EF”作为研究问题，但当前项目只实现分割后几何量化，不能宣称已实现该直接回归模型。",
+      "evidence": "出版商开放全文。引用的原Fig.3按CC BY 4.0原样保留并署名；本调研的局限分析是基于研究设计的评价。",
+      "access": "full_publisher",
+      "links": [
+        "https://www.nature.com/articles/s41746-019-0216-8"
+      ],
+      "metric": "EF MAE 7.0 pp",
+      "risk": "静态图像与报告监督",
+      "figure_file": "fig_02_3.png",
+      "figure_number": "Fig.3",
+      "license": "CC BY 4.0",
+      "title": "Deep learning interpretation of echocardiograms",
+      "doi": "10.1038/s41746-019-0216-8",
+      "authors": "Ghorbani A, Ouyang D, Abid A, He B, Chen JH, Harrington RA, Liang DH, Ashley EA, Zou JY.",
+      "pmid": "31993508",
+      "pmcid": "PMC6981156",
+      "volume": "3",
+      "pages": "10",
+      "jif": {
+        "jif": 18.0,
+        "year": 2025,
+        "source": "https://www.nature.com/npjdigitalmed/journal-impact",
+        "quote": "Journal Impact Factor: 18.0 (2025)"
+      },
+      "source_records": [
+        {
+          "url": "https://api.crossref.org/works/10.1038/s41746-019-0216-8",
+          "sha256": "dac1b1a47e02f4efd4a9a9f4245f14f5f2917e059a408c59442e35f04b16e9d4"
+        },
+        {
+          "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:10.1038/s41746-019-0216-8&format=json&resultType=core",
+          "sha256": "bab622cd2671f7d06bbc8c07348531bf87dce5ca003a9b8bae232e892602c060"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "short": "EchoNet-Dynamic",
+      "year": "2020",
+      "journal": "Nature",
+      "question": "利用整个视频和多个心搏，能否提高EF估计与重复测量的一致性？",
+      "data": "公开10,030段带标注的心尖四腔超声视频；内部患者划分为7,465训练、1,288验证、1,277测试。外部测试包括另一个医疗体系的2,895段视频。监督含临床EF和ED/ES轮廓。",
+      "method": "DeepLabV3-ResNet50完成帧级左室分割；R(2+1)D视频网络直接回归EF；再利用心动周期信息逐搏估计和汇总。分割模型、视频EF模型和多搏汇总是三个相关但不同的部分。",
+      "structure": "引言提出人工测量的采样和观察者差异；结果按总体流程、内部/外部性能、重复测量和逐搏分析展开；方法详细给出数据、分割、时空网络、超参和人工复核；扩展表提供消融及计算开销。",
+      "results": [
+        [
+          "左室分割Dice",
+          "0.92",
+          "摘要；不能单凭此指标推出EF MAE"
+        ],
+        [
+          "内部 / 外部 EF MAE",
+          "4.1 / 6.0 个百分点",
+          "摘要、Fig.2；两者使用各自测试队列"
+        ],
+        [
+          "内部 / 外部 低EF分类AUROC",
+          "0.97 / 0.96",
+          "论文使用的EF阈值与队列需同时保留"
+        ],
+        [
+          "内部EF测试人数",
+          "1,277",
+          "Extended Data Table 1"
+        ]
+      ],
+      "figures": [
+        "Fig.1：分割、视频回归和逐搏汇总流程；Fig.2：内部/外部散点、ROC、重复性与分割示例。",
+        "Fig.3：逐搏EF变化；Extended Data Fig.1/Table 2：视频架构和采样比较。",
+        "Extended Data Table 4：预测耗时与显存；这些依赖原硬件和实现，不能当成本项目测速。"
+      ],
+      "innovation": "将时空视频学习、弱监督分割和逐搏汇总结合；公开数据和代码；同时展示外部数据与重复测量验证。",
+      "limits": "主要是标准心尖四腔的回顾性视频；外部误差高于内部，提示设备/人群域偏移。EF监督多为临床超声测量，缺少所有任务的独立金标准；不是贴片设备的动态连续CO验证。",
+      "project": "最直接的架构来源。项目采用其分割骨干和官方分割权重，但AdamW/mean BCE、CAMUS数据、几何EF与原视频回归管线不同；4.1个百分点不能写成本项目预期或已达结果。",
+      "evidence": "PubMed/Europe PMC摘要、出版商公开信息及NCBI合法全文档案。",
+      "access": "full_pmc",
+      "links": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC8979576/",
+        "https://echonet.github.io/dynamic/"
+      ],
+      "metric": "EF MAE 内4.1 / 外6.0 pp",
+      "risk": "视频回归EF ≠ 分割后几何EF",
+      "title": "Video-based AI for beat-to-beat assessment of cardiac function",
+      "doi": "10.1038/s41586-020-2145-8",
+      "authors": "Ouyang D, He B, Ghorbani A, Yuan N, Ebinger J, Langlotz CP, Heidenreich PA, Harrington RA, Liang DH, Ashley EA, Zou JY.",
+      "pmid": "32269341",
+      "pmcid": "PMC8979576",
+      "volume": "580",
+      "pages": "252-256",
+      "jif": {
+        "jif": 56.1,
+        "year": 2025,
+        "source": "https://www.nature.com/nature/journal-impact",
+        "quote": "Journal Impact Factor: 56.1 (2025)"
+      },
+      "source_records": [
+        {
+          "url": "https://api.crossref.org/works/10.1038/s41586-020-2145-8",
+          "sha256": "0422f61e87b186d463a79410cea43cecef468beb9e870287fd7ab736a2e1d6cf"
+        },
+        {
+          "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:10.1038/s41586-020-2145-8&format=json&resultType=core",
+          "sha256": "57325f48b5afb9a1de58a71ee96d1895e05e56f1f533888141ffe68419b0520b"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "short": "区域室壁运动",
+      "year": "2020",
+      "journal": "Circulation",
+      "question": "标准切面的时空信息与左室壁分割，能否自动识别区域室壁运动异常？",
+      "data": "10,638次经胸超声检查中，6,454次在全部标准视图达到质量要求；2,740帧用于分割标注；独立医院1,756次检查用于外部验证。",
+      "method": "先用3D CNN筛选标准视图并控制质量，再用U-Net定位左室壁，最后用3D CNN结合4个标准视图识别区域室壁运动异常；训练侧五折交叉验证，并设置外部医院评价。",
+      "structure": "已核实摘要为Background—Methods—Results—Conclusions。它对应的论证顺序是临床问题、质量与视图筛选、分割辅助时空分类、内部/外部验证和应用边界；本次未获得可读取的正文，不能把此顺序冒充已核对的正文标题。",
+      "results": [
+        [
+          "符合质量要求的检查",
+          "6,454 / 10,638（约61%）",
+          "官方摘要；剩余检查不可当作模型已覆盖"
+        ],
+        [
+          "分割Dice",
+          "0.756",
+          "左室壁定位任务，目标与CAMUS左室腔不同"
+        ],
+        [
+          "内部 / 外部 AUROC",
+          "0.912 / 0.891",
+          "外部95% CI 0.834–0.948"
+        ],
+        [
+          "外部灵敏度 / 特异度",
+          "81.8% / 81.6%",
+          "官方摘要；不是EF MAE"
+        ]
+      ],
+      "figures": [
+        "全文未成功获取（AHA返回403），本次不编造原文图号、图注或逐图结论。",
+        "根据可核实的摘要，可提炼“质量筛选→视图→壁定位→时空分类”流程，以及内部/外部指标表。",
+        "后续取得合法正文后，优先核查病例纳入流程、分割目标定义、ROC与失败病例；此处为阅读建议。"
+      ],
+      "innovation": "把切面质量、空间定位和运动时序联合起来，显示自动心功能分析不应只依靠单张轮廓；设置独立医院外部验证。",
+      "limits": "约39%的检查未满足全标准视图质量条件，说明适用覆盖率是核心问题。室壁运动分类与左室腔分割目标不同，不能横向按Dice排序。本次评价限于核实摘要，未完成正文与补充材料深读。",
+      "project": "为quality_gate与temporal模块提供设计参考，要求同时报告拒绝率和接受病例性能。当前项目未实现区域室壁运动分类，不应把模块预留当作该任务已完成。",
+      "evidence": "Crossref结构化摘要 + PubMed/Europe PMC官方摘要；原文图表未核验。",
+      "access": "abstract_only",
+      "links": [
+        "https://pubmed.ncbi.nlm.nih.gov/32964749/"
+      ],
+      "metric": "外部AUROC 0.891",
+      "risk": "质量筛选后才评价；非EF任务",
+      "title": "Automated Recognition of Regional Wall Motion Abnormalities Through Deep Neural Network Interpretation of Transthoracic Echocardiography",
+      "doi": "10.1161/circulationaha.120.047530",
+      "authors": "Huang MS, Wang CS, Chiang JH, Liu PY, Tsai WC.",
+      "pmid": "32964749",
+      "pmcid": null,
+      "volume": "142",
+      "pages": "1510-1520",
+      "jif": {
+        "jif": null,
+        "year": null,
+        "source": "https://www.ahajournals.org/journal/circ",
+        "note": "期刊官网访问返回403；未获得可核实的当期JIF，数值留空。"
+      },
+      "source_records": [
+        {
+          "url": "https://api.crossref.org/works/10.1161/circulationaha.120.047530",
+          "sha256": "1a3688d593b9586d3fc3771bef268913434d6062583933ee1c133eb6905e6696"
+        },
+        {
+          "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:10.1161/circulationaha.120.047530&format=json&resultType=core",
+          "sha256": "28152a054c398fa63e628ff8a06a75c24137112cd1db20c6ad54df939f974530"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "short": "自动流程正式验证",
+      "year": "2022",
+      "journal": "Nature Communications",
+      "question": "自动测量与专家之间的分歧，能否小于专家相互之间的分歧？",
+      "data": "600名参与者、602次匿名超声检查；包含421名心衰患者及179名对照；比较23个参数与3名核心实验室读者的重复测量。各参数实际可评价样本数不同，不能统一写为602。",
+      "method": "采用预先定义的individual equivalence coefficient（IEC）和非劣效界值0.25，结合置信区间评价自动测量相对于人际分歧的位置；并报告差值、ICC及Bland–Altman等探索性结果。",
+      "structure": "引言说明单次人工参考的局限；结果依次介绍人群、主要IEC与次要一致性指标；讨论分析真实场景与商业软件复现限制；方法说明盲法读片、非劣效设计、样本量与统计。",
+      "results": [
+        [
+          "参数数 / 参与者数",
+          "23 / 600",
+          "摘要与方法；检查数602"
+        ],
+        [
+          "IEC点估计",
+          "23项均 < 0",
+          "摘要与Fig.1"
+        ],
+        [
+          "IEC 95% CI上界",
+          "23项均 < 0.25",
+          "预设非劣效门槛；不是“误差为零”"
+        ],
+        [
+          "LVEF可评价检查",
+          "531",
+          "Fig.1/2图注；按实际参数样本数报告"
+        ]
+      ],
+      "figures": [
+        "Fig.1：23个参数IEC森林图，重点读置信区间与红色非劣效界值。",
+        "Fig.2：自动—人工与人工—人工相对绝对差值的箱线图；Table 2补充一致性指标。",
+        "Supplementary Table 1：队列特征；正文人口百分比存在口径/排印可疑处，本调研不重复该比例。"
+      ],
+      "innovation": "研究重点由“贴近某一个人”转为“相对于专家重复性是否可接受”，采用预定义界值与区间，给自动化测量提供更强的验证范式。",
+      "limits": "使用研究级图像，不能直接推广到运动下贴片声窗。部分软件与知识产权受商业限制，代码开放度低。非劣效于人际差异不证明对CMR或有创参考绝对准确，也不是患者结局研究。",
+      "project": "为src/metrics/cardiac增加评价思路：MAE之外考虑偏倚、区间和观察者重复性；真正开展非劣效研究须有预设界值、足够样本和独立设计，不能事后从现有结果挑选阈值。",
+      "evidence": "出版商开放全文与图注；Fig.1按CC BY 4.0原样引用并署名。",
+      "access": "full_publisher",
+      "links": [
+        "https://www.nature.com/articles/s41467-022-34245-1"
+      ],
+      "metric": "23项IEC区间达预设界值",
+      "risk": "研究级图像与商业实现",
+      "figure_file": "fig_05_1.png",
+      "figure_number": "Fig.1",
+      "license": "CC BY 4.0",
+      "title": "A formal validation of a deep learning-based automated workflow for the interpretation of the echocardiogram",
+      "doi": "10.1038/s41467-022-34245-1",
+      "authors": "Tromp J, Bauer D, Claggett BL, Frost M, Iversen MB, Prasad N, Petrie MC, Larson MG, Ezekowitz JA, Solomon SD.",
+      "pmid": "36351912",
+      "pmcid": "PMC9646849",
+      "volume": "13",
+      "pages": "6776",
+      "jif": {
+        "jif": 18.1,
+        "year": 2025,
+        "source": "https://www.nature.com/ncomms/journal-impact",
+        "quote": "Journal Impact Factor: 18.1 (2025)"
+      },
+      "source_records": [
+        {
+          "url": "https://api.crossref.org/works/10.1038/s41467-022-34245-1",
+          "sha256": "7bfd1d97abb4049ff020889fe475b7870c6c3b8299febeabb0866e4caded9b1d"
+        },
+        {
+          "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:10.1038/s41467-022-34245-1&format=json&resultType=core",
+          "sha256": "885b59c2b401aa39a01da81dfb00a76b6847b396dcb9aaddb2a6209e450a5475"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "short": "可穿戴心脏超声",
+      "year": "2023",
+      "journal": "Nature",
+      "question": "柔性贴附探头能否在运动及恢复过程中连续获得可用于心功能量化的心脏图像？",
+      "data": "材料和声学表征、仿体、标准切面人体成像及运动/恢复示范。Fig.5d明确为12个心动周期的参数比较，不能解读为12名独立受试者。",
+      "method": "柔性压电阵列、液态金属复合电极及封装改善皮肤耦合；多种波束形成获取B模式图像。FCN-32分割左室，结合几何推导容积波形及SV、EF、CO；与商业设备进行示例比较。",
+      "structure": "正文依次展示器件设计与机械/声学性能、B模式成像、多个标准切面、运动下成像和深度学习自动分析；Methods细化制造、声学实验、成像与量化；扩展/补充资料给出动态实验。",
+      "results": [
+        [
+          "容积波形平均偏差",
+          "约 −1.5 mL",
+          "正文Fig.5c附近；偏倚，不是MAE"
+        ],
+        [
+          "Fig.5d参数比较样本",
+          "12个心动周期",
+          "图注明示n=12 cycles，非12名患者"
+        ],
+        [
+          "恢复过程SV示例",
+          "约60→70 mL",
+          "Fig.5g；个体过程示范，非总体均值"
+        ],
+        [
+          "恢复过程HR示例",
+          "约175→130 次/分",
+          "Fig.5h；不能作为CAMUS心率来源"
+        ]
+      ],
+      "figures": [
+        "Fig.1：器件与材料；Fig.2：声学成像；Fig.3：与商业设备的标准切面对照。",
+        "Fig.4：运动过程图像；Fig.5：FCN流程、容积波形、设备比较、恢复期SV/EF/CO/HR曲线。",
+        "图像受呼吸遮挡时使用补全；应区分实际成像、补全和剔除区段，不能把平滑完整曲线等同于连续真实观测。"
+      ],
+      "innovation": "把可变形硬件、皮肤耦合、深部心脏成像和自动容积曲线连接起来，是本项目“贴片式连续监测”最直接的系统级参考。",
+      "limits": "人体示范与小规模周期比较不能替代大样本疾病队列验证；声窗、体位和呼吸遮挡仍影响可用性。曲线推导CO不等于独立前向血流真值，论文原型效果也不能通过CAMUS实验直接继承。",
+      "project": "指导后续采集带空间标定、设备时间戳、完整相邻ED周期与同步独立参考的数据。时序模块应保留缺口和质量标志；CO只有在HR来源可信时计算，并明确是左室总容积差的等效输出。",
+      "evidence": "出版商开放全文；Fig.5按CC BY 4.0原样引用。数值仅用于解释原图，未当作项目结果或性能目标。",
+      "access": "full_publisher",
+      "links": [
+        "https://www.nature.com/articles/s41586-022-05498-z",
+        "https://github.com/UCSD-XuGroup/Wearable-Cardiac-Ultrasound-Imager"
+      ],
+      "metric": "连续容积/SV/EF/CO原型",
+      "risk": "心搏重复数≠患者数；CO需独立参考",
+      "figure_file": "fig_06_5.png",
+      "figure_number": "Fig.5",
+      "license": "CC BY 4.0",
+      "title": "A wearable cardiac ultrasound imager",
+      "doi": "10.1038/s41586-022-05498-z",
+      "authors": "Hu H, Huang H, Li M, Gao X, Yin L, Qi R, Wu RS, Chen X, Ma Y, Shi K, Li C, Maus TM, Huang B, Lu C, Lin M, Zhou S, Lou Z, Gu Y, Chen Y, Lei Y, Wang X, Wang R, Yue W, Yang X, Bian Y, Mu J, Park G, Xiang S, Cai S, Corey PW, Wang J, Xu S.",
+      "pmid": "36697864",
+      "pmcid": "PMC9876798",
+      "volume": "613",
+      "pages": "667-675",
+      "jif": {
+        "jif": 56.1,
+        "year": 2025,
+        "source": "https://www.nature.com/nature/journal-impact",
+        "quote": "Journal Impact Factor: 56.1 (2025)"
+      },
+      "source_records": [
+        {
+          "url": "https://api.crossref.org/works/10.1038/s41586-022-05498-z",
+          "sha256": "bbb5fe0c7410c0effed74453900bf83883cfabda23f7bcbcb778f46f656dd6ce"
+        },
+        {
+          "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:10.1038/s41586-022-05498-z&format=json&resultType=core",
+          "sha256": "b6ded2ca2051e6187676b0a221a22fcb3f751a87777e4f8e788a1acd32cca6be"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "short": "AI vs 技师随机试验",
+      "year": "2023",
+      "journal": "Nature",
+      "question": "把AI作为初始EF读者纳入临床工作流，是否会减少心脏科医生的大幅修改，并节省时间？",
+      "data": "筛查3,769次检查，因图像质量排除274次，最终3,495次进入盲法随机非劣效试验。ClinicalTrials.gov NCT05140642。比较AI和超声技师初始评估后由心脏科医生审定的流程。",
+      "method": "随机分配初始评估来源并保持审定者盲法；主要终点是最终LVEF相对初始估计改变超过5个百分点的检查比例。次要指标包括相对既往独立评估的差异、耗时和盲法指标。",
+      "structure": "引言提出缺少盲法随机验证；结果包括纳入与随机流程、主要终点、次要安全性/耗时与盲法；讨论解释工作流意义；方法给出随机化、终点和非劣效统计。",
+      "results": [
+        [
+          "主要终点发生率：AI / 技师",
+          "16.8% / 27.2%",
+          "摘要；Fig.2及结果表"
+        ],
+        [
+          "两组风险差",
+          "−10.4 个百分点",
+          "95% CI −13.2至−7.7；原研究检验P<0.001"
+        ],
+        [
+          "最终对既往独立评估MAD：AI / 技师",
+          "6.29 / 7.23 个百分点",
+          "不是对CMR真值的EF MAE"
+        ],
+        [
+          "排除低质量检查",
+          "274 / 3,769",
+          "Fig.1；泛化必须包含覆盖率讨论"
+        ]
+      ],
+      "figures": [
+        "Fig.1：CONSORT筛选、随机和随访；读清排除人数与分析人群。",
+        "Fig.2：初始至最终读数、最终至既往读数的比较。",
+        "主要结果表：风险差与区间；不能把“修改率下降”改写成“临床结局改善”。"
+      ],
+      "innovation": "让AI进入真实读片环节并通过盲法随机试验检验流程效果，证据类型比单纯内部测试更接近临床应用决策。",
+      "limits": "试验是特定中心和工作流中的初始辅助读者评价；低质量影像被排除。主要终点依赖审定流程，不是独立绝对容积或患者预后金标准；结果不等于无人监管部署。",
+      "project": "给未来临床验证提供设计顺序：先离线冻结算法，再独立读片/重复性，再开展前瞻工作流评价。当前pytest通过只说明工程检查，不构成该类临床试验证据。",
+      "evidence": "官方摘要 + 出版商开放全文及图注。P值与置信区间直接引用原研究，本调研未复算。",
+      "access": "full_publisher",
+      "links": [
+        "https://www.nature.com/articles/s41586-023-05947-3",
+        "https://clinicaltrials.gov/study/NCT05140642"
+      ],
+      "metric": "主要终点16.8% vs 27.2%",
+      "risk": "工作流终点≠临床结局或CO准确度",
+      "title": "Blinded, randomized trial of sonographer versus AI cardiac function assessment",
+      "doi": "10.1038/s41586-023-05947-3",
+      "authors": "He B, Kwan AC, Cho JH, Yuan N, Pollick C, Shiota T, Ebinger J, Bello NA, Wei J, Josan K, Duffy G, Jujjavarapu M, Siegel R, Cheng S, Zou JY, Ouyang D.",
+      "pmid": "37020027",
+      "pmcid": "PMC10115627",
+      "volume": "616",
+      "pages": "520-524",
+      "jif": {
+        "jif": 56.1,
+        "year": 2025,
+        "source": "https://www.nature.com/nature/journal-impact",
+        "quote": "Journal Impact Factor: 56.1 (2025)"
+      },
+      "source_records": [
+        {
+          "url": "https://api.crossref.org/works/10.1038/s41586-023-05947-3",
+          "sha256": "0c08457c26b68a8aefdfe6436a8e8c42941c3d0a8d12bc308d508de47123ab36"
+        },
+        {
+          "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:10.1038/s41586-023-05947-3&format=json&resultType=core",
+          "sha256": "d211390438f36ed9125e8c1cd750aa76092c64cb1955a637afda7af0a8f8ede9"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "short": "EchoCLIP",
+      "year": "2024",
+      "journal": "Nature Medicine",
+      "question": "能否不用逐任务重新标注，让超声图像与临床报告对齐，从而支持多种零样本任务和检索？",
+      "data": "1,032,975个视频—文本配对，来源于224,685次检查、99,870名患者；训练时随机抽视频帧输入图像编码器，重点为心尖四腔。",
+      "method": "CLIP式图像—文本对比学习，压缩报告以匹配视觉信息；用文本提示进行功能和结构评价。EchoCLIP-R扩展报告上下文，比较患者相似性、临床变化及图文检索。",
+      "structure": "引言讨论标注成本；结果包括模型框架、零样本心功能/结构、临床相似性和语义检索；讨论与监督视频模型比较；方法说明报告整理、训练和各队列评价。",
+      "results": [
+        [
+          "内部 / 外部 LVEF MAE",
+          "8.4 / 7.1 个百分点",
+          "正文；外部为EchoNet-Dynamic数据"
+        ],
+        [
+          "起搏器识别AUROC",
+          "0.84",
+          "摘要；另有瓣膜器械任务"
+        ],
+        [
+          "识别同一患者AUROC",
+          "0.86",
+          "不是身份去识别成功率"
+        ],
+        [
+          "正确报告平均检索排名",
+          "候选前1%",
+          "平均排名口径；不能写成Top-1准确率99%"
+        ]
+      ],
+      "figures": [
+        "Fig.1：图像/文本编码器、数据与LVEF结果；Fig.2：零样本任务表现。",
+        "Fig.3：患者相似性及临床事件前后变化；Fig.4：图像→报告检索流程和排名。",
+        "要区分“视频配对数”与“真正学习运动的视频编码器”，该模型训练主体为随机帧图像编码。"
+      ],
+      "innovation": "利用临床文本减少逐任务人工标签依赖，建立通用超声嵌入，并展示检索与跨检查关系分析。",
+      "limits": "图像编码器未充分建模心脏运动；主要是单视图。报告偏差、文本泄漏和机构风格可能影响泛化；零样本EF误差不应直接与不同队列的监督模型作显著性排名。",
+      "project": "适合作为以后“特征提取”或报告检索的扩展方向。当前CAMUS几百例不宜从头训练百万级模型；如使用公开预训练，应冻结版本并在固定患者划分上评价增益和失败病例。",
+      "evidence": "出版商开放全文；Fig.1按CC BY 4.0原样引用。",
+      "access": "full_publisher",
+      "links": [
+        "https://www.nature.com/articles/s41591-024-02959-y"
+      ],
+      "metric": "外部EF MAE 7.1 pp",
+      "risk": "图像编码、报告噪声、单视图",
+      "figure_file": "fig_08_1.png",
+      "figure_number": "Fig.1",
+      "license": "CC BY 4.0",
+      "title": "Vision–language foundation model for echocardiogram interpretation",
+      "doi": "10.1038/s41591-024-02959-y",
+      "authors": "Christensen M, Vukadinovic M, Yuan N, Ouyang D.",
+      "pmid": "38689062",
+      "pmcid": "PMC11108770",
+      "volume": "30",
+      "pages": "1481-1488",
+      "jif": {
+        "jif": 52.3,
+        "year": 2025,
+        "source": "https://www.nature.com/nm/journal-impact",
+        "quote": "Journal Impact Factor: 52.3 (2025)"
+      },
+      "source_records": [
+        {
+          "url": "https://api.crossref.org/works/10.1038/s41591-024-02959-y",
+          "sha256": "587455282e21ad41a484b0458a8d7e884bb8fbae483bf9060c81f1fbfcf8fde6"
+        },
+        {
+          "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:10.1038/s41591-024-02959-y&format=json&resultType=core",
+          "sha256": "68ffecd4a40912bbf6a4676028c1e771832c779325ddf0b3d09671e235e2a01c"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "short": "PanEcho",
+      "year": "2025",
+      "journal": "JAMA",
+      "question": "一个多任务视频模型能否整合整次超声检查，并同时输出39项诊断和定量指标？",
+      "data": "约120万段视频、32,265次TTE、24,405名患者用于开发；时间独立内部验证，4类外部队列包含国际数据、EchoNet相关公开队列及简化/床旁场景。各任务与各队列可用标签数不同。",
+      "method": "帧图像编码器提取特征，Transformer建模视频时序，多任务头产生18项分类与21项回归；检查级聚合所有可用视频；比较完整、简化检查与真实POCUS场景。",
+      "structure": "JAMA结构化摘要提出目标和多中心回顾性设计；Methods说明标签、模型和验证队列；Results依次给分类、回归、视图重要性和床旁评价；Discussion、Limitations和Conclusions界定用途。",
+      "results": [
+        [
+          "内部18项分类中位AUROC",
+          "0.91（IQR 0.88–0.93）",
+          "摘要；不是每项都为0.91"
+        ],
+        [
+          "内部21项回归中位归一化MAE",
+          "0.13（IQR 0.10–0.18）",
+          "归一化值，不是13个百分点"
+        ],
+        [
+          "内部 / 外部 LVEF MAE",
+          "4.2 / 4.5 个百分点",
+          "摘要；具体队列见原文Fig.3"
+        ],
+        [
+          "真实床旁14项分类中位AUROC",
+          "0.85（IQR 0.77–0.87）",
+          "摘要；与简化TTE结果区分"
+        ]
+      ],
+      "figures": [
+        "Fig.1：患者流转、模型与外部验证设计；Fig.2：多任务分类；Fig.3：回归。",
+        "Fig.4：各任务视图相关性雷达图；Fig.5：模拟与真实POCUS表现。",
+        "eFigure 1：关键回归量Bland–Altman；每个子任务都应标注样本量与参考来源。"
+      ],
+      "innovation": "统一多视图、视频和多任务，不再为每个临床指标搭建孤立模型；跨时间、跨地区与床旁场景验证，并公开模型。",
+      "limits": "回顾性临床报告标签不是所有任务的独立金标准；不包括所有静态谱多普勒、应变或3D信息。完整训练数据非全部公开，真实临床工作流还需前瞻验证。",
+      "project": "为以后把面积、长轴、容积与功能组成统一输出提供参考，但本项目当前只有DeepLabV3分割模型，不能将结果表的多列误称为已训练多任务网络。",
+      "evidence": "PubMed/Europe PMC摘要 + NCBI公开全文档案。JAMA官网JIF数值未能核实，因此不填猜测值。",
+      "access": "full_pmc",
+      "links": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC12186137/"
+      ],
+      "metric": "外部EF MAE 4.5 pp",
+      "risk": "多任务回顾性验证，非前瞻临床获益",
+      "title": "Complete AI-Enabled Echocardiography Interpretation With Multitask Deep Learning",
+      "doi": "10.1001/jama.2025.8731",
+      "authors": "Holste G, Oikonomou EK, Tokodi M, Kovács A, Wang Z, Khera R.",
+      "pmid": "40549400",
+      "pmcid": "PMC12186137",
+      "volume": "334",
+      "pages": "306-318",
+      "jif": {
+        "jif": null,
+        "year": null,
+        "source": "https://jamanetwork.com/journals/jama/pages/journal-information",
+        "note": "期刊官网访问返回403；未获得可核实的当期JIF，数值留空。"
+      },
+      "source_records": [
+        {
+          "url": "https://api.crossref.org/works/10.1001/jama.2025.8731",
+          "sha256": "ce5fce59c2753873df3712476f6573905333c6d164cf530cdf6fdf8792e67c8b"
+        },
+        {
+          "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:10.1001/jama.2025.8731&format=json&resultType=core",
+          "sha256": "ff662d7a0aaea4dbb20553e3dcf20b48ec6e32fa43af8b0052e96c1966e7db6f"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "short": "EchoPrime",
+      "year": "2026（在线2025）",
+      "journal": "Nature",
+      "question": "把不同切面的视频与解剖结构关联起来，能否支持完整检查的通用解释？",
+      "data": "12,124,168段视频与报告，来自275,442次检查、108,913名患者。共5个医疗体系参与评价，其中1个为内部体系、4个为外部体系，包含不同国家和公开MIMIC数据。在线发表为2025-11-11，卷期为2026年650卷970–977页。",
+      "method": "视频—文本对比预训练；视图分类器识别58类视图；按解剖结构进行多实例注意力加权，结合检索增强解释整次检查；评估23项基准，并展示迁移学习。",
+      "structure": "引言说明单视图/单任务限制；结果按总览、自动检查解释、解剖注意力和迁移展开；讨论数据和模态边界；方法给出预处理、对比学习、视图模型、检索和外部评价。",
+      "results": [
+        [
+          "训练视频—报告对",
+          "12,124,168",
+          "正文队列；不等于患者数"
+        ],
+        [
+          "内部 LVEF MAE",
+          "4.79 个百分点",
+          "正文；与各基线在同队列比较"
+        ],
+        [
+          "外部 LVEF MAE范围",
+          "4.14–6.46 个百分点",
+          "正文/Table 2，不同医疗体系各自结果"
+        ],
+        [
+          "视图类别 / 评测基准",
+          "58 / 23",
+          "正文；不是23项均有同一数值"
+        ]
+      ],
+      "figures": [
+        "Fig.1：训练数据、双编码器和检查级推理；Table 1：内外部人群。",
+        "Fig.2及Table 2：跨机构任务结果；Fig.3：视图与解剖结构之间的注意力热图。",
+        "阅读重点是“模型为何为某个结构选这些切面”，注意力相关性本身不等于因果可解释性。"
+      ],
+      "innovation": "通过视频表征、切面知识、结构注意力和检索，将基础模型从单张图像扩展到多视图完整检查。",
+      "limits": "训练数据规模大且大部分受数据协议限制；未纳入部分静态谱多普勒/M型图像。报告标签和检索可能继承机构偏差；回顾性外部性能不能替代前瞻工作流试验或贴片设备验证。",
+      "project": "长期可考虑以视图分类和按结构聚合作为扩展；近期更重要的是把A2C/A4C的原始坐标、相位和数据来源记录完整，且不得将先后采集的两视图伪造成同步双平面连续曲线。",
+      "evidence": "出版商开放全文 + Crossref与Europe PMC核实在线/卷期年份差异。Fig.3原样引用，依据CC BY-NC-ND 4.0，仅供本次非商业学术汇报，不裁切或改绘原图。",
+      "access": "full_publisher",
+      "links": [
+        "https://www.nature.com/articles/s41586-025-09850-x"
+      ],
+      "metric": "外部EF MAE 4.14–6.46 pp",
+      "risk": "大规模报告监督；完整检查≠贴片单声窗",
+      "figure_file": "fig_10_3.png",
+      "figure_number": "Fig.3",
+      "license": "CC BY-NC-ND 4.0",
+      "title": "Comprehensive echocardiogram evaluation with view primed vision language AI",
+      "doi": "10.1038/s41586-025-09850-x",
+      "authors": "Vukadinovic M, Chiu IM, Tang X, Yuan N, Chen TY, Cheng P, Li D, Cheng S, He B, Ouyang D.",
+      "pmid": "41219498",
+      "pmcid": "PMC12935550",
+      "volume": "650",
+      "pages": "970-977",
+      "jif": {
+        "jif": 56.1,
+        "year": 2025,
+        "source": "https://www.nature.com/nature/journal-impact",
+        "quote": "Journal Impact Factor: 56.1 (2025)"
+      },
+      "source_records": [
+        {
+          "url": "https://api.crossref.org/works/10.1038/s41586-025-09850-x",
+          "sha256": "6ec3d9c84a041990581f7302bd2744e1b6271cc183cc3ddc05f085558b359e20"
+        },
+        {
+          "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:10.1038/s41586-025-09850-x&format=json&resultType=core",
+          "sha256": "06f82c3faf7af44f87770e6070fbc44a95eb996f6ed4f3bd1f33bab7846cea09"
+        }
+      ]
+    }
+  ],
+  "synthesis": [
+    {
+      "topic": "文献怎样连接到本项目",
+      "text": "数据与标签由CAMUS奠定；EchoNet提供可复现分割/视频基线；室壁运动研究说明质量门控与时序的价值；Tromp与随机试验说明必须把准确度、重复性和临床工作流分层验证；可穿戴超声论文提出硬件—成像—曲线的系统目标；EchoCLIP、PanEcho、EchoPrime提供未来通用表征方向。"
+    },
+    {
+      "topic": "不能直接拼接论文数字作排行榜",
+      "text": "这些论文的视图、队列、参考标签、模型监督、质量排除和任务都不同。4.1、4.5、5.3或7.1个百分点只能在原研究对应条件下解释。只有在同一固定测试集、同一参考口径、相同患者级汇总规则下运行各模型，才适合做配对统计比较。"
+    },
+    {
+      "topic": "当前基线的准确定位",
+      "text": "项目使用EchoNet官方DeepLabV3-ResNet50分割权重，对CAMUS进行训练适配；配置为30轮、batch 8、AdamW、学习率0.0001、均值BCE。由分割掩膜经面积长轴或双平面圆盘法计算EDV/ESV，再计算SV/EF。它不是EchoNet-Dynamic的视频EF回归精确复现，也不是已经完成的贴片临床验证。"
+    },
+    {
+      "topic": "空间与时间必须分别核查",
+      "text": "空间间距和坐标恢复决定mm、mm²及mL是否成立；帧率和时间戳决定心率、周期及CO是否成立。CAMUS当前半周期数据不能反射或拼接来制造完整周期；缺少可靠HR或独立CO参考时，CO及其MAE应为null并注明原因。"
+    },
+    {
+      "topic": "把真值层级写进结果表",
+      "text": "专家掩膜、轮廓派生关键点、同一几何法参考容积、数据集EF和独立临床参考属于不同层级。分割派生点误差不能冒充人工解剖点误差；只有同步、独立获取的CO参考才能支持CO MAE。"
+    },
+    {
+      "topic": "统计比较应以患者为实验单位",
+      "text": "先预定义主要终点，例如患者平均Dice或患者EF绝对误差。对同一患者两个模型误差的差值做配对t检验，核查差值分布与异常值；不满足条件时用患者级置换或Wilcoxon。多个对照用Holm等校正；报告差值、95% CI、效应量、样本量和失败率，不只报告P值。多次随机种子的训练波动另行报告，不能把种子或同患者多帧当作独立患者。"
+    },
+    {
+      "topic": "建议的项目论文结构",
+      "text": "引言说明贴片连续定量的临床动机与技术缺口；相关工作按分割量化、时序质量、可穿戴与临床验证组织；方法给出元数据审计、患者划分、模型、几何与质量模块；结果先给覆盖率和分割，再给分层功能误差、边界/关键点、消融、外部验证与速度；讨论单独列出半周期、参考值和设备差异；最后给数据、代码和许可。"
+    },
+    {
+      "topic": "近期可执行的实验",
+      "text": "冻结患者划分和参考口径；在同一训练预算下完成DeepLabV3与后续对照；预先定义主要指标与统计计划；保存训练日志、归一化、权重摘要、逐患者结果与失败病例；只对有可靠时空标定的数据输出带单位的功能量。后续再采集完整周期和独立参考，验证贴片场景迁移。"
+    }
+  ]
+}

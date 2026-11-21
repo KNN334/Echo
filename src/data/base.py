@@ -83,4 +83,7 @@ def build_adapter(manifest, split, name='camus'):
         return CamusAdapter(manifest, split)
     if name == 'prepared':
         return PreparedDatasetAdapter(manifest, split)
+    if name == 'patch':
+        from .patch import PatchAdapter
+        return PatchAdapter(manifest, split)
     raise ValueError(f'不支持的数据适配器：{name}')

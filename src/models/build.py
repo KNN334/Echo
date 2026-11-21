@@ -2,12 +2,19 @@
 import numpy as np
 
 from .deeplabv3 import deeplabv3_resnet50
+from .fcn32 import fcn32
 from ..data.transforms import normalize
 
 
 def build_model(config=None):
     """模型工厂；当前实现用户指定的单前景 DeepLabV3 基线。"""
     config = config or {'name': 'deeplabv3_resnet50'}
+    if config.get('name') == 'fcn32':
+        return fcn32(
+            in_channels=config.get('in_channels', 3),
+            num_classes=config.get('num_classes', 1),
+            base_channels=config.get('base_channels', 32),
+        )
     if config.get('name') != 'deeplabv3_resnet50':
         raise ValueError(f'不支持的模型：{config.get("name")}')
     if config.get('in_channels', 3) != 3 or config.get('num_classes', 1) != 1:
