@@ -1,5 +1,5 @@
 {
-  "best_model": "UNet",
+  "best_model": "Attention-UNet",
   "best_case": "patient0015_2CH",
   "videos": {
     "patient_id": "patient0015",
@@ -9,7 +9,8 @@
     "source_fps": 62.9,
     "labeled_frames": 2,
     "unlabeled_frames": 18,
-    "best_model_by_patient_mean_dice": "UNet",
+    "best_model_by_patient_mean_dice": "Attention-UNet",
+    "representative_checkpoint_seed": 2026,
     "files": [
       "best_model_patient0015_2CH.mp4",
       "best_model_patient0015_2CH.gif",

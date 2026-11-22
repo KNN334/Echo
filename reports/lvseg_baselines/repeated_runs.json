@@ -1,0 +1,530 @@
+{
+  "protocol": {
+    "seeds": [
+      2026,
+      2027,
+      2028,
+      2029,
+      2030
+    ],
+    "runs_per_model": 5,
+    "selection_metric": "mean validation Dice at the checkpoint with minimum validation loss",
+    "selected_baseline": "Attention-UNet",
+    "test_set_used_for_selection": false,
+    "test_metric_summary": "mean and sample standard deviation across independent seeds; each seed first averages labeled-frame metrics within patient"
+  },
+  "models": [
+    {
+      "model": "UNet",
+      "run_count": 5,
+      "seeds": [
+        2026,
+        2027,
+        2028,
+        2029,
+        2030
+      ],
+      "validation_mean_dice": 0.929839530646801,
+      "validation_sd_dice": 0.0018237567401641283,
+      "validation_mean_loss": 0.11117963851988316,
+      "validation_sd_loss": 0.003099034315290602,
+      "patient_mean_dice": 0.935466960775342,
+      "patient_mean_dice_sd": 0.002661013309735404,
+      "patient_mean_miou": 0.9346220545289408,
+      "patient_mean_miou_sd": 0.0023854888034862297,
+      "patient_mean_precision": 0.9444331531157997,
+      "patient_mean_precision_sd": 0.004166095605376465,
+      "patient_mean_recall": 0.9316376342981733,
+      "patient_mean_recall_sd": 0.008410600878236873,
+      "patient_mean_hd95": 4.058077197719581,
+      "patient_mean_hd95_sd": 0.344555418480654,
+      "patient_mean_asd": 1.492158850159185,
+      "patient_mean_asd_sd": 0.09947346309814349
+    },
+    {
+      "model": "Attention-UNet",
+      "run_count": 5,
+      "seeds": [
+        2026,
+        2027,
+        2028,
+        2029,
+        2030
+      ],
+      "validation_mean_dice": 0.9299580374956131,
+      "validation_sd_dice": 0.001932779806228216,
+      "validation_mean_loss": 0.11177338474988938,
+      "validation_sd_loss": 0.0027031178178114237,
+      "patient_mean_dice": 0.9362566521294946,
+      "patient_mean_dice_sd": 0.002187966404378048,
+      "patient_mean_miou": 0.9352503924613501,
+      "patient_mean_miou_sd": 0.002151294061593709,
+      "patient_mean_precision": 0.9432144251929115,
+      "patient_mean_precision_sd": 0.009451875874965935,
+      "patient_mean_recall": 0.9339911686961069,
+      "patient_mean_recall_sd": 0.011666077235885702,
+      "patient_mean_hd95": 3.7430560815845833,
+      "patient_mean_hd95_sd": 0.14157736255924688,
+      "patient_mean_asd": 1.4328671515169418,
+      "patient_mean_asd_sd": 0.049850423608672284
+    },
+    {
+      "model": "UNet++",
+      "run_count": 5,
+      "seeds": [
+        2026,
+        2027,
+        2028,
+        2029,
+        2030
+      ],
+      "validation_mean_dice": 0.9295768551826478,
+      "validation_sd_dice": 0.0013742260116943149,
+      "validation_mean_loss": 0.11268898531794548,
+      "validation_sd_loss": 0.002386348600125135,
+      "patient_mean_dice": 0.9348640455494672,
+      "patient_mean_dice_sd": 0.002220472665029522,
+      "patient_mean_miou": 0.9340367632907838,
+      "patient_mean_miou_sd": 0.002140404581680219,
+      "patient_mean_precision": 0.9372981079644275,
+      "patient_mean_precision_sd": 0.012117454773719623,
+      "patient_mean_recall": 0.9378793335564156,
+      "patient_mean_recall_sd": 0.013513036705050952,
+      "patient_mean_hd95": 3.9776013008445728,
+      "patient_mean_hd95_sd": 0.3642343813590775,
+      "patient_mean_asd": 1.4768833393422938,
+      "patient_mean_asd_sd": 0.08039185797811879
+    },
+    {
+      "model": "UNet-mini",
+      "run_count": 5,
+      "seeds": [
+        2026,
+        2027,
+        2028,
+        2029,
+        2030
+      ],
+      "validation_mean_dice": 0.8880442569553852,
+      "validation_sd_dice": 0.0036884147118731395,
+      "validation_mean_loss": 0.18208645924925804,
+      "validation_sd_loss": 0.005978263106775818,
+      "patient_mean_dice": 0.9024651494198268,
+      "patient_mean_dice_sd": 0.0026942588559071526,
+      "patient_mean_miou": 0.9035201139079012,
+      "patient_mean_miou_sd": 0.0025782819205268626,
+      "patient_mean_precision": 0.9026331269661464,
+      "patient_mean_precision_sd": 0.015612421438661444,
+      "patient_mean_recall": 0.9113575541199166,
+      "patient_mean_recall_sd": 0.016117569466582243,
+      "patient_mean_hd95": 10.756264117886337,
+      "patient_mean_hd95_sd": 2.367043360734696,
+      "patient_mean_asd": 2.8178821743171913,
+      "patient_mean_asd_sd": 0.3661907972176219
+    },
+    {
+      "model": "VGG16-UNet",
+      "run_count": 5,
+      "seeds": [
+        2026,
+        2027,
+        2028,
+        2029,
+        2030
+      ],
+      "validation_mean_dice": 0.9242534198760987,
+      "validation_sd_dice": 0.002814495021657085,
+      "validation_mean_loss": 0.12209052115678787,
+      "validation_sd_loss": 0.0055858406073286465,
+      "patient_mean_dice": 0.9321124344789319,
+      "patient_mean_dice_sd": 0.003567413778026037,
+      "patient_mean_miou": 0.9311462096872819,
+      "patient_mean_miou_sd": 0.0034177688404777376,
+      "patient_mean_precision": 0.9350870025757081,
+      "patient_mean_precision_sd": 0.007755526793923458,
+      "patient_mean_recall": 0.9343702747893913,
+      "patient_mean_recall_sd": 0.00734381328923808,
+      "patient_mean_hd95": 4.09807620279234,
+      "patient_mean_hd95_sd": 0.4506329484708667,
+      "patient_mean_asd": 1.5269780475191141,
+      "patient_mean_asd_sd": 0.11379209015918948
+    }
+  ],
+  "runs": [
+    {
+      "seed": 2026,
+      "model": "UNet",
+      "best_epoch": 19,
+      "best_validation_loss": 0.11024143308401108,
+      "best_validation_dice": 0.9308619129657746,
+      "test_metrics": {
+        "patient_mean_dice": 0.9386791569009735,
+        "patient_mean_miou": 0.9375314046463462,
+        "patient_mean_precision": 0.9392440471327742,
+        "patient_mean_recall": 0.9431423699163354,
+        "patient_mean_hd95": 3.9769715333653277,
+        "patient_mean_asd": 1.4019050937768407
+      }
+    },
+    {
+      "seed": 2026,
+      "model": "Attention-UNet",
+      "best_epoch": 18,
+      "best_validation_loss": 0.11237072676420212,
+      "best_validation_dice": 0.9291297468543053,
+      "test_metrics": {
+        "patient_mean_dice": 0.933905867718552,
+        "patient_mean_miou": 0.9329750307612814,
+        "patient_mean_precision": 0.9586129583701404,
+        "patient_mean_recall": 0.9143256912731127,
+        "patient_mean_hd95": 3.7301783017609664,
+        "patient_mean_asd": 1.4553121936065219
+      }
+    },
+    {
+      "seed": 2026,
+      "model": "UNet++",
+      "best_epoch": 18,
+      "best_validation_loss": 0.11560780182480812,
+      "best_validation_dice": 0.9279038542509079,
+      "test_metrics": {
+        "patient_mean_dice": 0.9317282081085991,
+        "patient_mean_miou": 0.9308422162731156,
+        "patient_mean_precision": 0.9504735379146567,
+        "patient_mean_recall": 0.9186648383088761,
+        "patient_mean_hd95": 3.85577809489356,
+        "patient_mean_asd": 1.5250796041677026
+      }
+    },
+    {
+      "seed": 2026,
+      "model": "UNet-mini",
+      "best_epoch": 14,
+      "best_validation_loss": 0.17981584504246712,
+      "best_validation_dice": 0.8895983478426933,
+      "test_metrics": {
+        "patient_mean_dice": 0.9026236689252737,
+        "patient_mean_miou": 0.90353126218371,
+        "patient_mean_precision": 0.9053392237093338,
+        "patient_mean_recall": 0.9086636008196067,
+        "patient_mean_hd95": 9.894374785691502,
+        "patient_mean_asd": 2.6597625340582414
+      }
+    },
+    {
+      "seed": 2026,
+      "model": "VGG16-UNet",
+      "best_epoch": 19,
+      "best_validation_loss": 0.12050832599401474,
+      "best_validation_dice": 0.9247084307670593,
+      "test_metrics": {
+        "patient_mean_dice": 0.9331963502455707,
+        "patient_mean_miou": 0.9324086757943933,
+        "patient_mean_precision": 0.9355373764059232,
+        "patient_mean_recall": 0.9359354686826401,
+        "patient_mean_hd95": 3.8880326493705923,
+        "patient_mean_asd": 1.4694836596428815
+      }
+    },
+    {
+      "seed": 2027,
+      "model": "UNet",
+      "best_epoch": 18,
+      "best_validation_loss": 0.11280773133039475,
+      "best_validation_dice": 0.928583269417286,
+      "test_metrics": {
+        "patient_mean_dice": 0.9343281653235074,
+        "patient_mean_miou": 0.9333691626104422,
+        "patient_mean_precision": 0.9474850796904286,
+        "patient_mean_recall": 0.926343387049543,
+        "patient_mean_hd95": 3.7691053454594,
+        "patient_mean_asd": 1.4594587909831012
+      }
+    },
+    {
+      "seed": 2027,
+      "model": "Attention-UNet",
+      "best_epoch": 17,
+      "best_validation_loss": 0.10911653265357017,
+      "best_validation_dice": 0.9320767053961754,
+      "test_metrics": {
+        "patient_mean_dice": 0.9393930905268273,
+        "patient_mean_miou": 0.9381246531678307,
+        "patient_mean_precision": 0.9434551396646789,
+        "patient_mean_recall": 0.939586517956355,
+        "patient_mean_hd95": 3.5273707611191494,
+        "patient_mean_asd": 1.3542157808614181
+      }
+    },
+    {
+      "seed": 2027,
+      "model": "UNet++",
+      "best_epoch": 16,
+      "best_validation_loss": 0.11233872443437576,
+      "best_validation_dice": 0.9297839182615281,
+      "test_metrics": {
+        "patient_mean_dice": 0.9365781622696885,
+        "patient_mean_miou": 0.9356074860421212,
+        "patient_mean_precision": 0.935893991378297,
+        "patient_mean_recall": 0.9420644233555605,
+        "patient_mean_hd95": 3.684061599613733,
+        "patient_mean_asd": 1.4056680744529872
+      }
+    },
+    {
+      "seed": 2027,
+      "model": "UNet-mini",
+      "best_epoch": 19,
+      "best_validation_loss": 0.18581498876214028,
+      "best_validation_dice": 0.8855981777608395,
+      "test_metrics": {
+        "patient_mean_dice": 0.9019768387390856,
+        "patient_mean_miou": 0.9031173515780835,
+        "patient_mean_precision": 0.887428952630716,
+        "patient_mean_recall": 0.9265429422947783,
+        "patient_mean_hd95": 11.609038976150712,
+        "patient_mean_asd": 2.908585368508663
+      }
+    },
+    {
+      "seed": 2027,
+      "model": "VGG16-UNet",
+      "best_epoch": 18,
+      "best_validation_loss": 0.11680433735251426,
+      "best_validation_dice": 0.9268589147925377,
+      "test_metrics": {
+        "patient_mean_dice": 0.9367802430854426,
+        "patient_mean_miou": 0.9354992406582539,
+        "patient_mean_precision": 0.939603661579369,
+        "patient_mean_recall": 0.9383143524196776,
+        "patient_mean_hd95": 3.680894311897921,
+        "patient_mean_asd": 1.4000032715002688
+      }
+    },
+    {
+      "seed": 2028,
+      "model": "UNet",
+      "best_epoch": 19,
+      "best_validation_loss": 0.10675737395882606,
+      "best_validation_dice": 0.9323729029297829,
+      "test_metrics": {
+        "patient_mean_dice": 0.9377999543596717,
+        "patient_mean_miou": 0.9367619601115167,
+        "patient_mean_precision": 0.9421585810694164,
+        "patient_mean_recall": 0.9379547066799298,
+        "patient_mean_hd95": 3.7959197268949088,
+        "patient_mean_asd": 1.4032245653310746
+      }
+    },
+    {
+      "seed": 2028,
+      "model": "Attention-UNet",
+      "best_epoch": 19,
+      "best_validation_loss": 0.10922384649515152,
+      "best_validation_dice": 0.9318193331360817,
+      "test_metrics": {
+        "patient_mean_dice": 0.9369163397593803,
+        "patient_mean_miou": 0.9360711899041475,
+        "patient_mean_precision": 0.9333720538407521,
+        "patient_mean_recall": 0.9449792526655232,
+        "patient_mean_hd95": 3.912719734625818,
+        "patient_mean_asd": 1.467034128622753
+      }
+    },
+    {
+      "seed": 2028,
+      "model": "UNet++",
+      "best_epoch": 18,
+      "best_validation_loss": 0.11147560968995095,
+      "best_validation_dice": 0.9302524876594543,
+      "test_metrics": {
+        "patient_mean_dice": 0.9347632693889785,
+        "patient_mean_miou": 0.9341034984425483,
+        "patient_mean_precision": 0.9223321676184808,
+        "patient_mean_recall": 0.9534459527716871,
+        "patient_mean_hd95": 4.010769210138766,
+        "patient_mean_asd": 1.4794256010213078
+      }
+    },
+    {
+      "seed": 2028,
+      "model": "UNet-mini",
+      "best_epoch": 19,
+      "best_validation_loss": 0.17316628083586694,
+      "best_validation_dice": 0.8931030628085136,
+      "test_metrics": {
+        "patient_mean_dice": 0.9069425878470696,
+        "patient_mean_miou": 0.90783942534057,
+        "patient_mean_precision": 0.9087851046430668,
+        "patient_mean_recall": 0.9135003714480402,
+        "patient_mean_hd95": 9.41315876154331,
+        "patient_mean_asd": 2.582659313172434
+      }
+    },
+    {
+      "seed": 2028,
+      "model": "VGG16-UNet",
+      "best_epoch": 19,
+      "best_validation_loss": 0.11959848374128342,
+      "best_validation_dice": 0.9252527531981468,
+      "test_metrics": {
+        "patient_mean_dice": 0.9311057064686556,
+        "patient_mean_miou": 0.9301186974907725,
+        "patient_mean_precision": 0.9451989841997092,
+        "patient_mean_recall": 0.9224653108442078,
+        "patient_mean_hd95": 4.015289582896524,
+        "patient_mean_asd": 1.5428986144599377
+      }
+    },
+    {
+      "seed": 2029,
+      "model": "UNet",
+      "best_epoch": 17,
+      "best_validation_loss": 0.11509074710309505,
+      "best_validation_dice": 0.9277900376915932,
+      "test_metrics": {
+        "patient_mean_dice": 0.9323811838866634,
+        "patient_mean_miou": 0.9320372919152945,
+        "patient_mean_precision": 0.9436158781515279,
+        "patient_mean_recall": 0.9268211860014932,
+        "patient_mean_hd95": 4.133151327862953,
+        "patient_mean_asd": 1.6000074306242897
+      }
+    },
+    {
+      "seed": 2029,
+      "model": "Attention-UNet",
+      "best_epoch": 10,
+      "best_validation_loss": 0.11560923099517822,
+      "best_validation_dice": 0.9275646468997002,
+      "test_metrics": {
+        "patient_mean_dice": 0.9344602819181574,
+        "patient_mean_miou": 0.9332382113997211,
+        "patient_mean_precision": 0.9385125318160923,
+        "patient_mean_recall": 0.9348753007135396,
+        "patient_mean_hd95": 3.811043293924816,
+        "patient_mean_asd": 1.474219912191669
+      }
+    },
+    {
+      "seed": 2029,
+      "model": "UNet++",
+      "best_epoch": 19,
+      "best_validation_loss": 0.10958797529339791,
+      "best_validation_dice": 0.9313761821389198,
+      "test_metrics": {
+        "patient_mean_dice": 0.9373254658383233,
+        "patient_mean_miou": 0.936304654961338,
+        "patient_mean_precision": 0.9484527524582179,
+        "patient_mean_recall": 0.9304962025632888,
+        "patient_mean_hd95": 3.747080684583941,
+        "patient_mean_asd": 1.391620928646729
+      }
+    },
+    {
+      "seed": 2029,
+      "model": "UNet-mini",
+      "best_epoch": 18,
+      "best_validation_loss": 0.1829462993144989,
+      "best_validation_dice": 0.8883843177556991,
+      "test_metrics": {
+        "patient_mean_dice": 0.9006399255152483,
+        "patient_mean_miou": 0.9017264919305442,
+        "patient_mean_precision": 0.9242251564626272,
+        "patient_mean_recall": 0.8854719271533034,
+        "patient_mean_hd95": 8.413821592396616,
+        "patient_mean_asd": 2.520855510744681
+      }
+    },
+    {
+      "seed": 2029,
+      "model": "VGG16-UNet",
+      "best_epoch": 9,
+      "best_validation_loss": 0.13147925525903703,
+      "best_validation_dice": 0.9194441050291061,
+      "test_metrics": {
+        "patient_mean_dice": 0.9269406991558885,
+        "patient_mean_miou": 0.9261502464721189,
+        "patient_mean_precision": 0.926124606140226,
+        "patient_mean_recall": 0.933352662133183,
+        "patient_mean_hd95": 4.862477522162886,
+        "patient_mean_asd": 1.7058794603175307
+      }
+    },
+    {
+      "seed": 2030,
+      "model": "UNet",
+      "best_epoch": 20,
+      "best_validation_loss": 0.11100090712308884,
+      "best_validation_dice": 0.9295895302295685,
+      "test_metrics": {
+        "patient_mean_dice": 0.9341463434058939,
+        "patient_mean_miou": 0.933410453361104,
+        "patient_mean_precision": 0.9496621795348511,
+        "patient_mean_recall": 0.9239265218435649,
+        "patient_mean_hd95": 4.615238055015315,
+        "patient_mean_asd": 1.5961983700806182
+      }
+    },
+    {
+      "seed": 2030,
+      "model": "Attention-UNet",
+      "best_epoch": 19,
+      "best_validation_loss": 0.11254658684134483,
+      "best_validation_dice": 0.929199755191803,
+      "test_metrics": {
+        "patient_mean_dice": 0.9366076807245559,
+        "patient_mean_miou": 0.9358428770737701,
+        "patient_mean_precision": 0.9421194422728939,
+        "patient_mean_recall": 0.9361890808720039,
+        "patient_mean_hd95": 3.7339683164921667,
+        "patient_mean_asd": 1.413553742302347
+      }
+    },
+    {
+      "seed": 2030,
+      "model": "UNet++",
+      "best_epoch": 19,
+      "best_validation_loss": 0.11443481534719467,
+      "best_validation_dice": 0.9285678336024284,
+      "test_metrics": {
+        "patient_mean_dice": 0.9339251221417466,
+        "patient_mean_miou": 0.9333259607347959,
+        "patient_mean_precision": 0.9293380904524848,
+        "patient_mean_recall": 0.9447252507826654,
+        "patient_mean_hd95": 4.590316914992863,
+        "patient_mean_asd": 1.5826224884227422
+      }
+    },
+    {
+      "seed": 2030,
+      "model": "UNet-mini",
+      "best_epoch": 19,
+      "best_validation_loss": 0.18868888229131697,
+      "best_validation_dice": 0.8835373786091805,
+      "test_metrics": {
+        "patient_mean_dice": 0.900142726072457,
+        "patient_mean_miou": 0.901386038506598,
+        "patient_mean_precision": 0.8873871973849884,
+        "patient_mean_recall": 0.9226089288838544,
+        "patient_mean_hd95": 14.450926473649545,
+        "patient_mean_asd": 3.4175481451019367
+      }
+    },
+    {
+      "seed": 2030,
+      "model": "VGG16-UNet",
+      "best_epoch": 18,
+      "best_validation_loss": 0.12206220343708991,
+      "best_validation_dice": 0.9250028955936432,
+      "test_metrics": {
+        "patient_mean_dice": 0.9325391734391018,
+        "patient_mean_miou": 0.931554188020871,
+        "patient_mean_precision": 0.9289703845533132,
+        "patient_mean_recall": 0.941783579867248,
+        "patient_mean_hd95": 4.043686947633775,
+        "patient_mean_asd": 1.5166252316749524
+      }
+    }
+  ]
+}

@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import argparse
-import csv
 import json
 import os
 from pathlib import Path
@@ -23,29 +22,40 @@ from lvseg.visualization.video import export_readme_videos
 
 
 def _refresh_metrics_table(readme: Path, comparison_csv: Path) -> None:
-    with comparison_csv.open(newline="", encoding="utf-8-sig") as stream:
-        rows = list(csv.DictReader(stream))
+    repeated_results = Path("reports/lvseg_baselines/repeated_runs.json")
+    if not repeated_results.is_file():
+        raise FileNotFoundError(
+            "Repeated baseline results are required before refreshing the README table")
+    repeated = json.loads(repeated_results.read_text(encoding="utf-8"))
+    rows = repeated["models"]
+    selected = repeated["protocol"]["selected_baseline"]
     table_rows = [
-        "| 模型 | Dice | mIoU | Precision | Recall | HD95 (mm) | ASD (mm) |",
-        "|---|---:|---:|---:|---:|---:|---:|",
+        "| 模型 | 验证集 Dice | 测试 Dice | 测试 mIoU | Precision | Recall | HD95 (mm) | ASD (mm) |",
+        "|---|---:|---:|---:|---:|---:|---:|---:|",
     ]
     columns = (
-        ("patient_mean_dice", "patient_mean_dice_sd", 4),
-        ("patient_mean_miou", "patient_mean_miou_sd", 4),
-        ("patient_mean_precision", "patient_mean_precision_sd", 4),
-        ("patient_mean_recall", "patient_mean_recall_sd", 4),
-        ("patient_mean_hd95", "patient_mean_hd95_sd", 2),
-        ("patient_mean_asd", "patient_mean_asd_sd", 2),
+        ("patient_mean_dice", 4),
+        ("patient_mean_miou", 4),
+        ("patient_mean_precision", 4),
+        ("patient_mean_recall", 4),
+        ("patient_mean_hd95", 2),
+        ("patient_mean_asd", 2),
     )
     for row in rows:
-        values = [f"{float(row[mean]):.{digits}f} ± {float(row[sd]):.{digits}f}"
-                  for mean, sd, digits in columns]
-        table_rows.append(f"| {row['model']} | " + " | ".join(values) + " |")
+        values = [f"{float(row[mean]):.{digits}f}" for mean, digits in columns]
+        validation = f"{float(row['validation_mean_dice']):.4f}"
+        model = f"**{row['model']}** ✓" if row["model"] == selected else row["model"]
+        table_rows.append(f"| {model} | {validation} | " + " | ".join(values) + " |")
     text = readme.read_text(encoding="utf-8")
     start_marker = "<!-- SEGMENTATION_METRICS_TABLE_START -->"
     end_marker = "<!-- SEGMENTATION_METRICS_TABLE_END -->"
     before, rest = text.split(start_marker, 1)
     _, after = rest.split(end_marker, 1)
+    before = before.replace("### 最高 Dice 基线：U-Net",
+                            f"### 验证集重复实验选出的基线：{selected}")
+    before = before.replace(
+        "下表为固定患者级测试集上按患者先求均值、再跨患者汇总的结果。mIoU 是前景与背景 IoU 的均值。Dice、mIoU、Precision 和 Recall 越高越好；HD95 与 ASD 越低越好。HD95 是双向表面距离合并后的 95 百分位，ASD 是双向平均表面距离；距离以原始图像像素间距换算为 mm。每名患者的 ED/ES 标注帧用于分割评价，整段视频（包括无标签帧）都参与推理和容积曲线。",
+        f"五种基线在固定患者划分下各独立训练 {repeated['protocol']['runs_per_model']} 次。按跨种子的验证集 Dice 均值选择基线；测试集不用于选模。表中验证 Dice 与测试指标均为跨种子均值；每次测试指标先在患者内平均，再汇总。mIoU 是前景与背景 IoU 的均值，HD95/ASD 使用原始像素间距换算为 mm。测试集 ED/ES 标注帧用于分割评价，整段视频（包括无标签帧）都参与推理和容积曲线。")
     readme.write_text(before + start_marker + "\n\n" + "\n".join(table_rows) +
                       "\n\n" + end_marker + after, encoding="utf-8", newline="\n")
 
@@ -75,15 +85,21 @@ def main(argv=None):
     plot_volume_accuracy_comparison(
         results_root, models, assets / "volume_accuracy_comparison.png",
         alignment_audit=alignment_audit)
-    summaries = [json.loads((results_root / name / "evaluation" / "summary.json").read_text(
-        encoding="utf-8")) for name in models]
-    best_model = max(summaries, key=lambda row: row["patient_mean_dice"])["model"]
+    repeated = json.loads(Path("reports/lvseg_baselines/repeated_runs.json").read_text(
+        encoding="utf-8"))
+    best_model = repeated["protocol"]["selected_baseline"]
     case_id = json.loads(test_manifest.read_text(encoding="utf-8"))["cases"][0]["case_id"]
     plot_volume_curve(results_root / best_model / "evaluation", case_id,
                       assets / "volume_waveform.png")
     video_metadata = export_readme_videos(
-        prepared_root, test_manifest, results_root, assets)
+        prepared_root, test_manifest, results_root, assets, best_model=best_model)
     _refresh_metrics_table(Path("README.md"), Path("reports/lvseg_baselines/model_comparison.csv"))
+    readme_path = Path("README.md")
+    readme_text = readme_path.read_text(encoding="utf-8")
+    readme_text = readme_text.replace(
+        "![U-Net 对测试视频逐帧分割]",
+        f"![{best_model} 对测试视频逐帧分割]")
+    readme_path.write_text(readme_text, encoding="utf-8", newline="\n")
     (assets / "README_assets.json").write_text(json.dumps({
         "best_model": best_model,
         "best_case": case_id,

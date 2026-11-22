@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "lv-video-segmentation"
-version = "0.7.1"
+version = "0.8.0"
 description = "CAMUS / EchoNet left-ventricle cine segmentation and volume baselines"
 requires-python = ">=3.10"
 dependencies = ["numpy>=1.24", "scipy>=1.10", "Pillow>=10", "PyYAML>=6.0"]
@@ -22,6 +22,7 @@ lvseg-prepare-echonet = "scripts.prepare_echonet:main"
 lvseg-run-baselines = "scripts.run_baselines:cli"
 lvseg-plot-volume-curve = "scripts.plot_volume_curve:cli"
 lvseg-export-readme-assets = "scripts.export_readme_assets:main"
+lvseg-run-repeated-baselines = "scripts.run_repeated_baselines:main"
 
 [tool.setuptools.packages.find]
 include = ["lvseg*", "scripts*"]

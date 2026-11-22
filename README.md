@@ -4,11 +4,11 @@
 
 ## 结果预览
 
-### 最高 Dice 基线：U-Net
+### 验证集重复实验选出的基线：Attention-UNet
 
-该测试患者视频由固定测试集的 2CH cine 逐帧推理生成；绿色为模型掩码，琥珀色轮廓仅在存在专家标注的帧显示。GIF 为便于阅读的慢速预览，MP4 保留源帧率。
+该测试患者视频由固定测试集的 2CH cine 逐帧推理生成，使用被选基线 Attention-UNet 的代表性 2026 种子权重；绿色为模型掩码，琥珀色轮廓仅在存在专家标注的帧显示。GIF 为便于阅读的慢速预览，MP4 保留源帧率。
 
-![U-Net 对测试视频逐帧分割](reports/lvseg_baselines/assets/best_model_patient0015_2CH.gif)
+![Attention-UNet 对测试视频逐帧分割](reports/lvseg_baselines/assets/best_model_patient0015_2CH.gif)
 
 [下载源帧率 MP4](reports/lvseg_baselines/assets/best_model_patient0015_2CH.mp4)
 
@@ -22,21 +22,21 @@
 
 ### 分割结果对比
 
-下表为固定患者级测试集上按患者先求均值、再跨患者汇总的结果。mIoU 是前景与背景 IoU 的均值。Dice、mIoU、Precision 和 Recall 越高越好；HD95 与 ASD 越低越好。HD95 是双向表面距离合并后的 95 百分位，ASD 是双向平均表面距离；距离以原始图像像素间距换算为 mm。每名患者的 ED/ES 标注帧用于分割评价，整段视频（包括无标签帧）都参与推理和容积曲线。
+五种基线在固定患者划分下各独立训练 5 次。按跨种子的验证集 Dice 均值选择基线；测试集不用于选模。表中验证 Dice 与测试指标均为跨种子均值；每次测试指标先在患者内平均，再汇总。mIoU 是前景与背景 IoU 的均值，HD95/ASD 使用原始像素间距换算为 mm。测试集 ED/ES 标注帧用于分割评价，整段视频（包括无标签帧）都参与推理和容积曲线。
 
 <!-- SEGMENTATION_METRICS_TABLE_START -->
 
-| 模型 | Dice | mIoU | Precision | Recall | HD95 (mm) | ASD (mm) |
-|---|---:|---:|---:|---:|---:|---:|
-| UNet | 0.9387 ± 0.0291 | 0.9375 ± 0.0253 | 0.9392 ± 0.0475 | 0.9431 ± 0.0319 | 3.98 ± 2.12 | 1.40 ± 0.58 |
-| Attention-UNet | 0.9339 ± 0.0254 | 0.9330 ± 0.0226 | 0.9586 ± 0.0335 | 0.9143 ± 0.0359 | 3.73 ± 1.18 | 1.46 ± 0.52 |
-| UNet++ | 0.9317 ± 0.0271 | 0.9308 ± 0.0236 | 0.9505 ± 0.0442 | 0.9187 ± 0.0346 | 3.86 ± 1.32 | 1.53 ± 0.59 |
-| UNet-mini | 0.9026 ± 0.0367 | 0.9035 ± 0.0308 | 0.9053 ± 0.0637 | 0.9087 ± 0.0467 | 9.89 ± 6.15 | 2.66 ± 0.90 |
-| VGG16-UNet | 0.9332 ± 0.0282 | 0.9324 ± 0.0240 | 0.9355 ± 0.0463 | 0.9359 ± 0.0340 | 3.89 ± 1.18 | 1.47 ± 0.49 |
+| 模型 | 验证集 Dice | 测试 Dice | 测试 mIoU | Precision | Recall | HD95 (mm) | ASD (mm) |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| UNet | 0.9298 | 0.9355 | 0.9346 | 0.9444 | 0.9316 | 4.06 | 1.49 |
+| **Attention-UNet** ✓ | 0.9300 | 0.9363 | 0.9353 | 0.9432 | 0.9340 | 3.74 | 1.43 |
+| UNet++ | 0.9296 | 0.9349 | 0.9340 | 0.9373 | 0.9379 | 3.98 | 1.48 |
+| UNet-mini | 0.8880 | 0.9025 | 0.9035 | 0.9026 | 0.9114 | 10.76 | 2.82 |
+| VGG16-UNet | 0.9243 | 0.9321 | 0.9311 | 0.9351 | 0.9344 | 4.10 | 1.53 |
 
 <!-- SEGMENTATION_METRICS_TABLE_END -->
 
-完整数值见 [模型对比 CSV](reports/lvseg_baselines/model_comparison.csv) 和 [结果报告](reports/lvseg_baselines/RESULTS.md)。表中 `±` 表示患者级指标的样本标准差。
+完整均值见 [模型对比 CSV](reports/lvseg_baselines/model_comparison.csv)；逐次实验结果、验证集选择记录和离散程度见 [重复实验报告](reports/lvseg_baselines/repeated_runs.json) 与 [结果报告](reports/lvseg_baselines/RESULTS.md)。
 
 ### 逐帧容积波形与时相
 
@@ -69,6 +69,7 @@ CAMUS 提供半周期片段，没有相邻两个 EDV 峰，因此该数据的 HR
 .venv\Scripts\python.exe scripts\download_camus.py --workers 4
 .venv\Scripts\python.exe scripts\prepare_camus.py
 .venv\Scripts\python.exe scripts\run_baselines.py --stage all --device cuda
+.venv\Scripts\python.exe scripts\run_repeated_baselines.py --seeds 2026 2027 2028 2029 2030 --device cuda
 .venv\Scripts\python.exe scripts\export_readme_assets.py
 .venv\Scripts\python.exe -m pytest -q
 ```

@@ -59,7 +59,8 @@ def _write_gif(path: Path, frames: list[np.ndarray], duration_ms: int = 100) -> 
 
 
 def export_readme_videos(prepared_root: str | Path, test_manifest: str | Path,
-                         results_root: str | Path, output_dir: str | Path) -> dict:
+                         results_root: str | Path, output_dir: str | Path, *,
+                         best_model: str | None = None) -> dict:
     prepared_root, test_manifest = Path(prepared_root), Path(test_manifest)
     results_root, output_dir = Path(results_root), Path(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -78,7 +79,12 @@ def export_readme_videos(prepared_root: str | Path, test_manifest: str | Path,
             encoding="utf-8"))
         for model in ("UNet", "Attention-UNet", "UNet++", "UNet-mini", "VGG16-UNet")
     ]
-    best = max(model_summaries, key=lambda row: row["patient_mean_dice"])["model"]
+    best = best_model or max(model_summaries,
+                             key=lambda row: row["patient_mean_dice"])["model"]
+    if best not in {row["model"] for row in model_summaries}:
+        raise ValueError(f"Selected baseline is not in the video comparison: {best}")
+    checkpoint_run = json.loads((results_root / best / "run.json").read_text(
+        encoding="utf-8"))
     predictions = {}
     for summary in model_summaries:
         name = summary["model"]
@@ -147,6 +153,7 @@ def export_readme_videos(prepared_root: str | Path, test_manifest: str | Path,
         "view": metadata["view"], "frames": int(len(images)), "source_fps": fps,
         "labeled_frames": int(labeled.sum()), "unlabeled_frames": int((~labeled).sum()),
         "best_model_by_patient_mean_dice": best,
+        "representative_checkpoint_seed": checkpoint_run.get("seed"),
         "files": [best_video.name, best_gif.name, comparison_video.name,
                   comparison_gif.name],
         "overlay": "green = model mask; amber = expert-mask contour where labeled",
