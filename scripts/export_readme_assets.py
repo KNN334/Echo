@@ -25,7 +25,10 @@ from lvseg.visualization.video import export_readme_videos
 def _refresh_metrics_table(readme: Path, comparison_csv: Path) -> None:
     with comparison_csv.open(newline="", encoding="utf-8-sig") as stream:
         rows = list(csv.DictReader(stream))
-    table_rows = []
+    table_rows = [
+        "| 模型 | Dice | mIoU | Precision | Recall | HD95 (mm) | ASD (mm) |",
+        "|---|---:|---:|---:|---:|---:|---:|",
+    ]
     columns = (
         ("patient_mean_dice", "patient_mean_dice_sd", 4),
         ("patient_mean_miou", "patient_mean_miou_sd", 4),
@@ -43,8 +46,8 @@ def _refresh_metrics_table(readme: Path, comparison_csv: Path) -> None:
     end_marker = "<!-- SEGMENTATION_METRICS_TABLE_END -->"
     before, rest = text.split(start_marker, 1)
     _, after = rest.split(end_marker, 1)
-    readme.write_text(before + start_marker + "\n" + "\n".join(table_rows) +
-                      "\n" + end_marker + after, encoding="utf-8", newline="\n")
+    readme.write_text(before + start_marker + "\n\n" + "\n".join(table_rows) +
+                      "\n\n" + end_marker + after, encoding="utf-8", newline="\n")
 
 
 def main(argv=None):
