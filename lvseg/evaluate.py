@@ -84,6 +84,8 @@ def evaluate_model(checkpoint_path: str | Path, split_manifest: str | Path,
     volume_by_patient_view = {}
     patient_dice = {}
     patient_iou = {}
+    patient_miou = {}
+    patient_other_metrics = {}
     started = time.time()
 
     for case_index, case in enumerate(split_data["cases"], start=1):
@@ -123,7 +125,7 @@ def evaluate_model(checkpoint_path: str | Path, split_manifest: str | Path,
             frame_rows.append(row)
             if labeled[index]:
                 reference_mask = original_gt[index]
-                scores = overlap_metrics(prediction, reference_mask)
+                scores = overlap_metrics(prediction, reference_mask, spacing)
                 reference_base = simpson_single_plane(reference_mask, spacing_for_geometry)
                 reference_volume = reference_base * unit_scale if reference_base is not None else None
                 phase_name = next((phase for phase, frame in metadata.get("phases", {}).items()
@@ -138,6 +140,10 @@ def evaluate_model(checkpoint_path: str | Path, split_manifest: str | Path,
                                    if volume is not None and reference_volume is not None else None})
                 patient_dice.setdefault(case["patient_id"], []).append(scores["dice"])
                 patient_iou.setdefault(case["patient_id"], []).append(scores["iou"])
+                patient_miou.setdefault(case["patient_id"], []).append(scores["miou"])
+                patient_metrics = patient_other_metrics.setdefault(case["patient_id"], {})
+                for metric in ("precision", "recall", "hd95", "asd"):
+                    patient_metrics.setdefault(metric, []).append(scores[metric])
                 patient_view = volume_by_patient_view.setdefault(
                     (case["patient_id"], case["view"]), [[], []])
                 if volume is not None and reference_volume is not None:
@@ -205,6 +211,18 @@ def evaluate_model(checkpoint_path: str | Path, split_manifest: str | Path,
             [row["reference"] for row in patient_pairs], unit=unit)
     per_patient_dice = {patient: float(np.mean(scores)) for patient, scores in patient_dice.items()}
     per_patient_iou = {patient: float(np.mean(scores)) for patient, scores in patient_iou.items()}
+    per_patient_miou = {patient: float(np.mean(scores)) for patient, scores in patient_miou.items()}
+    per_patient_metrics = {}
+    for patient, metrics in patient_other_metrics.items():
+        per_patient_metrics[patient] = {}
+        for metric, values in metrics.items():
+            valid = [value for value in values if value is not None and np.isfinite(value)]
+            per_patient_metrics[patient][metric] = float(np.mean(valid)) if valid else None
+    patient_metric_means = {}
+    for metric in ("precision", "recall", "hd95", "asd"):
+        values = [row[metric] for row in per_patient_metrics.values()
+                  if row[metric] is not None]
+        patient_metric_means[metric] = float(np.mean(values)) if values else None
     summary = {
         "model": checkpoint["model"], "test_patients": len(test_patients),
         "test_cines": len(split_data["cases"]), "inference_frames": len(frame_rows),
@@ -212,9 +230,17 @@ def evaluate_model(checkpoint_path: str | Path, split_manifest: str | Path,
         "unlabeled_inference_frames": sum(not row["label_available"] for row in frame_rows),
         "patient_mean_dice": float(np.mean(list(per_patient_dice.values()))) if per_patient_dice else None,
         "patient_mean_iou": float(np.mean(list(per_patient_iou.values()))) if per_patient_iou else None,
+        "patient_mean_miou": float(np.mean(list(per_patient_miou.values()))) if per_patient_miou else None,
+        "patient_mean_precision": patient_metric_means["precision"],
+        "patient_mean_recall": patient_metric_means["recall"],
+        "patient_mean_hd95": patient_metric_means["hd95"],
+        "patient_mean_asd": patient_metric_means["asd"],
+        "boundary_distance_unit": "mm" if spacing is not None else "pixel",
         "frame_mean_iou": float(np.mean([row["iou"] for row in label_rows])) if label_rows else None,
         "dice_by_patient": per_patient_dice,
         "iou_by_patient": per_patient_iou,
+        "miou_by_patient": per_patient_miou,
+        "segmentation_metrics_by_patient": per_patient_metrics,
         "volume_units": sorted({row["volume_unit"] for row in frame_rows}),
         "volume_bland_altman_by_labeled_frame_view": ba_by_view_frames,
         "volume_bland_altman_by_patient_view_means": ba_by_view_patients,
@@ -224,10 +250,6 @@ def evaluate_model(checkpoint_path: str | Path, split_manifest: str | Path,
         "sequence_types": sorted({str(row.get("sequence_type")) for row in event_rows}),
         "event_count": sum(row.get("ed_frame") is not None for row in event_rows),
         "sequence_count": len(split_data["cases"]),
-        "events_with_hr_estimate": sum(row.get("HR_bpm") is not None for row in event_rows),
-        "events_with_calibrated_co": sum(
-            row.get("CO_ml_per_min") is not None for row in event_rows),
-        "events_with_proxy_co": sum(row.get("CO_proxy_per_min") is not None for row in event_rows),
         "events_with_hr_estimate": sum(row.get("HR_bpm") is not None for row in event_rows),
         "events_with_calibrated_co": sum(
             row.get("CO_ml_per_min") is not None for row in event_rows),

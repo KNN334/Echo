@@ -1,6 +1,7 @@
 import numpy as np
 
 from lvseg.metrics.cycles import bland_altman, cycle_metrics
+from lvseg.metrics.segmentation import overlap_metrics
 from lvseg.metrics.volume import simpson_biplane, simpson_single_plane
 
 
@@ -80,3 +81,19 @@ def test_bland_altman_reports_bias_and_limits_of_agreement():
     assert result["n"] == 3
     assert np.isclose(result["bias"], 1.0)
     assert result["loa_lower"] < result["bias"] < result["loa_upper"]
+
+
+def test_segmentation_metrics_include_precision_recall_and_spaced_surface_distances():
+    prediction = np.zeros((12, 12), dtype=bool)
+    reference = np.zeros_like(prediction)
+    prediction[2:7, 2:7] = True
+    reference[2:7, 3:8] = True
+
+    result = overlap_metrics(prediction, reference, spacing_xy_mm=(0.5, 1.0))
+
+    assert np.isclose(result["precision"], 0.8)
+    assert np.isclose(result["recall"], 0.8)
+    assert np.isclose(result["miou"], ((20 / 30) + (114 / 124)) / 2)
+    assert np.isclose(result["hd95"], 0.5)
+    assert 0 < result["asd"] < result["hd95"]
+    assert result["boundary_distance_unit"] == "mm"

@@ -65,7 +65,7 @@ def plot_volume_curve(results_dir: str | Path, case_id: str, output: str | Path)
                              "ES": "Reference ES"}[phase]
             right_half = marker_x > (float(np.nanmin(x)) + float(np.nanmax(x))) / 2
             x_offset = -8 if right_half else 8
-            y_offset = {"EDV": 10, "ED": 30, "ESV": 10, "ES": 30}[phase]
+            y_offset = {"EDV": 10, "ED": 30, "ESV": -24, "ES": 30}[phase]
             ax.annotate(f"{display_phase} {marker_y:.1f} {unit}", (marker_x, marker_y),
                         xytext=(x_offset, y_offset), textcoords="offset points",
                         ha="right" if right_half else "left", color=color, fontsize=8,
@@ -91,11 +91,15 @@ def plot_volume_curve(results_dir: str | Path, case_id: str, output: str | Path)
                 "Fewer than two EDV peaks detected; HR/CO unavailable",
             "timestamps_missing": "No reliable time axis; HR/CO unavailable",
         }.get(status_reason, "HR/CO unavailable: " + str(status_reason or "no valid cycle"))
-        ax.text(0.02, 0.98, message,
-                transform=ax.transAxes, va="top", fontsize=8,
+        ax.text(0.98, 0.98, message,
+                transform=ax.transAxes, ha="right", va="top", fontsize=8,
                 bbox={"boxstyle": "round,pad=0.35", "facecolor": "white", "alpha": 0.88})
     ax.set_xlabel("Time (s)" if time_available else "Frame index")
     ax.set_ylabel(f"LV volume ({unit})")
+    finite_volume = volume[np.isfinite(volume)]
+    if len(finite_volume):
+        lower_margin = max(1.0, float(np.ptp(finite_volume)) * 0.28)
+        ax.set_ylim(bottom=max(0.0, float(finite_volume.min()) - lower_margin))
     ax.set_title(f"{rows[0]['patient_id']} · {rows[0]['view']} · {case_id}")
     ax.spines[["right", "top"]].set_visible(False)
     handles, legend_labels = ax.get_legend_handles_labels()
@@ -104,5 +108,6 @@ def plot_volume_curve(results_dir: str | Path, case_id: str, output: str | Path)
     fig.subplots_adjust(left=0.11, right=0.98, top=0.87, bottom=0.24)
     output.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(output, dpi=220, bbox_inches="tight", pad_inches=0.1)
+    fig.savefig(output.with_suffix(".pdf"), bbox_inches="tight", pad_inches=0.1)
     plt.close(fig)
     return output

@@ -1,50 +1,86 @@
-# 左心室视频分割基线
+# CAMUS 左心室视频分割与逐帧容积基线
 
-本阶段只实现左心室 B-mode 视频分割与逐帧几何分析，不包含贴片硬件、RF/IQ 采集或波束合成。训练模型为 U-Net、Attention U-Net、U-Net++、U-Net-mini 和 VGG16-U-Net；暂不加入项目自定义模型或消融模块。
+面向 CAMUS 多帧超声心动图的左心室分割基线。模型训练只读取人工标注的 ED/ES 帧；推理按时间顺序处理整段 cine，包括无标签帧。项目当前范围是数据准备、左室分割、逐帧容积和心动指标计算、结果可视化及评价，不包含贴片硬件或波束合成代码。
 
-操作步骤和实现边界详见[左室工作流](docs/lvseg_workflow.md)与[PyCharm 运行指南](docs/pycharm_run.md)。 See the [baseline result report](reports/lvseg_baselines/RESULTS.md).
+## 结果预览
 
-## 数据
+### 最高 Dice 基线：U-Net
 
-当前主要数据为 CAMUS 官方发布的 500 名患者、2CH/4CH 动态超声序列。原始影像以多帧 NIfTI cine volume 提供，不是静态图片；处理时按源文件帧顺序解码。当前本地下载清单记录了 3,500 个原始文件，合计 3,470,387,058 字节，SHA-256 校验全部通过。原始与处理后影像不纳入 Git。
+该测试患者视频由固定测试集的 2CH cine 逐帧推理生成；绿色为模型掩码，琥珀色轮廓仅在存在专家标注的帧显示。GIF 为便于阅读的慢速预览，MP4 保留源帧率。
 
-CAMUS 只提供 ED/ES 专家掩码，且序列是半周期片段。训练仅读取人工标注帧；测试推理按时间顺序处理视频中的每一帧，无标签帧也进入容积波形。只有有掩码的帧参与 IoU、Dice 和专家掩码容积对照。2CH 与 4CH 是不同采集序列，不能假定同步后逐帧合并为双平面容积。
+![U-Net 对测试视频逐帧分割](reports/lvseg_baselines/assets/best_model_patient0015_2CH.gif)
 
-患者级固定划分为 train/validation/test = 400/50/50。训练归一化参数来自训练标注帧；验证集用于早停；测试集只用于最终评价。CAMUS 半周期没有相邻两个完整 ED 峰，因此不会从它计算 HR 或 CO。
+[下载源帧率 MP4](reports/lvseg_baselines/assets/best_model_patient0015_2CH.mp4)
 
-EchoNet-Dynamic 可作为完整 A4C 视频的可选外部数据。数据需由使用者先按 Stanford AIMI 条款授权获取；代码不会绕过访问许可或下载受控数据。它没有空间标定，Simpson 输出只能标为像素立方代理值，不能报告 mL、mL/min 或临床容积。完整视频里检测到相邻 ED 峰时才会估计 HR；无法从该数据得到同步第二切面。
+### 同一患者的五模型全视频外推对比
 
-CAMUS 用于非商业科研，遵循 CC BY-NC-SA 4.0，保留署名及完整来源校验清单。引用：S. Leclerc et al., “Deep Learning for Segmentation using an Open Large-Scale Dataset in 2D Echocardiography,” *IEEE Transactions on Medical Imaging*, 38(9), 2198–2210, 2019, doi: [10.1109/TMI.2019.2900516](https://doi.org/10.1109/TMI.2019.2900516)。详见 [CAMUS 使用条款](docs/data_sources/CAMUS_LICENSE_TERMS.md)。
+五个基线在同一 2CH 测试 cine 上逐帧推理。琥珀色轮廓表示该帧有专家标签；其余帧只显示模型预测，不补造标签。
+
+![五个模型全视频掩码对比](reports/lvseg_baselines/assets/five_model_patient0015_2CH.gif)
+
+[下载五模型对比 MP4](reports/lvseg_baselines/assets/five_model_patient0015_2CH.mp4)
+
+### 分割结果对比
+
+下表为固定患者级测试集上按患者先求均值、再跨患者汇总的结果。mIoU 是前景与背景 IoU 的均值。Dice、mIoU、Precision 和 Recall 越高越好；HD95 与 ASD 越低越好。HD95 是双向表面距离合并后的 95 百分位，ASD 是双向平均表面距离；距离以原始图像像素间距换算为 mm。每名患者的 ED/ES 标注帧用于分割评价，整段视频（包括无标签帧）都参与推理和容积曲线。
+
+| 模型 | Dice | mIoU | Precision | Recall | HD95 (mm) | ASD (mm) |
+|---|---:|---:|---:|---:|---:|---:|
+<!-- SEGMENTATION_METRICS_TABLE_START -->
+| UNet | 0.9387 ± 0.0291 | 0.9375 ± 0.0253 | 0.9392 ± 0.0475 | 0.9431 ± 0.0319 | 3.98 ± 2.12 | 1.40 ± 0.58 |
+| Attention-UNet | 0.9339 ± 0.0254 | 0.9330 ± 0.0226 | 0.9586 ± 0.0335 | 0.9143 ± 0.0359 | 3.73 ± 1.18 | 1.46 ± 0.52 |
+| UNet++ | 0.9317 ± 0.0271 | 0.9308 ± 0.0236 | 0.9505 ± 0.0442 | 0.9187 ± 0.0346 | 3.86 ± 1.32 | 1.53 ± 0.59 |
+| UNet-mini | 0.9026 ± 0.0367 | 0.9035 ± 0.0308 | 0.9053 ± 0.0637 | 0.9087 ± 0.0467 | 9.89 ± 6.15 | 2.66 ± 0.90 |
+| VGG16-UNet | 0.9332 ± 0.0282 | 0.9324 ± 0.0240 | 0.9355 ± 0.0463 | 0.9359 ± 0.0340 | 3.89 ± 1.18 | 1.47 ± 0.49 |
+<!-- SEGMENTATION_METRICS_TABLE_END -->
+
+完整数值见 [模型对比 CSV](reports/lvseg_baselines/model_comparison.csv) 和 [结果报告](reports/lvseg_baselines/RESULTS.md)。表中 `±` 表示患者级指标的样本标准差。
+
+### 逐帧容积波形与时相
+
+每帧分割掩码按原始图像间距计算 20 圆盘单平面 Simpson 容积，并沿真实时间顺序绘制。实心标记为预测容积曲线检测出的 EDV 峰与 ESV 谷；空心标记为数据提供的专家 ED/ES 参考帧，参考标签不参与预测峰谷选择。
+
+![左心室逐帧容积波形及 EDV、ESV 标注](reports/lvseg_baselines/assets/volume_waveform.png)
+
+CAMUS 提供半周期片段，没有相邻两个 EDV 峰，因此该数据的 HR 和 CO 保留为空。2CH 与 4CH 是不同步采集的序列，不合并计算双平面容积。
+
+### 不同模型的容积估算误差
+
+图中按视图比较每名测试患者有标注帧的平均绝对容积差。预测轮廓和专家掩码使用同一个单平面 Simpson 几何法；因此这是同几何方法的一致性对照，不是独立临床容积准确性验证。
+
+![不同模型的患者级容积估算误差](reports/lvseg_baselines/assets/volume_accuracy_comparison.png)
+
+## 数据和评价协议
+
+- CAMUS 官方原始数据：500 名患者，3,500 个发布清单文件全部通过 SHA-256 校验；包含 2CH/4CH 多帧 cine、对应标签和时序/空间信息。原始数据遵循 CC BY-NC-SA 4.0，非商业研究使用，需按 [CAMUS 许可与引用说明](docs/data_sources/CAMUS_LICENSE_TERMS.md)署名。
+- 处理后数据：1,000 段 cine、19,232 帧；2,000 帧有 ED/ES 专家掩码。固定患者划分为训练/验证/测试 400/50/50，防止同一患者跨集合。
+- 对比模型：U-Net、Attention U-Net、U-Net++、U-Net-mini、VGG16-U-Net；模型选择只用验证集，测试集只用于最终评价。
+- 测试集共 50 名患者、100 段 cine、1,961 帧。每个模型都推理全部帧，其中 200 帧有标签、1,761 帧无标签。IoU、Dice、Precision、Recall、HD95、ASD 只在有标签帧上计算。
+- 容积波形覆盖推理视频的每一帧。容积 Bland–Altman 对照仅使用带专家掩码的测试帧；预测掩码和专家掩码使用相同 Simpson 几何法。
+- 原始影像、处理后数组、模型权重及逐帧缓存不提交到 Git；README 展示所需的轻量图像、GIF 和 MP4 作为结果资产纳入仓库。
 
 ## 运行
 
-在项目虚拟环境中执行：
+在 Windows 项目根目录使用项目虚拟环境：
 
 ```powershell
 .venv\Scripts\python.exe scripts\download_camus.py --workers 4
-.venv\Scripts\python.exe scripts\prepare_camus.py --overwrite
+.venv\Scripts\python.exe scripts\prepare_camus.py
 .venv\Scripts\python.exe scripts\run_baselines.py --stage all --device cuda
-```
-
-已完成的完整数据可跳过下载和预处理步骤。准备脚本拒绝不完整或校验失败的原始集；训练与评估结果保存到 `runs/lvseg_baselines/`。可用 `--model UNet-mini` 选择单个基线，`--epochs 1 --limit-test-cines 1` 只用于流程冒烟检查，不能当作正式实验结果。
-
-若已授权获取 EchoNet-Dynamic，可先执行：
-
-```powershell
-.venv\Scripts\python.exe scripts\prepare_echonet.py --raw-root <EchoNet根目录> --output data/processed/echonet
-.venv\Scripts\python.exe scripts\run_baselines.py --stage evaluate --external-test-manifest data/processed/echonet/splits/test.json --device cuda
-```
-
-## 逐帧容积与结果
-
-每个推理帧的预测掩码恢复到原图网格；用原始像素间距计算 20 圆盘单平面 Simpson 估计，按帧时间排列为左室容积曲线。单平面圆盘包含旋转对称近似，不等于同步双平面 Simpson 或独立临床容积测量。曲线上局部峰标为预测 EDV，随后谷标为 ESV；人工 ED/ES 位置另行标记，不用于选择预测峰谷。
-
-若完整视频存在相邻 ED 峰，周期为 `T`，`HR = 60/T`，`SV = EDV − ESV`，`EF = SV/EDV`，`CO = SV × HR`。仅在体积经空间标定且完整周期成立时输出绝对容积单位和 CO；否则输出代理量或空值及原因。CAMUS 半周期的 HR/CO 保持不可用。
-
-分割结果用专家标注帧上的 IoU/Dice 评价。容积 Bland–Altman 对照也只用带标签帧，并以专家掩码通过同一 Simpson 几何法形成参照；它不是独立临床容积验证。结果目录包含全帧容积 CSV、带标签帧指标、ED/ES 事件、预测掩码、标注帧轮廓对照图、容积曲线、Bland–Altman 图和汇总 JSON。
-
-运行完整检查：
-
-```powershell
+.venv\Scripts\python.exe scripts\export_readme_assets.py
 .venv\Scripts\python.exe -m pytest -q
 ```
+
+无 CUDA 时将 `--device cuda` 改为 `--device cpu`。EchoNet-Dynamic 仅支持在取得数据访问授权后准备；该数据没有空间标定，不用于报告 mL 容积或绝对 CO。
+
+## 目录
+
+```text
+lvseg/                         左室数据、模型、评价、时相和容积
+scripts/                       下载、预处理、训练/评价及 README 素材导出
+configs/lvseg.yaml             基线模型、数据和评价设置
+tests/                         左室分割与心功能指标检查
+reports/lvseg_baselines/       结果报告、对比表和 README 展示素材
+```
+
+工程检查通过不等于贴片系统验证或临床有效性验证。当前 CAMUS 单平面几何结果不应解释为同步双平面或独立临床容积测量。

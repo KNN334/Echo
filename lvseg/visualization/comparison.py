@@ -19,6 +19,26 @@ def _read_csv(path: Path):
         return list(csv.DictReader(stream))
 
 
+def _audit_two_panel_geometry(fig, axes, report_path: Path) -> None:
+    fig.canvas.draw()
+    renderer = fig.canvas.get_renderer()
+    boxes = [axis.get_window_extent(renderer=renderer) for axis in axes]
+    widths = [box.width / fig.dpi * 72.0 for box in boxes]
+    heights = [box.height / fig.dpi * 72.0 for box in boxes]
+    width_delta, height_delta = max(widths) - min(widths), max(heights) - min(heights)
+    report = {
+        "panel_count": len(boxes), "widths_pt": widths, "heights_pt": heights,
+        "max_width_difference_pt": width_delta,
+        "max_height_difference_pt": height_delta,
+        "tolerance_pt": 1.5,
+        "status": "PASS" if width_delta <= 1.5 and height_delta <= 1.5 else "FAIL",
+    }
+    report_path.parent.mkdir(parents=True, exist_ok=True)
+    report_path.write_text(json.dumps(report, indent=2), encoding="utf-8")
+    if report["status"] != "PASS":
+        raise RuntimeError(f"Comparable plot panels are misaligned: {report}")
+
+
 def plot_mask_comparison(split_manifest: str | Path, evaluation_dir: str | Path,
                          output: str | Path) -> Path:
     """Show expert and predicted contours on labeled test frames only."""
@@ -78,7 +98,9 @@ def plot_mask_comparison(split_manifest: str | Path, evaluation_dir: str | Path,
     return output
 
 
-def plot_baseline_comparison(results_root: str | Path, model_names: list[str]) -> Path:
+def plot_baseline_comparison(results_root: str | Path, model_names: list[str], *,
+                             output: str | Path | None = None,
+                             alignment_audit=None) -> Path:
     results_root = Path(results_root)
     summaries, dice, iou = [], [], []
     for name in model_names:
@@ -86,10 +108,10 @@ def plot_baseline_comparison(results_root: str | Path, model_names: list[str]) -
             encoding="utf-8"))
         summaries.append(summary)
         dice.append(list(summary["dice_by_patient"].values()))
-        iou.append(list(summary["iou_by_patient"].values()))
+        iou.append(list(summary["miou_by_patient"].values()))
     fig, axes = plt.subplots(1, 2, figsize=(11, 4.5), sharey=True, constrained_layout=True)
     palette = ["#407B9E", "#9B6BA8", "#4F8A70", "#CB8B46", "#555A68"]
-    for ax, values, title in zip(axes, (dice, iou), ("Patient-level Dice", "Patient-level IoU")):
+    for ax, values, title in zip(axes, (dice, iou), ("Patient-level Dice", "Patient-level mIoU")):
         parts = ax.boxplot(values, patch_artist=True, showfliers=False,
                            medianprops={"color": "#202020", "linewidth": 1.5},
                            whiskerprops={"color": "#555555"}, capprops={"color": "#555555"})
@@ -103,8 +125,83 @@ def plot_baseline_comparison(results_root: str | Path, model_names: list[str]) -
         ax.spines[["right", "top"]].set_visible(False)
         ax.set_ylabel("Score" if ax is axes[0] else "")
     fig.suptitle("LV segmentation on the fixed held-out patient split")
-    output = results_root / "baseline_comparison.png"
+    output = Path(output) if output else results_root / "baseline_comparison.png"
+    output.parent.mkdir(parents=True, exist_ok=True)
+    fig.canvas.draw()
+    audit_dir = Path(".work/lvseg_figure_qa")
+    _audit_two_panel_geometry(fig, axes,
+                              audit_dir / "segmentation_model_comparison.alignment.json")
+    if alignment_audit:
+        alignment_audit(fig, json_out=audit_dir / "segmentation_model_comparison.skill.json",
+                        overlay_svg=audit_dir / "segmentation_model_comparison.alignment.svg",
+                        strict=True)
     fig.savefig(output, dpi=240, bbox_inches="tight")
+    qa_pdf = audit_dir / "segmentation_model_comparison.pdf"
+    qa_pdf.parent.mkdir(parents=True, exist_ok=True)
+    fig.savefig(qa_pdf, bbox_inches="tight")
+    plt.close(fig)
+    return output
+
+
+def plot_volume_accuracy_comparison(results_root: str | Path,
+                                    model_names: list[str],
+                                    output: str | Path | None = None,
+                                    alignment_audit=None) -> Path:
+    """Compare patient-level absolute Simpson-volume error by view and model."""
+    results_root = Path(results_root)
+    palette = ["#407B9E", "#9B6BA8", "#4F8A70", "#CB8B46", "#555A68"]
+    fig, axes = plt.subplots(1, 2, figsize=(11, 4.6), sharey=True,
+                             constrained_layout=True)
+    for ax, view in zip(axes, ("2CH", "4CH")):
+        distributions = []
+        for model_name in model_names:
+            rows = _read_csv(results_root / model_name / "evaluation" /
+                             "labeled_frame_metrics.csv")
+            by_patient = {}
+            for row in rows:
+                if row["view"] != view or not row.get("volume") or not row.get("reference_volume"):
+                    continue
+                error = abs(float(row["volume"]) - float(row["reference_volume"]))
+                by_patient.setdefault(row["patient_id"], []).append(error)
+            distributions.append([float(np.mean(values)) for _, values in sorted(by_patient.items())])
+
+        boxes = ax.boxplot(distributions, patch_artist=True, showfliers=False,
+                           medianprops={"color": "#202020", "linewidth": 1.4},
+                           whiskerprops={"color": "#555555"},
+                           capprops={"color": "#555555"})
+        for index, (box, values, color) in enumerate(zip(boxes["boxes"], distributions, palette), 1):
+            box.set_facecolor(color)
+            box.set_alpha(0.70)
+            if values:
+                jitter = np.linspace(-0.08, 0.08, len(values))
+                ax.scatter(np.full(len(values), index) + jitter, values, s=10,
+                           color=color, alpha=0.45, edgecolors="none", zorder=3)
+                ax.scatter(index, np.mean(values), marker="D", s=25,
+                           color="#B23A48", edgecolors="white", linewidths=0.4, zorder=4)
+        ax.set_xticks(np.arange(1, len(model_names) + 1), model_names,
+                      rotation=26, ha="right")
+        ax.set_title(view)
+        ax.set_ylabel("Patient-level mean absolute error (mL)")
+        ax.grid(axis="y", color="#E6E6E6", linewidth=0.7)
+        ax.spines[["right", "top"]].set_visible(False)
+    fig.suptitle("Single-plane Simpson volume agreement with expert-mask estimates")
+    fig.text(0.5, -0.015,
+             "Dots = test patients; boxes = median and IQR; red diamond = mean. Expert-mask volumes use the same geometry method, not an independent clinical reference.",
+             ha="center", fontsize=8)
+    output = Path(output) if output else results_root / "volume_accuracy_comparison.png"
+    output.parent.mkdir(parents=True, exist_ok=True)
+    fig.canvas.draw()
+    audit_dir = Path(".work/lvseg_figure_qa")
+    _audit_two_panel_geometry(fig, axes,
+                              audit_dir / "volume_accuracy_comparison.alignment.json")
+    if alignment_audit:
+        alignment_audit(fig, json_out=audit_dir / "volume_accuracy_comparison.skill.json",
+                        overlay_svg=audit_dir / "volume_accuracy_comparison.alignment.svg",
+                        strict=True)
+    fig.savefig(output, dpi=240, bbox_inches="tight")
+    qa_pdf = audit_dir / "volume_accuracy_comparison.pdf"
+    qa_pdf.parent.mkdir(parents=True, exist_ok=True)
+    fig.savefig(qa_pdf, bbox_inches="tight")
     plt.close(fig)
     return output
 

@@ -7,6 +7,7 @@ import csv
 import json
 import os
 from pathlib import Path
+import statistics
 import sys
 
 if __package__ in (None, ""):
@@ -22,6 +23,7 @@ from lvseg.visualization.volume_curve import plot_volume_curve
 from lvseg.visualization.comparison import (
     plot_baseline_comparison,
     plot_mask_comparison,
+    plot_volume_accuracy_comparison,
     plot_volume_bland_altman,
 )
 
@@ -51,7 +53,9 @@ def _validate_prepared(root: Path, split_file: Path):
 
 def _write_comparison(output: Path, summaries: list[dict]):
     fields = ("model", "test_patients", "test_cines", "inference_frames", "labeled_frames",
-              "unlabeled_inference_frames", "patient_mean_dice", "frame_mean_iou")
+              "unlabeled_inference_frames", "patient_mean_dice", "patient_mean_iou",
+              "patient_mean_miou", "patient_mean_precision", "patient_mean_recall", "patient_mean_hd95",
+              "patient_mean_asd", "boundary_distance_unit")
     with (output / "baseline_comparison.csv").open("w", newline="", encoding="utf-8-sig") as stream:
         writer = csv.DictWriter(stream, fieldnames=fields)
         writer.writeheader()
@@ -77,8 +81,22 @@ def _write_project_report(results_root: Path, model_names: list[str]):
         row = {key: summary.get(key) for key in (
             "model", "test_patients", "test_cines", "inference_frames", "labeled_frames",
             "unlabeled_inference_frames", "patient_mean_dice", "patient_mean_iou",
+            "patient_mean_miou",
+            "patient_mean_precision", "patient_mean_recall", "patient_mean_hd95",
+            "patient_mean_asd", "boundary_distance_unit",
             "frame_mean_iou", "event_count", "events_with_hr_estimate",
             "events_with_calibrated_co")}
+        distributions = {
+            "patient_mean_dice": list(summary["dice_by_patient"].values()),
+            "patient_mean_iou": list(summary["iou_by_patient"].values()),
+            "patient_mean_miou": list(summary["miou_by_patient"].values()),
+        }
+        for metric in ("precision", "recall", "hd95", "asd"):
+            distributions[f"patient_mean_{metric}"] = [
+                values[metric] for values in summary["segmentation_metrics_by_patient"].values()
+                if values[metric] is not None]
+        for metric, values in distributions.items():
+            row[f"{metric}_sd"] = statistics.stdev(values) if len(values) > 1 else 0.0
         for scope, source in (
             ("frame", summary["volume_bland_altman_by_labeled_frame_view"]),
             ("patient", summary["volume_bland_altman_by_patient_view_means"]),
@@ -95,7 +113,7 @@ def _write_project_report(results_root: Path, model_names: list[str]):
         writer.writerows(comparison_rows)
 
     report_data = {
-        "project_version": "0.6.0",
+        "project_version": "0.7.0",
         "dataset": {
             "name": "CAMUS", "raw_complete": raw["complete"],
             "raw_patients": raw["patients_requested"],
@@ -116,7 +134,10 @@ def _write_project_report(results_root: Path, model_names: list[str]):
         "evaluation_protocol": {
             "test_patients": 50, "test_cines": 100, "all_test_frames_inferred": True,
             "labels_used_for_training": "expert ED/ES frames from training patients only",
-            "labels_used_for_iou_dice": "expert-labeled frames from test patients only",
+            "labels_used_for_segmentation_metrics": "expert-labeled frames from test patients only",
+            "segmentation_metrics": "framewise Dice, binary foreground/background mean IoU, precision, recall, HD95, and ASD; frames averaged within patient before across-patient summaries; HD95 and ASD use original-image pixel spacing in mm",
+            "hd95_definition": "95th percentile of symmetric concatenated surface distances",
+            "asd_definition": "mean of symmetric surface-to-surface distances",
             "volume_reference": "same single-plane Simpson method on expert masks; not an independent clinical reference",
             "phase_source": "framewise predicted volume curve; labels do not select predicted extrema",
             "sequence_scope": "CAMUS half-cycle; no adjacent ED peaks for HR or CO",
@@ -139,14 +160,17 @@ def _write_project_report(results_root: Path, model_names: list[str]):
         "## 基线性能", "",
         "五个模型使用共同的患者划分、192×256 输入、训练标注帧归一化、BCE + soft Dice、AdamW、固定 0.5 阈值和验证损失选模。测试集不参与归一化、选模或阈值调整。",
         f"每个模型测试 {summaries[0]['test_patients']} 名患者、{summaries[0]['test_cines']} 段 cine；{summaries[0]['inference_frames']:,} 帧全部推理，其中 {summaries[0]['labeled_frames']} 帧带标签，{summaries[0]['unlabeled_inference_frames']:,} 帧无标签。", "",
-        "| 模型 | 患者平均 Dice | 患者平均 IoU | 标注帧 | 全帧推理 |",
-        "|---|---:|---:|---:|---:|",
+        "| 模型 | Dice | mIoU | Precision | Recall | HD95 (mm) | ASD (mm) |",
+        "|---|---:|---:|---:|---:|---:|---:|",
     ]
     for row in comparison_rows:
         lines.append(
-            f"| {row['model']} | {row['patient_mean_dice']:.4f} | "
-            f"{row['patient_mean_iou']:.4f} | {row['labeled_frames']} | "
-            f"{row['inference_frames']} |")
+            f"| {row['model']} | {row['patient_mean_dice']:.4f} ± {row['patient_mean_dice_sd']:.4f} | "
+            f"{row['patient_mean_miou']:.4f} ± {row['patient_mean_miou_sd']:.4f} | "
+            f"{row['patient_mean_precision']:.4f} ± {row['patient_mean_precision_sd']:.4f} | "
+            f"{row['patient_mean_recall']:.4f} ± {row['patient_mean_recall_sd']:.4f} | "
+            f"{row['patient_mean_hd95']:.2f} ± {row['patient_mean_hd95_sd']:.2f} | "
+            f"{row['patient_mean_asd']:.2f} ± {row['patient_mean_asd_sd']:.2f} |")
 
     lines.extend(["", "## 容积一致性", "",
                   "每帧预测掩码恢复到原图网格后，用原图像素间距计算 20 圆盘单平面 Simpson 估计，并按时间排列成容积波形。预测容积峰谷与人工 ED/ES 参考帧分开标记；人工标签不参与预测峰谷选择。2CH/4CH 是不同采集序列，不假设同步，也不逐帧组合。",
@@ -259,6 +283,7 @@ def main(argv=None):
     if summaries:
         _write_comparison(output_root, summaries)
         plot_baseline_comparison(output_root, [row["model"] for row in summaries])
+        plot_volume_accuracy_comparison(output_root, [row["model"] for row in summaries])
         if len(summaries) == len(training["models"]):
             _write_project_report(output_root, training["models"])
     return summaries

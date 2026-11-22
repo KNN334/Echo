@@ -8,6 +8,7 @@ from lvseg.data.dataset import LabeledFrames
 from lvseg.evaluate import evaluate_model
 from lvseg.models import MODEL_NAMES, build_model
 from lvseg.visualization.comparison import plot_mask_comparison
+from lvseg.visualization.video import _overlay
 from lvseg.data import prepare_echonet as echonet_preparation
 
 
@@ -109,3 +110,17 @@ def test_echonet_preparation_keeps_full_video_and_unavailable_calibration(monkey
     assert metadata["complete_cycle_verified"]
     assert metadata["spacing_xy_mm"] is None
     assert metadata["labeled_frames"] == [0, 3]
+
+
+def test_video_overlay_marks_prediction_and_only_supplied_reference():
+    image = np.zeros((32, 40), dtype=np.uint8)
+    prediction = np.zeros_like(image, dtype=bool)
+    reference = np.zeros_like(prediction)
+    prediction[3:12, 4:14] = True
+    reference[18:27, 25:35] = True
+
+    rendered = _overlay(image, prediction, reference, scale=1)
+
+    assert rendered.shape == (32, 40, 3)
+    assert tuple(rendered[3, 4]) == (35, 240, 80)
+    assert tuple(rendered[18, 25]) == (20, 190, 255)
