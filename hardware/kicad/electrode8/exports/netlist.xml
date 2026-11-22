@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="E">
+  <design>
+    <source>C:\Users\LEN\Desktop\毕业设计\毕设-基于贴片式超声探头的心脏功能参数连续监测与分析\hardware\kicad\electrode8\electrode8.kicad_sch</source>
+    <date>2026-11-22T13:08:15</date>
+    <tool>Eeschema 10.0.8</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title>8-channel contact routing lesson</title>
+        <company/>
+        <rev/>
+        <date>2026-11-22</date>
+        <source>electrode8.kicad_sch</source>
+        <comment number="1" value="Teaching dimensions. RET is a return contact, not protective earth."/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="J1">
+      <value>Contact_9</value>
+      <footprint>PatchLesson:Tail_9_P2.00</footprint>
+      <fields>
+        <field name="Footprint">PatchLesson:Tail_9_P2.00</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="PatchLesson" part="Contact_9" description=""/>
+      <property name="Sheetname" value="electrode8"/>
+      <property name="Sheetfile" value="electrode8.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>e3160151-2ed8-512a-8db1-9a2194ca0cee</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+            <pin num="6"/>
+            <pin num="7"/>
+            <pin num="8"/>
+            <pin num="9"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="J2">
+      <value>Contact_8</value>
+      <footprint>PatchLesson:Array_8_P1.20</footprint>
+      <fields>
+        <field name="Footprint">PatchLesson:Array_8_P1.20</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="PatchLesson" part="Contact_8" description=""/>
+      <property name="Sheetname" value="electrode8"/>
+      <property name="Sheetfile" value="electrode8.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>2c62a3fb-0f3a-5ea9-be37-1cc1d4993efd</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+            <pin num="6"/>
+            <pin num="7"/>
+            <pin num="8"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="J3">
+      <value>Contact_1</value>
+      <footprint>PatchLesson:Return_Contact</footprint>
+      <fields>
+        <field name="Footprint">PatchLesson:Return_Contact</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="PatchLesson" part="Contact_1" description=""/>
+      <property name="Sheetname" value="electrode8"/>
+      <property name="Sheetfile" value="electrode8.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>acc85a78-1f1d-52db-977c-6b5423562ef3</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="PatchLesson" part="Contact_1">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Contact_1</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="PatchLesson" part="Contact_8">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Contact_8</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+        <pin num="3" name="3" type="passive"/>
+        <pin num="4" name="4" type="passive"/>
+        <pin num="5" name="5" type="passive"/>
+        <pin num="6" name="6" type="passive"/>
+        <pin num="7" name="7" type="passive"/>
+        <pin num="8" name="8" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="PatchLesson" part="Contact_9">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Contact_9</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+        <pin num="3" name="3" type="passive"/>
+        <pin num="4" name="4" type="passive"/>
+        <pin num="5" name="5" type="passive"/>
+        <pin num="6" name="6" type="passive"/>
+        <pin num="7" name="7" type="passive"/>
+        <pin num="8" name="8" type="passive"/>
+        <pin num="9" name="9" type="passive"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="PatchLesson">
+      <uri>${KIPRJMOD}/PatchLesson.kicad_sym</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="/CH1" class="Default">
+      <node ref="J1" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="J2" pin="1" pinfunction="1_1" pintype="passive"/>
+    </net>
+    <net code="2" name="/CH2" class="Default">
+      <node ref="J1" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="J2" pin="2" pinfunction="2_2" pintype="passive"/>
+    </net>
+    <net code="3" name="/CH3" class="Default">
+      <node ref="J1" pin="3" pinfunction="3_3" pintype="passive"/>
+      <node ref="J2" pin="3" pinfunction="3_3" pintype="passive"/>
+    </net>
+    <net code="4" name="/CH4" class="Default">
+      <node ref="J1" pin="4" pinfunction="4_4" pintype="passive"/>
+      <node ref="J2" pin="4" pinfunction="4_4" pintype="passive"/>
+    </net>
+    <net code="5" name="/CH5" class="Default">
+      <node ref="J1" pin="5" pinfunction="5_5" pintype="passive"/>
+      <node ref="J2" pin="5" pinfunction="5_5" pintype="passive"/>
+    </net>
+    <net code="6" name="/CH6" class="Default">
+      <node ref="J1" pin="6" pinfunction="6_6" pintype="passive"/>
+      <node ref="J2" pin="6" pinfunction="6_6" pintype="passive"/>
+    </net>
+    <net code="7" name="/CH7" class="Default">
+      <node ref="J1" pin="7" pinfunction="7_7" pintype="passive"/>
+      <node ref="J2" pin="7" pinfunction="7_7" pintype="passive"/>
+    </net>
+    <net code="8" name="/CH8" class="Default">
+      <node ref="J1" pin="8" pinfunction="8_8" pintype="passive"/>
+      <node ref="J2" pin="8" pinfunction="8_8" pintype="passive"/>
+    </net>
+    <net code="9" name="/RET" class="Default">
+      <node ref="J1" pin="9" pinfunction="9_9" pintype="passive"/>
+      <node ref="J3" pin="1" pinfunction="1_1" pintype="passive"/>
+    </net>
+  </nets>
+</export>

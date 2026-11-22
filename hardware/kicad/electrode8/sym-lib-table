@@ -1,0 +1,2 @@
+(sym_lib_table (version 7)
+  (lib (name "PatchLesson") (type "KiCad") (uri "${KIPRJMOD}/PatchLesson.kicad_sym") (options "") (descr "Teaching passive contacts")))
