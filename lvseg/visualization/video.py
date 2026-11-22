@@ -9,6 +9,8 @@ import cv2
 import numpy as np
 from PIL import Image
 
+from .mask_panels import export_mask_grid
+
 
 def _boundary(mask: np.ndarray) -> np.ndarray:
     mask = np.asarray(mask, dtype=np.uint8)
@@ -60,7 +62,7 @@ def _write_gif(path: Path, frames: list[np.ndarray], duration_ms: int = 100) -> 
 
 def export_readme_videos(prepared_root: str | Path, test_manifest: str | Path,
                          results_root: str | Path, output_dir: str | Path, *,
-                         best_model: str | None = None) -> dict:
+                         best_model: str | None = None, alignment_audit=None) -> dict:
     prepared_root, test_manifest = Path(prepared_root), Path(test_manifest)
     results_root, output_dir = Path(results_root), Path(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -114,31 +116,11 @@ def export_readme_videos(prepared_root: str | Path, test_manifest: str | Path,
                     cv2.LINE_AA)
         best_frames.append(frame)
 
-    cell_w, cell_h = 256, 192
-    compare_header, compare_footer = 38, 36
-    compare_frames = []
-    names = [summary["model"] for summary in model_summaries]
-    for index, image in enumerate(images):
-        sheet = np.zeros((compare_header + cell_h + compare_footer, cell_w * len(names), 3),
-                         dtype=np.uint8)
-        for column, name in enumerate(names):
-            x0 = column * cell_w
-            cv2.putText(sheet, name, (x0 + 8, 26), cv2.FONT_HERSHEY_SIMPLEX, 0.54,
-                        (245, 245, 245), 1, cv2.LINE_AA)
-            reference = labels[index] if labeled[index] else None
-            body = _overlay(image, predictions[name][index], reference, 1)
-            sheet[compare_header:compare_header + cell_h,
-                  x0:x0 + cell_w] = body
-        state = predicted_phase.get(index, "unlabeled frame")
-        footer = f"{case_id} | frame {index}/{len(images) - 1} | {index / float(metadata['fps']):.3f} s | "
-        footer += f"expert label: {state}" if labeled[index] else "expert label: unavailable"
-        cv2.putText(sheet, footer, (8, compare_header + cell_h + 24),
-                    cv2.FONT_HERSHEY_SIMPLEX, 0.52,
-                    (20, 190, 255) if labeled[index] else (190, 190, 190), 1,
-                    cv2.LINE_AA)
-        compare_frames.append(sheet)
-
     slug = f"{metadata['patient_id']}_{metadata['view']}"
+    comparison_preview = output_dir / f"five_model_{slug}.png"
+    compare_frames = [cv2.cvtColor(frame, cv2.COLOR_RGB2BGR) for frame in export_mask_grid(
+        images, labels, labeled, predictions, metadata, comparison_preview,
+        alignment_audit=alignment_audit)]
     best_video = output_dir / f"best_model_{slug}.mp4"
     best_gif = output_dir / f"best_model_{slug}.gif"
     comparison_video = output_dir / f"five_model_{slug}.mp4"
@@ -155,8 +137,14 @@ def export_readme_videos(prepared_root: str | Path, test_manifest: str | Path,
         "best_model_by_patient_mean_dice": best,
         "representative_checkpoint_seed": checkpoint_run.get("seed"),
         "files": [best_video.name, best_gif.name, comparison_video.name,
-                  comparison_gif.name],
-        "overlay": "green = model mask; amber = expert-mask contour where labeled",
+                  comparison_gif.name, comparison_preview.name,
+                  comparison_preview.with_suffix(".pdf").name,
+                  comparison_preview.with_suffix(".svg").name],
+        "overlay": "best-model video: green = model mask; amber = expert-mask contour where labeled",
+        "comparison_layout": "2 by 3: B-mode input and five black-background binary masks; "
+                             "amber expert contour on input only where labeled; no mask cleanup",
+        "comparison_preview_frame": int(len(images) // 2),
+        "comparison_aspect_ratio": "restored original aspect ratio with square letterboxing",
         "source": "fixed held-out CAMUS test split",
     }
     (output_dir / "video_metadata.json").write_text(

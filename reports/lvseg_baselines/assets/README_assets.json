@@ -15,14 +15,22 @@
       "best_model_patient0015_2CH.mp4",
       "best_model_patient0015_2CH.gif",
       "five_model_patient0015_2CH.mp4",
-      "five_model_patient0015_2CH.gif"
+      "five_model_patient0015_2CH.gif",
+      "five_model_patient0015_2CH.png",
+      "five_model_patient0015_2CH.pdf",
+      "five_model_patient0015_2CH.svg"
     ],
-    "overlay": "green = model mask; amber = expert-mask contour where labeled",
+    "overlay": "best-model video: green = model mask; amber = expert-mask contour where labeled",
+    "comparison_layout": "2 by 3: B-mode input and five black-background binary masks; amber expert contour on input only where labeled; no mask cleanup",
+    "comparison_preview_frame": 10,
+    "comparison_aspect_ratio": "restored original aspect ratio with square letterboxing",
     "source": "fixed held-out CAMUS test split"
   },
   "figures": [
     "segmentation_model_comparison.png",
     "volume_accuracy_comparison.png",
-    "volume_waveform.png"
+    "volume_waveform.png",
+    "five_model_patient0015_2CH.png",
+    "multiview_masks_patient0015.png"
   ]
 }

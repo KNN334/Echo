@@ -12,13 +12,28 @@
 
 [下载源帧率 MP4](reports/lvseg_baselines/assets/best_model_patient0015_2CH.mp4)
 
-### 同一患者的五模型全视频外推对比
+### 同一患者的五模型掩膜网格对比
 
-五个基线在同一 2CH 测试 cine 上逐帧推理。琥珀色轮廓表示该帧有专家标签；其余帧只显示模型预测，不补造标签。
+采用“原始 B 超 + 五个模型二值掩膜”的 2×3 网格：左上角为输入图，其余位置为黑底白色左室掩膜。五个模型使用各自 2026 种子的代表性权重，对同一测试患者 patient0015 的 2CH 视频逐帧推理；下图固定展示中间帧（第 10 帧，索引从 0 开始），不按分割得分挑帧。所有面板保留完整视野，按原始宽高比显示，不做掩膜平滑或修补。
 
-![五个模型全视频掩码对比](reports/lvseg_baselines/assets/five_model_patient0015_2CH.gif)
+![原始 B 超与五模型二值掩膜的 2×3 网格对比](reports/lvseg_baselines/assets/five_model_patient0015_2CH.png)
 
-[下载五模型对比 MP4](reports/lvseg_baselines/assets/five_model_patient0015_2CH.mp4)
+<details>
+<summary>展开同一布局的全视频逐帧对比</summary>
+
+![五模型黑底白色掩膜逐帧对比](reports/lvseg_baselines/assets/five_model_patient0015_2CH.gif)
+
+仅在有专家标签的帧，输入图显示琥珀色专家轮廓；无标签帧只显示预测。GIF 为慢速预览，[MP4 保留源帧率](reports/lvseg_baselines/assets/five_model_patient0015_2CH.mp4)。
+
+</details>
+
+### 同一患者 A4C / A2C 双切面的模型掩膜对比
+
+同一测试患者 patient0015 的 A4C（CAMUS 记为 4CH）与 A2C（2CH）分别展示 ED、ES 帧。每行依次为 B 超输入、专家掩膜以及 UNet、Attention-UNet、UNet++、UNet-mini、VGG16-UNet 的预测掩膜，模型顺序与对比表一致。ED/ES 来自各切面原始标注元数据；所有模型比较同一行的同一帧。
+
+![同一患者 A4C 和 A2C 的 ED 与 ES 专家掩膜及五模型对比](reports/lvseg_baselines/assets/multiview_masks_patient0015.png)
+
+两个切面是独立采集的序列，这里按各自 ED/ES 展示，不表示逐帧同步或双平面容积计算。[双切面高清 PDF](reports/lvseg_baselines/assets/multiview_masks_patient0015.pdf) · [五模型网格高清 PDF](reports/lvseg_baselines/assets/five_model_patient0015_2CH.pdf)
 
 ### 分割结果对比
 

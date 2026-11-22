@@ -19,6 +19,7 @@ from lvseg.visualization.comparison import (
 )
 from lvseg.visualization.volume_curve import plot_volume_curve
 from lvseg.visualization.video import export_readme_videos
+from lvseg.visualization.mask_panels import plot_multiview_mask_comparison
 
 
 def _refresh_metrics_table(readme: Path, comparison_csv: Path) -> None:
@@ -92,7 +93,12 @@ def main(argv=None):
     plot_volume_curve(results_root / best_model / "evaluation", case_id,
                       assets / "volume_waveform.png")
     video_metadata = export_readme_videos(
-        prepared_root, test_manifest, results_root, assets, best_model=best_model)
+        prepared_root, test_manifest, results_root, assets, best_model=best_model,
+        alignment_audit=alignment_audit)
+    multiview_path = plot_multiview_mask_comparison(
+        prepared_root, test_manifest, results_root, models,
+        assets / f"multiview_masks_{video_metadata['patient_id']}.png",
+        patient_id=video_metadata["patient_id"], alignment_audit=alignment_audit)
     _refresh_metrics_table(Path("README.md"), Path("reports/lvseg_baselines/model_comparison.csv"))
     readme_path = Path("README.md")
     readme_text = readme_path.read_text(encoding="utf-8")
@@ -105,7 +111,8 @@ def main(argv=None):
         "best_case": case_id,
         "videos": video_metadata,
         "figures": ["segmentation_model_comparison.png",
-                    "volume_accuracy_comparison.png", "volume_waveform.png"],
+                    "volume_accuracy_comparison.png", "volume_waveform.png",
+                    f"five_model_{video_metadata['case_id']}.png", multiview_path.name],
     }, indent=2), encoding="utf-8")
     print(json.dumps(video_metadata, indent=2))
     return video_metadata

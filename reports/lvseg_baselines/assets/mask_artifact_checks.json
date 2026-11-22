@@ -1,0 +1,71 @@
+{
+  "videos": [
+    {
+      "stem": "best_model_patient0015_2CH",
+      "decoded_frames": 20,
+      "gif_frames": 20,
+      "fps": 62.9,
+      "frame_hw": [
+        448,
+        512
+      ]
+    },
+    {
+      "stem": "five_model_patient0015_2CH",
+      "decoded_frames": 20,
+      "gif_frames": 20,
+      "fps": 62.9,
+      "frame_hw": [
+        784,
+        1008
+      ]
+    }
+  ],
+  "images": [
+    {
+      "stem": "five_model_patient0015_2CH",
+      "size": [
+        2160,
+        1680
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ]
+    },
+    {
+      "stem": "multiview_masks_patient0015",
+      "size": [
+        2160,
+        1395
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ]
+    }
+  ],
+  "readme_missing_links": [],
+  "sources": {
+    "data/processed/camus_video/patient0015_2CH.npz": "f9c12303d1a178e8ead1dfc1a18a32de7651acd6caa1f9bf38408deb5c819efd",
+    "data/processed/camus_video/patient0015_2CH.json": "80b990b17780530a9b22a4e6079766076a6ac8eda39210d57ac9f2932fbdfede",
+    "runs/lvseg_baselines/UNet/evaluation/predicted_masks/patient0015_2CH.npz": "53b3a4ca6081a49d1decdac079573b91a9e8e5d8860de4af5077925d5768c144",
+    "runs/lvseg_baselines/Attention-UNet/evaluation/predicted_masks/patient0015_2CH.npz": "da956e3c487637cccaa61af1ebe830a59c70322ab3875972322bdecf63a3d070",
+    "runs/lvseg_baselines/UNet++/evaluation/predicted_masks/patient0015_2CH.npz": "a72f927a3a3368f9f3306467d099a5f6d15023b3e0eac853095026690be35be1",
+    "runs/lvseg_baselines/UNet-mini/evaluation/predicted_masks/patient0015_2CH.npz": "2ad6b2ee05f44e2ccc7250c65248df5326a784a491190417cd1988266349b817",
+    "runs/lvseg_baselines/VGG16-UNet/evaluation/predicted_masks/patient0015_2CH.npz": "b141a668ed0d5daa042e89ce0180d3d8e8ebe849c0f9f8eb6aea9521829ceda6",
+    "data/processed/camus_video/patient0015_4CH.npz": "6b2dc437920f56f5706ff2b13794a8fa16c054345a8555255fb1c1d8f9229597",
+    "data/processed/camus_video/patient0015_4CH.json": "107d24c1b41bbb47a25562825e989ea9e48e060453d5289769ef5eae35d41c8c",
+    "runs/lvseg_baselines/UNet/evaluation/predicted_masks/patient0015_4CH.npz": "cd9e83a005eabc6456b7352d33d40192e1a33bc5fcb61f6af2d0a5c95ddf5919",
+    "runs/lvseg_baselines/Attention-UNet/evaluation/predicted_masks/patient0015_4CH.npz": "b8184c34a89334f1367c87d62cd41c6e7ac176adad239fa0e42909796b02d68f",
+    "runs/lvseg_baselines/UNet++/evaluation/predicted_masks/patient0015_4CH.npz": "948e077d2eef9a0b24de197f7078c994ab7c669f44b6d4ee1f14ee545212ab91",
+    "runs/lvseg_baselines/UNet-mini/evaluation/predicted_masks/patient0015_4CH.npz": "77c4ce0e9aef953cf041bc11ec750eda0c3db5054c547e207feedded161d3d50",
+    "runs/lvseg_baselines/VGG16-UNet/evaluation/predicted_masks/patient0015_4CH.npz": "fae6c732c00710b045841ab1fee4b5c4634a65d19cef677de1a3efb0ffeb9780",
+    "runs/lvseg_baselines/UNet/run.json": "6e382bad17700939abb3ae866f49d1b7a84ea878d1163b33e576b01ae82303de",
+    "runs/lvseg_baselines/Attention-UNet/run.json": "e2cd7f9105221b7b4977cc81e16dce859466a80cd9fa9a834e28b06c47b7c82e",
+    "runs/lvseg_baselines/UNet++/run.json": "4b9a32dd8458811672501bbd400aef69508d0b13a7e491635c1ca0ad0c86b96b",
+    "runs/lvseg_baselines/UNet-mini/run.json": "c7b77025a8a38b5c86d14c447bb20b9cc812d52097b8af5aa4fc5af595f7ffe3",
+    "runs/lvseg_baselines/VGG16-UNet/run.json": "62bda076b32041296d5a214ca3e141357d5ed16fad9668ca29743a09f01eb110"
+  },
+  "status": "PASS"
+}
