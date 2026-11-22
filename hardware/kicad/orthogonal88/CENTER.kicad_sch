@@ -1,0 +1,4621 @@
+(kicad_sch
+	(version 20260306)
+	(generator "eeschema")
+	(generator_version "10.0")
+	(uuid "8248c938-bedb-5266-bb12-c22f4058a72e")
+	(paper "A3")
+	(title_block
+		(title "CENTER / independent physical piezo subelements")
+		(date "2026-11-22")
+		(comment 1 "Published topology reconstruction; piezo properties unspecified")
+	)
+	(lib_symbols
+		(symbol "OrthogonalPatch:Piezo"
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board no)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "Y"
+				(at 0 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Piezo"
+				(at 0 -5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Piezo_0_1"
+				(polyline
+					(pts
+						(xy -2.54 0) (xy -1.27 0)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 2.54) (xy -1.27 -2.54)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 2.54) (xy 1.27 -2.54)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 0) (xy 2.54 0)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Piezo_1_1"
+				(pin passive line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "SIG"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 0 180)
+					(length 2.54)
+					(name "RETURN"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "OrthogonalPatch:Port"
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board no)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "J"
+				(at 0 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Port"
+				(at 0 -5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Port_0_1"
+				(rectangle
+					(start -2.54 1.27)
+					(end 0 -1.27)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "Port_1_1"
+				(pin passive line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "CONTACT"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+	)
+	(global_label "C_R5C3"
+		(shape passive)
+		(at 144.78 43.18 180)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify right)
+		)
+		(uuid "04d43242-a2f9-5520-92ac-727259b11c6e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 144.78 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "C_R6C4"
+		(shape passive)
+		(at 144.78 142.24 180)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify right)
+		)
+		(uuid "067ea127-b4fc-5606-94fd-d8f822421d05")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 144.78 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "RETURN"
+		(shape passive)
+		(at 330.2 175.26 0)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify left)
+		)
+		(uuid "0740066d-704a-507a-9dd1-ef4b095f7632")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 330.2 175.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "RETURN"
+		(shape passive)
+		(at 271.78 43.18 0)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify left)
+		)
+		(uuid "1149730a-2e2a-53e6-92e5-e88b597a2c30")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 271.78 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "RETURN"
+		(shape passive)
+		(at 330.2 43.18 0)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify left)
+		)
+		(uuid "129b5a37-882c-5450-af85-17d6440546cc")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 330.2 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "RETURN"
+		(shape passive)
+		(at 330.2 142.24 0)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify left)
+		)
+		(uuid "12ed37c0-1c2d-58fc-a7a0-c77eb3d488e0")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 330.2 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "C_R1C4"
+		(shape passive)
+		(at 203.2 208.28 180)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify right)
+		)
+		(uuid "15222b23-eb3f-57e1-b23a-d9be0d1514d4")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 203.2 208.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "C_R4C5"
+		(shape passive)
+		(at 261.62 109.22 180)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify right)
+		)
+		(uuid "156aa986-09aa-55b7-aa42-785c8bf7b274")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 261.62 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "RETURN"
+		(shape passive)
+		(at 330.2 208.28 0)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify left)
+		)
+		(uuid "176fed31-370a-58b0-a015-b38658d0beed")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 330.2 208.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "RETURN"
+		(shape passive)
+		(at 271.78 142.24 0)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify left)
+		)
+		(uuid "19c881d2-6880-52d5-9919-294913a19c7c")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 271.78 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "RETURN"
+		(shape passive)
+		(at 38.1 109.22 0)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify left)
+		)
+		(uuid "2355d35c-a46a-5838-95d2-01270eeac7d4")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 38.1 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "C_R2C2"
+		(shape passive)
+		(at 203.2 142.24 180)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify right)
+		)
+		(uuid "2559ed2e-db28-5c6b-87da-fd990bf1d447")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 203.2 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "C_R3C1"
+		(shape passive)
+		(at 86.36 43.18 180)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify right)
+		)
+		(uuid "2a154570-27d5-54d5-936e-472d53a6086f")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 86.36 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "RETURN"
+		(shape passive)
+		(at 96.52 76.2 0)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify left)
+		)
+		(uuid "2d2e1d8f-79a8-5a53-ab0f-667f41597eb4")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 96.52 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "C_R4C2"
+		(shape passive)
+		(at 86.36 142.24 180)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify right)
+		)
+		(uuid "31929db8-3a22-55db-aab5-54505b7cc3fe")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 86.36 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "C_R5C1"
+		(shape passive)
+		(at 27.94 43.18 180)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify right)
+		)
+		(uuid "3e7e91b4-f1fb-59dd-a4e8-d2588f15cbf7")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 27.94 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "C_R3C4"
+		(shape passive)
+		(at 86.36 208.28 180)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify right)
+		)
+		(uuid "3f90f9b6-8fb0-5855-83e5-a0d66dad2d0b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 86.36 208.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "C_R4C1"
+		(shape passive)
+		(at 261.62 76.2 180)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify right)
+		)
+		(uuid "439a9483-a271-5625-aa4e-fa53f75644af")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 261.62 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "RETURN"
+		(shape passive)
+		(at 38.1 208.28 0)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify left)
+		)
+		(uuid "49bd3770-e410-5641-be53-74782b84176e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 38.1 208.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "RETURN"
+		(shape passive)
+		(at 38.1 142.24 0)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify left)
+		)
+		(uuid "5096cf16-163b-5d71-b5a0-e688542be591")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 38.1 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "RETURN"
+		(shape passive)
+		(at 271.78 109.22 0)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify left)
+		)
+		(uuid "5175510d-942a-5122-9868-c0adb393abaa")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 271.78 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "C_R5C4"
+		(shape passive)
+		(at 320.04 175.26 180)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify right)
+		)
+		(uuid "529d740a-fbd6-500c-8ce9-4b1369a20fa2")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 320.04 175.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "C_R3C5"
+		(shape passive)
+		(at 86.36 76.2 180)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify right)
+		)
+		(uuid "538b38c3-e270-53e9-a780-bb3659a0aa83")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 86.36 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "RETURN"
+		(shape passive)
+		(at 38.1 175.26 0)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify left)
+		)
+		(uuid "556564a6-b0ed-57fe-b9a2-aa3198b5e515")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 38.1 175.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "C_R6C2"
+		(shape passive)
+		(at 27.94 142.24 180)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify right)
+		)
+		(uuid "5a14881b-a03a-58e2-839f-87c10ee3c14d")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 27.94 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "C_R1C6"
+		(shape passive)
+		(at 320.04 208.28 180)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify right)
+		)
+		(uuid "5a82bc90-9a8c-5393-b0d9-70a6f419b12c")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 320.04 208.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "C_R1C2"
+		(shape passive)
+		(at 27.94 208.28 180)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify right)
+		)
+		(uuid "5fe11a19-8d28-5444-8073-9ceb835c565d")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 27.94 208.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "RETURN"
+		(shape passive)
+		(at 330.2 76.2 0)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify left)
+		)
+		(uuid "6076b661-59d0-5cfc-86af-8e0c45418a40")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 330.2 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "RETURN"
+		(shape passive)
+		(at 271.78 208.28 0)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify left)
+		)
+		(uuid "637cd333-2920-5251-8265-adfebbaf9f2c")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 271.78 208.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "RETURN"
+		(shape passive)
+		(at 213.36 43.18 0)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify left)
+		)
+		(uuid "64baa919-8be6-58a0-ab1d-4636dec09f80")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 213.36 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "C_R2C3"
+		(shape passive)
+		(at 203.2 109.22 180)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify right)
+		)
+		(uuid "66bd10ef-8aa0-58bd-83c7-4e188e1f051f")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 203.2 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "C_R4C4"
+		(shape passive)
+		(at 261.62 142.24 180)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify right)
+		)
+		(uuid "6756d1f9-524c-59c1-8a5e-f1c87bafa28e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 261.62 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "RETURN"
+		(shape passive)
+		(at 330.2 109.22 0)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify left)
+		)
+		(uuid "6ce829ae-4148-5a02-9ac5-6272418b0ebf")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 330.2 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "RETURN"
+		(shape passive)
+		(at 213.36 208.28 0)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify left)
+		)
+		(uuid "7075f40f-f511-521a-b902-7a2f0beaf61f")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 213.36 208.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "RETURN"
+		(shape passive)
+		(at 96.52 43.18 0)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify left)
+		)
+		(uuid "71c638be-c731-510a-a0d1-e77e9fa9a533")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 96.52 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "C_R5C6"
+		(shape passive)
+		(at 144.78 208.28 180)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify right)
+		)
+		(uuid "73e5d3ae-fc9f-56a2-851f-28d3f7aea5b2")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 144.78 208.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "RETURN"
+		(shape passive)
+		(at 213.36 142.24 0)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify left)
+		)
+		(uuid "7485751b-3959-5af0-aa73-3b6b7cbffc14")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 213.36 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "C_R1C3"
+		(shape passive)
+		(at 27.94 76.2 180)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify right)
+		)
+		(uuid "80460ae7-b0e0-5f45-935d-16c8ae63a312")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 27.94 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "RETURN"
+		(shape passive)
+		(at 96.52 109.22 0)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify left)
+		)
+		(uuid "887f1c14-a1cc-5c9f-8702-57296073593b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 96.52 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "RETURN"
+		(shape passive)
+		(at 38.1 76.2 0)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify left)
+		)
+		(uuid "8a58a8b5-57c2-59ce-908b-2fbc0f9c1413")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 38.1 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "RETURN"
+		(shape passive)
+		(at 213.36 175.26 0)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify left)
+		)
+		(uuid "8ca15feb-e5b0-56e0-b976-bb6373b89d39")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 213.36 175.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "RETURN"
+		(shape passive)
+		(at 154.94 175.26 0)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify left)
+		)
+		(uuid "8ebc0037-ea8a-5952-82ed-7044937773fd")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 154.94 175.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "RETURN"
+		(shape passive)
+		(at 154.94 43.18 0)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify left)
+		)
+		(uuid "8f27ec78-b917-5e4a-8bc0-aa7753322f9f")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 154.94 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "C_R5C5"
+		(shape passive)
+		(at 320.04 43.18 180)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify right)
+		)
+		(uuid "8f57587a-0e19-57de-8d85-5c439ef78c6c")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 320.04 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "RETURN"
+		(shape passive)
+		(at 96.52 142.24 0)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify left)
+		)
+		(uuid "92d1e8d1-c2be-5054-8535-e66469271f91")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 96.52 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "RETURN"
+		(shape passive)
+		(at 154.94 142.24 0)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify left)
+		)
+		(uuid "953f1d14-5af6-593a-afa8-b7c91e1dfb5f")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 154.94 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "C_R2C4"
+		(shape passive)
+		(at 27.94 175.26 180)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify right)
+		)
+		(uuid "98a228a0-df9e-51a7-932d-2dc989f02e1b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 27.94 175.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "C_R6C5"
+		(shape passive)
+		(at 144.78 109.22 180)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify right)
+		)
+		(uuid "9ed1a2bb-ba26-56fb-bd2c-d6f8f88e2467")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 144.78 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "RETURN"
+		(shape passive)
+		(at 213.36 109.22 0)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify left)
+		)
+		(uuid "9ed7e64a-f6a3-5c75-926c-efce00758fe4")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 213.36 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "RETURN"
+		(shape passive)
+		(at 38.1 43.18 0)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify left)
+		)
+		(uuid "9fa68d3f-d0b3-51ec-9f6e-20946652e077")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 38.1 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "C_R1C5"
+		(shape passive)
+		(at 144.78 76.2 180)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify right)
+		)
+		(uuid "a3ab7c35-4ccb-5594-bd87-d98703403098")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 144.78 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "C_R6C3"
+		(shape passive)
+		(at 320.04 76.2 180)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify right)
+		)
+		(uuid "aff523e4-626b-5919-aaa1-01ebd7a08ef0")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 320.04 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "RETURN"
+		(shape passive)
+		(at 213.36 76.2 0)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify left)
+		)
+		(uuid "b17d8a2f-6d0f-53b7-acc3-00cc15f560ad")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 213.36 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "RETURN"
+		(shape passive)
+		(at 154.94 76.2 0)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify left)
+		)
+		(uuid "b67221d3-80ac-5706-9ec5-dc4398e1693b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 154.94 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "C_R5C2"
+		(shape passive)
+		(at 203.2 175.26 180)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify right)
+		)
+		(uuid "bcbc3835-568e-57f6-95f6-29ae9905fb71")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 203.2 175.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "C_R6C1"
+		(shape passive)
+		(at 203.2 76.2 180)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify right)
+		)
+		(uuid "c8bd8b8d-fa7d-57e6-9ea8-067381e16abb")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 203.2 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "C_R2C5"
+		(shape passive)
+		(at 320.04 109.22 180)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify right)
+		)
+		(uuid "c9f44191-4866-51a0-8c21-11df96e3c132")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 320.04 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "RETURN"
+		(shape passive)
+		(at 154.94 109.22 0)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify left)
+		)
+		(uuid "cacce58f-6b05-578d-b692-4ca430ee7734")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 154.94 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "C_R2C6"
+		(shape passive)
+		(at 144.78 175.26 180)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify right)
+		)
+		(uuid "cc1d09b0-c91c-53ae-975c-5dc0f7f5a487")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 144.78 175.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "C_R3C6"
+		(shape passive)
+		(at 261.62 208.28 180)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify right)
+		)
+		(uuid "d1072902-ee00-512b-a4e6-e99807d0a7bc")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 261.62 208.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "RETURN"
+		(shape passive)
+		(at 271.78 175.26 0)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify left)
+		)
+		(uuid "d10b3cfc-5a73-52d7-84f6-908ca6027756")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 271.78 175.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "RETURN"
+		(shape passive)
+		(at 154.94 208.28 0)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify left)
+		)
+		(uuid "d1b4eab1-95c0-58c0-9967-758d868ad561")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 154.94 208.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "C_R4C3"
+		(shape passive)
+		(at 86.36 109.22 180)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify right)
+		)
+		(uuid "d78f31c8-c817-53df-914a-b24f6660eb0c")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 86.36 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "C_R6C6"
+		(shape passive)
+		(at 320.04 142.24 180)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify right)
+		)
+		(uuid "d81fe13e-b796-5ab1-82e1-9a84bc8ac5da")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 320.04 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "C_R4C6"
+		(shape passive)
+		(at 86.36 175.26 180)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify right)
+		)
+		(uuid "dc4b5376-17b9-5c49-9138-03adb03e47b6")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 86.36 175.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "RETURN"
+		(shape passive)
+		(at 96.52 208.28 0)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify left)
+		)
+		(uuid "e5fc20bc-ad10-5c70-a75c-6d9fc971f9ee")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 96.52 208.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "C_R2C1"
+		(shape passive)
+		(at 27.94 109.22 180)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify right)
+		)
+		(uuid "e7c23901-70e6-521f-831c-36702a2f1ed1")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 27.94 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "C_R3C2"
+		(shape passive)
+		(at 261.62 175.26 180)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify right)
+		)
+		(uuid "eada7e8a-2115-5fea-bac7-8f99776ac8da")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 261.62 175.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "C_R3C3"
+		(shape passive)
+		(at 261.62 43.18 180)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify right)
+		)
+		(uuid "f6334b28-75be-5025-877b-426ccca3bf7e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 261.62 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "RETURN"
+		(shape passive)
+		(at 96.52 175.26 0)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify left)
+		)
+		(uuid "f88a9b1c-5250-5702-a481-11ea4b3333fe")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 96.52 175.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "RETURN"
+		(shape passive)
+		(at 271.78 76.2 0)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify left)
+		)
+		(uuid "fb12aa49-9dbb-5beb-858d-d2c4b98defcc")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 271.78 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "C_R1C1"
+		(shape passive)
+		(at 203.2 43.18 180)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify right)
+		)
+		(uuid "fb190509-24de-5c32-a769-31708e3ff1fe")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 203.2 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "OrthogonalPatch:Piezo")
+		(at 33.02 43.18 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "0104dc47-e2af-5b93-92a3-aa795e00c2e0")
+		(property "Reference" "Y313"
+			(at 33.02 38.1 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "Piezo"
+			(at 33.02 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 33.02 43.18 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 33.02 43.18 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 33.02 43.18 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "8ae95cc4-3c23-59b6-b80c-6bcb139e52d0")
+		)
+		(pin "2"
+			(uuid "46236c4b-8b2f-5669-b800-1e9883e07a9c")
+		)
+		(instances
+			(project "orthogonal88"
+				(path "/5f9e5745-36fe-55fa-a80b-a2ed6993591b/8248c938-bedb-5266-bb12-c22f4058a72e"
+					(reference "Y313")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "OrthogonalPatch:Piezo")
+		(at 149.86 175.26 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "0bb2d851-1270-508e-9974-842779193674")
+		(property "Reference" "Y339"
+			(at 149.86 170.18 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "Piezo"
+			(at 149.86 180.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 149.86 175.26 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 149.86 175.26 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 149.86 175.26 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "639bca2e-d77d-56ed-a9d6-512201d2a87a")
+		)
+		(pin "2"
+			(uuid "7b0bee98-a451-5d04-97ff-11e56f4b5be6")
+		)
+		(instances
+			(project "orthogonal88"
+				(path "/5f9e5745-36fe-55fa-a80b-a2ed6993591b/8248c938-bedb-5266-bb12-c22f4058a72e"
+					(reference "Y339")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "OrthogonalPatch:Piezo")
+		(at 91.44 142.24 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "0c17f6e8-cb5a-53ff-a68d-28ee2e81d0ec")
+		(property "Reference" "Y332"
+			(at 91.44 137.16 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "Piezo"
+			(at 91.44 147.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 91.44 142.24 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 91.44 142.24 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 91.44 142.24 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "1815e009-7566-5990-a1ad-d5b09df7781a")
+		)
+		(pin "2"
+			(uuid "6a3e2cfe-e62a-5b47-971e-53b981e548ed")
+		)
+		(instances
+			(project "orthogonal88"
+				(path "/5f9e5745-36fe-55fa-a80b-a2ed6993591b/8248c938-bedb-5266-bb12-c22f4058a72e"
+					(reference "Y332")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "OrthogonalPatch:Piezo")
+		(at 208.28 43.18 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "10a240f2-01d2-52e3-afb6-a685de807b98")
+		(property "Reference" "Y316"
+			(at 208.28 38.1 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "Piezo"
+			(at 208.28 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 208.28 43.18 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 208.28 43.18 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 208.28 43.18 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "5651d519-aed1-5817-bf1b-66d925f19c48")
+		)
+		(pin "2"
+			(uuid "c7faa9f3-ae99-56af-9419-a5d1dc79dbca")
+		)
+		(instances
+			(project "orthogonal88"
+				(path "/5f9e5745-36fe-55fa-a80b-a2ed6993591b/8248c938-bedb-5266-bb12-c22f4058a72e"
+					(reference "Y316")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "OrthogonalPatch:Piezo")
+		(at 91.44 109.22 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "11a45808-e5b2-5a6b-9daa-7639707cec11")
+		(property "Reference" "Y326"
+			(at 91.44 104.14 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "Piezo"
+			(at 91.44 114.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 91.44 109.22 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 91.44 109.22 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 91.44 109.22 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "879b22dd-be58-55c0-ba94-1cf88cb96119")
+		)
+		(pin "2"
+			(uuid "329686dd-a4e2-5853-8c82-15c4c85a1e73")
+		)
+		(instances
+			(project "orthogonal88"
+				(path "/5f9e5745-36fe-55fa-a80b-a2ed6993591b/8248c938-bedb-5266-bb12-c22f4058a72e"
+					(reference "Y326")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "OrthogonalPatch:Piezo")
+		(at 266.7 109.22 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "179429bc-0555-5dce-8e63-c6f9450a9341")
+		(property "Reference" "Y329"
+			(at 266.7 104.14 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "Piezo"
+			(at 266.7 114.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 266.7 109.22 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 266.7 109.22 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 266.7 109.22 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "35f431cb-a982-51d3-9036-34e69294c123")
+		)
+		(pin "2"
+			(uuid "bc3c9dd8-60d3-5bd8-9e92-549d6910a6c7")
+		)
+		(instances
+			(project "orthogonal88"
+				(path "/5f9e5745-36fe-55fa-a80b-a2ed6993591b/8248c938-bedb-5266-bb12-c22f4058a72e"
+					(reference "Y329")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "OrthogonalPatch:Piezo")
+		(at 149.86 109.22 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "25a05dd7-bf8b-5f39-94d1-d18f09e9d420")
+		(property "Reference" "Y327"
+			(at 149.86 104.14 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "Piezo"
+			(at 149.86 114.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 149.86 109.22 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 149.86 109.22 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 149.86 109.22 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "a04a104f-1b15-51be-8372-65c117479dc6")
+		)
+		(pin "2"
+			(uuid "e152262e-cc31-5d09-a482-51526b03c013")
+		)
+		(instances
+			(project "orthogonal88"
+				(path "/5f9e5745-36fe-55fa-a80b-a2ed6993591b/8248c938-bedb-5266-bb12-c22f4058a72e"
+					(reference "Y327")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "OrthogonalPatch:Piezo")
+		(at 91.44 76.2 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "26305729-be47-560d-91e4-0f69028d91d7")
+		(property "Reference" "Y320"
+			(at 91.44 71.12 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "Piezo"
+			(at 91.44 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 91.44 76.2 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 91.44 76.2 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 91.44 76.2 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "637f61e6-bcf3-50cc-8d6e-0f14097e53ca")
+		)
+		(pin "2"
+			(uuid "f55edbbe-b2ed-53a2-ab9e-40066bd88d0c")
+		)
+		(instances
+			(project "orthogonal88"
+				(path "/5f9e5745-36fe-55fa-a80b-a2ed6993591b/8248c938-bedb-5266-bb12-c22f4058a72e"
+					(reference "Y320")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "OrthogonalPatch:Piezo")
+		(at 266.7 208.28 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "28c43672-d22e-555f-895b-faa1843ce421")
+		(property "Reference" "Y347"
+			(at 266.7 203.2 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "Piezo"
+			(at 266.7 213.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 266.7 208.28 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 266.7 208.28 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 266.7 208.28 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "cfbdf879-11f8-5d7f-89fd-fa560a155676")
+		)
+		(pin "2"
+			(uuid "a71b2422-f0d1-526a-9e0d-5b1a98f36e1a")
+		)
+		(instances
+			(project "orthogonal88"
+				(path "/5f9e5745-36fe-55fa-a80b-a2ed6993591b/8248c938-bedb-5266-bb12-c22f4058a72e"
+					(reference "Y347")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "OrthogonalPatch:Piezo")
+		(at 149.86 76.2 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "36def11f-6207-57e0-a6db-7a9c889baf50")
+		(property "Reference" "Y321"
+			(at 149.86 71.12 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "Piezo"
+			(at 149.86 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 149.86 76.2 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 149.86 76.2 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 149.86 76.2 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "cd6a1c8d-0d2f-5439-ae7f-4b3f8812be80")
+		)
+		(pin "2"
+			(uuid "319fdb01-c8a3-56cc-a9ea-2d53e3251494")
+		)
+		(instances
+			(project "orthogonal88"
+				(path "/5f9e5745-36fe-55fa-a80b-a2ed6993591b/8248c938-bedb-5266-bb12-c22f4058a72e"
+					(reference "Y321")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "OrthogonalPatch:Piezo")
+		(at 325.12 43.18 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "4bb1476f-60ef-5554-85a2-b9b8d57e1812")
+		(property "Reference" "Y318"
+			(at 325.12 38.1 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "Piezo"
+			(at 325.12 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 325.12 43.18 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 325.12 43.18 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 325.12 43.18 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "d48de74e-0b7d-5d8a-a4d2-0f6221fc54f9")
+		)
+		(pin "2"
+			(uuid "f240fd61-6a9f-595f-8ef4-74efdf9edd87")
+		)
+		(instances
+			(project "orthogonal88"
+				(path "/5f9e5745-36fe-55fa-a80b-a2ed6993591b/8248c938-bedb-5266-bb12-c22f4058a72e"
+					(reference "Y318")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "OrthogonalPatch:Piezo")
+		(at 208.28 76.2 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "4cd7779a-0601-5681-9614-73e9dc9bb467")
+		(property "Reference" "Y322"
+			(at 208.28 71.12 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "Piezo"
+			(at 208.28 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 208.28 76.2 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 208.28 76.2 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 208.28 76.2 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "9f94f7ee-72d9-517a-a575-60ecc79aa589")
+		)
+		(pin "2"
+			(uuid "6e1839e4-8c7f-5279-bd3f-7637f66b20ce")
+		)
+		(instances
+			(project "orthogonal88"
+				(path "/5f9e5745-36fe-55fa-a80b-a2ed6993591b/8248c938-bedb-5266-bb12-c22f4058a72e"
+					(reference "Y322")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "OrthogonalPatch:Piezo")
+		(at 325.12 76.2 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "4e1849c3-2740-5a42-b1be-99f54b704ef4")
+		(property "Reference" "Y324"
+			(at 325.12 71.12 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "Piezo"
+			(at 325.12 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 325.12 76.2 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 325.12 76.2 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 325.12 76.2 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "7d64259e-3a43-59d7-9170-cac7a5683543")
+		)
+		(pin "2"
+			(uuid "99642c70-3e2f-5a38-8737-4ea6794c2dfd")
+		)
+		(instances
+			(project "orthogonal88"
+				(path "/5f9e5745-36fe-55fa-a80b-a2ed6993591b/8248c938-bedb-5266-bb12-c22f4058a72e"
+					(reference "Y324")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "OrthogonalPatch:Piezo")
+		(at 208.28 142.24 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "54973ce1-c08a-53ca-838e-1507ae72596b")
+		(property "Reference" "Y334"
+			(at 208.28 137.16 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "Piezo"
+			(at 208.28 147.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 208.28 142.24 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 208.28 142.24 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 208.28 142.24 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "ab1b9b96-7b17-5b52-9deb-477a98e73e74")
+		)
+		(pin "2"
+			(uuid "09333f07-fa78-5f2d-8e34-de3a6942c7c0")
+		)
+		(instances
+			(project "orthogonal88"
+				(path "/5f9e5745-36fe-55fa-a80b-a2ed6993591b/8248c938-bedb-5266-bb12-c22f4058a72e"
+					(reference "Y334")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "OrthogonalPatch:Piezo")
+		(at 208.28 175.26 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "6155d2e1-543b-5c4a-9ef3-6c933928e855")
+		(property "Reference" "Y340"
+			(at 208.28 170.18 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "Piezo"
+			(at 208.28 180.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 208.28 175.26 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 208.28 175.26 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 208.28 175.26 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "4e19753d-09b9-5622-bd25-3ddda177a2a1")
+		)
+		(pin "2"
+			(uuid "21e20da6-3760-500a-b952-e9a6551490c7")
+		)
+		(instances
+			(project "orthogonal88"
+				(path "/5f9e5745-36fe-55fa-a80b-a2ed6993591b/8248c938-bedb-5266-bb12-c22f4058a72e"
+					(reference "Y340")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "OrthogonalPatch:Piezo")
+		(at 266.7 175.26 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "6327f660-cce3-5c17-bb1e-fa3a1663e093")
+		(property "Reference" "Y341"
+			(at 266.7 170.18 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "Piezo"
+			(at 266.7 180.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 266.7 175.26 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 266.7 175.26 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 266.7 175.26 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "bdd1d25c-47d4-53ba-8823-f48f55c02fc8")
+		)
+		(pin "2"
+			(uuid "e87775c2-3987-5b86-bffb-e52a5744b505")
+		)
+		(instances
+			(project "orthogonal88"
+				(path "/5f9e5745-36fe-55fa-a80b-a2ed6993591b/8248c938-bedb-5266-bb12-c22f4058a72e"
+					(reference "Y341")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "OrthogonalPatch:Piezo")
+		(at 325.12 142.24 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "647cb342-3263-5de7-8b48-c56d50c7f8b0")
+		(property "Reference" "Y336"
+			(at 325.12 137.16 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "Piezo"
+			(at 325.12 147.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 325.12 142.24 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 325.12 142.24 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 325.12 142.24 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "0098b05f-0c0b-5f73-8ed7-f1f6e4c48a4e")
+		)
+		(pin "2"
+			(uuid "cdf63639-168f-5693-9ee9-d54ab789cb66")
+		)
+		(instances
+			(project "orthogonal88"
+				(path "/5f9e5745-36fe-55fa-a80b-a2ed6993591b/8248c938-bedb-5266-bb12-c22f4058a72e"
+					(reference "Y336")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "OrthogonalPatch:Piezo")
+		(at 266.7 142.24 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "654dc48e-b035-5ffc-8aa8-334b348c5a30")
+		(property "Reference" "Y335"
+			(at 266.7 137.16 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "Piezo"
+			(at 266.7 147.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 266.7 142.24 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 266.7 142.24 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 266.7 142.24 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "8f0e725a-57e9-554d-88bb-28c308f94daf")
+		)
+		(pin "2"
+			(uuid "406baa4a-1995-5376-841c-4a0ed75b22b1")
+		)
+		(instances
+			(project "orthogonal88"
+				(path "/5f9e5745-36fe-55fa-a80b-a2ed6993591b/8248c938-bedb-5266-bb12-c22f4058a72e"
+					(reference "Y335")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "OrthogonalPatch:Piezo")
+		(at 33.02 142.24 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "6c09d620-bb84-58e1-878b-0fbeec7ff12a")
+		(property "Reference" "Y331"
+			(at 33.02 137.16 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "Piezo"
+			(at 33.02 147.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 33.02 142.24 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 33.02 142.24 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 33.02 142.24 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "de4cadf7-f89e-5b2d-829c-7e2432d1f6d2")
+		)
+		(pin "2"
+			(uuid "0832da97-22d6-520b-9dd2-a4ad644db333")
+		)
+		(instances
+			(project "orthogonal88"
+				(path "/5f9e5745-36fe-55fa-a80b-a2ed6993591b/8248c938-bedb-5266-bb12-c22f4058a72e"
+					(reference "Y331")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "OrthogonalPatch:Piezo")
+		(at 266.7 76.2 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "6dc42480-c13c-5cc6-b122-d1ac6dd82124")
+		(property "Reference" "Y323"
+			(at 266.7 71.12 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "Piezo"
+			(at 266.7 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 266.7 76.2 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 266.7 76.2 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 266.7 76.2 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "e54d130d-631f-55cc-a13e-4d29c37a07fd")
+		)
+		(pin "2"
+			(uuid "e6718324-224f-539e-b1e3-f016fb84ca67")
+		)
+		(instances
+			(project "orthogonal88"
+				(path "/5f9e5745-36fe-55fa-a80b-a2ed6993591b/8248c938-bedb-5266-bb12-c22f4058a72e"
+					(reference "Y323")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "OrthogonalPatch:Piezo")
+		(at 33.02 76.2 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "7289b645-ba0e-54cf-a32a-8fff0e4b620b")
+		(property "Reference" "Y319"
+			(at 33.02 71.12 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "Piezo"
+			(at 33.02 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 33.02 76.2 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 33.02 76.2 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 33.02 76.2 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "476a74fe-5521-5936-b68a-577b85bcf7f8")
+		)
+		(pin "2"
+			(uuid "373e02c6-9229-5464-a048-d8ca81f46bfe")
+		)
+		(instances
+			(project "orthogonal88"
+				(path "/5f9e5745-36fe-55fa-a80b-a2ed6993591b/8248c938-bedb-5266-bb12-c22f4058a72e"
+					(reference "Y319")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "OrthogonalPatch:Piezo")
+		(at 91.44 208.28 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "7854d565-a62b-5e7d-afc7-71bce0da10cd")
+		(property "Reference" "Y344"
+			(at 91.44 203.2 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "Piezo"
+			(at 91.44 213.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 91.44 208.28 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 91.44 208.28 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 91.44 208.28 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "1fc99184-d648-5ab3-975c-3072d9a8cc33")
+		)
+		(pin "2"
+			(uuid "eb735450-e34c-584e-96bb-3e94c029b75b")
+		)
+		(instances
+			(project "orthogonal88"
+				(path "/5f9e5745-36fe-55fa-a80b-a2ed6993591b/8248c938-bedb-5266-bb12-c22f4058a72e"
+					(reference "Y344")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "OrthogonalPatch:Piezo")
+		(at 325.12 175.26 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "7fd8785b-9978-5f17-8cfd-0b14eb26e341")
+		(property "Reference" "Y342"
+			(at 325.12 170.18 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "Piezo"
+			(at 325.12 180.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 325.12 175.26 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 325.12 175.26 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 325.12 175.26 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "9d5565c8-f58f-512e-b64f-c9c390726a09")
+		)
+		(pin "2"
+			(uuid "98040025-2cad-5155-a7d7-0fc9a60d019e")
+		)
+		(instances
+			(project "orthogonal88"
+				(path "/5f9e5745-36fe-55fa-a80b-a2ed6993591b/8248c938-bedb-5266-bb12-c22f4058a72e"
+					(reference "Y342")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "OrthogonalPatch:Piezo")
+		(at 325.12 109.22 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "87d91881-a5ad-5fb4-acab-78ce0530fcc0")
+		(property "Reference" "Y330"
+			(at 325.12 104.14 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "Piezo"
+			(at 325.12 114.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 325.12 109.22 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 325.12 109.22 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 325.12 109.22 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "92b0b85c-e261-5275-8fe6-4a36ae0100ff")
+		)
+		(pin "2"
+			(uuid "e995cb13-40f2-52d5-83fc-62c5d4c8a18e")
+		)
+		(instances
+			(project "orthogonal88"
+				(path "/5f9e5745-36fe-55fa-a80b-a2ed6993591b/8248c938-bedb-5266-bb12-c22f4058a72e"
+					(reference "Y330")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "OrthogonalPatch:Piezo")
+		(at 149.86 142.24 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "92f31c4e-717f-5f86-a907-e4bf0e36665c")
+		(property "Reference" "Y333"
+			(at 149.86 137.16 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "Piezo"
+			(at 149.86 147.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 149.86 142.24 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 149.86 142.24 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 149.86 142.24 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "a783cc06-3dc8-565a-9789-56d506bf1ab4")
+		)
+		(pin "2"
+			(uuid "36c55be2-fe57-54fb-8ab6-3133078c748b")
+		)
+		(instances
+			(project "orthogonal88"
+				(path "/5f9e5745-36fe-55fa-a80b-a2ed6993591b/8248c938-bedb-5266-bb12-c22f4058a72e"
+					(reference "Y333")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "OrthogonalPatch:Piezo")
+		(at 149.86 43.18 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "96c39f58-421e-5af5-a82d-3c17d02c81db")
+		(property "Reference" "Y315"
+			(at 149.86 38.1 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "Piezo"
+			(at 149.86 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 149.86 43.18 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 149.86 43.18 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 149.86 43.18 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "8a738b59-71d9-5b43-8712-bda1de897503")
+		)
+		(pin "2"
+			(uuid "fb35f392-483c-5db0-b7d1-e295db25c927")
+		)
+		(instances
+			(project "orthogonal88"
+				(path "/5f9e5745-36fe-55fa-a80b-a2ed6993591b/8248c938-bedb-5266-bb12-c22f4058a72e"
+					(reference "Y315")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "OrthogonalPatch:Piezo")
+		(at 91.44 175.26 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "a9839fc9-d182-5443-b13d-0d76cd8a29da")
+		(property "Reference" "Y338"
+			(at 91.44 170.18 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "Piezo"
+			(at 91.44 180.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 91.44 175.26 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 91.44 175.26 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 91.44 175.26 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "acde35bf-5553-5e8a-89b7-b5ea0f87ca82")
+		)
+		(pin "2"
+			(uuid "2d5b2d30-e216-577b-902c-31c5fbd16397")
+		)
+		(instances
+			(project "orthogonal88"
+				(path "/5f9e5745-36fe-55fa-a80b-a2ed6993591b/8248c938-bedb-5266-bb12-c22f4058a72e"
+					(reference "Y338")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "OrthogonalPatch:Piezo")
+		(at 33.02 208.28 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "b53523c8-fc2a-5e90-9f8a-522dc753b4a3")
+		(property "Reference" "Y343"
+			(at 33.02 203.2 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "Piezo"
+			(at 33.02 213.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 33.02 208.28 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 33.02 208.28 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 33.02 208.28 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "bfd71d96-0c5f-5991-8d0a-bdc7658d52f9")
+		)
+		(pin "2"
+			(uuid "c2df5d54-ad43-5d5e-b62a-9ad578fd34ad")
+		)
+		(instances
+			(project "orthogonal88"
+				(path "/5f9e5745-36fe-55fa-a80b-a2ed6993591b/8248c938-bedb-5266-bb12-c22f4058a72e"
+					(reference "Y343")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "OrthogonalPatch:Piezo")
+		(at 325.12 208.28 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "b7d6c3f4-7dea-51a4-b062-93e4be7dc5b0")
+		(property "Reference" "Y348"
+			(at 325.12 203.2 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "Piezo"
+			(at 325.12 213.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 325.12 208.28 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 325.12 208.28 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 325.12 208.28 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "cacc7c2b-03bf-5d77-b642-032a48e2e3de")
+		)
+		(pin "2"
+			(uuid "854b8d5c-ad2c-525c-a69d-6271c931d2b7")
+		)
+		(instances
+			(project "orthogonal88"
+				(path "/5f9e5745-36fe-55fa-a80b-a2ed6993591b/8248c938-bedb-5266-bb12-c22f4058a72e"
+					(reference "Y348")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "OrthogonalPatch:Piezo")
+		(at 33.02 175.26 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "c37a1597-b985-5e24-9536-352e206c9aba")
+		(property "Reference" "Y337"
+			(at 33.02 170.18 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "Piezo"
+			(at 33.02 180.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 33.02 175.26 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 33.02 175.26 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 33.02 175.26 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "de57be67-3911-5adb-9dfe-5d483a7ec910")
+		)
+		(pin "2"
+			(uuid "d35ca249-59e2-5cd2-b070-d0c579b8212e")
+		)
+		(instances
+			(project "orthogonal88"
+				(path "/5f9e5745-36fe-55fa-a80b-a2ed6993591b/8248c938-bedb-5266-bb12-c22f4058a72e"
+					(reference "Y337")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "OrthogonalPatch:Piezo")
+		(at 266.7 43.18 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "c6efb938-5676-5485-a2de-844f9832bac9")
+		(property "Reference" "Y317"
+			(at 266.7 38.1 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "Piezo"
+			(at 266.7 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 266.7 43.18 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 266.7 43.18 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 266.7 43.18 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "d3d03010-0699-5a45-a8da-96e26f56a1e6")
+		)
+		(pin "2"
+			(uuid "b527535c-c38f-51db-ba18-15da24b692d7")
+		)
+		(instances
+			(project "orthogonal88"
+				(path "/5f9e5745-36fe-55fa-a80b-a2ed6993591b/8248c938-bedb-5266-bb12-c22f4058a72e"
+					(reference "Y317")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "OrthogonalPatch:Piezo")
+		(at 208.28 208.28 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "cf0c710c-bc92-506a-9c60-bfa27a7312a8")
+		(property "Reference" "Y346"
+			(at 208.28 203.2 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "Piezo"
+			(at 208.28 213.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 208.28 208.28 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 208.28 208.28 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 208.28 208.28 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "4ecbd9c8-ef8e-5abe-94ac-a3231c8659cd")
+		)
+		(pin "2"
+			(uuid "f833b441-750c-5dd8-9bd8-ee71445814bc")
+		)
+		(instances
+			(project "orthogonal88"
+				(path "/5f9e5745-36fe-55fa-a80b-a2ed6993591b/8248c938-bedb-5266-bb12-c22f4058a72e"
+					(reference "Y346")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "OrthogonalPatch:Piezo")
+		(at 33.02 109.22 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "d3387770-e15f-5edf-8fb5-4d83b1e5feb8")
+		(property "Reference" "Y325"
+			(at 33.02 104.14 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "Piezo"
+			(at 33.02 114.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 33.02 109.22 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 33.02 109.22 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 33.02 109.22 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "22966776-bb68-5ee4-adf7-d7a4e34502ff")
+		)
+		(pin "2"
+			(uuid "48fa8645-f9cc-5fa1-8e91-d1477bf5deef")
+		)
+		(instances
+			(project "orthogonal88"
+				(path "/5f9e5745-36fe-55fa-a80b-a2ed6993591b/8248c938-bedb-5266-bb12-c22f4058a72e"
+					(reference "Y325")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "OrthogonalPatch:Piezo")
+		(at 149.86 208.28 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "e3e73352-4b5b-5f85-8cac-84ee03855f9c")
+		(property "Reference" "Y345"
+			(at 149.86 203.2 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "Piezo"
+			(at 149.86 213.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 149.86 208.28 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 149.86 208.28 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 149.86 208.28 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "73d9d272-2aea-5365-a549-ea649ed03087")
+		)
+		(pin "2"
+			(uuid "cb8abbfd-f9fa-5c27-a813-60eea800c6a8")
+		)
+		(instances
+			(project "orthogonal88"
+				(path "/5f9e5745-36fe-55fa-a80b-a2ed6993591b/8248c938-bedb-5266-bb12-c22f4058a72e"
+					(reference "Y345")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "OrthogonalPatch:Piezo")
+		(at 208.28 109.22 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "fa688467-40c6-59d1-9527-f6df10eecd33")
+		(property "Reference" "Y328"
+			(at 208.28 104.14 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "Piezo"
+			(at 208.28 114.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 208.28 109.22 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 208.28 109.22 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 208.28 109.22 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "ad3dbeee-f274-5df5-8afa-995305ffc51d")
+		)
+		(pin "2"
+			(uuid "557a32fb-3d11-5a33-be94-8be4bde8b2b6")
+		)
+		(instances
+			(project "orthogonal88"
+				(path "/5f9e5745-36fe-55fa-a80b-a2ed6993591b/8248c938-bedb-5266-bb12-c22f4058a72e"
+					(reference "Y328")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "OrthogonalPatch:Piezo")
+		(at 91.44 43.18 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "fbb3909f-0343-56b2-80c3-652de0c198f1")
+		(property "Reference" "Y314"
+			(at 91.44 38.1 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "Piezo"
+			(at 91.44 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 91.44 43.18 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 91.44 43.18 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 91.44 43.18 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "ecf36072-648f-569a-8b54-bd2ba9fa0cbc")
+		)
+		(pin "2"
+			(uuid "c2d5f286-5ab7-5f3a-aa67-88e69eb0b450")
+		)
+		(instances
+			(project "orthogonal88"
+				(path "/5f9e5745-36fe-55fa-a80b-a2ed6993591b/8248c938-bedb-5266-bb12-c22f4058a72e"
+					(reference "Y314")
+					(unit 1)
+				)
+			)
+		)
+	)
+)

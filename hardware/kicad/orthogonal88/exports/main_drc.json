@@ -1,0 +1,3022 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-11-22T15:30:14",
+    "ignored_checks": [
+        {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+        },
+        {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+        },
+        {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+        },
+        {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+        },
+        {
+            "description": "Footprint component type doesn't match footprint pads",
+            "key": "footprint_type_mismatch"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning"
+    ],
+    "kicad_version": "10.0.8",
+    "schematic_parity": [],
+    "source": "orthogonal88.kicad_pcb",
+    "unconnected_items": [],
+    "violations": [
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[C_R3C3]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 100.0,
+                        "y": 99.561594
+                    },
+                    "uuid": "032c36a7-1204-4c97-9841-6367d52bc6bd"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_07]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 97.737258,
+                        "y": 96.733167
+                    },
+                    "uuid": "0496b93c-03b8-49f6-83b0-afefe0ec3a39"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_01]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 95.757359,
+                        "y": 95.318954
+                    },
+                    "uuid": "04e192c2-0569-4caa-a8ce-c0da5a28bac6"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_03]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 95.757359,
+                        "y": 96.450324
+                    },
+                    "uuid": "05d32b3a-4042-4a54-b755-f30af5c6d49e"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_05]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 107.311484,
+                        "y": 88.785286
+                    },
+                    "uuid": "0a184e69-e0f0-4ac1-b9b3-4e6d188b7b53"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_05]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 97.171573,
+                        "y": 96.167482
+                    },
+                    "uuid": "0adfab70-2615-472f-8209-c3aa289410ca"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_01]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 106.180113,
+                        "y": 87.653916
+                    },
+                    "uuid": "0bea0487-e74c-4404-ac22-275a3a8c0dfe"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_06]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 96.605887,
+                        "y": 97.298853
+                    },
+                    "uuid": "0e34d387-3eb1-4861-b07e-18ad77e375e8"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_12]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 98.020101,
+                        "y": 99.278752
+                    },
+                    "uuid": "0ffc9ace-337d-41fc-86b1-5319012250a5"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[C_R1C5]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 111.554125,
+                        "y": 93.027927
+                    },
+                    "uuid": "1119bb55-8f45-4b4d-9dcf-1f851fc2803a"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_10]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 97.454416,
+                        "y": 98.713066
+                    },
+                    "uuid": "111d0c8c-2f0d-47d2-8e61-ccd087e6092e"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_08]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 98.302944,
+                        "y": 96.733167
+                    },
+                    "uuid": "11d483ab-9e5b-45d6-b2f1-35ca111baa95"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[C_R1C3]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 110.705597,
+                        "y": 92.179399
+                    },
+                    "uuid": "12d1c8e7-fe27-4059-90a5-46a73cb645e4"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[C_R3C1]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 99.434315,
+                        "y": 98.995909
+                    },
+                    "uuid": "13bc238f-5671-45bf-85a6-4c8ffb003e27"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[C_R5C3]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 111.271282,
+                        "y": 92.745084
+                    },
+                    "uuid": "1c543263-d59c-465c-b486-ebb10d52c2db"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_13]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 99.151472,
+                        "y": 98.713066
+                    },
+                    "uuid": "17484a85-079e-45b8-a1cd-ac24ec6d8685"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_08]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 97.737258,
+                        "y": 97.298853
+                    },
+                    "uuid": "14f5f77a-0665-4559-a177-081e94fa9f9b"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[C_R5C1]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 110.422754,
+                        "y": 91.896556
+                    },
+                    "uuid": "17e1e713-070d-438a-b659-459c11cf7dc2"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_09]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 108.442855,
+                        "y": 89.916657
+                    },
+                    "uuid": "16a4a330-2c27-4089-aef4-d1eb0be95b9f"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_02]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 96.040202,
+                        "y": 95.601796
+                    },
+                    "uuid": "13e9f22c-c521-45bd-aa05-523224384965"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_03]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 96.88873,
+                        "y": 95.318954
+                    },
+                    "uuid": "197305bf-1433-4e13-a220-9a799174d4e3"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_04]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 96.323045,
+                        "y": 96.450324
+                    },
+                    "uuid": "13ab8cd4-30f4-452b-9b3a-5242cb7ca70e"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_03]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 96.040202,
+                        "y": 96.167482
+                    },
+                    "uuid": "33510adf-689f-4a4a-a468-d0523b3249b0"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_05]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 97.454416,
+                        "y": 95.884639
+                    },
+                    "uuid": "3a048d92-a5bb-4774-8fe1-e71d907d8842"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_10]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 98.302944,
+                        "y": 97.864538
+                    },
+                    "uuid": "44374371-48e0-48ac-8c4f-345a1a049ad3"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_11]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 99.151472,
+                        "y": 97.581695
+                    },
+                    "uuid": "46633b93-a465-416b-a58c-90ca9a527d73"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_12]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 98.585786,
+                        "y": 98.713066
+                    },
+                    "uuid": "33512aab-e58e-4940-bc24-349ee9cfa539"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_08]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 96.88873,
+                        "y": 98.147381
+                    },
+                    "uuid": "34cdbdf6-a39d-40f7-96b7-598c56f36c63"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_09]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 97.171573,
+                        "y": 98.430223
+                    },
+                    "uuid": "409a54b8-9ed0-4d3a-8e6b-f053662b466a"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_11]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 98.302944,
+                        "y": 98.430223
+                    },
+                    "uuid": "30229767-7c4a-442e-bbef-621ff915fe8e"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_12]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 99.434315,
+                        "y": 97.864538
+                    },
+                    "uuid": "33f879fa-8416-4273-99ad-dc1d11eb19c9"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_07]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 96.605887,
+                        "y": 97.864538
+                    },
+                    "uuid": "41941143-d53a-42e5-a268-07cd67bd0fda"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_06]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 96.323045,
+                        "y": 97.581695
+                    },
+                    "uuid": "21c46cb5-f6c9-4b6d-9ada-8da1c866a584"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_01]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 96.323045,
+                        "y": 94.753268
+                    },
+                    "uuid": "3aed34b1-d339-4e80-840b-7beb1e47555f"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[C_R5C5]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 112.11981,
+                        "y": 93.593613
+                    },
+                    "uuid": "297a041b-6097-498d-9205-94a0f4bbb50a"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_13]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 109.574226,
+                        "y": 91.048028
+                    },
+                    "uuid": "469dda3b-5cca-4010-8769-2046dbfab413"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_06]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 107.594327,
+                        "y": 89.068129
+                    },
+                    "uuid": "28f26169-8272-40b4-8c9f-932bf7652993"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_05]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 96.88873,
+                        "y": 96.450324
+                    },
+                    "uuid": "25522496-fc9b-4836-9d4e-d5c7886a6a27"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_07]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 98.020101,
+                        "y": 96.450324
+                    },
+                    "uuid": "2791effe-f9f6-4073-8edb-a6287069a63e"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[C_R1C1]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 109.857069,
+                        "y": 91.330871
+                    },
+                    "uuid": "2e5bfcdf-206a-47d7-9f75-450c1d00c0e8"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_03]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 96.323045,
+                        "y": 95.884639
+                    },
+                    "uuid": "47ace351-88c7-4fd3-b04f-a0d52d6a8e78"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_04]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 95.757359,
+                        "y": 97.01601
+                    },
+                    "uuid": "6ea31d3d-684e-4ecc-970e-7236f7342490"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_10]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 98.585786,
+                        "y": 97.581695
+                    },
+                    "uuid": "6debeb70-c823-4866-8641-3e5a15b973f4"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_04]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 96.605887,
+                        "y": 96.167482
+                    },
+                    "uuid": "4c1d51c5-1e84-4674-aba0-881cf054539b"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_03]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 96.605887,
+                        "y": 95.601796
+                    },
+                    "uuid": "6b8833e9-7076-46de-b3e6-1ac06cd8bc68"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_04]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 97.171573,
+                        "y": 95.601796
+                    },
+                    "uuid": "4cf55f41-0e53-41ac-b5bc-e6c2be1bf291"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_08]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 108.160012,
+                        "y": 89.633815
+                    },
+                    "uuid": "6e919848-c6db-425c-97cd-67b9ff139be5"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_01]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 96.040202,
+                        "y": 95.036111
+                    },
+                    "uuid": "60fce465-2c16-4433-9865-eb5184425fb5"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_06]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 96.88873,
+                        "y": 97.01601
+                    },
+                    "uuid": "643cc54a-fe3c-4c85-88bd-4cd108715e39"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_12]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 99.151472,
+                        "y": 98.147381
+                    },
+                    "uuid": "6347c64c-8ec2-4e50-8692-821ea6688cc2"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_13]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 99.717157,
+                        "y": 98.147381
+                    },
+                    "uuid": "70f85147-19db-43a8-9c86-eed43247fc50"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_01]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 94.908831,
+                        "y": 96.167482
+                    },
+                    "uuid": "4f42f225-bc43-4311-bfcc-9ba702222aff"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_02]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 95.191674,
+                        "y": 96.450324
+                    },
+                    "uuid": "6a84bd65-8686-40f5-b36a-348e91968d2c"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_10]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 98.020101,
+                        "y": 98.147381
+                    },
+                    "uuid": "5df7e199-2b63-424f-984d-af2bdbe6d5a7"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_13]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 98.302944,
+                        "y": 99.561594
+                    },
+                    "uuid": "6a3e7ea0-24a7-449f-a9a9-dfd82037663e"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_07]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 97.454416,
+                        "y": 97.01601
+                    },
+                    "uuid": "6978fd4d-163a-43cf-bf2b-804ba23313ff"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_10]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 108.725698,
+                        "y": 90.1995
+                    },
+                    "uuid": "6e21b7ba-8029-4f8c-941e-ebed3595fb35"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_04]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 96.040202,
+                        "y": 96.733167
+                    },
+                    "uuid": "67374859-d182-44b0-9cb2-cb2cfe5510ce"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_07]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 97.171573,
+                        "y": 97.298853
+                    },
+                    "uuid": "8416aebb-7ad1-4e66-9833-32e92f6f68b1"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_06]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 97.454416,
+                        "y": 96.450324
+                    },
+                    "uuid": "895c30d5-6dff-4ae7-aec3-03ab97efce3a"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_10]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 97.737258,
+                        "y": 98.430223
+                    },
+                    "uuid": "9919851b-2314-468b-b6a1-c15ca09dca51"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_02]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 95.757359,
+                        "y": 95.884639
+                    },
+                    "uuid": "987c9f72-4027-4352-8bf8-dfea53a915f0"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_09]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 98.302944,
+                        "y": 97.298853
+                    },
+                    "uuid": "923a8076-1a74-4271-9673-59b27f04a90c"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_07]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 107.87717,
+                        "y": 89.350972
+                    },
+                    "uuid": "80724c64-376c-49ed-9396-18374438aa89"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[C_R1C5]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 101.131371,
+                        "y": 99.561594
+                    },
+                    "uuid": "8c6d687c-0131-4d27-a195-6a40a38734b9"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[C_R5C1]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 98.868629,
+                        "y": 99.561594
+                    },
+                    "uuid": "92b473d4-cc97-4e53-b12c-96c7785f3271"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_06]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 97.737258,
+                        "y": 96.167482
+                    },
+                    "uuid": "87e5c160-649a-4763-a353-1acd2cf8a924"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_11]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 97.737258,
+                        "y": 98.995909
+                    },
+                    "uuid": "89f12574-9edc-4b20-aa23-32b8861c395f"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[C_R3C3]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 110.988439,
+                        "y": 92.462242
+                    },
+                    "uuid": "99827435-45ae-4e5b-8314-9fe8ec7deaf2"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[C_R1C1]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 100.0,
+                        "y": 98.430223
+                    },
+                    "uuid": "7e72d2b1-a636-41fe-8f10-be9c96d7403d"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_08]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 98.020101,
+                        "y": 97.01601
+                    },
+                    "uuid": "891e6c2b-ef01-49ab-8d74-14d335061def"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_06]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 97.171573,
+                        "y": 96.733167
+                    },
+                    "uuid": "7208ef05-11c8-4d82-931e-8366a0b22db2"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_12]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 98.302944,
+                        "y": 98.995909
+                    },
+                    "uuid": "a1c8fa7f-ee2b-438f-bfee-bc0f30903f50"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_03]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 95.474517,
+                        "y": 96.733167
+                    },
+                    "uuid": "9a7e494f-21eb-4c48-9bb1-1d82c67851c7"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_01]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 95.474517,
+                        "y": 95.601796
+                    },
+                    "uuid": "7f87fd58-efc3-48f3-aed5-78d4672a748f"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_04]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 107.028641,
+                        "y": 88.502444
+                    },
+                    "uuid": "870efc39-d32c-40b8-afcd-a639f8822b72"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_09]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 97.737258,
+                        "y": 97.864538
+                    },
+                    "uuid": "cc976045-8349-4dd9-a9aa-ed6abba72884"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_11]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 98.585786,
+                        "y": 98.147381
+                    },
+                    "uuid": "b2d21e92-cad4-43ea-b9a0-a40685d63f07"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_12]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 109.291383,
+                        "y": 90.765185
+                    },
+                    "uuid": "caa34a14-cef7-4fa8-b495-af86428dad8b"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_05]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 96.323045,
+                        "y": 97.01601
+                    },
+                    "uuid": "ac1595eb-5396-480a-a278-2c0b923867d1"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_03]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 106.745799,
+                        "y": 88.219601
+                    },
+                    "uuid": "c6bff781-da72-49f9-ad6b-2565074e8fe1"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_05]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 96.605887,
+                        "y": 96.733167
+                    },
+                    "uuid": "c76328a5-e2e9-4382-8d05-213cb345ee57"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_09]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 98.585786,
+                        "y": 97.01601
+                    },
+                    "uuid": "bc9f195a-a4a6-4967-b52b-8231ead98165"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_07]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 96.88873,
+                        "y": 97.581695
+                    },
+                    "uuid": "a558777e-7afd-42f4-8bcc-8b1032a8bedf"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_01]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 95.191674,
+                        "y": 95.884639
+                    },
+                    "uuid": "a2a7edaf-18c8-49ba-8760-d8a32808945e"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[C_R1C3]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 100.565685,
+                        "y": 98.995909
+                    },
+                    "uuid": "a7c02b36-cfb3-4e4f-81cb-c5187e0f9d15"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_04]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 96.88873,
+                        "y": 95.884639
+                    },
+                    "uuid": "a95fbe26-2abc-41ba-8baf-09fd93e6df5f"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_09]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 98.020101,
+                        "y": 97.581695
+                    },
+                    "uuid": "d2ec3f24-a5fa-4140-9329-03db06d3a438"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_02]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 96.323045,
+                        "y": 95.318954
+                    },
+                    "uuid": "d10f6068-5261-4625-8184-cd9dee85998d"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_11]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 98.020101,
+                        "y": 98.713066
+                    },
+                    "uuid": "b412ba8f-ba06-48c3-8e6a-0e8b2e27c617"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_02]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 106.462956,
+                        "y": 87.936758
+                    },
+                    "uuid": "a33ff76e-ed68-4e94-81c6-d40657710cbd"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[C_R3C5]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 100.565685,
+                        "y": 100.12728
+                    },
+                    "uuid": "d0568195-ff31-4839-95fc-31da509f3473"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[C_R3C5]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 111.836968,
+                        "y": 93.31077
+                    },
+                    "uuid": "aa7cfecb-4d09-480b-ae07-764ce082d7b5"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_09]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 97.454416,
+                        "y": 98.147381
+                    },
+                    "uuid": "ad2ae4a9-4eea-4fa6-914e-50b9ed941872"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[V_POS_10]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 88.728718,
+                        "y": 92.745084
+                    },
+                    "uuid": "014eda47-b7b0-4f65-b638-bf91a58c584e"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_10]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 98.868629,
+                        "y": 97.298853
+                    },
+                    "uuid": "d5fc899d-3457-447b-9594-6cacbd332ca1"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[RETURN]在 LM_RETURN 上, 优先级 0",
+                    "pos": {
+                        "x": 89.5,
+                        "y": 84.5
+                    },
+                    "uuid": "628bb830-f0d1-4c4c-8765-7d3924c3ae8c"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_13]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 99.434315,
+                        "y": 98.430223
+                    },
+                    "uuid": "d70c2124-057b-4d9a-98e4-440d36d7ff94"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_08]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 97.171573,
+                        "y": 97.864538
+                    },
+                    "uuid": "ef85ddcb-fc86-435e-8e46-a3dc0cdce6e5"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[V_POS_01]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 98.585786,
+                        "y": 100.410122
+                    },
+                    "uuid": "00f55169-8410-42bb-9bd4-d82fa284a25f"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_02]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 96.605887,
+                        "y": 95.036111
+                    },
+                    "uuid": "f5e7be4d-e4a8-43c4-b002-4926e4f07535"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_05]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 96.040202,
+                        "y": 97.298853
+                    },
+                    "uuid": "dbf05647-4893-4976-8abe-3e7558d0acba"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[C_R5C3]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 99.434315,
+                        "y": 100.12728
+                    },
+                    "uuid": "f7ee5d71-d94d-4556-bdfa-cd73026a283b"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[C_R3C1]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 110.139911,
+                        "y": 91.613714
+                    },
+                    "uuid": "edab8cf6-459f-4042-8eec-770f94765b40"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_11]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 98.868629,
+                        "y": 97.864538
+                    },
+                    "uuid": "d5519e22-0ca4-4204-9a43-a523c9aba102"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_13]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 98.585786,
+                        "y": 99.278752
+                    },
+                    "uuid": "fe026db4-a5e0-4039-b9e7-f8984c8cd640"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_11]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 109.00854,
+                        "y": 90.482343
+                    },
+                    "uuid": "daf0ff06-bab6-4455-9d68-8258f79b2d1b"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_12]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 98.868629,
+                        "y": 98.430223
+                    },
+                    "uuid": "e6386667-ed8e-49df-bdcb-048be262a543"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_13]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 98.868629,
+                        "y": 98.995909
+                    },
+                    "uuid": "db5f4a4a-a38f-4770-8dcf-d92ff649f324"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[C_R5C5]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 100.0,
+                        "y": 100.692965
+                    },
+                    "uuid": "f3bd5d32-ce2d-4e8c-b681-fd9b441468c1"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_08]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 97.454416,
+                        "y": 97.581695
+                    },
+                    "uuid": "f8a34339-ae8f-4cc2-9d8d-f9731df78f19"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[U_NEG_02]在 LM_E1 上, 优先级 0",
+                    "pos": {
+                        "x": 95.474517,
+                        "y": 96.167482
+                    },
+                    "uuid": "e4087c44-7aeb-4bd9-b35b-8efa1596ce06"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[V_POS_10]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 96.040202,
+                        "y": 102.955707
+                    },
+                    "uuid": "205d729d-379e-4b89-b4cc-39c47ea1b4d0"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[V_POS_01]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 99.434315,
+                        "y": 101.258651
+                    },
+                    "uuid": "1a42266a-a4bc-4e1e-8ed3-46d3ebcef60c"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[V_POS_05]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 97.454416,
+                        "y": 101.541493
+                    },
+                    "uuid": "0f123b80-f03c-4d4f-905e-3ca66d8286d2"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[V_POS_12]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 88.163032,
+                        "y": 93.31077
+                    },
+                    "uuid": "019e72a1-3843-4bd0-ade6-e33c6ff8c477"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[C_R6C3]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 99.151472,
+                        "y": 100.410122
+                    },
+                    "uuid": "31e7b525-1bd3-4b7a-8dab-eb42c674e1c3"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[V_POS_05]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 98.302944,
+                        "y": 102.390021
+                    },
+                    "uuid": "090f437c-01a6-4fe7-b9ca-787e9eb1a4ec"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[C_R6C5]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 99.717157,
+                        "y": 100.975808
+                    },
+                    "uuid": "3a0ec7a5-fbd9-4447-a461-1954ef2abb46"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[C_R4C3]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 92.688516,
+                        "y": 88.785286
+                    },
+                    "uuid": "351f80c8-4dfd-49b3-b9aa-7a7e90f4fca5"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[V_POS_09]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 96.605887,
+                        "y": 102.955707
+                    },
+                    "uuid": "2dfac516-e6b9-46e5-a402-179535b1f93f"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[V_POS_08]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 97.737258,
+                        "y": 103.521392
+                    },
+                    "uuid": "1d869245-8ae0-4318-a2a4-95b19699f0ef"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[C_R6C5]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 92.12283,
+                        "y": 89.350972
+                    },
+                    "uuid": "25ad346b-6c92-4ea0-ba10-a050d43f3bd5"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[V_POS_07]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 97.171573,
+                        "y": 102.390021
+                    },
+                    "uuid": "2c85f0c9-9412-4240-ba9a-d8f6c379c4bd"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[V_POS_04]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 98.020101,
+                        "y": 101.541493
+                    },
+                    "uuid": "20829e8d-e24e-4419-a4c0-a76a612f938f"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[V_POS_02]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 98.020101,
+                        "y": 100.410122
+                    },
+                    "uuid": "0ca26f29-9d9c-447b-824f-c80198e09f7b"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[V_POS_12]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 96.323045,
+                        "y": 104.36992
+                    },
+                    "uuid": "163b93bf-48cb-4fba-a870-e17cf05b472d"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[V_POS_05]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 97.737258,
+                        "y": 101.824336
+                    },
+                    "uuid": "34a54d03-ea00-464e-92da-087a6a617de1"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[C_R2C3]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 100.282843,
+                        "y": 99.278752
+                    },
+                    "uuid": "119ae441-dc5d-4443-ba99-11135bd8a30a"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[C_R2C5]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 100.848528,
+                        "y": 99.844437
+                    },
+                    "uuid": "1267a733-1300-4e37-9950-d3a2f8334e85"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[V_POS_09]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 96.88873,
+                        "y": 103.23855
+                    },
+                    "uuid": "61bb9e0b-d109-4b13-8e00-9bfaa6e1ac13"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[V_POS_04]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 98.585786,
+                        "y": 102.107179
+                    },
+                    "uuid": "6f459db6-52c3-478f-be78-6a698cb4a870"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[C_R2C3]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 93.537044,
+                        "y": 87.936758
+                    },
+                    "uuid": "7e6918ef-15ee-465c-b9b6-90fcd43eeae1"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[V_POS_01]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 91.274302,
+                        "y": 90.1995
+                    },
+                    "uuid": "4751917f-fe6b-4ccd-80c3-4cdffd89bf63"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[V_POS_02]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 99.151472,
+                        "y": 101.541493
+                    },
+                    "uuid": "4b4d03fd-10fe-447e-b07b-fe4b9cc41630"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[V_POS_07]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 97.454416,
+                        "y": 102.672864
+                    },
+                    "uuid": "48dadb7f-e8e9-490b-b592-cd0ef7aede22"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[V_POS_06]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 98.302944,
+                        "y": 102.955707
+                    },
+                    "uuid": "6b632fc5-11fb-47d4-bf95-5cc584a0da6b"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[V_POS_08]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 97.171573,
+                        "y": 102.955707
+                    },
+                    "uuid": "53c57d8a-5c61-4e6c-b9b7-f4b931acb3e8"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[V_POS_03]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 98.585786,
+                        "y": 101.541493
+                    },
+                    "uuid": "3c753287-bc4a-45d9-a866-63460721797f"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[V_POS_02]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 98.302944,
+                        "y": 100.692965
+                    },
+                    "uuid": "791d5118-7f61-4d77-8e12-0f8df04d3e02"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[V_POS_06]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 96.88873,
+                        "y": 101.541493
+                    },
+                    "uuid": "477b48fd-822b-400c-95c9-8f74ab7788fd"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[V_POS_11]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 95.474517,
+                        "y": 102.955707
+                    },
+                    "uuid": "5bccf016-dfcd-494e-aba5-987826ead3e5"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[C_R6C1]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 98.585786,
+                        "y": 99.844437
+                    },
+                    "uuid": "433e105e-55d6-4a7a-8c78-a017ee3cd7cf"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[C_R4C5]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 92.971359,
+                        "y": 88.502444
+                    },
+                    "uuid": "593c4e24-a52f-4087-aa46-c16ae97ca71a"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[V_POS_11]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 88.445875,
+                        "y": 93.027927
+                    },
+                    "uuid": "4291b258-6967-41cf-9d20-28ae38291451"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[C_R2C1]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 99.717157,
+                        "y": 98.713066
+                    },
+                    "uuid": "4a21d64f-0418-4af1-8ebe-5500e4e2d9ef"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[C_R4C1]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 99.151472,
+                        "y": 99.278752
+                    },
+                    "uuid": "68d715ca-7add-49dd-8f96-d639021b0b1c"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[V_POS_11]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 96.040202,
+                        "y": 103.521392
+                    },
+                    "uuid": "529e3779-8117-4b85-9fea-aacf6c602a49"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[V_POS_09]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 89.011561,
+                        "y": 92.462242
+                    },
+                    "uuid": "6121587f-fcee-42c8-9b49-717e052a865d"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[V_POS_09]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 97.454416,
+                        "y": 103.804235
+                    },
+                    "uuid": "6d821fc4-1866-4a03-80ef-e77892b36daf"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[C_R4C5]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 100.282843,
+                        "y": 100.410122
+                    },
+                    "uuid": "78b96715-e277-41a1-8c6e-8568ac128099"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[V_POS_02]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 99.434315,
+                        "y": 101.824336
+                    },
+                    "uuid": "3b3a1e31-eb62-40fb-aa89-788ad7a5bcde"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[V_POS_06]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 98.020101,
+                        "y": 102.672864
+                    },
+                    "uuid": "605c2d2b-7fb3-4d92-b5fb-dfc07e385763"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[V_POS_12]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 96.605887,
+                        "y": 104.652763
+                    },
+                    "uuid": "70e6e876-5425-4678-94b2-9e2a07f06e1f"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[V_POS_11]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 96.605887,
+                        "y": 104.087078
+                    },
+                    "uuid": "47b73450-2ba9-41f2-8d92-3f5bca95a7c1"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[V_POS_13]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 96.040202,
+                        "y": 104.652763
+                    },
+                    "uuid": "7858e770-91ae-4ace-8f64-7327f5fbbc07"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[V_POS_07]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 97.737258,
+                        "y": 102.955707
+                    },
+                    "uuid": "3a4a6f30-7de2-4ded-bc45-a3e8cc72c9d9"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[V_POS_01]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 98.868629,
+                        "y": 100.692965
+                    },
+                    "uuid": "442d575e-5fa9-4317-9875-449a0e866c0a"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[C_R2C5]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 93.819887,
+                        "y": 87.653916
+                    },
+                    "uuid": "5343b39d-6818-4322-839b-c09f808a1f2d"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[V_POS_11]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 96.323045,
+                        "y": 103.804235
+                    },
+                    "uuid": "6b208a90-1c50-4647-ab64-e6ba17ce9dba"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[V_POS_07]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 96.605887,
+                        "y": 101.824336
+                    },
+                    "uuid": "5eb6cd7e-17ff-4dd9-93b1-8c11493bda22"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[V_POS_13]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 95.757359,
+                        "y": 104.36992
+                    },
+                    "uuid": "52f4559c-497c-46bb-8e91-efe7e9336393"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[V_POS_09]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 96.040202,
+                        "y": 102.390021
+                    },
+                    "uuid": "7ff9f34f-b29e-4e3d-89c0-cbb6b58fd646"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[V_POS_08]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 96.88873,
+                        "y": 102.672864
+                    },
+                    "uuid": "850b6f50-c571-4396-9f39-350ec0918e46"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[V_POS_13]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 96.323045,
+                        "y": 104.935606
+                    },
+                    "uuid": "81cda462-1e28-4b87-8790-bc08d279047d"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[C_R4C3]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 99.717157,
+                        "y": 99.844437
+                    },
+                    "uuid": "8201d142-fb54-4e3b-8825-a4756ae0d1fc"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[V_POS_09]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 96.323045,
+                        "y": 102.672864
+                    },
+                    "uuid": "84233b50-efc8-4395-9330-f73b1bbe0688"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[V_POS_09]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 97.171573,
+                        "y": 103.521392
+                    },
+                    "uuid": "c99f3fa8-c270-4c4d-b3dd-89c0676a6da5"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[V_POS_03]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 98.868629,
+                        "y": 101.824336
+                    },
+                    "uuid": "cdd7e0a5-54cf-4b5a-a8d9-60cc45223b8d"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[C_R6C3]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 91.839988,
+                        "y": 89.633815
+                    },
+                    "uuid": "a92231fb-b940-4669-b88a-5be1bc30ee9e"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[V_POS_02]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 98.585786,
+                        "y": 100.975808
+                    },
+                    "uuid": "ac404f5f-db14-4ed2-917d-b9252806498c"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[V_POS_13]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 95.191674,
+                        "y": 103.804235
+                    },
+                    "uuid": "c8455089-b1a1-4975-8ef2-1b6f398bc542"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[V_POS_12]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 95.474517,
+                        "y": 103.521392
+                    },
+                    "uuid": "a7019b82-db3b-4109-8db2-b947f5003b2e"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[C_R2C1]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 93.254201,
+                        "y": 88.219601
+                    },
+                    "uuid": "db2f9adc-c3b8-4a8e-a3dd-e01c2714f4c1"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[V_POS_12]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 95.191674,
+                        "y": 103.23855
+                    },
+                    "uuid": "b4422df5-dc8e-4c22-9507-0d17d9ed65a0"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[V_POS_01]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 98.302944,
+                        "y": 100.12728
+                    },
+                    "uuid": "bd4f2bb7-40f1-4575-a307-671966a43d82"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[V_POS_03]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 98.302944,
+                        "y": 101.258651
+                    },
+                    "uuid": "d92d5f00-c864-4bbd-b941-82686fec8218"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[V_POS_05]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 98.585786,
+                        "y": 102.672864
+                    },
+                    "uuid": "bcc274ad-e32d-4cca-954c-eee9b7556734"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[V_POS_03]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 99.151472,
+                        "y": 102.107179
+                    },
+                    "uuid": "d62f47a6-808e-4b27-8949-8eb0b11a90f9"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[V_POS_10]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 96.605887,
+                        "y": 103.521392
+                    },
+                    "uuid": "a6b99fd5-b1b5-4c1a-a056-8744953dc7cc"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[V_POS_02]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 98.868629,
+                        "y": 101.258651
+                    },
+                    "uuid": "b2d32338-8b96-4df0-a613-37d3d7074b84"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[V_POS_02]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 90.99146,
+                        "y": 90.482343
+                    },
+                    "uuid": "8e8284fa-5ba1-4e4c-8d78-9daed2035da5"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[V_POS_13]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 95.474517,
+                        "y": 104.087078
+                    },
+                    "uuid": "c2f37721-2d1e-49b4-b4a9-0aecc37ce37e"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[V_POS_10]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 97.171573,
+                        "y": 104.087078
+                    },
+                    "uuid": "95e4382c-c04e-4528-9b14-a3453c179b80"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[V_POS_01]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 99.151472,
+                        "y": 100.975808
+                    },
+                    "uuid": "b2829db1-5da8-40b9-96b1-33430b4b6a1a"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[V_POS_12]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 96.040202,
+                        "y": 104.087078
+                    },
+                    "uuid": "950ea842-cdb9-499a-a848-b0689d4214ab"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[V_POS_08]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 96.323045,
+                        "y": 102.107179
+                    },
+                    "uuid": "ba8c1296-065b-4600-9164-24898d9a1175"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[V_POS_03]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 90.708617,
+                        "y": 90.765185
+                    },
+                    "uuid": "c2eed4b7-9474-4c05-bb77-f683211fd51a"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[V_POS_03]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 97.737258,
+                        "y": 100.692965
+                    },
+                    "uuid": "bf7bfca5-27a6-4e4e-83f6-45beeacced25"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[V_POS_03]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 98.020101,
+                        "y": 100.975808
+                    },
+                    "uuid": "8a3b25e9-61f1-45ae-b54b-0da7b13b3b06"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[V_POS_06]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 89.860089,
+                        "y": 91.613714
+                    },
+                    "uuid": "dc611196-2c68-4103-8bc9-71c661b65929"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[V_POS_10]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 96.323045,
+                        "y": 103.23855
+                    },
+                    "uuid": "9a9a5553-8ec0-4817-a423-1a34a443f0ca"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[V_POS_06]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 97.171573,
+                        "y": 101.824336
+                    },
+                    "uuid": "ab10a625-06ca-4eaa-a686-4549c314eef2"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[V_POS_13]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 94.908831,
+                        "y": 103.521392
+                    },
+                    "uuid": "a83cf6cf-2967-4769-adbd-0058de3b6930"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[V_POS_05]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 98.020101,
+                        "y": 102.107179
+                    },
+                    "uuid": "9db3683d-4890-4e0e-8f43-2eb56051d696"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[V_POS_08]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 96.605887,
+                        "y": 102.390021
+                    },
+                    "uuid": "b7efa19f-5be6-46c4-9ff1-290a40989f32"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[V_POS_07]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 96.88873,
+                        "y": 102.107179
+                    },
+                    "uuid": "af0f89f1-9891-4339-a931-c862b66c3c2e"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[C_R6C1]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 91.557145,
+                        "y": 89.916657
+                    },
+                    "uuid": "d5efe398-38fd-473f-bd71-cc7daccd1e86"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[V_POS_04]在 LM_E2 上, 优先级 0",
+                    "pos": {
+                        "x": 97.454416,
+                        "y": 100.975808
+                    },
+                    "uuid": "bf28574e-3653-4b6f-babe-acda5f6bcb0d"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        }
+    ]
+}

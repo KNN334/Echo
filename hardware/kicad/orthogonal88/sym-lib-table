@@ -1,0 +1,2 @@
+(sym_lib_table (version 7)
+      (lib (name "OrthogonalPatch") (type "KiCad") (uri "${KIPRJMOD}/OrthogonalPatch.kicad_sym") (options "") (descr "Source-grounded topology")))

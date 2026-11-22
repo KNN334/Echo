@@ -1,0 +1,38 @@
+{
+  "meta": {
+    "filename": "E1.kicad_pro",
+    "version": 3
+  },
+  "board": {
+    "design_settings": {
+      "rules": {
+        "min_clearance": 0.03,
+        "min_track_width": 0.03,
+        "min_copper_edge_clearance": 0.2
+      },
+      "track_widths": [
+        0,
+        0.03
+      ]
+    }
+  },
+  "net_settings": {
+    "meta": {
+      "version": 3
+    },
+    "classes": [
+      {
+        "name": "Default",
+        "clearance": 0.03,
+        "track_width": 0.03,
+        "via_diameter": 0.15,
+        "via_drill": 0.07,
+        "microvia_diameter": 0.1,
+        "microvia_drill": 0.05
+      }
+    ],
+    "netclass_patterns": [],
+    "netclass_assignments": null,
+    "net_colors": null
+  }
+}

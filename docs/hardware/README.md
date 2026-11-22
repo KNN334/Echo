@@ -7,6 +7,7 @@
 1. [软件使用说明（Word）](documents/01_KiCad中文使用说明.docx) / [PDF](documents/01_KiCad中文使用说明.pdf) / [Markdown](01_KiCad中文使用说明.md)
 2. [从零绘制电极图（Word）](documents/02_从零绘制电极图教程.docx) / [PDF](documents/02_从零绘制电极图教程.pdf) / [Markdown](02_从零绘制电极图教程.md)
 3. [打开可编辑教学工程](../../hardware/kicad/electrode8/electrode8.kicad_pro)，并在新工程中跟随第二份教程重画。
+4. [论文正交 88 通道复现说明](03_论文正交88通道复现.md) / [PDF](documents/03_论文正交88通道复现.pdf)：依据论文拓扑和节距建立的[独立工程](../../hardware/kicad/orthogonal88/orthogonal88.kicad_pro)，附四层信号掩模、返回/屏蔽示意及连接审核。它包含补充的工程参数，不是作者原版加工 CAD。
 
 ![8 通道电极接点与引出线](../../hardware/kicad/electrode8/exports/electrode8_preview.png)
 

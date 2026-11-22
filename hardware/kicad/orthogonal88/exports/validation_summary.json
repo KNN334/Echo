@@ -1,0 +1,59 @@
+{
+  "physical_channels": 88,
+  "subelements": 348,
+  "schematic_components": 438,
+  "electrical_nets": 89,
+  "common_return_nodes": 350,
+  "logical_elements_per_axis": 32,
+  "erc_violations": 0,
+  "minimum_track_to_foreign_access_contact_clearance_mm": 0.035,
+  "drc": {
+    "E1": {
+      "errors": 0,
+      "warnings": 0,
+      "unconnected": 0,
+      "violation_types": {}
+    },
+    "E2": {
+      "errors": 0,
+      "warnings": 0,
+      "unconnected": 0,
+      "violation_types": {}
+    },
+    "E3": {
+      "errors": 0,
+      "warnings": 0,
+      "unconnected": 0,
+      "violation_types": {}
+    },
+    "E4": {
+      "errors": 0,
+      "warnings": 0,
+      "unconnected": 0,
+      "violation_types": {}
+    },
+    "RETURN": {
+      "errors": 0,
+      "warnings": 0,
+      "unconnected": 0,
+      "violation_types": {}
+    },
+    "SHIELD": {
+      "errors": 0,
+      "warnings": 0,
+      "unconnected": 0,
+      "violation_types": {}
+    },
+    "main": {
+      "errors": 0,
+      "warnings": 199,
+      "unconnected": 0,
+      "violation_types": {
+        "isolated_copper": 199
+      }
+    }
+  },
+  "schematic_pcb_parity": "Not applicable: multilayer mask abstraction; not a conventional PCB assembly.",
+  "fabrication_validation": false,
+  "vertical_access_depths_and_material_stack_verified": false
+}
