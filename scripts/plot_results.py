@@ -19,10 +19,18 @@ def main(argv=None):
     parser.add_argument('--output', default='reports/result_analysis/camus_cuda_progress')
     parser.add_argument('--no-images', action='store_true', help='没有病例缓存时跳过叠图和半周期示例')
     options = parser.parse_args(argv)
-    from src.visualization.analysis import build_analysis
-    result = build_analysis(project_path(options.results), project_path(options.training),
-                            None if options.no_images else project_path(options.prepared),
-                            project_path(options.output))
+    from src.utils.io import read_json
+    summary = read_json(project_path(options.results) / 'summary.json')
+    if 'echonet_dynamic' in summary.get('dataset_kinds', []):
+        from src.visualization.public_baseline import build_public_analysis
+        result = build_public_analysis(project_path(options.results), project_path(options.training),
+                                       None if options.no_images else project_path(options.prepared),
+                                       project_path(options.output))
+    else:
+        from src.visualization.analysis import build_analysis
+        result = build_analysis(project_path(options.results), project_path(options.training),
+                                None if options.no_images else project_path(options.prepared),
+                                project_path(options.output))
     print(f'完成 {result["figures"]} 张结果分析图，测试患者 {result["patients"]} 位。')
     print(f'图集：{Path(result["output"]) / "index.html"}')
     return result

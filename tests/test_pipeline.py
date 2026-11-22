@@ -36,7 +36,10 @@ def test_end_to_end_export_and_missing_co(tmp_path,monkeypatch):
     out=tmp_path/'results'
     result=evaluate(test_manifest,weights,out,device='cpu')
     assert result['cases_failed']==0 and result['labeled_frames']==2
+    assert result['frames'] == 4  # inference/geometry runs on every frame, not only labeled frames
     assert result['dice_patient_mean']==1
     assert result['manual_keypoint_error'] is None and result['beats']==0
     assert result['function']['single_plane_area_length_4CH']['CO']['mae'] is None
     assert (out/'report.html').exists() and (out/(key+'_features.json')).exists()
+    assert (out/'evidence_status.json').exists()
+    assert result['evidence_status']['physical_geometry']['status'] == 'available'

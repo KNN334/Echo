@@ -88,6 +88,9 @@ Echo/
 │   │   # 数据集路径、视图和处理约定
 │   │   ├── camus.yaml
 │   │   │   # CAMUS 数据目录、子集清单、患者数及预处理尺寸等参数
+│   │   ├── echonet.yaml
+│   │   │   # EchoNet-Dynamic 处理后数据目录、A4C 视图和
+│   │   │   # study-level 限制
 │   │   └── patch.yaml
 │   │       # Patch mainline data directory, four views,
 │   │       # patient split and 512x512 preprocessing
@@ -106,6 +109,8 @@ Echo/
 │   │   # 固定训练/验证/测试患者归属，防止同一患者跨集合
 │   ├── experiment.yaml
 │   │   # 实验总入口：合并组件配置，指定初始权重和训练/测试输出路径
+│   ├── experiment_echonet.yaml
+│   │   # EchoNet-Dynamic 下游视频分割基线实验入口与输出路径
 │   ├── experiment_patch.yaml
 │   │   # Patch mainline planning experiment
 │   │   # configuration
@@ -145,6 +150,8 @@ Echo/
 │   │   # through independent validation
 │   ├── patch_study_design.md
 │   │   # 采集到独立功能验证的研究主线、公开/仿真/实测证据分工及一轮图表候选
+│   ├── public_baseline_workflow.md
+│   │   # 按手写笔记主线组织 CAMUS/EchoNet 下游基线及证据边界
 │   ├── pycharm_run.md
 │   │   # PyCharm 环境确认、三个入口运行和配置修改步骤
 │   └── result_analysis.md
@@ -335,6 +342,8 @@ Echo/
 │   │   # 从匹配的冻结实验导出患者级图集及可追溯源数据
 │   ├── prepare_data.py
 │   │   # 阶段 1：核查已有处理后数据，生成固定患者级三份子集清单
+│   ├── prepare_echonet.py
+│   │   # 将 EchoNet-Dynamic 原始视频和轮廓转换为统一可审计病例格式
 │   └── train.py
 │       # 阶段 2：读取训练/验证清单，启动训练并保存配置和完成记录
 ├── src/
@@ -363,6 +372,8 @@ Echo/
 │   │   │   # Python 包初始化与模块说明，无需单独运行
 │   │   ├── base.py
 │   │   │   # 数据适配器接口与带标注帧 Dataset，供训练和评价统一读取
+│   │   ├── echonet.py
+│   │   │   # EchoNet-Dynamic 视频、轮廓和数据集参考标签的统一预处理
 │   │   ├── manifests.py
 │   │   │   # 读取子集病例清单，解析数据根目录并校验源 manifest 摘要
 │   │   ├── medical_io.py
@@ -404,6 +415,8 @@ Echo/
 │   │   │   # Python 包初始化与模块说明，无需单独运行
 │   │   ├── cardiac.py
 │   │   │   # 按患者汇总心功能 MAE、偏倚及不确定性
+│   │   ├── evidence.py
+│   │   │   # 按主线阶段汇总空间、时间、参考和患者身份的证据可用性
 │   │   ├── segmentation.py
 │   │   │   # Dice、ASSD、HD95 及关键点距离误差
 │   │   └── temporal.py
@@ -469,6 +482,8 @@ Echo/
 │   │   │   # 将预测/参考轮廓叠加到超声图像
 │   │   ├── plots.py
 │   │   │   # 绘制容积等时序曲线
+│   │   ├── public_baseline.py
+│   │   │   # 面向 CAMUS/EchoNet 单视图或缺失标定数据的通用基线图集
 │   │   └── report.py
 │   │       # 汇总指标、图像和曲线生成离线 HTML 报告
 │   └── __init__.py
@@ -495,6 +510,8 @@ Echo/
 │   │   # 检查左室标签身份、原始标注/坐标保留及声窗保护回退
 │   ├── test_config.py
 │   │   # 检查 YAML 合并、路径、模型工厂与三阶段入口衔接
+│   ├── test_echonet.py
+│   │   # 检查 EchoNet 预处理、轮廓相位和缺失证据状态
 │   ├── test_experiment.py
 │   │   # 检查处理后数据审计、子集清单与输出目录保护
 │   ├── test_geometry.py

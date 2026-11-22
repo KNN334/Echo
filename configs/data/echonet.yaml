@@ -1,0 +1,14 @@
+adapter: prepared
+dataset: data/processed/echonet
+split_assignments: configs/echonet_splits.json
+train_path: data/processed/echonet/splits/train.json
+val_path: data/processed/echonet/splits/val.json
+test_path: data/processed/echonet/splits/test.json
+split_seed: 2026
+expected_patients: 10030
+views: [A4C]
+split_unit: study_proxy
+preprocessing:
+  output_hw: [112, 112]
+  intensity_range: [0, 255]
+  roi_reviewed: false

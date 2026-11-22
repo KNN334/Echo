@@ -18,9 +18,17 @@ def build_report(output):
     parts=['<!doctype html><meta charset="utf-8"><title>Echo 研究结果</title>',
            '<style>body{font:16px system-ui;max-width:1080px;margin:32px auto;padding:0 20px;color:#172b3a} section{margin:28px 0} table{border-collapse:collapse;width:100%}th,td{border-bottom:1px solid #ddd;text-align:left;padding:8px}svg{width:100%;height:auto}img{max-width:100%}.note{background:#fff2cf;padding:14px}a{color:#12648c}</style>',
            '<h1>CAMUS / EchoNet 研究结果</h1>',
-           '<p class="note">'+html.escape(summary['experiment_type'])+'。人工关键点、独立 CO 参考缺失时不计算其误差。灰色原始容积，蓝色分析曲线；断线表示无效或缺失。</p>',
+           '<p class="note">'+html.escape(summary['experiment_type'])+'。逐帧曲线来自整段推理；专家 ED/ES 结果只用于阶段性误差隔离。人工关键点、独立 CO 参考缺失时不计算其误差。灰色原始容积，蓝色分析曲线；断线表示无效或缺失。</p>',
            f"<p>患者 {summary['patients']}，标注帧 {summary['labeled_frames']}，失败病例 {summary['cases_failed']}，Dice {summary['dice_patient_mean']}，HD95(mm) {summary['hd95_mm']}</p>",
-           '<p><a href="frames.csv">逐帧特征</a> · <a href="function.csv">EDV / ESV / SV / EF / CO</a> · <a href="structure.csv">结构误差</a> · <a href="summary.json">完整指标及溯源</a></p>']
+           '<p><a href="frames.csv">逐帧特征</a> · <a href="function.csv">EDV / ESV / SV / EF / CO</a> · <a href="structure.csv">结构误差</a> · <a href="evidence_status.json">阶段证据状态</a> · <a href="summary.json">完整指标及溯源</a></p>']
+    stages = summary.get('evidence_status', {})
+    parts.append('<h2>按笔记主线的阶段证据状态</h2><table><tr><th>阶段</th><th>状态</th><th>可用病例</th><th>覆盖率</th><th>缺失原因</th></tr>')
+    for stage, item in stages.items():
+        reasons = '; '.join(item.get('reasons', []))
+        parts.append('<tr>'+''.join('<td>'+html.escape(str(x))+'</td>' for x in (
+            stage, item.get('status'), f"{item.get('available_cases', 0)}/{item.get('total_cases', 0)}",
+            f"{100 * item.get('coverage', 0):.1f}%", reasons))+'</tr>')
+    parts.append('</table>')
     parts.append('<h2>功能指标 MAE（按参考口径分开）</h2><table><tr><th>口径</th><th>指标</th><th>MAE</th><th>单位</th><th>患者数</th></tr>')
     for method,metrics in summary['function'].items():
         for key,value in metrics.items():

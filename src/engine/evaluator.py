@@ -17,6 +17,7 @@ from ..temporal.quality_gate import quality_flags
 from ..temporal.smoothing import smooth_curve
 from ..temporal.beat_detection import detect_beats
 from ..data.base import build_adapter
+from ..metrics.evidence import aggregate_stage_status, case_stage_status
 
 
 def evaluate(test_path, weights, output, split="test", normalization=None, device="cuda", limit=None,
@@ -45,14 +46,19 @@ def evaluate(test_path, weights, output, split="test", normalization=None, devic
     refs = read_json(references) if references else {}
     manual = read_json(manual_landmarks) if manual_landmarks else {}
     structures, frame_rows, functional_rows, beat_rows, failures = [], [], [], [], []
+    metadata_rows = []
     biplane = {}
     camus_ef = {}
     started = time.perf_counter()
     for case in cases:
         key, pid, view = case["case_id"], case["patient_id"], case["view"]
         checkpoint_lengths=[len(x) for x in (structures,frame_rows,functional_rows,beat_rows)]
+        meta = None
         try:
             data, meta = source.load_case(case)
+            meta = dict(meta)
+            meta.setdefault('case_id', key)
+            metadata_rows.append(meta)
             frames = data['frames']
             gt_original = {int(i): g for i,g in zip(data['original_gt_indices'], data['original_gt'])}
             probabilities = predict(model, frames, mean, std, device)
@@ -80,6 +86,7 @@ def evaluate(test_path, weights, output, split="test", normalization=None, devic
                 row = {"case_id": key, "patient_id": pid, "view": view, "frame": index,
                        "time_s": times[index] if times is not None else None,
                        "volume_ml": f.get("volume_ml"), "area_mm2": f.get("area_mm2"),
+                       "volume_pixel3_proxy": f.get("volume_pixel3"),
                        "long_axis_mm": f.get("long_axis_mm"), "valid": valid[-1],
                        "confidence": confidence, "quality_flags": ";".join(flags)}
                 if lp:
@@ -120,6 +127,11 @@ def evaluate(test_path, weights, output, split="test", normalization=None, devic
             for row, volume in zip(frame_rows[-len(frames):],curve):
                 row["analysis_volume_ml"] = float(volume) if np.isfinite(volume) else None
                 row["temporal_filtered"] = temporal
+            pixel_values = np.asarray([features[index].get('volume_pixel3') if valid[index] else np.nan
+                                       for index in range(len(frames))], dtype=float)
+            pixel_curve = smooth_curve(pixel_values, valid) if temporal else pixel_values
+            for row, volume_proxy in zip(frame_rows[-len(frames):], pixel_curve):
+                row["analysis_volume_pixel3_proxy"] = float(volume_proxy) if np.isfinite(volume_proxy) else None
             phases = meta.get("phases", {})
             reported_ef=meta.get('config',{}).get('EF')
             if reported_ef is not None:
@@ -138,6 +150,21 @@ def evaluate(test_path, weights, output, split="test", normalization=None, devic
                       "phase_selection":"reference_ED_ES_for_segmentation_error_isolation"}
                 fr.update({"ref_"+k:tf[k] for k in ("EDV","ESV","SV","EF","CO")})
                 functional_rows.append(fr)
+                if meta.get('dataset_kind') == 'echonet_dynamic':
+                    pixel_edv = features.get(ed, {}).get('volume_pixel3')
+                    pixel_esv = features.get(es, {}).get('volume_pixel3')
+                    pixel_result = functional(pixel_edv, pixel_esv)
+                    functional_rows.append({
+                        'patient_id': pid, 'view': view,
+                        'method': 'single_plane_pixel_proxy_at_reference_ED_ES',
+                        'reference_scope': 'EchoNet_dataset_labels',
+                        'phase_selection': 'EchoNet_traced_ED_ES_frames',
+                        'pixel_EDV_proxy': pixel_edv, 'pixel_ESV_proxy': pixel_esv,
+                        'EF': pixel_result['EF'], 'ref_EF': meta.get('reference', {}).get('EF'),
+                        'SV': None, 'EDV': None, 'ESV': None, 'CO': None, 'HR': None,
+                        'issues': '' if pixel_result['EF'] is not None else ';'.join(pixel_result['issues']),
+                        'proxy_scope': 'pixel_geometry_EF_only_not_calibrated_volumes',
+                    })
                 # 分别记录参考 ED/ES 帧上的分割误差和预测曲线自动选相位的结果。
                 valid_indices=np.flatnonzero(np.asarray(valid)&np.isfinite(curve))
                 if len(valid_indices)>=2:
@@ -156,7 +183,30 @@ def evaluate(test_path, weights, output, split="test", normalization=None, devic
                 for phase, index in phases.items():
                     biplane.setdefault(pid,{}).setdefault(phase,{})[view] = {
                         "pred": features[index] if valid[index] else {}, "truth":truth_features.get(index,{})}
-            if meta.get("sequence_type") == "sequence":
+            if meta.get('dataset_kind') == 'echonet_dynamic':
+                pixel_valid = np.isfinite(pixel_curve)
+                candidates = np.flatnonzero(pixel_valid)
+                if len(candidates) >= 2:
+                    auto_ed = int(candidates[np.argmax(pixel_curve[candidates])])
+                    after = candidates[candidates > auto_ed]
+                    if len(after):
+                        auto_es = int(after[np.argmin(pixel_curve[after])])
+                        proxy = functional(float(pixel_curve[auto_ed]), float(pixel_curve[auto_es]))
+                        functional_rows.append({
+                            'patient_id': pid, 'view': view,
+                            'method': 'single_plane_pixel_proxy_auto_extrema',
+                            'reference_scope': 'EchoNet_dataset_labels',
+                            'phase_selection': 'predicted_video_extrema_over_acquired_clip',
+                            'ed_frame': auto_ed, 'es_frame': auto_es,
+                            'pixel_EDV_proxy': float(pixel_curve[auto_ed]),
+                            'pixel_ESV_proxy': float(pixel_curve[auto_es]),
+                            'EF': proxy['EF'],
+                            'ref_EF': meta.get('reference', {}).get('EF'),
+                            'EDV': None, 'ESV': None, 'SV': None, 'CO': None, 'HR': None,
+                            'issues': '' if proxy['EF'] is not None else ';'.join(proxy['issues']),
+                            'proxy_scope': 'pixel_geometry_EF_only_not_calibrated_volumes',
+                        })
+            if meta.get("sequence_type") == "sequence" and meta.get("full_cycle_verified", False):
                 for beat in detect_beats(curve,times,valid):
                     beat_rows.append({"patient_id":pid,"case_id":key,"view":view,**{k:v for k,v in beat.items() if k!='issues'}})
             if len(cases) <= 10 or (cases.index(case)+1)%20==0:
@@ -166,6 +216,8 @@ def evaluate(test_path, weights, output, split="test", normalization=None, devic
             # 病例失败时撤销该病例已追加的结果，避免半成品混入汇总。
             for collection,length in zip((structures,frame_rows,functional_rows,beat_rows),checkpoint_lengths):
                 del collection[length:]
+            if meta is not None and metadata_rows and metadata_rows[-1] is meta:
+                metadata_rows.pop()
             for phase in biplane.get(pid,{}).values():
                 phase.pop(view,None)
             failures.append({"case_id":key,"error":str(e),'traceback':traceback.format_exc()})
@@ -234,10 +286,21 @@ def evaluate(test_path, weights, output, split="test", normalization=None, devic
              "valid_frame_fraction":float(np.mean([x['valid'] for x in frame_rows])) if frame_rows else None,
              "timing_seconds":duration,"end_to_end_fps":len(frame_rows)/duration,
              "temporal":temporal,"gate":gate,
-             "experiment_type":ckpt.get('run',{}).get('experiment_type','external_checkpoint_cross_dataset')}
+             "experiment_type":ckpt.get('run',{}).get('experiment_type','external_checkpoint_cross_dataset'),
+             "evidence_status":aggregate_stage_status(metadata_rows),
+             "evidence_status_scope":"evaluated_cases_only",
+             "dataset_kinds":sorted({m.get('dataset_kind', 'prepared_public') for m in metadata_rows}),
+             "split_units":sorted({m.get('patient_identity_scope',
+                                         'study_proxy' if m.get('dataset_kind') == 'echonet_dynamic' else 'patient')
+                                    for m in metadata_rows})}
     for name, rows in [('frames',frame_rows),('structure',structures),('function',functional_rows),('beats',beat_rows)]:
         write_csv(out/(name+'.csv'),rows)
     write_json(out/'summary.json',summary)
+    write_json(out/'evidence_status.json', {
+        'cases': [{'patient_id': meta.get('patient_id'), 'case_id': meta.get('case_id'),
+                   'status': case_stage_status(meta)} for meta in metadata_rows],
+        'aggregate': summary['evidence_status'],
+    })
     from ..visualization.report import build_report
     build_report(out)
     return summary
