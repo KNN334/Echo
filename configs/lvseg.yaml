@@ -1,0 +1,27 @@
+dataset:
+  source_inventory: docs/data_sources/camus_download_manifest.json
+  raw_root: data/raw/camus_video
+  prepared_root: data/processed/camus_video
+  fixed_patient_splits: configs/splits/camus_patients.json
+  image_hw: [192, 256]
+
+training:
+  models: [UNet, Attention-UNet, UNet++, UNet-mini, VGG16-UNet]
+  base_channels: 24
+  epochs: 20
+  batch_size: 4
+  learning_rate: 0.0003
+  weight_decay: 0.0001
+  early_stopping_patience: 5
+  seed: 2026
+  horizontal_flip: true
+  workers: 0
+  device: auto
+
+evaluation:
+  output_root: runs/lvseg_baselines
+  threshold: 0.5
+  simpson_disks: 20
+  min_heart_period_s: 0.30
+  max_heart_period_s: 2.50
+  curve_examples_per_patient: 2

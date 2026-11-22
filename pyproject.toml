@@ -3,26 +3,27 @@ requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "patch-echo-monitor"
-version = "0.5.0"
-description = "Traceable CAMUS / EchoNet cardiac segmentation and function baseline"
+name = "lv-video-segmentation"
+version = "0.6.0"
+description = "CAMUS / EchoNet left-ventricle cine segmentation and volume baselines"
 requires-python = ">=3.10"
 dependencies = ["numpy>=1.24", "scipy>=1.10", "Pillow>=10", "PyYAML>=6.0"]
 
 [project.optional-dependencies]
-model = ["torch>=2.2", "torchvision>=0.17", "tqdm>=4.66"]
-medical = ["SimpleITK>=2.3", "opencv-python-headless>=4.9", "pydicom>=2.4"]
+model = ["torch>=2.2"]
+medical = ["SimpleITK>=2.3", "opencv-python-headless>=4.9"]
 visualization = ["matplotlib>=3.8"]
-test = ["pytest>=8"]
+test = ["pytest>=8", "torch>=2.2", "matplotlib>=3.8"]
 
 [project.scripts]
-echo-prepare = "scripts.prepare_data:cli"
-echo-train = "scripts.train:cli"
-echo-evaluate = "scripts.evaluate:cli"
-echo-plot-results = "scripts.plot_results:cli"
+lvseg-download-camus = "scripts.download_camus:cli"
+lvseg-prepare-camus = "scripts.prepare_camus:cli"
+lvseg-prepare-echonet = "scripts.prepare_echonet:main"
+lvseg-run-baselines = "scripts.run_baselines:cli"
+lvseg-plot-volume-curve = "scripts.plot_volume_curve:cli"
 
 [tool.setuptools.packages.find]
-include = ["src*", "scripts*"]
+include = ["lvseg*", "scripts*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

@@ -1,86 +1,35 @@
-# PyCharm 三阶段运行指南
+# PyCharm 运行步骤
 
-项目日常使用三个互相独立的入口。数据只从本地处理后数据集读取，不会下载公开数据或从原始影像重新预处理。
+确保 PyCharm 使用项目 `.venv` 中的 Python，并安装根目录 `requirements.txt` 中的依赖。
 
-## 首次准备
-
-1. 在 PyCharm 打开项目根目录，确认解释器为项目 `.venv/Scripts/python.exe`。
-2. 运行“00 检查实验环境”。输出应显示 `is_project_venv: true`、PyTorch 版本和 CUDA 状态；训练、评价与绘图入口会拒绝使用其他解释器。
-3. 将已处理的数据包解压到 `data/processed/camus/`。目录中应有 `manifest.json`、每个病例的 `.npz` 数组和 `.json` 元数据。
-4. 打开 `configs/experiment.yaml`。它会合并 `configs/model/`、`configs/data/` 和 `configs/train/` 中列出的 YAML 文件。到 `configs/data/camus.yaml` 确认 `dataset` 指向数据目录，期望患者数为 500。
-5. 运行 `scripts/prepare_data.py`。它核查数据完整性、原始标签、坐标变换和时间记录，然后按固定患者清单写出三个子集清单。
-
-如果没有初始化权重，可以在训练配置中将 `initial_weights` 设为 `null` 从头训练；已有 EchoNet 权重时将其放在 `checkpoints/` 并填写路径。此训练权重不属于数据下载流程。
-
-## 完整运行
-
-1. 展开 `scripts` 文件夹，右键 `prepare_data.py`，选择“运行”。确认训练、验证、测试清单已生成。
-2. 右键同目录的 `train.py`，选择“运行”。它只读 `train.json` 与 `val.json`，用验证损失选模。控制台显示带时间戳的进度、速度、耗时及剩余时间。
-3. 右键同目录的 `evaluate.py`，选择“运行”。它只读 `test.json` 和训练好的 `best.pt`，导出最终结果。
-
-也可以从右上角运行配置依次选择“00 检查实验环境”“01 数据读取与固定患者划分”“02 训练模型”“03 测试与生成结果”。这些配置都使用项目 `.venv`，并启用解释器校验。已更新的配置指向 `scripts/`。如果 PyCharm 仍显示旧配置，进入“运行 → 编辑配置”，将脚本路径改成上述新路径，并选择项目 `.venv`。
-
-PyCharm 自动创建的运行配置需将工作目录设为项目根目录，解释器使用项目虚拟环境。也可以直接在 PyCharm 终端依次运行：
+首次获取完整 CAMUS 数据并准备训练文件：
 
 ```powershell
-.\.venv\Scripts\python.exe scripts/prepare_data.py
-.\.venv\Scripts\python.exe scripts/train.py
-.\.venv\Scripts\python.exe scripts/evaluate.py
+.venv\Scripts\python.exe scripts\download_camus.py --workers 4
+.venv\Scripts\python.exe scripts\prepare_camus.py
 ```
 
-## 配置说明
+训练五个固定基线并评价：
 
-主配置为 `configs/experiment.yaml`，组件默认值在 `defaults` 指定的 YAML 文件里，主配置的同名字段优先。支持 `#` 注释。需要更换整套实验时，复制主配置，再通过 PyCharm 的“脚本参数”填写 `--config configs/你的实验.yaml`。
-
-| 字段 | 作用 |
-|---|---|
-| `data.dataset` | 已处理数据根目录，默认 `data/processed/camus` |
-| `data.split_assignments` | 固定的患者级划分；同一患者不会跨集合 |
-| `data.train_path` | prepare 生成的训练病例清单 |
-| `data.val_path` | prepare 生成的验证病例清单 |
-| `data.test_path` | prepare 生成的测试病例清单 |
-| `data.expected_patients` | 数据完整性预期患者数 |
-| `train.*` | 训练轮数、批大小、学习率、设备、初始化权重和输出目录 |
-| `test.*` | 最终测试权重、设备、参考数据和结果目录 |
-| `model.*` | 模型工厂使用的网络名称、输入通道与前景通道 |
-
-数据路径在 `configs/data/camus.yaml`，训练轮数/批大小在 `configs/train/baseline.yaml`。如果将训练输出改为 `checkpoints/experiment_02`，同时将测试权重改为 `checkpoints/experiment_02/best.pt`，测试输出改为 `runs/experiment_02`。目录中已有内容时请使用新名称；程序不会覆盖旧实验。
-
-本次配置使用 `camus_regularized_v2`，保留原来的 `camus_regularized` 记录。命令行或右键启动脚本也会校验 `.venv`，无需额外设置环境变量。日志副本默认对应 `checkpoints/<实验名>` 下的训练；自定义到其他位置时，日志仍保存在该训练输出目录。
-
-prepare 写出的清单只包含病例路径索引和溯源信息，不会复制数据数组。三个阶段分工如下：
-
-```text
-data/processed/camus/
-        │
-        ▼
-scripts/prepare_data.py ──按患者固定划分──> train.json / val.json / test.json
-                                  │              │              │
-                                  ▼              ▼              ▼
-                               train.py      train.py       evaluate.py
-                               读取训练集     读取验证集       只读取测试集
-                                  └──── best.pt ───┘
+```powershell
+.venv\Scripts\python.exe scripts\run_baselines.py --stage all --device cuda
 ```
 
-## 输出与安全规则
+没有 CUDA 时将 `--device cuda` 改为 `--device cpu`。查看单个模型可追加 `--model UNet-mini`。仅流程冒烟测试可使用 `--epochs 1 --limit-test-cines 1`；此结果不作为正式模型评价。
 
-- `scripts/prepare_data.py` 输出 `data/processed/camus/splits/{train,val,test}.json` 及本次数据审计记录。
-- `scripts/train.py` 输出 `best.pt`、`run.json`、`training.csv`、`training.log` 和完整合并配置快照。归一化仅来自训练集；验证集用于选模及可选早停。
-- 训练日志另存于 `reports/training/<实验名>/`，包含可直接查看的 `training_log.txt`、每轮损失与耗时 `training.csv`、运行环境/参数 `run.json` 和完成记录。当前代码更新前的 `camus_regularized` 23 轮实验也已归档；旧记录未保存完整 Python 环境信息，不能据此补推版本。
-- `scripts/evaluate.py` 输出分割掩膜、逐帧特征、Dice、边界距离、关键点误差、功能参数及 MAE 汇总和 `report.html`。运行结束后可在浏览器打开该 HTML。
-- 新训练或测试结果必须使用新的输出目录。程序会拒绝覆盖已经存在内容的目录。
-- 绝对容积需要空间标定。没有可靠完整周期或来源明确的心率时，CO 保持空值；没有人工关键点标签时，人工关键点误差保持空值。
-- 工程测试通过不等于临床有效性验证。当前正式基线与测量口径见 `reports/full_baseline/RESULTS.md` 和 `docs/measurement_protocol.md`。
+脚本入口如下：
 
-## 模块位置
+- `scripts/download_camus.py`：校验下载完整性后获取 CAMUS 原始 cine。
+- `scripts/prepare_camus.py`：统一处理影像帧与专家标注，生成固定划分清单。
+- `scripts/run_baselines.py`：训练、全帧推理、指标汇总与绘图。
+- `scripts/plot_volume_curve.py`：从已有推理 CSV 单独重画一个病例的逐帧容积曲线。
 
-- `src/config/`：YAML 配置合并与项目路径。
-- `src/data/`：通用适配器、病例清单、固定划分、坐标与元数据核查。
-- `src/data/camus/`：CAMUS 专用 Dataset 及可选独立下载/原始数组处理。
-- `src/models/`：模型工厂、DeepLabV3 和分割损失。
-- `src/engine/`：训练、验证、测试循环和进度/选模/早停回调。
-- `src/geometry/`、`src/metrics/`、`src/temporal/`：几何特征、评价指标及时序分析。
-- `src/visualization/`：叠图、容积曲线和 HTML 报告。
-- `src/utils/`：读写、SHA256、设备和随机种子。
-- `tests/`：项目工程回归检查，运行 `python -m pytest -q`。
-- `vendor/echonet/`：带来源与许可信息的 EchoNet 上游代码。
+若已有按官方许可获取的 EchoNet-Dynamic，可运行 `scripts/prepare_echonet.py --raw-root <数据根目录>` 准备完整 A4C 视频。该数据没有空间标定，不能报告绝对容积或 mL/min。
+
+运行检查：
+
+```powershell
+.venv\Scripts\python.exe -m pytest -q
+```
+
+数据在 `data/raw/` 和 `data/processed/`，模型、曲线、指标和图表在 `runs/lvseg_baselines/`。这些文件不提交到 Git。
