@@ -1,0 +1,40 @@
+dataset:
+  prepared_root: data/processed/camus_video
+  fixed_patient_splits: configs/splits/camus_patients.json
+
+training:
+  base_channels: 24
+  epochs: 20
+  batch_size: 4
+  learning_rate: 0.0003
+  weight_decay: 0.0001
+  early_stopping_patience: 5
+  horizontal_flip: true
+  workers: 0
+  seeds: [2026, 2027, 2028]
+  amp: true
+  context_frames: 3
+  edge_weight: 0.1
+  sobel_weight: 0.1
+
+variants:
+  B: {se: false, dilated_residual: false, temporal: false, edge: false}
+  S: {se: true, dilated_residual: false, temporal: false, edge: false}
+  D: {se: false, dilated_residual: true, temporal: false, edge: false}
+  T: {se: false, dilated_residual: false, temporal: true, edge: false}
+  E: {se: false, dilated_residual: false, temporal: false, edge: true}
+  SD: {se: true, dilated_residual: true, temporal: false, edge: false}
+  SDT: {se: true, dilated_residual: true, temporal: true, edge: false}
+  SDTE: {se: true, dilated_residual: true, temporal: true, edge: true}
+  DTE: {se: false, dilated_residual: true, temporal: true, edge: true}
+  STE: {se: true, dilated_residual: false, temporal: true, edge: true}
+  SDE: {se: true, dilated_residual: true, temporal: false, edge: true}
+
+evaluation:
+  threshold: 0.5
+  noise_sigmas: [0.1, 0.2]
+  noise_seed: 51023
+  minimum_dice_gain: 0.002
+  output_root: runs/lvseg_ablation
+  report_root: reports/lvseg_ablation
+  test_policy: freeze_validation_selection_before_one_final_evaluation

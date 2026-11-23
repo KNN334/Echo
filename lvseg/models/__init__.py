@@ -1,4 +1,4 @@
-"""Conventional segmentation baselines; no project-specific model is included."""
+"""Conventional baselines and independently configurable research additions."""
 
 from .architectures import MODEL_NAMES, build_model
 

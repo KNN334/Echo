@@ -15,6 +15,7 @@ from .metrics.cycles import bland_altman, cycle_metrics
 from .metrics.segmentation import overlap_metrics
 from .metrics.volume import simpson_single_plane
 from .models import build_model
+from .data.temporal import causal_clip
 
 
 def _write_csv(path: Path, rows: list[dict]):
@@ -30,9 +31,17 @@ def _predict(model, frames, mean, std, device, batch_size=4, threshold=0.5):
     model.eval()
     with torch.inference_mode():
         for start in range(0, len(frames), batch_size):
-            image = torch.from_numpy(frames[start:start + batch_size].copy()).float()[:, None] / 255.0
+            if getattr(model, "temporal", False):
+                clips = [causal_clip(frames, index, model.context_frames)
+                         for index in range(start, min(start + batch_size, len(frames)))]
+                image = torch.from_numpy(np.asarray([clip for clip, _ in clips])).float()[:, :, None] / 255
+                lengths = torch.tensor([length for _, length in clips], device=device)
+            else:
+                image = torch.from_numpy(frames[start:start + batch_size].copy()).float()[:, None] / 255.0
             image = (image - mean) / std
-            result.extend((model(image.to(device)).sigmoid()[:, 0] >= threshold).cpu().numpy())
+            logits = (model(image.to(device), lengths) if getattr(model, "temporal", False)
+                      else model(image.to(device)))
+            result.extend((logits.sigmoid()[:, 0] >= threshold).cpu().numpy())
     return np.asarray(result, dtype=np.uint8)
 
 
@@ -74,7 +83,7 @@ def evaluate_model(checkpoint_path: str | Path, split_manifest: str | Path,
         device = "cuda" if torch.cuda.is_available() else "cpu"
     torch.set_num_threads(2)
     model = build_model(checkpoint["model"],
-                        base_channels=checkpoint["model_config"]["base_channels"]).to(device)
+                        **checkpoint["model_config"]).to(device)
     model.load_state_dict(checkpoint["state_dict"], strict=True)
     mean, std = checkpoint["normalization"]["mean"], checkpoint["normalization"]["std"]
     output_dir.mkdir(parents=True, exist_ok=True)

@@ -156,7 +156,11 @@ class VGG16UNet(nn.Module):
         return self.head(x)
 
 
-def build_model(name: str, *, in_channels: int = 1, base_channels: int = 32) -> nn.Module:
+def build_model(name: str, *, in_channels: int = 1, base_channels: int = 32,
+                ablation: dict | None = None) -> nn.Module:
+    if name == "LV-Ablation":
+        from .ablation import AblationUNet
+        return AblationUNet(in_channels, base_channels, **(ablation or {}))
     if name == "UNet":
         return UNet(in_channels, base_channels, depth=4)
     if name == "Attention-UNet":
