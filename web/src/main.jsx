@@ -2,10 +2,11 @@ import React, { lazy, Suspense } from 'react'
 import { createRoot } from 'react-dom/client'
 import { HashRouter, Route, Routes } from 'react-router-dom'
 import { Layout } from './components/Layout.jsx'
+import { Loading } from './components/Loading.jsx'
 import { EmptyState } from './components/UI.jsx'
-import Overview from './pages/Overview.jsx'
 import './styles/global.css'
 
+const Overview = lazy(() => import('./pages/Overview.jsx'))
 const About = lazy(() => import('./pages/About.jsx'))
 const Features = lazy(() => import('./pages/Features.jsx'))
 const Results = lazy(() => import('./pages/Results.jsx'))
@@ -15,7 +16,7 @@ const PatientDetail = lazy(() => import('./pages/PatientDetail.jsx'))
 createRoot(document.getElementById('root')).render(
   <HashRouter>
     <Layout>
-      <Suspense fallback={<EmptyState title="正在加载页面…" loading />}>
+      <Suspense fallback={<Loading />}>
         <Routes>
           <Route index element={<Overview />} />
           <Route path="/about" element={<About />} />

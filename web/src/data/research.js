@@ -13,7 +13,6 @@ export const researchSources = {
   dra: 'https://github.com/KNN334/Echo/blob/main/reports/lvseg_ablation/RESULTS.md',
   legacy: 'https://github.com/KNN334/Echo/blob/main/reports/full_baseline/RESULTS.md',
 }
-
 export const evaluations = {
   dra: {
     title: 'DRA-UNet',
@@ -50,8 +49,3 @@ export const evaluations = {
     ],
   },
 }
-
-export const exampleLosses = [
-  [1, .71, .75], [2, .54, .58], [3, .44, .49], [4, .36, .42], [5, .31, .36],
-  [6, .27, .33], [7, .23, .31], [8, .20, .29], [9, .18, .28], [10, .16, .27],
-].map(([epoch, train, validation]) => ({ epoch, train, validation }))

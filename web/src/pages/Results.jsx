@@ -51,7 +51,7 @@ export default function Results() {
       </DataTable>
       <div className={styles.note}><Info size={17} /><span>参考容积由专家轮廓经同一几何方法派生。偏倚按预测值减去参考值计算。</span></div>
     </Panel>
-    <Panel title="训练曲线" subtitle="每轮训练和验证的 BCE 损失" action={<Badge tone="blue">示例数据</Badge>}>
+    <Panel title="DRA-UNet 训练曲线" subtitle="种子 2026 · 训练与验证的主分割损失（BCE + Dice）">
       <LossChart />
     </Panel>
   </div>

@@ -1,6 +1,8 @@
 import { useEffect, useRef } from 'react'
 import { Activity, ArrowRight, Focus, HeartPulse, Layers3, Ruler, ShieldCheck } from 'lucide-react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
+import { CineMonitor } from '../components/CineMonitor.jsx'
+import { PatchLesson } from '../components/PatchLesson.jsx'
 import { ActionLink, Badge, MetricCard, Panel, TextLink } from '../components/UI.jsx'
 import { modules, researchSources } from '../data/research.js'
 import styles from '../styles/Pages.module.css'
@@ -54,6 +56,11 @@ function PulseGraphic() {
 }
 
 export default function Overview() {
+  const { hash } = useLocation()
+  useEffect(() => {
+    if (hash === '#simulation') document.getElementById('simulation')?.scrollIntoView()
+  }, [hash])
+
   return <div className={styles.stack}>
     <section className={styles.hero} aria-labelledby="system-title">
       <PulseGraphic />
@@ -62,11 +69,13 @@ export default function Overview() {
         <h1 id="system-title">超声智能心脏功能评估系统</h1>
         <p>基于超声心动图的左心室分割、容积测量与心功能分析。</p>
         <div className={styles.heroActions}>
-          <ActionLink to="/results" primary>查看评估结果</ActionLink>
-          <ActionLink to="/patients" arrow={false}>浏览患者示例</ActionLink>
+          <ActionLink to="/#simulation" primary>观看贴片超声教学</ActionLink>
+          <ActionLink to="/results" arrow={false}>查看评估结果</ActionLink>
         </div>
       </div>
     </section>
+    <CineMonitor />
+    <div className={styles.anchor} id="simulation"><PatchLesson /></div>
     <section aria-labelledby="overview-eval">
       <div className={styles.sectionHeading}>
         <div><h2 id="overview-eval">模型评估概览</h2><p>DRA-UNet · CAMUS 验证集 · 50 名患者 · 3 个种子均值</p></div>

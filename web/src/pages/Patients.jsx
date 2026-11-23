@@ -51,10 +51,10 @@ export default function Patients() {
   }).concat({ key: 'issues', label: '问题备注' })
 
   return <div className={styles.stack}>
-    <PageHeading title="患者数据" description="检索患者级预测、几何参考值与缺测原因。" action={<Badge tone="blue">虚构示例</Badge>} />
+    <PageHeading title="患者数据" description="浏览固定测试集中的 CAMUS A2C 影像、预测值与专家轮廓派生参考值。" action={<Badge tone="blue">CAMUS</Badge>} />
     <Panel>
       <div className={styles.tableToolbar}>
-        <div><h2>患者列表</h2><p>{patients.length} 条示例记录 · 心率和心输出量缺测</p></div>
+        <div><h2>患者列表</h2><p>{patients.length} 名公开病例 · 心率和心输出量缺测</p></div>
         <div className={styles.filters}>
           <label className={styles.search}><Search size={17} />
             <input type="search" placeholder="搜索患者 ID" aria-label="搜索患者 ID" value={query}
@@ -66,7 +66,7 @@ export default function Patients() {
           </select>
         </div>
       </div>
-      {rows.length ? <DataTable columns={columns} label="患者级示例测量">
+      {rows.length ? <DataTable columns={columns} label="CAMUS 患者级测量">
         {rows.map(patient => {
           const to = `/patients/${patient.patient_id}`
           return <tr key={patient.patient_id} className={ui.clickableRow}

@@ -1,0 +1,1476 @@
+[
+  {
+    "patient_id": "patient0015",
+    "source": "CAMUS fixed test split",
+    "model": "DRA-UNet",
+    "seed": 2026,
+    "checkpoint_sha256": "5103390376bbd2db4c75269c7752ad30a43637d9d75a5cb18a955cb415c2f384",
+    "view": "A2C",
+    "fps": 62.9,
+    "spacing_mm": [
+      0.30799999833106995,
+      0.30799999833106995
+    ],
+    "complete_cycle_verified": false,
+    "expert_phases": {
+      "ED": 0,
+      "ES": 19
+    },
+    "expert_volumes_ml": {
+      "ED": 88.49883052723547,
+      "ES": 30.883759379896315
+    },
+    "image_quality": null,
+    "atlas": {
+      "columns": 5,
+      "rows": 4,
+      "width": 384,
+      "height": 288
+    },
+    "atlas_file": "patient0015_2CH.webp",
+    "frames": [
+      {
+        "index": 0,
+        "time_s": 0.0,
+        "volume_ml": 76.02281119603995
+      },
+      {
+        "index": 1,
+        "time_s": 0.01589825119236884,
+        "volume_ml": 74.2253818550042
+      },
+      {
+        "index": 2,
+        "time_s": 0.03179650238473768,
+        "volume_ml": 70.54094226365855
+      },
+      {
+        "index": 3,
+        "time_s": 0.04769475357710652,
+        "volume_ml": 68.52708883728788
+      },
+      {
+        "index": 4,
+        "time_s": 0.06359300476947535,
+        "volume_ml": 61.301389130012204
+      },
+      {
+        "index": 5,
+        "time_s": 0.0794912559618442,
+        "volume_ml": 56.17030430835813
+      },
+      {
+        "index": 6,
+        "time_s": 0.09538950715421304,
+        "volume_ml": 50.01345139804499
+      },
+      {
+        "index": 7,
+        "time_s": 0.11128775834658187,
+        "volume_ml": 47.8457338922897
+      },
+      {
+        "index": 8,
+        "time_s": 0.1271860095389507,
+        "volume_ml": 40.76491250073654
+      },
+      {
+        "index": 9,
+        "time_s": 0.14308426073131955,
+        "volume_ml": 37.87313859649585
+      },
+      {
+        "index": 10,
+        "time_s": 0.1589825119236884,
+        "volume_ml": 32.77487470681897
+      },
+      {
+        "index": 11,
+        "time_s": 0.17488076311605724,
+        "volume_ml": 28.695195674701
+      },
+      {
+        "index": 12,
+        "time_s": 0.1907790143084261,
+        "volume_ml": 25.791035483710942
+      },
+      {
+        "index": 13,
+        "time_s": 0.2066772655007949,
+        "volume_ml": 24.691203272213347
+      },
+      {
+        "index": 14,
+        "time_s": 0.22257551669316375,
+        "volume_ml": 22.14888113996964
+      },
+      {
+        "index": 15,
+        "time_s": 0.2384737678855326,
+        "volume_ml": 20.70359539844968
+      },
+      {
+        "index": 16,
+        "time_s": 0.2543720190779014,
+        "volume_ml": 19.931497222819246
+      },
+      {
+        "index": 17,
+        "time_s": 0.2702702702702703,
+        "volume_ml": 20.976161866858792
+      },
+      {
+        "index": 18,
+        "time_s": 0.2861685214626391,
+        "volume_ml": 23.454704824306848
+      },
+      {
+        "index": 19,
+        "time_s": 0.302066772655008,
+        "volume_ml": 22.26378047618376
+      }
+    ],
+    "events": [
+      {
+        "ed_frame": 0,
+        "es_frame": 16,
+        "ed_time_s": 0.0,
+        "es_time_s": 0.2543720190779014,
+        "EDV": 76.02281119603995,
+        "ESV": 19.931497222819246,
+        "SV": 56.09131397322071,
+        "volume_unit": "mL",
+        "EF_percent": 73.78221495726866,
+        "next_ed_frame": null,
+        "T_s": null,
+        "HR_bpm": null,
+        "CO_ml_per_min": null,
+        "CO_L_per_min": null,
+        "CO_proxy_per_min": null,
+        "HR_unavailable_reason": "source_sequence_not_verified_as_complete_cycle",
+        "CO_unavailable_reason": "source_sequence_not_verified_as_complete_cycle"
+      }
+    ]
+  },
+  {
+    "patient_id": "patient0028",
+    "source": "CAMUS fixed test split",
+    "model": "DRA-UNet",
+    "seed": 2026,
+    "checkpoint_sha256": "5103390376bbd2db4c75269c7752ad30a43637d9d75a5cb18a955cb415c2f384",
+    "view": "A2C",
+    "fps": 56.5,
+    "spacing_mm": [
+      0.30799999833106995,
+      0.30799999833106995
+    ],
+    "complete_cycle_verified": false,
+    "expert_phases": {
+      "ED": 0,
+      "ES": 21
+    },
+    "expert_volumes_ml": {
+      "ED": 66.27849913113414,
+      "ES": 30.51167787266889
+    },
+    "image_quality": null,
+    "atlas": {
+      "columns": 5,
+      "rows": 5,
+      "width": 384,
+      "height": 288
+    },
+    "atlas_file": "patient0028_2CH.webp",
+    "frames": [
+      {
+        "index": 0,
+        "time_s": 0.0,
+        "volume_ml": 92.01723896109016
+      },
+      {
+        "index": 1,
+        "time_s": 0.017699115044247787,
+        "volume_ml": 98.18605957558366
+      },
+      {
+        "index": 2,
+        "time_s": 0.035398230088495575,
+        "volume_ml": 77.8950066545779
+      },
+      {
+        "index": 3,
+        "time_s": 0.05309734513274336,
+        "volume_ml": 79.26088288675936
+      },
+      {
+        "index": 4,
+        "time_s": 0.07079646017699115,
+        "volume_ml": 78.72527107504185
+      },
+      {
+        "index": 5,
+        "time_s": 0.08849557522123894,
+        "volume_ml": 77.03847163330721
+      },
+      {
+        "index": 6,
+        "time_s": 0.10619469026548672,
+        "volume_ml": 78.3337013227578
+      },
+      {
+        "index": 7,
+        "time_s": 0.12389380530973451,
+        "volume_ml": 94.34151211539125
+      },
+      {
+        "index": 8,
+        "time_s": 0.1415929203539823,
+        "volume_ml": 104.4004480069497
+      },
+      {
+        "index": 9,
+        "time_s": 0.1592920353982301,
+        "volume_ml": 99.33383842233249
+      },
+      {
+        "index": 10,
+        "time_s": 0.17699115044247787,
+        "volume_ml": 88.39751716924741
+      },
+      {
+        "index": 11,
+        "time_s": 0.19469026548672566,
+        "volume_ml": 84.37138388260598
+      },
+      {
+        "index": 12,
+        "time_s": 0.21238938053097345,
+        "volume_ml": 79.30164879225744
+      },
+      {
+        "index": 13,
+        "time_s": 0.23008849557522124,
+        "volume_ml": 69.56240924649566
+      },
+      {
+        "index": 14,
+        "time_s": 0.24778761061946902,
+        "volume_ml": 83.82963807129032
+      },
+      {
+        "index": 15,
+        "time_s": 0.26548672566371684,
+        "volume_ml": 72.45338278955772
+      },
+      {
+        "index": 16,
+        "time_s": 0.2831858407079646,
+        "volume_ml": 69.824865913377
+      },
+      {
+        "index": 17,
+        "time_s": 0.3008849557522124,
+        "volume_ml": 69.81363157182585
+      },
+      {
+        "index": 18,
+        "time_s": 0.3185840707964602,
+        "volume_ml": 60.37939506235475
+      },
+      {
+        "index": 19,
+        "time_s": 0.336283185840708,
+        "volume_ml": 59.85409591968656
+      },
+      {
+        "index": 20,
+        "time_s": 0.35398230088495575,
+        "volume_ml": 62.80441054687168
+      },
+      {
+        "index": 21,
+        "time_s": 0.37168141592920356,
+        "volume_ml": 77.028844803553
+      }
+    ],
+    "events": [
+      {
+        "ed_frame": 8,
+        "es_frame": 19,
+        "ed_time_s": 0.1415929203539823,
+        "es_time_s": 0.336283185840708,
+        "EDV": 104.4004480069497,
+        "ESV": 59.85409591968656,
+        "SV": 44.546352087263145,
+        "volume_unit": "mL",
+        "EF_percent": 42.66873652141589,
+        "next_ed_frame": null,
+        "T_s": null,
+        "HR_bpm": null,
+        "CO_ml_per_min": null,
+        "CO_L_per_min": null,
+        "CO_proxy_per_min": null,
+        "HR_unavailable_reason": "source_sequence_not_verified_as_complete_cycle",
+        "CO_unavailable_reason": "source_sequence_not_verified_as_complete_cycle"
+      }
+    ]
+  },
+  {
+    "patient_id": "patient0054",
+    "source": "CAMUS fixed test split",
+    "model": "DRA-UNet",
+    "seed": 2026,
+    "checkpoint_sha256": "5103390376bbd2db4c75269c7752ad30a43637d9d75a5cb18a955cb415c2f384",
+    "view": "A2C",
+    "fps": 56.2,
+    "spacing_mm": [
+      0.30799999833106995,
+      0.30799999833106995
+    ],
+    "complete_cycle_verified": false,
+    "expert_phases": {
+      "ED": 0,
+      "ES": 16
+    },
+    "expert_volumes_ml": {
+      "ED": 108.11587988040662,
+      "ES": 55.81239854507879
+    },
+    "image_quality": null,
+    "atlas": {
+      "columns": 5,
+      "rows": 4,
+      "width": 384,
+      "height": 288
+    },
+    "atlas_file": "patient0054_2CH.webp",
+    "frames": [
+      {
+        "index": 0,
+        "time_s": 0.0,
+        "volume_ml": 109.45534666180438
+      },
+      {
+        "index": 1,
+        "time_s": 0.01779359430604982,
+        "volume_ml": 105.08046089349715
+      },
+      {
+        "index": 2,
+        "time_s": 0.03558718861209964,
+        "volume_ml": 104.41211387180891
+      },
+      {
+        "index": 3,
+        "time_s": 0.05338078291814946,
+        "volume_ml": 94.03505490309186
+      },
+      {
+        "index": 4,
+        "time_s": 0.07117437722419928,
+        "volume_ml": 98.98452901307226
+      },
+      {
+        "index": 5,
+        "time_s": 0.0889679715302491,
+        "volume_ml": 95.0783308565227
+      },
+      {
+        "index": 6,
+        "time_s": 0.10676156583629892,
+        "volume_ml": 92.60462201224298
+      },
+      {
+        "index": 7,
+        "time_s": 0.12455516014234874,
+        "volume_ml": 89.58155372663919
+      },
+      {
+        "index": 8,
+        "time_s": 0.14234875444839856,
+        "volume_ml": 80.46497890099496
+      },
+      {
+        "index": 9,
+        "time_s": 0.16014234875444838,
+        "volume_ml": 79.5912634163341
+      },
+      {
+        "index": 10,
+        "time_s": 0.1779359430604982,
+        "volume_ml": 77.58309366227657
+      },
+      {
+        "index": 11,
+        "time_s": 0.19572953736654802,
+        "volume_ml": 73.27358598736242
+      },
+      {
+        "index": 12,
+        "time_s": 0.21352313167259784,
+        "volume_ml": 65.83327909361496
+      },
+      {
+        "index": 13,
+        "time_s": 0.23131672597864766,
+        "volume_ml": 64.86313546349325
+      },
+      {
+        "index": 14,
+        "time_s": 0.24911032028469748,
+        "volume_ml": 62.926373030388596
+      },
+      {
+        "index": 15,
+        "time_s": 0.2669039145907473,
+        "volume_ml": 58.9800575052783
+      },
+      {
+        "index": 16,
+        "time_s": 0.2846975088967971,
+        "volume_ml": 52.84093615079565
+      }
+    ],
+    "events": [
+      {
+        "ed_frame": 0,
+        "es_frame": 3,
+        "ed_time_s": 0.0,
+        "es_time_s": 0.05338078291814946,
+        "EDV": 109.45534666180438,
+        "ESV": 94.03505490309186,
+        "SV": 15.420291758712523,
+        "volume_unit": "mL",
+        "EF_percent": 14.088203298426535,
+        "next_ed_frame": null,
+        "T_s": null,
+        "HR_bpm": null,
+        "CO_ml_per_min": null,
+        "CO_L_per_min": null,
+        "CO_proxy_per_min": null,
+        "HR_unavailable_reason": "source_sequence_not_verified_as_complete_cycle",
+        "CO_unavailable_reason": "source_sequence_not_verified_as_complete_cycle"
+      },
+      {
+        "ed_frame": 4,
+        "es_frame": 16,
+        "ed_time_s": 0.07117437722419928,
+        "es_time_s": 0.2846975088967971,
+        "EDV": 98.98452901307226,
+        "ESV": 52.84093615079565,
+        "SV": 46.14359286227661,
+        "volume_unit": "mL",
+        "EF_percent": 46.61697471549591,
+        "next_ed_frame": null,
+        "T_s": null,
+        "HR_bpm": null,
+        "CO_ml_per_min": null,
+        "CO_L_per_min": null,
+        "CO_proxy_per_min": null,
+        "HR_unavailable_reason": "source_sequence_not_verified_as_complete_cycle",
+        "CO_unavailable_reason": "source_sequence_not_verified_as_complete_cycle"
+      }
+    ]
+  },
+  {
+    "patient_id": "patient0065",
+    "source": "CAMUS fixed test split",
+    "model": "DRA-UNet",
+    "seed": 2026,
+    "checkpoint_sha256": "5103390376bbd2db4c75269c7752ad30a43637d9d75a5cb18a955cb415c2f384",
+    "view": "A2C",
+    "fps": 55.4,
+    "spacing_mm": [
+      0.30799999833106995,
+      0.30799999833106995
+    ],
+    "complete_cycle_verified": false,
+    "expert_phases": {
+      "ED": 0,
+      "ES": 16
+    },
+    "expert_volumes_ml": {
+      "ED": 61.32072652075851,
+      "ES": 15.18744669779254
+    },
+    "image_quality": null,
+    "atlas": {
+      "columns": 5,
+      "rows": 4,
+      "width": 384,
+      "height": 288
+    },
+    "atlas_file": "patient0065_2CH.webp",
+    "frames": [
+      {
+        "index": 0,
+        "time_s": 0.0,
+        "volume_ml": 67.50630563004572
+      },
+      {
+        "index": 1,
+        "time_s": 0.018050541516245487,
+        "volume_ml": 69.4088723918014
+      },
+      {
+        "index": 2,
+        "time_s": 0.036101083032490974,
+        "volume_ml": 67.7580267658214
+      },
+      {
+        "index": 3,
+        "time_s": 0.05415162454873646,
+        "volume_ml": 59.70726557099528
+      },
+      {
+        "index": 4,
+        "time_s": 0.07220216606498195,
+        "volume_ml": 54.688656264672666
+      },
+      {
+        "index": 5,
+        "time_s": 0.09025270758122744,
+        "volume_ml": 46.92265941450299
+      },
+      {
+        "index": 6,
+        "time_s": 0.10830324909747292,
+        "volume_ml": 41.05811185457768
+      },
+      {
+        "index": 7,
+        "time_s": 0.1263537906137184,
+        "volume_ml": 35.07686213948075
+      },
+      {
+        "index": 8,
+        "time_s": 0.1444043321299639,
+        "volume_ml": 27.698275847612177
+      },
+      {
+        "index": 9,
+        "time_s": 0.1624548736462094,
+        "volume_ml": 27.044671528413286
+      },
+      {
+        "index": 10,
+        "time_s": 0.18050541516245489,
+        "volume_ml": 24.709889980377504
+      },
+      {
+        "index": 11,
+        "time_s": 0.19855595667870038,
+        "volume_ml": 22.77015771818804
+      },
+      {
+        "index": 12,
+        "time_s": 0.21660649819494585,
+        "volume_ml": 20.35163277396825
+      },
+      {
+        "index": 13,
+        "time_s": 0.23465703971119134,
+        "volume_ml": 18.245863576303368
+      },
+      {
+        "index": 14,
+        "time_s": 0.2527075812274368,
+        "volume_ml": 16.457967352139768
+      },
+      {
+        "index": 15,
+        "time_s": 0.27075812274368233,
+        "volume_ml": 14.128475540437103
+      },
+      {
+        "index": 16,
+        "time_s": 0.2888086642599278,
+        "volume_ml": 13.566085254278947
+      }
+    ],
+    "events": []
+  },
+  {
+    "patient_id": "patient0070",
+    "source": "CAMUS fixed test split",
+    "model": "DRA-UNet",
+    "seed": 2026,
+    "checkpoint_sha256": "5103390376bbd2db4c75269c7752ad30a43637d9d75a5cb18a955cb415c2f384",
+    "view": "A2C",
+    "fps": 56.5,
+    "spacing_mm": [
+      0.30799999833106995,
+      0.30799999833106995
+    ],
+    "complete_cycle_verified": false,
+    "expert_phases": {
+      "ED": 0,
+      "ES": 20
+    },
+    "expert_volumes_ml": {
+      "ED": 118.9304815146464,
+      "ES": 38.69235033690339
+    },
+    "image_quality": null,
+    "atlas": {
+      "columns": 5,
+      "rows": 5,
+      "width": 384,
+      "height": 288
+    },
+    "atlas_file": "patient0070_2CH.webp",
+    "frames": [
+      {
+        "index": 0,
+        "time_s": 0.0,
+        "volume_ml": 99.45005216261883
+      },
+      {
+        "index": 1,
+        "time_s": 0.017699115044247787,
+        "volume_ml": 100.15396080010527
+      },
+      {
+        "index": 2,
+        "time_s": 0.035398230088495575,
+        "volume_ml": 96.05452703853102
+      },
+      {
+        "index": 3,
+        "time_s": 0.05309734513274336,
+        "volume_ml": 94.39265861948932
+      },
+      {
+        "index": 4,
+        "time_s": 0.07079646017699115,
+        "volume_ml": 89.53992696464407
+      },
+      {
+        "index": 5,
+        "time_s": 0.08849557522123894,
+        "volume_ml": 83.39372745508848
+      },
+      {
+        "index": 6,
+        "time_s": 0.10619469026548672,
+        "volume_ml": 71.99426493805528
+      },
+      {
+        "index": 7,
+        "time_s": 0.12389380530973451,
+        "volume_ml": 68.9558400056936
+      },
+      {
+        "index": 8,
+        "time_s": 0.1415929203539823,
+        "volume_ml": 61.93856589060616
+      },
+      {
+        "index": 9,
+        "time_s": 0.1592920353982301,
+        "volume_ml": 58.5170169768286
+      },
+      {
+        "index": 10,
+        "time_s": 0.17699115044247787,
+        "volume_ml": 51.3016692284209
+      },
+      {
+        "index": 11,
+        "time_s": 0.19469026548672566,
+        "volume_ml": 51.146249559176425
+      },
+      {
+        "index": 12,
+        "time_s": 0.21238938053097345,
+        "volume_ml": 45.79767475796892
+      },
+      {
+        "index": 13,
+        "time_s": 0.23008849557522124,
+        "volume_ml": 37.40189322274149
+      },
+      {
+        "index": 14,
+        "time_s": 0.24778761061946902,
+        "volume_ml": 43.20503892892564
+      },
+      {
+        "index": 15,
+        "time_s": 0.26548672566371684,
+        "volume_ml": 41.78722571956173
+      },
+      {
+        "index": 16,
+        "time_s": 0.2831858407079646,
+        "volume_ml": 38.90666837765278
+      },
+      {
+        "index": 17,
+        "time_s": 0.3008849557522124,
+        "volume_ml": 33.462394569676796
+      },
+      {
+        "index": 18,
+        "time_s": 0.3185840707964602,
+        "volume_ml": 36.94108364098296
+      },
+      {
+        "index": 19,
+        "time_s": 0.336283185840708,
+        "volume_ml": 39.934793194468284
+      },
+      {
+        "index": 20,
+        "time_s": 0.35398230088495575,
+        "volume_ml": 35.46378396071076
+      }
+    ],
+    "events": [
+      {
+        "ed_frame": 19,
+        "es_frame": 20,
+        "ed_time_s": 0.336283185840708,
+        "es_time_s": 0.35398230088495575,
+        "EDV": 39.934793194468284,
+        "ESV": 35.46378396071076,
+        "SV": 4.471009233757528,
+        "volume_unit": "mL",
+        "EF_percent": 11.195774101008356,
+        "next_ed_frame": null,
+        "T_s": null,
+        "HR_bpm": null,
+        "CO_ml_per_min": null,
+        "CO_L_per_min": null,
+        "CO_proxy_per_min": null,
+        "HR_unavailable_reason": "source_sequence_not_verified_as_complete_cycle",
+        "CO_unavailable_reason": "source_sequence_not_verified_as_complete_cycle"
+      }
+    ]
+  },
+  {
+    "patient_id": "patient0091",
+    "source": "CAMUS fixed test split",
+    "model": "DRA-UNet",
+    "seed": 2026,
+    "checkpoint_sha256": "5103390376bbd2db4c75269c7752ad30a43637d9d75a5cb18a955cb415c2f384",
+    "view": "A2C",
+    "fps": 51.3,
+    "spacing_mm": [
+      0.30799999833106995,
+      0.30799999833106995
+    ],
+    "complete_cycle_verified": false,
+    "expert_phases": {
+      "ED": 0,
+      "ES": 17
+    },
+    "expert_volumes_ml": {
+      "ED": 94.64994645814004,
+      "ES": 33.53818352466313
+    },
+    "image_quality": null,
+    "atlas": {
+      "columns": 5,
+      "rows": 4,
+      "width": 384,
+      "height": 288
+    },
+    "atlas_file": "patient0091_2CH.webp",
+    "frames": [
+      {
+        "index": 0,
+        "time_s": 0.0,
+        "volume_ml": 97.73261014613463
+      },
+      {
+        "index": 1,
+        "time_s": 0.019493177387914232,
+        "volume_ml": 100.9303494492251
+      },
+      {
+        "index": 2,
+        "time_s": 0.038986354775828465,
+        "volume_ml": 89.20273494167347
+      },
+      {
+        "index": 3,
+        "time_s": 0.058479532163742694,
+        "volume_ml": 74.86572763754296
+      },
+      {
+        "index": 4,
+        "time_s": 0.07797270955165693,
+        "volume_ml": 77.14618930143007
+      },
+      {
+        "index": 5,
+        "time_s": 0.09746588693957116,
+        "volume_ml": 71.51614859086412
+      },
+      {
+        "index": 6,
+        "time_s": 0.11695906432748539,
+        "volume_ml": 77.94642255174
+      },
+      {
+        "index": 7,
+        "time_s": 0.13645224171539963,
+        "volume_ml": 59.5813460400816
+      },
+      {
+        "index": 8,
+        "time_s": 0.15594541910331386,
+        "volume_ml": 60.70836491409128
+      },
+      {
+        "index": 9,
+        "time_s": 0.1754385964912281,
+        "volume_ml": 55.582286690634845
+      },
+      {
+        "index": 10,
+        "time_s": 0.19493177387914232,
+        "volume_ml": 49.449018039307326
+      },
+      {
+        "index": 11,
+        "time_s": 0.21442495126705655,
+        "volume_ml": 42.39779011743831
+      },
+      {
+        "index": 12,
+        "time_s": 0.23391812865497078,
+        "volume_ml": 40.13524614382505
+      },
+      {
+        "index": 13,
+        "time_s": 0.25341130604288503,
+        "volume_ml": 37.617074792210715
+      },
+      {
+        "index": 14,
+        "time_s": 0.27290448343079926,
+        "volume_ml": 28.811433727415512
+      },
+      {
+        "index": 15,
+        "time_s": 0.2923976608187135,
+        "volume_ml": 36.50434861278966
+      },
+      {
+        "index": 16,
+        "time_s": 0.3118908382066277,
+        "volume_ml": 23.16768068597626
+      },
+      {
+        "index": 17,
+        "time_s": 0.33138401559454195,
+        "volume_ml": 25.980895565376674
+      }
+    ],
+    "events": [
+      {
+        "ed_frame": 1,
+        "es_frame": 14,
+        "ed_time_s": 0.019493177387914232,
+        "es_time_s": 0.27290448343079926,
+        "EDV": 100.9303494492251,
+        "ESV": 28.811433727415512,
+        "SV": 72.1189157218096,
+        "volume_unit": "mL",
+        "EF_percent": 71.45414250060668,
+        "next_ed_frame": null,
+        "T_s": null,
+        "HR_bpm": null,
+        "CO_ml_per_min": null,
+        "CO_L_per_min": null,
+        "CO_proxy_per_min": null,
+        "HR_unavailable_reason": "source_sequence_not_verified_as_complete_cycle",
+        "CO_unavailable_reason": "source_sequence_not_verified_as_complete_cycle"
+      }
+    ]
+  },
+  {
+    "patient_id": "patient0094",
+    "source": "CAMUS fixed test split",
+    "model": "DRA-UNet",
+    "seed": 2026,
+    "checkpoint_sha256": "5103390376bbd2db4c75269c7752ad30a43637d9d75a5cb18a955cb415c2f384",
+    "view": "A2C",
+    "fps": 59.6,
+    "spacing_mm": [
+      0.30799999833106995,
+      0.30799999833106995
+    ],
+    "complete_cycle_verified": false,
+    "expert_phases": {
+      "ED": 0,
+      "ES": 18
+    },
+    "expert_volumes_ml": {
+      "ED": 91.3537068794689,
+      "ES": 51.67544568148453
+    },
+    "image_quality": null,
+    "atlas": {
+      "columns": 5,
+      "rows": 4,
+      "width": 384,
+      "height": 288
+    },
+    "atlas_file": "patient0094_2CH.webp",
+    "frames": [
+      {
+        "index": 0,
+        "time_s": 0.0,
+        "volume_ml": 77.74318507738454
+      },
+      {
+        "index": 1,
+        "time_s": 0.016778523489932886,
+        "volume_ml": 79.98264448311535
+      },
+      {
+        "index": 2,
+        "time_s": 0.03355704697986577,
+        "volume_ml": 73.5267032440455
+      },
+      {
+        "index": 3,
+        "time_s": 0.050335570469798654,
+        "volume_ml": 69.90672658104984
+      },
+      {
+        "index": 4,
+        "time_s": 0.06711409395973154,
+        "volume_ml": 57.19454684441056
+      },
+      {
+        "index": 5,
+        "time_s": 0.08389261744966443,
+        "volume_ml": 52.98642801304142
+      },
+      {
+        "index": 6,
+        "time_s": 0.10067114093959731,
+        "volume_ml": 55.066275214796505
+      },
+      {
+        "index": 7,
+        "time_s": 0.1174496644295302,
+        "volume_ml": 50.425437028708586
+      },
+      {
+        "index": 8,
+        "time_s": 0.1342281879194631,
+        "volume_ml": 52.136754775543295
+      },
+      {
+        "index": 9,
+        "time_s": 0.15100671140939598,
+        "volume_ml": 46.285628811770685
+      },
+      {
+        "index": 10,
+        "time_s": 0.16778523489932887,
+        "volume_ml": 48.50563064946692
+      },
+      {
+        "index": 11,
+        "time_s": 0.18456375838926173,
+        "volume_ml": 45.243078112556624
+      },
+      {
+        "index": 12,
+        "time_s": 0.20134228187919462,
+        "volume_ml": 46.252794377626394
+      },
+      {
+        "index": 13,
+        "time_s": 0.2181208053691275,
+        "volume_ml": 42.170396142644854
+      },
+      {
+        "index": 14,
+        "time_s": 0.2348993288590604,
+        "volume_ml": 47.022707075887666
+      },
+      {
+        "index": 15,
+        "time_s": 0.25167785234899326,
+        "volume_ml": 42.57851459377934
+      },
+      {
+        "index": 16,
+        "time_s": 0.2684563758389262,
+        "volume_ml": 38.711011736658094
+      },
+      {
+        "index": 17,
+        "time_s": 0.28523489932885904,
+        "volume_ml": 39.53107574793374
+      },
+      {
+        "index": 18,
+        "time_s": 0.30201342281879195,
+        "volume_ml": 43.681566404441575
+      }
+    ],
+    "events": [
+      {
+        "ed_frame": 1,
+        "es_frame": 16,
+        "ed_time_s": 0.016778523489932886,
+        "es_time_s": 0.2684563758389262,
+        "EDV": 79.98264448311535,
+        "ESV": 38.711011736658094,
+        "SV": 41.27163274645726,
+        "volume_unit": "mL",
+        "EF_percent": 51.60073540100297,
+        "next_ed_frame": null,
+        "T_s": null,
+        "HR_bpm": null,
+        "CO_ml_per_min": null,
+        "CO_L_per_min": null,
+        "CO_proxy_per_min": null,
+        "HR_unavailable_reason": "source_sequence_not_verified_as_complete_cycle",
+        "CO_unavailable_reason": "source_sequence_not_verified_as_complete_cycle"
+      }
+    ]
+  },
+  {
+    "patient_id": "patient0105",
+    "source": "CAMUS fixed test split",
+    "model": "DRA-UNet",
+    "seed": 2026,
+    "checkpoint_sha256": "5103390376bbd2db4c75269c7752ad30a43637d9d75a5cb18a955cb415c2f384",
+    "view": "A2C",
+    "fps": 51.6,
+    "spacing_mm": [
+      0.30799999833106995,
+      0.30799999833106995
+    ],
+    "complete_cycle_verified": false,
+    "expert_phases": {
+      "ED": 0,
+      "ES": 22
+    },
+    "expert_volumes_ml": {
+      "ED": 129.4361439664161,
+      "ES": 63.757618330328484
+    },
+    "image_quality": null,
+    "atlas": {
+      "columns": 5,
+      "rows": 5,
+      "width": 384,
+      "height": 288
+    },
+    "atlas_file": "patient0105_2CH.webp",
+    "frames": [
+      {
+        "index": 0,
+        "time_s": 0.0,
+        "volume_ml": 143.34424826531307
+      },
+      {
+        "index": 1,
+        "time_s": 0.01937984496124031,
+        "volume_ml": 141.80903044350015
+      },
+      {
+        "index": 2,
+        "time_s": 0.03875968992248062,
+        "volume_ml": 139.6542217857192
+      },
+      {
+        "index": 3,
+        "time_s": 0.05813953488372093,
+        "volume_ml": 135.19003079238948
+      },
+      {
+        "index": 4,
+        "time_s": 0.07751937984496124,
+        "volume_ml": 129.81666026458737
+      },
+      {
+        "index": 5,
+        "time_s": 0.09689922480620154,
+        "volume_ml": 124.4767889051896
+      },
+      {
+        "index": 6,
+        "time_s": 0.11627906976744186,
+        "volume_ml": 123.86521923433239
+      },
+      {
+        "index": 7,
+        "time_s": 0.13565891472868216,
+        "volume_ml": 121.5611184704305
+      },
+      {
+        "index": 8,
+        "time_s": 0.15503875968992248,
+        "volume_ml": 117.05100047989154
+      },
+      {
+        "index": 9,
+        "time_s": 0.1744186046511628,
+        "volume_ml": 109.67580128021316
+      },
+      {
+        "index": 10,
+        "time_s": 0.19379844961240308,
+        "volume_ml": 107.37541596029712
+      },
+      {
+        "index": 11,
+        "time_s": 0.2131782945736434,
+        "volume_ml": 102.28394999602223
+      },
+      {
+        "index": 12,
+        "time_s": 0.23255813953488372,
+        "volume_ml": 97.80550646971459
+      },
+      {
+        "index": 13,
+        "time_s": 0.25193798449612403,
+        "volume_ml": 92.78345721647736
+      },
+      {
+        "index": 14,
+        "time_s": 0.2713178294573643,
+        "volume_ml": 87.68843428315647
+      },
+      {
+        "index": 15,
+        "time_s": 0.29069767441860467,
+        "volume_ml": 81.26824556099696
+      },
+      {
+        "index": 16,
+        "time_s": 0.31007751937984496,
+        "volume_ml": 73.22121602792056
+      },
+      {
+        "index": 17,
+        "time_s": 0.32945736434108525,
+        "volume_ml": 69.09347507368068
+      },
+      {
+        "index": 18,
+        "time_s": 0.3488372093023256,
+        "volume_ml": 59.95133580374971
+      },
+      {
+        "index": 19,
+        "time_s": 0.3682170542635659,
+        "volume_ml": 55.89957311304007
+      },
+      {
+        "index": 20,
+        "time_s": 0.38759689922480617,
+        "volume_ml": 50.53570154371539
+      },
+      {
+        "index": 21,
+        "time_s": 0.4069767441860465,
+        "volume_ml": 48.85614814224552
+      },
+      {
+        "index": 22,
+        "time_s": 0.4263565891472868,
+        "volume_ml": 48.81867362735535
+      }
+    ],
+    "events": [
+      {
+        "ed_frame": 0,
+        "es_frame": 22,
+        "ed_time_s": 0.0,
+        "es_time_s": 0.4263565891472868,
+        "EDV": 143.34424826531307,
+        "ESV": 48.81867362735535,
+        "SV": 94.52557463795772,
+        "volume_unit": "mL",
+        "EF_percent": 65.94305371988291,
+        "next_ed_frame": null,
+        "T_s": null,
+        "HR_bpm": null,
+        "CO_ml_per_min": null,
+        "CO_L_per_min": null,
+        "CO_proxy_per_min": null,
+        "HR_unavailable_reason": "source_sequence_not_verified_as_complete_cycle",
+        "CO_unavailable_reason": "source_sequence_not_verified_as_complete_cycle"
+      }
+    ]
+  },
+  {
+    "patient_id": "patient0109",
+    "source": "CAMUS fixed test split",
+    "model": "DRA-UNet",
+    "seed": 2026,
+    "checkpoint_sha256": "5103390376bbd2db4c75269c7752ad30a43637d9d75a5cb18a955cb415c2f384",
+    "view": "A2C",
+    "fps": 56.5,
+    "spacing_mm": [
+      0.30799999833106995,
+      0.30799999833106995
+    ],
+    "complete_cycle_verified": false,
+    "expert_phases": {
+      "ED": 0,
+      "ES": 19
+    },
+    "expert_volumes_ml": {
+      "ED": 141.10258105864744,
+      "ES": 58.046063842690565
+    },
+    "image_quality": null,
+    "atlas": {
+      "columns": 5,
+      "rows": 4,
+      "width": 384,
+      "height": 288
+    },
+    "atlas_file": "patient0109_2CH.webp",
+    "frames": [
+      {
+        "index": 0,
+        "time_s": 0.0,
+        "volume_ml": 142.97388076653704
+      },
+      {
+        "index": 1,
+        "time_s": 0.017699115044247787,
+        "volume_ml": 153.04406861830833
+      },
+      {
+        "index": 2,
+        "time_s": 0.035398230088495575,
+        "volume_ml": 148.01678144924801
+      },
+      {
+        "index": 3,
+        "time_s": 0.05309734513274336,
+        "volume_ml": 146.65515717654003
+      },
+      {
+        "index": 4,
+        "time_s": 0.07079646017699115,
+        "volume_ml": 140.60043003326678
+      },
+      {
+        "index": 5,
+        "time_s": 0.08849557522123894,
+        "volume_ml": 140.25084773203295
+      },
+      {
+        "index": 6,
+        "time_s": 0.10619469026548672,
+        "volume_ml": 135.9374409284368
+      },
+      {
+        "index": 7,
+        "time_s": 0.12389380530973451,
+        "volume_ml": 126.68459080669179
+      },
+      {
+        "index": 8,
+        "time_s": 0.1415929203539823,
+        "volume_ml": 123.0445912656494
+      },
+      {
+        "index": 9,
+        "time_s": 0.1592920353982301,
+        "volume_ml": 114.22997481254964
+      },
+      {
+        "index": 10,
+        "time_s": 0.17699115044247787,
+        "volume_ml": 107.76613345263941
+      },
+      {
+        "index": 11,
+        "time_s": 0.19469026548672566,
+        "volume_ml": 95.42564827087818
+      },
+      {
+        "index": 12,
+        "time_s": 0.21238938053097345,
+        "volume_ml": 90.983706337629
+      },
+      {
+        "index": 13,
+        "time_s": 0.23008849557522124,
+        "volume_ml": 76.15276740196299
+      },
+      {
+        "index": 14,
+        "time_s": 0.24778761061946902,
+        "volume_ml": 70.58398267514113
+      },
+      {
+        "index": 15,
+        "time_s": 0.26548672566371684,
+        "volume_ml": 64.56550640330485
+      },
+      {
+        "index": 16,
+        "time_s": 0.2831858407079646,
+        "volume_ml": 61.42208378646586
+      },
+      {
+        "index": 17,
+        "time_s": 0.3008849557522124,
+        "volume_ml": 58.164424906331604
+      },
+      {
+        "index": 18,
+        "time_s": 0.3185840707964602,
+        "volume_ml": 57.15541543463851
+      },
+      {
+        "index": 19,
+        "time_s": 0.336283185840708,
+        "volume_ml": 55.24595435954493
+      }
+    ],
+    "events": [
+      {
+        "ed_frame": 1,
+        "es_frame": 19,
+        "ed_time_s": 0.017699115044247787,
+        "es_time_s": 0.336283185840708,
+        "EDV": 153.04406861830833,
+        "ESV": 55.24595435954493,
+        "SV": 97.7981142587634,
+        "volume_unit": "mL",
+        "EF_percent": 63.90193043199325,
+        "next_ed_frame": null,
+        "T_s": null,
+        "HR_bpm": null,
+        "CO_ml_per_min": null,
+        "CO_L_per_min": null,
+        "CO_proxy_per_min": null,
+        "HR_unavailable_reason": "source_sequence_not_verified_as_complete_cycle",
+        "CO_unavailable_reason": "source_sequence_not_verified_as_complete_cycle"
+      }
+    ]
+  },
+  {
+    "patient_id": "patient0110",
+    "source": "CAMUS fixed test split",
+    "model": "DRA-UNet",
+    "seed": 2026,
+    "checkpoint_sha256": "5103390376bbd2db4c75269c7752ad30a43637d9d75a5cb18a955cb415c2f384",
+    "view": "A2C",
+    "fps": 56.5,
+    "spacing_mm": [
+      0.30799999833106995,
+      0.30799999833106995
+    ],
+    "complete_cycle_verified": false,
+    "expert_phases": {
+      "ED": 0,
+      "ES": 15
+    },
+    "expert_volumes_ml": {
+      "ED": 94.58609127229394,
+      "ES": 36.75225609508655
+    },
+    "image_quality": null,
+    "atlas": {
+      "columns": 5,
+      "rows": 4,
+      "width": 384,
+      "height": 288
+    },
+    "atlas_file": "patient0110_2CH.webp",
+    "frames": [
+      {
+        "index": 0,
+        "time_s": 0.0,
+        "volume_ml": 85.52555673949453
+      },
+      {
+        "index": 1,
+        "time_s": 0.017699115044247787,
+        "volume_ml": 85.88349431055391
+      },
+      {
+        "index": 2,
+        "time_s": 0.035398230088495575,
+        "volume_ml": 81.69494805373985
+      },
+      {
+        "index": 3,
+        "time_s": 0.05309734513274336,
+        "volume_ml": 73.62377418999613
+      },
+      {
+        "index": 4,
+        "time_s": 0.07079646017699115,
+        "volume_ml": 67.16503846900098
+      },
+      {
+        "index": 5,
+        "time_s": 0.08849557522123894,
+        "volume_ml": 61.44564266533267
+      },
+      {
+        "index": 6,
+        "time_s": 0.10619469026548672,
+        "volume_ml": 56.320328261631175
+      },
+      {
+        "index": 7,
+        "time_s": 0.12389380530973451,
+        "volume_ml": 51.929717420046394
+      },
+      {
+        "index": 8,
+        "time_s": 0.1415929203539823,
+        "volume_ml": 45.42495942059032
+      },
+      {
+        "index": 9,
+        "time_s": 0.1592920353982301,
+        "volume_ml": 45.45404353916506
+      },
+      {
+        "index": 10,
+        "time_s": 0.17699115044247787,
+        "volume_ml": 41.11598199342483
+      },
+      {
+        "index": 11,
+        "time_s": 0.19469026548672566,
+        "volume_ml": 37.18035246435536
+      },
+      {
+        "index": 12,
+        "time_s": 0.21238938053097345,
+        "volume_ml": 37.52691521713206
+      },
+      {
+        "index": 13,
+        "time_s": 0.23008849557522124,
+        "volume_ml": 34.662682713799356
+      },
+      {
+        "index": 14,
+        "time_s": 0.24778761061946902,
+        "volume_ml": 32.79619413837999
+      },
+      {
+        "index": 15,
+        "time_s": 0.26548672566371684,
+        "volume_ml": 33.38089097802086
+      }
+    ],
+    "events": []
+  }
+]
