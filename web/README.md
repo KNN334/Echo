@@ -16,6 +16,10 @@ npm run dev
 
 ## 静态托管
 
+Echo 仓库通过 GitHub Actions 将 `main` 分支的 `web/` 构建发布到 GitHub Pages。修改 `web/` 后推送至 `main` 即可触发更新。[公开站点](https://knn334.github.io/Echo/) · [部署记录](https://github.com/KNN334/Echo/actions/workflows/pages.yml)
+
+在其他静态托管平台部署时，按以下步骤配置。
+
 1. 在 Vercel 或 Netlify 关联源码仓库，将项目根目录设为 `web`，安装命令设为 `npm ci`。
 2. 将构建命令设为 `npm run build`，输出目录设为 `dist`，发布后通过平台分配的网址访问。若使用对象存储静态托管，将 `dist` 中的文件原样上传，并设置 `index.html` 为索引页。
 3. 打开部署网址下的 `#/patients/patient0015` 并刷新页面，确认详情和图表可用。Vite 使用相对资源路径，HashRouter 将路由保留在网址片段中。
