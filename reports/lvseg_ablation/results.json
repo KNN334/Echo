@@ -1,0 +1,4707 @@
+{
+  "complete": true,
+  "split": "val",
+  "test_used_for_selection": false,
+  "selection": {
+    "selected": "DTE",
+    "best_candidate": "DTE",
+    "eligible": true,
+    "test_used_for_selection": false,
+    "explanation": "\u9a8c\u8bc1\u96c6\u6700\u4f73\u65b0\u7ed3\u6784\u4e3a DTE\uff0cDice=0.9333\uff0c\u76f8\u5bf9\u672c\u8f6e B \u7684\u914d\u5bf9\u5747\u503c\u5dee +0.0046\uff0c\u79cd\u5b50\u80dc\u51fa 3/3\u3002\u5019\u9009 DTE \u8fbe\u5230\u9884\u8bbe\u6807\u51c6\uff0c\u53ef\u51bb\u7ed3\u540e\u8fdb\u884c\u6700\u7ec8\u6d4b\u8bd5\u3002",
+    "protocol_sha256": "1c907d831458b55c85456e35520639911c69b92ae112f4fd1a021fed468030fe",
+    "checkpoint_hashes": {
+      "runs/lvseg_ablation/seed_2026/B": "4bc55b0f83bbd686f973439eceac09b1cf8d22f68918ae6e93dda497b03e0ab2",
+      "runs/lvseg_ablation/seed_2026/S": "10ec92c12c62f1c225786a69f5aad88280872a0a71cc1faaf8bc4f6d6616c6eb",
+      "runs/lvseg_ablation/seed_2026/D": "f064048d75ba174c02e4d6385dd7162da1aea8cdd2d71b50c762bc83788c8bd6",
+      "runs/lvseg_ablation/seed_2026/T": "9f8a7a9059f8e88c1bf850a6b88ef8cd948d8bd49d81b2042a09032dcebeb3fd",
+      "runs/lvseg_ablation/seed_2026/E": "ba56d4b7b86249eb7bfa98e49cef0d793fc95de1d666b9d0d178a32098fe1854",
+      "runs/lvseg_ablation/seed_2026/SD": "af8d8d976266b50fee8920c892d03d4a2fcd1d3b6ca12aa11ebe12bdd4a0b955",
+      "runs/lvseg_ablation/seed_2026/SDT": "795abf29e88485d0f063f90b9527ead1be824ae92e45b52a5f1a816695615779",
+      "runs/lvseg_ablation/seed_2026/SDTE": "c24b53935b3e9e7b829044f855c9afaefaa8188b2227a8dee9b27ff8647f2692",
+      "runs/lvseg_ablation/seed_2026/DTE": "5103390376bbd2db4c75269c7752ad30a43637d9d75a5cb18a955cb415c2f384",
+      "runs/lvseg_ablation/seed_2026/STE": "8283c469a66fb43010a8d0760d295a7c5a4626c1f10fb4e3ab304be632119939",
+      "runs/lvseg_ablation/seed_2026/SDE": "99abe37b2ede4982cceb37df4176585d28730edbddae4ec69643c6767443c1eb",
+      "runs/lvseg_ablation/seed_2027/B": "37f66fde4d8556062b75cf168c54b027c9e2b520be19c6cbd90e66080020285d",
+      "runs/lvseg_ablation/seed_2027/S": "50729e589ef9b65496df61049c547aaaf1d7e47c0e017554f79070c2bc696c77",
+      "runs/lvseg_ablation/seed_2027/D": "0427cf3c4fe203f2dcf34dca22f9d267031f19e0d01f734ca4a6bea2bef70536",
+      "runs/lvseg_ablation/seed_2027/T": "8e9f8f348ff2f1b75c993d4569e6e780cb73bf41ca0ee4407f320e037611e74b",
+      "runs/lvseg_ablation/seed_2027/E": "8464c6b94364c257ed0dacfb21970409ee62ce583e9987bdc018ffe3967bf69f",
+      "runs/lvseg_ablation/seed_2027/SD": "0f86847effc251b1695433fc60965374241af78bdc5b0cf307cdd1a4b94802be",
+      "runs/lvseg_ablation/seed_2027/SDT": "ebd4f97e36334d9b43bf4afa28da3b46e1fc5f729579e35b3e1e8cca03d70acb",
+      "runs/lvseg_ablation/seed_2027/SDTE": "b48d264942aea6ca84282edba4f8fdd83959d356ad7527ef2614db1afc27bada",
+      "runs/lvseg_ablation/seed_2027/DTE": "8f331ca256f34063df4253ec23b4ba61d312d21a4c2238d38a23577734ee4c25",
+      "runs/lvseg_ablation/seed_2027/STE": "516d7a2695d78c70d714aac80b697edc82ff596e0973a852285f710b24982dc4",
+      "runs/lvseg_ablation/seed_2027/SDE": "8849b30b0971f1ceab71bb82574600a06fb484dddb61f73bea9045101ad30551",
+      "runs/lvseg_ablation/seed_2028/B": "9a9cb1399d65fe148f259207f4ca8206502055b6f76b01bcb72cb37f3e632492",
+      "runs/lvseg_ablation/seed_2028/S": "bc9c73bc9ac98eb0cc51e366314012770084338ad2384c3294cd1e49d514d7b6",
+      "runs/lvseg_ablation/seed_2028/D": "afc073409b3dd68b70af8a5d53582ac99fd8da956e95f9a6d1ebc5f1825440e5",
+      "runs/lvseg_ablation/seed_2028/T": "bafa356914cec07f1b20724e057423bf68d210426cd1dfe81aea1daa4e52b04d",
+      "runs/lvseg_ablation/seed_2028/E": "f8b9a7a57af1b27195a1d7faf2877f392ab9b0776577e23b51387095265c59f2",
+      "runs/lvseg_ablation/seed_2028/SD": "f811d713878fb46b68db85d9958fe785ba8e2db728893e71245d98df7b38b111",
+      "runs/lvseg_ablation/seed_2028/SDT": "be0af9c673e9a4286f7b61f029b105b8174268315a7b3002fb209f8e2a8316e5",
+      "runs/lvseg_ablation/seed_2028/SDTE": "b9dbb874a0bc8536e0a2802ef5df666d300e936e71093906554d8233ec3d7d78",
+      "runs/lvseg_ablation/seed_2028/DTE": "4151e198759b38d2657adae5fc3de82403ac7920af7093debf4ba73c1866181e",
+      "runs/lvseg_ablation/seed_2028/STE": "70be8a99eff9877d66e1713c72cf66702334c429f1f9c1933d9c06cdf779c80a",
+      "runs/lvseg_ablation/seed_2028/SDE": "6052b94cdd7dc94c64bc0f3f7486445317e7c2b218848a2c91064edef8959f9a"
+    }
+  },
+  "models": [
+    {
+      "variant": "B",
+      "se": false,
+      "dilated_residual": false,
+      "temporal": false,
+      "edge": false,
+      "runs": 3,
+      "seeds": [
+        2026,
+        2027,
+        2028
+      ],
+      "parameters": 4489865,
+      "dice": 0.9286917649179992,
+      "dice_sd": 0.005446288060507425,
+      "miou": 0.9280324455581488,
+      "miou_sd": 0.004768440235100216,
+      "precision": 0.9294199253940567,
+      "precision_sd": 0.013410377143766942,
+      "recall": 0.9327915621600789,
+      "recall_sd": 0.003833921062668872,
+      "hd95": 4.278562622086872,
+      "hd95_sd": 0.47835175883279424,
+      "asd": 1.5684396660289341,
+      "asd_sd": 0.16820586557104722,
+      "volume_absolute_error_ml": 7.960177625981424,
+      "volume_absolute_error_ml_sd": 0.5357210764958117,
+      "paired_dice_deltas": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "paired_wins": 0,
+      "mean_paired_dice_gain": 0.0,
+      "noise_0.1_dice": 0.926600856070869,
+      "noise_0.2_dice": 0.9213836496206781
+    },
+    {
+      "variant": "S",
+      "se": true,
+      "dilated_residual": false,
+      "temporal": false,
+      "edge": false,
+      "runs": 3,
+      "seeds": [
+        2026,
+        2027,
+        2028
+      ],
+      "parameters": 4422963,
+      "dice": 0.9283669303170764,
+      "dice_sd": 0.0014430168375040519,
+      "miou": 0.9278112054897952,
+      "miou_sd": 0.0015083736060466995,
+      "precision": 0.9396104827991385,
+      "precision_sd": 0.0028170773977528527,
+      "recall": 0.9221119800342239,
+      "recall_sd": 0.0019222781583777323,
+      "hd95": 4.223831756908578,
+      "hd95_sd": 0.1329893165845101,
+      "asd": 1.5476697189066277,
+      "asd_sd": 0.0309358569289113,
+      "volume_absolute_error_ml": 7.899193705364672,
+      "volume_absolute_error_ml_sd": 0.42223221883634954,
+      "paired_dice_deltas": [
+        -0.0019727168734015033,
+        -0.005263094749126229,
+        0.006261307819759532
+      ],
+      "paired_wins": 1,
+      "mean_paired_dice_gain": -0.0003248346009227336,
+      "noise_0.1_dice": 0.9239958069789466,
+      "noise_0.2_dice": 0.90888388285559
+    },
+    {
+      "variant": "D",
+      "se": false,
+      "dilated_residual": true,
+      "temporal": false,
+      "edge": false,
+      "runs": 3,
+      "seeds": [
+        2026,
+        2027,
+        2028
+      ],
+      "parameters": 4587809,
+      "dice": 0.9311246559855658,
+      "dice_sd": 0.001140393210366429,
+      "miou": 0.9300680800585674,
+      "miou_sd": 0.0011015065139288126,
+      "precision": 0.9327544842249746,
+      "precision_sd": 0.0028938058650359606,
+      "recall": 0.9336449011009207,
+      "recall_sd": 0.0036275769024743483,
+      "hd95": 4.106358921035287,
+      "hd95_sd": 0.09536478801650816,
+      "asd": 1.498675280160665,
+      "asd_sd": 0.022388635425406242,
+      "volume_absolute_error_ml": 7.970354801102812,
+      "volume_absolute_error_ml_sd": 0.409241448869524,
+      "paired_dice_deltas": [
+        0.0004891319001809613,
+        -0.0021904667193161087,
+        0.009000008021834982
+      ],
+      "paired_wins": 2,
+      "mean_paired_dice_gain": 0.0024328910675666116,
+      "noise_0.1_dice": 0.9288032657747887,
+      "noise_0.2_dice": 0.891380721720391
+    },
+    {
+      "variant": "T",
+      "se": false,
+      "dilated_residual": false,
+      "temporal": true,
+      "edge": false,
+      "runs": 3,
+      "seeds": [
+        2026,
+        2027,
+        2028
+      ],
+      "parameters": 8546057,
+      "dice": 0.9308702368509695,
+      "dice_sd": 0.0014521689457613447,
+      "miou": 0.9301123046122118,
+      "miou_sd": 0.0011771726919900312,
+      "precision": 0.9286737612812828,
+      "precision_sd": 0.010743809378341011,
+      "recall": 0.9374998806692485,
+      "recall_sd": 0.010708907113593411,
+      "hd95": 4.203202407054154,
+      "hd95_sd": 0.30000354480318225,
+      "asd": 1.5059299394795265,
+      "asd_sd": 0.06511435942048091,
+      "volume_absolute_error_ml": 7.881782478032684,
+      "volume_absolute_error_ml_sd": 0.3190541434966699,
+      "paired_dice_deltas": [
+        -0.00016032244645913796,
+        -0.00011420342437973297,
+        0.006809941669749686
+      ],
+      "paired_wins": 1,
+      "mean_paired_dice_gain": 0.0021784719329702718,
+      "noise_0.1_dice": 0.9294490360176946,
+      "noise_0.2_dice": 0.9242461683547571
+    },
+    {
+      "variant": "E",
+      "se": false,
+      "dilated_residual": false,
+      "temporal": false,
+      "edge": true,
+      "runs": 3,
+      "seeds": [
+        2026,
+        2027,
+        2028
+      ],
+      "parameters": 4495098,
+      "dice": 0.9298407295143916,
+      "dice_sd": 0.0006518664838021595,
+      "miou": 0.929152811743264,
+      "miou_sd": 0.0006526833327640082,
+      "precision": 0.9367145588739887,
+      "precision_sd": 0.00730452494327626,
+      "recall": 0.9272886181825865,
+      "recall_sd": 0.0061681124986318735,
+      "hd95": 4.152561867537058,
+      "hd95_sd": 0.03457219581040973,
+      "asd": 1.5170017064797086,
+      "asd_sd": 0.015334986048179022,
+      "volume_absolute_error_ml": 7.975625462796911,
+      "volume_absolute_error_ml_sd": 0.5754283976723642,
+      "paired_dice_deltas": [
+        -0.0010467793318884588,
+        -0.0023880812631886794,
+        0.006881754384254424
+      ],
+      "paired_wins": 1,
+      "mean_paired_dice_gain": 0.0011489645963924284,
+      "noise_0.1_dice": 0.9273616619413843,
+      "noise_0.2_dice": 0.9195225941981354
+    },
+    {
+      "variant": "SD",
+      "se": true,
+      "dilated_residual": true,
+      "temporal": false,
+      "edge": false,
+      "runs": 3,
+      "seeds": [
+        2026,
+        2027,
+        2028
+      ],
+      "parameters": 4520907,
+      "dice": 0.9292257300213934,
+      "dice_sd": 0.002057463074719707,
+      "miou": 0.9284233073504112,
+      "miou_sd": 0.0020379327114817608,
+      "precision": 0.9271589794287026,
+      "precision_sd": 0.008261677774283143,
+      "recall": 0.936413603634681,
+      "recall_sd": 0.005143427681916433,
+      "hd95": 4.094933045241056,
+      "hd95_sd": 0.06993287167070922,
+      "asd": 1.5306757199363004,
+      "asd_sd": 0.04764762887298934,
+      "volume_absolute_error_ml": 8.4985435665381,
+      "volume_absolute_error_ml_sd": 0.3086785648170579,
+      "paired_dice_deltas": [
+        -0.0007993955050986656,
+        -0.002090159047258955,
+        0.004491449862540242
+      ],
+      "paired_wins": 1,
+      "mean_paired_dice_gain": 0.0005339651033942072,
+      "noise_0.1_dice": 0.928135610768968,
+      "noise_0.2_dice": 0.9221513013150633
+    },
+    {
+      "variant": "SDT",
+      "se": true,
+      "dilated_residual": true,
+      "temporal": true,
+      "edge": false,
+      "runs": 3,
+      "seeds": [
+        2026,
+        2027,
+        2028
+      ],
+      "parameters": 8577099,
+      "dice": 0.9298006756088217,
+      "dice_sd": 0.004661811735894771,
+      "miou": 0.9290027289731099,
+      "miou_sd": 0.004147517953150647,
+      "precision": 0.9287531580654662,
+      "precision_sd": 0.010978650483414069,
+      "recall": 0.9356241515217129,
+      "recall_sd": 0.01943811936471135,
+      "hd95": 4.108803236746444,
+      "hd95_sd": 0.2455953609660235,
+      "asd": 1.5239328484335766,
+      "asd_sd": 0.08320720710986247,
+      "volume_absolute_error_ml": 8.281263928780657,
+      "volume_absolute_error_ml_sd": 0.44800811879007374,
+      "paired_dice_deltas": [
+        0.0007956794305973292,
+        0.0005207574937882153,
+        0.002010295148082264
+      ],
+      "paired_wins": 3,
+      "mean_paired_dice_gain": 0.0011089106908226027,
+      "noise_0.1_dice": 0.9287484284047304,
+      "noise_0.2_dice": 0.9088688210093003
+    },
+    {
+      "variant": "SDTE",
+      "se": true,
+      "dilated_residual": true,
+      "temporal": true,
+      "edge": true,
+      "runs": 3,
+      "seeds": [
+        2026,
+        2027,
+        2028
+      ],
+      "parameters": 8582332,
+      "dice": 0.9299431954955973,
+      "dice_sd": 0.0038590170574695046,
+      "miou": 0.9292082907478665,
+      "miou_sd": 0.0037698268623189072,
+      "precision": 0.9258386024181112,
+      "precision_sd": 0.012326263904981994,
+      "recall": 0.9389027044400223,
+      "recall_sd": 0.006150193955470967,
+      "hd95": 4.113821311583822,
+      "hd95_sd": 0.22087928138933527,
+      "asd": 1.5157981780114238,
+      "asd_sd": 0.09579509719721999,
+      "volume_absolute_error_ml": 8.061669304792485,
+      "volume_absolute_error_ml_sd": 0.8374839956663833,
+      "paired_dice_deltas": [
+        -0.0004403340029256464,
+        0.0009823027925656147,
+        0.003212322943154655
+      ],
+      "paired_wins": 2,
+      "mean_paired_dice_gain": 0.0012514305775982078,
+      "noise_0.1_dice": 0.9290131775054948,
+      "noise_0.2_dice": 0.9203574742278706
+    },
+    {
+      "variant": "DTE",
+      "se": false,
+      "dilated_residual": true,
+      "temporal": true,
+      "edge": true,
+      "runs": 3,
+      "seeds": [
+        2026,
+        2027,
+        2028
+      ],
+      "parameters": 8649234,
+      "dice": 0.9332842497482396,
+      "dice_sd": 0.0007195537469517103,
+      "miou": 0.9322421330877542,
+      "miou_sd": 0.0007113227202696826,
+      "precision": 0.9395621072445687,
+      "precision_sd": 0.0065781810247050815,
+      "recall": 0.9308690077208942,
+      "recall_sd": 0.008016850674296479,
+      "hd95": 3.8793983913754704,
+      "hd95_sd": 0.08389918900682705,
+      "asd": 1.440472352175357,
+      "asd_sd": 0.019321268360225165,
+      "volume_absolute_error_ml": 7.586684259357778,
+      "volume_absolute_error_ml_sd": 0.2333143835061246,
+      "paired_dice_deltas": [
+        0.0010073711868053836,
+        0.0011333825090246163,
+        0.01163670079489143
+      ],
+      "paired_wins": 3,
+      "mean_paired_dice_gain": 0.004592484830240477,
+      "noise_0.1_dice": 0.9315361034186739,
+      "noise_0.2_dice": 0.921667137111545
+    },
+    {
+      "variant": "STE",
+      "se": true,
+      "dilated_residual": false,
+      "temporal": true,
+      "edge": true,
+      "runs": 3,
+      "seeds": [
+        2026,
+        2027,
+        2028
+      ],
+      "parameters": 8484388,
+      "dice": 0.9276408655378876,
+      "dice_sd": 0.0011790722435506963,
+      "miou": 0.9268474724747582,
+      "miou_sd": 0.001104449250022056,
+      "precision": 0.9325393227903604,
+      "precision_sd": 0.002577286529740566,
+      "recall": 0.9274231614392432,
+      "recall_sd": 0.003823214952144316,
+      "hd95": 4.345987849680934,
+      "hd95_sd": 0.27731457013258143,
+      "asd": 1.5738183715803276,
+      "asd_sd": 0.008862724788834812,
+      "volume_absolute_error_ml": 8.021602420493345,
+      "volume_absolute_error_ml_sd": 0.39105886820161945,
+      "paired_dice_deltas": [
+        -0.002610422036669058,
+        -0.005202509706506597,
+        0.004660233602840846
+      ],
+      "paired_wins": 1,
+      "mean_paired_dice_gain": -0.0010508993801116029,
+      "noise_0.1_dice": 0.9260080589921376,
+      "noise_0.2_dice": 0.9214235491579643
+    },
+    {
+      "variant": "SDE",
+      "se": true,
+      "dilated_residual": true,
+      "temporal": false,
+      "edge": true,
+      "runs": 3,
+      "seeds": [
+        2026,
+        2027,
+        2028
+      ],
+      "parameters": 4526140,
+      "dice": 0.9309887863844364,
+      "dice_sd": 0.0025351350144660113,
+      "miou": 0.9301454525177472,
+      "miou_sd": 0.002156074968766126,
+      "precision": 0.9345092557944287,
+      "precision_sd": 0.0067099497415153446,
+      "recall": 0.9323172704404786,
+      "recall_sd": 0.004721437776263091,
+      "hd95": 3.992985453862486,
+      "hd95_sd": 0.20058588043386358,
+      "asd": 1.481875685711182,
+      "asd_sd": 0.06185960591817554,
+      "volume_absolute_error_ml": 8.100667439845484,
+      "volume_absolute_error_ml_sd": 0.33912658989709554,
+      "paired_dice_deltas": [
+        -0.00014371428250536944,
+        -0.0038098289033162702,
+        0.01084460758513317
+      ],
+      "paired_wins": 1,
+      "mean_paired_dice_gain": 0.002297021466437177,
+      "noise_0.1_dice": 0.9289758509434675,
+      "noise_0.2_dice": 0.9216021840559268
+    }
+  ],
+  "runs": [
+    {
+      "seed": 2026,
+      "variant": "B",
+      "options": {
+        "se": false,
+        "dilated_residual": false,
+        "temporal": false,
+        "edge": false
+      },
+      "training_seconds": 398.3292169570923,
+      "run_dir": "runs/lvseg_ablation/seed_2026/B",
+      "validation": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "4bc55b0f83bbd686f973439eceac09b1cf8d22f68918ae6e93dda497b03e0ab2",
+        "noise_sigma": 0.0,
+        "parameter_count": 4489865,
+        "best_epoch": 19,
+        "elapsed_s": 23.171690464019775,
+        "context_lengths": {
+          "1": 200
+        },
+        "metrics": {
+          "dice": 0.9316072787584811,
+          "miou": 0.9305609674368397,
+          "precision": 0.9370119128424683,
+          "recall": 0.9302111361188747,
+          "hd95": 3.9294241558475576,
+          "asd": 1.4667482983156375,
+          "volume_absolute_error_ml": 7.432158586324853
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -2.383720897880587,
+            "loa_lower": -16.60762303979873,
+            "loa_upper": 11.840181244037556
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -0.6118234875323434,
+            "loa_lower": -19.177964659283877,
+            "loa_upper": 17.954317684219188
+          }
+        }
+      },
+      "noise_0.1": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "4bc55b0f83bbd686f973439eceac09b1cf8d22f68918ae6e93dda497b03e0ab2",
+        "noise_sigma": 0.1,
+        "parameter_count": 4489865,
+        "best_epoch": 19,
+        "elapsed_s": 10.016721248626709,
+        "context_lengths": {
+          "1": 200
+        },
+        "metrics": {
+          "dice": 0.9297485780916983,
+          "miou": 0.9288541549042733,
+          "precision": 0.9401231542082381,
+          "recall": 0.9237120944281731,
+          "hd95": 4.0571882521227165,
+          "asd": 1.509140991468918,
+          "volume_absolute_error_ml": 7.884948121967292
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -3.540420736271881,
+            "loa_lower": -18.85080104562454,
+            "loa_upper": 11.769959573080776
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -1.5871358912609492,
+            "loa_lower": -20.8011997063068,
+            "loa_upper": 17.6269279237849
+          }
+        }
+      },
+      "noise_0.2": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "4bc55b0f83bbd686f973439eceac09b1cf8d22f68918ae6e93dda497b03e0ab2",
+        "noise_sigma": 0.2,
+        "parameter_count": 4489865,
+        "best_epoch": 19,
+        "elapsed_s": 10.483011245727539,
+        "context_lengths": {
+          "1": 200
+        },
+        "metrics": {
+          "dice": 0.9227967238557876,
+          "miou": 0.9230914069305594,
+          "precision": 0.9422847801427229,
+          "recall": 0.9091593515561898,
+          "hd95": 4.513929125076668,
+          "asd": 1.6810539615573574,
+          "volume_absolute_error_ml": 9.053935712937399
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -5.214119486864133,
+            "loa_lower": -22.15984884901642,
+            "loa_upper": 11.731609875288152
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -3.8459484834520383,
+            "loa_lower": -24.50950334809572,
+            "loa_upper": 16.817606381191645
+          }
+        }
+      }
+    },
+    {
+      "seed": 2026,
+      "variant": "S",
+      "options": {
+        "se": true,
+        "dilated_residual": false,
+        "temporal": false,
+        "edge": false
+      },
+      "training_seconds": 323.2817304134369,
+      "run_dir": "runs/lvseg_ablation/seed_2026/S",
+      "validation": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "10ec92c12c62f1c225786a69f5aad88280872a0a71cc1faaf8bc4f6d6616c6eb",
+        "noise_sigma": 0.0,
+        "parameter_count": 4422963,
+        "best_epoch": 20,
+        "elapsed_s": 12.290721654891968,
+        "context_lengths": {
+          "1": 200
+        },
+        "metrics": {
+          "dice": 0.9296345618850796,
+          "miou": 0.9291431385364683,
+          "precision": 0.9401037585737125,
+          "recall": 0.9239355671052725,
+          "hd95": 4.2624231313277905,
+          "asd": 1.5305525310396413,
+          "volume_absolute_error_ml": 8.105168939798288
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 0.17459021125661878,
+            "loa_lower": -23.184334464573332,
+            "loa_upper": 23.533514887086568
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -2.393601970123372,
+            "loa_lower": -20.485161159977707,
+            "loa_upper": 15.697957219730965
+          }
+        }
+      },
+      "noise_0.1": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "10ec92c12c62f1c225786a69f5aad88280872a0a71cc1faaf8bc4f6d6616c6eb",
+        "noise_sigma": 0.1,
+        "parameter_count": 4422963,
+        "best_epoch": 20,
+        "elapsed_s": 11.120552062988281,
+        "context_lengths": {
+          "1": 200
+        },
+        "metrics": {
+          "dice": 0.9245696954278106,
+          "miou": 0.9252226934803223,
+          "precision": 0.9378354693799855,
+          "recall": 0.9178190134730455,
+          "hd95": 4.946728980289186,
+          "asd": 1.7220711072406951,
+          "volume_absolute_error_ml": 9.088314392422811
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -0.11441256289772482,
+            "loa_lower": -26.2082323016183,
+            "loa_upper": 25.979407175822846
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -2.824743366403161,
+            "loa_lower": -21.581001455798166,
+            "loa_upper": 15.931514722991842
+          }
+        }
+      },
+      "noise_0.2": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "10ec92c12c62f1c225786a69f5aad88280872a0a71cc1faaf8bc4f6d6616c6eb",
+        "noise_sigma": 0.2,
+        "parameter_count": 4422963,
+        "best_epoch": 20,
+        "elapsed_s": 10.917606592178345,
+        "context_lengths": {
+          "1": 200
+        },
+        "metrics": {
+          "dice": 0.9158844296462219,
+          "miou": 0.9180007040197437,
+          "precision": 0.9400731221393411,
+          "recall": 0.9001992898514193,
+          "hd95": 5.44369527479663,
+          "asd": 1.924786304424932,
+          "volume_absolute_error_ml": 10.5673246318188
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -1.7753428764820023,
+            "loa_lower": -31.742427576951048,
+            "loa_upper": 28.19174182398704
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -4.859013109110844,
+            "loa_lower": -24.80890781040018,
+            "loa_upper": 15.09088159217849
+          }
+        }
+      }
+    },
+    {
+      "seed": 2026,
+      "variant": "D",
+      "options": {
+        "se": false,
+        "dilated_residual": true,
+        "temporal": false,
+        "edge": false
+      },
+      "training_seconds": 380.4064373970032,
+      "run_dir": "runs/lvseg_ablation/seed_2026/D",
+      "validation": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "f064048d75ba174c02e4d6385dd7162da1aea8cdd2d71b50c762bc83788c8bd6",
+        "noise_sigma": 0.0,
+        "parameter_count": 4587809,
+        "best_epoch": 14,
+        "elapsed_s": 22.658408403396606,
+        "context_lengths": {
+          "1": 200
+        },
+        "metrics": {
+          "dice": 0.9320964106586621,
+          "miou": 0.9308722834721079,
+          "precision": 0.9305532854803777,
+          "recall": 0.9376944671376595,
+          "hd95": 3.9962632165100227,
+          "asd": 1.477621565660395,
+          "volume_absolute_error_ml": 7.879904839239999
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 0.31834073440357313,
+            "loa_lower": -16.171966236976157,
+            "loa_upper": 16.808647705783304
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -0.043628512417739816,
+            "loa_lower": -18.53998697560965,
+            "loa_upper": 18.45272995077417
+          }
+        }
+      },
+      "noise_0.1": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "f064048d75ba174c02e4d6385dd7162da1aea8cdd2d71b50c762bc83788c8bd6",
+        "noise_sigma": 0.1,
+        "parameter_count": 4587809,
+        "best_epoch": 14,
+        "elapsed_s": 17.01201605796814,
+        "context_lengths": {
+          "1": 200
+        },
+        "metrics": {
+          "dice": 0.9289675310735137,
+          "miou": 0.9282281150175876,
+          "precision": 0.9306237994754089,
+          "recall": 0.9317868217147668,
+          "hd95": 4.591615804837176,
+          "asd": 1.620523427085725,
+          "volume_absolute_error_ml": 7.99537315358796
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -0.47217028204507616,
+            "loa_lower": -17.725615885806302,
+            "loa_upper": 16.781275321716148
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -1.0530537239656241,
+            "loa_lower": -19.33618570890014,
+            "loa_upper": 17.230078260968888
+          }
+        }
+      },
+      "noise_0.2": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "f064048d75ba174c02e4d6385dd7162da1aea8cdd2d71b50c762bc83788c8bd6",
+        "noise_sigma": 0.2,
+        "parameter_count": 4587809,
+        "best_epoch": 14,
+        "elapsed_s": 16.01866865158081,
+        "context_lengths": {
+          "1": 200
+        },
+        "metrics": {
+          "dice": 0.9064624896913085,
+          "miou": 0.911453237709861,
+          "precision": 0.9103967353367792,
+          "recall": 0.9150976760655708,
+          "hd95": 8.689660571045954,
+          "asd": 2.85740402516229,
+          "volume_absolute_error_ml": 22.563936714989225
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 10.89948860821017,
+            "loa_lower": -120.0620240101133,
+            "loa_upper": 141.86100122653363
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 11.904313380396154,
+            "loa_lower": -116.59830928237875,
+            "loa_upper": 140.40693604317107
+          }
+        }
+      }
+    },
+    {
+      "seed": 2026,
+      "variant": "T",
+      "options": {
+        "se": false,
+        "dilated_residual": false,
+        "temporal": true,
+        "edge": false
+      },
+      "training_seconds": 729.4776566028595,
+      "run_dir": "runs/lvseg_ablation/seed_2026/T",
+      "validation": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "9f8a7a9059f8e88c1bf850a6b88ef8cd948d8bd49d81b2042a09032dcebeb3fd",
+        "noise_sigma": 0.0,
+        "parameter_count": 8546057,
+        "best_epoch": 20,
+        "elapsed_s": 25.091506719589233,
+        "context_lengths": {
+          "1": 100,
+          "2": 0,
+          "3": 100
+        },
+        "metrics": {
+          "dice": 0.931446956312022,
+          "miou": 0.9305748865379703,
+          "precision": 0.9409329291746118,
+          "recall": 0.926200630982533,
+          "hd95": 4.0707283782648425,
+          "asd": 1.4678460565324567,
+          "volume_absolute_error_ml": 7.523743047680253
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -0.8214065142049755,
+            "loa_lower": -17.6597763023986,
+            "loa_upper": 16.016963273988647
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -1.6325216672040963,
+            "loa_lower": -19.324575072136167,
+            "loa_upper": 16.059531737727976
+          }
+        }
+      },
+      "noise_0.1": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "9f8a7a9059f8e88c1bf850a6b88ef8cd948d8bd49d81b2042a09032dcebeb3fd",
+        "noise_sigma": 0.1,
+        "parameter_count": 8546057,
+        "best_epoch": 20,
+        "elapsed_s": 16.2313392162323,
+        "context_lengths": {
+          "1": 100,
+          "2": 0,
+          "3": 100
+        },
+        "metrics": {
+          "dice": 0.9302069245271366,
+          "miou": 0.9294151005428063,
+          "precision": 0.9428135661646444,
+          "recall": 0.9219033238215597,
+          "hd95": 4.113875838135926,
+          "asd": 1.5013378509534372,
+          "volume_absolute_error_ml": 7.97930184602352
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -1.7503918067954203,
+            "loa_lower": -19.53868249532014,
+            "loa_upper": 16.037898881729298
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -2.0007990034002234,
+            "loa_lower": -20.968357167586166,
+            "loa_upper": 16.966759160785717
+          }
+        }
+      },
+      "noise_0.2": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "9f8a7a9059f8e88c1bf850a6b88ef8cd948d8bd49d81b2042a09032dcebeb3fd",
+        "noise_sigma": 0.2,
+        "parameter_count": 8546057,
+        "best_epoch": 20,
+        "elapsed_s": 15.537489175796509,
+        "context_lengths": {
+          "1": 100,
+          "2": 0,
+          "3": 100
+        },
+        "metrics": {
+          "dice": 0.9221892525724452,
+          "miou": 0.9228235743159834,
+          "precision": 0.9436634869343788,
+          "recall": 0.9059138333922008,
+          "hd95": 4.984880264360613,
+          "asd": 1.769155089331088,
+          "volume_absolute_error_ml": 8.872760167959141
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -3.9407706235859417,
+            "loa_lower": -24.907236177352154,
+            "loa_upper": 17.025694930180272
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -3.913994369779451,
+            "loa_lower": -23.55162515165757,
+            "loa_upper": 15.723636412098669
+          }
+        }
+      }
+    },
+    {
+      "seed": 2026,
+      "variant": "E",
+      "options": {
+        "se": false,
+        "dilated_residual": false,
+        "temporal": false,
+        "edge": true
+      },
+      "training_seconds": 467.6498532295227,
+      "run_dir": "runs/lvseg_ablation/seed_2026/E",
+      "validation": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "ba56d4b7b86249eb7bfa98e49cef0d793fc95de1d666b9d0d178a32098fe1854",
+        "noise_sigma": 0.0,
+        "parameter_count": 4495098,
+        "best_epoch": 20,
+        "elapsed_s": 13.093854904174805,
+        "context_lengths": {
+          "1": 200
+        },
+        "metrics": {
+          "dice": 0.9305604994265927,
+          "miou": 0.9299055960260589,
+          "precision": 0.9451256702018349,
+          "recall": 0.9202008408336276,
+          "hd95": 4.1887667284313785,
+          "asd": 1.5080392194472783,
+          "volume_absolute_error_ml": 8.06456346635894
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -1.826576555295353,
+            "loa_lower": -20.432617775391652,
+            "loa_upper": 16.779464664800944
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -3.3498487626973428,
+            "loa_lower": -20.55283624379327,
+            "loa_upper": 13.853138718398585
+          }
+        }
+      },
+      "noise_0.1": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "ba56d4b7b86249eb7bfa98e49cef0d793fc95de1d666b9d0d178a32098fe1854",
+        "noise_sigma": 0.1,
+        "parameter_count": 4495098,
+        "best_epoch": 20,
+        "elapsed_s": 18.410324335098267,
+        "context_lengths": {
+          "1": 200
+        },
+        "metrics": {
+          "dice": 0.927014427504594,
+          "miou": 0.9269812949005236,
+          "precision": 0.9446574625899476,
+          "recall": 0.9143196607269946,
+          "hd95": 4.586107492785645,
+          "asd": 1.5995739788112948,
+          "volume_absolute_error_ml": 8.534017231247391
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -2.936134147324643,
+            "loa_lower": -20.828617856206446,
+            "loa_upper": 14.956349561557158
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -3.338721312261192,
+            "loa_lower": -21.41105359869922,
+            "loa_upper": 14.733610974176834
+          }
+        }
+      },
+      "noise_0.2": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "ba56d4b7b86249eb7bfa98e49cef0d793fc95de1d666b9d0d178a32098fe1854",
+        "noise_sigma": 0.2,
+        "parameter_count": 4495098,
+        "best_epoch": 20,
+        "elapsed_s": 16.230548858642578,
+        "context_lengths": {
+          "1": 200
+        },
+        "metrics": {
+          "dice": 0.9166947040114154,
+          "miou": 0.9191200284098402,
+          "precision": 0.9395584951494189,
+          "recall": 0.9010869651753614,
+          "hd95": 5.959853446604381,
+          "asd": 2.115801111248394,
+          "volume_absolute_error_ml": 10.605932718751394
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -2.9853887889279647,
+            "loa_lower": -29.242965603535794,
+            "loa_upper": 23.272188025679867
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -4.167463265620352,
+            "loa_lower": -26.66317394355437,
+            "loa_upper": 18.328247412313665
+          }
+        }
+      }
+    },
+    {
+      "seed": 2026,
+      "variant": "SD",
+      "options": {
+        "se": true,
+        "dilated_residual": true,
+        "temporal": false,
+        "edge": false
+      },
+      "training_seconds": 409.1798527240753,
+      "run_dir": "runs/lvseg_ablation/seed_2026/SD",
+      "validation": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "af8d8d976266b50fee8920c892d03d4a2fcd1d3b6ca12aa11ebe12bdd4a0b955",
+        "noise_sigma": 0.0,
+        "parameter_count": 4520907,
+        "best_epoch": 15,
+        "elapsed_s": 13.036324977874756,
+        "context_lengths": {
+          "1": 200
+        },
+        "metrics": {
+          "dice": 0.9308078832533825,
+          "miou": 0.9298699201412206,
+          "precision": 0.9295461664996191,
+          "recall": 0.9370725545574702,
+          "hd95": 4.103416392421775,
+          "asd": 1.4957696198444663,
+          "volume_absolute_error_ml": 8.547042640012897
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 1.1660580342175864,
+            "loa_lower": -16.814535737668038,
+            "loa_upper": 19.146651806103208
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 2.4456870957384442,
+            "loa_lower": -17.126057508816096,
+            "loa_upper": 22.01743170029298
+          }
+        }
+      },
+      "noise_0.1": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "af8d8d976266b50fee8920c892d03d4a2fcd1d3b6ca12aa11ebe12bdd4a0b955",
+        "noise_sigma": 0.1,
+        "parameter_count": 4520907,
+        "best_epoch": 15,
+        "elapsed_s": 15.671491384506226,
+        "context_lengths": {
+          "1": 200
+        },
+        "metrics": {
+          "dice": 0.928390736533088,
+          "miou": 0.9278211828645023,
+          "precision": 0.934146887272087,
+          "recall": 0.9283037483256258,
+          "hd95": 4.115109442989454,
+          "asd": 1.5361883453193754,
+          "volume_absolute_error_ml": 8.667890312564941
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -0.710302646177901,
+            "loa_lower": -20.12479976854234,
+            "loa_upper": 18.704194476186537
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 0.9837037403058556,
+            "loa_lower": -18.369926499671084,
+            "loa_upper": 20.337333980282796
+          }
+        }
+      },
+      "noise_0.2": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "af8d8d976266b50fee8920c892d03d4a2fcd1d3b6ca12aa11ebe12bdd4a0b955",
+        "noise_sigma": 0.2,
+        "parameter_count": 4520907,
+        "best_epoch": 15,
+        "elapsed_s": 14.157710075378418,
+        "context_lengths": {
+          "1": 200
+        },
+        "metrics": {
+          "dice": 0.9154979583156698,
+          "miou": 0.9180851554052581,
+          "precision": 0.9361663772895891,
+          "recall": 0.9033341610785885,
+          "hd95": 5.413988150259151,
+          "asd": 1.9406733788562593,
+          "volume_absolute_error_ml": 10.008880134436176
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -3.3568656076206844,
+            "loa_lower": -28.671618867891507,
+            "loa_upper": 21.95788765265014
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -2.378942789097914,
+            "loa_lower": -24.21063860763177,
+            "loa_upper": 19.452753029435943
+          }
+        }
+      }
+    },
+    {
+      "seed": 2026,
+      "variant": "SDT",
+      "options": {
+        "se": true,
+        "dilated_residual": true,
+        "temporal": true,
+        "edge": false
+      },
+      "training_seconds": 662.2365477085114,
+      "run_dir": "runs/lvseg_ablation/seed_2026/SDT",
+      "validation": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "795abf29e88485d0f063f90b9527ead1be824ae92e45b52a5f1a816695615779",
+        "noise_sigma": 0.0,
+        "parameter_count": 8577099,
+        "best_epoch": 14,
+        "elapsed_s": 15.337875127792358,
+        "context_lengths": {
+          "1": 100,
+          "2": 0,
+          "3": 100
+        },
+        "metrics": {
+          "dice": 0.9324029581890785,
+          "miou": 0.9312457153061139,
+          "precision": 0.9220057286299049,
+          "recall": 0.9468669618602877,
+          "hd95": 3.872906427362667,
+          "asd": 1.4684009205409445,
+          "volume_absolute_error_ml": 8.042421891866958
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 2.909433466328605,
+            "loa_lower": -13.946549920905493,
+            "loa_upper": 19.7654168535627
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 2.6395350740854497,
+            "loa_lower": -16.047930406512037,
+            "loa_upper": 21.32700055468294
+          }
+        }
+      },
+      "noise_0.1": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "795abf29e88485d0f063f90b9527ead1be824ae92e45b52a5f1a816695615779",
+        "noise_sigma": 0.1,
+        "parameter_count": 8577099,
+        "best_epoch": 14,
+        "elapsed_s": 13.132034540176392,
+        "context_lengths": {
+          "1": 100,
+          "2": 0,
+          "3": 100
+        },
+        "metrics": {
+          "dice": 0.9319401676255736,
+          "miou": 0.9307496006044065,
+          "precision": 0.9242812861939566,
+          "recall": 0.9435072159780602,
+          "hd95": 4.222805468336239,
+          "asd": 1.5097633461973963,
+          "volume_absolute_error_ml": 8.071729096947534
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 2.336583693521721,
+            "loa_lower": -14.66782528993571,
+            "loa_upper": 19.340992676979152
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 1.9218109797748517,
+            "loa_lower": -17.09862563203344,
+            "loa_upper": 20.94224759158314
+          }
+        }
+      },
+      "noise_0.2": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "795abf29e88485d0f063f90b9527ead1be824ae92e45b52a5f1a816695615779",
+        "noise_sigma": 0.2,
+        "parameter_count": 8577099,
+        "best_epoch": 14,
+        "elapsed_s": 12.487410068511963,
+        "context_lengths": {
+          "1": 100,
+          "2": 0,
+          "3": 100
+        },
+        "metrics": {
+          "dice": 0.8842433830827374,
+          "miou": 0.8963041372791575,
+          "precision": 0.8724420975687692,
+          "recall": 0.9119923215099103,
+          "hd95": 15.769111121095957,
+          "asd": 4.6776657832042385,
+          "volume_absolute_error_ml": 25.580271438691483
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 15.971952464131384,
+            "loa_lower": -93.01170707819682,
+            "loa_upper": 124.95561200645957
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 20.34847027179422,
+            "loa_lower": -90.9935698841577,
+            "loa_upper": 131.69051042774612
+          }
+        }
+      }
+    },
+    {
+      "seed": 2026,
+      "variant": "SDTE",
+      "options": {
+        "se": true,
+        "dilated_residual": true,
+        "temporal": true,
+        "edge": true
+      },
+      "training_seconds": 682.7905311584473,
+      "run_dir": "runs/lvseg_ablation/seed_2026/SDTE",
+      "validation": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "c24b53935b3e9e7b829044f855c9afaefaa8188b2227a8dee9b27ff8647f2692",
+        "noise_sigma": 0.0,
+        "parameter_count": 8582332,
+        "best_epoch": 15,
+        "elapsed_s": 7.71551251411438,
+        "context_lengths": {
+          "1": 100,
+          "2": 0,
+          "3": 100
+        },
+        "metrics": {
+          "dice": 0.9311669447555555,
+          "miou": 0.9304691202732802,
+          "precision": 0.9266022338139278,
+          "recall": 0.9407603369977974,
+          "hd95": 3.9426300804841348,
+          "asd": 1.4758129777601514,
+          "volume_absolute_error_ml": 7.889973222120013
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 2.5502822930286246,
+            "loa_lower": -13.004460630412783,
+            "loa_upper": 18.105025216470032
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 2.3044491847740356,
+            "loa_lower": -15.817574484771498,
+            "loa_upper": 20.42647285431957
+          }
+        }
+      },
+      "noise_0.1": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "c24b53935b3e9e7b829044f855c9afaefaa8188b2227a8dee9b27ff8647f2692",
+        "noise_sigma": 0.1,
+        "parameter_count": 8582332,
+        "best_epoch": 15,
+        "elapsed_s": 11.11001205444336,
+        "context_lengths": {
+          "1": 100,
+          "2": 0,
+          "3": 100
+        },
+        "metrics": {
+          "dice": 0.9292882446132001,
+          "miou": 0.9289265313757109,
+          "precision": 0.9295151373553143,
+          "recall": 0.9347983951026745,
+          "hd95": 4.044573208109716,
+          "asd": 1.5112881555617375,
+          "volume_absolute_error_ml": 8.242746482443314
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 1.5337077615141066,
+            "loa_lower": -15.798068180584044,
+            "loa_upper": 18.865483703612256
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 1.4655129749884739,
+            "loa_lower": -17.730624052123698,
+            "loa_upper": 20.661650002100647
+          }
+        }
+      },
+      "noise_0.2": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "c24b53935b3e9e7b829044f855c9afaefaa8188b2227a8dee9b27ff8647f2692",
+        "noise_sigma": 0.2,
+        "parameter_count": 8582332,
+        "best_epoch": 15,
+        "elapsed_s": 12.559677839279175,
+        "context_lengths": {
+          "1": 100,
+          "2": 0,
+          "3": 100
+        },
+        "metrics": {
+          "dice": 0.9095015898497709,
+          "miou": 0.9153532989668385,
+          "precision": 0.9161923075647629,
+          "recall": 0.9101227552785238,
+          "hd95": 8.401447865585174,
+          "asd": 2.940337715636596,
+          "volume_absolute_error_ml": 12.752310819009105
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 0.8418729363916726,
+            "loa_lower": -25.590105263743563,
+            "loa_upper": 27.27385113652691
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 5.826958899522266,
+            "loa_lower": -56.05485423679893,
+            "loa_upper": 67.70877203584347
+          }
+        }
+      }
+    },
+    {
+      "seed": 2026,
+      "variant": "DTE",
+      "options": {
+        "se": false,
+        "dilated_residual": true,
+        "temporal": true,
+        "edge": true
+      },
+      "training_seconds": 719.7255756855011,
+      "run_dir": "runs/lvseg_ablation/seed_2026/DTE",
+      "validation": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "5103390376bbd2db4c75269c7752ad30a43637d9d75a5cb18a955cb415c2f384",
+        "noise_sigma": 0.0,
+        "parameter_count": 8649234,
+        "best_epoch": 20,
+        "elapsed_s": 7.645472764968872,
+        "context_lengths": {
+          "1": 100,
+          "2": 0,
+          "3": 100
+        },
+        "metrics": {
+          "dice": 0.9326146499452865,
+          "miou": 0.9315966487763115,
+          "precision": 0.9444794910785517,
+          "recall": 0.9243434261995008,
+          "hd95": 3.921463155619191,
+          "asd": 1.4626358555541956,
+          "volume_absolute_error_ml": 7.855425226091355
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -1.3993474478662227,
+            "loa_lower": -17.564936312738432,
+            "loa_upper": 14.766241417005986
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -3.218748085828009,
+            "loa_lower": -23.58119651824385,
+            "loa_upper": 17.143700346587835
+          }
+        }
+      },
+      "noise_0.1": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "5103390376bbd2db4c75269c7752ad30a43637d9d75a5cb18a955cb415c2f384",
+        "noise_sigma": 0.1,
+        "parameter_count": 8649234,
+        "best_epoch": 20,
+        "elapsed_s": 11.888808012008667,
+        "context_lengths": {
+          "1": 100,
+          "2": 0,
+          "3": 100
+        },
+        "metrics": {
+          "dice": 0.9305244455937703,
+          "miou": 0.929906003375575,
+          "precision": 0.9465667116877003,
+          "recall": 0.9186936545003632,
+          "hd95": 4.240463256963642,
+          "asd": 1.5337371693439221,
+          "volume_absolute_error_ml": 8.061004238840747
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -2.6017975490124856,
+            "loa_lower": -19.724997250550377,
+            "loa_upper": 14.521402152525408
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -3.8702214510248747,
+            "loa_lower": -24.146702266047576,
+            "loa_upper": 16.406259363997826
+          }
+        }
+      },
+      "noise_0.2": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "5103390376bbd2db4c75269c7752ad30a43637d9d75a5cb18a955cb415c2f384",
+        "noise_sigma": 0.2,
+        "parameter_count": 8649234,
+        "best_epoch": 20,
+        "elapsed_s": 11.699432373046875,
+        "context_lengths": {
+          "1": 100,
+          "2": 0,
+          "3": 100
+        },
+        "metrics": {
+          "dice": 0.9137830171164996,
+          "miou": 0.9177348978945286,
+          "precision": 0.9329363677286713,
+          "recall": 0.9039781707097384,
+          "hd95": 6.947140607775307,
+          "asd": 2.3701375865111713,
+          "volume_absolute_error_ml": 14.704149442492453
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -2.386912477082051,
+            "loa_lower": -31.527042783857745,
+            "loa_upper": 26.75321782969364
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 5.099633435945764,
+            "loa_lower": -100.16778000172432,
+            "loa_upper": 110.36704687361585
+          }
+        }
+      }
+    },
+    {
+      "seed": 2026,
+      "variant": "STE",
+      "options": {
+        "se": true,
+        "dilated_residual": false,
+        "temporal": true,
+        "edge": true
+      },
+      "training_seconds": 650.624936580658,
+      "run_dir": "runs/lvseg_ablation/seed_2026/STE",
+      "validation": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "8283c469a66fb43010a8d0760d295a7c5a4626c1f10fb4e3ab304be632119939",
+        "noise_sigma": 0.0,
+        "parameter_count": 8484388,
+        "best_epoch": 15,
+        "elapsed_s": 7.440054178237915,
+        "context_lengths": {
+          "1": 100,
+          "2": 0,
+          "3": 100
+        },
+        "metrics": {
+          "dice": 0.9289968567218121,
+          "miou": 0.9281208182025469,
+          "precision": 0.9315713527955701,
+          "recall": 0.9309797505492114,
+          "hd95": 4.6622084615544255,
+          "asd": 1.5768841261192201,
+          "volume_absolute_error_ml": 7.9820197738326115
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -0.7780127477942286,
+            "loa_lower": -17.235646995704077,
+            "loa_upper": 15.67962150011562
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 1.6489021789431697,
+            "loa_lower": -17.246797924372597,
+            "loa_upper": 20.54460228225894
+          }
+        }
+      },
+      "noise_0.1": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "8283c469a66fb43010a8d0760d295a7c5a4626c1f10fb4e3ab304be632119939",
+        "noise_sigma": 0.1,
+        "parameter_count": 8484388,
+        "best_epoch": 15,
+        "elapsed_s": 12.778925895690918,
+        "context_lengths": {
+          "1": 100,
+          "2": 0,
+          "3": 100
+        },
+        "metrics": {
+          "dice": 0.9270431215906764,
+          "miou": 0.9266255866494287,
+          "precision": 0.9339217793918196,
+          "recall": 0.9250728874138203,
+          "hd95": 4.622792468227872,
+          "asd": 1.6479126052369404,
+          "volume_absolute_error_ml": 7.955781576650281
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -1.78483127591767,
+            "loa_lower": -19.01880795569615,
+            "loa_upper": 15.44914540386081
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 0.36213796651125163,
+            "loa_lower": -18.498285276508916,
+            "loa_upper": 19.22256120953142
+          }
+        }
+      },
+      "noise_0.2": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "8283c469a66fb43010a8d0760d295a7c5a4626c1f10fb4e3ab304be632119939",
+        "noise_sigma": 0.2,
+        "parameter_count": 8484388,
+        "best_epoch": 15,
+        "elapsed_s": 12.439405918121338,
+        "context_lengths": {
+          "1": 100,
+          "2": 0,
+          "3": 100
+        },
+        "metrics": {
+          "dice": 0.9224631410881777,
+          "miou": 0.922933118047083,
+          "precision": 0.9391866041258615,
+          "recall": 0.9118010151081272,
+          "hd95": 4.741207613403466,
+          "asd": 1.736547372159354,
+          "volume_absolute_error_ml": 8.62085133723087
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -3.61794116631199,
+            "loa_lower": -21.784018049616677,
+            "loa_upper": 14.548135716992697
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -2.132002784406579,
+            "loa_lower": -22.409519427397598,
+            "loa_upper": 18.145513858584437
+          }
+        }
+      }
+    },
+    {
+      "seed": 2026,
+      "variant": "SDE",
+      "options": {
+        "se": true,
+        "dilated_residual": true,
+        "temporal": false,
+        "edge": true
+      },
+      "training_seconds": 366.1756875514984,
+      "run_dir": "runs/lvseg_ablation/seed_2026/SDE",
+      "validation": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "99abe37b2ede4982cceb37df4176585d28730edbddae4ec69643c6767443c1eb",
+        "noise_sigma": 0.0,
+        "parameter_count": 4526140,
+        "best_epoch": 15,
+        "elapsed_s": 7.247535705566406,
+        "context_lengths": {
+          "1": 200
+        },
+        "metrics": {
+          "dice": 0.9314635644759758,
+          "miou": 0.9307230837355793,
+          "precision": 0.9304538991823118,
+          "recall": 0.9375096112976326,
+          "hd95": 3.932078709695366,
+          "asd": 1.470443386477269,
+          "volume_absolute_error_ml": 8.126151937220731
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 1.4970594731198372,
+            "loa_lower": -14.767753462020046,
+            "loa_upper": 17.76187240825972
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 0.92948689037667,
+            "loa_lower": -18.124757837938056,
+            "loa_upper": 19.983731618691394
+          }
+        }
+      },
+      "noise_0.1": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "99abe37b2ede4982cceb37df4176585d28730edbddae4ec69643c6767443c1eb",
+        "noise_sigma": 0.1,
+        "parameter_count": 4526140,
+        "best_epoch": 15,
+        "elapsed_s": 12.164509534835815,
+        "context_lengths": {
+          "1": 200
+        },
+        "metrics": {
+          "dice": 0.9293561066112426,
+          "miou": 0.9289973356381777,
+          "precision": 0.9341891834029964,
+          "recall": 0.9301005929734327,
+          "hd95": 4.032523547185682,
+          "asd": 1.5226389920001369,
+          "volume_absolute_error_ml": 8.176572035821984
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 0.044881467618292564,
+            "loa_lower": -16.892088764461832,
+            "loa_upper": 16.981851699698417
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 0.07422255365255495,
+            "loa_lower": -19.541851158544667,
+            "loa_upper": 19.690296265849774
+          }
+        }
+      },
+      "noise_0.2": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "99abe37b2ede4982cceb37df4176585d28730edbddae4ec69643c6767443c1eb",
+        "noise_sigma": 0.2,
+        "parameter_count": 4526140,
+        "best_epoch": 15,
+        "elapsed_s": 11.708293676376343,
+        "context_lengths": {
+          "1": 200
+        },
+        "metrics": {
+          "dice": 0.918527176650906,
+          "miou": 0.9211705367486868,
+          "precision": 0.933631701900948,
+          "recall": 0.9109859345282284,
+          "hd95": 5.46819238489145,
+          "asd": 1.9106268937149837,
+          "volume_absolute_error_ml": 9.413455103145406
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -2.1328617196441026,
+            "loa_lower": -21.668507125591773,
+            "loa_upper": 17.402783686303565
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -2.0591077722136975,
+            "loa_lower": -24.141382257441155,
+            "loa_upper": 20.02316671301376
+          }
+        }
+      }
+    },
+    {
+      "seed": 2027,
+      "variant": "B",
+      "options": {
+        "se": false,
+        "dilated_residual": false,
+        "temporal": false,
+        "edge": false
+      },
+      "training_seconds": 385.37194538116455,
+      "run_dir": "runs/lvseg_ablation/seed_2027/B",
+      "validation": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "37f66fde4d8556062b75cf168c54b027c9e2b520be19c6cbd90e66080020285d",
+        "noise_sigma": 0.0,
+        "parameter_count": 4489865,
+        "best_epoch": 19,
+        "elapsed_s": 7.506580114364624,
+        "context_lengths": {
+          "1": 200
+        },
+        "metrics": {
+          "dice": 0.9320596569616276,
+          "miou": 0.9310040971659954,
+          "precision": 0.9373119387743764,
+          "recall": 0.9309664899932248,
+          "hd95": 4.082460634685603,
+          "asd": 1.4759767230972605,
+          "volume_absolute_error_ml": 7.945092194006661
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 0.1497274444465941,
+            "loa_lower": -17.866338361544162,
+            "loa_upper": 18.16579325043735
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 0.6390484747622152,
+            "loa_lower": -16.39479060852476,
+            "loa_upper": 17.672887558049194
+          }
+        }
+      },
+      "noise_0.1": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "37f66fde4d8556062b75cf168c54b027c9e2b520be19c6cbd90e66080020285d",
+        "noise_sigma": 0.1,
+        "parameter_count": 4489865,
+        "best_epoch": 19,
+        "elapsed_s": 12.020596742630005,
+        "context_lengths": {
+          "1": 200
+        },
+        "metrics": {
+          "dice": 0.931139520605833,
+          "miou": 0.9301573862766052,
+          "precision": 0.938973077008968,
+          "recall": 0.9276556073252294,
+          "hd95": 4.089947955778579,
+          "asd": 1.4911415737884672,
+          "volume_absolute_error_ml": 7.790786741490443
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -0.596041607069775,
+            "loa_lower": -16.979203027852673,
+            "loa_upper": 15.787119813713122
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 0.0012962598044828156,
+            "loa_lower": -17.028554973445083,
+            "loa_upper": 17.03114749305405
+          }
+        }
+      },
+      "noise_0.2": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "37f66fde4d8556062b75cf168c54b027c9e2b520be19c6cbd90e66080020285d",
+        "noise_sigma": 0.2,
+        "parameter_count": 4489865,
+        "best_epoch": 19,
+        "elapsed_s": 12.330443382263184,
+        "context_lengths": {
+          "1": 200
+        },
+        "metrics": {
+          "dice": 0.9280068174577616,
+          "miou": 0.9273732891494386,
+          "precision": 0.9416566564150289,
+          "recall": 0.9193138954765966,
+          "hd95": 4.173975011891905,
+          "asd": 1.5437957024293423,
+          "volume_absolute_error_ml": 7.954976489774866
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -1.6843923609771223,
+            "loa_lower": -19.20197821805703,
+            "loa_upper": 15.833193496102785
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -1.60680007726692,
+            "loa_lower": -18.728165289402632,
+            "loa_upper": 15.514565134868791
+          }
+        }
+      }
+    },
+    {
+      "seed": 2027,
+      "variant": "S",
+      "options": {
+        "se": true,
+        "dilated_residual": false,
+        "temporal": false,
+        "edge": false
+      },
+      "training_seconds": 293.8935327529907,
+      "run_dir": "runs/lvseg_ablation/seed_2027/S",
+      "validation": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "50729e589ef9b65496df61049c547aaaf1d7e47c0e017554f79070c2bc696c77",
+        "noise_sigma": 0.0,
+        "parameter_count": 4422963,
+        "best_epoch": 13,
+        "elapsed_s": 7.320706844329834,
+        "context_lengths": {
+          "1": 200
+        },
+        "metrics": {
+          "dice": 0.9267965622125014,
+          "miou": 0.9261733044497327,
+          "precision": 0.9365793459762091,
+          "recall": 0.9222961112059239,
+          "hd95": 4.333257426477644,
+          "asd": 1.5833811884442037,
+          "volume_absolute_error_ml": 8.178907928649682
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -3.2431309409402798,
+            "loa_lower": -22.181601422663373,
+            "loa_upper": 15.695339540782815
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 0.6835572580526112,
+            "loa_lower": -18.500239183959962,
+            "loa_upper": 19.867353700065188
+          }
+        }
+      },
+      "noise_0.1": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "50729e589ef9b65496df61049c547aaaf1d7e47c0e017554f79070c2bc696c77",
+        "noise_sigma": 0.1,
+        "parameter_count": 4422963,
+        "best_epoch": 13,
+        "elapsed_s": 12.4061119556427,
+        "context_lengths": {
+          "1": 200
+        },
+        "metrics": {
+          "dice": 0.9254300034861441,
+          "miou": 0.9248533455558114,
+          "precision": 0.9391486047035444,
+          "recall": 0.9170326141215649,
+          "hd95": 4.36088998342542,
+          "asd": 1.6124415674272958,
+          "volume_absolute_error_ml": 8.269011538276754
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -4.196194250757877,
+            "loa_lower": -21.964691736863358,
+            "loa_upper": 13.572303235347604
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -0.28662826850607787,
+            "loa_lower": -19.238831684633194,
+            "loa_upper": 18.665575147621038
+          }
+        }
+      },
+      "noise_0.2": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "50729e589ef9b65496df61049c547aaaf1d7e47c0e017554f79070c2bc696c77",
+        "noise_sigma": 0.2,
+        "parameter_count": 4422963,
+        "best_epoch": 13,
+        "elapsed_s": 12.1300950050354,
+        "context_lengths": {
+          "1": 200
+        },
+        "metrics": {
+          "dice": 0.921064237228907,
+          "miou": 0.9209252121006132,
+          "precision": 0.9432731009213788,
+          "recall": 0.9051349131611798,
+          "hd95": 4.531825775727425,
+          "asd": 1.704802110072418,
+          "volume_absolute_error_ml": 8.912305704759008
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -5.988511844555577,
+            "loa_lower": -24.883921639828607,
+            "loa_upper": 12.90689795071745
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -2.5448071208880707,
+            "loa_lower": -22.167430857281616,
+            "loa_upper": 17.077816615505476
+          }
+        }
+      }
+    },
+    {
+      "seed": 2027,
+      "variant": "D",
+      "options": {
+        "se": false,
+        "dilated_residual": true,
+        "temporal": false,
+        "edge": false
+      },
+      "training_seconds": 358.11044549942017,
+      "run_dir": "runs/lvseg_ablation/seed_2027/D",
+      "validation": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "0427cf3c4fe203f2dcf34dca22f9d267031f19e0d01f734ca4a6bea2bef70536",
+        "noise_sigma": 0.0,
+        "parameter_count": 4587809,
+        "best_epoch": 14,
+        "elapsed_s": 7.331622123718262,
+        "context_lengths": {
+          "1": 200
+        },
+        "metrics": {
+          "dice": 0.9298691902423115,
+          "miou": 0.9288125972807246,
+          "precision": 0.9316778937916738,
+          "recall": 0.9325475205674165,
+          "hd95": 4.159497669516604,
+          "asd": 1.5221947054986569,
+          "volume_absolute_error_ml": 8.41725460919182
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -1.6876096114240977,
+            "loa_lower": -20.67845557945458,
+            "loa_upper": 17.303236356606387
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 0.4906559537223498,
+            "loa_lower": -19.412019508199336,
+            "loa_upper": 20.393331415644035
+          }
+        }
+      },
+      "noise_0.1": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "0427cf3c4fe203f2dcf34dca22f9d267031f19e0d01f734ca4a6bea2bef70536",
+        "noise_sigma": 0.1,
+        "parameter_count": 4587809,
+        "best_epoch": 14,
+        "elapsed_s": 12.615168333053589,
+        "context_lengths": {
+          "1": 200
+        },
+        "metrics": {
+          "dice": 0.9268499419624149,
+          "miou": 0.9262154671681324,
+          "precision": 0.9363150033460564,
+          "recall": 0.922587420234218,
+          "hd95": 4.756911568913759,
+          "asd": 1.6114754152186281,
+          "volume_absolute_error_ml": 9.110583090929016
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -3.4136398984244885,
+            "loa_lower": -22.92933743926637,
+            "loa_upper": 16.102057642417392
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -0.2732373446083764,
+            "loa_lower": -22.80531006786352,
+            "loa_upper": 22.25883537864677
+          }
+        }
+      },
+      "noise_0.2": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "0427cf3c4fe203f2dcf34dca22f9d267031f19e0d01f734ca4a6bea2bef70536",
+        "noise_sigma": 0.2,
+        "parameter_count": 4587809,
+        "best_epoch": 14,
+        "elapsed_s": 13.165960311889648,
+        "context_lengths": {
+          "1": 200
+        },
+        "metrics": {
+          "dice": 0.8403989571633771,
+          "miou": 0.8612105493838044,
+          "precision": 0.828006299766443,
+          "recall": 0.8792034741500775,
+          "hd95": 27.200358712470717,
+          "asd": 7.6276148606922,
+          "volume_absolute_error_ml": 54.01992403021446
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 40.21371401102449,
+            "loa_lower": -142.6743533718232,
+            "loa_upper": 223.10178139387216
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 45.44371858698103,
+            "loa_lower": -139.72103536565572,
+            "loa_upper": 230.60847253961776
+          }
+        }
+      }
+    },
+    {
+      "seed": 2027,
+      "variant": "T",
+      "options": {
+        "se": false,
+        "dilated_residual": false,
+        "temporal": true,
+        "edge": false
+      },
+      "training_seconds": 684.6337027549744,
+      "run_dir": "runs/lvseg_ablation/seed_2027/T",
+      "validation": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "8e9f8f348ff2f1b75c993d4569e6e780cb73bf41ca0ee4407f320e037611e74b",
+        "noise_sigma": 0.0,
+        "parameter_count": 8546057,
+        "best_epoch": 20,
+        "elapsed_s": 12.85930871963501,
+        "context_lengths": {
+          "1": 100,
+          "2": 0,
+          "3": 100
+        },
+        "metrics": {
+          "dice": 0.9319454535372479,
+          "miou": 0.9309879233196482,
+          "precision": 0.9208967423949297,
+          "recall": 0.9474998973289277,
+          "hd95": 3.9922389512711396,
+          "asd": 1.4688283755629008,
+          "volume_absolute_error_ml": 7.985626590670085
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 2.635929726334626,
+            "loa_lower": -13.686597567340968,
+            "loa_upper": 18.958457020010222
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 3.0425107911494944,
+            "loa_lower": -17.30018294280034,
+            "loa_upper": 23.385204525099326
+          }
+        }
+      },
+      "noise_0.1": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "8e9f8f348ff2f1b75c993d4569e6e780cb73bf41ca0ee4407f320e037611e74b",
+        "noise_sigma": 0.1,
+        "parameter_count": 8546057,
+        "best_epoch": 20,
+        "elapsed_s": 16.212674140930176,
+        "context_lengths": {
+          "1": 100,
+          "2": 0,
+          "3": 100
+        },
+        "metrics": {
+          "dice": 0.9310264213641558,
+          "miou": 0.9301045606407883,
+          "precision": 0.9210376445852765,
+          "recall": 0.9454090890576213,
+          "hd95": 4.028275033573897,
+          "asd": 1.4910408957749355,
+          "volume_absolute_error_ml": 7.955995093705726
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 2.2744398870873797,
+            "loa_lower": -14.121664154128023,
+            "loa_upper": 18.67054392830278
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 2.768028572002839,
+            "loa_lower": -17.430385448358727,
+            "loa_upper": 22.96644259236441
+          }
+        }
+      },
+      "noise_0.2": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "8e9f8f348ff2f1b75c993d4569e6e780cb73bf41ca0ee4407f320e037611e74b",
+        "noise_sigma": 0.2,
+        "parameter_count": 8546057,
+        "best_epoch": 20,
+        "elapsed_s": 16.510934829711914,
+        "context_lengths": {
+          "1": 100,
+          "2": 0,
+          "3": 100
+        },
+        "metrics": {
+          "dice": 0.9284429041030919,
+          "miou": 0.9280351969178665,
+          "precision": 0.923679799028896,
+          "recall": 0.9378885065514625,
+          "hd95": 4.297562635525602,
+          "asd": 1.5782231967880804,
+          "volume_absolute_error_ml": 8.103075232802848
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 0.9148736167942243,
+            "loa_lower": -15.887442593799733,
+            "loa_upper": 17.717189827388182
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 1.3010458205196114,
+            "loa_lower": -19.26635813765857,
+            "loa_upper": 21.868449778697794
+          }
+        }
+      }
+    },
+    {
+      "seed": 2027,
+      "variant": "E",
+      "options": {
+        "se": false,
+        "dilated_residual": false,
+        "temporal": false,
+        "edge": true
+      },
+      "training_seconds": 439.73688101768494,
+      "run_dir": "runs/lvseg_ablation/seed_2027/E",
+      "validation": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "8464c6b94364c257ed0dacfb21970409ee62ce583e9987bdc018ffe3967bf69f",
+        "noise_sigma": 0.0,
+        "parameter_count": 4495098,
+        "best_epoch": 19,
+        "elapsed_s": 7.341012954711914,
+        "context_lengths": {
+          "1": 200
+        },
+        "metrics": {
+          "dice": 0.929671575698439,
+          "miou": 0.9288077628714895,
+          "precision": 0.9319649542050322,
+          "recall": 0.9314392778059983,
+          "hd95": 4.149024558403175,
+          "asd": 1.5082573246139999,
+          "volume_absolute_error_ml": 7.360906196228948
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -0.338696690885609,
+            "loa_lower": -16.63711073258222,
+            "loa_upper": 15.959717350811001
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 1.9650130140053848,
+            "loa_lower": -13.515838467386297,
+            "loa_upper": 17.445864495397068
+          }
+        }
+      },
+      "noise_0.1": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "8464c6b94364c257ed0dacfb21970409ee62ce583e9987bdc018ffe3967bf69f",
+        "noise_sigma": 0.1,
+        "parameter_count": 4495098,
+        "best_epoch": 19,
+        "elapsed_s": 11.844384670257568,
+        "context_lengths": {
+          "1": 200
+        },
+        "metrics": {
+          "dice": 0.9265098236461298,
+          "miou": 0.9262731795643951,
+          "precision": 0.9305838798554232,
+          "recall": 0.9270759666000941,
+          "hd95": 4.4615548858766765,
+          "asd": 1.6101938303792287,
+          "volume_absolute_error_ml": 7.681609605162866
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -0.46879340425396976,
+            "loa_lower": -17.45990181279627,
+            "loa_upper": 16.522315004288334
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 1.2011575593821497,
+            "loa_lower": -14.599799440070155,
+            "loa_upper": 17.002114558834457
+          }
+        }
+      },
+      "noise_0.2": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "8464c6b94364c257ed0dacfb21970409ee62ce583e9987bdc018ffe3967bf69f",
+        "noise_sigma": 0.2,
+        "parameter_count": 4495098,
+        "best_epoch": 19,
+        "elapsed_s": 12.48750114440918,
+        "context_lengths": {
+          "1": 200
+        },
+        "metrics": {
+          "dice": 0.9195659324677465,
+          "miou": 0.921292427803629,
+          "precision": 0.9294645780920403,
+          "recall": 0.9156259320498108,
+          "hd95": 5.795828482216934,
+          "asd": 2.019886555823499,
+          "volume_absolute_error_ml": 8.453910186190956
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -1.5502692673970768,
+            "loa_lower": -20.87809927457837,
+            "loa_upper": 17.777560739784217
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -0.4516768659944415,
+            "loa_lower": -17.676183974374542,
+            "loa_upper": 16.772830242385655
+          }
+        }
+      }
+    },
+    {
+      "seed": 2027,
+      "variant": "SD",
+      "options": {
+        "se": true,
+        "dilated_residual": true,
+        "temporal": false,
+        "edge": false
+      },
+      "training_seconds": 298.5509994029999,
+      "run_dir": "runs/lvseg_ablation/seed_2027/SD",
+      "validation": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "0f86847effc251b1695433fc60965374241af78bdc5b0cf307cdd1a4b94802be",
+        "noise_sigma": 0.0,
+        "parameter_count": 4520907,
+        "best_epoch": 13,
+        "elapsed_s": 7.1477203369140625,
+        "context_lengths": {
+          "1": 200
+        },
+        "metrics": {
+          "dice": 0.9299694979143687,
+          "miou": 0.9293073756193669,
+          "precision": 0.9339642184994702,
+          "recall": 0.9309724566188806,
+          "hd95": 4.02114547920858,
+          "asd": 1.5112984880188345,
+          "volume_absolute_error_ml": 8.168486351215641
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -0.22186641965483503,
+            "loa_lower": -19.06152963409173,
+            "loa_upper": 18.617796794782063
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 1.1145931976891998,
+            "loa_lower": -19.322037529232222,
+            "loa_upper": 21.55122392461062
+          }
+        }
+      },
+      "noise_0.1": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "0f86847effc251b1695433fc60965374241af78bdc5b0cf307cdd1a4b94802be",
+        "noise_sigma": 0.1,
+        "parameter_count": 4520907,
+        "best_epoch": 13,
+        "elapsed_s": 12.184407949447632,
+        "context_lengths": {
+          "1": 200
+        },
+        "metrics": {
+          "dice": 0.9287324750261418,
+          "miou": 0.9281230837031349,
+          "precision": 0.9344038186568724,
+          "recall": 0.9281289245507276,
+          "hd95": 4.007388238991133,
+          "asd": 1.5379946685797066,
+          "volume_absolute_error_ml": 8.441990083785814
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -0.5890942946055274,
+            "loa_lower": -20.1801681964676,
+            "loa_upper": 19.001979607256548
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 0.6823798143420664,
+            "loa_lower": -19.637520783887872,
+            "loa_upper": 21.002280412572006
+          }
+        }
+      },
+      "noise_0.2": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "0f86847effc251b1695433fc60965374241af78bdc5b0cf307cdd1a4b94802be",
+        "noise_sigma": 0.2,
+        "parameter_count": 4520907,
+        "best_epoch": 13,
+        "elapsed_s": 11.66341757774353,
+        "context_lengths": {
+          "1": 200
+        },
+        "metrics": {
+          "dice": 0.9247961238253157,
+          "miou": 0.9245860660104319,
+          "precision": 0.9369300771603215,
+          "recall": 0.9184611821705664,
+          "hd95": 4.162118925668478,
+          "asd": 1.6244599031084257,
+          "volume_absolute_error_ml": 8.806706323236117
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -2.027135483885372,
+            "loa_lower": -23.616148628268654,
+            "loa_upper": 19.561877660497913
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -0.692190218325145,
+            "loa_lower": -21.395096647287904,
+            "loa_upper": 20.010716210637614
+          }
+        }
+      }
+    },
+    {
+      "seed": 2027,
+      "variant": "SDT",
+      "options": {
+        "se": true,
+        "dilated_residual": true,
+        "temporal": true,
+        "edge": false
+      },
+      "training_seconds": 637.5726609230042,
+      "run_dir": "runs/lvseg_ablation/seed_2027/SDT",
+      "validation": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "ebd4f97e36334d9b43bf4afa28da3b46e1fc5f729579e35b3e1e8cca03d70acb",
+        "noise_sigma": 0.0,
+        "parameter_count": 8577099,
+        "best_epoch": 20,
+        "elapsed_s": 7.76090407371521,
+        "context_lengths": {
+          "1": 100,
+          "2": 0,
+          "3": 100
+        },
+        "metrics": {
+          "dice": 0.9325804144554158,
+          "miou": 0.9315457500178198,
+          "precision": 0.922832524315169,
+          "recall": 0.9468265359435043,
+          "hd95": 4.090437288489176,
+          "asd": 1.48379746442995,
+          "volume_absolute_error_ml": 8.00328447472394
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 2.7323952978878094,
+            "loa_lower": -14.607365594827268,
+            "loa_upper": 20.072156190602886
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 2.4151325425113463,
+            "loa_lower": -15.36497324045713,
+            "loa_upper": 20.195238325479824
+          }
+        }
+      },
+      "noise_0.1": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "ebd4f97e36334d9b43bf4afa28da3b46e1fc5f729579e35b3e1e8cca03d70acb",
+        "noise_sigma": 0.1,
+        "parameter_count": 8577099,
+        "best_epoch": 20,
+        "elapsed_s": 12.384521484375,
+        "context_lengths": {
+          "1": 100,
+          "2": 0,
+          "3": 100
+        },
+        "metrics": {
+          "dice": 0.9314783858873347,
+          "miou": 0.9304961117680649,
+          "precision": 0.9209418587236402,
+          "recall": 0.9464133638503185,
+          "hd95": 4.41048400459254,
+          "asd": 1.5420266776486564,
+          "volume_absolute_error_ml": 8.102330283708588
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 2.7212785653283458,
+            "loa_lower": -14.532930447224947,
+            "loa_upper": 19.975487577881637
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 2.486850199851545,
+            "loa_lower": -15.214386469035244,
+            "loa_upper": 20.188086868738335
+          }
+        }
+      },
+      "noise_0.2": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "ebd4f97e36334d9b43bf4afa28da3b46e1fc5f729579e35b3e1e8cca03d70acb",
+        "noise_sigma": 0.2,
+        "parameter_count": 8577099,
+        "best_epoch": 20,
+        "elapsed_s": 13.112335920333862,
+        "context_lengths": {
+          "1": 100,
+          "2": 0,
+          "3": 100
+        },
+        "metrics": {
+          "dice": 0.9265844833970225,
+          "miou": 0.9263413409613531,
+          "precision": 0.9151650017822093,
+          "recall": 0.9427450532508646,
+          "hd95": 5.350007569095782,
+          "asd": 1.7881881312357266,
+          "volume_absolute_error_ml": 9.00102593379346
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 4.042416190435575,
+            "loa_lower": -24.778362597364627,
+            "loa_upper": 32.863194978235775
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 2.379861996809274,
+            "loa_lower": -15.265476387868796,
+            "loa_upper": 20.025200381487345
+          }
+        }
+      }
+    },
+    {
+      "seed": 2027,
+      "variant": "SDTE",
+      "options": {
+        "se": true,
+        "dilated_residual": true,
+        "temporal": true,
+        "edge": true
+      },
+      "training_seconds": 684.6009588241577,
+      "run_dir": "runs/lvseg_ablation/seed_2027/SDTE",
+      "validation": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "b48d264942aea6ca84282edba4f8fdd83959d356ad7527ef2614db1afc27bada",
+        "noise_sigma": 0.0,
+        "parameter_count": 8582332,
+        "best_epoch": 19,
+        "elapsed_s": 7.994806528091431,
+        "context_lengths": {
+          "1": 100,
+          "2": 0,
+          "3": 100
+        },
+        "metrics": {
+          "dice": 0.9330419597541932,
+          "miou": 0.9321861063343397,
+          "precision": 0.937765297278908,
+          "recall": 0.9320378299867119,
+          "hd95": 4.035685962612598,
+          "asd": 1.4464734311787337,
+          "volume_absolute_error_ml": 7.323339098178965
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -0.854758156123164,
+            "loa_lower": -16.107654078950933,
+            "loa_upper": 14.398137766704604
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 0.4490514281013071,
+            "loa_lower": -17.66727395755939,
+            "loa_upper": 18.565376813762004
+          }
+        }
+      },
+      "noise_0.1": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "b48d264942aea6ca84282edba4f8fdd83959d356ad7527ef2614db1afc27bada",
+        "noise_sigma": 0.1,
+        "parameter_count": 8582332,
+        "best_epoch": 19,
+        "elapsed_s": 12.556978464126587,
+        "context_lengths": {
+          "1": 100,
+          "2": 0,
+          "3": 100
+        },
+        "metrics": {
+          "dice": 0.932205835228888,
+          "miou": 0.9314500297438308,
+          "precision": 0.9383107788870046,
+          "recall": 0.9299392000050293,
+          "hd95": 4.055562722133628,
+          "asd": 1.4666992938742436,
+          "volume_absolute_error_ml": 7.346738778104609
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -1.2182717069174882,
+            "loa_lower": -16.91573835804467,
+            "loa_upper": 14.479194944209695
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 0.05003512804316643,
+            "loa_lower": -17.683980299006386,
+            "loa_upper": 17.78405055509272
+          }
+        }
+      },
+      "noise_0.2": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "b48d264942aea6ca84282edba4f8fdd83959d356ad7527ef2614db1afc27bada",
+        "noise_sigma": 0.2,
+        "parameter_count": 8582332,
+        "best_epoch": 19,
+        "elapsed_s": 13.34196949005127,
+        "context_lengths": {
+          "1": 100,
+          "2": 0,
+          "3": 100
+        },
+        "metrics": {
+          "dice": 0.9276437364571889,
+          "miou": 0.9274367666338932,
+          "precision": 0.9377701695737564,
+          "recall": 0.9221173467924764,
+          "hd95": 4.251992070959096,
+          "asd": 1.5636449181178633,
+          "volume_absolute_error_ml": 7.926521288095907
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -2.2181713034930435,
+            "loa_lower": -20.128133819432733,
+            "loa_upper": 15.691791212446645
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -0.9022790894386641,
+            "loa_lower": -18.768780150188576,
+            "loa_upper": 16.964221971311247
+          }
+        }
+      }
+    },
+    {
+      "seed": 2027,
+      "variant": "DTE",
+      "options": {
+        "se": false,
+        "dilated_residual": true,
+        "temporal": true,
+        "edge": true
+      },
+      "training_seconds": 734.8157093524933,
+      "run_dir": "runs/lvseg_ablation/seed_2027/DTE",
+      "validation": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "8f331ca256f34063df4253ec23b4ba61d312d21a4c2238d38a23577734ee4c25",
+        "noise_sigma": 0.0,
+        "parameter_count": 8649234,
+        "best_epoch": 18,
+        "elapsed_s": 13.347473382949829,
+        "context_lengths": {
+          "1": 100,
+          "2": 0,
+          "3": 100
+        },
+        "metrics": {
+          "dice": 0.9331930394706522,
+          "miou": 0.9321249974023276,
+          "precision": 0.942117093395199,
+          "recall": 0.9284456324543187,
+          "hd95": 3.78278829677934,
+          "asd": 1.4316032345564507,
+          "volume_absolute_error_ml": 7.468724782973195
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -2.626980253270689,
+            "loa_lower": -19.2971186630312,
+            "loa_upper": 14.043158156489822
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -0.10939792813326818,
+            "loa_lower": -17.987434371717494,
+            "loa_upper": 17.768638515450956
+          }
+        }
+      },
+      "noise_0.1": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "8f331ca256f34063df4253ec23b4ba61d312d21a4c2238d38a23577734ee4c25",
+        "noise_sigma": 0.1,
+        "parameter_count": 8649234,
+        "best_epoch": 18,
+        "elapsed_s": 18.39360785484314,
+        "context_lengths": {
+          "1": 100,
+          "2": 0,
+          "3": 100
+        },
+        "metrics": {
+          "dice": 0.9309892322525489,
+          "miou": 0.9301485317555559,
+          "precision": 0.9451715873804839,
+          "recall": 0.9214212319097075,
+          "hd95": 3.876362257372228,
+          "asd": 1.4787977683725793,
+          "volume_absolute_error_ml": 7.736252310495763
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -3.659602296596143,
+            "loa_lower": -21.213613081645526,
+            "loa_upper": 13.894408488453243
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -1.2754330513820138,
+            "loa_lower": -19.137931076955297,
+            "loa_upper": 16.58706497419127
+          }
+        }
+      },
+      "noise_0.2": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "8f331ca256f34063df4253ec23b4ba61d312d21a4c2238d38a23577734ee4c25",
+        "noise_sigma": 0.2,
+        "parameter_count": 8649234,
+        "best_epoch": 18,
+        "elapsed_s": 16.348820209503174,
+        "context_lengths": {
+          "1": 100,
+          "2": 0,
+          "3": 100
+        },
+        "metrics": {
+          "dice": 0.9219630887225903,
+          "miou": 0.9221571066789539,
+          "precision": 0.9492818974845941,
+          "recall": 0.9011619891679701,
+          "hd95": 4.515778939071964,
+          "asd": 1.736007398855436,
+          "volume_absolute_error_ml": 9.05851115031853
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -6.546002022642444,
+            "loa_lower": -26.801274077285704,
+            "loa_upper": 13.709270032000816
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -4.272589647318532,
+            "loa_lower": -24.033184650075174,
+            "loa_upper": 15.488005355438109
+          }
+        }
+      }
+    },
+    {
+      "seed": 2027,
+      "variant": "STE",
+      "options": {
+        "se": true,
+        "dilated_residual": false,
+        "temporal": true,
+        "edge": true
+      },
+      "training_seconds": 588.970871925354,
+      "run_dir": "runs/lvseg_ablation/seed_2027/STE",
+      "validation": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "516d7a2695d78c70d714aac80b697edc82ff596e0973a852285f710b24982dc4",
+        "noise_sigma": 0.0,
+        "parameter_count": 8484388,
+        "best_epoch": 13,
+        "elapsed_s": 7.745503187179565,
+        "context_lengths": {
+          "1": 100,
+          "2": 0,
+          "3": 100
+        },
+        "metrics": {
+          "dice": 0.926857147255121,
+          "miou": 0.9261495530679743,
+          "precision": 0.9354604539514625,
+          "recall": 0.9233799214108666,
+          "hd95": 4.2315440558282145,
+          "asd": 1.580741187807755,
+          "volume_absolute_error_ml": 8.430947268979923
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -2.9361198472137304,
+            "loa_lower": -20.626175935865934,
+            "loa_upper": 14.753936241438472
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 0.3684510531341125,
+            "loa_lower": -22.290691206575538,
+            "loa_upper": 23.027593312843763
+          }
+        }
+      },
+      "noise_0.1": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "516d7a2695d78c70d714aac80b697edc82ff596e0973a852285f710b24982dc4",
+        "noise_sigma": 0.1,
+        "parameter_count": 8484388,
+        "best_epoch": 13,
+        "elapsed_s": 12.739662647247314,
+        "context_lengths": {
+          "1": 100,
+          "2": 0,
+          "3": 100
+        },
+        "metrics": {
+          "dice": 0.925599826552446,
+          "miou": 0.9248921943068015,
+          "precision": 0.9373714592645586,
+          "recall": 0.9190343975647179,
+          "hd95": 4.316496906410236,
+          "asd": 1.6157530755633642,
+          "volume_absolute_error_ml": 8.579977286267525
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -3.3617991694079037,
+            "loa_lower": -21.38400037539518,
+            "loa_upper": 14.660402036579372
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -0.4513912007759939,
+            "loa_lower": -22.858554864184963,
+            "loa_upper": 21.955772462632975
+          }
+        }
+      },
+      "noise_0.2": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "516d7a2695d78c70d714aac80b697edc82ff596e0973a852285f710b24982dc4",
+        "noise_sigma": 0.2,
+        "parameter_count": 8484388,
+        "best_epoch": 13,
+        "elapsed_s": 12.692034721374512,
+        "context_lengths": {
+          "1": 100,
+          "2": 0,
+          "3": 100
+        },
+        "metrics": {
+          "dice": 0.9219005170148891,
+          "miou": 0.9215215436422376,
+          "precision": 0.9412469835562736,
+          "recall": 0.9085249863431651,
+          "hd95": 4.521929629459914,
+          "asd": 1.6923206534091166,
+          "volume_absolute_error_ml": 8.960121527083173
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -4.70997494058578,
+            "loa_lower": -24.042656710310748,
+            "loa_upper": 14.622706829139187
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -2.4043301548386604,
+            "loa_lower": -23.942743633572544,
+            "loa_upper": 19.134083323895222
+          }
+        }
+      }
+    },
+    {
+      "seed": 2027,
+      "variant": "SDE",
+      "options": {
+        "se": true,
+        "dilated_residual": true,
+        "temporal": false,
+        "edge": true
+      },
+      "training_seconds": 327.4565255641937,
+      "run_dir": "runs/lvseg_ablation/seed_2027/SDE",
+      "validation": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "8849b30b0971f1ceab71bb82574600a06fb484dddb61f73bea9045101ad30551",
+        "noise_sigma": 0.0,
+        "parameter_count": 4526140,
+        "best_epoch": 13,
+        "elapsed_s": 7.16487455368042,
+        "context_lengths": {
+          "1": 200
+        },
+        "metrics": {
+          "dice": 0.9282498280583114,
+          "miou": 0.9277593968407704,
+          "precision": 0.9308195056929702,
+          "recall": 0.93116043040916,
+          "hd95": 4.216965237103926,
+          "asd": 1.5486539982854206,
+          "volume_absolute_error_ml": 8.426332858432673
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -0.04999320563063975,
+            "loa_lower": -18.70767195352356,
+            "loa_upper": 18.60768554226228
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 1.8767821742486308,
+            "loa_lower": -17.92396731941492,
+            "loa_upper": 21.677531667912184
+          }
+        }
+      },
+      "noise_0.1": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "8849b30b0971f1ceab71bb82574600a06fb484dddb61f73bea9045101ad30551",
+        "noise_sigma": 0.1,
+        "parameter_count": 4526140,
+        "best_epoch": 13,
+        "elapsed_s": 12.438558101654053,
+        "context_lengths": {
+          "1": 200
+        },
+        "metrics": {
+          "dice": 0.9266587623978402,
+          "miou": 0.926251184669102,
+          "precision": 0.9312189194204654,
+          "recall": 0.927602114157693,
+          "hd95": 4.270441597102376,
+          "asd": 1.5846358254113542,
+          "volume_absolute_error_ml": 8.61901362086433
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -0.4656840117385447,
+            "loa_lower": -20.14644747183824,
+            "loa_upper": 19.21507944836115
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 1.3565447878086883,
+            "loa_lower": -19.00675043317039,
+            "loa_upper": 21.719840008787763
+          }
+        }
+      },
+      "noise_0.2": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "8849b30b0971f1ceab71bb82574600a06fb484dddb61f73bea9045101ad30551",
+        "noise_sigma": 0.2,
+        "parameter_count": 4526140,
+        "best_epoch": 13,
+        "elapsed_s": 11.91223669052124,
+        "context_lengths": {
+          "1": 200
+        },
+        "metrics": {
+          "dice": 0.9222751242792865,
+          "miou": 0.9225456123270572,
+          "precision": 0.9311083021763027,
+          "recall": 0.919478007761314,
+          "hd95": 4.691773312200971,
+          "asd": 1.7247962867829794,
+          "volume_absolute_error_ml": 9.090019525854808
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -1.5338250774702646,
+            "loa_lower": -23.57555427919766,
+            "loa_upper": 20.50790412425713
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 0.08284914364264964,
+            "loa_lower": -20.913036910654938,
+            "loa_upper": 21.07873519794024
+          }
+        }
+      }
+    },
+    {
+      "seed": 2028,
+      "variant": "B",
+      "options": {
+        "se": false,
+        "dilated_residual": false,
+        "temporal": false,
+        "edge": false
+      },
+      "training_seconds": 234.60329675674438,
+      "run_dir": "runs/lvseg_ablation/seed_2028/B",
+      "validation": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "9a9cb1399d65fe148f259207f4ca8206502055b6f76b01bcb72cb37f3e632492",
+        "noise_sigma": 0.0,
+        "parameter_count": 4489865,
+        "best_epoch": 8,
+        "elapsed_s": 7.035687685012817,
+        "context_lengths": {
+          "1": 200
+        },
+        "metrics": {
+          "dice": 0.9224083590338887,
+          "miou": 0.9225322720716114,
+          "precision": 0.9139359245653255,
+          "recall": 0.9371970603681369,
+          "hd95": 4.8238030757274535,
+          "asd": 1.7625939766739043,
+          "volume_absolute_error_ml": 8.503282097612757
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 1.7761149710550006,
+            "loa_lower": -14.352304555063345,
+            "loa_upper": 17.904534497173348
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 2.43839078307801,
+            "loa_lower": -16.668426288602493,
+            "loa_upper": 21.545207854758512
+          }
+        }
+      },
+      "noise_0.1": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "9a9cb1399d65fe148f259207f4ca8206502055b6f76b01bcb72cb37f3e632492",
+        "noise_sigma": 0.1,
+        "parameter_count": 4489865,
+        "best_epoch": 8,
+        "elapsed_s": 12.506875038146973,
+        "context_lengths": {
+          "1": 200
+        },
+        "metrics": {
+          "dice": 0.9189144695150756,
+          "miou": 0.9197867637975219,
+          "precision": 0.9152225743760529,
+          "recall": 0.9296331648771647,
+          "hd95": 5.220750018203563,
+          "asd": 1.8396759512475538,
+          "volume_absolute_error_ml": 8.930881292421033
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 0.8921646056963805,
+            "loa_lower": -16.73676866754158,
+            "loa_upper": 18.521097878934338
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 1.5273671839466691,
+            "loa_lower": -18.847043984651595,
+            "loa_upper": 21.901778352544934
+          }
+        }
+      },
+      "noise_0.2": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "9a9cb1399d65fe148f259207f4ca8206502055b6f76b01bcb72cb37f3e632492",
+        "noise_sigma": 0.2,
+        "parameter_count": 4489865,
+        "best_epoch": 8,
+        "elapsed_s": 12.244329690933228,
+        "context_lengths": {
+          "1": 200
+        },
+        "metrics": {
+          "dice": 0.9133474075484851,
+          "miou": 0.9151957271768195,
+          "precision": 0.9208600045747979,
+          "recall": 0.9132163775923325,
+          "hd95": 5.4603442670411155,
+          "asd": 1.9674657187249502,
+          "volume_absolute_error_ml": 9.74553717905787
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -1.8810245331807243,
+            "loa_lower": -22.0755092134975,
+            "loa_upper": 18.313460147136052
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -0.7014747768824603,
+            "loa_lower": -21.86706546413912,
+            "loa_upper": 20.4641159103742
+          }
+        }
+      }
+    },
+    {
+      "seed": 2028,
+      "variant": "S",
+      "options": {
+        "se": true,
+        "dilated_residual": false,
+        "temporal": false,
+        "edge": false
+      },
+      "training_seconds": 315.32300186157227,
+      "run_dir": "runs/lvseg_ablation/seed_2028/S",
+      "validation": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "bc9c73bc9ac98eb0cc51e366314012770084338ad2384c3294cd1e49d514d7b6",
+        "noise_sigma": 0.0,
+        "parameter_count": 4422963,
+        "best_epoch": 18,
+        "elapsed_s": 6.595013618469238,
+        "context_lengths": {
+          "1": 200
+        },
+        "metrics": {
+          "dice": 0.9286696668536483,
+          "miou": 0.9281171734831846,
+          "precision": 0.9421483438474939,
+          "recall": 0.9201042617914754,
+          "hd95": 4.0758147129203,
+          "asd": 1.5290754372360384,
+          "volume_absolute_error_ml": 7.413504247646045
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -3.4294786671460584,
+            "loa_lower": -21.426262107784126,
+            "loa_upper": 14.56730477349201
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -1.2558832536378497,
+            "loa_lower": -18.764937193766702,
+            "loa_upper": 16.253170686491
+          }
+        }
+      },
+      "noise_0.1": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "bc9c73bc9ac98eb0cc51e366314012770084338ad2384c3294cd1e49d514d7b6",
+        "noise_sigma": 0.1,
+        "parameter_count": 4422963,
+        "best_epoch": 18,
+        "elapsed_s": 11.633672714233398,
+        "context_lengths": {
+          "1": 200
+        },
+        "metrics": {
+          "dice": 0.9219877220228848,
+          "miou": 0.923084902164548,
+          "precision": 0.9403628982438355,
+          "recall": 0.910421913918686,
+          "hd95": 4.744474672563788,
+          "asd": 1.7187987334211363,
+          "volume_absolute_error_ml": 8.228921456049665
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -4.118038957236027,
+            "loa_lower": -23.96497883622485,
+            "loa_upper": 15.728900921752796
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -2.4757317874994125,
+            "loa_lower": -20.371706658982905,
+            "loa_upper": 15.42024308398408
+          }
+        }
+      },
+      "noise_0.2": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "bc9c73bc9ac98eb0cc51e366314012770084338ad2384c3294cd1e49d514d7b6",
+        "noise_sigma": 0.2,
+        "parameter_count": 4422963,
+        "best_epoch": 18,
+        "elapsed_s": 12.183176040649414,
+        "context_lengths": {
+          "1": 200
+        },
+        "metrics": {
+          "dice": 0.8897029816916412,
+          "miou": 0.8996206772405567,
+          "precision": 0.9223052403728517,
+          "recall": 0.8667355376381617,
+          "hd95": 10.780544399761029,
+          "asd": 3.6668939944365433,
+          "volume_absolute_error_ml": 15.587025241487051
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -0.5162515188840393,
+            "loa_lower": -54.07222311149058,
+            "loa_upper": 53.0397200737225
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 0.5667616323271265,
+            "loa_lower": -42.87628866483093,
+            "loa_upper": 44.00981192948519
+          }
+        }
+      }
+    },
+    {
+      "seed": 2028,
+      "variant": "D",
+      "options": {
+        "se": false,
+        "dilated_residual": true,
+        "temporal": false,
+        "edge": false
+      },
+      "training_seconds": 403.50586581230164,
+      "run_dir": "runs/lvseg_ablation/seed_2028/D",
+      "validation": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "afc073409b3dd68b70af8a5d53582ac99fd8da956e95f9a6d1ebc5f1825440e5",
+        "noise_sigma": 0.0,
+        "parameter_count": 4587809,
+        "best_epoch": 18,
+        "elapsed_s": 7.4691572189331055,
+        "context_lengths": {
+          "1": 200
+        },
+        "metrics": {
+          "dice": 0.9314083670557237,
+          "miou": 0.9305193594228698,
+          "precision": 0.9360322734028723,
+          "recall": 0.9306927155976861,
+          "hd95": 4.163315877079234,
+          "asd": 1.4962095693229431,
+          "volume_absolute_error_ml": 7.613904954876618
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -0.9434188257006865,
+            "loa_lower": -17.507793929773843,
+            "loa_upper": 15.620956278372471
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -0.3557572111652128,
+            "loa_lower": -18.474581390622184,
+            "loa_upper": 17.76306696829176
+          }
+        }
+      },
+      "noise_0.1": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "afc073409b3dd68b70af8a5d53582ac99fd8da956e95f9a6d1ebc5f1825440e5",
+        "noise_sigma": 0.1,
+        "parameter_count": 4587809,
+        "best_epoch": 18,
+        "elapsed_s": 12.306017637252808,
+        "context_lengths": {
+          "1": 200
+        },
+        "metrics": {
+          "dice": 0.9305923242884375,
+          "miou": 0.9296692475339878,
+          "precision": 0.9372824698848771,
+          "recall": 0.9278925884350347,
+          "hd95": 4.117799373323279,
+          "asd": 1.5108327415996718,
+          "volume_absolute_error_ml": 7.719305923500111
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -1.2083328459242257,
+            "loa_lower": -18.037858522619313,
+            "loa_upper": 15.621192830770863
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -1.2639411582946685,
+            "loa_lower": -19.41191327498161,
+            "loa_upper": 16.884030958392277
+          }
+        }
+      },
+      "noise_0.2": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "afc073409b3dd68b70af8a5d53582ac99fd8da956e95f9a6d1ebc5f1825440e5",
+        "noise_sigma": 0.2,
+        "parameter_count": 4587809,
+        "best_epoch": 18,
+        "elapsed_s": 12.030257940292358,
+        "context_lengths": {
+          "1": 200
+        },
+        "metrics": {
+          "dice": 0.9272807183064873,
+          "miou": 0.9266361286886601,
+          "precision": 0.9407310711058128,
+          "recall": 0.9181443174120199,
+          "hd95": 4.391116655254064,
+          "asd": 1.5957430537182906,
+          "volume_absolute_error_ml": 8.108482697006727
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -2.7722398280008647,
+            "loa_lower": -20.438674523511185,
+            "loa_upper": 14.894194867509457
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -2.9482270308105636,
+            "loa_lower": -21.932144190823006,
+            "loa_upper": 16.03569012920188
+          }
+        }
+      }
+    },
+    {
+      "seed": 2028,
+      "variant": "T",
+      "options": {
+        "se": false,
+        "dilated_residual": false,
+        "temporal": true,
+        "edge": false
+      },
+      "training_seconds": 654.21222615242,
+      "run_dir": "runs/lvseg_ablation/seed_2028/T",
+      "validation": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "bafa356914cec07f1b20724e057423bf68d210426cd1dfe81aea1daa4e52b04d",
+        "noise_sigma": 0.0,
+        "parameter_count": 8546057,
+        "best_epoch": 18,
+        "elapsed_s": 7.255140781402588,
+        "context_lengths": {
+          "1": 100,
+          "2": 0,
+          "3": 100
+        },
+        "metrics": {
+          "dice": 0.9292183007036384,
+          "miou": 0.9287741039790169,
+          "precision": 0.9241916122743069,
+          "recall": 0.9387991136962848,
+          "hd95": 4.54663989162648,
+          "asd": 1.581115386343222,
+          "volume_absolute_error_ml": 8.135977795747714
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 2.9899117222957545,
+            "loa_lower": -16.98586763317169,
+            "loa_upper": 22.9656910777632
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 1.797520946366522,
+            "loa_lower": -17.181690769164955,
+            "loa_upper": 20.776732661898
+          }
+        }
+      },
+      "noise_0.1": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "bafa356914cec07f1b20724e057423bf68d210426cd1dfe81aea1daa4e52b04d",
+        "noise_sigma": 0.1,
+        "parameter_count": 8546057,
+        "best_epoch": 18,
+        "elapsed_s": 12.009981870651245,
+        "context_lengths": {
+          "1": 100,
+          "2": 0,
+          "3": 100
+        },
+        "metrics": {
+          "dice": 0.9271137621617914,
+          "miou": 0.9272292417521814,
+          "precision": 0.9266786595036994,
+          "recall": 0.9322157202279289,
+          "hd95": 4.538941656134676,
+          "asd": 1.6402782682754564,
+          "volume_absolute_error_ml": 7.903872205331794
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 1.1679426268845328,
+            "loa_lower": -14.407369308722828,
+            "loa_upper": 16.74325456249189
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 0.6792218602764345,
+            "loa_lower": -18.892421043589227,
+            "loa_upper": 20.250864764142097
+          }
+        }
+      },
+      "noise_0.2": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "bafa356914cec07f1b20724e057423bf68d210426cd1dfe81aea1daa4e52b04d",
+        "noise_sigma": 0.2,
+        "parameter_count": 8546057,
+        "best_epoch": 18,
+        "elapsed_s": 12.051056623458862,
+        "context_lengths": {
+          "1": 100,
+          "2": 0,
+          "3": 100
+        },
+        "metrics": {
+          "dice": 0.9221063483887342,
+          "miou": 0.9235128183038603,
+          "precision": 0.9343395831431869,
+          "recall": 0.9155992708578493,
+          "hd95": 4.709433839675518,
+          "asd": 1.7390379187398195,
+          "volume_absolute_error_ml": 8.367719716243432
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -2.121858447253287,
+            "loa_lower": -18.257796185827086,
+            "loa_upper": 14.014079291320511
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -2.2569469492360024,
+            "loa_lower": -22.234079536258264,
+            "loa_upper": 17.72018563778626
+          }
+        }
+      }
+    },
+    {
+      "seed": 2028,
+      "variant": "E",
+      "options": {
+        "se": false,
+        "dilated_residual": false,
+        "temporal": false,
+        "edge": true
+      },
+      "training_seconds": 380.0634353160858,
+      "run_dir": "runs/lvseg_ablation/seed_2028/E",
+      "validation": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "f8b9a7a57af1b27195a1d7faf2877f392ab9b0776577e23b51387095265c59f2",
+        "noise_sigma": 0.0,
+        "parameter_count": 4495098,
+        "best_epoch": 18,
+        "elapsed_s": 7.120610475540161,
+        "context_lengths": {
+          "1": 200
+        },
+        "metrics": {
+          "dice": 0.9292901134181432,
+          "miou": 0.9287450763322437,
+          "precision": 0.9330530522150989,
+          "recall": 0.9302257359081334,
+          "hd95": 4.11989431577662,
+          "asd": 1.5347085753778473,
+          "volume_absolute_error_ml": 8.501406725802845
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 1.9273269171895842,
+            "loa_lower": -30.968684989445915,
+            "loa_upper": 34.82333882382508
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -0.13528593637939793,
+            "loa_lower": -18.63275381235046,
+            "loa_upper": 18.362181939591668
+          }
+        }
+      },
+      "noise_0.1": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "f8b9a7a57af1b27195a1d7faf2877f392ab9b0776577e23b51387095265c59f2",
+        "noise_sigma": 0.1,
+        "parameter_count": 4495098,
+        "best_epoch": 18,
+        "elapsed_s": 12.665795087814331,
+        "context_lengths": {
+          "1": 200
+        },
+        "metrics": {
+          "dice": 0.9285607346734289,
+          "miou": 0.9279950762920341,
+          "precision": 0.9368496363268412,
+          "recall": 0.9249543551887275,
+          "hd95": 4.16550741306461,
+          "asd": 1.554952243347199,
+          "volume_absolute_error_ml": 8.54656277057053
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 0.8780418023953379,
+            "loa_lower": -33.45258398868711,
+            "loa_upper": 35.208667593477784
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -1.3628454423806893,
+            "loa_lower": -18.931327002028823,
+            "loa_upper": 16.205636117267446
+          }
+        }
+      },
+      "noise_0.2": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "f8b9a7a57af1b27195a1d7faf2877f392ab9b0776577e23b51387095265c59f2",
+        "noise_sigma": 0.2,
+        "parameter_count": 4495098,
+        "best_epoch": 18,
+        "elapsed_s": 12.360786199569702,
+        "context_lengths": {
+          "1": 200
+        },
+        "metrics": {
+          "dice": 0.9223071461152443,
+          "miou": 0.9224677001615847,
+          "precision": 0.9390777627403013,
+          "recall": 0.9112727968914645,
+          "hd95": 6.024513543105647,
+          "asd": 1.863627169300604,
+          "volume_absolute_error_ml": 9.594017026813761
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -1.342050435385475,
+            "loa_lower": -33.87411413409712,
+            "loa_upper": 31.190013263326172
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -3.6536391715644196,
+            "loa_lower": -22.567396266286202,
+            "loa_upper": 15.260117923157361
+          }
+        }
+      }
+    },
+    {
+      "seed": 2028,
+      "variant": "SD",
+      "options": {
+        "se": true,
+        "dilated_residual": true,
+        "temporal": false,
+        "edge": false
+      },
+      "training_seconds": 221.06040453910828,
+      "run_dir": "runs/lvseg_ablation/seed_2028/SD",
+      "validation": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "f811d713878fb46b68db85d9958fe785ba8e2db728893e71245d98df7b38b111",
+        "noise_sigma": 0.0,
+        "parameter_count": 4520907,
+        "best_epoch": 9,
+        "elapsed_s": 6.745927810668945,
+        "context_lengths": {
+          "1": 200
+        },
+        "metrics": {
+          "dice": 0.926899808896429,
+          "miou": 0.9260926262906463,
+          "precision": 0.9179665532870186,
+          "recall": 0.9411957997276921,
+          "hd95": 4.160237264092813,
+          "asd": 1.5849590519456,
+          "volume_absolute_error_ml": 8.78010170838576
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 2.684669750175534,
+            "loa_lower": -14.283866237600325,
+            "loa_upper": 19.653205737951392
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 2.650921792631682,
+            "loa_lower": -18.316398955716913,
+            "loa_upper": 23.618242540980276
+          }
+        }
+      },
+      "noise_0.1": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "f811d713878fb46b68db85d9958fe785ba8e2db728893e71245d98df7b38b111",
+        "noise_sigma": 0.1,
+        "parameter_count": 4520907,
+        "best_epoch": 9,
+        "elapsed_s": 11.633809328079224,
+        "context_lengths": {
+          "1": 200
+        },
+        "metrics": {
+          "dice": 0.9272836207476743,
+          "miou": 0.9264338626271627,
+          "precision": 0.9216002196660206,
+          "recall": 0.9383047187797497,
+          "hd95": 4.06165160423163,
+          "asd": 1.5694280605620694,
+          "volume_absolute_error_ml": 8.689717650355085
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 2.0467097345843595,
+            "loa_lower": -15.087420883281107,
+            "loa_upper": 19.180840352449827
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 1.5708395602977265,
+            "loa_lower": -19.567526730409085,
+            "loa_upper": 22.70920585100454
+          }
+        }
+      },
+      "noise_0.2": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "f811d713878fb46b68db85d9958fe785ba8e2db728893e71245d98df7b38b111",
+        "noise_sigma": 0.2,
+        "parameter_count": 4520907,
+        "best_epoch": 9,
+        "elapsed_s": 11.598724603652954,
+        "context_lengths": {
+          "1": 200
+        },
+        "metrics": {
+          "dice": 0.9261598218042042,
+          "miou": 0.925343913154981,
+          "precision": 0.9283639234397524,
+          "recall": 0.9293787776892383,
+          "hd95": 4.207598161287282,
+          "asd": 1.5977598937387172,
+          "volume_absolute_error_ml": 8.793817700811747
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 0.08447470276306618,
+            "loa_lower": -17.879714174629214,
+            "loa_upper": 18.04866358015535
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -0.49893439619592217,
+            "loa_lower": -22.23654039843199,
+            "loa_upper": 21.23867160604015
+          }
+        }
+      }
+    },
+    {
+      "seed": 2028,
+      "variant": "SDT",
+      "options": {
+        "se": true,
+        "dilated_residual": true,
+        "temporal": true,
+        "edge": false
+      },
+      "training_seconds": 474.28944301605225,
+      "run_dir": "runs/lvseg_ablation/seed_2028/SDT",
+      "validation": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "be0af9c673e9a4286f7b61f029b105b8174268315a7b3002fb209f8e2a8316e5",
+        "noise_sigma": 0.0,
+        "parameter_count": 8577099,
+        "best_epoch": 10,
+        "elapsed_s": 7.529638051986694,
+        "context_lengths": {
+          "1": 100,
+          "2": 0,
+          "3": 100
+        },
+        "metrics": {
+          "dice": 0.924418654181971,
+          "miou": 0.9242167215953958,
+          "precision": 0.9414212212513245,
+          "recall": 0.9131789567613466,
+          "hd95": 4.363065994387488,
+          "asd": 1.6196001603298353,
+          "volume_absolute_error_ml": 8.798085419751075
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -3.4617598979287965,
+            "loa_lower": -20.155818180509325,
+            "loa_upper": 13.232298384651731
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -2.8523299972567897,
+            "loa_lower": -24.830279635965038,
+            "loa_upper": 19.12561964145146
+          }
+        }
+      },
+      "noise_0.1": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "be0af9c673e9a4286f7b61f029b105b8174268315a7b3002fb209f8e2a8316e5",
+        "noise_sigma": 0.1,
+        "parameter_count": 8577099,
+        "best_epoch": 10,
+        "elapsed_s": 11.351226329803467,
+        "context_lengths": {
+          "1": 100,
+          "2": 0,
+          "3": 100
+        },
+        "metrics": {
+          "dice": 0.9228267317012828,
+          "miou": 0.9228386415920121,
+          "precision": 0.9450901641486802,
+          "recall": 0.9068784477306662,
+          "hd95": 4.405364721436277,
+          "asd": 1.650779269432666,
+          "volume_absolute_error_ml": 9.03695131457698
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -4.403738257176083,
+            "loa_lower": -21.14739566972864,
+            "loa_upper": 12.33991915537647
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -4.08656214853053,
+            "loa_lower": -26.216158215766185,
+            "loa_upper": 18.043033918705127
+          }
+        }
+      },
+      "noise_0.2": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "be0af9c673e9a4286f7b61f029b105b8174268315a7b3002fb209f8e2a8316e5",
+        "noise_sigma": 0.2,
+        "parameter_count": 8577099,
+        "best_epoch": 10,
+        "elapsed_s": 11.876882076263428,
+        "context_lengths": {
+          "1": 100,
+          "2": 0,
+          "3": 100
+        },
+        "metrics": {
+          "dice": 0.9157785965481412,
+          "miou": 0.9167928359598211,
+          "precision": 0.9489179495258697,
+          "recall": 0.8902934240529145,
+          "hd95": 5.038494733250968,
+          "asd": 1.8530854695066292,
+          "volume_absolute_error_ml": 10.025132752171194
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -6.79989660265365,
+            "loa_lower": -24.614861136883924,
+            "loa_upper": 11.015067931576624
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -6.586191635004262,
+            "loa_lower": -29.322141897279494,
+            "loa_upper": 16.14975862727097
+          }
+        }
+      }
+    },
+    {
+      "seed": 2028,
+      "variant": "SDTE",
+      "options": {
+        "se": true,
+        "dilated_residual": true,
+        "temporal": true,
+        "edge": true
+      },
+      "training_seconds": 466.62528467178345,
+      "run_dir": "runs/lvseg_ablation/seed_2028/SDTE",
+      "validation": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "b9dbb874a0bc8536e0a2802ef5df666d300e936e71093906554d8233ec3d7d78",
+        "noise_sigma": 0.0,
+        "parameter_count": 8582332,
+        "best_epoch": 9,
+        "elapsed_s": 7.329267501831055,
+        "context_lengths": {
+          "1": 100,
+          "2": 0,
+          "3": 100
+        },
+        "metrics": {
+          "dice": 0.9256206819770434,
+          "miou": 0.9249696456359794,
+          "precision": 0.9131482761614979,
+          "recall": 0.9439099463355576,
+          "hd95": 4.363147891654734,
+          "asd": 1.6251081250953865,
+          "volume_absolute_error_ml": 8.971695594078474
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 2.9897099618886465,
+            "loa_lower": -14.450797211425403,
+            "loa_upper": 20.430217135202696
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 2.5826213819372854,
+            "loa_lower": -17.979200587016322,
+            "loa_upper": 23.144443350890896
+          }
+        }
+      },
+      "noise_0.1": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "b9dbb874a0bc8536e0a2802ef5df666d300e936e71093906554d8233ec3d7d78",
+        "noise_sigma": 0.1,
+        "parameter_count": 8582332,
+        "best_epoch": 9,
+        "elapsed_s": 11.684404373168945,
+        "context_lengths": {
+          "1": 100,
+          "2": 0,
+          "3": 100
+        },
+        "metrics": {
+          "dice": 0.9255454526743964,
+          "miou": 0.9249515472305286,
+          "precision": 0.9165084681343866,
+          "recall": 0.9404324087432663,
+          "hd95": 4.211591554394451,
+          "asd": 1.6118770481823663,
+          "volume_absolute_error_ml": 8.991123585602923
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 2.2349302127493744,
+            "loa_lower": -15.507245517929979,
+            "loa_upper": 19.97710594342873
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 1.6706644796480312,
+            "loa_lower": -19.417264470964923,
+            "loa_upper": 22.758593430260987
+          }
+        }
+      },
+      "noise_0.2": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "b9dbb874a0bc8536e0a2802ef5df666d300e936e71093906554d8233ec3d7d78",
+        "noise_sigma": 0.2,
+        "parameter_count": 8582332,
+        "best_epoch": 9,
+        "elapsed_s": 11.044232845306396,
+        "context_lengths": {
+          "1": 100,
+          "2": 0,
+          "3": 100
+        },
+        "metrics": {
+          "dice": 0.923927096376652,
+          "miou": 0.9236213891576931,
+          "precision": 0.9229281741838935,
+          "recall": 0.9307386148286874,
+          "hd95": 4.262547696470769,
+          "asd": 1.634133857421687,
+          "volume_absolute_error_ml": 8.833778084503969
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 0.0991479028015327,
+            "loa_lower": -18.197165579963148,
+            "loa_upper": 18.395461385566215
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -0.2546027898498346,
+            "loa_lower": -21.307454802475714,
+            "loa_upper": 20.798249222776047
+          }
+        }
+      }
+    },
+    {
+      "seed": 2028,
+      "variant": "DTE",
+      "options": {
+        "se": false,
+        "dilated_residual": true,
+        "temporal": true,
+        "edge": true
+      },
+      "training_seconds": 698.4512157440186,
+      "run_dir": "runs/lvseg_ablation/seed_2028/DTE",
+      "validation": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "4151e198759b38d2657adae5fc3de82403ac7920af7093debf4ba73c1866181e",
+        "noise_sigma": 0.0,
+        "parameter_count": 8649234,
+        "best_epoch": 18,
+        "elapsed_s": 7.054248571395874,
+        "context_lengths": {
+          "1": 100,
+          "2": 0,
+          "3": 100
+        },
+        "metrics": {
+          "dice": 0.9340450598287802,
+          "miou": 0.9330047530846234,
+          "precision": 0.9320897372599554,
+          "recall": 0.9398179645088631,
+          "hd95": 3.93394372172788,
+          "asd": 1.4271779664154247,
+          "volume_absolute_error_ml": 7.435902769008785
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 0.40433830536028964,
+            "loa_lower": -14.420203357217806,
+            "loa_upper": 15.228879967938385
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 1.7948918451938582,
+            "loa_lower": -16.468576273097895,
+            "loa_upper": 20.058359963485614
+          }
+        }
+      },
+      "noise_0.1": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "4151e198759b38d2657adae5fc3de82403ac7920af7093debf4ba73c1866181e",
+        "noise_sigma": 0.1,
+        "parameter_count": 8649234,
+        "best_epoch": 18,
+        "elapsed_s": 10.89898133277893,
+        "context_lengths": {
+          "1": 100,
+          "2": 0,
+          "3": 100
+        },
+        "metrics": {
+          "dice": 0.9330946324097024,
+          "miou": 0.9321253823550566,
+          "precision": 0.9340001814497206,
+          "recall": 0.9359799238111915,
+          "hd95": 3.8781053180588714,
+          "asd": 1.4394213431124465,
+          "volume_absolute_error_ml": 7.312670401564609
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -0.23134202556615377,
+            "loa_lower": -15.196376183676076,
+            "loa_upper": 14.73369213254377
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": 1.0658451672459721,
+            "loa_lower": -16.470280781407286,
+            "loa_upper": 18.60197111589923
+          }
+        }
+      },
+      "noise_0.2": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "4151e198759b38d2657adae5fc3de82403ac7920af7093debf4ba73c1866181e",
+        "noise_sigma": 0.2,
+        "parameter_count": 8649234,
+        "best_epoch": 18,
+        "elapsed_s": 11.273934841156006,
+        "context_lengths": {
+          "1": 100,
+          "2": 0,
+          "3": 100
+        },
+        "metrics": {
+          "dice": 0.9292553054955451,
+          "miou": 0.9287103450149946,
+          "precision": 0.935225006609059,
+          "recall": 0.927307191210553,
+          "hd95": 3.997485102361052,
+          "asd": 1.518590852802401,
+          "volume_absolute_error_ml": 7.450746012881387
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -1.4713863106535883,
+            "loa_lower": -17.333476815211224,
+            "loa_upper": 14.390704193904046
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -0.16928142063805282,
+            "loa_lower": -17.737824400777402,
+            "loa_upper": 17.399261559501294
+          }
+        }
+      }
+    },
+    {
+      "seed": 2028,
+      "variant": "STE",
+      "options": {
+        "se": true,
+        "dilated_residual": false,
+        "temporal": true,
+        "edge": true
+      },
+      "training_seconds": 628.5128791332245,
+      "run_dir": "runs/lvseg_ablation/seed_2028/STE",
+      "validation": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "70be8a99eff9877d66e1713c72cf66702334c429f1f9c1933d9c06cdf779c80a",
+        "noise_sigma": 0.0,
+        "parameter_count": 8484388,
+        "best_epoch": 16,
+        "elapsed_s": 7.117648124694824,
+        "context_lengths": {
+          "1": 100,
+          "2": 0,
+          "3": 100
+        },
+        "metrics": {
+          "dice": 0.9270685926367296,
+          "miou": 0.9262720461537532,
+          "precision": 0.9305861616240486,
+          "recall": 0.9279098123576517,
+          "hd95": 4.144211031660162,
+          "asd": 1.5638298008140077,
+          "volume_absolute_error_ml": 7.651840218667502
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -0.8441615806098989,
+            "loa_lower": -16.549666819747227,
+            "loa_upper": 14.861343658527428
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -0.11868256760007753,
+            "loa_lower": -19.290989881122144,
+            "loa_upper": 19.053624745921987
+          }
+        }
+      },
+      "noise_0.1": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "70be8a99eff9877d66e1713c72cf66702334c429f1f9c1933d9c06cdf779c80a",
+        "noise_sigma": 0.1,
+        "parameter_count": 8484388,
+        "best_epoch": 16,
+        "elapsed_s": 11.945309400558472,
+        "context_lengths": {
+          "1": 100,
+          "2": 0,
+          "3": 100
+        },
+        "metrics": {
+          "dice": 0.9253812288332903,
+          "miou": 0.9246814479405142,
+          "precision": 0.932872723117121,
+          "recall": 0.9224052798180798,
+          "hd95": 4.2253835401937785,
+          "asd": 1.60738585513471,
+          "volume_absolute_error_ml": 7.798803414231315
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -1.8311817026743626,
+            "loa_lower": -18.115700844862403,
+            "loa_upper": 14.453337439513676
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -1.1431878043273906,
+            "loa_lower": -20.480937708885264,
+            "loa_upper": 18.194562100230485
+          }
+        }
+      },
+      "noise_0.2": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "70be8a99eff9877d66e1713c72cf66702334c429f1f9c1933d9c06cdf779c80a",
+        "noise_sigma": 0.2,
+        "parameter_count": 8484388,
+        "best_epoch": 16,
+        "elapsed_s": 11.516141414642334,
+        "context_lengths": {
+          "1": 100,
+          "2": 0,
+          "3": 100
+        },
+        "metrics": {
+          "dice": 0.9199069893708263,
+          "miou": 0.9196918056817743,
+          "precision": 0.9385448650006528,
+          "recall": 0.9065446618539403,
+          "hd95": 4.7435168280056565,
+          "asd": 1.7678997201902402,
+          "volume_absolute_error_ml": 8.436673756106186
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -4.4619922431873364,
+            "loa_lower": -22.084930582927672,
+            "loa_upper": 13.160946096553001
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -3.80478834475146,
+            "loa_lower": -23.60610303944373,
+            "loa_upper": 15.99652634994081
+          }
+        }
+      }
+    },
+    {
+      "seed": 2028,
+      "variant": "SDE",
+      "options": {
+        "se": true,
+        "dilated_residual": true,
+        "temporal": false,
+        "edge": true
+      },
+      "training_seconds": 356.14837622642517,
+      "run_dir": "runs/lvseg_ablation/seed_2028/SDE",
+      "validation": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "6052b94cdd7dc94c64bc0f3f7486445317e7c2b218848a2c91064edef8959f9a",
+        "noise_sigma": 0.0,
+        "parameter_count": 4526140,
+        "best_epoch": 19,
+        "elapsed_s": 11.921156644821167,
+        "context_lengths": {
+          "1": 200
+        },
+        "metrics": {
+          "dice": 0.9332529666190219,
+          "miou": 0.9319538769768917,
+          "precision": 0.9422543625080041,
+          "recall": 0.9282817696146434,
+          "hd95": 3.829912414788165,
+          "asd": 1.4265296723708563,
+          "volume_absolute_error_ml": 7.749517523883045
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -1.9426938012147628,
+            "loa_lower": -22.290597450546777,
+            "loa_upper": 18.405209848117252
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -2.075775292044564,
+            "loa_lower": -20.148507924564026,
+            "loa_upper": 15.996957340474896
+          }
+        }
+      },
+      "noise_0.1": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "6052b94cdd7dc94c64bc0f3f7486445317e7c2b218848a2c91064edef8959f9a",
+        "noise_sigma": 0.1,
+        "parameter_count": 4526140,
+        "best_epoch": 19,
+        "elapsed_s": 13.491341590881348,
+        "context_lengths": {
+          "1": 200
+        },
+        "metrics": {
+          "dice": 0.9309126838213195,
+          "miou": 0.9298369832108895,
+          "precision": 0.9424109171156716,
+          "recall": 0.9237761416295566,
+          "hd95": 4.493677888293988,
+          "asd": 1.5471118728476856,
+          "volume_absolute_error_ml": 8.143977856189803
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -2.5665293179192408,
+            "loa_lower": -23.82508394607536,
+            "loa_upper": 18.69202531023688
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -2.706140095659036,
+            "loa_lower": -21.086566857135004,
+            "loa_upper": 15.67428666581693
+          }
+        }
+      },
+      "noise_0.2": {
+        "split": "val",
+        "patients": 50,
+        "labeled_frames": 200,
+        "checkpoint_sha256": "6052b94cdd7dc94c64bc0f3f7486445317e7c2b218848a2c91064edef8959f9a",
+        "noise_sigma": 0.2,
+        "parameter_count": 4526140,
+        "best_epoch": 19,
+        "elapsed_s": 11.830993175506592,
+        "context_lengths": {
+          "1": 200
+        },
+        "metrics": {
+          "dice": 0.9240042512375878,
+          "miou": 0.9243459757404509,
+          "precision": 0.940837656028139,
+          "recall": 0.9145702804288465,
+          "hd95": 4.890280129997238,
+          "asd": 1.73233581323248,
+          "volume_absolute_error_ml": 10.654337889966664
+        },
+        "volume_bland_altman_by_patient_view": {
+          "2CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -0.3717774546982752,
+            "loa_lower": -54.339858315414055,
+            "loa_upper": 53.596303406017505
+          },
+          "4CH": {
+            "n": 50,
+            "unit": "mL",
+            "bias": -4.1638406654862115,
+            "loa_lower": -23.08248801597416,
+            "loa_upper": 14.754806685001736
+          }
+        }
+      }
+    }
+  ]
+}

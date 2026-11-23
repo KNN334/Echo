@@ -60,6 +60,25 @@ def _write_gif(path: Path, frames: list[np.ndarray], duration_ms: int = 100) -> 
                        duration=duration_ms, loop=0, optimize=True)
 
 
+def render_overlay_frames(images, prediction, labels, labeled, metadata, model_name):
+    phases = {int(index): phase for phase, index in metadata.get("phases", {}).items()}
+    times = metadata.get("timestamps_s")
+    frames = []
+    for index, image in enumerate(images):
+        body = _overlay(image, prediction[index], labels[index] if labeled[index] else None, 2)
+        frame = np.pad(body, ((64, 0), (0, 0), (0, 0)))
+        timestamp = times[index] if times is not None else index / float(metadata["fps"])
+        title = f"{model_name} | {metadata['case_id']} | frame {index} | {timestamp:.3f} s"
+        state = f"Expert label: {phases.get(index, 'available')}" if labeled[index] else (
+            "Expert label: unavailable")
+        cv2.putText(frame, title, (12, 25), cv2.FONT_HERSHEY_SIMPLEX,
+                    0.62, (245, 245, 245), 1, cv2.LINE_AA)
+        cv2.putText(frame, state, (12, 50), cv2.FONT_HERSHEY_SIMPLEX,
+                    0.53, (20, 190, 255) if labeled[index] else (190, 190, 190), 1, cv2.LINE_AA)
+        frames.append(frame)
+    return frames
+
+
 def export_readme_videos(prepared_root: str | Path, test_manifest: str | Path,
                          results_root: str | Path, output_dir: str | Path, *,
                          best_model: str | None = None, alignment_audit=None) -> dict:
@@ -97,24 +116,7 @@ def export_readme_videos(prepared_root: str | Path, test_manifest: str | Path,
         if len(predictions[name]) != len(images):
             raise ValueError(f"Prediction and cine frame counts differ for {name} / {case_id}")
 
-    scale, header = 2, 64
-    predicted_phase = {int(index): phase for phase, index in metadata.get("phases", {}).items()}
-    best_frames = []
-    for index, image in enumerate(images):
-        reference = labels[index] if labeled[index] else None
-        body = _overlay(image, predictions[best][index], reference, scale)
-        frame = np.zeros((body.shape[0] + header, body.shape[1], 3), dtype=np.uint8)
-        frame[header:] = body
-        phase = predicted_phase.get(index, "unlabeled frame")
-        timestamp = index / float(metadata["fps"])
-        cv2.putText(frame, f"{best} | {case_id} | frame {index} | {timestamp:.3f} s",
-                    (12, 25), cv2.FONT_HERSHEY_SIMPLEX, 0.62, (245, 245, 245), 1,
-                    cv2.LINE_AA)
-        state = f"Expert label: {phase}" if labeled[index] else "Expert label: unavailable"
-        cv2.putText(frame, state, (12, 50), cv2.FONT_HERSHEY_SIMPLEX, 0.53,
-                    (20, 190, 255) if labeled[index] else (190, 190, 190), 1,
-                    cv2.LINE_AA)
-        best_frames.append(frame)
+    best_frames = render_overlay_frames(images, predictions[best], labels, labeled, metadata, best)
 
     slug = f"{metadata['patient_id']}_{metadata['view']}"
     comparison_preview = output_dir / f"five_model_{slug}.png"

@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="640" viewBox="0 0 960 640" role="img"
+     aria-labelledby="title description">
+  <title id="title">DRA-UNet architecture</title>
+  <desc id="description">A shared five-stage dilated residual encoder processes the current frame and up to two preceding frames. ConvLSTM fuses the deepest features. Four attention-gated current-frame skips feed a four-stage decoder. Training uses a segmentation head and an auxiliary edge head.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L8 4 L0 8Z" fill="#516277"/>
+    </marker>
+  </defs>
+  <rect x="1" y="1" width="958" height="638" rx="18" fill="#fff" stroke="#d7dfe8"/>
+  <g font-family="Arial, sans-serif" fill="#17283b" text-anchor="middle">
+    <text x="480" y="39" font-size="25" font-weight="700">DRA-UNet</text>
+    <g font-size="16" font-weight="600">
+      <text x="185" y="80">Shared encoder</text>
+      <text x="480" y="80">Current-frame skip features</text>
+      <text x="780" y="80">Decoder and output heads</text>
+    </g>
+    <g fill="none" stroke="#516277" stroke-width="1.7" marker-end="url(#arrow)">
+      <path d="M185 151 V181"/><path d="M185 225 V251"/><path d="M185 295 V321"/>
+      <path d="M185 365 V391"/><path d="M185 435 V461"/>
+      <path d="M300 483 H344"/><path d="M616 483 H780 V435"/>
+      <path d="M780 391 V365"/><path d="M780 321 V295"/><path d="M780 251 V225"/>
+      <path d="M780 181 V165 H694 V151"/><path d="M780 181 V165 H866 V151"/>
+    </g>
+    <g fill="none" stroke="#516277" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#arrow)">
+      <path d="M300 203 H664"/><path d="M300 273 H664"/>
+      <path d="M300 343 H664"/><path d="M300 413 H664"/>
+    </g>
+    <g stroke="#8da8bb" fill="#eef5f9">
+      <rect x="70" y="98" width="230" height="53" rx="8"/>
+      <rect x="70" y="181" width="230" height="44" rx="8"/>
+      <rect x="70" y="251" width="230" height="44" rx="8"/>
+      <rect x="70" y="321" width="230" height="44" rx="8"/>
+      <rect x="70" y="391" width="230" height="44" rx="8"/>
+      <rect x="70" y="461" width="230" height="44" rx="8"/>
+    </g>
+    <g stroke="#8dafac" fill="#e8f5f1">
+      <rect x="664" y="181" width="232" height="44" rx="8"/>
+      <rect x="664" y="251" width="232" height="44" rx="8"/>
+      <rect x="664" y="321" width="232" height="44" rx="8"/>
+      <rect x="664" y="391" width="232" height="44" rx="8"/>
+      <rect x="618" y="98" width="152" height="53" rx="8"/>
+    </g>
+    <rect x="788" y="98" width="156" height="53" rx="8" fill="#fff4e4" stroke="#bc9561"/>
+    <rect x="344" y="452" width="272" height="62" rx="8" fill="#f3eefb" stroke="#aa9ac3"/>
+    <g fill="#fff" stroke="#a4b4c4">
+      <rect x="434" y="189" width="92" height="28" rx="14"/>
+      <rect x="434" y="259" width="92" height="28" rx="14"/>
+      <rect x="434" y="329" width="92" height="28" rx="14"/>
+      <rect x="434" y="399" width="92" height="28" rx="14"/>
+    </g>
+    <g font-size="15">
+      <text x="185" y="120" font-weight="600">Causal B-mode clip</text>
+      <text x="185" y="139" font-size="13">Current frame + up to 2 past frames</text>
+      <text x="185" y="208">Dilated residual · 24 ch</text>
+      <text x="185" y="278">Dilated residual · 48 ch</text>
+      <text x="185" y="348">Dilated residual · 96 ch</text>
+      <text x="185" y="418">Dilated residual · 192 ch</text>
+      <text x="185" y="488">Dilated residual · 384 ch</text>
+      <text x="480" y="208" font-size="13">AG · 24 ch</text>
+      <text x="480" y="278" font-size="13">AG · 48 ch</text>
+      <text x="480" y="348" font-size="13">AG · 96 ch</text>
+      <text x="480" y="418" font-size="13">AG · 192 ch</text>
+      <text x="780" y="208">Upsample, concat, conv · 24 ch</text>
+      <text x="780" y="278">Upsample, concat, conv · 48 ch</text>
+      <text x="780" y="348">Upsample, concat, conv · 96 ch</text>
+      <text x="780" y="418">Upsample, concat, conv · 192 ch</text>
+      <text x="694" y="120" font-weight="600">LV mask head</text>
+      <text x="694" y="139" font-size="13">1×1 convolution</text>
+      <text x="866" y="120" font-weight="600">Auxiliary edge head</text>
+      <text x="866" y="139" font-size="13">3×3 conv + 1×1 conv</text>
+      <text x="480" y="477" font-weight="600">Bottleneck ConvLSTM · 192 hidden ch</text>
+      <text x="480" y="498" font-size="13">1×1 projection + current feature</text>
+    </g>
+    <path d="M36 541 H924" stroke="#d7dfe8"/>
+    <g text-anchor="start" font-size="14">
+      <text x="37" y="566">Encoder: 3×3 conv + GN + ReLU → dilated 3×3 conv (dilation 2) + GN → residual sum + ReLU</text>
+      <text x="37" y="590">2×2 max pooling between encoder stages; each Attention Gate (AG) uses the incoming decoder feature</text>
+      <text x="37" y="614">ED/ES training loss: mask BCE + soft Dice loss + 0.1 × edge BCE + 0.1 × mask Sobel L1</text>
+    </g>
+  </g>
+</svg>

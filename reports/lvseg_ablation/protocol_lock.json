@@ -1,0 +1,135 @@
+{
+  "config": {
+    "dataset": {
+      "prepared_root": "data/processed/camus_video",
+      "fixed_patient_splits": "configs/splits/camus_patients.json"
+    },
+    "training": {
+      "base_channels": 24,
+      "epochs": 20,
+      "batch_size": 4,
+      "learning_rate": 0.0003,
+      "weight_decay": 0.0001,
+      "early_stopping_patience": 5,
+      "horizontal_flip": true,
+      "workers": 0,
+      "seeds": [
+        2026,
+        2027,
+        2028
+      ],
+      "amp": true,
+      "context_frames": 3,
+      "edge_weight": 0.1,
+      "sobel_weight": 0.1
+    },
+    "variants": {
+      "B": {
+        "se": false,
+        "dilated_residual": false,
+        "temporal": false,
+        "edge": false
+      },
+      "S": {
+        "se": true,
+        "dilated_residual": false,
+        "temporal": false,
+        "edge": false
+      },
+      "D": {
+        "se": false,
+        "dilated_residual": true,
+        "temporal": false,
+        "edge": false
+      },
+      "T": {
+        "se": false,
+        "dilated_residual": false,
+        "temporal": true,
+        "edge": false
+      },
+      "E": {
+        "se": false,
+        "dilated_residual": false,
+        "temporal": false,
+        "edge": true
+      },
+      "SD": {
+        "se": true,
+        "dilated_residual": true,
+        "temporal": false,
+        "edge": false
+      },
+      "SDT": {
+        "se": true,
+        "dilated_residual": true,
+        "temporal": true,
+        "edge": false
+      },
+      "SDTE": {
+        "se": true,
+        "dilated_residual": true,
+        "temporal": true,
+        "edge": true
+      },
+      "DTE": {
+        "se": false,
+        "dilated_residual": true,
+        "temporal": true,
+        "edge": true
+      },
+      "STE": {
+        "se": true,
+        "dilated_residual": false,
+        "temporal": true,
+        "edge": true
+      },
+      "SDE": {
+        "se": true,
+        "dilated_residual": true,
+        "temporal": false,
+        "edge": true
+      }
+    },
+    "evaluation": {
+      "threshold": 0.5,
+      "noise_sigmas": [
+        0.1,
+        0.2
+      ],
+      "noise_seed": 51023,
+      "minimum_dice_gain": 0.002,
+      "output_root": "runs/lvseg_ablation",
+      "report_root": "reports/lvseg_ablation",
+      "test_policy": "freeze_validation_selection_before_one_final_evaluation"
+    }
+  },
+  "source_hashes": {
+    "configs/lvseg_ablation.yaml": "77f8607fb00ca631d3c979791f8432e801308f137e36d7d7377d7b076437c8ab",
+    "docs/lvseg_ablation_protocol.md": "66004ce2063243f0d75bc28ba51326252dcc088c4ba1e9511b6cccb68421b1ff",
+    "lvseg/models/ablation.py": "e3c997b412ec3758c96919bb10738033324bedd1881962a3273bf23791cff86c",
+    "lvseg/models/architectures.py": "3220a9fc3c648f710b39631e07c48fdf80d3bb60c854a65bc032f70e6f63ba31",
+    "lvseg/data/temporal.py": "68c2c0764c15b727d153f2eaf5e6dd576d2ec536dda3b6365bbefd616af4711f",
+    "lvseg/losses.py": "24399410bbb57827e19b8a71d2c45c18efbec951363d46bea5c7e5bd903656f2",
+    "lvseg/ablation_experiment.py": "d8ca2e3572e43b2f76143c6a95feb4a55ac140ee93088ecc02f486cf858d6a17",
+    "lvseg/train.py": "342259db940e223fcd3b8b2fc7cd13c0fd9682e3cea3f60a7fd0ae110e1ad5f1",
+    "lvseg/evaluate.py": "aa8a3ce1aeb5136e1ece4e2d479f058d388851038a79e764dd9eaa0322cb38fb",
+    "lvseg/metrics/segmentation.py": "71abc3efc00848cf77973939abd759364341c258d383ccc54d9d9976c8b05032",
+    "lvseg/metrics/volume.py": "de86a1f4551624556fa465d29b78abea450629fc052bd33aa6b549bc2e159c4b",
+    "lvseg/metrics/cycles.py": "501b8e97e8fef49aa8c901dba975f781462c61db837676089a681ed471ad1717",
+    "scripts/run_ablations.py": "6df0c1b97ff164d3a18b541acbb4595e8025247302f18d8083c604c3e5f91e9d"
+  },
+  "manifest_hashes": {
+    "train": "74c5ffb23c7ef3e072182b648cf8596e0ffef2cf0b71d0ad413c261e274b22f9",
+    "val": "a0d5738616ea49076022d9354bd61975d4ce1eb66d182fc4dd7675346576bd72",
+    "test": "46b682a03bcead0301014bcbab67b20558c65e745a5335dd438436522119cee7"
+  },
+  "patient_counts": {
+    "train": 400,
+    "val": 50,
+    "test": 50
+  },
+  "test_used_for_selection": false,
+  "fixed_split_sha256": "cefb8c0a480132888a15d0479ea822dc6468cda8a937ae82e6adbe69025931dc",
+  "input_audit_sha256": "03f6c926586838795aaac00af5183846f1cabb405853562e567b6eb6d7cd2e4c"
+}

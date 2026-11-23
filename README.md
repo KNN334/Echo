@@ -1,6 +1,6 @@
-# CAMUS 左心室视频分割与逐帧容积基线
+# CAMUS 左心室视频分割与逐帧容积估算
 
-面向 CAMUS 多帧超声心动图的左心室分割基线。模型训练只读取人工标注的 ED/ES 帧；推理按时间顺序处理整段 cine，包括无标签帧。项目当前范围是数据准备、左室分割、逐帧容积和心动指标计算、结果可视化及评价，不包含贴片硬件或波束合成代码。
+**DRA-UNet** 是本项目的最终左心室分割模型。模型沿用 Attention-UNet 的跳连门控，在编码器引入空洞残差块，在最深层融合时间上下文，并在解码末端加入边缘监督。训练只对专家标注的 ED/ES 帧计算分割与边缘损失。推理按时间顺序处理 CAMUS 超声 cine 的每一帧，预测掩膜用于后续容积和心功能指标计算。
 
 ## 文字流程图
 
@@ -13,15 +13,18 @@ CAMUS 原始多帧超声视频：同一患者的 2CH / 4CH 独立 cine
 固定患者级划分：训练 400 人 / 验证 50 人 / 测试 50 人
     │
     ├─ 模型训练与选择
-    │   仅使用训练 / 验证患者中有人工标签的 ED / ES 帧
+    │   仅对训练 / 验证患者的 ED / ES 目标帧计算监督损失
     │       ↓
     │   UNet / Attention-UNet / UNet++ / UNet-mini / VGG16-UNet
     │   每个模型独立训练 5 次，归一化参数只由训练数据确定
     │       ↓
     │   每次训练保存验证损失最低的权重
     │   按这些权重的跨种子验证 Dice 均值选择基线
+    │   以 Attention-UNet 为对照完成模块消融 → DRA-UNet
     │
-    └─ 固定测试集评价：加载已训练权重，所有模型均参与对比
+    ├─ DRA-UNet 单病例预览：A2C 逐帧分割与 A2C / A4C 掩膜对比
+    │
+    └─ 五种基线定量评价：固定测试集
         每段视频按原始时间顺序逐帧分割，包括全部无标签帧
             ↓
         二值左室掩膜 → 还原原图尺寸 → 像素间距换算为 mm
@@ -37,42 +40,55 @@ CAMUS 原始多帧超声视频：同一患者的 2CH / 4CH 独立 cine
                 无标签帧不计算参考误差，但保留其分割结果与容积
 ```
 
-测试集不参与权重、阈值或模型选择。当前二值化阈值固定为 0.5；可视化使用各模型 2026 种子的代表性权重，模型对比表汇总 5 次实验的均值。
+模型、权重和阈值在测试前确定。二值化阈值为 0.5，逐帧预览使用各模型 2026 种子的权重。
+
+## DRA-UNet 模型结构
+
+![DRA-UNet 的空洞残差编码器、时序瓶颈、门控跳连和边缘监督](reports/lvseg_ablation/assets/dra_unet_architecture.svg)
+
+共享编码器处理当前帧及最多两帧历史。最深层 ConvLSTM 跳过序列开头的补位帧，输出经投影后与当前帧瓶颈特征相加。四条跳连只传当前帧的特征，分别由对应解码特征门控。训练时使用专家掩膜计算分割 BCE、Soft Dice 损失、边缘 BCE 和预测掩膜的 Sobel 梯度损失。逐帧容积计算使用分割头生成的掩膜。[模型代码](lvseg/models/ablation.py) · [损失函数](lvseg/losses.py)
 
 ## 结果预览
 
-### 验证集重复实验选出的基线：Attention-UNet
+### DRA-UNet 逐帧左心室分割
 
-该测试患者视频由固定测试集的 2CH cine 逐帧推理生成，使用被选基线 Attention-UNet 的代表性 2026 种子权重；绿色为模型掩码，琥珀色轮廓仅在存在专家标注的帧显示。GIF 为便于阅读的慢速预览，MP4 保留源帧率。
+使用固定测试患者 `patient0015` 的 A2C cine。绿色为 DRA-UNet 预测掩膜，琥珀色轮廓仅在专家标注的 ED 和 ES 帧显示。GIF 为慢速预览，MP4 保留源帧率。[源帧率 MP4](reports/lvseg_ablation/assets/dra_patient0015_2CH.mp4) · [素材来源与权重校验](reports/lvseg_ablation/assets/provenance.json)
+
+![DRA-UNet 对 patient0015 的 A2C 超声视频逐帧分割](reports/lvseg_ablation/assets/dra_patient0015_2CH.gif)
+
+<details>
+<summary>查看同病例的 Attention-UNet 基线视频</summary>
 
 ![Attention-UNet 对测试视频逐帧分割](reports/lvseg_baselines/assets/best_model_patient0015_2CH.gif)
 
-[下载源帧率 MP4](reports/lvseg_baselines/assets/best_model_patient0015_2CH.mp4)
+[源帧率 MP4](reports/lvseg_baselines/assets/best_model_patient0015_2CH.mp4)
 
-### 同一患者的五模型掩膜网格对比
+</details>
 
-采用“原始 B 超 + 五个模型二值掩膜”的 2×3 网格：左上角为输入图，其余位置为黑底白色左室掩膜。五个模型使用各自 2026 种子的代表性权重，对同一测试患者 patient0015 的 2CH 视频逐帧推理；下图固定展示中间帧（第 10 帧，索引从 0 开始），不按分割得分挑帧。所有面板保留完整视野，按原始宽高比显示，不做掩膜平滑或修补。
+### 同一患者的六模型掩膜网格对比
 
-![原始 B 超与五模型二值掩膜的 2×3 网格对比](reports/lvseg_baselines/assets/five_model_patient0015_2CH.png)
+2×4 网格包含 B 超输入、专家掩膜、五个基线与 DRA-UNet。下图展示 A2C 中间帧（索引 10），该帧没有专家掩膜。所有面板按原始宽高比显示，模型掩膜直接使用二值预测。
+
+![原始 B 超、专家标注状态与六模型二值掩膜对比](reports/lvseg_ablation/assets/six_model_patient0015_2CH.png)
 
 <details>
 <summary>展开同一布局的全视频逐帧对比</summary>
 
-![五模型黑底白色掩膜逐帧对比](reports/lvseg_baselines/assets/five_model_patient0015_2CH.gif)
+![同一 A2C 视频的六模型逐帧掩膜对比](reports/lvseg_ablation/assets/six_model_patient0015_2CH.gif)
 
-仅在有专家标签的帧，输入图显示琥珀色专家轮廓；无标签帧只显示预测。GIF 为慢速预览，[MP4 保留源帧率](reports/lvseg_baselines/assets/five_model_patient0015_2CH.mp4)。
+专家掩膜仅在 ED 和 ES 帧显示。[源帧率 MP4](reports/lvseg_ablation/assets/six_model_patient0015_2CH.mp4)
 
 </details>
 
 ### 同一患者 A4C / A2C 双切面的模型掩膜对比
 
-同一测试患者 patient0015 的 A4C（CAMUS 记为 4CH）与 A2C（2CH）分别展示 ED、ES 帧。每行依次为 B 超输入、专家掩膜以及 UNet、Attention-UNet、UNet++、UNet-mini、VGG16-UNet 的预测掩膜，模型顺序与对比表一致。ED/ES 来自各切面原始标注元数据；所有模型比较同一行的同一帧。
+同一测试患者的 A4C（CAMUS 记为 4CH）与 A2C（2CH）分别展示专家标注的 ED 和 ES 帧。每行依次为 B 超输入、专家掩膜、五个基线与 DRA-UNet。两个切面独立采集，各自按原始相位标注取帧。[双切面 PDF](reports/lvseg_ablation/assets/multiview_masks_patient0015.pdf) · [六模型网格 PDF](reports/lvseg_ablation/assets/six_model_patient0015_2CH.pdf)
 
-![同一患者 A4C 和 A2C 的 ED 与 ES 专家掩膜及五模型对比](reports/lvseg_baselines/assets/multiview_masks_patient0015.png)
+![同一患者 A4C 和 A2C 的 ED 与 ES 专家掩膜及六模型对比](reports/lvseg_ablation/assets/multiview_masks_patient0015.png)
 
-两个切面是独立采集的序列，这里按各自 ED/ES 展示，不表示逐帧同步或双平面容积计算。[双切面高清 PDF](reports/lvseg_baselines/assets/multiview_masks_patient0015.pdf) · [五模型网格高清 PDF](reports/lvseg_baselines/assets/five_model_patient0015_2CH.pdf)
+影像素材来自 CAMUS，采用 CC BY-NC-SA 4.0。[数据署名与许可](docs/data_sources/CAMUS_LICENSE_TERMS.md)
 
-### 分割结果对比
+### 五种基线分割结果
 
 五种基线在固定患者划分下各独立训练 5 次。按跨种子的验证集 Dice 均值选择基线；测试集不用于选模。表中验证 Dice 与测试指标均为跨种子均值；每次测试指标先在患者内平均，再汇总。mIoU 是前景与背景 IoU 的均值，HD95/ASD 使用原始像素间距换算为 mm。测试集 ED/ES 标注帧用于分割评价，整段视频（包括无标签帧）都参与推理和容积曲线。
 
@@ -90,9 +106,37 @@ CAMUS 原始多帧超声视频：同一患者的 2CH / 4CH 独立 cine
 
 完整均值见 [模型对比 CSV](reports/lvseg_baselines/model_comparison.csv)；逐次实验结果、验证集选择记录和离散程度见 [重复实验报告](reports/lvseg_baselines/repeated_runs.json) 与 [结果报告](reports/lvseg_baselines/RESULTS.md)。
 
+### DRA-UNet 模块消融
+
+表中为 CAMUS 验证集 50 名患者的三种子均值（2026、2027、2028）。B 为本轮同训练配置下重训的 Attention-UNet。S 表示用 SE 替换 Attention Gate，D 表示空洞残差编码器，T 表示瓶颈 ConvLSTM，E 表示边缘分支与 Sobel 损失。DRA-UNet 对应 DTE 配置，完整测试集指标尚未汇总。
+
+<!-- DRA_ABLATION_TABLE_START -->
+
+| 配置 | Dice | mIoU | Precision | Recall | HD95 (mm) | ASD (mm) | Simpson MAE (mL) | 配对 ΔDice |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| B | 0.9287 | 0.9280 | 0.9294 | 0.9328 | 4.28 | 1.57 | 7.96 | +0.0000 |
+| S | 0.9284 | 0.9278 | 0.9396 | 0.9221 | 4.22 | 1.55 | 7.90 | -0.0003 |
+| D | 0.9311 | 0.9301 | 0.9328 | 0.9336 | 4.11 | 1.50 | 7.97 | +0.0024 |
+| T | 0.9309 | 0.9301 | 0.9287 | 0.9375 | 4.20 | 1.51 | 7.88 | +0.0022 |
+| E | 0.9298 | 0.9292 | 0.9367 | 0.9273 | 4.15 | 1.52 | 7.98 | +0.0011 |
+| SD | 0.9292 | 0.9284 | 0.9272 | 0.9364 | 4.09 | 1.53 | 8.50 | +0.0005 |
+| SDT | 0.9298 | 0.9290 | 0.9288 | 0.9356 | 4.11 | 1.52 | 8.28 | +0.0011 |
+| SDTE | 0.9299 | 0.9292 | 0.9258 | 0.9389 | 4.11 | 1.52 | 8.06 | +0.0013 |
+| **DRA-UNet (DTE)** | 0.9333 | 0.9322 | 0.9396 | 0.9309 | 3.88 | 1.44 | 7.59 | +0.0046 |
+| STE | 0.9276 | 0.9268 | 0.9325 | 0.9274 | 4.35 | 1.57 | 8.02 | -0.0011 |
+| SDE | 0.9310 | 0.9301 | 0.9345 | 0.9323 | 3.99 | 1.48 | 8.10 | +0.0023 |
+
+<!-- DRA_ABLATION_TABLE_END -->
+
+DRA-UNet 相比 B 的验证 Dice 提高 0.0046，HD95 从 4.28 mm 降至 3.88 mm。配对图按相同种子比较两个配置，患者级图对每位患者的三次配对差值取均值。[完整消融结果](reports/lvseg_ablation/RESULTS.md) · [收敛曲线](reports/lvseg_ablation/evidence/DTE_vs_B/convergence.png) · [输入时间上下文对照](reports/lvseg_ablation/evidence/DTE_vs_B/context_dice.png)
+
+![DRA-UNet 相对 Attention-UNet 的同种子验证 Dice 差值](reports/lvseg_ablation/evidence/DTE_vs_B/seed_dice.png)
+
+![DRA-UNet 相对 Attention-UNet 的患者级验证 Dice 差值](reports/lvseg_ablation/evidence/DTE_vs_B/patient_dice.png)
+
 ### 逐帧容积波形与时相
 
-每帧分割掩码按原始图像间距计算 20 圆盘单平面 Simpson 容积，并沿真实时间顺序绘制。实心标记为预测容积曲线检测出的 EDV 峰与 ESV 谷；空心标记为数据提供的专家 ED/ES 参考帧，参考标签不参与预测峰谷选择。
+图中使用 Attention-UNet 基线的逐帧分割掩膜，按原始图像间距计算 20 圆盘单平面 Simpson 容积并按时间绘制。实心标记为预测容积曲线检测出的 EDV 峰与 ESV 谷，空心标记为专家 ED/ES 参考帧。
 
 ![左心室逐帧容积波形及 EDV、ESV 标注](reports/lvseg_baselines/assets/volume_waveform.png)
 
@@ -100,7 +144,7 @@ CAMUS 提供半周期片段，没有相邻两个 EDV 峰，因此该数据的 HR
 
 ### 不同模型的容积估算误差
 
-图中按视图比较每名测试患者有标注帧的平均绝对容积差。预测轮廓和专家掩码使用同一个单平面 Simpson 几何法；因此这是同几何方法的一致性对照，不是独立临床容积准确性验证。
+图中按视图比较五种基线在每名测试患者有标注帧上的平均绝对容积差。预测轮廓和专家掩码使用同一个单平面 Simpson 几何法。
 
 ![不同模型的患者级容积估算误差](reports/lvseg_baselines/assets/volume_accuracy_comparison.png)
 
@@ -264,6 +308,8 @@ $$
 
 无 CUDA 时将 `--device cuda` 改为 `--device cpu`。EchoNet-Dynamic 仅支持在取得数据访问授权后准备；该数据没有空间标定，不用于报告 mL 容积或绝对 CO。
 
+DRA-UNet 使用 `build_model("DRA-UNet")` 构建。消融训练配置、锁定的代码版本和预览导出命令见 [DRA-UNet 复现步骤](docs/dra_unet_reproduction.md)。
+
 ## 目录
 
 ```text
@@ -272,6 +318,7 @@ scripts/                       下载、预处理、训练/评价及 README 素�
 configs/lvseg.yaml             基线模型、数据和评价设置
 tests/                         左室分割与心功能指标检查
 reports/lvseg_baselines/       结果报告、对比表和 README 展示素材
+reports/lvseg_ablation/        DRA-UNet 三种子消融、结构图和预览
 ```
 
 工程检查通过不等于贴片系统验证或临床有效性验证。当前 CAMUS 单平面几何结果不应解释为同步双平面或独立临床容积测量。

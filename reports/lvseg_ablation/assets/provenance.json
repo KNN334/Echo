@@ -1,0 +1,30 @@
+{
+  "model": "DRA-UNet",
+  "ablation_variant": "DTE",
+  "seed": 2026,
+  "checkpoint_sha256": "5103390376bbd2db4c75269c7752ad30a43637d9d75a5cb18a955cb415c2f384",
+  "patient_id": "patient0015",
+  "patient_selection": "same fixed test patient used by existing baseline previews",
+  "threshold": 0.5,
+  "views": {
+    "2CH": {
+      "frame_count": 20,
+      "source_fps": 62.9,
+      "labeled_phase_indices": {
+        "ED": 0,
+        "ES": 19
+      }
+    },
+    "4CH": {
+      "frame_count": 27,
+      "source_fps": 67.4,
+      "labeled_phase_indices": {
+        "ED": 26,
+        "ES": 0
+      }
+    }
+  },
+  "baseline_checkpoint_seed": 2026,
+  "expert_labels": "displayed only at ED and ES; all frames receive predictions",
+  "license": "CAMUS CC BY-NC-SA 4.0; see docs/data_sources/CAMUS_LICENSE_TERMS.md"
+}

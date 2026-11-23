@@ -156,8 +156,16 @@ class VGG16UNet(nn.Module):
         return self.head(x)
 
 
-def build_model(name: str, *, in_channels: int = 1, base_channels: int = 32,
+def build_model(name: str, *, in_channels: int = 1, base_channels: int | None = None,
                 ablation: dict | None = None) -> nn.Module:
+    if base_channels is None:
+        base_channels = 24 if name == "DRA-UNet" else 32
+    if name == "DRA-UNet":
+        from .ablation import AblationUNet
+        if ablation is not None:
+            raise ValueError("DRA-UNet has a fixed architecture")
+        return AblationUNet(in_channels, base_channels, dilated_residual=True,
+                            temporal=True, edge=True, context_frames=3)
     if name == "LV-Ablation":
         from .ablation import AblationUNet
         return AblationUNet(in_channels, base_channels, **(ablation or {}))
@@ -171,4 +179,4 @@ def build_model(name: str, *, in_channels: int = 1, base_channels: int = 32,
         return UNet(in_channels, max(base_channels // 2, 8), depth=2)
     if name == "VGG16-UNet":
         return VGG16UNet(in_channels)
-    raise ValueError(f"Unknown segmentation baseline {name!r}; choose from {MODEL_NAMES}")
+    raise ValueError(f"Unknown segmentation model {name!r}; choose from {(*MODEL_NAMES, 'DRA-UNet')}")

@@ -58,15 +58,18 @@ def save_mask_plate(fig, output, *, require_matplotlib_panel_alignment=None):
 
 def export_mask_grid(images, labels, labeled, predictions, metadata, output, *,
                      alignment_audit=None):
-    """Render every cine frame as B-mode + five binary masks in a 2-by-3 grid."""
+    """Render the five-baseline or six-model cine comparison."""
     names = list(predictions)
-    if len(names) != 5:
-        raise ValueError("The README mask grid requires exactly five baseline models")
-    fig, axes = plt.subplots(2, 3, figsize=(7.2, 5.6), dpi=300)
+    include_expert = len(names) == 6
+    if len(names) not in (5, 6):
+        raise ValueError("The README mask grid requires five or six models")
+    columns = 4 if include_expert else 3
+    titles = ["B-mode input", *(["Expert mask"] if include_expert else []), *names]
+    fig, axes = plt.subplots(2, columns, figsize=(7.2, 7.2 * 2 / columns + 0.8), dpi=300)
     fig.subplots_adjust(left=0.005, right=0.995, top=0.995, bottom=0.065,
                         wspace=0.012, hspace=0.012)
     artists = []
-    for ax, name in zip(axes.flat, ["B-mode input", *names]):
+    for ax, name in zip(axes.flat, titles):
         # A black label band keeps text outside the ultrasound / mask pixels.
         artists.append(ax.imshow(np.zeros((280, 256, 3), dtype=np.uint8),
                                  interpolation="nearest"))
@@ -79,6 +82,9 @@ def export_mask_grid(images, labels, labeled, predictions, metadata, output, *,
     phases = {int(index): phase for phase, index in metadata.get("phases", {}).items()}
     for index, image in enumerate(images):
         bodies = [square_panel(image, metadata["original_hw"])]
+        if include_expert:
+            bodies.append(square_panel(labels[index], metadata["original_hw"], mask=True)
+                          if labeled[index] else np.zeros_like(bodies[0]))
         bodies.extend(square_panel(predictions[name][index], metadata["original_hw"],
                                    mask=True) for name in names)
         for artist, body in zip(artists, bodies):
@@ -101,14 +107,15 @@ def export_mask_grid(images, labels, labeled, predictions, metadata, output, *,
         fig.canvas.draw()
         # Video previews are reduced to even pixel dimensions; still images remain 300 dpi.
         video_frame = Image.fromarray(np.asarray(fig.canvas.buffer_rgba())[:, :, :3])
-        rendered.append(np.asarray(video_frame.resize((1008, 784), Image.Resampling.LANCZOS)))
+        rendered.append(np.asarray(video_frame.resize(
+            (1008, 616 if include_expert else 784), Image.Resampling.LANCZOS)))
     plt.close(fig)
     return rendered
 
 
 def plot_multiview_mask_comparison(prepared_root, test_manifest, results_root,
                                    model_names, output, *, patient_id,
-                                   alignment_audit=None):
+                                   alignment_audit=None, extra_predictions=None):
     """Compare ED/ES separately in A4C and A2C; never pair asynchronous frames."""
     prepared_root, results_root, output = map(Path, (prepared_root, results_root, output))
     manifest = json.loads(Path(test_manifest).read_text(encoding="utf-8"))
@@ -128,9 +135,12 @@ def plot_multiview_mask_comparison(prepared_root, test_manifest, results_root,
             references = dict(zip(arrays["original_gt_indices"], arrays["original_gt"]))
         predictions = {}
         for name in model_names:
-            path = results_root / name / "evaluation" / "predicted_masks" / f"{case_id}.npz"
-            with np.load(path, allow_pickle=False) as arrays:
-                predictions[name] = arrays["masks"]
+            if extra_predictions and name in extra_predictions:
+                predictions[name] = extra_predictions[name][case_id]
+            else:
+                path = results_root / name / "evaluation" / "predicted_masks" / f"{case_id}.npz"
+                with np.load(path, allow_pickle=False) as arrays:
+                    predictions[name] = arrays["masks"]
             if predictions[name].shape != (len(frames), *metadata["original_hw"]):
                 raise ValueError(f"Prediction coordinates differ for {name} / {case_id}")
         for phase in ("ED", "ES"):

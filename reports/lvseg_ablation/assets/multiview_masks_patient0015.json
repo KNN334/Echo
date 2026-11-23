@@ -1,0 +1,50 @@
+{
+  "patient_id": "patient0015",
+  "selection_rule": "same patient as the existing README cine; no metric-based selection",
+  "model_order": [
+    "UNet",
+    "Attention-UNet",
+    "UNet++",
+    "UNet-mini",
+    "VGG16-UNet",
+    "DRA-UNet"
+  ],
+  "examples": [
+    {
+      "case_id": "patient0015_4CH",
+      "view_display": "A4C (4CH)",
+      "phase": "ED",
+      "frame": 26,
+      "expert_label_available": true
+    },
+    {
+      "case_id": "patient0015_4CH",
+      "view_display": "A4C (4CH)",
+      "phase": "ES",
+      "frame": 0,
+      "expert_label_available": true
+    },
+    {
+      "case_id": "patient0015_2CH",
+      "view_display": "A2C (2CH)",
+      "phase": "ED",
+      "frame": 0,
+      "expert_label_available": true
+    },
+    {
+      "case_id": "patient0015_2CH",
+      "view_display": "A2C (2CH)",
+      "phase": "ES",
+      "frame": 19,
+      "expert_label_available": true
+    }
+  ],
+  "display": "full field of view, original aspect ratio, black square letterbox; B-mode uses prepared model inputs; nearest-neighbor binary masks; no mask cleanup",
+  "source": "fixed held-out CAMUS test split; per-model representative checkpoints",
+  "synchronized_views": false,
+  "files": [
+    "multiview_masks_patient0015.png",
+    "multiview_masks_patient0015.pdf",
+    "multiview_masks_patient0015.svg"
+  ]
+}
