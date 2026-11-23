@@ -67,9 +67,9 @@ CAMUS 原始多帧超声视频：同一患者的 2CH / 4CH 独立 cine
 
 ### 同一患者的六模型掩膜网格对比
 
-2×4 网格包含 B 超输入、专家掩膜、五个基线与 DRA-UNet。下图展示 A2C 中间帧（索引 10），该帧没有专家掩膜。所有面板按原始宽高比显示，模型掩膜直接使用二值预测。
+2×4 网格展示同一患者 A2C 的舒张末期（ED，帧索引 0）。B 超输入上的琥珀色轮廓和右侧白色专家掩膜均来自 CAMUS 的原始 ED 标注。五个基线与 DRA-UNet 的掩膜均为对该帧的二值预测。
 
-![原始 B 超、专家标注状态与六模型二值掩膜对比](reports/lvseg_ablation/assets/six_model_patient0015_2CH.png)
+![A2C 舒张末期 B 超、专家掩膜与六模型二值掩膜对比](reports/lvseg_ablation/assets/six_model_patient0015_2CH.png)
 
 <details>
 <summary>展开同一布局的全视频逐帧对比</summary>

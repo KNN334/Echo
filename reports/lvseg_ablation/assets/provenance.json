@@ -24,6 +24,11 @@
       }
     }
   },
+  "mask_grid_still": {
+    "view": "2CH",
+    "phase": "ED",
+    "frame_index": 0
+  },
   "baseline_checkpoint_seed": 2026,
   "expert_labels": "displayed only at ED and ES; all frames receive predictions",
   "license": "CAMUS CC BY-NC-SA 4.0; see docs/data_sources/CAMUS_LICENSE_TERMS.md"

@@ -111,6 +111,10 @@ def main():
         "checkpoint_sha256": checkpoint_hash, "patient_id": patient_id,
         "patient_selection": "same fixed test patient used by existing baseline previews",
         "threshold": 0.5, "views": example_views,
+        "mask_grid_still": {
+            "view": "2CH", "phase": "ED",
+            "frame_index": example_views["2CH"]["labeled_phase_indices"]["ED"],
+        },
         "baseline_checkpoint_seed": 2026,
         "expert_labels": "displayed only at ED and ES; all frames receive predictions",
         "license": "CAMUS CC BY-NC-SA 4.0; see docs/data_sources/CAMUS_LICENSE_TERMS.md",

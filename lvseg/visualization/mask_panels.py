@@ -58,11 +58,17 @@ def save_mask_plate(fig, output, *, require_matplotlib_panel_alignment=None):
 
 def export_mask_grid(images, labels, labeled, predictions, metadata, output, *,
                      alignment_audit=None):
-    """Render the five-baseline or six-model cine comparison."""
+    """Render every cine frame and save an ED still for the expert-mask layout."""
     names = list(predictions)
     include_expert = len(names) == 6
     if len(names) not in (5, 6):
         raise ValueError("The README mask grid requires five or six models")
+    phases = metadata.get("phases", {})
+    snapshot = len(images) // 2
+    if include_expert:
+        snapshot = phases.get("ED")
+        if snapshot is None or not 0 <= snapshot < len(images) or not labeled[snapshot]:
+            raise ValueError("The expert-mask comparison requires an annotated ED frame")
     columns = 4 if include_expert else 3
     titles = ["B-mode input", *(["Expert mask"] if include_expert else []), *names]
     fig, axes = plt.subplots(2, columns, figsize=(7.2, 7.2 * 2 / columns + 0.8), dpi=300)
@@ -78,8 +84,7 @@ def export_mask_grid(images, labels, labeled, predictions, metadata, output, *,
         ax.set_axis_off()
     footer = fig.text(0.012, 0.022, "", fontsize=7.2, color="#333333")
     rendered = []
-    snapshot = len(images) // 2
-    phases = {int(index): phase for phase, index in metadata.get("phases", {}).items()}
+    phases = {int(index): phase for phase, index in phases.items()}
     for index, image in enumerate(images):
         bodies = [square_panel(image, metadata["original_hw"])]
         if include_expert:
