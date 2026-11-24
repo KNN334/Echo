@@ -1,6 +1,6 @@
 # EchoLab 后端
 
-FastAPI 服务提供公开 CAMUS 报表查询和去标识影像存档。报表在启动时加载到内存，替换报表后重启服务。上传与报表查询使用独立存储。**研究基线 · 非临床验证。**
+FastAPI 服务提供公开 CAMUS 报表查询及上传影像的 DRA-UNet 左心室分割。报表在启动时加载到内存，替换报表后重启服务。上传与报表查询使用独立存储。**研究基线 · 非临床验证。**
 
 ## 本地启动
 
@@ -13,7 +13,18 @@ python -m uvicorn backend.app.main:app --reload --no-access-log
 
 打开 [接口文档](http://127.0.0.1:8000/docs) 或 [服务状态](http://127.0.0.1:8000/api/health)。在 `backend/` 下也可使用 `python -m uvicorn app.main:app --reload --no-access-log`。
 
-如需在本机验证上传，在启动后端前运行 `$env:ECHO_UPLOADS_ENABLED = 'true'`，并上传已去标识的影像。网页连接方式见 [前端说明](../web/README.md)。
+本机启用推理时，先从种子 2026 的私有 PyTorch 权重导出 ONNX。导出程序校验源权重、保留训练归一化与三帧因果上下文，并输出 ONNX 的 SHA-256。
+
+```powershell
+python -m pip install torch onnx
+python -m backend.export_model runs/lvseg_ablation/seed_2026/DTE/best.pt .work/dra-unet-seed2026.onnx
+python -m pip install -r backend/requirements-inference.txt
+$env:ECHO_UPLOADS_ENABLED = 'true'
+$env:ECHO_INFERENCE_CHECKPOINT = '.work/dra-unet-seed2026.onnx'
+python -m uvicorn backend.app.main:app --no-access-log
+```
+
+从 [前端说明](../web/README.md) 设置本地 API 地址，然后在「影像分割」上传去标识的 MP4、AVI、PNG 或 JPEG。视频按解码顺序逐帧分割，网页并排回放原始灰阶影像及预测掩膜。DICOM 可先从超声设备导出为去标识的 MP4。
 
 ## 接口和数据来源
 
@@ -26,9 +37,10 @@ python -m uvicorn backend.app.main:app --reload --no-access-log
 | GET | `/api/results/training-history` | 按训练轮次返回损失 |
 | GET | `/api/patients` | 搜索、排序、问题筛选与分页 |
 | GET | `/api/patients/{patient_id}` | 预测、参考、配对误差、ED/ES 叠图与逐帧容积（如有） |
-| POST | `/api/upload` | 校验并存档 `file`，表单须提交 `deidentified=true` |
-| POST | `/api/inference/{case_id}` | 预留推理请求与响应，返回 `501` |
-| GET | `/api/inference/{case_id}/status` | 已存档病例返回 `disabled` |
+| POST | `/api/upload?for_inference=true` | 校验并存档待推理影像，表单须提交 `deidentified=true` |
+| POST | `/api/inference/{case_id}` | 提交已上传影像的分割任务，返回 `202` |
+| GET | `/api/inference/{case_id}/status` | 读取任务状态、处理帧数或失败原因 |
+| GET | `/api/inference/{case_id}/result` | 已完成的分割回放数据及受限影像地址 |
 
 - 报表和公开病例接口接受 `study=legacy` 或 `study=dra`。默认 `legacy` 读取 `reports/full_baseline/`，对应 DeepLabV3-ResNet50 在 CAMUS 固定测试集的 82 名患者、328 个标注帧，患者测量使用专家标注相位与同几何法双平面参考，训练日志为 mean BCE。
 - `study=dra` 的评估读取 `reports/lvseg_ablation/results.json` 内 DTE 的 CAMUS 50 人验证集结果，训练曲线为种子 2026 的真实 BCE + Dice 主分割损失。病例查询读取 `web/src/assets/camus-cases.json`，对应 10 名固定测试集公开 A2C 回放病例。病例叠图来自同目录发布的 WebP，曲线保留所有已发布帧及有效峰谷。历史双平面报表的逐帧曲线、独立轮廓点列及 DRA 平滑曲线目前缺测，接口返回 `null` 与原因。
@@ -38,7 +50,7 @@ python -m uvicorn backend.app.main:app --reload --no-access-log
 
 ## 环境变量
 
-列表值使用 JSON 数组。默认目录以仓库根目录为基准。
+列表值使用 JSON 数组，CORS 来源也可用逗号分隔。默认目录以仓库根目录为基准。
 
 | 变量 | 默认值 |
 | --- | --- |
@@ -50,21 +62,20 @@ python -m uvicorn backend.app.main:app --reload --no-access-log
 | `ECHO_UPLOAD_DIR` | `backend/data/uploads` |
 | `ECHO_UPLOAD_MAX_BYTES` | `52428800`（50 MiB） |
 | `ECHO_UPLOAD_FORMATS` | `[".png",".jpg",".jpeg",".avi",".mp4",".zip"]` |
+| `ECHO_INFERENCE_CHECKPOINT` | 私有 ONNX 路径，默认留空 |
+| `ECHO_INFERENCE_SHA256` | ONNX SHA-256，Render 下载模型时必填 |
+| `ECHO_INFERENCE_MAX_FRAMES` | `300`，Render Blueprint 设置为 `180` |
 
-存档使用随机 UUID 目录，文件重命名为 `original` 加扩展名，元数据保存存档文件名、大小、时间和校验状态。文件内容保留原件，格式签名校验无法验证画面和元数据是否已去标识。ZIP 作为原件存档。上传文件仅可从服务器存储目录管理。
+存档使用随机 UUID 目录，元数据保存存档文件名、大小、时间和校验状态。文件内容保留原件，上传前由用户确认已去标识。预测和分割影像只通过随机病例 ID 查询，响应禁止公共缓存。部署时为存储配置访问限制、磁盘配额和清理周期。
 
-## 公网部署
+## Render 部署与原网址接入
 
-在 Python 主机安装依赖并部署仓库中的报表及公开站点素材。使用 Uvicorn 运行服务，通过 HTTPS 反向代理对外提供访问。下例适用于代理和 Uvicorn 在同一主机的情形。
+1. 在 Render 登录并连接 `KNN334/Echo`，选择 **New → Blueprint** 应用仓库中的 [render.yaml](../render.yaml)。也可新建 Python Web Service，根目录用整个仓库，复制 Blueprint 的构建和启动命令。Uvicorn 监听 Render 注入的 `$PORT`，每个实例启动一个推理 worker。
+2. 将导出的 ONNX 保存在有权限控制的私有存储。Render 服务的环境变量中填入 `ECHO_CHECKPOINT_URL`（Render 可访问的私有 HTTPS 源）和 `ECHO_INFERENCE_SHA256`。需要 Bearer 鉴权时另填 `ECHO_CHECKPOINT_TOKEN`，例如私有 GitHub Release 资产的 API 地址配合只读令牌。服务每次冷启动都可能重新读取私有模型。把 URL 和令牌保存在 Render 的环境设置中。
+3. `ECHO_CORS_ORIGINS` 设置为 `https://knn334.github.io,http://localhost:5173,http://127.0.0.1:5173`。网页来源只包含协议、域名和端口。Render 地址分配后，用公网 HTTPS 测试 `/docs` 和 `/api/health`，确认 `inference_enabled` 为 `true`。
+4. 在 GitHub 仓库的 **Settings → Secrets and variables → Actions → Variables** 设置 `VITE_API_BASE_URL` 为 Render 分配的实际 HTTPS 地址，再运行 [Publish EchoLab](https://github.com/KNN334/Echo/actions/workflows/pages.yml)。通过原网址打开「影像分割」并上传一段已有授权的公开研究影像。 [影像分割](https://knn334.github.io/Echo/#/segment)
 
-```bash
-export ECHO_CORS_ORIGINS='["https://knn334.github.io"]'
-python -m uvicorn backend.app.main:app --host 127.0.0.1 --port 8000 --no-access-log
-```
-
-1. 为 Uvicorn 配置进程托管及 HTTPS 代理，在外部网络验证 `/api/health` 可访问。
-2. 在 GitHub 仓库的 **Settings → Secrets and variables → Actions → Variables** 设置 `VITE_API_BASE_URL` 为后端 HTTPS 基础地址，不带 `/api`，然后重新运行 Pages 发布工作流。浏览器跨域来源使用 `https://knn334.github.io`，无需附带 `/Echo/`。
-3. 公网无登录的实例保持上传关闭。开启内部上传时，将 `ECHO_UPLOAD_DIR` 指向独立持久化目录，限制磁盘配额、请求体大小和访问范围。反向代理日志也应避免记录提交的文件名或真实身份信息。
+Blueprint 的免费实例使用 ONNX Runtime CPU，空闲时会休眠，上传和分割结果保存在临时磁盘。首次访问须等待唤醒。长期保存研究数据需要另配私有持久化存储。 [Render 免费实例说明](https://render.com/docs/free)
 
 ## 验证
 
@@ -72,3 +83,5 @@ python -m uvicorn backend.app.main:app --host 127.0.0.1 --port 8000 --no-access-
 python -m pip install -r backend/requirements-test.txt
 python -m pytest -q backend/tests --basetemp=.work/pytest-echo-backend
 ```
+
+可通过 `ECHO_TEST_INFERENCE_MODEL` 和 `ECHO_TEST_CINE` 指向私有 ONNX 与已授权的 CAMUS A2C 视频，运行真实上传、分割与回放集成测试。

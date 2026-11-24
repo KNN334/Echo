@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: echo-assess-api
+    runtime: python
+    plan: free
+    branch: main
+    buildCommand: python -m pip install -r backend/requirements-inference.txt
+    startCommand: python -m backend.fetch_checkpoint && python -m uvicorn backend.app.main:app --host 0.0.0.0 --port "$PORT" --no-access-log
+    healthCheckPath: /api/health
+    envVars:
+      - key: PYTHON_VERSION
+        value: '3.12.12'
+      - key: ECHO_CORS_ORIGINS
+        value: https://knn334.github.io,http://localhost:5173,http://127.0.0.1:5173
+      - key: ECHO_UPLOADS_ENABLED
+        value: 'true'
+      - key: ECHO_UPLOAD_DIR
+        value: /tmp/echo-uploads
+      - key: ECHO_INFERENCE_CHECKPOINT
+        value: /tmp/echo-model/dra-unet-seed2026.onnx
+      - key: ECHO_INFERENCE_MAX_FRAMES
+        value: '180'
+      - key: ECHO_CHECKPOINT_URL
+        sync: false
+      - key: ECHO_INFERENCE_SHA256
+        sync: false

@@ -12,6 +12,7 @@ research/cache/
 /data/
 /checkpoints/
 /runs/
+*.onnx
 vendor/*.zip
 *.log
 .env

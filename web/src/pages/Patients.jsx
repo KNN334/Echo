@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { ArrowDown, ArrowDownUp, ArrowRight, ArrowUp, ChevronLeft, ChevronRight, Search } from 'lucide-react'
 import { Link, useNavigate, useSearchParams } from 'react-router-dom'
 import { ApiStatus } from '../components/ApiStatus.jsx'
-import { CaseUpload } from '../components/CaseUpload.jsx'
 import { Badge, DataTable, EmptyState, Missing, PageHeading, Panel } from '../components/UI.jsx'
 import { apiEnabled, useApi } from '../data/api.js'
 import { issueLabels, measures, missingReason, patients } from '../data/patients.js'
@@ -113,6 +112,5 @@ export default function Patients() {
           <button type="button" aria-label="下一页" disabled={page === pageCount} onClick={() => setPage(page + 1)}><ChevronRight size={17} /></button></div>
       </div>}
     </Panel>
-    {apiEnabled && <CaseUpload />}
   </div>
 }

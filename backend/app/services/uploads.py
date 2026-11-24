@@ -43,7 +43,7 @@ class LocalUploads:
         self.max_bytes = settings.upload_max_bytes
         self.formats = allowed_formats(settings)
 
-    def save(self, upload: UploadFile) -> UploadResult:
+    def save(self, upload: UploadFile, *, inference_formats: set[str] | None = None) -> UploadResult:
         name = upload.filename or ""
         if not name or len(name) > 255 or PureWindowsPath(name).name != name or any(
             char in '/\\:<>",|?*' or ord(char) < 32 for char in name
@@ -52,6 +52,8 @@ class LocalUploads:
         extension = Path(name).suffix.lower()
         if extension not in self.formats:
             raise ServiceError(415, "不支持此文件格式")
+        if inference_formats is not None and extension not in inference_formats:
+            raise ServiceError(415, "此格式未开放自动分割，请选择 MP4、AVI、PNG 或 JPEG")
         size = upload.size or 0
         if size == 0:
             raise ServiceError(400, "上传文件为空")
@@ -61,7 +63,8 @@ class LocalUploads:
             raise ServiceError(415, "文件内容与扩展名不符或格式无效")
 
         case_id = uuid4()
-        result = UploadResult(case_id=case_id, size_bytes=size)
+        result = UploadResult(case_id=case_id, size_bytes=size,
+                              inference_status="ready" if inference_formats is not None else "disabled")
         filename = f"original{extension}"
         metadata = {**result.model_dump(mode="json"), "filename": filename,
                     "uploaded_at": datetime.now(timezone.utc).isoformat(), "deidentified_attestation": True}
@@ -81,4 +84,7 @@ class LocalUploads:
         return result
 
     def exists(self, case_id: UUID) -> bool:
-        return (self.directory / str(case_id) / "metadata.json").is_file()
+        return (self.case_dir(case_id) / "metadata.json").is_file()
+
+    def case_dir(self, case_id: UUID) -> Path:
+        return self.directory / str(case_id)

@@ -2,7 +2,7 @@ import logging
 from contextlib import asynccontextmanager
 from time import perf_counter
 
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request, Response
 from fastapi.exceptions import RequestValidationError
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
@@ -12,6 +12,7 @@ from .config import Settings
 from .core import ServiceError
 from .repositories import InMemoryReports
 from .schemas import Health
+from .services.inference import InferenceJobs
 from .services.uploads import LocalUploads, allowed_formats
 
 logger = logging.getLogger("uvicorn.error")
@@ -25,9 +26,13 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         app.state.settings = settings
         app.state.reports = InMemoryReports(settings)
         app.state.uploads = LocalUploads(settings)
-        yield
+        app.state.jobs = InferenceJobs(settings, app.state.uploads)
+        try:
+            yield
+        finally:
+            app.state.jobs.close()
 
-    app = FastAPI(title="超声智能心脏功能评估系统", description="公开影像研究报表与去标识文件存档。研究基线 · 非临床验证", lifespan=lifespan)
+    app = FastAPI(title="超声智能心脏功能评估系统", description="公开影像研究报表与 DRA-UNet 左心室分割。研究基线 · 非临床验证", lifespan=lifespan)
 
     @app.middleware("http")
     async def log_request(request: Request, call_next):
@@ -55,12 +60,18 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         return JSONResponse({"detail": f"请求参数无效（{fields or '请检查格式'}）"}, status_code=422)
 
     @app.get("/api/health", response_model=Health, tags=["运行状态"])
-    def health(request: Request):
+    def health(request: Request, response: Response):
         status = request.app.state.reports.status
         formats = allowed_formats(settings)
-        return Health(status="ok" if all(value == "loaded" for value in status.values()) else "degraded",
+        jobs = request.app.state.jobs
+        if jobs.expected and not jobs.enabled:
+            response.status_code = 503
+        ready = all(value == "loaded" for value in status.values()) and (not jobs.expected or jobs.enabled)
+        return Health(status="ok" if ready else "degraded",
                       reports=status, uploads_enabled=settings.uploads_enabled and bool(formats),
-                      upload_max_bytes=settings.upload_max_bytes, upload_formats=formats)
+                      upload_max_bytes=settings.upload_max_bytes, upload_formats=formats,
+                      inference_enabled=jobs.enabled, inference_formats=sorted(jobs.formats) if jobs.enabled else [],
+                      inference_max_frames=settings.inference_max_frames)
 
     app.include_router(reports.router)
     app.include_router(cases.router)

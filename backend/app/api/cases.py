@@ -1,6 +1,7 @@
-from typing import Literal
+from typing import Annotated, Literal
 
-from fastapi import APIRouter, Request, status
+from fastapi import APIRouter, Path, Request, Response, status
+from fastapi.responses import FileResponse
 from pydantic import UUID4, BaseModel, ValidationError
 from python_multipart.exceptions import MultipartParseError
 from starlette.concurrency import run_in_threadpool
@@ -10,10 +11,11 @@ from starlette.requests import ClientDisconnect
 
 from ..core import ServiceError
 from ..schemas import InferenceRequest, InferenceResult, InferenceStatus, UploadResult
+from ..services.inference import DISABLED
 from ..services.uploads import allowed_formats
 
 router = APIRouter(prefix="/api", tags=["上传与推理"])
-DISABLED = "阶段一推理未启用，上传文件仅校验与存档"
+PRIVATE = {"Cache-Control": "private, no-store", "Referrer-Policy": "no-referrer"}
 
 
 class UploadForm(BaseModel):
@@ -22,6 +24,12 @@ class UploadForm(BaseModel):
 
 class RequestTooLarge(MultiPartException):
     pass
+
+
+def check_origin(request: Request):
+    origin = request.headers.get("origin")
+    if origin and origin not in request.app.state.settings.cors_origins:
+        raise ServiceError(403, "该前端来源未获准提交上传或推理")
 
 
 async def limited_stream(request: Request, limit: int):
@@ -40,13 +48,15 @@ async def limited_stream(request: Request, limit: int):
         },
     }}}},
 })
-async def upload(request: Request):
+async def upload(request: Request, response: Response, for_inference: bool = False):
+    response.headers.update(PRIVATE)
     settings = request.app.state.settings
     if not settings.uploads_enabled or not allowed_formats(settings):
         raise ServiceError(403, "此环境未开启上传")
-    origin = request.headers.get("origin")
-    if origin and origin not in settings.cors_origins:
-        raise ServiceError(403, "该前端来源未获准提交上传")
+    check_origin(request)
+    jobs = request.app.state.jobs
+    if for_inference and not jobs.enabled:
+        raise ServiceError(503, DISABLED)
     if request.headers.get("content-type", "").split(";", 1)[0].strip().lower() != "multipart/form-data":
         raise ServiceError(415, "请使用 multipart/form-data 上传影像或压缩包")
     limit = settings.upload_max_bytes + 64 * 1024
@@ -68,20 +78,34 @@ async def upload(request: Request):
             UploadForm.model_validate({"deidentified": form.get("deidentified")})
         except ValidationError as exc:
             raise ServiceError(422, "请确认材料已去除患者身份信息") from exc
-        return await run_in_threadpool(request.app.state.uploads.save, file)
+        return await run_in_threadpool(request.app.state.uploads.save, file,
+                                       inference_formats=jobs.formats if for_inference else None)
     finally:
         await form.close()
 
 
-@router.post("/inference/{case_id}", response_model=InferenceResult, responses={501: {"description": DISABLED}})
-def inference(case_id: UUID4, options: InferenceRequest | None = None):
+@router.post("/inference/{case_id}", response_model=InferenceStatus, status_code=202, responses={501: {"description": DISABLED}})
+def inference(case_id: UUID4, request: Request, response: Response, options: InferenceRequest | None = None):
+    response.headers.update(PRIVATE)
+    check_origin(request)
     if options and options.case_id is not None and options.case_id != case_id:
         raise ServiceError(422, "请求体和路径的病例 ID 不一致")
-    raise ServiceError(501, DISABLED)
+    return request.app.state.jobs.submit(case_id, options or InferenceRequest())
 
 
 @router.get("/inference/{case_id}/status", response_model=InferenceStatus)
-def inference_status(case_id: UUID4, request: Request):
-    if not request.app.state.uploads.exists(case_id):
-        raise ServiceError(404, "找不到该上传病例")
-    return InferenceStatus(case_id=case_id, status="disabled", detail=DISABLED)
+def inference_status(case_id: UUID4, request: Request, response: Response):
+    response.headers.update(PRIVATE)
+    return request.app.state.jobs.status(case_id)
+
+
+@router.get("/inference/{case_id}/result", response_model=InferenceResult)
+def inference_result(case_id: UUID4, request: Request, response: Response):
+    response.headers.update(PRIVATE)
+    return request.app.state.jobs.result(case_id)
+
+
+@router.get("/inference/{case_id}/sheets/{index}", response_class=FileResponse)
+def inference_sheet(case_id: UUID4, index: Annotated[int, Path(ge=0)], request: Request):
+    path = request.app.state.jobs.sheet(case_id, index)
+    return FileResponse(path, media_type="image/webp", headers=PRIVATE)

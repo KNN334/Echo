@@ -79,7 +79,8 @@ export default function Overview() {
         <h1 id="system-title">超声智能心脏功能评估系统</h1>
         <p>基于超声心动图的左心室分割、容积测量与心功能分析。</p>
         <div className={styles.heroActions}>
-          <ActionLink to="/#simulation" primary>观看贴片超声教学</ActionLink>
+          <ActionLink to="/segment" primary>上传影像并分割</ActionLink>
+          <ActionLink to="/#simulation" arrow={false}>观看贴片超声教学</ActionLink>
           <ActionLink to="/results" arrow={false}>查看评估结果</ActionLink>
         </div>
       </div>

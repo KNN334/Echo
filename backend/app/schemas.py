@@ -181,7 +181,9 @@ class Health(Provenance):
     uploads_enabled: bool
     upload_max_bytes: int
     upload_formats: list[str]
-    inference_enabled: Literal[False] = False
+    inference_enabled: bool = False
+    inference_formats: list[str] = Field(default_factory=list)
+    inference_max_frames: int
 
 
 class UploadResult(Provenance):
@@ -190,7 +192,7 @@ class UploadResult(Provenance):
     saved: Literal[True] = True
     validation: Literal["basic_format_and_size_passed"] = "basic_format_and_size_passed"
     size_bytes: int
-    inference_status: Literal["disabled"] = "disabled"
+    inference_status: Literal["disabled", "ready"] = "disabled"
 
 
 class InferenceRequest(BaseModel):
@@ -198,16 +200,20 @@ class InferenceRequest(BaseModel):
 
     case_id: UUID4 | None = None
     view: Literal["A2C", "A4C"] | None = None
-    phase_selection: Literal["auto", "ED", "ES"] = "auto"
+    phase_selection: Literal["auto"] = "auto"
 
 
 class InferenceResult(Provenance):
     source: Literal["uploaded"] = "uploaded"
     case_id: UUID4
-    contours: Contours
-    volume_curve: VolumeCurve
-    measurements: PatientValues
-    units: dict[str, str] = UNITS
+    model: Literal["DRA-UNet"] = "DRA-UNet"
+    seed: Literal[2026] = 2026
+    view: Literal["A2C", "A4C"] | None = None
+    frames: int = Field(gt=0)
+    nonempty_masks: int = Field(ge=0)
+    playback_fps: FiniteFloat | None = None
+    atlas: Atlas
+    sheet_urls: list[str]
     quality_flags: list[str]
     elapsed_s: FiniteFloat
 
@@ -215,5 +221,7 @@ class InferenceResult(Provenance):
 class InferenceStatus(Provenance):
     source: Literal["uploaded"] = "uploaded"
     case_id: UUID4
-    status: Literal["disabled", "queued", "processing", "done", "failed"]
+    status: Literal["disabled", "ready", "queued", "processing", "done", "failed"]
     detail: str | None = None
+    completed_frames: int | None = None
+    total_frames: int | None = None

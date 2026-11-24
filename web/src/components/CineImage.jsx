@@ -2,12 +2,12 @@ import { useState } from 'react'
 import { Loading } from './Loading.jsx'
 import styles from '../styles/Monitor.module.css'
 
-export function CineImage({ cine, index, children, onReady }) {
+export function CineImage({ cine, index, children, onReady, label = `CAMUS A2C 左心室分割 · 帧 ${index}` }) {
   const [status, setStatus] = useState('loading')
   const [attempt, setAttempt] = useState(0)
   const tile = cine.atlas
 
-  return <div className={styles.viewer} role="img" aria-label={`CAMUS A2C 左心室分割 · 帧 ${index}`}
+  return <div className={styles.viewer} role="img" aria-label={label}
     aria-busy={status === 'loading'} style={{ aspectRatio: `${tile.width} / ${tile.height}` }}>
     <img key={attempt} className={styles.atlas} src={cine.atlasUrl} alt=""
       onLoad={() => { setStatus('ready'); onReady?.(true) }}

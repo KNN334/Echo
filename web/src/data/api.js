@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-const base = (import.meta.env.VITE_API_BASE_URL ?? '').trim().replace(/\/+$/, '')
+const base = (import.meta.env.VITE_API_BASE_URL ?? '').trim().replace(/\/+$/, '').replace(/\/api$/, '')
 
 export const apiEnabled = Boolean(base)
 export const apiUrl = path => `${base}${path}`

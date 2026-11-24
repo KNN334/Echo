@@ -7,6 +7,7 @@ import { EmptyState } from './components/UI.jsx'
 import './styles/global.css'
 
 const Overview = lazy(() => import('./pages/Overview.jsx'))
+const Segment = lazy(() => import('./pages/Segment.jsx'))
 const About = lazy(() => import('./pages/About.jsx'))
 const Features = lazy(() => import('./pages/Features.jsx'))
 const Results = lazy(() => import('./pages/Results.jsx'))
@@ -19,6 +20,7 @@ createRoot(document.getElementById('root')).render(
       <Suspense fallback={<Loading />}>
         <Routes>
           <Route index element={<Overview />} />
+          <Route path="/segment" element={<Segment />} />
           <Route path="/about" element={<About />} />
           <Route path="/features" element={<Features />} />
           <Route path="/results" element={<Results />} />

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import {
   Activity, ChartNoAxesCombined, ChevronRight, CircleHelp, Database,
-  LayoutGrid, Network, PanelLeftClose, PanelLeftOpen, ShieldCheck, Telescope, X,
+  LayoutGrid, Network, PanelLeftClose, PanelLeftOpen, ScanLine, ShieldCheck, Telescope, X,
 } from 'lucide-react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { Badge } from './UI.jsx'
@@ -9,6 +9,7 @@ import styles from '../styles/Layout.module.css'
 
 const links = [
   { path: '/', icon: LayoutGrid, label: '概览', title: '研究概览' },
+  { path: '/segment', icon: ScanLine, label: '影像分割' },
   { path: '/about', icon: Telescope, label: '项目介绍' },
   { path: '/features', icon: Network, label: '核心能力' },
   { path: '/results', icon: ChartNoAxesCombined, label: '结果评估' },
