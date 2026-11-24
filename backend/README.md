@@ -71,7 +71,7 @@ python -m uvicorn backend.app.main:app --no-access-log
 ## Render 部署与原网址接入
 
 1. 在 Render 登录并连接 `KNN334/Echo`，选择 **New → Blueprint** 应用仓库中的 [render.yaml](../render.yaml)。也可新建 Python Web Service，根目录用整个仓库，复制 Blueprint 的构建和启动命令。Uvicorn 监听 Render 注入的 `$PORT`，每个实例启动一个推理 worker。
-2. 将导出的 ONNX 保存在有权限控制的私有存储。Render 服务的环境变量中填入 `ECHO_CHECKPOINT_URL`（Render 可访问的私有 HTTPS 源）和 `ECHO_INFERENCE_SHA256`。需要 Bearer 鉴权时另填 `ECHO_CHECKPOINT_TOKEN`，例如私有 GitHub Release 资产的 API 地址配合只读令牌。服务每次冷启动都可能重新读取私有模型。把 URL 和令牌保存在 Render 的环境设置中。
+2. 将导出的 ONNX 保存在有权限控制的私有存储。在 Blueprint 表单填写 `ECHO_CHECKPOINT_URL`（Render 可访问的私有 HTTPS 源）、`ECHO_INFERENCE_SHA256` 和 `ECHO_CHECKPOINT_TOKEN`。使用私有 GitHub Release 时，填写资产的 API 地址和仅对模型仓库授予 **Contents: Read-only** 的细粒度令牌。Render 每次冷启动都可能重新读取模型。将令牌直接填写在 Render 中。 [创建细粒度令牌](https://github.com/settings/personal-access-tokens/new)
 3. `ECHO_CORS_ORIGINS` 设置为 `https://knn334.github.io,http://localhost:5173,http://127.0.0.1:5173`。网页来源只包含协议、域名和端口。Render 地址分配后，用公网 HTTPS 测试 `/docs` 和 `/api/health`，确认 `inference_enabled` 为 `true`。
 4. 在 GitHub 仓库的 **Settings → Secrets and variables → Actions → Variables** 设置 `VITE_API_BASE_URL` 为 Render 分配的实际 HTTPS 地址，再运行 [Publish EchoLab](https://github.com/KNN334/Echo/actions/workflows/pages.yml)。通过原网址打开「影像分割」并上传一段已有授权的公开研究影像。 [影像分割](https://knn334.github.io/Echo/#/segment)
 

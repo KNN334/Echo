@@ -24,3 +24,5 @@ services:
         sync: false
       - key: ECHO_INFERENCE_SHA256
         sync: false
+      - key: ECHO_CHECKPOINT_TOKEN
+        sync: false
