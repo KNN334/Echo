@@ -212,6 +212,7 @@ class InferenceResult(Provenance):
     frames: int = Field(gt=0)
     nonempty_masks: int = Field(ge=0)
     playback_fps: FiniteFloat | None = None
+    input_rotation_degrees: Literal[-90, 0, 90] = 0
     atlas: Atlas
     sheet_urls: list[str]
     quality_flags: list[str]

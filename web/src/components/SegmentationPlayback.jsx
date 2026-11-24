@@ -41,6 +41,7 @@ export function SegmentationPlayback({ result }) {
         <output>第 {frame + 1} / {frames} 帧</output>
       </div>}
       {result.quality_flags.map(flag => <p className={styles.footnote} key={flag}>{flag}</p>)}
+      {Boolean(result.input_rotation_degrees) && <p className={styles.footnote}>已自动校正侧向声束，掩膜已映回原始方向。</p>}
     </div>
   </Panel>
 }

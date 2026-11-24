@@ -12,6 +12,7 @@ from ..config import Settings
 from ..core import ServiceError
 from ..model_spec import CONTEXT_FRAMES, MODEL_HW, SOURCE_SHA256, sha256
 from ..schemas import Atlas, InferenceResult
+from .orientation import sequence_rotation
 
 MAX_SOURCE_PIXELS = 4096 * 2160
 ATLAS_COLUMNS = 4
@@ -28,7 +29,11 @@ def resized(frame: np.ndarray, size: tuple[int, int]) -> np.ndarray:
 
 
 def prepare_frames(path: Path, max_frames: int):
-    model_frames, preview_frames = [], []
+    preview_frames = []
+
+    # Retain both axes' resampling directly from the decoded image. The full
+    # video need not be kept in memory while determining its shared transform.
+    upright_frames, sideways_frames = [], []
 
     def append(gray: np.ndarray):
         height, width = gray.shape
@@ -38,7 +43,8 @@ def prepare_frames(path: Path, max_frames: int):
         if preview_frames and preview_frames[0].shape != preview_size[::-1]:
             raise ServiceError(422, "单段视频的帧尺寸应保持一致")
         preview_frames.append(resized(gray, preview_size))
-        model_frames.append(resized(gray, MODEL_HW[::-1]))
+        upright_frames.append(resized(gray, MODEL_HW[::-1]))
+        sideways_frames.append(resized(gray, MODEL_HW))
 
     if path.suffix in {".png", ".jpg", ".jpeg"}:
         try:
@@ -47,7 +53,7 @@ def prepare_frames(path: Path, max_frames: int):
                 append(np.asarray(ImageOps.exif_transpose(image).convert("L")))
         except (OSError, Image.DecompressionBombError) as exc:
             raise ServiceError(422, "无法解码上传的图像") from exc
-        return np.stack(model_frames), preview_frames, None
+        return pack_frames(upright_frames, sideways_frames, preview_frames, None)
 
     # Use the file decoder in presentation order, including frames without labels.
     capture = cv2.VideoCapture(str(path), cv2.CAP_FFMPEG, [cv2.CAP_PROP_N_THREADS, 1])
@@ -63,14 +69,20 @@ def prepare_frames(path: Path, max_frames: int):
             ok, frame = capture.read()
             if not ok:
                 break
-            if len(model_frames) == max_frames:
+            if len(preview_frames) == max_frames:
                 raise ServiceError(422, f"视频超过 {max_frames} 帧，请截取较短的片段")
             append(cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY))
     finally:
         capture.release()
-    if not model_frames or (isfinite(declared) and declared > 0 and len(model_frames) < int(declared)):
+    if not preview_frames or (isfinite(declared) and declared > 0 and len(preview_frames) < int(declared)):
         raise ServiceError(422, "无法完整解码该视频，请重新导出后再试")
-    return np.stack(model_frames), preview_frames, float(fps) if isfinite(fps) and 0 < fps <= 240 else None
+    return pack_frames(upright_frames, sideways_frames, preview_frames, float(fps) if isfinite(fps) and 0 < fps <= 240 else None)
+
+
+def pack_frames(upright_frames, sideways_frames, preview_frames, fps):
+    turns = sequence_rotation(preview_frames)
+    frames = np.rot90(np.stack(sideways_frames), turns, axes=(1, 2)).copy() if turns else np.stack(upright_frames)
+    return frames, preview_frames, fps, turns
 
 
 def write_sheets(directory: Path, case_id: UUID, previews, masks):
@@ -124,14 +136,16 @@ class DraSegmenter:
 
     def segment(self, path: Path, directory: Path, case_id: UUID, view, progress) -> InferenceResult:
         started = perf_counter()
-        frames, previews, fps = prepare_frames(path, self.max_frames)
+        frames, previews, fps, turns = prepare_frames(path, self.max_frames)
         progress(0, len(frames))
         masks = self.predict(frames, progress)
-        atlas, urls = write_sheets(directory, case_id, previews, masks)
+        source_masks = np.rot90(masks, -turns, axes=(1, 2)).copy() if turns else masks
+        atlas, urls = write_sheets(directory, case_id, previews, source_masks)
         nonempty = int(np.count_nonzero(masks.any(axis=(1, 2))))
         flags = []
         if nonempty < len(frames):
             flags.append("部分帧未得到左心室掩膜，请核对影像切面和图像质量" if nonempty else "所有帧的左心室掩膜均为空，请核对影像切面和图像质量")
         return InferenceResult(case_id=case_id, view=view, frames=len(frames), nonempty_masks=nonempty,
-                               playback_fps=fps, atlas=atlas, sheet_urls=urls, quality_flags=flags,
+                               playback_fps=fps, input_rotation_degrees=turns * 90,
+                               atlas=atlas, sheet_urls=urls, quality_flags=flags,
                                elapsed_s=perf_counter() - started)

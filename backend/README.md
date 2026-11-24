@@ -85,3 +85,9 @@ python -m pytest -q backend/tests --basetemp=.work/pytest-echo-backend
 ```
 
 可通过 `ECHO_TEST_INFERENCE_MODEL` 和 `ECHO_TEST_CINE` 指向私有 ONNX 与已授权的 CAMUS A2C 视频，运行真实上传、分割与回放集成测试。
+
+对带像素标注的 PNG 检查集，可在同一份 ONNX 上复核方向校正。原方向与自动校正的结果都转换回原图分辨率，再按左室腔标注计算图像级 Dice 和 IoU。将 `85` 替换为该数据的左室腔标签编码。
+
+```powershell
+python -m backend.validate_orientation .work/dra-unet-seed2026.onnx path/to/test_images path/to/test_masks --mask-value 85
+```
