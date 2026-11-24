@@ -2,16 +2,18 @@ import { useEffect, useRef } from 'react'
 import { Activity, ArrowRight, Focus, HeartPulse, Layers3, Ruler, ShieldCheck } from 'lucide-react'
 import { Link, useLocation } from 'react-router-dom'
 import { CineMonitor } from '../components/CineMonitor.jsx'
+import { ApiStatus } from '../components/ApiStatus.jsx'
 import { PatchLesson } from '../components/PatchLesson.jsx'
 import { ActionLink, Badge, MetricCard, Panel, TextLink } from '../components/UI.jsx'
 import { modules, researchSources } from '../data/research.js'
+import { apiEnabled, useApi } from '../data/api.js'
 import styles from '../styles/Pages.module.css'
 
 const metrics = [
-  { title: 'Dice 相似度', value: '0.933', description: '左心室掩膜 · 患者均值', icon: Layers3, tint: 'blue' },
-  { title: 'ASSD 边界距离', value: '1.44', unit: 'mm', description: '对称平均表面距离', icon: Ruler, tint: 'cyan' },
-  { title: 'HD95 边界距离', value: '3.88', unit: 'mm', description: '双向边界距离第 95 百分位', icon: Focus, tint: 'violet' },
-  { title: '容积估算 MAE', value: '7.59', unit: 'mL', description: 'ED / ES · 同几何法参考', icon: HeartPulse, tint: 'indigo' },
+  { key: 'Dice', title: 'Dice 相似度', value: '0.933', description: '左心室掩膜 · 患者均值', icon: Layers3, tint: 'blue' },
+  { key: 'ASSD', title: 'ASSD 边界距离', value: '1.44', unit: 'mm', description: '对称平均表面距离', icon: Ruler, tint: 'cyan' },
+  { key: 'HD95', title: 'HD95 边界距离', value: '3.88', unit: 'mm', description: '双向边界距离第 95 百分位', icon: Focus, tint: 'violet' },
+  { key: '标注帧容积估算', title: '容积估算 MAE', value: '7.59', unit: 'mL', description: 'ED / ES · 同几何法参考', icon: HeartPulse, tint: 'indigo' },
 ]
 
 const workflow = [
@@ -57,6 +59,14 @@ function PulseGraphic() {
 
 export default function Overview() {
   const { hash } = useLocation()
+  const report = useApi('/api/overview?study=dra')
+  const available = !apiEnabled || (report.data && !report.data.warnings.length)
+  const cards = metrics.map(item => {
+    if (!apiEnabled) return item
+    const value = report.data?.segmentation.find(row => row.metric === item.key)?.value
+      ?? report.data?.function_mae.find(row => row.metric === item.key)?.mae
+    return { ...item, value: value?.toFixed(item.key === 'Dice' ? 3 : 2) ?? '—' }
+  })
   useEffect(() => {
     if (hash === '#simulation') document.getElementById('simulation')?.scrollIntoView()
   }, [hash])
@@ -78,10 +88,13 @@ export default function Overview() {
     <div className={styles.anchor} id="simulation"><PatchLesson /></div>
     <section aria-labelledby="overview-eval">
       <div className={styles.sectionHeading}>
-        <div><h2 id="overview-eval">模型评估概览</h2><p>DRA-UNet · CAMUS 验证集 · 50 名患者 · 3 个种子均值</p></div>
+        <div><h2 id="overview-eval">模型评估概览</h2>
+          {available && <p>{apiEnabled ? `${report.data.model} · ${report.data.scope} · ${report.data.patients} 名患者` : 'DRA-UNet · CAMUS 验证集 · 50 名患者 · 3 个种子均值'}</p>}
+        </div>
         <Badge tone="blue">验证集</Badge>
       </div>
-      <div className={styles.metrics}>{metrics.map(item => <MetricCard key={item.title} item={item} />)}</div>
+      {available ? <div className={styles.metrics}>{cards.map(item => <MetricCard key={item.title} item={item} />)}</div>
+        : <ApiStatus request={report} />}
     </section>
     <Panel title="评估工作流" subtitle="从超声影像到患者级评估">
       <div className={styles.workflow}>{workflow.map(([mod, title, caption]) => (

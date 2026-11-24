@@ -45,6 +45,7 @@ export const patients = camusCases.map(cine => {
 })
 
 export function missingReason(key, patient) {
+  if (patient.missing_reasons?.[key]) return patient.missing_reasons[key]
   if (key === 'ref_CO') return '缺少独立 CO 参考'
   if (key === 'HR' || key === 'ref_HR' || key === 'CO') return missingHeartRate
   if (key.startsWith('ref_')) return '缺少配对的几何参考值'

@@ -95,6 +95,12 @@
 .segmented button:hover { color: var(--blue); }
 .segmented button[aria-pressed="true"] { color: var(--blue); background: #fff; box-shadow: 0 1px 3px #15243d15; }
 .note { display: flex; align-items: flex-start; gap: 8px; margin: 13px 20px 16px; color: #405a80; background: #eff5fd; padding: 10px 12px; border-radius: 7px; font-size: 12px; line-height: 1.5; }
+.uploadForm { display: grid; justify-items: start; gap: 12px; padding: 0 22px 20px; color: var(--muted); font-size: 13px; overflow-wrap: anywhere; }
+.uploadField { display: grid; gap: 7px; width: 100%; }
+.uploadField input { max-width: 100%; }
+.uploadConsent { display: flex; align-items: flex-start; gap: 8px; }
+.uploadConsent input { margin-top: 3px; }
+.uploadForm [role='alert'] { color: #993e24; }
 .tableToolbar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; padding: 18px 22px; }
 .filters { display: flex; flex-wrap: wrap; gap: 8px; }
 .search { display: flex; align-items: center; gap: 8px; min-height: 37px; padding: 0 9px; border: 1px solid var(--line); border-radius: 8px; color: #5a7193; }

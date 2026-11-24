@@ -1,6 +1,6 @@
 # 超声智能心脏功能评估系统
 
-EchoLab 提供概览、项目介绍、核心能力、结果评估、患者列表和患者详情。页面使用 React、React Router、Vite、CSS Modules 与 Recharts，可作为免登录站点静态托管。
+EchoLab 提供概览、项目介绍、核心能力、结果评估、患者列表和患者详情。页面使用 React、React Router、Vite、CSS Modules 与 Recharts，支持静态展示及 FastAPI 接入。
 
 ## 本地预览与构建
 
@@ -8,11 +8,22 @@ EchoLab 提供概览、项目介绍、核心能力、结果评估、患者列表
 
 ```powershell
 cd web
-npm ci
-npm run dev
+npm.cmd ci
+npm.cmd run dev
 ```
 
 `npm run build` 生成 `web/dist/`。在 `web/` 下运行 `npm run preview` 可通过本地 HTTP 检查生产构建。
+
+## 接入后端
+
+按 [后端启动说明](../backend/README.md) 启动 FastAPI 后，在 `web/` 目录运行以下命令。
+
+```powershell
+$env:VITE_API_BASE_URL = 'http://127.0.0.1:8000'
+npm.cmd run dev
+```
+
+该变量在 Vite 启动或构建时读取，省略时使用打包的公开报表与影像。配置后，概览、评估结果、病例查询与详情从后端读取。患者页可切换 DRA-UNet A2C 回放或历史双平面报表，并在上传启用时存档去标识影像。首页分割回放和贴片超声教学使用已经导出的公开素材。
 
 ## 静态托管
 

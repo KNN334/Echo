@@ -310,6 +310,8 @@ $$
 
 DRA-UNet 使用 `build_model("DRA-UNet")` 构建。消融训练配置、锁定的代码版本和预览导出命令见 [DRA-UNet 复现步骤](docs/dra_unet_reproduction.md)。
 
+EchoLab 网页可连接 FastAPI 查询报表、查看公开病例并存档去标识影像。第一阶段提供只读研究结果与上传校验，模型推理预留给第二阶段。 [后端启动与部署](backend/README.md) · [前端接入](web/README.md)
+
 ## 目录
 
 ```text
@@ -319,6 +321,8 @@ configs/lvseg.yaml             基线模型、数据和评价设置
 tests/                         左室分割与心功能指标检查
 reports/lvseg_baselines/       结果报告、对比表和 README 展示素材
 reports/lvseg_ablation/        DRA-UNet 三种子消融、结构图和预览
+backend/                       FastAPI 报表查询、病例详情与影像存档
+web/                           EchoLab 网页与公开回放素材
 ```
 
 工程检查通过不等于贴片系统验证或临床有效性验证。当前 CAMUS 单平面几何结果不应解释为同步双平面或独立临床容积测量。
